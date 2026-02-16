@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Scroll Media — Client Reports</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--shadow:#151516;--azure:#0c3387;--lucid:#cbe9ff;--highlighter:#e2ed7a;--porcelain:#f2f3f4;--ghost:#fafdff;}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--ghost);color:var(--shadow);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.header{background:var(--shadow);padding:24px 40px;border-bottom:3px solid var(--azure);}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.5px;}
+.logo span{color:var(--highlighter);font-weight:400;}
+.badge{background:rgba(226,237,122,0.15);border:1px solid rgba(226,237,122,0.3);color:var(--highlighter);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:16px;}
+.container{max-width:1200px;margin:48px auto;padding:0 40px;}
+.intro{margin-bottom:40px;}
+.intro h1{font-size:32px;font-weight:800;color:var(--shadow);margin-bottom:8px;letter-spacing:-0.5px;}
+.intro p{font-size:15px;color:rgba(21,21,22,0.6);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px;}
+.card{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:28px;text-decoration:none;color:inherit;transition:all 0.2s ease;display:block;}
+.card:hover{border-color:var(--azure);box-shadow:0 4px 12px rgba(12,51,135,0.08);transform:translateY(-2px);}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.card-name{font-size:20px;font-weight:700;color:var(--shadow);letter-spacing:-0.3px;}
+.status{background:rgba(16,185,129,0.1);color:#059669;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:4px 10px;border-radius:12px;}
+.card-meta{display:flex;gap:16px;margin-bottom:16px;font-size:13px;color:rgba(21,21,22,0.5);}
+.card-meta strong{color:var(--shadow);font-weight:600;}
+.card-desc{font-size:14px;line-height:1.7;color:rgba(21,21,22,0.7);margin-bottom:20px;}
+.card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--porcelain);}
+.view-link{font-size:13px;font-weight:600;color:var(--azure);display:flex;align-items:center;gap:6px;}
+.view-link::after{content:'→';font-size:16px;}
+.count{font-size:12px;color:rgba(21,21,22,0.4);}
+.footer{background:var(--porcelain);padding:32px 40px;text-align:center;margin-top:80px;}
+.footer p{font-size:12px;color:rgba(21,21,22,0.5);}
+.footer span{color:var(--azure);font-weight:600;}
+@media(max-width:768px){.header-inner{flex-direction:column;gap:12px;align-items:flex-start;}.grid{grid-template-columns:1fr;}.container{padding:32px 24px;}}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-inner">
+<div class="logo">Scroll Media <span>Reports</span></div>
+<div class="badge">Team Access</div>
+</div>
+</div>
+<div class="container">
+<div class="intro">
+<h1>Client Report Directory</h1>
+<p>Monthly performance reports for all active clients. Click any client to view their reports archive.</p>
+</div>
+<div class="grid">
+<a href="/skinbybrownlee/" class="card">
+<div class="card-header">
+<div class="card-name">Skin by Brownlee</div>
+<div class="status">● Active</div>
+</div>
+<div class="card-meta">
+<div><strong>Latest:</strong> Feb 2026</div>
+<div><strong>Level:</strong> Lift</div>
+</div>
+<div class="card-desc">Med spa and skincare e-commerce business focused on perimenopause positioning and product sales.</div>
+<div class="card-footer">
+<div class="view-link">View Reports</div>
+<div class="count">2 reports</div>
+</div>
+</a>
+<a href="/launchparty/" class="card">
+<div class="card-header">
+<div class="card-name">Launch Party</div>
+<div class="status">● Active</div>
+</div>
+<div class="card-meta">
+<div><strong>Latest:</strong> Jan 2026</div>
+<div><strong>Level:</strong> Spark</div>
+</div>
+<div class="card-desc">Boutique fitness studio driving community building and class bookings through Instagram.</div>
+<div class="card-footer">
+<div class="view-link">View Reports</div>
+<div class="count">1 report</div>
+</div>
+</a>
+<a href="/defineoakley/" class="card">
+<div class="card-header">
+<div class="card-name">Define Oakley</div>
+<div class="status">● Active</div>
+</div>
+<div class="card-meta">
+<div><strong>Latest:</strong> Feb 2026</div>
+<div><strong>Level:</strong> Rise</div>
+</div>
+<div class="card-desc">Boutique fitness studio focused on member retention and community engagement.</div>
+<div class="card-footer">
+<div class="view-link">View Reports</div>
+<div class="count">2 reports</div>
+</div>
+</a>
+</div>
+</div>
+<div class="footer">
+<p><span>Scroll Media</span> — Client Reports Directory — Team Access Only</p>
+</div>
+</body>
+</html>
