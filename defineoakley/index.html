@@ -3,379 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Define Oakley monthly performance reports archive">
+  <meta name="robots" content="noindex, nofollow">
   <title>Define Oakley Reports | Scroll Media</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* RESET */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* VARIABLES */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     :root {
       --shadow: #151516;
       --azure: #0c3387;
       --lucid: #cbe9ff;
-      --highlighter: #e2ed7a;
-      --porcelain: #f2f3f4;
       --ghost: #fafdff;
-      --white: #ffffff;
-      
-      --space-1: 8px;
-      --space-2: 16px;
-      --space-3: 24px;
-      --space-4: 32px;
-      --space-6: 48px;
-      --space-8: 64px;
     }
-
-    /* BASE */
-    html {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
+    
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
       background: var(--ghost);
       color: var(--shadow);
-      font-size: 16px;
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    /* HEADER */
-    .header {
-      background: var(--shadow);
-      padding: var(--space-2) var(--space-3);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-
-    .logo {
-      height: 32px;
-      width: auto;
-    }
-
-    .spacer {
-      flex: 1;
-    }
-
-    .breadcrumb {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .breadcrumb a {
-      color: rgba(255, 255, 255, 0.6);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .breadcrumb a:hover, .breadcrumb a:focus {
-      color: var(--highlighter);
-    }
-
-    .breadcrumb-sep {
-      margin: 0 var(--space-1);
-      opacity: 0.4;
-    }
-
-    /* CONTAINER */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: var(--space-6) var(--space-3);
-    }
-
-    /* CLIENT PROFILE */
-    .client-profile {
-      background: var(--white);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      border-radius: 16px;
-      padding: var(--space-4);
-      margin-bottom: var(--space-6);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    }
-
-    .profile-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: var(--space-3);
-      gap: var(--space-2);
-      flex-wrap: wrap;
-    }
-
-    h1 {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--shadow);
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-    }
-
-    .status-badge {
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      color: #10b981;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 6px 12px;
-      border-radius: 12px;
-    }
-
-    .profile-meta {
-      display: grid;
-      gap: var(--space-2);
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    }
-
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .meta-label {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: rgba(21, 21, 22, 0.5);
-    }
-
-    .meta-value {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--shadow);
-    }
-
-    /* SECTION HEADER */
-    .section-header {
-      margin-bottom: var(--space-4);
-    }
-
-    h2 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--shadow);
-      margin-bottom: var(--space-1);
-    }
-
-    .section-desc {
-      font-size: 16px;
-      color: rgba(21, 21, 22, 0.6);
       line-height: 1.6;
+      padding: 24px;
     }
-
-    /* REPORTS GRID */
-    .reports-grid {
-      display: grid;
-      gap: var(--space-3);
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
     }
-
-    .report-card {
-      background: var(--white);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      border-radius: 16px;
-      padding: var(--space-3);
+    
+    .breadcrumb {
+      font-size: 14px;
+      color: rgba(21, 21, 22, 0.5);
+      margin-bottom: 32px;
+    }
+    
+    .breadcrumb a {
+      color: var(--azure);
       text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
     }
-
-    .report-card:hover, .report-card:focus {
-      border-color: var(--azure);
-      box-shadow: 0 4px 12px rgba(12, 51, 135, 0.12);
-      transform: translateY(-2px);
+    
+    .breadcrumb a:hover {
+      text-decoration: underline;
     }
-
-    .report-card:focus {
-      outline: 2px solid var(--azure);
-      outline-offset: 2px;
+    
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
-
-    .report-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: var(--space-2);
+    
+    .subtitle {
+      font-size: 16px;
+      color: rgba(21, 21, 22, 0.6);
+      margin-bottom: 32px;
     }
-
-    .report-month {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--shadow);
-    }
-
-    .latest-badge {
-      background: rgba(226, 237, 122, 0.15);
-      border: 1px solid rgba(226, 237, 122, 0.3);
-      color: var(--shadow);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      padding: 4px 10px;
+    
+    .empty-state {
+      text-align: center;
+      padding: 64px 24px;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.06);
       border-radius: 12px;
     }
-
-    .report-meta {
-      margin-bottom: var(--space-2);
+    
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.3;
     }
-
-    .meta-row {
-      font-size: 14px;
-      color: rgba(21, 21, 22, 0.6);
-      margin-bottom: 4px;
-      line-height: 1.5;
-    }
-
-    .report-cta {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--azure);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding-top: var(--space-2);
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    /* FOOTER */
-    .footer {
-      background: var(--porcelain);
-      padding: var(--space-4) var(--space-3);
-      text-align: center;
-      margin-top: var(--space-8);
-    }
-
-    .footer p {
-      font-size: 12px;
+    
+    .empty-state p {
       color: rgba(21, 21, 22, 0.5);
+      font-size: 15px;
     }
-
-    .footer-brand {
-      color: var(--azure);
-      font-weight: 600;
-    }
-
-    /* RESPONSIVE */
-    @media (min-width: 768px) {
-      .container {
-        padding: var(--space-8) var(--space-6);
-      }
-
-      h1 {
-        font-size: 42px;
-      }
-
-      .client-profile {
-        padding: var(--space-6);
-      }
-    }
-
-    /* ACCESSIBILITY */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-
-    @media (prefers-contrast: high) {
-      .report-card, .client-profile {
-        border-width: 2px;
-      }
-    }
-
-    /* FOCUS VISIBLE */
-    .logo:focus-visible, a:focus-visible {
-      outline: 2px solid var(--azure);
-      outline-offset: 4px;
-      border-radius: 4px;
+    
+    @media (max-width: 480px) {
+      h1 { font-size: 28px; }
     }
   </style>
 </head>
 <body>
-  <header class="header" role="banner">
-    <div class="header-inner">
-      <img src="/assets/scroll-logo.svg" alt="Scroll Media" class="logo" width="150" height="32">
-      <div class="spacer"></div>
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/team/">All Clients</a>
-        <span class="breadcrumb-sep">/</span>
-        <span aria-current="page">Define Oakley</span>
-      </nav>
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">← All Clients</a>
     </div>
-  </header>
-
-  <main class="container">
-    <div class="client-profile">
-      <div class="profile-header">
-        <h1>Define Oakley</h1>
-        <div class="status-badge" role="status">Active</div>
-      </div>
-      <div class="profile-meta">
-        <div class="meta-item">
-          <div class="meta-label">Latest Report</div>
-          <div class="meta-value">January 2026</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Maturity Level</div>
-          <div class="meta-value">Rise</div>
-        </div>
-        <div class="meta-item">
-          <div class="meta-label">Total Reports</div>
-          <div class="meta-value">1</div>
-        </div>
-      </div>
+    
+    <h1>Define Oakley</h1>
+    <p class="subtitle">Monthly performance reports</p>
+    
+    <div class="empty-state">
+      <div class="empty-state-icon">📊</div>
+      <p>No reports yet. Monthly reports will appear here.</p>
     </div>
-
-    <div class="section-header">
-      <h2>Monthly Reports</h2>
-      <p class="section-desc">Performance analysis, format insights, and strategic adjustments for Define Oakley.</p>
-    </div>
-
-    <!-- No reports yet -->
-      <a href="/defineoakley/jan2026/" class="report-card" role="listitem">
-        <div class="report-header">
-          <div class="report-month">January 2026</div>
-          <div class="latest-badge">Latest</div>
-        </div>
-        <div class="report-meta">
-          <div class="meta-row">📊 Performance Score: 8.0/10</div>
-          <div class="meta-row">📈 16,141 views (viral post)</div>
-          <div class="meta-row">🎯 Format winners identified</div>
-        </div>
-        <div class="report-cta" aria-label="View January 2026 report">View Report →</div>
-      </a>
-    </div>
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <p><span class="footer-brand">Scroll Media</span> — Define Oakley — Monthly Performance Reports</p>
-  </footer>
+  </div>
 </body>
 </html>
