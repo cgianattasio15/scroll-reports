@@ -1,36 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Scroll Media — Client Reports</title>
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--shadow:#151516;--azure:#0c3387;--lucid:#cbe9ff;--highlighter:#e2ed7a;--ghost:#fafdff;}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--ghost);color:var(--shadow);line-height:1.6;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px;}
-.container{max-width:600px;text-align:center;}
-.logo{margin-bottom:40px;}
-.logo img{height:48px;width:auto;}
-h1{font-size:32px;font-weight:800;color:var(--shadow);margin-bottom:16px;letter-spacing:-0.5px;}
-p{font-size:16px;color:rgba(21,21,22,0.6);margin-bottom:32px;line-height:1.8;}
-.note{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:24px;font-size:14px;color:rgba(21,21,22,0.6);line-height:1.6;}
-.note strong{color:var(--shadow);font-weight:600;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Internal directory of all Scroll Media client reports">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Team Directory | Scroll Media Client Reports</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* RESET */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* VARIABLES */
+    :root {
+      --shadow: #151516;
+      --azure: #0c3387;
+      --lucid: #cbe9ff;
+      --highlighter: #e2ed7a;
+      --porcelain: #f2f3f4;
+      --ghost: #fafdff;
+      --white: #ffffff;
+      
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-6: 48px;
+      --space-8: 64px;
+    }
+
+    /* BASE */
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--ghost);
+      color: var(--shadow);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--shadow);
+      padding: var(--space-2) var(--space-3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .logo {
+      height: 32px;
+      width: auto;
+    }
+
+    .spacer {
+      flex: 1;
+    }
+
+    .badge {
+      background: rgba(226, 237, 122, 0.15);
+      border: 1px solid rgba(226, 237, 122, 0.3);
+      color: var(--highlighter);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 16px;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-6) var(--space-3);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      margin-bottom: var(--space-6);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--shadow);
+      letter-spacing: -0.5px;
+      margin-bottom: var(--space-2);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: rgba(21, 21, 22, 0.6);
+      line-height: 1.6;
+      max-width: 65ch;
+    }
+
+    /* CARDS GRID */
+    .cards {
+      display: grid;
+      gap: var(--space-3);
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      padding: var(--space-4);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .card:hover, .card:focus {
+      border-color: var(--azure);
+      box-shadow: 0 4px 12px rgba(12, 51, 135, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .card:focus {
+      outline: 2px solid var(--azure);
+      outline-offset: 2px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: var(--space-2);
+      gap: var(--space-2);
+    }
+
+    .card-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--shadow);
+    }
+
+    .status {
+      font-size: 12px;
+      font-weight: 600;
+      color: #10b981;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: var(--space-3);
+      margin-bottom: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .card-meta div {
+      font-size: 14px;
+      color: rgba(21, 21, 22, 0.6);
+    }
+
+    .card-meta strong {
+      font-weight: 600;
+      color: var(--shadow);
+    }
+
+    .card-desc {
+      font-size: 16px;
+      color: rgba(21, 21, 22, 0.6);
+      line-height: 1.6;
+      margin-bottom: var(--space-3);
+      max-width: 60ch;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: var(--space-2);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .view-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--azure);
+    }
+
+    .count {
+      font-size: 13px;
+      color: rgba(21, 21, 22, 0.5);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--porcelain);
+      padding: var(--space-4) var(--space-3);
+      text-align: center;
+      margin-top: var(--space-8);
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: rgba(21, 21, 22, 0.5);
+    }
+
+    .footer-brand {
+      color: var(--azure);
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 768px) {
+      .container {
+        padding: var(--space-8) var(--space-6);
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .header-inner {
+        padding: 0 var(--space-3);
+      }
+    }
+
+    /* ACCESSIBILITY */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (prefers-contrast: high) {
+      .card {
+        border-width: 2px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<div class="logo">
-<img src="/assets/scroll-logo.svg" alt="Scroll Media" />
-</div>
-<h1>Client Reports</h1>
-<p>Monthly performance reports for Scroll Media clients.</p>
-<div class="note">
-<strong>Looking for your report?</strong><br>
-Navigate directly to your client URL:<br>
-reports.scrollmedia.co/yourclientname/
-</div>
-</div>
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <img src="/assets/scroll-logo.svg" alt="Scroll Media" class="logo" width="150" height="32">
+      <div class="spacer"></div>
+      <div class="badge" role="status">Team Access</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>Client Report Directory</h1>
+      <p class="subtitle">Monthly performance reports for all active clients. Click any client to view their reports archive.</p>
+    </div>
+
+    <div class="cards" role="list">
+      <a href="/skinbybrownlee/" class="card" role="listitem">
+        <div class="card-header">
+          <div class="card-name">Skin by Brownlee</div>
+          <div class="status" aria-label="Status">● Active</div>
+        </div>
+        <div class="card-meta">
+          <div><strong>Latest:</strong> Feb 2026</div>
+          <div><strong>Level:</strong> Lift</div>
+        </div>
+        <div class="card-desc">Med spa and skincare e-commerce business focused on perimenopause positioning and product sales.</div>
+        <div class="card-footer">
+          <div class="view-link" aria-label="View reports">View Reports →</div>
+          <div class="count">2 reports</div>
+        </div>
+      </a>
+
+      <a href="/launchparty/" class="card" role="listitem">
+        <div class="card-header">
+          <div class="card-name">Launch Party</div>
+          <div class="status" aria-label="Status">● Active</div>
+        </div>
+        <div class="card-meta">
+          <div><strong>Latest:</strong> Jan 2026</div>
+          <div><strong>Level:</strong> Spark</div>
+        </div>
+        <div class="card-desc">Indie beauty boutique selling skincare products, building community and driving sales through Instagram.</div>
+        <div class="card-footer">
+          <div class="view-link" aria-label="View reports">View Reports →</div>
+          <div class="count">1 report</div>
+        </div>
+      </a>
+
+      <a href="/defineoakley/" class="card" role="listitem">
+        <div class="card-header">
+          <div class="card-name">Define Oakley</div>
+          <div class="status" aria-label="Status">● Active</div>
+        </div>
+        <div class="card-meta">
+          <div><strong>Latest:</strong> Feb 2026</div>
+          <div><strong>Level:</strong> Rise</div>
+        </div>
+        <div class="card-desc">Boutique fitness studio focused on member retention and community engagement.</div>
+        <div class="card-footer">
+          <div class="view-link" aria-label="View reports">View Reports →</div>
+          <div class="count">2 reports</div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p><span class="footer-brand">Scroll Media</span> — Client Reports Directory — Team Access Only</p>
+  </footer>
 </body>
 </html>

@@ -1,36 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Scroll Media — Client Reports</title>
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--shadow:#151516;--azure:#0c3387;--lucid:#cbe9ff;--highlighter:#e2ed7a;--ghost:#fafdff;}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--ghost);color:var(--shadow);line-height:1.6;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px;}
-.container{max-width:600px;text-align:center;}
-.logo{margin-bottom:40px;}
-.logo img{height:48px;width:auto;}
-h1{font-size:32px;font-weight:800;color:var(--shadow);margin-bottom:16px;letter-spacing:-0.5px;}
-p{font-size:16px;color:rgba(21,21,22,0.6);margin-bottom:32px;line-height:1.8;}
-.note{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:12px;padding:24px;font-size:14px;color:rgba(21,21,22,0.6);line-height:1.6;}
-.note strong{color:var(--shadow);font-weight:600;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monthly performance reports for Scroll Media clients">
+  <title>Client Reports | Scroll Media</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* RESET */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* VARIABLES - Scroll Media Brand Guidelines v1.0 */
+    :root {
+      --shadow: #151516;
+      --azure: #0c3387;
+      --lucid: #cbe9ff;
+      --highlighter: #e2ed7a;
+      --porcelain: #f2f3f4;
+      --ghost: #fafdff;
+      --white: #ffffff;
+      
+      /* 8px spacing grid */
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-6: 48px;
+      --space-8: 64px;
+    }
+
+    /* BASE */
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--ghost);
+      color: var(--shadow);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3);
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* LOGO */
+    .logo {
+      margin-bottom: var(--space-6);
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      max-width: 100%;
+    }
+
+    /* TYPOGRAPHY */
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--shadow);
+      letter-spacing: -0.5px;
+      margin-bottom: var(--space-2);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: rgba(21, 21, 22, 0.6);
+      margin-bottom: var(--space-4);
+      line-height: 1.6;
+    }
+
+    /* NOTE CARD */
+    .note {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      padding: var(--space-4);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      text-align: left;
+    }
+
+    .note-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--shadow);
+      margin-bottom: var(--space-2);
+    }
+
+    .note-body {
+      font-size: 16px;
+      color: rgba(21, 21, 22, 0.6);
+      line-height: 1.7;
+    }
+
+    .note-url {
+      display: inline-block;
+      margin-top: var(--space-1);
+      padding: var(--space-1) var(--space-2);
+      background: var(--porcelain);
+      border-radius: 8px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 14px;
+      color: var(--azure);
+      font-weight: 600;
+    }
+
+    /* RESPONSIVE - Mobile First (360px baseline) */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 48px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .logo img {
+        height: 56px;
+      }
+    }
+
+    /* HIGH CONTRAST MODE */
+    @media (prefers-contrast: high) {
+      .note {
+        border-width: 2px;
+      }
+    }
+
+    /* REDUCED MOTION */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-<div class="logo">
-<img src="/assets/scroll-logo.svg" alt="Scroll Media" />
-</div>
-<h1>Client Reports</h1>
-<p>Monthly performance reports for Scroll Media clients.</p>
-<div class="note">
-<strong>Looking for your report?</strong><br>
-Navigate directly to your client URL:<br>
-<code style="color:var(--azure);font-weight:600;">reports.scrollmedia.co/yourclientname/</code>
-</div>
-</div>
+  <main class="container">
+    <div class="logo">
+      <img src="/assets/scroll-logo.svg" alt="Scroll Media" width="200" height="56">
+    </div>
+
+    <h1>Client Reports</h1>
+    <p class="subtitle">Monthly performance reports for Scroll Media clients.</p>
+
+    <div class="note" role="region" aria-label="Access instructions">
+      <div class="note-title">Looking for your report?</div>
+      <div class="note-body">
+        Navigate directly to your client URL:
+        <span class="note-url">reports.scrollmedia.co/yourclientname/</span>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
