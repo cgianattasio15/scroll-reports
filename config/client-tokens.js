@@ -12,7 +12,7 @@
 
 const CLIENT_TOKENS = {
   // Launch Party (Indie Beauty Boutique)
-  '8k3h9x2n': {
+  'r8kh3m2p': {
     clientFolder: 'launchparty',
     clientName: 'Launch Party',
     created: '2026-02-16',
@@ -20,7 +20,7 @@ const CLIENT_TOKENS = {
   },
   
   // Skin by Brownlee (Med Spa)
-  'm4p7w1qz': {
+  't4nw9x5q': {
     clientFolder: 'skinbybrownlee',
     clientName: 'Skin by Brownlee',
     created: '2026-02-16',
@@ -28,7 +28,7 @@ const CLIENT_TOKENS = {
   },
   
   // Define Oakley (Boutique Fitness)
-  'x9n2k5rt': {
+  'v7bj2k6n': {
     clientFolder: 'defineoakley',
     clientName: 'Define Oakley',
     created: '2026-02-16',
