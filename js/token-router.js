@@ -2,7 +2,7 @@
  * Token-Based URL Router for Scroll Reports
  * 
  * Routes client-specific token URLs to actual report paths
- * Example: /r/r8kh3m2p/january2026/ → /launchparty/january2026/
+ * Example: /r/8k3h9x2n/january2026/ → /launchparty/january2026/
  */
 
 (function() {
@@ -10,9 +10,9 @@
 
   // Token registry (must match /config/client-tokens.js)
   const CLIENT_TOKENS = {
-    'r8kh3m2p': { clientFolder: 'launchparty', clientName: 'Launch Party', active: true },
-    't4nw9x5q': { clientFolder: 'skinbybrownlee', clientName: 'Skin by Brownlee', active: true },
-    'v7bj2k6n': { clientFolder: 'defineoakley', clientName: 'Define Oakley', active: true }
+    '8k3h9x2n': { clientFolder: 'launchparty', clientName: 'Launch Party', active: true },
+    'm4p7w1qz': { clientFolder: 'skinbybrownlee', clientName: 'Skin by Brownlee', active: true },
+    'x9n2k5rt': { clientFolder: 'defineoakley', clientName: 'Define Oakley', active: true }
   };
 
   /**
