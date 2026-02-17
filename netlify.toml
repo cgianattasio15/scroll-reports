@@ -1,0 +1,29 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/launchparty"
+  to = "/launchparty/"
+  status = 301
+
+[[redirects]]
+  from = "/skinbybrownlee"
+  to = "/skinbybrownlee/"
+  status = 301
+
+[[redirects]]
+  from = "/defineoakley"
+  to = "/defineoakley/"
+  status = 301
+
+[[redirects]]
+  from = "/launchparty/january2026"
+  to = "/launchparty/january2026/"
+  status = 301
