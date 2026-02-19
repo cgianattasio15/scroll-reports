@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Skin by Brownlee — January 2026 | Scroll Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    :root{
+      --shadow:#151516;
+      --azure:#0c3387;
+      --lucid:#cbe9ff;
+      --hl:#e2ed7a;
+      --ink-mid:rgba(255,255,255,0.65);
+      --ink-light:rgba(255,255,255,0.35);
+      --porcelain:#f2f3f4;
+      --ghost:#fafdff;
+      --border:rgba(21,21,22,0.08);
+      --text:#151516;
+      --text-muted:#5a5a5c;
+      --green:#10b981;
+      --amber:#f59e0b;
+      --red:#ef4444;
+      --purple:#7c3aed;
+    }
+    body{font-family:'Source Sans 3',sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    
+    .hero{background:linear-gradient(135deg,#151516 0%,#1a1a1c 100%);color:white;padding:3rem 1.5rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(12,51,135,.18),transparent 70%);border-radius:50%}
+    .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .hero-logo{height:34px;margin-bottom:1.75rem;filter:brightness(0) invert(1)}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.15);border:1px solid rgba(226,237,122,.3);padding:.4rem .875rem;border-radius:4px;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:1.25rem}
+    .hero-eyebrow .dot{width:5px;height:5px;background:var(--hl);border-radius:50%}
+    .hero h1{font-size:clamp(2rem,7vw,3.75rem);font-weight:700;line-height:1.08;letter-spacing:-.02em;margin-bottom:.875rem}
+    .hero-sub{font-size:clamp(.9375rem,2.5vw,1.125rem);color:var(--ink-mid);margin-bottom:1.5rem;max-width:600px}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:.625rem}
+    .hero-pill{display:flex;align-items:center;gap:.375rem;font-size:.75rem;color:var(--ink-light)}
+    .hero-pill .dot{width:4px;height:4px;background:var(--hl);border-radius:50%}
+    
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+    
+    .score-wrap{position:relative;z-index:10;margin:-2rem auto 3.5rem}
+    .score-card{background:white;border-radius:10px;padding:2.5rem 2rem;box-shadow:0 2px 16px rgba(21,21,22,.1);border:1px solid var(--border);text-align:center;position:relative;overflow:hidden}
+    .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#1a4fc4)}
+    .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
+    .score-num{font-size:clamp(3.5rem,12vw,5rem);font-weight:700;color:var(--azure);line-height:1;margin-bottom:.5rem}
+    .score-denom{font-size:1.5rem;color:var(--text-muted);font-weight:400}
+    .score-title{font-size:1.125rem;font-weight:600;color:var(--text);margin-bottom:.5rem}
+    .score-desc{font-size:.9375rem;color:var(--text-muted);max-width:700px;margin:0 auto 1.25rem;line-height:1.7}
+    .score-note{font-size:.75rem;color:var(--text-muted);margin:1.25rem auto 1.75rem;padding:.75rem 1rem;background:var(--porcelain);border-radius:6px;line-height:1.6;font-style:italic;max-width:700px}
+    .score-badges{display:flex;justify-content:center;gap:.875rem;flex-wrap:wrap}
+    .score-badge{display:flex;align-items:center;gap:.5rem;padding:.5rem .875rem;border-radius:6px;font-size:.8125rem;font-weight:700}
+    .score-badge.exceed{background:rgba(124,58,237,.1);color:var(--purple)}
+    .score-badge.ontrack{background:rgba(16,185,129,.1);color:#059669}
+    .score-badge.watch{background:rgba(245,158,11,.1);color:#b45309}
+    .score-badge .badge-dot{width:8px;height:8px;border-radius:50%}
+    .score-badge.exceed .badge-dot{background:var(--purple)}
+    .score-badge.ontrack .badge-dot{background:var(--green)}
+    .score-badge.watch .badge-dot{background:var(--amber)}
+    
+    .sec{margin-bottom:4rem}
+    .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.5rem}
+    .sec-title{font-size:clamp(1.625rem,5vw,2.25rem);font-weight:700;line-height:1.15;color:var(--shadow);margin-bottom:.75rem}
+    .sec-sub{font-size:clamp(.9375rem,2vw,1.125rem);color:var(--text-muted);max-width:750px;font-weight:500;margin-bottom:2rem}
+    
+    .funnel-group{margin-bottom:2rem}
+    .funnel-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:white;background:var(--azure);padding:.5rem .875rem;border-radius:6px 6px 0 0;display:inline-block}
+    .metrics-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:0 6px 6px 6px;overflow:hidden}
+    .metric-card{background:white;padding:1.25rem 1.5rem}
+    .metric-card:hover{background:rgba(12,51,135,.02)}
+    .metric-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem}
+    .metric-name{font-size:.875rem;font-weight:700;color:var(--text)}
+    .metric-status{font-size:.625rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .5rem;border-radius:4px}
+    .metric-status.exceed{background:rgba(124,58,237,.12);color:var(--purple)}
+    .metric-status.ontrack{background:rgba(16,185,129,.12);color:#059669}
+    .metric-status.watch{background:rgba(245,158,11,.12);color:#b45309}
+    .metric-nums{display:flex;gap:1.5rem;margin-bottom:.875rem;flex-wrap:wrap}
+    .metric-val{display:flex;flex-direction:column;gap:.2rem}
+    .metric-val-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+    .metric-actual{font-size:1.375rem;font-weight:700;color:var(--shadow)}
+    .metric-actual.exceed{color:var(--purple)}
+    .metric-actual.ontrack{color:#059669}
+    .metric-actual.watch{color:#b45309}
+    .metric-target{font-size:.875rem;color:var(--text-muted);font-weight:500}
+    .metric-mom{font-size:.75rem;color:var(--text-muted);margin-bottom:.75rem}
+    .metric-mom.up{color:var(--green)}
+    .metric-mom.down{color:var(--red)}
+    .bar-track{height:5px;background:var(--porcelain);border-radius:3px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:3px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+    .bar-fill.exceed{background:linear-gradient(90deg,var(--purple),#a78bfa)}
+    .bar-fill.ontrack{background:linear-gradient(90deg,var(--green),#34d399)}
+    .bar-fill.watch{background:linear-gradient(90deg,var(--amber),#fcd34d)}
+    
+    .insights-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
+    .insight-card{background:white;border-radius:8px;padding:1.5rem;border:1px solid var(--border);box-shadow:0 1px 3px rgba(21,21,22,.04)}
+    .insight-flag{display:flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.875rem}
+    .insight-flag .flag-dot{width:8px;height:8px;border-radius:50%}
+    .insight-flag.win{color:#059669}.insight-flag.win .flag-dot{background:var(--green)}
+    .insight-flag.watch{color:#b45309}.insight-flag.watch .flag-dot{background:var(--amber)}
+    .insight-flag.alert{color:var(--red)}.insight-flag.alert .flag-dot{background:var(--red)}
+    .insight-flag.signal{color:var(--azure)}.insight-flag.signal .flag-dot{background:var(--azure)}
+    .insight-title{font-size:1.0625rem;font-weight:700;color:var(--shadow);margin-bottom:.75rem;line-height:1.35}
+    .insight-body{font-size:.9rem;line-height:1.75;color:var(--text-muted)}
+    .insight-body strong{color:var(--shadow);font-weight:700}
+    
+    .posts-grid{display:grid;gap:1.25rem}
+    .post-card{background:white;border-radius:8px;border:1px solid var(--border);box-shadow:0 1px 3px rgba(21,21,22,.04);overflow:hidden}
+    .post-rank-bar{height:3px}
+    .post-rank-bar.rank1{background:linear-gradient(90deg,#f59e0b,#fcd34d)}
+    .post-rank-bar.rank2{background:linear-gradient(90deg,#94a3b8,#cbd5e1)}
+    .post-rank-bar.rank3{background:linear-gradient(90deg,#b45309,#d97706)}
+    .post-body{padding:1.5rem 1.75rem}
+    .post-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.875rem;flex-wrap:wrap}
+    .post-num{width:28px;height:28px;border-radius:50%;background:var(--azure);color:white;font-size:.875rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .post-num.outlier{background:var(--purple)}
+    .post-chip{font-size:.6875rem;font-weight:700;padding:.25rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.05em}
+    .post-chip.reel{background:rgba(12,51,135,.08);color:var(--azure)}
+    .post-chip.carousel{background:rgba(99,102,241,.1);color:#4338ca}
+    .post-chip.top{background:rgba(124,58,237,.12);color:var(--purple)}
+    .post-title{font-size:1rem;font-weight:700;color:var(--shadow);margin-bottom:.5rem;line-height:1.35}
+    .post-date{font-size:.75rem;color:var(--text-muted);margin-bottom:.875rem}
+    .post-stats{display:flex;flex-wrap:wrap;gap:1.25rem;margin:1rem 0;padding:1rem 1.25rem;background:var(--porcelain);border-radius:6px}
+    .post-stat{display:flex;flex-direction:column;gap:.2rem}
+    .post-stat-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+    .post-stat-val{font-size:.9375rem;font-weight:700;color:var(--shadow)}
+    .post-stat-val.hero{color:var(--purple);font-size:1.125rem}
+    .post-analysis{font-size:.875rem;line-height:1.75;color:var(--text-muted);margin-top:.875rem}
+    .post-analysis strong{color:var(--shadow)}
+    .post-link{display:inline-flex;align-items:center;gap:.375rem;color:var(--azure);text-decoration:none;font-size:.8125rem;font-weight:700;margin-top:.875rem;transition:opacity .2s}
+    .post-link:hover{opacity:.7}
+    .post-link::after{content:"→"}
+    
+    .format-grid{display:grid;gap:1.25rem}
+    .format-card{background:white;border-radius:8px;padding:1.5rem 1.75rem;border:1px solid var(--border);box-shadow:0 1px 3px rgba(21,21,22,.04);position:relative}
+    .format-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:8px 0 0 8px}
+    .format-card.working::before{background:var(--green)}
+    .format-card.underperforming::before{background:var(--amber)}
+    .format-card.test::before{background:var(--azure)}
+    .format-verdict{font-size:.625rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;padding:.25rem .5rem;border-radius:3px;display:inline-block}
+    .format-card.working .format-verdict{background:rgba(16,185,129,.12);color:#059669}
+    .format-card.underperforming .format-verdict{background:rgba(245,158,11,.12);color:#b45309}
+    .format-card.test .format-verdict{background:rgba(12,51,135,.08);color:var(--azure)}
+    .format-name{font-size:1.0625rem;font-weight:700;color:var(--shadow);margin-bottom:.625rem}
+    .format-metric{font-size:.875rem;font-weight:700;color:var(--azure);margin-bottom:.75rem}
+    .format-why{font-size:.875rem;line-height:1.75;color:var(--text-muted);margin-bottom:1rem}
+    .format-why strong{color:var(--shadow)}
+    .format-direction{font-size:.8125rem;line-height:1.65;color:var(--text-muted);padding:.75rem 1rem;background:var(--porcelain);border-radius:6px}
+    .format-direction strong{color:var(--shadow)}
+    
+    .priorities-grid{display:grid;gap:1.25rem}
+    .priority-card{background:white;border-radius:8px;padding:1.5rem 1.75rem;border:1px solid var(--border);box-shadow:0 1px 3px rgba(21,21,22,.04)}
+    .priority-num{width:32px;height:32px;border-radius:50%;background:var(--azure);color:white;font-size:.9375rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .priority-title{font-size:1.0625rem;font-weight:700;color:var(--shadow);margin-bottom:.5rem}
+    .priority-goal{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--azure);margin-bottom:.75rem}
+    .priority-tactics{font-size:.875rem;line-height:1.75;color:var(--text-muted)}
+    .priority-tactics strong{color:var(--shadow)}
+    
+    .footer{background:var(--shadow);color:white;padding:2.5rem 1.5rem;margin-top:5rem;text-align:center}
+    .footer-text{font-size:.9375rem;color:var(--ink-mid);margin-bottom:.75rem;line-height:1.65}
+    .footer-meta{font-size:.75rem;color:var(--ink-light);letter-spacing:.05em}
+    
+    @media(max-width:768px){
+      .hero{padding:2rem 1.25rem}
+      .hero h1{font-size:2rem}
+      .wrap{padding:0 1.25rem}
+      .score-card{padding:2rem 1.5rem}
+      .metric-nums{flex-direction:column;gap:.75rem}
+      .post-stats{flex-direction:column;gap:.875rem}
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <svg class="hero-logo" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg"><text x="0" y="30" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="white">SCROLL</text></svg>
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span>Month 4 · Rise Stage</span>
+    </div>
+    <h1>Skin by Brownlee<br>January 2026</h1>
+    <p class="hero-sub">Monthly performance analysis with strategic insights and February recommendations.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">Score: 7.0 / 10</span>
+      <span class="hero-pill"><span class="dot"></span> @skinbybrownleeandco</span>
+      <span class="hero-pill"><span class="dot"></span> AM: Riley</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="score-wrap">
+    <div class="score-card">
+      <div class="score-eyebrow">Monthly Performance Score</div>
+      <div class="score-num">7.0<span class="score-denom"> / 10</span></div>
+      <div class="score-title">Conversion Excellence with Awareness Opportunity</div>
+      <p class="score-desc">January delivered exceptional conversion performance. Your audience is highly engaged when they reach your profile—profile-to-click and click-to-link conversion rates both exceeded targets by wide margins. The opportunity ahead is visibility: expanding reach and awareness to bring more qualified traffic to the profile. Three key metrics are on track, with seven showing room for growth through format optimization and content testing.</p>
+      <div class="score-note">This score reflects your account's current positioning and performance trajectory. A 7.0 in Month 4 indicates strong foundational performance with clear growth opportunities ahead. Scores are weighted to prioritize quality engagement and conversion metrics over pure volume.</div>
+      <div class="score-badges">
+        <span class="score-badge exceed"><span class="badge-dot"></span> 2 Exceeding</span>
+        <span class="score-badge ontrack"><span class="badge-dot"></span> 3 On Track</span>
+        <span class="score-badge watch"><span class="badge-dot"></span> 7 Watch</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERFORMANCE DASHBOARD -->
+  <div class="sec">
+    <div class="sec-label">Performance Dashboard</div>
+    <h2 class="sec-title">January Metrics</h2>
+    <p class="sec-sub">All 13 metrics measured against Rise Stage target ranges (10,000–100,000 followers)</p>
+
+    <!-- BASELINE -->
+    <div class="funnel-group">
+      <div class="funnel-label">Baseline</div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Total Followers</div>
+            <span class="metric-status ontrack">On Track</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual ontrack">32,606</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">10,000 – 100,000</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">32,732</div>
+            </div>
+          </div>
+          <div class="metric-mom down">↓ 126 followers (−0.4% MoM)</div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-width="33"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AWARENESS -->
+    <div class="funnel-group">
+      <div class="funnel-label">Awareness (Top of Funnel)</div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Avg Reach / Day</div>
+            <span class="metric-status watch">Watch</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual watch">2,078</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">5,000 – 20,000</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">1,979</div>
+            </div>
+          </div>
+          <div class="metric-mom up">↑ 5% MoM</div>
+          <div class="bar-track"><div class="bar-fill watch" data-width="41"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">New Followers</div>
+            <span class="metric-status ontrack">On Track</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual ontrack">359</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">300 – 2,500</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">448</div>
+            </div>
+          </div>
+          <div class="metric-mom down">↓ 20% MoM</div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-width="15"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Shares</div>
+            <span class="metric-status watch">Watch</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual watch">77</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">200 – 2,000</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">122</div>
+            </div>
+          </div>
+          <div class="metric-mom down">↓ 37% MoM</div>
+          <div class="bar-track"><div class="bar-fill watch" data-width="39"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Total Views</div>
+            <span class="metric-status ontrack">On Track</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual ontrack">181,257</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">150,000 – 800,000</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">228,897</div>
+            </div>
+          </div>
+          <div class="metric-mom down">↓ 21% MoM</div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-width="23"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGAGEMENT -->
+    <div class="funnel-group">
+      <div class="funnel-label">Engagement (Middle of Funnel)</div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Profile Visits</div>
+            <span class="metric-status ontrack">On Track</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual ontrack">2,018</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">1,500 – 10,000</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">2,458</div>
+            </div>
+          </div>
+          <div class="metric-mom down">↓ 18% MoM</div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-width="20"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Avg Watch Time</div>
+            <span class="metric-status watch">Watch</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual watch">8.82s</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">10s – 15s</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">6.00s</div>
+            </div>
+          </div>
+          <div class="metric-mom up">↑ 47% MoM</div>
+          <div class="bar-track"><div class="bar-fill watch" data-width="88"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Retention %</div>
+            <span class="metric-status watch">Watch</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual watch">39%</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">65% – 80%</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">N/A</div>
+            </div>
+          </div>
+          <div class="metric-mom">New metric tracking</div>
+          <div class="bar-track"><div class="bar-fill watch" data-width="60"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Saves</div>
+            <span class="metric-status watch">Watch</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual watch">112</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">300 – 2,500</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">66</div>
+            </div>
+          </div>
+          <div class="metric-mom up">↑ 70% MoM</div>
+          <div class="bar-track"><div class="bar-fill watch" data-width="37"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Comments</div>
+            <span class="metric-status watch">Watch</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual watch">155</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">250 – 900</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">56</div>
+            </div>
+          </div>
+          <div class="metric-mom up">↑ 177% MoM</div>
+          <div class="bar-track"><div class="bar-fill watch" data-width="62"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONVERSION -->
+    <div class="funnel-group">
+      <div class="funnel-label">Conversion (Bottom of Funnel)</div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Click-Through Rate (CTR)</div>
+            <span class="metric-status exceed">Exceeding</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual exceed">16.35%</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">2% – 5%</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">15.95%</div>
+            </div>
+          </div>
+          <div class="metric-mom up">↑ 3% MoM</div>
+          <div class="bar-track"><div class="bar-fill exceed" data-width="100"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Link Taps</div>
+            <span class="metric-status watch">Watch</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual watch">330</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">350 – 3,000</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">392</div>
+            </div>
+          </div>
+          <div class="metric-mom down">↓ 16% MoM</div>
+          <div class="bar-track"><div class="bar-fill watch" data-width="94"></div></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-top">
+            <div class="metric-name">Profile Conversion Rate (PCR)</div>
+            <span class="metric-status exceed">Exceeding</span>
+          </div>
+          <div class="metric-nums">
+            <div class="metric-val">
+              <div class="metric-val-label">Actual</div>
+              <div class="metric-actual exceed">17.79%</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Target Range</div>
+              <div class="metric-target">8% – 14%</div>
+            </div>
+            <div class="metric-val">
+              <div class="metric-val-label">Prior Month</div>
+              <div class="metric-target">16.84%</div>
+            </div>
+          </div>
+          <div class="metric-mom up">↑ 6% MoM</div>
+          <div class="bar-track"><div class="bar-fill exceed" data-width="100"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRATEGIC INSIGHTS -->
+  <div class="sec">
+    <div class="sec-label">Key Insights</div>
+    <h2 class="sec-title">What the Numbers Tell Us</h2>
+    <p class="sec-sub">Four strategic patterns that matter most for February planning</p>
+    
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-flag win">
+          <span class="flag-dot"></span>
+          <span>Win</span>
+        </div>
+        <div class="insight-title">Conversion Infrastructure Proves Audience-Offer Alignment</div>
+        <p class="insight-body">Your CTR (16.35%) and PCR (17.79%) both significantly exceed Rise Stage targets. This validates that when qualified prospects reach your profile, they engage and convert at exceptional rates. <strong>The conversion path is proven—the infrastructure works.</strong> The growth opportunity is traffic volume, not conversion optimization.</p>
+      </div>
+      
+      <div class="insight-card">
+        <div class="insight-flag signal">
+          <span class="flag-dot"></span>
+          <span>Growth Lever</span>
+        </div>
+        <div class="insight-title">Awareness Gap: Reach Below Rise Floor</div>
+        <p class="insight-body">Average reach of 2,078/day falls below the 5,000 Rise Stage minimum. With 32K followers, this indicates limited content distribution. The algorithm isn't amplifying your content at scale. <strong>February priority: test high-shareability formats</strong> (transformation stories, authority-building tips, myth-busting POVs) to trigger algorithmic favorability and expand organic reach.</p>
+      </div>
+      
+      <div class="insight-card">
+        <div class="insight-flag watch">
+          <span class="flag-dot"></span>
+          <span>Opportunity</span>
+        </div>
+        <div class="insight-title">Engagement Depth Signals Format Optimization Need</div>
+        <p class="insight-body">Saves (112), shares (77), and retention (39%) all fall short of Rise targets. Content is converting visitors but not inspiring saves or shares at scale. The 1/12 post (32 saves, 35 shares) proves the audience WILL engage deeply with the right format. <strong>Test tighter hooks, listicle-style delivery, and transformation-focused storytelling.</strong></p>
+      </div>
+      
+      <div class="insight-card">
+        <div class="insight-flag signal">
+          <span class="flag-dot"></span>
+          <span>Momentum</span>
+        </div>
+        <div class="insight-title">Quality Metrics Show Upward Trajectory</div>
+        <p class="insight-body">Despite volume challenges, engagement quality improved significantly: watch time +47%, saves +70%, comments +177% MoM. When people see your content, they're increasingly engaged. <strong>This validates content direction—now the priority is distribution.</strong> Scale what's working through format testing and pillar amplification.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP POSTS -->
+  <div class="sec">
+    <div class="sec-label">Top Performers</div>
+    <h2 class="sec-title">January's Best Content</h2>
+    <p class="sec-sub">The three posts that drove the strongest results and what made them work</p>
+    
+    <div class="posts-grid">
+      <div class="post-card">
+        <div class="post-rank-bar rank1"></div>
+        <div class="post-body">
+          <div class="post-meta">
+            <div class="post-num outlier">1</div>
+            <span class="post-chip reel">Reel</span>
+            <span class="post-chip top">Outlier</span>
+          </div>
+          <div class="post-title">Authority Builder — PSA: You're Throwing Money Away</div>
+          <div class="post-date">January 12 · Education & Authority · Awareness</div>
+          <div class="post-stats">
+            <div class="post-stat">
+              <div class="post-stat-label">Views</div>
+              <div class="post-stat-val">3,638</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Saves</div>
+              <div class="post-stat-val hero">32</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Shares</div>
+              <div class="post-stat-val hero">35</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Comments</div>
+              <div class="post-stat-val">8</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Retention</div>
+              <div class="post-stat-val">58.1%</div>
+            </div>
+          </div>
+          <p class="post-analysis"><strong>Why it worked:</strong> This post tapped into loss aversion psychology with the "throwing money away" hook, then delivered immediately actionable advice. The authority-building format (expert tips) combined with specific, practical guidance drove both saves (reference content) and shares (helping others avoid mistakes). The 58.1% retention shows the hook held attention through the full list.</p>
+          <a href="https://www.instagram.com/reel/DTafgITjYuO/" class="post-link" target="_blank">View on Instagram</a>
+        </div>
+      </div>
+      
+      <div class="post-card">
+        <div class="post-rank-bar rank2"></div>
+        <div class="post-body">
+          <div class="post-meta">
+            <div class="post-num">2</div>
+            <span class="post-chip reel">Reel</span>
+          </div>
+          <div class="post-title">Case Study / Transformation Story</div>
+          <div class="post-date">January 9 · Social Proof & Transformation · Awareness</div>
+          <div class="post-stats">
+            <div class="post-stat">
+              <div class="post-stat-label">Views</div>
+              <div class="post-stat-val">3,377</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Saves</div>
+              <div class="post-stat-val">18</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Shares</div>
+              <div class="post-stat-val">4</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Comments</div>
+              <div class="post-stat-val hero">31</div>
+            </div>
+          </div>
+          <p class="post-analysis"><strong>Why it worked:</strong> Before/after transformations are visual proof of expertise. The 31 comments indicate high engagement—people asking questions, tagging friends. The transformation format validates that Sylvia's approach delivers real results, building trust with prospective clients who are still in research mode.</p>
+          <a href="https://www.instagram.com/reel/DTS4AtdjXXK/" class="post-link" target="_blank">View on Instagram</a>
+        </div>
+      </div>
+      
+      <div class="post-card">
+        <div class="post-rank-bar rank3"></div>
+        <div class="post-body">
+          <div class="post-meta">
+            <div class="post-num">3</div>
+            <span class="post-chip reel">Reel</span>
+          </div>
+          <div class="post-title">Educational Reel (How-To)</div>
+          <div class="post-date">January 23 · Product Education · Middle Funnel</div>
+          <div class="post-stats">
+            <div class="post-stat">
+              <div class="post-stat-label">Views</div>
+              <div class="post-stat-val">2,830</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Saves</div>
+              <div class="post-stat-val">2</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Shares</div>
+              <div class="post-stat-val">5</div>
+            </div>
+            <div class="post-stat">
+              <div class="post-stat-label">Comments</div>
+              <div class="post-stat-val hero">28</div>
+            </div>
+          </div>
+          <p class="post-analysis"><strong>Why it worked:</strong> The "does this sound like you?" pattern-interrupt hook created immediate personal relevance. The 28 comments show the content sparked conversation. Educational content that connects lifestyle factors (diet) to skin outcomes positions Sylvia as a holistic expert vs. product pusher.</p>
+          <a href="https://www.instagram.com/reel/DT27sCxjQja/" class="post-link" target="_blank">View on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAT ANALYSIS -->
+  <div class="sec">
+    <div class="sec-label">Format Performance</div>
+    <h2 class="sec-title">What's Working (and What Needs Work)</h2>
+    <p class="sec-sub">Three format verdicts that inform February content direction</p>
+    
+    <div class="format-grid">
+      <div class="format-card working">
+        <div class="format-verdict">✓ Working</div>
+        <div class="format-name">Authority Builder (Expert Tips)</div>
+        <div class="format-metric">32 saves · 35 shares · 3,638 views (Jan 12)</div>
+        <p class="format-why"><strong>Why it works:</strong> The expert tips format leverages Sylvia's 17+ years of credibility while delivering immediately actionable advice. The "you're throwing money away" hook creates urgency through loss aversion. This format earns saves (reference content) and shares (helping friends) simultaneously while positioning Sylvia as the trusted perimenopause skincare expert.</p>
+        <div class="format-direction"><strong>February Direction:</strong> 2× per month minimum. Lead with pattern-interrupt hooks that create urgency or challenge assumptions. Keep lists to 3-5 items for retention. Follow each post with Instagram Stories amplifying one tip in detail.</div>
+      </div>
+      
+      <div class="format-card working">
+        <div class="format-verdict">✓ Working</div>
+        <div class="format-name">Transformation Story / Case Study</div>
+        <div class="format-metric">31 comments · 18 saves · 3,377 views (Jan 9)</div>
+        <p class="format-why"><strong>Why it works:</strong> Before/after content is visual proof that validates expertise. The high comment count (31) shows this format sparks conversation—people ask questions, tag partners. Transformation content answers the key buyer question: "Will this actually work for me?" Social proof at scale.</p>
+        <div class="format-direction"><strong>February Direction:</strong> 1× per week. Always include the transformation timeframe and specific treatments used. End with a clear CTA (Skin Quiz or consultation link). Use Story Highlights to organize transformations by concern (acne, hyperpigmentation, aging).</div>
+      </div>
+      
+      <div class="format-card underperforming">
+        <div class="format-verdict">⚠ Needs Adjustment</div>
+        <div class="format-name">Educational Carousel</div>
+        <div class="format-metric">Low saves across multiple posts despite solid reach</div>
+        <p class="format-why"><strong>Why it needs work:</strong> Carousels are reaching audiences (1,900+ views) but generating minimal saves. Content is being consumed but not bookmarked. The framing treats these as "educational content" when they need to be positioned as "pre-purchase tools" or "reference resources." Lack of urgency or utility in the hook.</p>
+        <div class="format-direction"><strong>February Direction:</strong> Reframe hooks for save-worthiness: "Save this before your next treatment" or "Bookmark this: everything you need to know about..." Target: 10+ saves per carousel. Test adding a downloadable/screenshot-friendly final slide.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEBRUARY PRIORITIES -->
+  <div class="sec">
+    <div class="sec-label">February Strategy</div>
+    <h2 class="sec-title">Four Strategic Priorities</h2>
+    <p class="sec-sub">The focus areas that will drive the greatest impact next month</p>
+    
+    <div class="priorities-grid">
+      <div class="priority-card">
+        <div class="priority-num">1</div>
+        <div class="priority-title">Test High-Shareability Content Formats</div>
+        <div class="priority-goal">Goal: Increase shares from 77 to 150+ and reach from 2,078/day to 3,500+/day</div>
+        <p class="priority-tactics"><strong>Tactics:</strong> Myth-busting POVs ("What derms won't tell you about..."), before/after transformation carousels with shocking results, founder vulnerability moments. Focus on formats that prompt "send this to your friend dealing with hormonal skin" behavior. Double down on authority-builder format that drove 35 shares in January.</p>
+      </div>
+      
+      <div class="priority-card">
+        <div class="priority-num">2</div>
+        <div class="priority-title">Optimize First 3 Seconds for Retention</div>
+        <div class="priority-goal">Goal: Improve retention from 39% to 50%+</div>
+        <p class="priority-tactics"><strong>Tactics:</strong> Pattern interrupt hooks (start mid-sentence, use on-screen text that creates curiosity), immediate problem-solution framing. Test 5 different hook styles in first 2 weeks: question-based, pattern interrupt, bold claim, "before I tell you X", list-based ("5 things..."). Analyze which drives highest retention.</p>
+      </div>
+      
+      <div class="priority-card">
+        <div class="priority-num">3</div>
+        <div class="priority-title">Amplify Conversion Path with Quiz-Focused Content</div>
+        <div class="priority-goal">Goal: Maintain 16%+ CTR while increasing profile visits to 2,500+</div>
+        <p class="priority-tactics"><strong>Tactics:</strong> Educational carousels ending with Skin Quiz CTA, product comparison content that positions the quiz as the decision tool, ingredient deep-dives. Leverage proven conversion rates (17.79% PCR) by driving more qualified traffic to profile through value-first content.</p>
+      </div>
+      
+      <div class="priority-card">
+        <div class="priority-num">4</div>
+        <div class="priority-title">Establish Founder POV as Authority Pillar</div>
+        <div class="priority-goal">Goal: Build differentiated authority through consistent Sylvia-led content</div>
+        <p class="priority-tactics"><strong>Tactics:</strong> Weekly founder POV addressing perimenopause skin misconceptions, behind-business transparency (what it's really like running an esthetics practice), expert counter-points to influencer skincare trends. Position Sylvia as the trusted voice vs. generic wellness creators—17+ years of licensed expertise matters.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p class="footer-text">Questions about this report? Ready to discuss February strategy?<br>Reply to this email or reach out before our next call.</p>
+  <p class="footer-meta">Scroll Media – Performance Report · Skin by Brownlee · January 2026</p>
+</div>
+
+<script>
+  const bars = document.querySelectorAll('.bar-fill');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.getAttribute('data-width') + '%';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  bars.forEach(b => observer.observe(b));
+</script>
+</body>
+</html>
