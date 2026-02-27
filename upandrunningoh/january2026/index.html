@@ -145,31 +145,85 @@
     .footer-text{font-size:.75rem;line-height:1.7}
     .footer-text a{color:rgba(255,255,255,.4);text-decoration:none}
     .main-content{padding-top:2rem;padding-bottom:2rem}
-    @media(max-width:600px){
-      .score-badges{gap:.5rem}
-      .score-badge{font-size:.75rem;padding:.4rem .625rem}
-      .hero-pills{gap:.5rem}
-      .metric-grid{grid-template-columns:1fr}
-      .posts-grid{grid-template-columns:1fr}
-      .insights-grid{grid-template-columns:1fr}
-    }
-
     
-    
+      /* === SCORE TREND SECTION === */
+      .score-trend-section {
+        margin-top:1.25rem;
+        padding:1.25rem 1.5rem 1rem;
+        background:#111112;
+        border-radius:10px;
+        text-align:center;
+        border:1px solid rgba(255,255,255,0.06);
+      }
+      .score-trend-label {
+        font-size:.5625rem;
+        font-weight:700;
+        letter-spacing:.14em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.35);
+        margin-bottom:1rem;
+      }
+      .score-trend-bars {
+        display:flex;
+        justify-content:center;
+        align-items:flex-end;
+        gap:2.25rem;
+        height:96px;
+      }
+      .trend-col {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:.3rem;
+        min-width:48px;
+      }
+      .trend-bar-wrap {
+        width:36px;
+        height:72px;
+        display:flex;
+        align-items:flex-end;
+        background:rgba(255,255,255,0.07);
+        border-radius:5px;
+        overflow:hidden;
+      }
+      .trend-bar {
+        width:100%;
+        border-radius:5px 5px 0 0;
+        min-height:4px;
+        transition:height .3s ease;
+      }
+      .trend-score {
+        font-size:.875rem;
+        line-height:1;
+        letter-spacing:-.01em;
+        margin-top:.1rem;
+      }
+      .trend-month {
+        font-size:.5625rem;
+        letter-spacing:.06em;
+        text-transform:uppercase;
+        margin-top:.15rem;
+      }
+      .score-trend-delta {
+        font-size:.6875rem;
+        font-weight:700;
+        margin-top:.875rem;
+        letter-spacing:.04em;
+      }
 
-    
-    /* Score Trend Section */
-    .score-trend-section{margin-top:1.25rem;padding:1.25rem 1.5rem 1rem;background:#111112;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,0.06)}
-    .score-trend-label{font-size:.5625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem}
-    .score-trend-bars{display:flex;justify-content:center;align-items:flex-end;gap:2.25rem;height:96px}
-    .trend-col{display:flex;flex-direction:column;align-items:center;gap:.3rem;min-width:48px}
-    .trend-bar-wrap{width:36px;height:72px;display:flex;align-items:flex-end;background:rgba(255,255,255,0.07);border-radius:5px;overflow:hidden}
-    .trend-bar{width:100%;border-radius:5px 5px 0 0;min-height:4px;transition:height .3s ease}
-    .trend-score{font-size:.875rem;line-height:1;letter-spacing:-.01em;margin-top:.1rem}
-    .trend-month{font-size:.5625rem;letter-spacing:.06em;text-transform:uppercase;margin-top:.15rem}
-    .score-trend-delta{font-size:.6875rem;font-weight:700;margin-top:.875rem;letter-spacing:.04em;color:rgba(255,255,255,0.5)}
-    @media(max-width:480px){.score-trend-bars{gap:1.5rem}.trend-col{min-width:38px}.trend-bar-wrap{width:28px;height:60px}}.trend-col{min-width:40px}.trend-bar-wrap{width:22px;height:44px}}
-
+      @media(max-width:600px){
+        .score-badges{gap:.5rem}
+        .score-badge{font-size:.75rem;padding:.4rem .625rem}
+        .hero-pills{gap:.5rem}
+        .metric-grid{grid-template-columns:1fr}
+        .posts-grid{grid-template-columns:1fr}
+        .insights-grid{grid-template-columns:1fr}
+      }
+      @media(max-width:480px){
+        .score-trend-bars{gap:1.5rem}
+        .trend-col{min-width:38px}
+        .trend-bar-wrap{width:28px;height:60px}
+      }
     </style>
 </head>
 <body>
