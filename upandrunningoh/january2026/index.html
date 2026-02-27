@@ -145,37 +145,29 @@
     /* STRATEGY ADJUSTMENTS */
     .adj-grid{display:grid;gap:1.5rem}
     .adj-card{background:white;border-radius:10px;border:1px solid var(--border);box-shadow:0 1px 4px rgba(21,21,22,.05);overflow:hidden}
-    .adj-top-bar{height:4px}
-    .adj-card.doubling .adj-top-bar{background:linear-gradient(90deg,var(--green),#34d399)}
-    .adj-card.pivoting .adj-top-bar{background:linear-gradient(90deg,var(--amber),#fcd34d)}
-    .adj-card.testing .adj-top-bar{background:linear-gradient(90deg,var(--azure),#1a4fc4)}
+    
+    .adj-card.doubling 
+    .adj-card.pivoting 
+    .adj-card.testing 
     .adj-body{padding:1.75rem}
     .adj-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap}
-    .adj-type-pill{font-size:.625rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .7rem;border-radius:4px;flex-shrink:0}
-    .adj-card.doubling .adj-type-pill{background:rgba(16,185,129,.12);color:#059669}
-    .adj-card.pivoting .adj-type-pill{background:rgba(245,158,11,.12);color:#b45309}
-    .adj-card.testing .adj-type-pill{background:rgba(12,51,135,.1);color:var(--azure)}
-    .adj-meta-row{display:flex;gap:1rem;flex-wrap:wrap}
-    .adj-meta-item{font-size:.75rem;color:var(--text-muted);display:flex;align-items:center;gap:.3rem}
-    .adj-meta-item strong{color:var(--text);font-weight:700}
+    
+    .adj-card.doubling 
+    .adj-card.pivoting 
+    .adj-card.testing 
+    
+    
+    
     .adj-what{font-size:1.0625rem;font-weight:700;color:var(--shadow);margin-bottom:1rem;line-height:1.4}
     .adj-section-label{font-size:.625rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.4rem;margin-top:1rem}
     .adj-section-label:first-of-type{margin-top:0}
-    .adj-text{font-size:.875rem;line-height:1.75;color:var(--text-muted)}
+    
     .adj-text strong{color:var(--shadow)}
     .adj-bullets{margin:.25rem 0 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.5rem}
     .adj-bullets li{font-size:.8125rem;line-height:1.55;color:var(--text-muted);padding:.5rem .75rem;background:var(--surface);border-radius:6px;border-left:3px solid var(--azure);display:block}
     .adj-bullets li strong{color:var(--shadow);display:block;font-size:.75rem;font-weight:700;letter-spacing:.02em;margin-bottom:.15rem}
-    .adj-footer{margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--text-muted)}
+    
     .adj-footer strong{color:var(--text)}
-
-    /* AM CALLOUT */
-    .am-callout{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:2rem;color:white;margin-bottom:4rem}
-    .am-callout-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.75rem}
-    .am-callout-title{font-size:1.25rem;font-weight:700;margin-bottom:1.25rem}
-    .am-callout-items{display:grid;gap:.875rem}
-    .am-callout-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;line-height:1.65}
-    .am-callout-item .arrow{color:var(--hl);font-weight:700;flex-shrink:0;margin-top:.05rem;font-size:1rem}
 
     /* FOOTER */
     footer.footer{background:#151516;color:var(--ink-mid);padding:3rem 1.5rem;text-align:center}
@@ -205,19 +197,34 @@
     }
     :focus-visible{outline:2px solid var(--azure);outline-offset:2px;border-radius:2px}
   
-    /* Score Trend Section */
-    .score-trend-section{margin-top:1.5rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;text-align:center}
-    .score-trend-label{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:1rem}
-    .score-trend-bars{display:flex;justify-content:center;align-items:flex-end;gap:1.25rem;height:64px;margin-bottom:.625rem}
-    .trend-col{display:flex;flex-direction:column;align-items:center;gap:.25rem;min-width:48px}
-    .trend-bar-wrap{width:28px;height:48px;display:flex;align-items:flex-end;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
-    .trend-bar{width:100%;border-radius:4px;transition:height .3s ease;background:rgba(255,255,255,0.15);min-height:4px}
-    .trend-bar-current{background:var(--azure)!important}
-    .trend-score{font-size:.8125rem;font-weight:400;color:var(--ink-mid);line-height:1}
-    .trend-month{font-size:.6875rem;color:var(--ink-mid);letter-spacing:.03em;position:relative}
-    .trend-curr-label{display:none}
-    .score-trend-delta{font-size:.75rem;font-weight:600;margin-top:.375rem;letter-spacing:.02em}
+    
     @media(max-width:480px){.score-trend-bars{gap:.75rem}.trend-col{min-width:40px}.trend-bar-wrap{width:22px}}
+
+    
+    /* Score Trend Section */
+    .score-trend-section{margin-top:1.75rem;padding:1.5rem 1.5rem 1.25rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-align:center}
+    .score-trend-label{font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.25rem}
+    .score-trend-bars{display:flex;justify-content:center;align-items:flex-end;gap:2rem;height:80px}
+    .trend-col{display:flex;flex-direction:column;align-items:center;gap:.375rem;min-width:48px}
+    .trend-bar-wrap{width:32px;height:56px;display:flex;align-items:flex-end;background:rgba(255,255,255,0.08);border-radius:5px;overflow:hidden}
+    .trend-bar{width:100%;border-radius:5px;min-height:6px;transition:height .4s ease}
+    .trend-score{font-size:.875rem;line-height:1;letter-spacing:-.01em}
+    .trend-month{font-size:.6875rem;color:rgba(255,255,255,0.4);letter-spacing:.04em}
+    .score-trend-delta{font-size:.75rem;font-weight:700;margin-top:1rem;letter-spacing:.02em}
+    @media(max-width:480px){.score-trend-bars{gap:1.25rem}.trend-col{min-width:38px}.trend-bar-wrap{width:26px;height:48px}}
+
+    
+    /* Adj cards — LP style */
+    .adj-type-badge{font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+    .adj-type-badge.doubling{background:rgba(16,185,129,.1);color:#059669}
+    .adj-type-badge.pivoting{background:rgba(239,68,68,.1);color:#dc2626}
+    .adj-type-badge.testing{background:rgba(12,51,135,.1);color:var(--azure)}
+    .adj-meta{font-size:.75rem;color:var(--text-muted)}
+    .adj-what{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.4}
+    .adj-section{margin-bottom:.875rem}
+    .adj-section-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}
+    .adj-bullets{margin:0;padding-left:1.25rem;display:flex;flex-direction:column;gap:.375rem;font-size:.875rem;color:var(--text);line-height:1.6}
+    .adj-effective{font-size:.75rem;color:var(--text-muted);padding:.75rem 1.25rem;border-top:1px solid var(--border);background:var(--surface)}
 
     </style>
 </head>
@@ -256,24 +263,24 @@
         <div class="score-trend-bars">
         <div class="trend-col">
           <div class="trend-bar-wrap">
-            <div class="trend-bar" style="height:18%;background:rgba(255,255,255,0.18)"></div>
+            <div class="trend-bar" style="height:30%;background:rgba(255,255,255,0.25)"></div>
           </div>
-          <div class="trend-score" style="font-weight:400;color:var(--ink-mid)">6.7</div>
-          <div class="trend-month">Nov</div>
+          <div class="trend-score" style="font-weight:400;color:rgba(255,255,255,0.55)">6.7</div>
+          <div class="trend-month" style="">Nov</div>
         </div>
         <div class="trend-col">
           <div class="trend-bar-wrap">
-            <div class="trend-bar" style="height:30%;background:rgba(255,255,255,0.18)"></div>
+            <div class="trend-bar" style="height:40%;background:rgba(255,255,255,0.25)"></div>
           </div>
-          <div class="trend-score" style="font-weight:400;color:var(--ink-mid)">7.2</div>
-          <div class="trend-month">Dec</div>
+          <div class="trend-score" style="font-weight:400;color:rgba(255,255,255,0.55)">7.2</div>
+          <div class="trend-month" style="">Dec</div>
         </div>
         <div class="trend-col">
           <div class="trend-bar-wrap">
-            <div class="trend-bar" style="height:38%;background:#3b82f6"></div>
+            <div class="trend-bar" style="height:47%;background:#3b82f6"></div>
           </div>
-          <div class="trend-score" style="font-weight:700;color:var(--text)">7.5</div>
-          <div class="trend-month">Jan</div>
+          <div class="trend-score" style="font-weight:700;color:#fff">7.5</div>
+          <div class="trend-month" style="color:rgba(255,255,255,0.7);font-weight:600">Jan</div>
         </div>
         </div>
         <div class="score-trend-delta" style="color:#10b981">+0.8 vs. Nov</div>
@@ -667,87 +674,68 @@
 <!-- FEBRUARY STRATEGY -->
 <div class="wrap">
   <div class="sec">
-    <p class="sec-label">Month Ahead</p>
-    <h2 class="sec-title">February Strategy: 3 Key Adjustments</h2>
-    <p class="sec-sub">What is changing in February, why, and what we expect to see. Each adjustment is grounded in January performance data, the Scroll Media Formats Library, and Up and Running&rsquo;s content pillars and IVP. These are ready to log in the account homebase Strategy Adjustments tab (Tab 08).</p>
+    <p class="sec-label">February Direction</p>
+    <h2 class="sec-title">Strategy Adjustments</h2>
+    <p class="sec-sub">Three strategic adjustments taking effect in February, grounded in January&rsquo;s performance data.</p>
     <div class="adj-grid">
-      <div class="adj-card doubling">
-        <div class="adj-top-bar"></div>
+      <div class="adj-card">
+        <div class="adj-header">
+          <span class="adj-type-badge doubling">Doubling Down</span>
+          <span class="adj-meta">Format Analysis &middot; Heavy Testing</span>
+        </div>
         <div class="adj-body">
-          <div class="adj-header">
-            <span class="adj-type-pill">Doubling Down</span>
-            <div class="adj-meta-row">
-              <span class="adj-meta-item"><strong>Source:</strong> Format Analysis</span>
-              <span class="adj-meta-item"><strong>Phase:</strong> Heavy Testing</span>
-            </div>
-          </div>
           <p class="adj-what">Founder Story Reels &mdash; prioritizing personal founder voice as a core content focus</p>
-          <p class="adj-section-label">Rationale</p>
-          <div class="adj-text"><ul class='adj-bullets'><li><strong>Top performer:</strong> Jan 22 Founder Story drove the highest shares and comments of the month.</li><li><strong>Best retention:</strong> The alt-cut version hit 91.2% &mdash; the top retention score in January.</li><li><strong>Proven formula:</strong> Personal founder voice + community belonging is what resonates for this account.</li><li><strong>Underserved pillar:</strong> Proof &amp; Community Trust is currently the weakest pillar in the content mix.</li></ul></div>
-          <p class="adj-section-label">Expected Outcome</p>
-          <div class="adj-text"><ul class='adj-bullets'><li><strong>More engagement:</strong> Consistent founder-voice content should lift shares, comments, and profile visits.</li><li><strong>Follower growth:</strong> Pairing each post with a Follow CTA directly targets the flat New Followers trend.</li></ul></div>
-          <div class="adj-footer"><strong>Effective:</strong> February 1, 2026</div>
-        </div>
-      </div>
-      <div class="adj-card pivoting">
-        <div class="adj-top-bar"></div>
-        <div class="adj-body">
-          <div class="adj-header">
-            <span class="adj-type-pill">Pivoting Away</span>
-            <div class="adj-meta-row">
-              <span class="adj-meta-item"><strong>Source:</strong> Format Analysis</span>
-              <span class="adj-meta-item"><strong>Phase:</strong> Heavy Testing</span>
-            </div>
+          <div class="adj-section">
+            <p class="adj-section-label">Rationale</p>
+            <ul class='adj-bullets'><li><strong>Top performer:</strong> Jan 22 Founder Story drove the highest shares and comments of the month.</li><li><strong>Best retention:</strong> The alt-cut version hit 91.2% &mdash; the top retention score in January.</li><li><strong>Proven formula:</strong> Personal founder voice + community belonging is what resonates for this account.</li><li><strong>Underserved pillar:</strong> Proof &amp; Community Trust is currently the weakest pillar in the content mix.</li></ul>
           </div>
+          <div class="adj-section">
+            <p class="adj-section-label">Expected Outcome</p>
+            <ul class='adj-bullets'><li><strong>More engagement:</strong> Consistent founder-voice content should lift shares, comments, and profile visits.</li><li><strong>Follower growth:</strong> Pairing each post with a Follow CTA directly targets the flat New Followers trend.</li></ul>
+          </div>
+        </div>
+        <div class="adj-effective">Effective: February 1, 2026</div>
+      </div>
+      <div class="adj-card">
+        <div class="adj-header">
+          <span class="adj-type-badge pivoting">Pivoting Away</span>
+          <span class="adj-meta">Format Analysis &middot; Heavy Testing</span>
+        </div>
+        <div class="adj-body">
           <p class="adj-what">Generic B-Roll hooks &mdash; shifting content focus toward save-optimized Expert Education formats</p>
-          <p class="adj-section-label">Rationale</p>
-          <div class="adj-text"><ul class='adj-bullets'><li><strong>Not converting:</strong> B-Roll posts got views but zero saves and near-zero shares for 3 consecutive months.</li><li><strong>Right format for saves:</strong> Expert Education (gear guides, shoe fitting tips, injury prevention) is the highest-save format for this niche.</li><li><strong>CTA pairing:</strong> &ldquo;Save this before your next run&rdquo; pairs directly with educational content to drive action.</li></ul></div>
-          <p class="adj-section-label">Expected Outcome</p>
-          <div class="adj-text"><ul class='adj-bullets'><li><strong>Saves improvement:</strong> Expert Education content with an explicit Save CTA should meaningfully move the saves metric.</li><li><strong>Full-funnel lift:</strong> Educational posts also drive Profile Visits and Link Taps toward the shop.</li></ul></div>
-          <div class="adj-footer"><strong>Effective:</strong> February 1, 2026</div>
-        </div>
-      </div>
-      <div class="adj-card testing">
-        <div class="adj-top-bar"></div>
-        <div class="adj-body">
-          <div class="adj-header">
-            <span class="adj-type-pill">Testing Next</span>
-            <div class="adj-meta-row">
-              <span class="adj-meta-item"><strong>Source:</strong> Month Ahead</span>
-              <span class="adj-meta-item"><strong>Phase:</strong> Heavy Testing</span>
-            </div>
+          <div class="adj-section">
+            <p class="adj-section-label">Rationale</p>
+            <ul class='adj-bullets'><li><strong>Not converting:</strong> B-Roll posts got views but zero saves and near-zero shares for 3 consecutive months.</li><li><strong>Right format for saves:</strong> Expert Education (gear guides, shoe fitting tips, injury prevention) is the highest-save format for this niche.</li><li><strong>CTA pairing:</strong> &ldquo;Save this before your next run&rdquo; pairs directly with educational content to drive action.</li></ul>
           </div>
-          <p class="adj-what">February Events content series &mdash; building a dedicated content series around the February event calendar</p>
-          <p class="adj-section-label">Rationale</p>
-          <div class="adj-text"><ul class='adj-bullets'><li><strong>Proven reach driver:</strong> The Frozen Feet Challenge drove 46% of January&rsquo;s total views from a single post.</li><li><strong>Ready to activate:</strong> The February events calendar is already announced and the audience is primed.</li><li><strong>Right formats:</strong> Event Recap Reels and Countdown/Tease content are core formats for this niche.</li><li><strong>Shares fix:</strong> Pairing event posts with a Share CTA (&ldquo;Tag someone who needs to join us&rdquo;) directly targets the declining Shares metric.</li></ul></div>
-          <p class="adj-section-label">Expected Outcome</p>
-          <div class="adj-text"><ul class='adj-bullets'><li><strong>Reach recovery:</strong> Event content should re-activate the distribution patterns established in December.</li><li><strong>Data for March:</strong> This series builds knowledge on which event formats drive the strongest reach for this account.</li></ul></div>
-          <div class="adj-footer"><strong>Effective:</strong> February 1, 2026</div>
+          <div class="adj-section">
+            <p class="adj-section-label">Expected Outcome</p>
+            <ul class='adj-bullets'><li><strong>Saves improvement:</strong> Expert Education content with an explicit Save CTA should meaningfully move the saves metric.</li><li><strong>Full-funnel lift:</strong> Educational posts also drive Profile Visits and Link Taps toward the shop.</li></ul>
+          </div>
         </div>
+        <div class="adj-effective">Effective: February 1, 2026</div>
+      </div>
+      <div class="adj-card">
+        <div class="adj-header">
+          <span class="adj-type-badge testing">Testing Next</span>
+          <span class="adj-meta">Month Ahead &middot; Heavy Testing</span>
+        </div>
+        <div class="adj-body">
+          <p class="adj-what">February Events content series &mdash; building a dedicated content series around the February event calendar</p>
+          <div class="adj-section">
+            <p class="adj-section-label">Rationale</p>
+            <ul class='adj-bullets'><li><strong>Proven reach driver:</strong> The Frozen Feet Challenge drove 46% of January&rsquo;s total views from a single post.</li><li><strong>Ready to activate:</strong> The February events calendar is already announced and the audience is primed.</li><li><strong>Right formats:</strong> Event Recap Reels and Countdown/Tease content are core formats for this niche.</li><li><strong>Shares fix:</strong> Pairing event posts with a Share CTA (&ldquo;Tag someone who needs to join us&rdquo;) directly targets the declining Shares metric.</li></ul>
+          </div>
+          <div class="adj-section">
+            <p class="adj-section-label">Expected Outcome</p>
+            <ul class='adj-bullets'><li><strong>Reach recovery:</strong> Event content should re-activate the distribution patterns established in December.</li><li><strong>Data for March:</strong> This series builds knowledge on which event formats drive the strongest reach for this account.</li></ul>
+          </div>
+        </div>
+        <div class="adj-effective">Effective: February 1, 2026</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- AM CALLOUT -->
-<div class="wrap">
-  <div class="am-callout">
-    <p class="am-callout-label">Rachel &mdash; February Focus</p>
-    <h3 class="am-callout-title">Your 3 Priorities This Month</h3>
-    <div class="am-callout-items">
-      <div class="am-callout-item">
-        <span class="arrow">&#8594;</span>
-        <span><strong>Prioritize event-anchored content</strong> this month. The February events calendar is already announced &mdash; build a dedicated content series around it. Pair each event post with a Share CTA (&ldquo;Tag someone who needs to join us&rdquo;). This is the primary reach lever for the month.</span>
-      </div>
-      <div class="am-callout-item">
-        <span class="arrow">&#8594;</span>
-        <span><strong>Make founder voice a consistent presence</strong> in the content mix. Use the Jan 22 post as the creative benchmark &mdash; personal voice, community belonging, specific store detail. Close with a Follow CTA (&ldquo;Follow for weekly running tips from our Dayton team&rdquo;) to address the flat New Followers trend.</span>
-      </div>
-      <div class="am-callout-item">
-        <span class="arrow">&#8594;</span>
-        <span><strong>Shift B-Roll slots toward Expert Education formats</strong> (shoe fitting guides, gear checklists, injury prevention tips). Include an explicit Save CTA in the caption and on-screen text. Saves have been near-zero for 3 months &mdash; this is the format that moves that metric.</span>
-      </div>
-    </div>
   </div>
 </div>
 
