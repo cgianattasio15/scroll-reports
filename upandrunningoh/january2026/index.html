@@ -204,7 +204,22 @@
       .bar-fill{transition:none}
     }
     :focus-visible{outline:2px solid var(--azure);outline-offset:2px;border-radius:2px}
-  </style>
+  
+    /* Score Trend Section */
+    .score-trend-section{margin-top:1.5rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;text-align:center}
+    .score-trend-label{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:1rem}
+    .score-trend-bars{display:flex;justify-content:center;align-items:flex-end;gap:1.25rem;height:64px;margin-bottom:.625rem}
+    .trend-col{display:flex;flex-direction:column;align-items:center;gap:.25rem;min-width:48px}
+    .trend-bar-wrap{width:28px;height:48px;display:flex;align-items:flex-end;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
+    .trend-bar{width:100%;border-radius:4px;transition:height .3s ease;background:rgba(255,255,255,0.15);min-height:4px}
+    .trend-bar-current{background:var(--azure)!important}
+    .trend-score{font-size:.8125rem;font-weight:400;color:var(--ink-mid);line-height:1}
+    .trend-month{font-size:.6875rem;color:var(--ink-mid);letter-spacing:.03em;position:relative}
+    .trend-curr-label{display:none}
+    .score-trend-delta{font-size:.75rem;font-weight:600;margin-top:.375rem;letter-spacing:.02em}
+    @media(max-width:480px){.score-trend-bars{gap:.75rem}.trend-col{min-width:40px}.trend-bar-wrap{width:22px}}
+
+    </style>
 </head>
 <body>
 
@@ -236,6 +251,33 @@
       <p class="score-title">Building Month &mdash; Conversion Layer Intact, Volume Rebuilding After Holiday Peak</p>
       <p class="score-desc">January reflects a healthy normalization after December&rsquo;s event-driven peak. Avg Reach/Day pulled back from 890 to 166, Views fell from 56,942 to 15,715, and Shares fell back below the floor. However, the conversion layer held strong: PCR recovered to 12.00% (back on track after December&rsquo;s dip), CTR held at 5.00%, Watch Time hit the Spark ceiling at 6.0s, and Link Taps held at 10. The account is not in decline &mdash; it&rsquo;s rebuilding from a clean baseline.</p>
       <p class="score-note">Scored using the Scroll Media Weighted Performance Framework v2.0. Tier&nbsp;1 (quality/conversion) metrics weighted 1.5&times;, Tier&nbsp;2 (volume/distribution) 1.0&times;, Tier&nbsp;3 (context/community) 0.75&times;. Weighted total: 5.50&nbsp;/&nbsp;14.0 &rarr; Raw score: 3.93 &rarr; MoM credit: &minus;0.25 (majority of metrics declined vs. December; December was event-inflated &mdash; reduced penalty per Context Rule) &rarr; Adjusted: 3.68 &rarr; Compressed: 6.0 + (3.68 &times; 0.4) = <strong>7.5</strong>. The updated framework uses a 6.0 compression floor and 0.4 multiplier, calibrated to Spark-stage account performance. January volume dips are common post-holiday &mdash; Instagram organic reach normalizes after the holiday content surge.</p>
+      <div class="score-trend-section">
+        <div class="score-trend-label">3-Month Score Trend</div>
+        <div class="score-trend-bars">
+        <div class="trend-col">
+          <div class="trend-bar-wrap">
+            <div class="trend-bar" style="height:18%;background:rgba(255,255,255,0.18)"></div>
+          </div>
+          <div class="trend-score" style="font-weight:400;color:var(--ink-mid)">6.7</div>
+          <div class="trend-month">Nov</div>
+        </div>
+        <div class="trend-col">
+          <div class="trend-bar-wrap">
+            <div class="trend-bar" style="height:30%;background:rgba(255,255,255,0.18)"></div>
+          </div>
+          <div class="trend-score" style="font-weight:400;color:var(--ink-mid)">7.2</div>
+          <div class="trend-month">Dec</div>
+        </div>
+        <div class="trend-col">
+          <div class="trend-bar-wrap">
+            <div class="trend-bar" style="height:38%;background:#3b82f6"></div>
+          </div>
+          <div class="trend-score" style="font-weight:700;color:var(--text)">7.5</div>
+          <div class="trend-month">Jan</div>
+        </div>
+        </div>
+        <div class="score-trend-delta" style="color:#10b981">+0.8 vs. Nov</div>
+      </div>
       <div class="score-badges">
         <div class="score-badge exceed"><span class="bdot"></span>0 Exceeding</div>
         <div class="score-badge ontrack"><span class="bdot"></span>6 On Track</div>
