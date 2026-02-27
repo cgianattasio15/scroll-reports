@@ -152,19 +152,21 @@
       .insights-grid{grid-template-columns:1fr}
     }
   
-    /* Score Trend Section */
-    .score-trend-section{margin-top:1.5rem;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;text-align:center}
-    .score-trend-label{font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:1rem}
-    .score-trend-bars{display:flex;justify-content:center;align-items:flex-end;gap:1.25rem;height:64px;margin-bottom:.625rem}
-    .trend-col{display:flex;flex-direction:column;align-items:center;gap:.25rem;min-width:48px}
-    .trend-bar-wrap{width:28px;height:48px;display:flex;align-items:flex-end;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
-    .trend-bar{width:100%;border-radius:4px;transition:height .3s ease;background:rgba(255,255,255,0.15);min-height:4px}
-    .trend-bar-current{background:var(--azure)!important}
-    .trend-score{font-size:.8125rem;font-weight:400;color:var(--ink-mid);line-height:1}
-    .trend-month{font-size:.6875rem;color:var(--ink-mid);letter-spacing:.03em;position:relative}
-    .trend-curr-label{display:none}
-    .score-trend-delta{font-size:.75rem;font-weight:600;margin-top:.375rem;letter-spacing:.02em}
+    
     @media(max-width:480px){.score-trend-bars{gap:.75rem}.trend-col{min-width:40px}.trend-bar-wrap{width:22px}}
+
+    
+    /* Score Trend Section */
+    .score-trend-section{margin-top:1.75rem;padding:1.5rem 1.5rem 1.25rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-align:center}
+    .score-trend-label{font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:1.25rem}
+    .score-trend-bars{display:flex;justify-content:center;align-items:flex-end;gap:2rem;height:80px}
+    .trend-col{display:flex;flex-direction:column;align-items:center;gap:.375rem;min-width:48px}
+    .trend-bar-wrap{width:32px;height:56px;display:flex;align-items:flex-end;background:rgba(255,255,255,0.08);border-radius:5px;overflow:hidden}
+    .trend-bar{width:100%;border-radius:5px;min-height:6px;transition:height .4s ease}
+    .trend-score{font-size:.875rem;line-height:1;letter-spacing:-.01em}
+    .trend-month{font-size:.6875rem;color:rgba(255,255,255,0.4);letter-spacing:.04em}
+    .score-trend-delta{font-size:.75rem;font-weight:700;margin-top:1rem;letter-spacing:.02em}
+    @media(max-width:480px){.score-trend-bars{gap:1.25rem}.trend-col{min-width:38px}.trend-bar-wrap{width:26px;height:48px}}
 
     </style>
 </head>
@@ -199,31 +201,31 @@
         <div class="score-trend-bars">
         <div class="trend-col">
           <div class="trend-bar-wrap">
-            <div class="trend-bar" style="height:18%;background:rgba(255,255,255,0.18)"></div>
+            <div class="trend-bar" style="height:30%;background:rgba(255,255,255,0.25)"></div>
           </div>
-          <div class="trend-score" style="font-weight:400;color:var(--ink-mid)">6.7</div>
-          <div class="trend-month">Oct</div>
+          <div class="trend-score" style="font-weight:400;color:rgba(255,255,255,0.55)">6.7</div>
+          <div class="trend-month" style="">Oct</div>
         </div>
         <div class="trend-col">
           <div class="trend-bar-wrap">
-            <div class="trend-bar" style="height:10%;background:rgba(255,255,255,0.18)"></div>
+            <div class="trend-bar" style="height:24%;background:rgba(255,255,255,0.25)"></div>
           </div>
-          <div class="trend-score" style="font-weight:400;color:var(--ink-mid)">6.4</div>
-          <div class="trend-month">Nov</div>
+          <div class="trend-score" style="font-weight:400;color:rgba(255,255,255,0.55)">6.4</div>
+          <div class="trend-month" style="">Nov</div>
         </div>
         <div class="trend-col">
           <div class="trend-bar-wrap">
-            <div class="trend-bar" style="height:12%;background:rgba(255,255,255,0.18)"></div>
+            <div class="trend-bar" style="height:26%;background:rgba(255,255,255,0.25)"></div>
           </div>
-          <div class="trend-score" style="font-weight:400;color:var(--ink-mid)">6.5</div>
-          <div class="trend-month">Dec</div>
+          <div class="trend-score" style="font-weight:400;color:rgba(255,255,255,0.55)">6.5</div>
+          <div class="trend-month" style="">Dec</div>
         </div>
         <div class="trend-col">
           <div class="trend-bar-wrap">
-            <div class="trend-bar" style="height:50%;background:#3b82f6"></div>
+            <div class="trend-bar" style="height:58%;background:#3b82f6"></div>
           </div>
-          <div class="trend-score" style="font-weight:700;color:var(--text)">8.0</div>
-          <div class="trend-month">Jan</div>
+          <div class="trend-score" style="font-weight:700;color:#fff">8.0</div>
+          <div class="trend-month" style="color:rgba(255,255,255,0.7);font-weight:600">Jan</div>
         </div>
         </div>
         <div class="score-trend-delta" style="color:#10b981">+1.3 vs. Oct</div>
