@@ -120,21 +120,29 @@
     .insight-flag.signal{background:rgba(59,130,246,.12);color:#1d4ed8}
     .insight-title{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.5rem;line-height:1.3}
     .insight-body{font-size:.8125rem;color:var(--text-muted);line-height:1.65}
-    .adj-grid{display:grid;gap:1.25rem}
-    .adj-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden}
-    .adj-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:.875rem;border-bottom:1px solid var(--border)}
-    .adj-type-badge{font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+    /* ── Strategy Adjustments ──────────────────────────────────────────── */
+    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
+    .adj-card{background:white;border-radius:12px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+    .adj-card-top{padding:1.25rem 1.5rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:1rem}
+    .adj-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:800;flex-shrink:0;margin-top:.1rem}
+    .adj-num.doubling{background:rgba(16,185,129,.12);color:#059669}
+    .adj-num.testing{background:rgba(12,51,135,.1);color:var(--azure)}
+    .adj-num.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-type-badge{font-size:.6rem;font-weight:800;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
     .adj-type-badge.doubling{background:rgba(16,185,129,.1);color:#059669}
-    .adj-type-badge.pivoting{background:rgba(239,68,68,.1);color:#dc2626}
     .adj-type-badge.testing{background:rgba(12,51,135,.1);color:var(--azure)}
-    .adj-meta{font-size:.75rem;color:var(--text-muted)}
-    .adj-body{padding:1.25rem}
-    .adj-what{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.4}
-    .adj-section{margin-bottom:.875rem}
-    .adj-section-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.375rem}
-    .adj-bullets{padding-left:1.1rem;margin:0}
-    .adj-bullets li{font-size:.8125rem;color:var(--text-muted);line-height:1.65;margin-bottom:.25rem}
-    .adj-effective{font-size:.75rem;color:var(--text);font-weight:600;padding:.625rem 1.25rem;background:var(--porcelain);border-top:1px solid var(--border)}
+    .adj-type-badge.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-headline{font-size:1rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.25rem}
+    .adj-context{font-size:.75rem;color:var(--text-muted);font-weight:500}
+    .adj-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:1rem}
+    .adj-why-block{background:var(--porcelain);border-radius:8px;padding:.875rem 1rem}
+    .adj-why-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.375rem}
+    .adj-why-text{font-size:.8125rem;color:var(--text);line-height:1.6}
+    .adj-moves-block{display:flex;align-items:flex-start;gap:.625rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:8px}
+    .adj-moves-icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+    .adj-moves-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.25rem}
+    .adj-moves-text{font-size:.8125rem;color:var(--text-muted);line-height:1.55}
     .footer{background:#151516;color:rgba(255,255,255,.5);padding:2.5rem 1.5rem;margin-top:2.5rem}
     .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
     .footer-logo{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.6}
@@ -758,60 +766,9 @@
     </div>
   </section>
 
-  <section class="sec">
-    <p class="sec-label">March Direction</p>
-    <h2 class="sec-title">Strategy Adjustments</h2>
-    <p class="sec-sub">Two strategic adjustments taking effect in March, grounded in February&rsquo;s performance data.</p>
-    <div class="adj-grid">
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Strategy &middot; Proven Performer</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Focus on event-driven content (Run Club, seasonal launches) to rebuild reach.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 24 Run Club Reel drove 3,039 views &mdash; the highest of the month</li><li>Event-driven content consistently drives the highest reach and follower acquisition for MEAS</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Strengthen audience trust and brand authority</li><li>Improve key engagement signals (saves, shares, comments)</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Content Experiment &middot; Growth Opportunity</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Introduce a monthly &ldquo;New here?&rdquo; founder intro Reel to build personal brand equity.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 5 &ldquo;New here?&rdquo; Reel drove 11.29% engagement &mdash; the highest of the month</li><li>This format differentiates MEAS from generic activewear brands and builds a loyal following</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Unlock a new repeatable content pillar for consistent performance</li><li>Drive new follower acquisition and expand reach</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-        <div class="adj-body">
-          <p class="adj-what">Spring Running Season content series &mdash; Run Club events + seasonal launch content to rebuild reach above 1,500/day</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 24 Run Club Reel drove 3,039 views &mdash; the highest of the month</li><li>The Feb 26 &ldquo;Spring running season&rdquo; Reel (9.42% engagement) confirms the seasonal transition is the next reach driver</li><li>Event-driven content (Galentine&rsquo;s, Run Club) consistently drives the highest reach and follower acquisition for MEAS</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Reach above 1,500/day in March</li><li>New Followers above 100 in March</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Format &middot; New Follower Driver</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Monthly &ldquo;New here?&rdquo; founder intro Reel &mdash; making this a consistent monthly pillar for new follower acquisition</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 5 &ldquo;New here?&rdquo; Reel drove 11.29% engagement and 2,677 views &mdash; the highest engagement rate of the month</li><li>The founder-led intro format builds personal brand equity that differentiates MEAS from generic activewear brands</li><li>This format converts new viewers into followers by giving them a clear reason to stay</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Consistent new follower acquisition above 100/month</li><li>Increased brand equity and personal connection with the MEAS community</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Format Test &middot; Saves Driver</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Monthly outfit inspiration Carousel with explicit &ldquo;Save this for your next order&rdquo; CTA &mdash; testing to rebuild save volume and strengthen content utility signals</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>Saves at 3 are critically below the Lift stage benchmark &mdash; the biggest gap in the February scorecard</li><li>Outfit inspiration Carousels (&ldquo;5 ways to style the Sculpt Set&rdquo;) are the highest-save format in the activewear vertical</li><li>Explicit &ldquo;Save this for your next order&rdquo; CTAs in captions drive saves by giving the audience a clear reason to bookmark</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Saves above 60 in March</li><li>Increased product reference traffic and repeat purchase intent</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-  <!-- CTA Section -->
+    <!-- CTA Section (moved before Strategy Adjustments) -->
+  </div><!-- close .wrap.main-content -->
+<!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-section-inner">
       <div class="cta-section-header">
@@ -904,6 +861,93 @@
       </div>
     </div>
   </section>
+
+  <!-- Strategy Adjustments -->
+  <div class="wrap">
+  <section class="sec">
+    <p class="sec-label">March Direction</p>
+    <h2 class="sec-title">Strategy Adjustments</h2>
+    <p class="sec-sub">Three high-priority moves for March &mdash; grounded in February&rsquo;s data and mapped to your core business goals.</p>
+    <div class="adj-grid">
+
+      <!-- Adjustment 1 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">1</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Make event-driven content the reach engine for March</p>
+            <p class="adj-context">Reach &amp; New Followers &middot; Awareness Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">January&rsquo;s Galentine&rsquo;s Brunch drove the account&rsquo;s highest reach month on record. February&rsquo;s reach decline is a direct consequence of fewer events &mdash; not a content quality problem. The Run Club Reel (&ldquo;Why run alone?&rdquo;) drove 3,039 views and confirmed that event-driven content is the reach engine. Spring Running Season is the next event opportunity to replicate that spike.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Avg Reach/Day back above the Lift floor &rarr; new follower acquisition &rarr; community growth that compounds into future event attendance and product sales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 2 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">2</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Keep the &ldquo;New here?&rdquo; intro Reel as a monthly community anchor</p>
+            <p class="adj-context">New Followers &amp; Profile Visits &middot; Community Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">The Feb 5 &ldquo;New here? Let&rsquo;s (re)introduce ourselves&rdquo; Reel drove 2,677 views and 21 comments &mdash; the highest comment count of the month. Intro content converts new viewers into followers by giving them a clear reason to stay. For a community-first brand like MEAS Active, this is the highest-leverage new follower acquisition format.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">New Followers above the Watch floor &rarr; growing community of local, event-ready followers &rarr; stronger attendance and engagement at future Run Club events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 3 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num fixing">3</div>
+          <div>
+            <span class="adj-type-badge fixing">Fixing</span>
+            <p class="adj-headline">Add reference-worthy outfit and styling content to drive Saves</p>
+            <p class="adj-context">Saves &middot; Engagement Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">Saves are critically low at 3 against a 10&ndash;50 target &mdash; the account has no save-worthy reference content in the current mix. The Watch Time (7.5s) and Retention (32%) are both exceeding targets, confirming the audience is engaged &mdash; they just have nothing to bookmark. Monthly outfit inspiration Carousels (&ldquo;What to wear for Run Club&rdquo;, &ldquo;Spring activewear picks&rdquo;) are the fix.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Saves above the 10 floor &rarr; stronger content utility signals &rarr; warm audience that revisits the profile and converts to product purchases and event attendance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
 
 
 <footer class="footer">

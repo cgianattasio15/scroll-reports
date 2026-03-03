@@ -120,21 +120,29 @@
     .insight-flag.signal{background:rgba(59,130,246,.12);color:#1d4ed8}
     .insight-title{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.5rem;line-height:1.3}
     .insight-body{font-size:.8125rem;color:var(--text-muted);line-height:1.65}
-    .adj-grid{display:grid;gap:1.25rem}
-    .adj-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden}
-    .adj-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:.875rem;border-bottom:1px solid var(--border)}
-    .adj-type-badge{font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+    /* ── Strategy Adjustments ──────────────────────────────────────────── */
+    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
+    .adj-card{background:white;border-radius:12px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+    .adj-card-top{padding:1.25rem 1.5rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:1rem}
+    .adj-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:800;flex-shrink:0;margin-top:.1rem}
+    .adj-num.doubling{background:rgba(16,185,129,.12);color:#059669}
+    .adj-num.testing{background:rgba(12,51,135,.1);color:var(--azure)}
+    .adj-num.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-type-badge{font-size:.6rem;font-weight:800;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
     .adj-type-badge.doubling{background:rgba(16,185,129,.1);color:#059669}
-    .adj-type-badge.pivoting{background:rgba(239,68,68,.1);color:#dc2626}
     .adj-type-badge.testing{background:rgba(12,51,135,.1);color:var(--azure)}
-    .adj-meta{font-size:.75rem;color:var(--text-muted)}
-    .adj-body{padding:1.25rem}
-    .adj-what{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.4}
-    .adj-section{margin-bottom:.875rem}
-    .adj-section-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.375rem}
-    .adj-bullets{padding-left:1.1rem;margin:0}
-    .adj-bullets li{font-size:.8125rem;color:var(--text-muted);line-height:1.65;margin-bottom:.25rem}
-    .adj-effective{font-size:.75rem;color:var(--text);font-weight:600;padding:.625rem 1.25rem;background:var(--porcelain);border-top:1px solid var(--border)}
+    .adj-type-badge.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-headline{font-size:1rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.25rem}
+    .adj-context{font-size:.75rem;color:var(--text-muted);font-weight:500}
+    .adj-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:1rem}
+    .adj-why-block{background:var(--porcelain);border-radius:8px;padding:.875rem 1rem}
+    .adj-why-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.375rem}
+    .adj-why-text{font-size:.8125rem;color:var(--text);line-height:1.6}
+    .adj-moves-block{display:flex;align-items:flex-start;gap:.625rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:8px}
+    .adj-moves-icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+    .adj-moves-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.25rem}
+    .adj-moves-text{font-size:.8125rem;color:var(--text-muted);line-height:1.55}
     .footer{background:#151516;color:rgba(255,255,255,.5);padding:2.5rem 1.5rem;margin-top:2.5rem}
     .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
     .footer-logo{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.6}
@@ -758,60 +766,9 @@
     </div>
   </section>
 
-  <section class="sec">
-    <p class="sec-label">March Direction</p>
-    <h2 class="sec-title">Strategy Adjustments</h2>
-    <p class="sec-sub">Two strategic adjustments taking effect in March, grounded in February&rsquo;s performance data.</p>
-    <div class="adj-grid">
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Strategy &middot; Proven Performer</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Continue to lean into bold, myth-busting Reels with expert authority framing.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 11 Dermaplaning Reel drove 18 comments and 7 shares &mdash; the highest of the month</li><li>This format activates both the comment and share reflex, driving engagement and reach</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Strengthen audience trust and brand authority</li><li>Improve key engagement signals (saves, shares, comments)</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Content Experiment &middot; Growth Opportunity</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Test a new &ldquo;Ask a Derm&rdquo; content series to drive community engagement and build authority.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>This format directly addresses audience questions and builds trust</li><li>It also provides a repeatable content pillar that can be scaled across multiple posts</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Unlock a new repeatable content pillar for consistent performance</li><li>Drive new follower acquisition and expand reach</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-        <div class="adj-body">
-          <p class="adj-what">Perimenopause &amp; hormonal skin content series &mdash; scaling to 2 posts per month minimum with explicit booking CTAs</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>Top 2 posts of the month by engagement were perimenopause content</li><li>No other esthetician account is creating this content at this specificity level &mdash; this is the moat</li><li>New Followers grew 34% MoM, driven largely by this content series</li><li>The webinar CTA on the Feb 15 Reel confirms this content drives event registrations</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>New Followers sustained above 400/month</li><li>Increased booking inquiries from the hormonal skin audience</li><li>Comments improvement as the audience engages with the relatable framing</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Format &middot; Comments Driver</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Bold myth-busting Reels with expert authority framing &mdash; minimum one &ldquo;someone had to say it&rdquo; Reel per month</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 11 Dermaplaning Reel drove 18 comments and 7 shares &mdash; the highest of the month</li><li>Bold claims with expert authority backing activate both the comment and share reflex</li><li>This format builds professional authority and differentiates Brownlee from generic skincare accounts</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Comments improvement toward the 250 Rise floor</li><li>Shares improvement toward the 200 Rise floor</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Format Test &middot; Retention Fix</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Structured Reel hooks with explicit &ldquo;here&rsquo;s what you&rsquo;ll learn&rdquo; promise &mdash; testing to improve Retention % from 24% toward 50%+</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>Retention dropped from 39% to 24% &mdash; a significant decline that needs to be reversed</li><li>A clear promise in the first 2 seconds (&ldquo;By the end of this, you&rsquo;ll know exactly what&hellip;&rdquo;) creates a completion incentive</li><li>Numbered steps in educational Reels also drive retention by creating a &ldquo;watch to the end&rdquo; structure</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Retention improvement toward 35%+ in March</li><li>Watch Time improvement toward the 10s floor</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-  <!-- CTA Section -->
+    <!-- CTA Section (moved before Strategy Adjustments) -->
+  </div><!-- close .wrap.main-content -->
+<!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-section-inner">
       <div class="cta-section-header">
@@ -904,6 +861,93 @@
       </div>
     </div>
   </section>
+
+  <!-- Strategy Adjustments -->
+  <div class="wrap">
+  <section class="sec">
+    <p class="sec-label">March Direction</p>
+    <h2 class="sec-title">Strategy Adjustments</h2>
+    <p class="sec-sub">Three high-priority moves for March &mdash; grounded in February&rsquo;s data and mapped to your core business goals.</p>
+    <div class="adj-grid">
+
+      <!-- Adjustment 1 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">1</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Scale the perimenopause &amp; hormonal skin series to 2+ posts per month</p>
+            <p class="adj-context">Saves &amp; Authority &middot; Differentiation Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">The Feb 18 Perimenopause Carousel drove 18 saves &mdash; the highest of the month &mdash; and the Feb 15 &ldquo;AM I THE DRAMA?&rdquo; Reel drove 10 comments. This content series is the account&rsquo;s clearest differentiator: no other esthetician in the market is owning this conversation. The audience is bookmarking it, sharing it, and commenting on it &mdash; all three signals of high-value content.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Saves above the Watch floor &rarr; stronger authority positioning &rarr; more qualified booking inquiries from the exact audience that needs specialized hormonal skin expertise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 2 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">2</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Keep myth-busting Reels as a monthly non-negotiable</p>
+            <p class="adj-context">Comments &amp; Shares &middot; Awareness Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">The Feb 11 &ldquo;Dermaplaning blades WRECKING your skin&rdquo; Reel drove 18 comments and 11 saves &mdash; the highest comment count of the month. Bold, contrarian takes with expert authority framing activate the comment reflex and position Brownlee as the go-to truth-teller in the skincare space. This format is both a reach driver and a trust builder.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Comments above the Watch floor &rarr; stronger algorithmic distribution &rarr; expanded reach to new audiences who need to hear the expert perspective.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 3 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num fixing">3</div>
+          <div>
+            <span class="adj-type-badge fixing">Fixing</span>
+            <p class="adj-headline">Add a clear &ldquo;here&rsquo;s what you&rsquo;ll learn&rdquo; hook to every Reel to stop early drop-off</p>
+            <p class="adj-context">Retention &amp; Watch Time &middot; Engagement Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">Retention dropped from 39% in January to 24% in February &mdash; viewers are leaving Reels before the key message lands. The fix is structural: opening with an explicit promise (&ldquo;I&rsquo;m going to show you exactly why&hellip;&rdquo;) creates a completion incentive that keeps viewers watching. Educational skincare content is naturally suited to this structure.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Retention back toward 30%+ &rarr; Watch Time above the Watch floor &rarr; stronger algorithmic distribution for all Reel content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
 
 
 <footer class="footer">

@@ -123,21 +123,29 @@
     .insight-flag.signal{background:rgba(59,130,246,.12);color:#1d4ed8}
     .insight-title{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.5rem;line-height:1.3}
     .insight-body{font-size:.8125rem;color:var(--text-muted);line-height:1.65}
-    .adj-grid{display:grid;gap:1.25rem}
-    .adj-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden}
-    .adj-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:.875rem;border-bottom:1px solid var(--border)}
-    .adj-type-badge{font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+    /* ── Strategy Adjustments ──────────────────────────────────────────── */
+    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
+    .adj-card{background:white;border-radius:12px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+    .adj-card-top{padding:1.25rem 1.5rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:1rem}
+    .adj-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:800;flex-shrink:0;margin-top:.1rem}
+    .adj-num.doubling{background:rgba(16,185,129,.12);color:#059669}
+    .adj-num.testing{background:rgba(12,51,135,.1);color:var(--azure)}
+    .adj-num.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-type-badge{font-size:.6rem;font-weight:800;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
     .adj-type-badge.doubling{background:rgba(16,185,129,.1);color:#059669}
-    .adj-type-badge.pivoting{background:rgba(239,68,68,.1);color:#dc2626}
     .adj-type-badge.testing{background:rgba(12,51,135,.1);color:var(--azure)}
-    .adj-meta{font-size:.75rem;color:var(--text-muted)}
-    .adj-body{padding:1.25rem}
-    .adj-what{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.4}
-    .adj-section{margin-bottom:.875rem}
-    .adj-section-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.375rem}
-    .adj-bullets{padding-left:1.1rem;margin:0}
-    .adj-bullets li{font-size:.8125rem;color:var(--text-muted);line-height:1.65;margin-bottom:.25rem}
-    .adj-effective{font-size:.75rem;color:var(--text);font-weight:600;padding:.625rem 1.25rem;background:var(--porcelain);border-top:1px solid var(--border)}
+    .adj-type-badge.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-headline{font-size:1rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.25rem}
+    .adj-context{font-size:.75rem;color:var(--text-muted);font-weight:500}
+    .adj-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:1rem}
+    .adj-why-block{background:var(--porcelain);border-radius:8px;padding:.875rem 1rem}
+    .adj-why-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.375rem}
+    .adj-why-text{font-size:.8125rem;color:var(--text);line-height:1.6}
+    .adj-moves-block{display:flex;align-items:flex-start;gap:.625rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:8px}
+    .adj-moves-icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+    .adj-moves-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.25rem}
+    .adj-moves-text{font-size:.8125rem;color:var(--text-muted);line-height:1.55}
     .footer{background:#151516;color:rgba(255,255,255,.5);padding:2.5rem 1.5rem;margin-top:2.5rem}
     .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
     .footer-logo{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.6}
@@ -777,61 +785,9 @@
     </div>
   </section>
 
-  <section class="sec">
-    <p class="sec-label">March Direction</p>
-    <h2 class="sec-title">Strategy Adjustments</h2>
-    <p class="sec-sub">Two strategic adjustments taking effect in March, grounded in February&rsquo;s performance data.</p>
-    <div class="adj-grid">
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Strategy &middot; Proven Performer</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Re-introduce pre-purchase utility framing in Carousel posts to rebuild save volume.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 12 Valentine&rsquo;s post drove 39 saves alone, confirming the format works</li><li>Saves are a leading indicator of purchase intent &mdash; rebuilding this signal is the top priority for March</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Strengthen audience trust and brand authority</li><li>Improve key engagement signals (saves, shares, comments)</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Content Experiment &middot; Growth Opportunity</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Scale curiosity-gap and identity-challenge hooks in Reels to rebuild reach volume.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 3 Reel (5,349 views) confirms the distribution capability exists &mdash; the constraint is hook consistency, not content quality</li><li>The algorithm responds to scroll-stopping hooks with broad distribution</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Unlock a new repeatable content pillar for consistent performance</li><li>Drive new follower acquisition and expand reach</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-        <div class="adj-body">
-          <p class="adj-what">Opinion-led Reels with curiosity-gap hooks &mdash; minimum one strong POV Reel per month with an explicit identity-challenge or contrarian angle</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 26 &ldquo;Shopping small&rdquo; Reel drove 118 shares &mdash; the highest of the month and a clear signal of the format&rsquo;s reach potential</li><li>Opinion-led hooks outperform informational hooks for shares and cold reach on boutique retail accounts</li><li>Shares are the primary organic distribution mechanism for this account at Lift stage</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Shares sustained consistently above current baseline</li><li>Improve average daily reach toward Lift stage benchmarks</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Hook Strategy &middot; Reach Fix</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Standardize curiosity-gap or identity-challenge hooks across all Reels &mdash; every Reel in March must have a hook that creates pattern interrupt in the first 2 seconds</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 3 Reel (5,349 views) vs. the average (1,700 views) gap is a hook problem, not a content quality problem</li><li>Curiosity-gap hooks (&ldquo;We have thoughts on this&rdquo;, &ldquo;Here&rsquo;s what no one tells you&rdquo;) drive the initial stop-scroll that determines reach</li><li>Consistent hook quality is the single highest-leverage change available at this stage</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Improve average Reel view counts toward Lift stage benchmarks</li><li>Improve average daily reach toward Lift stage benchmarks</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Format Test &middot; Saves Driver</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Carousel utility posts &mdash; 2&ndash;3 per month featuring product recommendation lists, styling guides, or &ldquo;what to wear for&rdquo; frameworks to drive Saves toward the Lift stage benchmark</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>Saves at 46 are below the Lift stage benchmark Lift floor &mdash; the account is not generating enough &ldquo;bookmark&rdquo; content</li><li>Carousel utility content (gift guides, style roundups, product comparisons) is the highest-save format for boutique retail</li><li>Save-worthy content compounds over time as a discovery mechanism and signals content quality to the algorithm</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Improve save volume and strengthen content utility signals</li><li>Increased profile authority and long-term follower retention</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-  <!-- CTA Section -->
+    <!-- CTA Section (moved before Strategy Adjustments) -->
+  </div><!-- close .wrap.main-content -->
+<!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-section-inner">
       <div class="cta-section-header">
@@ -924,6 +880,93 @@
       </div>
     </div>
   </section>
+
+  <!-- Strategy Adjustments -->
+  <div class="wrap">
+  <section class="sec">
+    <p class="sec-label">March Direction</p>
+    <h2 class="sec-title">Strategy Adjustments</h2>
+    <p class="sec-sub">Three high-priority moves for March &mdash; grounded in February&rsquo;s data and mapped to your core business goals.</p>
+    <div class="adj-grid">
+
+      <!-- Adjustment 1 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">1</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Make opinion-led Reels a consistent monthly pillar</p>
+            <p class="adj-context">Shares &amp; Reach &middot; Awareness Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">The Feb 26 &ldquo;Shopping small isn&rsquo;t just a feel-good choice&rdquo; Reel drove 118 shares &mdash; the highest of the month and a clear signal that opinion-led, identity-driven content is the shares engine for Launch Party. The &ldquo;Shopping small&rdquo; angle resonates deeply with the boutique&rsquo;s audience and activates the share reflex at scale.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Shares above the On Track range &rarr; expanded organic reach &rarr; more profile visits and new follower acquisition from warm, values-aligned audiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 2 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">2</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Add save-worthy utility content to every content week</p>
+            <p class="adj-context">Saves &amp; Retention &middot; Community Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">Saves dropped from 50 in January to 46 in February &mdash; still on track, but the trend needs to be protected. The #1 post (&ldquo;Valentine&rsquo;s Day outfit&rdquo;) drove 7 saves and 8.98% engagement, confirming that styling utility content is the saves driver. Outfit inspiration Carousels with explicit &ldquo;Save this for your next shopping trip&rdquo; CTAs are the repeatable format.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Saves sustained above the On Track floor &rarr; stronger content utility signals &rarr; warm audience that revisits the profile and converts to in-store visits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 3 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num fixing">3</div>
+          <div>
+            <span class="adj-type-badge fixing">Fixing</span>
+            <p class="adj-headline">Rebuild reach with hook-driven Reels after January&rsquo;s contraction</p>
+            <p class="adj-context">Reach &amp; Views &middot; Awareness Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">Avg Reach/Day dropped from 1,451 in January to 823 in February &mdash; a post-January normalization, but still below the Lift floor. Total Views fell from 106K to 75K. The conversion infrastructure (CTR 15.14%, PCR 11.11%) is strong &mdash; the account just needs more distribution. Curiosity-gap and identity-challenge hooks in the first 2 seconds are the lever to push Reels into broader distribution.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Avg Reach/Day back above the Lift floor &rarr; more profile visits and link taps &rarr; more in-store traffic from warm, discovery-ready audiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
 
 
 <footer class="footer">
