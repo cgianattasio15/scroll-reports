@@ -123,21 +123,29 @@
     .insight-flag.signal{background:rgba(59,130,246,.12);color:#1d4ed8}
     .insight-title{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.5rem;line-height:1.3}
     .insight-body{font-size:.8125rem;color:var(--text-muted);line-height:1.65}
-    .adj-grid{display:grid;gap:1.25rem}
-    .adj-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden}
-    .adj-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:.875rem;border-bottom:1px solid var(--border)}
-    .adj-type-badge{font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+    /* ── Strategy Adjustments ──────────────────────────────────────────── */
+    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
+    .adj-card{background:white;border-radius:12px;border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+    .adj-card-top{padding:1.25rem 1.5rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:1rem}
+    .adj-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:800;flex-shrink:0;margin-top:.1rem}
+    .adj-num.doubling{background:rgba(16,185,129,.12);color:#059669}
+    .adj-num.testing{background:rgba(12,51,135,.1);color:var(--azure)}
+    .adj-num.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-type-badge{font-size:.6rem;font-weight:800;padding:.2rem .6rem;border-radius:3px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
     .adj-type-badge.doubling{background:rgba(16,185,129,.1);color:#059669}
-    .adj-type-badge.pivoting{background:rgba(239,68,68,.1);color:#dc2626}
     .adj-type-badge.testing{background:rgba(12,51,135,.1);color:var(--azure)}
-    .adj-meta{font-size:.75rem;color:var(--text-muted)}
-    .adj-body{padding:1.25rem}
-    .adj-what{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.4}
-    .adj-section{margin-bottom:.875rem}
-    .adj-section-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.375rem}
-    .adj-bullets{padding-left:1.1rem;margin:0}
-    .adj-bullets li{font-size:.8125rem;color:var(--text-muted);line-height:1.65;margin-bottom:.25rem}
-    .adj-effective{font-size:.75rem;color:var(--text);font-weight:600;padding:.625rem 1.25rem;background:var(--porcelain);border-top:1px solid var(--border)}
+    .adj-type-badge.fixing{background:rgba(245,158,11,.12);color:#d97706}
+    .adj-headline{font-size:1rem;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:.25rem}
+    .adj-context{font-size:.75rem;color:var(--text-muted);font-weight:500}
+    .adj-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:1rem}
+    .adj-why-block{background:var(--porcelain);border-radius:8px;padding:.875rem 1rem}
+    .adj-why-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.375rem}
+    .adj-why-text{font-size:.8125rem;color:var(--text);line-height:1.6}
+    .adj-moves-block{display:flex;align-items:flex-start;gap:.625rem;padding:.875rem 1rem;border:1px solid var(--border);border-radius:8px}
+    .adj-moves-icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+    .adj-moves-label{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.25rem}
+    .adj-moves-text{font-size:.8125rem;color:var(--text-muted);line-height:1.55}
     .footer{background:#151516;color:rgba(255,255,255,.5);padding:2.5rem 1.5rem;margin-top:2.5rem}
     .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
     .footer-logo{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.6}
@@ -451,7 +459,7 @@
     </div>
     <h1>Lane &amp; Kate<br>February 2026</h1>
     <div class="hero-tagline">Lift Stage &mdash; Consistent Performer</div>
-    <p class="hero-sub">CTR and Saves both exceeding targets for the second consecutive month. Watch Time improved to 5.0s MoM. The account is converting at an exceptional rate &mdash; the primary growth lever remains reach volume and Reel consistency.</p>
+    <p class="hero-sub">CTR at 18.13% is 3x the Lift ceiling &mdash; the content-to-profile conversion path is exceptional. Watch Time improved to 5.0s MoM. The account converts well when it gets distribution; the primary growth lever is Reel cadence and reach volume.</p>
     <div class="hero-pills">
       <div class="hero-pill"><span class="dot"></span>7,143 Followers</div>
       <div class="hero-pill"><span class="dot"></span>57,910 Total Views</div>
@@ -467,7 +475,7 @@
     <div class="score-card">
       <p class="score-eyebrow">February 2026 Monthly Score</p>
       <div class="score-num">8.0<span class="score-denom">/10</span></div>
-      <p class="score-title">Solid Month &mdash; CTR &amp; Saves Exceeding, Watch Time Improving</p>
+      <p class="score-title">Solid Month &mdash; CTR Exceeding, Watch Time &amp; Views Improving</p>
       <p class="score-desc">February held steady at 8.0 &mdash; matching December 2025 and maintaining the consistent Solid Month baseline. CTR reached 18.13% (3x the Lift ceiling) and Saves at 6 are below the 80 floor, but the conversion signals from profile visits and link taps remain strong. Watch Time improved to 5.0s MoM. The account&rsquo;s primary growth constraint is reach volume and Reel cadence.</p>
       <p class="score-note">Scored using the Scroll Media Weighted Performance Framework &mdash; Tier 1 (quality/conversion) metrics weighted 1.5x, Tier 2 (volume) 1.0x, Tier 3 (context) 0.75x. MoM trend credit: +0.5 applied (Watch Time, Shares, Views, New Followers all improved MoM; CTR and Link Taps remain strong).</p>
       <div class="score-trend-section">
@@ -498,9 +506,9 @@
       <div class="score-trend-delta" style="color:#f59e0b">&minus;0.1 vs. Jan &mdash; Essentially flat</div>
     </div>
     <div class="score-badges">
-      <div class="score-badge exceed"><span class="badge-dot"></span>2 Exceeding</div>
-      <div class="score-badge ontrack"><span class="badge-dot"></span>4 On Track</div>
-      <div class="score-badge watch"><span class="badge-dot"></span>6 Watch</div>
+      <div class="score-badge exceed"><span class="badge-dot"></span>1 Exceeding</div>
+      <div class="score-badge ontrack"><span class="badge-dot"></span>3 On Track</div>
+      <div class="score-badge watch"><span class="badge-dot"></span>9 Watch</div>
     </div>
   </div>
 
@@ -618,7 +626,7 @@
           <div class="mc-top"><span class="mc-name">Profile Visits</span><span class="mc-badge watch">Watch</span></div>
           <div class="mc-nums"><div class="mc-val"><span class="mc-val-lbl">February</span><span class="mc-actual watch">761</span></div><div class="mc-val"><span class="mc-val-lbl">Target</span><span class="mc-target">300&ndash;2,000</span></div></div>
           <p class="mc-mom mom-up">&uarr; 67 vs. Jan</p>
-          <div class="bar-track"><div class="bar-fill ontrack" data-w="27"></div></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="27"></div></div>
           <p class="mc-note">Improved MoM and approaching the 300 floor. Profile Visits scales with reach &mdash; the CTR of 18.13% confirms the content-to-profile conversion path is working. The constraint is reach volume.</p>
         </div>
         <div class="metric-card">
@@ -631,7 +639,7 @@
         <div class="metric-card">
           <div class="mc-top"><span class="mc-name">Retention %</span><span class="mc-badge watch">Watch</span></div>
           <div class="mc-nums"><div class="mc-val"><span class="mc-val-lbl">February</span><span class="mc-actual watch">15.83%</span></div><div class="mc-val"><span class="mc-val-lbl">Target</span><span class="mc-target">50%&ndash;65%</span></div></div>
-          <p class="mc-mom mom-flat">&mdash; New metric (Jan: 30.49%)</p>
+          <p class="mc-mom mom-down">&darr; 14.66pts vs. Jan (30.49%)</p>
           <div class="bar-track"><div class="bar-fill watch" data-w="10"></div></div>
           <p class="mc-note">Retention declined from January&rsquo;s 30.49% to 15.83% &mdash; a significant drop. This metric requires investigation: either the Reel content is losing viewers early, or the Retention % calculation changed. Structured tutorial-format Reels with numbered steps are the fix to improve completion rates.</p>
         </div>
@@ -640,7 +648,7 @@
           <div class="mc-nums"><div class="mc-val"><span class="mc-val-lbl">February</span><span class="mc-actual watch">6</span></div><div class="mc-val"><span class="mc-val-lbl">Target</span><span class="mc-target">80&ndash;400</span></div></div>
           <p class="mc-mom mom-down">&darr; 15 vs. Jan (21)</p>
           <div class="bar-track"><div class="bar-fill watch" data-w="1"></div></div>
-          <p class="mc-note">Below the 80 floor. The Feb 19 Jewelry Care Reel drove 21 saves in January &mdash; the highest in recent months &mdash; confirming that educational, reference-worthy content is the saves driver. Structured jewelry care and styling tutorials are the path to crossing the 80 floor.</p>
+          <p class="mc-note">Well below the 80 floor. The Feb 19 Jewelry Care Reel drove 21 saves &mdash; the highest of the month &mdash; confirming that educational, reference-worthy content is the saves driver. Consistent education Reels (care guides, styling tips, stone selection) are the path to crossing the 80 floor.</p>
         </div>
         <div class="metric-card">
           <div class="mc-top"><span class="mc-name">Comments</span><span class="mc-badge watch">Watch</span></div>
@@ -676,7 +684,7 @@
           <div class="mc-top"><span class="mc-name">PCR</span><span class="mc-badge ontrack">On Track</span></div>
           <div class="mc-nums"><div class="mc-val"><span class="mc-val-lbl">February</span><span class="mc-actual ontrack">10.38%</span></div><div class="mc-val"><span class="mc-val-lbl">Target</span><span class="mc-target">10%&ndash;16%</span></div></div>
           <p class="mc-mom mom-down">&darr; 0.86pts vs. Jan</p>
-          <div class="bar-track"><div class="bar-fill ontrack" data-w="5"></div></div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-w="22"></div></div>
           <p class="mc-note">On track at the low end of the Lift range. The profile-to-link conversion path is intact. Improving this metric requires stronger bio link CTAs and a more compelling bio link destination (booking page or lookbook).</p>
         </div>
       </div>
@@ -761,60 +769,8 @@
     </div>
   </section>
 
-  <section class="sec">
-    <p class="sec-label">March Direction</p>
-    <h2 class="sec-title">Strategy Adjustments</h2>
-    <p class="sec-sub">Two strategic adjustments taking effect in March, grounded in February&rsquo;s performance data.</p>
-    <div class="adj-grid">
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Strategy &middot; Proven Performer</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Amplify educational content that demystifies the fine jewelry buying process.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 19 &ldquo;How to choose an engagement ring&rdquo; post drove 11.2% engagement &mdash; the highest of the month</li><li>Educational content builds trust and positions L&K as the expert guide</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Strengthen audience trust and brand authority</li><li>Improve key engagement signals (saves, shares, comments)</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Content Experiment &middot; Growth Opportunity</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Introduce more behind-the-scenes content showing the craftsmanship and design process.</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>This content format builds brand equity and justifies the premium price point</li><li>It also provides a new content pillar that can be scaled across multiple posts</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Unlock a new repeatable content pillar for consistent performance</li><li>Drive new follower acquisition and expand reach</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-        <div class="adj-body">
-          <p class="adj-what">Trend-forward content with custom consultation angle &mdash; minimum one &ldquo;trends + our take&rdquo; Reel per month</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 26 Reel drove 112 shares &mdash; confirming trend-forward content is the shares engine</li><li>The &ldquo;we have more ideas&rdquo; framing creates a natural consultation invitation that drives DMs and bookings</li><li>Shareable content is the primary organic reach driver for jewelry accounts</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Shares consistently above current baseline</li><li>Increased DM inquiries from the consultation angle</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Format &middot; Saves Driver</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Jewelry education content &mdash; minimum one practical care or education Reel per month to sustain Saves above floor</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 19 Jewelry Care Reel drove 21 saves &mdash; the highest of the month</li><li>Educational content builds long-term loyalty and positions Lane &amp; Kate as the jewelry authority</li><li>Save-worthy content compounds over time as a discovery mechanism</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Improve save volume and strengthen content utility signals</li><li>Increased profile authority and long-term follower retention</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-      <div class="adj-card">
-        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Format Test &middot; Retention Fix</span></div>
-        <div class="adj-body">
-          <p class="adj-what">Structured tutorial-format Reels with numbered steps &mdash; testing to improve Retention % above 50%</p>
-          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>Retention dropped from 30.49% to 15.83% &mdash; a significant decline that needs to be reversed</li><li>Numbered steps (&ldquo;Step 1&hellip; Step 2&hellip; Step 3&rdquo;) create a completion incentive that drives retention</li><li>Tutorial-format Reels (ring sizing, stone selection, care guides) are naturally structured for numbered steps</li></ul></div>
-          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Retention improvement toward the 30%+ range in March</li><li>Watch Time improvement toward the 6s floor</li></ul></div>
-        </div>
-        <div class="adj-effective">Effective: March 1, 2026</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-  <!-- CTA Section -->
+  <!-- CTA Section (moved before Strategy Adjustments) -->
+  </div><!-- close .wrap.main-content -->
   <section class="cta-section">
     <div class="cta-section-inner">
       <div class="cta-section-header">
@@ -828,85 +784,151 @@
       <!-- Primary CTA -->
       <div class="cta-primary-card">
         <div class="cta-primary-label">&#9733; Primary Monthly CTA</div>
-        <p class="cta-primary-objective">Drive Consultation Bookings & Qualified Inquiries</p>
+        <p class="cta-primary-objective">Drive Consultation Bookings &amp; Qualified Inquiries</p>
         <div class="cta-primary-meta">
           <div class="cta-meta-chip"><strong>Type:</strong>&nbsp;Book / Inquire CTA</div>
-          <div class="cta-meta-chip"><strong>Mechanism:</strong>&nbsp;Link in Bio → Consultation Booking Page</div>
+          <div class="cta-meta-chip"><strong>Mechanism:</strong>&nbsp;Link in Bio &rarr; Consultation Booking Page</div>
           <div class="cta-meta-chip"><strong>Primary KPI:</strong>&nbsp;Link Taps / Form Submissions</div>
         </div>
         <div class="cta-primary-copy-block">
           <p class="cta-copy-label">Suggested Copy</p>
           <p class="cta-copy-text">&ldquo;Ready to find the one? Tap the link in bio to book your private consultation.&rdquo;</p>
         </div>
-        <p class="cta-primary-rationale">Lane & Kate is a fine jewelry boutique where the purchase decision is high-consideration and relationship-driven. The primary conversion event is a private consultation, not an impulse click. All BOFU content should funnel toward booking that conversation — the in-person experience is where the sale closes.</p>
+        <p class="cta-primary-rationale">Lane &amp; Kate is a fine jewelry boutique where the purchase decision is high-consideration and relationship-driven. The primary conversion event is a private consultation, not an impulse click. All BOFU content should funnel toward booking that conversation &mdash; the in-person experience is where the sale closes.</p>
       </div>
 
       <!-- Funnel CTAs -->
       <p class="cta-funnel-label">Funnel-Stage CTA Plan</p>
       <div class="cta-funnel-grid">
-        
-      <div class="cta-funnel-card">
-        <div class="cta-funnel-card-header">
-          <span class="cta-stage-badge tofu">TOFU</span>
-          <span class="cta-funnel-icon">📡</span>
-        </div>
-        <div class="cta-funnel-type">Save CTA</div>
-        <div class="cta-funnel-copy">&ldquo;Save this if you're planning something special.&rdquo;</div>
-        <div class="cta-funnel-meta">
-          <div class="cta-funnel-meta-row">
-            <span class="cta-funnel-meta-key">Mechanism</span>
-            <span class="cta-funnel-meta-val">On-Screen Text CTA</span>
+        <div class="cta-funnel-card">
+          <div class="cta-funnel-card-header">
+            <span class="cta-stage-badge tofu">TOFU</span>
+            <span class="cta-funnel-icon">📡</span>
           </div>
-          <div class="cta-funnel-meta-row">
-            <span class="cta-funnel-meta-key">Primary KPI</span>
-            <span class="cta-funnel-meta-val">Saves</span>
+          <div class="cta-funnel-type">Save CTA</div>
+          <div class="cta-funnel-copy">&ldquo;Save this if you&rsquo;re planning something special.&rdquo;</div>
+          <div class="cta-funnel-meta">
+            <div class="cta-funnel-meta-row"><span class="cta-funnel-meta-key">Mechanism</span><span class="cta-funnel-meta-val">On-Screen Text CTA</span></div>
+            <div class="cta-funnel-meta-row"><span class="cta-funnel-meta-key">Primary KPI</span><span class="cta-funnel-meta-val">Saves</span></div>
           </div>
+          <div class="cta-funnel-rationale">Fine jewelry buyers research extensively before purchasing. Save CTAs on educational and inspirational content build a warm, high-intent audience over time.</div>
         </div>
-        <div class="cta-funnel-rationale">Fine jewelry buyers research extensively before purchasing. Save CTAs on educational and inspirational content build a warm, high-intent audience over time.</div>
-      </div>
-        
-      <div class="cta-funnel-card">
-        <div class="cta-funnel-card-header">
-          <span class="cta-stage-badge mofu">MOFU</span>
-          <span class="cta-funnel-icon">🔥</span>
-        </div>
-        <div class="cta-funnel-type">Question CTA</div>
-        <div class="cta-funnel-copy">&ldquo;What's your go-to metal — yellow gold, white gold, or rose? Tell us below.&rdquo;</div>
-        <div class="cta-funnel-meta">
-          <div class="cta-funnel-meta-row">
-            <span class="cta-funnel-meta-key">Mechanism</span>
-            <span class="cta-funnel-meta-val">Caption Comment Prompt</span>
+        <div class="cta-funnel-card">
+          <div class="cta-funnel-card-header">
+            <span class="cta-stage-badge mofu">MOFU</span>
+            <span class="cta-funnel-icon">🔥</span>
           </div>
-          <div class="cta-funnel-meta-row">
-            <span class="cta-funnel-meta-key">Primary KPI</span>
-            <span class="cta-funnel-meta-val">Comments</span>
+          <div class="cta-funnel-type">Question CTA</div>
+          <div class="cta-funnel-copy">&ldquo;What&rsquo;s your go-to metal &mdash; yellow gold, white gold, or rose? Tell us below.&rdquo;</div>
+          <div class="cta-funnel-meta">
+            <div class="cta-funnel-meta-row"><span class="cta-funnel-meta-key">Mechanism</span><span class="cta-funnel-meta-val">Caption Comment Prompt</span></div>
+            <div class="cta-funnel-meta-row"><span class="cta-funnel-meta-key">Primary KPI</span><span class="cta-funnel-meta-val">Comments</span></div>
           </div>
+          <div class="cta-funnel-rationale">Preference-based questions surface buying intent and help the team understand what styles resonate most with the audience.</div>
         </div>
-        <div class="cta-funnel-rationale">Preference-based questions surface buying intent and help the team understand what styles resonate most with the audience.</div>
-      </div>
-        
-      <div class="cta-funnel-card">
-        <div class="cta-funnel-card-header">
-          <span class="cta-stage-badge bofu">BOFU</span>
-          <span class="cta-funnel-icon">🎯</span>
-        </div>
-        <div class="cta-funnel-type">Book / Inquire CTA</div>
-        <div class="cta-funnel-copy">&ldquo;This is the kind of piece that deserves a proper conversation. Tap the link in bio to book your consultation.&rdquo;</div>
-        <div class="cta-funnel-meta">
-          <div class="cta-funnel-meta-row">
-            <span class="cta-funnel-meta-key">Mechanism</span>
-            <span class="cta-funnel-meta-val">Specific Link in Bio → Booking Form</span>
+        <div class="cta-funnel-card">
+          <div class="cta-funnel-card-header">
+            <span class="cta-stage-badge bofu">BOFU</span>
+            <span class="cta-funnel-icon">🎯</span>
           </div>
-          <div class="cta-funnel-meta-row">
-            <span class="cta-funnel-meta-key">Primary KPI</span>
-            <span class="cta-funnel-meta-val">Link Taps / Form Submissions</span>
+          <div class="cta-funnel-type">Book / Inquire CTA</div>
+          <div class="cta-funnel-copy">&ldquo;This is the kind of piece that deserves a proper conversation. Tap the link in bio to book your consultation.&rdquo;</div>
+          <div class="cta-funnel-meta">
+            <div class="cta-funnel-meta-row"><span class="cta-funnel-meta-key">Mechanism</span><span class="cta-funnel-meta-val">Link in Bio &rarr; Booking Form</span></div>
+            <div class="cta-funnel-meta-row"><span class="cta-funnel-meta-key">Primary KPI</span><span class="cta-funnel-meta-val">Link Taps / Form Submissions</span></div>
           </div>
+          <div class="cta-funnel-rationale">High-ticket jewelry purchases require trust and a personal touch. The consultation is the conversion event &mdash; not the click. BOFU content should make booking feel like the natural next step.</div>
         </div>
-        <div class="cta-funnel-rationale">High-ticket jewelry purchases require trust and a personal touch. The consultation is the conversion event — not the click. BOFU content should make booking feel like the natural next step.</div>
-      </div>
       </div>
     </div>
   </section>
+
+  <!-- Strategy Adjustments -->
+  <div class="wrap">
+  <section class="sec">
+    <p class="sec-label">March Direction</p>
+    <h2 class="sec-title">Strategy Adjustments</h2>
+    <p class="sec-sub">Three high-priority moves for March &mdash; grounded in February&rsquo;s data and mapped to your core business goals.</p>
+    <div class="adj-grid">
+
+      <!-- Adjustment 1 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">1</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Make trend-forward Reels a monthly non-negotiable</p>
+            <p class="adj-context">Reach &amp; Shares &middot; Awareness Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">The Feb 26 &ldquo;Talking trends&rdquo; Reel drove 112 shares &mdash; more than every other post combined. That single post confirmed that trend-forward content with a &ldquo;we have more ideas&rdquo; angle is the primary organic reach driver for this account. One post shouldn&rsquo;t be an outlier; it should be a repeatable pillar.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Shares above the 60 floor &rarr; expanded organic reach &rarr; more profile visits and DM inquiries from warm, consultation-ready audiences.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 2 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num doubling">2</div>
+          <div>
+            <span class="adj-type-badge doubling">Doubling Down</span>
+            <p class="adj-headline">Keep education content as a consistent monthly pillar</p>
+            <p class="adj-context">Saves &amp; Authority &middot; Community Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">The Feb 19 Jewelry Care Reel drove 21 saves &mdash; the highest of the month. The audience is bookmarking Lane &amp; Kate as a jewelry reference resource. That&rsquo;s a trust signal that compounds: saved content gets revisited, shared with partners, and converts to consultations over time.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Saves toward the 80 floor &rarr; stronger content utility signals &rarr; positions L&amp;K as the go-to jewelry authority for high-intent buyers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adjustment 3 -->
+      <div class="adj-card">
+        <div class="adj-card-top">
+          <div class="adj-num fixing">3</div>
+          <div>
+            <span class="adj-type-badge fixing">Fixing</span>
+            <p class="adj-headline">Restructure Reels with numbered steps to stop early drop-off</p>
+            <p class="adj-context">Retention &amp; Watch Time &middot; Engagement Goal</p>
+          </div>
+        </div>
+        <div class="adj-body">
+          <div class="adj-why-block">
+            <p class="adj-why-label">Why</p>
+            <p class="adj-why-text">Retention dropped from 30.49% in January to 15.83% in February &mdash; viewers are leaving Reels early. Numbered steps (&ldquo;Step 1&hellip; Step 2&hellip;&rdquo;) create a completion incentive that keeps viewers watching. Tutorial-format Reels (ring care, stone selection, sizing guides) are naturally suited to this structure.</p>
+          </div>
+          <div class="adj-moves-block">
+            <div class="adj-moves-icon">&#8599;</div>
+            <div>
+              <p class="adj-moves-label">What This Moves</p>
+              <p class="adj-moves-text">Retention back toward 30%+ &rarr; Watch Time above the 6s floor &rarr; stronger algorithmic distribution for all Reel content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
 
 
 <footer class="footer">
