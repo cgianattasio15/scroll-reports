@@ -571,5 +571,17 @@
   });
 </script>
 <script async src="//www.instagram.com/embed.js"></script>
+<script>
+window.addEventListener('load', function() {
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  } else {
+    var t = setInterval(function() {
+      if (window.instgrm) { window.instgrm.Embeds.process(); clearInterval(t); }
+    }, 500);
+    setTimeout(function() { clearInterval(t); }, 10000);
+  }
+});
+</script>
 </body>
 </html>
