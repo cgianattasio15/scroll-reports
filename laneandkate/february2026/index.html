@@ -18,7 +18,7 @@
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
     :root{--shadow:#151516;--azure:#0c3387;--hl:#e2ed7a;--ink-mid:rgba(255,255,255,.65);--ink-light:rgba(255,255,255,.35);--porcelain:#f2f3f4;--ghost:#fafdff;--border:rgba(21,21,22,.08);--text:#151516;--text-muted:#5a5a5c;--green:#10b981;--amber:#f59e0b;--red:#ef4444;--purple:#7c3aed;--tofu:#0c3387;--mofu:#7c3aed;--bofu:#10b981}
     body{font-family:'Source Sans 3',sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    header.hero{background:linear-gradient(135deg,#151516 0%,#1a1a1c 100%);color:white;padding:3rem 1.5rem;position:relative;overflow:hidden}
+    header.hero{background:linear-gradient(135deg,#151516 0%,#1a1a1c 100%);color:white;padding:3rem 1.5rem 5rem;position:relative;overflow:hidden}
     header.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(12,51,135,.18),transparent 70%);border-radius:50%;pointer-events:none}
     .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
     .hero-logo{height:34px;width:auto;margin-bottom:1.75rem;filter:brightness(0) invert(1);display:block}
@@ -35,7 +35,7 @@
     .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.75rem}
     .sec-title{font-size:clamp(1.625rem,5vw,2.25rem);font-weight:700;line-height:1.15;color:var(--shadow);margin-bottom:.75rem}
     .sec-sub{font-size:clamp(.9375rem,2vw,1.0625rem);color:var(--text-muted);max-width:750px;font-weight:500;margin-bottom:1.25rem;line-height:1.7}
-    .score-wrap{position:relative;z-index:10;margin:-2rem auto 2rem}
+    .score-wrap{position:relative;z-index:10;margin:-3.5rem auto 2rem}
     .score-card{background:white;border-radius:10px;padding:2rem 1.75rem;box-shadow:0 2px 16px rgba(21,21,22,.1);border:1px solid var(--border);text-align:center;position:relative}
     .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#1a4fc4)}
     .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
@@ -90,8 +90,8 @@
     .bar-fill.ontrack{background:#10b981}
     .bar-fill.watch{background:#f59e0b}
     .mc-note{font-size:.75rem;color:var(--text-muted);line-height:1.6}
-    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
-    .post-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden;box-shadow:0 1px 6px rgba(21,21,22,.06)}
+    .posts-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;max-width:580px;margin:0 auto}
+    .post-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:visible;box-shadow:0 1px 6px rgba(21,21,22,.06)}
     .post-rank-bar{padding:.625rem 1rem;display:flex;align-items:center;gap:.75rem}
     .post-rank-bar.rank1{background:linear-gradient(90deg,rgba(12,51,135,.08),transparent)}
     .post-rank-bar.rank2{background:linear-gradient(90deg,rgba(124,58,237,.06),transparent)}
@@ -192,10 +192,11 @@
     .hero-niche-badge.niche{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)}
     .hero-niche-badge.subniche{background:rgba(226,237,122,.12);color:var(--hl);border:1px solid rgba(226,237,122,.25)}
     .hero-niche-divider{color:rgba(255,255,255,.25);font-size:.75rem;font-weight:400}
-    @media(max-width:900px){.sec{padding:2rem 2rem}.metric-grid{grid-template-columns:repeat(2,1fr)}.funnel-group.mofu .metric-grid{grid-template-columns:repeat(2,1fr)}.posts-grid{grid-template-columns:repeat(2,1fr)}.insights-grid{grid-template-columns:repeat(2,1fr)}.adj-grid{grid-template-columns:1fr}.goals-grid{grid-template-columns:1fr}}
-    @media(max-width:600px){.sec{padding:1.5rem 1.25rem}.score-badges{gap:.5rem}.score-badge{font-size:.75rem;padding:.4rem .625rem}.hero-pills{gap:.5rem}.metric-grid{grid-template-columns:1fr}.funnel-group.mofu .metric-grid{grid-template-columns:1fr}.posts-grid{grid-template-columns:1fr}.insights-grid{grid-template-columns:1fr}.goals-grid{grid-template-columns:1fr;gap:1rem}.goal-card{padding:1.25rem}}
+    @media(max-width:900px){.sec{padding:2rem 2rem}.metric-grid{grid-template-columns:repeat(2,1fr)}.funnel-group.mofu .metric-grid{grid-template-columns:repeat(2,1fr)}.insights-grid{grid-template-columns:repeat(2,1fr)}.adj-grid{grid-template-columns:1fr}.goals-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){.sec{padding:1.5rem 1.25rem}.score-badges{gap:.5rem}.score-badge{font-size:.75rem;padding:.4rem .625rem}.hero-pills{gap:.5rem}.metric-grid{grid-template-columns:1fr}.funnel-group.mofu .metric-grid{grid-template-columns:1fr}.insights-grid{grid-template-columns:1fr}.goals-grid{grid-template-columns:1fr;gap:1rem}.goal-card{padding:1.25rem}}
     @media(max-width:480px){.score-trend-bars{gap:1.5rem}.trend-col{min-width:38px}.trend-bar-wrap{width:28px;height:60px}}
-    @media print{.hero{background:#0c3387 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.score-trend-section{background:#111112 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.footer{background:#151516 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.wrap{max-width:100%}.metric-grid{grid-template-columns:repeat(2,1fr) !important}.posts-grid{grid-template-columns:repeat(2,1fr) !important}.insights-grid{grid-template-columns:repeat(2,1fr) !important}}
+    @media print{.hero{background:#0c3387 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.score-trend-section{background:#111112 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.footer{background:#151516 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.wrap{max-width:100%}.metric-grid{grid-template-columns:repeat(2,1fr) !important}.insights-grid{grid-template-columns:repeat(2,1fr) !important}}
+      .post-embed{margin:1.25rem 0;display:flex;justify-content:center;overflow:hidden}
   </style>
 </head>
 <body>

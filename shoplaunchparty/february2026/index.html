@@ -25,7 +25,7 @@
       --tofu:#0c3387;--mofu:#7c3aed;--bofu:#10b981;
     }
     body{font-family:'Source Sans 3',sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    header.hero{background:linear-gradient(135deg,#151516 0%,#1a1a1c 100%);color:white;padding:3rem 1.5rem;position:relative;overflow:hidden}
+    header.hero{background:linear-gradient(135deg,#151516 0%,#1a1a1c 100%);color:white;padding:3rem 1.5rem 5rem;position:relative;overflow:hidden}
     header.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(12,51,135,.18),transparent 70%);border-radius:50%;pointer-events:none}
     .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
     .hero-logo{height:34px;width:auto;margin-bottom:1.75rem;filter:brightness(0) invert(1);display:block}
@@ -42,7 +42,7 @@
     .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.75rem}
     .sec-title{font-size:clamp(1.625rem,5vw,2.25rem);font-weight:700;line-height:1.15;color:var(--shadow);margin-bottom:.75rem}
     .sec-sub{font-size:clamp(.9375rem,2vw,1.0625rem);color:var(--text-muted);max-width:750px;font-weight:500;margin-bottom:1.25rem;line-height:1.7}
-    .score-wrap{position:relative;z-index:10;margin:-2rem auto 2rem}
+    .score-wrap{position:relative;z-index:10;margin:-3.5rem auto 2rem}
     .score-card{background:white;border-radius:10px;padding:2rem 1.75rem;box-shadow:0 2px 16px rgba(21,21,22,.1);border:1px solid var(--border);text-align:center;position:relative}
     .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#1a4fc4)}
     .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
@@ -105,8 +105,8 @@
     .goal-kpi-label{font-size:.6875rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
     .goal-kpi-value{font-size:1.5rem;font-weight:700;color:var(--azure)}
     .goal-narrative{font-size:.8125rem;color:var(--text-muted);line-height:1.65}
-    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin-top:1.25rem}
-    .post-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden;box-shadow:0 1px 6px rgba(21,21,22,.06)}
+    .posts-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;max-width:580px;margin:0 auto}
+    .post-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:visible;box-shadow:0 1px 6px rgba(21,21,22,.06)}
     .post-rank-bar{display:flex;justify-content:space-between;align-items:center;padding:.625rem 1rem;font-size:.75rem;font-weight:700}
     .post-rank-bar.rank1{background:linear-gradient(90deg,#0c3387,#1a4fc4);color:white}
     .post-rank-bar.rank2{background:linear-gradient(90deg,#7c3aed,#9d5cf5);color:white}
@@ -122,7 +122,7 @@
     .post-stat{font-size:.75rem;color:var(--text-muted);font-weight:600}
     .post-stat span{display:block;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-bottom:.125rem}
     .post-why{font-size:.8125rem;color:var(--text-muted);line-height:1.65;margin-bottom:1rem}
-    .post-embed{margin-bottom:1rem}
+    .post-embed{margin:1.25rem 0;display:flex;justify-content:center;overflow:hidden}
     .post-embed blockquote{margin:0 auto;max-width:100%}
     .insights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-top:1.25rem}
     .insight-card{background:var(--porcelain);border-radius:8px;padding:1.5rem;border:1px solid var(--border)}
@@ -142,11 +142,32 @@
     @media(max-width:640px){
       .sec{padding:1.5rem 1.25rem}
       .metric-grid{grid-template-columns:1fr}
-      .posts-grid{grid-template-columns:1fr}
+      
       .goals-grid{grid-template-columns:1fr}
       .insights-grid{grid-template-columns:1fr}
       .next-grid{grid-template-columns:1fr}
     }
+  
+    .adj-grid{display:grid;gap:1.25rem}
+        .adj-card{background:white;border-radius:10px;border:1px solid var(--border);overflow:hidden}
+        .adj-header{padding:1rem 1.25rem;display:flex;align-items:center;gap:.875rem;border-bottom:1px solid var(--border)}
+        .adj-type-badge{font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+        .adj-type-badge.doubling{background:rgba(16,185,129,.1);color:#059669}
+        .adj-type-badge.pivoting{background:rgba(239,68,68,.1);color:#dc2626}
+        .adj-type-badge.testing{background:rgba(12,51,135,.1);color:var(--azure)}
+        .adj-meta{font-size:.75rem;color:var(--text-muted)}
+        .adj-body{padding:1.25rem}
+        .adj-what{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.4}
+        .adj-section{margin-bottom:.875rem}
+        .adj-section-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.375rem}
+        .adj-bullets{padding-left:1.1rem;margin:0}
+        .adj-bullets li{font-size:.8125rem;color:var(--text-muted);line-height:1.65;margin-bottom:.25rem}
+        .adj-effective{font-size:.75rem;color:var(--text);font-weight:600;padding:.625rem 1.25rem;background:var(--porcelain);border-top:1px solid var(--border)}
+    .footer{background:#151516;color:rgba(255,255,255,.5);padding:2.5rem 1.5rem;margin-top:2.5rem}
+        .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center}
+        .footer-logo{height:28px;width:auto;filter:brightness(0) invert(1);opacity:.6}
+        .footer-text{font-size:.75rem;line-height:1.7}
+        .footer-text a{color:rgba(255,255,255,.4);text-decoration:none}
   </style>
 </head>
 <body>
@@ -454,6 +475,7 @@
     </div>
   </section>
 
+  
   <section class="sec">
     <p class="sec-label">Analysis</p>
     <h2 class="sec-title">What We Learned</h2>
@@ -462,54 +484,73 @@
       <div class="insight-card">
         <span class="insight-flag win">Win</span>
         <h3 class="insight-title">CTR Continues to Strengthen &mdash; Conversion Path Is Compounding</h3>
-        <p class="insight-body">CTR improved for the second consecutive month (12.50% &rarr; 14.12% &rarr; 15.14%). At 2.5x the Lift ceiling, the content-to-profile conversion path is not just working &mdash; it&rsquo;s getting stronger. This is the clearest signal that the content strategy is building cumulative authority, not just generating one-off engagement.</p>
+        <p class="insight-body">CTR improved for the second consecutive month (12.50% &rarr; 14.12% &rarr; 15.14%). At 2.5&times; the Lift ceiling, this is the clearest signal that the content is attracting the right audience and the profile is converting. The conversion infrastructure is working &mdash; the growth lever now is reach volume.</p>
       </div>
       <div class="insight-card">
         <span class="insight-flag win">Win</span>
         <h3 class="insight-title">Opinion-Led Content Is the Shares Engine</h3>
-        <p class="insight-body">The Feb 26 &ldquo;Shopping small&rdquo; Reel drove <strong>118 shares</strong> &mdash; more than double the entire month&rsquo;s previous share count. The pattern is clear: strong POV content with a clear brand stance activates the share reflex. This format should be a consistent monthly pillar, not an occasional post.</p>
+        <p class="insight-body">The Feb 26 &ldquo;Shopping small&rdquo; Reel drove <strong>118 shares</strong> &mdash; more than double the next-highest post. Opinion-led hooks that challenge assumptions or take a clear stance are the primary organic distribution mechanism for this account. This format needs to be systematized, not treated as a one-off.</p>
       </div>
       <div class="insight-card">
         <span class="insight-flag watch">Watch</span>
         <h3 class="insight-title">Reach Needs Consistent Hook-Driven Distribution</h3>
-        <p class="insight-body">The Feb 3 Reel hit 5,349 views &mdash; but the remaining 9 Reels averaged under 1,700 views. The distribution capability exists; the constraint is hook consistency. <strong>Every Reel needs a curiosity-gap or identity-challenge hook</strong> in the first 2 seconds to trigger algorithm distribution. This is the single highest-leverage fix for March.</p>
+        <p class="insight-body">The Feb 3 Reel hit 5,349 views &mdash; but the remaining 9 Reels averaged under 1,700 views. The distribution gap is a hook problem, not a content quality problem. Every Reel needs a curiosity-gap or identity-challenge hook in the first 2 seconds to replicate the Feb 3 breakout performance consistently.</p>
       </div>
       <div class="insight-card">
         <span class="insight-flag signal">Signal</span>
         <h3 class="insight-title">Watch Time Improving &mdash; Content Depth Is Working</h3>
-        <p class="insight-body">Watch Time improved to 7.10s (+0.54s MoM) despite lower reach. This means the audience that does watch is watching longer &mdash; a signal that content depth and storytelling quality are improving. The path to crossing the 10s ceiling is more tutorial-style and narrative-driven content that rewards viewers who stay.</p>
+        <p class="insight-body">Watch Time improved to 7.10s (+0.54s MoM) despite lower reach. This means the audience that does watch is staying longer &mdash; a sign that content depth and storytelling are landing. The goal now is to get more people into the top of the funnel so more of them experience that depth.</p>
       </div>
     </div>
   </section>
 
   <section class="sec">
-    <p class="sec-label">March Strategy</p>
-    <h2 class="sec-title">Next Steps</h2>
-    <p class="sec-sub">The three highest-leverage priorities for March 2026 based on February&rsquo;s data.</p>
-    <div class="next-grid">
-      <div class="next-card">
-        <p class="next-priority">Priority 1 &mdash; Reach</p>
-        <h3 class="next-title">Standardize Curiosity-Gap Hooks Across All Reels</h3>
-        <p class="next-body">Every Reel in March needs a curiosity-gap or identity-challenge hook in the first 2 seconds. The Feb 3 Reel proved the format works &mdash; now it needs to be the standard, not the exception. Write the hook before writing the script.</p>
+    <p class="sec-label">March Direction</p>
+    <h2 class="sec-title">Strategy Adjustments</h2>
+    <p class="sec-sub">Three strategic adjustments taking effect in March, grounded in February&rsquo;s performance data.</p>
+    <div class="adj-grid">
+      <div class="adj-card">
+        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Content Format &middot; Shares &amp; Reach Driver</span></div>
+        <div class="adj-body">
+          <p class="adj-what">Opinion-led Reels with curiosity-gap hooks &mdash; minimum one strong POV Reel per month with an explicit identity-challenge or contrarian angle</p>
+          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 26 &ldquo;Shopping small&rdquo; Reel drove 118 shares &mdash; the highest of the month and a clear signal of the format&rsquo;s reach potential</li><li>Opinion-led hooks outperform informational hooks for shares and cold reach on boutique retail accounts</li><li>Shares are the primary organic distribution mechanism for this account at Lift stage</li></ul></div>
+          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Shares sustained above the 60 floor in March</li><li>Avg Reach/Day improvement toward the 1,000+ range</li></ul></div>
+        </div>
+        <div class="adj-effective">Effective: March 1, 2026</div>
       </div>
-      <div class="next-card">
-        <p class="next-priority">Priority 2 &mdash; Saves</p>
-        <h3 class="next-title">Add 2&ndash;3 Carousel Utility Posts Per Month</h3>
-        <p class="next-body">Saves at 46 are below the 80 floor. The fix is more carousel utility content: product recommendation lists, &ldquo;what to buy for X&rdquo; guides, and reference-worthy roundups. The Feb 12 Valentine&rsquo;s carousel drove 39 saves alone &mdash; that format needs to run monthly.</p>
+      <div class="adj-card">
+        <div class="adj-header"><span class="adj-type-badge doubling">Doubling Down</span><span class="adj-meta">Hook Strategy &middot; Reach Fix</span></div>
+        <div class="adj-body">
+          <p class="adj-what">Standardize curiosity-gap or identity-challenge hooks across all Reels &mdash; every Reel in March must have a hook that creates pattern interrupt in the first 2 seconds</p>
+          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>The Feb 3 Reel (5,349 views) vs. the average (1,700 views) gap is a hook problem, not a content quality problem</li><li>Curiosity-gap hooks (&ldquo;We have thoughts on this&rdquo;, &ldquo;Here&rsquo;s what no one tells you&rdquo;) drive the initial stop-scroll that determines reach</li><li>Consistent hook quality is the single highest-leverage change available at this stage</li></ul></div>
+          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Average Reel views above 2,500 in March</li><li>Avg Reach/Day improvement toward the 1,000+ Lift floor</li></ul></div>
+        </div>
+        <div class="adj-effective">Effective: March 1, 2026</div>
       </div>
-      <div class="next-card">
-        <p class="next-priority">Priority 3 &mdash; Shares</p>
-        <h3 class="next-title">Schedule One Opinion-Led Reel Per Month</h3>
-        <p class="next-body">The Feb 26 Opinion Reel drove 118 shares. This is the shares engine. One strong POV Reel per month &mdash; with a clear brand stance on indie beauty, small business, or consumer culture &mdash; should be a permanent content pillar for Launch Party.</p>
+      <div class="adj-card">
+        <div class="adj-header"><span class="adj-type-badge testing">Testing Next</span><span class="adj-meta">Format Test &middot; Saves Driver</span></div>
+        <div class="adj-body">
+          <p class="adj-what">Carousel utility posts &mdash; 2&ndash;3 per month featuring product recommendation lists, styling guides, or &ldquo;what to wear for&rdquo; frameworks to drive Saves above the 80 floor</p>
+          <div class="adj-section"><p class="adj-section-label">Rationale</p><ul class="adj-bullets"><li>Saves at 46 are below the 80 Lift floor &mdash; the account is not generating enough &ldquo;bookmark&rdquo; content</li><li>Carousel utility content (gift guides, style roundups, product comparisons) is the highest-save format for boutique retail</li><li>Save-worthy content compounds over time as a discovery mechanism and signals content quality to the algorithm</li></ul></div>
+          <div class="adj-section"><p class="adj-section-label">Expected Outcome</p><ul class="adj-bullets"><li>Saves above the 80 Lift floor in March</li><li>Increased profile authority and long-term follower retention</li></ul></div>
+        </div>
+        <div class="adj-effective">Effective: March 1, 2026</div>
       </div>
     </div>
   </section>
 
 </div>
 
-<footer class="footer-bar">
-  <p>Prepared by <a href="https://scrollmedia.co" target="_blank">Scroll Media</a> &mdash; February 2026 &mdash; Confidential</p>
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="https://reports.scrollmedia.co/assets/scroll-media-logo-white.png" alt="Scroll Media" class="footer-logo" onerror="this.style.display='none'">
+    <div class="footer-text">
+      Prepared by <a href="https://scrollmedia.co">Scroll Media</a> &mdash; February 2026 Performance Report<br>
+      Data sources: Metricool, Instagram Insights &middot; Scoring: Scroll Media Weighted Performance Framework v2.0
+    </div>
+  </div>
 </footer>
+
 
 <script async src="//www.instagram.com/embed.js"></script>
 <script>
