@@ -194,6 +194,245 @@
     @media(max-width:480px){.score-trend-bars{gap:1.5rem}.trend-col{min-width:38px}.trend-bar-wrap{width:28px;height:60px}}
     @media print{.hero{background:#0c3387 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.score-trend-section{background:#111112 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.footer{background:#151516 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.wrap{max-width:100%}.metric-grid{grid-template-columns:repeat(2,1fr) !important}.insights-grid{grid-template-columns:repeat(2,1fr) !important}}
       .post-embed{margin:1.25rem 0;display:flex;justify-content:center;overflow:hidden}
+  
+    /* ── CTA Section ─────────────────────────────────────────────────────── */
+    .cta-section {
+      background: #0f172a;
+      padding: 3.5rem 2rem;
+    }
+    .cta-section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .cta-section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .cta-section-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .cta-section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f8fafc;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+    .cta-section-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin: 0.15rem 0 0;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    /* Primary CTA Card */
+    .cta-primary-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-primary-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+      border-radius: 16px 16px 0 0;
+    }
+    .cta-primary-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.3);
+      color: #a78bfa;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .cta-primary-objective {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #f8fafc;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      line-height: 1.3;
+    }
+    .cta-primary-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .cta-meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .cta-meta-chip strong {
+      color: #f8fafc;
+      font-weight: 600;
+    }
+    .cta-primary-copy-block {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-left: 3px solid #6366f1;
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .cta-copy-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.4rem;
+    }
+    .cta-copy-text {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      font-style: italic;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .cta-primary-rationale {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      margin: 0;
+    }
+    /* Funnel CTA Row */
+    .cta-funnel-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1rem;
+    }
+    .cta-funnel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 768px) {
+      .cta-funnel-grid { grid-template-columns: 1fr; }
+    }
+    .cta-funnel-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .cta-funnel-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cta-stage-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+    }
+    .cta-stage-badge.tofu {
+      background: rgba(16,185,129,0.15);
+      color: #34d399;
+      border: 1px solid rgba(16,185,129,0.25);
+    }
+    .cta-stage-badge.mofu {
+      background: rgba(245,158,11,0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+    .cta-stage-badge.bofu {
+      background: rgba(239,68,68,0.15);
+      color: #f87171;
+      border: 1px solid rgba(239,68,68,0.25);
+    }
+    .cta-funnel-icon {
+      font-size: 1.1rem;
+      opacity: 0.7;
+    }
+    .cta-funnel-type {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #f8fafc;
+      line-height: 1.3;
+    }
+    .cta-funnel-copy {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-style: italic;
+      line-height: 1.5;
+      padding: 0.65rem 0.85rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      border-left: 2px solid rgba(255,255,255,0.1);
+    }
+    .cta-funnel-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .cta-funnel-meta-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.73rem;
+    }
+    .cta-funnel-meta-key {
+      color: rgba(255,255,255,0.35);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      min-width: 70px;
+    }
+    .cta-funnel-meta-val {
+      color: rgba(255,255,255,0.65);
+      line-height: 1.4;
+    }
+    .cta-funnel-rationale {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.55;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 0.75rem;
+      margin-top: auto;
+    }
+
   </style>
 </head>
 <body>
@@ -571,6 +810,101 @@
     </div>
   </section>
 </div>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-section-inner">
+      <div class="cta-section-header">
+        <div class="cta-section-icon">🎯</div>
+        <div>
+          <p class="cta-section-title">March CTA Strategy</p>
+          <p class="cta-section-sub">Call-to-Action Plan &middot; Aligned to Funnel &amp; Goals</p>
+        </div>
+      </div>
+
+      <!-- Primary CTA -->
+      <div class="cta-primary-card">
+        <div class="cta-primary-label">&#9733; Primary Monthly CTA</div>
+        <p class="cta-primary-objective">Drive Community Engagement & In-Store / Event Participation</p>
+        <div class="cta-primary-meta">
+          <div class="cta-meta-chip"><strong>Type:</strong>&nbsp;Limited Availability CTA + Follow CTA</div>
+          <div class="cta-meta-chip"><strong>Mechanism:</strong>&nbsp;Link in Bio → Event Registration or Shop Page</div>
+          <div class="cta-meta-chip"><strong>Primary KPI:</strong>&nbsp;Link Taps / Event Sign-Ups / New Followers</div>
+        </div>
+        <div class="cta-primary-copy-block">
+          <p class="cta-copy-label">Suggested Copy</p>
+          <p class="cta-copy-text">&ldquo;Run Club is back — tap the link in bio to grab your spot before it fills up.&rdquo;</p>
+        </div>
+        <p class="cta-primary-rationale">MEAS Active is a community-first activewear brand where events (Run Club, seasonal launches) are the primary growth engine. The primary CTA for March should leverage upcoming events to drive both in-person participation and follower acquisition. Event-based CTAs create real urgency and give the audience a concrete reason to act now.</p>
+      </div>
+
+      <!-- Funnel CTAs -->
+      <p class="cta-funnel-label">Funnel-Stage CTA Plan</p>
+      <div class="cta-funnel-grid">
+        
+      <div class="cta-funnel-card">
+        <div class="cta-funnel-card-header">
+          <span class="cta-stage-badge tofu">TOFU</span>
+          <span class="cta-funnel-icon">📡</span>
+        </div>
+        <div class="cta-funnel-type">Follow CTA</div>
+        <div class="cta-funnel-copy">&ldquo;Follow along — new drops, Run Club dates, and local events every week.&rdquo;</div>
+        <div class="cta-funnel-meta">
+          <div class="cta-funnel-meta-row">
+            <span class="cta-funnel-meta-key">Mechanism</span>
+            <span class="cta-funnel-meta-val">On-Screen Text CTA</span>
+          </div>
+          <div class="cta-funnel-meta-row">
+            <span class="cta-funnel-meta-key">Primary KPI</span>
+            <span class="cta-funnel-meta-val">New Followers</span>
+          </div>
+        </div>
+        <div class="cta-funnel-rationale">MEAS has strong reach-per-post but low follower conversion. A value-forward Follow CTA on high-reach Reels (Run Club, new arrivals) directly addresses the follower acquisition gap.</div>
+      </div>
+        
+      <div class="cta-funnel-card">
+        <div class="cta-funnel-card-header">
+          <span class="cta-stage-badge mofu">MOFU</span>
+          <span class="cta-funnel-icon">🔥</span>
+        </div>
+        <div class="cta-funnel-type">Question CTA</div>
+        <div class="cta-funnel-copy">&ldquo;What's your go-to run distance? Drop it below — we're building the next route around you.&rdquo;</div>
+        <div class="cta-funnel-meta">
+          <div class="cta-funnel-meta-row">
+            <span class="cta-funnel-meta-key">Mechanism</span>
+            <span class="cta-funnel-meta-val">Caption Comment Prompt</span>
+          </div>
+          <div class="cta-funnel-meta-row">
+            <span class="cta-funnel-meta-key">Primary KPI</span>
+            <span class="cta-funnel-meta-val">Comments</span>
+          </div>
+        </div>
+        <div class="cta-funnel-rationale">Community-building questions that reference the audience's actual running habits drive high comment volume and reinforce MEAS's identity as a local running community — not just a store.</div>
+      </div>
+        
+      <div class="cta-funnel-card">
+        <div class="cta-funnel-card-header">
+          <span class="cta-stage-badge bofu">BOFU</span>
+          <span class="cta-funnel-icon">🎯</span>
+        </div>
+        <div class="cta-funnel-type">Limited Availability CTA</div>
+        <div class="cta-funnel-copy">&ldquo;Spots are limited — tap the link in bio to register for Run Club before they're gone.&rdquo;</div>
+        <div class="cta-funnel-meta">
+          <div class="cta-funnel-meta-row">
+            <span class="cta-funnel-meta-key">Mechanism</span>
+            <span class="cta-funnel-meta-val">Specific Link in Bio → Event Registration Page</span>
+          </div>
+          <div class="cta-funnel-meta-row">
+            <span class="cta-funnel-meta-key">Primary KPI</span>
+            <span class="cta-funnel-meta-val">Link Taps / Event Registrations</span>
+          </div>
+        </div>
+        <div class="cta-funnel-rationale">Real scarcity (limited Run Club spots, limited-edition drops) is MEAS's most powerful conversion lever. This CTA should only be used when the limitation is genuine.</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
 
 <footer class="footer">
   <div class="footer-inner">
