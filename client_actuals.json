@@ -1,0 +1,37 @@
+{
+  "shoplaunchparty": {
+    "stage": "Lift",
+    "january2026": {
+      "total_followers": 5370,
+      "avg_reach_per_day": 1451,
+      "new_followers": 82,
+      "shares": 45,
+      "total_views": 106849,
+      "profile_visits": 928,
+      "avg_watch_time": 6.56,
+      "retention_pct": 44,
+      "saves": 50,
+      "comments": 118,
+      "ctr": 14.12,
+      "link_taps": 131,
+      "pcr": 8.84,
+      "monthly_score": 7.6
+    },
+    "february2026": {
+      "total_followers": 5373,
+      "avg_reach_per_day": 823,
+      "new_followers": 69,
+      "shares": 61,
+      "total_views": 75762,
+      "profile_visits": 621,
+      "avg_watch_time": 7.10,
+      "retention_pct": 43,
+      "saves": 46,
+      "comments": 122,
+      "ctr": 15.14,
+      "link_taps": 94,
+      "pcr": 11.11,
+      "monthly_score": null
+    }
+  }
+}

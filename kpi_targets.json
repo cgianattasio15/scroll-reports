@@ -1,0 +1,67 @@
+{
+  "stages": {
+    "Spark": {
+      "avg_reach_per_day":    {"low": 300,    "high": 1200,    "unit": "number"},
+      "new_followers":        {"low": 40,     "high": 90,      "unit": "number"},
+      "shares":               {"low": 15,     "high": 60,      "unit": "number"},
+      "total_views":          {"low": 10000,  "high": 40000,   "unit": "number"},
+      "comments":             {"low": 15,     "high": 75,      "unit": "number"},
+      "profile_visits":       {"low": 50,     "high": 500,     "unit": "number"},
+      "retention_pct":        {"low": 35,     "high": 50,      "unit": "percent"},
+      "avg_watch_time":       {"low": 3,      "high": 6,       "unit": "seconds"},
+      "saves":                {"low": 20,     "high": 80,      "unit": "number"},
+      "ctr":                  {"low": 3,      "high": 8,       "unit": "percent"},
+      "link_taps":            {"low": 5,      "high": 40,      "unit": "number"},
+      "pcr":                  {"low": 10,     "high": 18,      "unit": "percent"}
+    },
+    "Lift": {
+      "avg_reach_per_day":    {"low": 1500,   "high": 5000,    "unit": "number"},
+      "new_followers":        {"low": 100,    "high": 270,     "unit": "number"},
+      "shares":               {"low": 60,     "high": 300,     "unit": "number"},
+      "total_views":          {"low": 40000,  "high": 150000,  "unit": "number"},
+      "comments":             {"low": 75,     "high": 250,     "unit": "number"},
+      "profile_visits":       {"low": 300,    "high": 2000,    "unit": "number"},
+      "retention_pct":        {"low": 50,     "high": 65,      "unit": "percent"},
+      "avg_watch_time":       {"low": 6,      "high": 10,      "unit": "seconds"},
+      "saves":                {"low": 80,     "high": 400,     "unit": "number"},
+      "ctr":                  {"low": 3,      "high": 6,       "unit": "percent"},
+      "link_taps":            {"low": 30,     "high": 180,     "unit": "number"},
+      "pcr":                  {"low": 10,     "high": 16,      "unit": "percent"}
+    },
+    "Rise": {
+      "avg_reach_per_day":    {"low": 5000,   "high": 20000,   "unit": "number"},
+      "new_followers":        {"low": 300,    "high": 2500,    "unit": "number"},
+      "shares":               {"low": 200,    "high": 2000,    "unit": "number"},
+      "total_views":          {"low": 150000, "high": 800000,  "unit": "number"},
+      "comments":             {"low": 250,    "high": 900,     "unit": "number"},
+      "profile_visits":       {"low": 1500,   "high": 10000,   "unit": "number"},
+      "retention_pct":        {"low": 65,     "high": 80,      "unit": "percent"},
+      "avg_watch_time":       {"low": 10,     "high": 15,      "unit": "seconds"},
+      "saves":                {"low": 300,    "high": 2500,    "unit": "number"},
+      "ctr":                  {"low": 2,      "high": 5,       "unit": "percent"},
+      "link_taps":            {"low": 350,    "high": 3000,    "unit": "number"},
+      "pcr":                  {"low": 8,      "high": 14,      "unit": "percent"}
+    },
+    "Thrive": {
+      "avg_reach_per_day":    {"low": 20000,  "high": 50000,   "unit": "number"},
+      "new_followers":        {"low": 750,    "high": 10000,   "unit": "number"},
+      "shares":               {"low": 750,    "high": 2500,    "unit": "number"},
+      "total_views":          {"low": 650000, "high": 3000000, "unit": "number"},
+      "comments":             {"low": 900,    "high": 3500,    "unit": "number"},
+      "profile_visits":       {"low": 8000,   "high": 40000,   "unit": "number"},
+      "retention_pct":        {"low": 80,     "high": 95,      "unit": "percent"},
+      "avg_watch_time":       {"low": 15,     "high": 25,      "unit": "seconds"},
+      "saves":                {"low": 950,    "high": 5000,    "unit": "number"},
+      "ctr":                  {"low": 1,      "high": 4,       "unit": "percent"},
+      "link_taps":            {"low": 3000,   "high": 15000,   "unit": "number"},
+      "pcr":                  {"low": 5,      "high": 12,      "unit": "percent"}
+    }
+  },
+  "clients": {
+    "shoplaunchparty":    {"stage": "Lift",  "name": "Launch Party"},
+    "laneandkate":        {"stage": "Lift",  "name": "Lane & Kate"},
+    "skinbybrownleeandco":{"stage": "Rise",  "name": "Skin by Brownlee"},
+    "measactive":         {"stage": "Lift",  "name": "MEAS Active"},
+    "upandrunningoh":     {"stage": "Spark", "name": "Up and Running OH"}
+  }
+}

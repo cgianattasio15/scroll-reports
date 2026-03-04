@@ -1,0 +1,146 @@
+{
+  "_note": "All actuals sourced directly from client homebase 05-Performance Data CSVs. Targets from KPI Cheat Sheet. Do not edit manually.",
+  "_kpi_targets": {
+    "Spark": {
+      "avg_reach_per_day":   {"low": 300,   "high": 1200},
+      "new_followers":       {"low": 40,    "high": 90},
+      "shares":              {"low": 15,    "high": 60},
+      "total_views":         {"low": 10000, "high": 40000},
+      "profile_visits":      {"low": 50,    "high": 500},
+      "avg_watch_time":      {"low": 3,     "high": 6},
+      "retention_pct":       {"low": 35,    "high": 50},
+      "saves":               {"low": 20,    "high": 80},
+      "comments":            {"low": 15,    "high": 75},
+      "ctr":                 {"low": 3,     "high": 8},
+      "link_taps":           {"low": 5,     "high": 40},
+      "pcr":                 {"low": 10,    "high": 18}
+    },
+    "Lift": {
+      "avg_reach_per_day":   {"low": 1500,  "high": 5000},
+      "new_followers":       {"low": 100,   "high": 270},
+      "shares":              {"low": 60,    "high": 300},
+      "total_views":         {"low": 40000, "high": 150000},
+      "profile_visits":      {"low": 300,   "high": 2000},
+      "avg_watch_time":      {"low": 6,     "high": 10},
+      "retention_pct":       {"low": 50,    "high": 65},
+      "saves":               {"low": 80,    "high": 400},
+      "comments":            {"low": 75,    "high": 250},
+      "ctr":                 {"low": 3,     "high": 6},
+      "link_taps":           {"low": 30,    "high": 180},
+      "pcr":                 {"low": 10,    "high": 16}
+    },
+    "Rise": {
+      "avg_reach_per_day":   {"low": 5000,  "high": 20000},
+      "new_followers":       {"low": 300,   "high": 2500},
+      "shares":              {"low": 200,   "high": 2000},
+      "total_views":         {"low": 150000,"high": 800000},
+      "profile_visits":      {"low": 1500,  "high": 10000},
+      "avg_watch_time":      {"low": 10,    "high": 15},
+      "retention_pct":       {"low": 65,    "high": 80},
+      "saves":               {"low": 300,   "high": 2500},
+      "comments":            {"low": 250,   "high": 900},
+      "ctr":                 {"low": 2,     "high": 5},
+      "link_taps":           {"low": 350,   "high": 3000},
+      "pcr":                 {"low": 8,     "high": 14}
+    },
+    "Thrive": {
+      "avg_reach_per_day":   {"low": 20000, "high": 50000},
+      "new_followers":       {"low": 750,   "high": 10000},
+      "shares":              {"low": 750,   "high": 2500},
+      "total_views":         {"low": 650000,"high": 3000000},
+      "profile_visits":      {"low": 8000,  "high": 40000},
+      "avg_watch_time":      {"low": 15,    "high": 25},
+      "retention_pct":       {"low": 80,    "high": 95},
+      "saves":               {"low": 950,   "high": 5000},
+      "comments":            {"low": 900,   "high": 3500},
+      "ctr":                 {"low": 1,     "high": 4},
+      "link_taps":           {"low": 3000,  "high": 15000},
+      "pcr":                 {"low": 5,     "high": 12}
+    }
+  },
+  "shoplaunchparty": {
+    "stage": "Lift",
+    "january2026": {
+      "total_followers": 5370, "avg_reach_per_day": 1451, "new_followers": 82,
+      "shares": 45, "total_views": 106849, "profile_visits": 928,
+      "avg_watch_time": 6.56, "retention_pct": 44, "saves": 50,
+      "comments": 118, "ctr": 14.12, "link_taps": 131, "pcr": 8.84,
+      "monthly_score": 7.6
+    },
+    "february2026": {
+      "total_followers": 5373, "avg_reach_per_day": 823, "new_followers": 69,
+      "shares": 61, "total_views": 75762, "profile_visits": 621,
+      "avg_watch_time": 7.10, "retention_pct": 43, "saves": 46,
+      "comments": 122, "ctr": 15.14, "link_taps": 94, "pcr": 11.11,
+      "monthly_score": null
+    }
+  },
+  "laneandkate": {
+    "stage": "Lift",
+    "january2026": {
+      "total_followers": 7111, "avg_reach_per_day": 446, "new_followers": 78,
+      "shares": 63, "total_views": 39612, "profile_visits": 694,
+      "avg_watch_time": 3.50, "retention_pct": 30.49, "saves": 87,
+      "comments": 42, "ctr": 21.47, "link_taps": 149, "pcr": 11.24,
+      "monthly_score": 8.1
+    },
+    "february2026": {
+      "total_followers": 7143, "avg_reach_per_day": 600, "new_followers": 79,
+      "shares": 34, "total_views": 57910, "profile_visits": 761,
+      "avg_watch_time": 5.00, "retention_pct": 15.83, "saves": 6,
+      "comments": 27, "ctr": 18.13, "link_taps": 138, "pcr": 10.38,
+      "monthly_score": null
+    }
+  },
+  "skinbybrownleeandco": {
+    "stage": "Rise",
+    "january2026": {
+      "total_followers": 32606, "avg_reach_per_day": 2238, "new_followers": 359,
+      "shares": 77, "total_views": 181257, "profile_visits": 2018,
+      "avg_watch_time": 8.82, "retention_pct": 39, "saves": 112,
+      "comments": 155, "ctr": 16.35, "link_taps": 330, "pcr": 17.79,
+      "monthly_score": 8.0
+    },
+    "february2026": {
+      "total_followers": 32866, "avg_reach_per_day": 2967, "new_followers": 481,
+      "shares": 38, "total_views": 189316, "profile_visits": 3083,
+      "avg_watch_time": 7.50, "retention_pct": 24, "saves": 84,
+      "comments": 97, "ctr": 13.01, "link_taps": 401, "pcr": 15.60,
+      "monthly_score": null
+    }
+  },
+  "measactive": {
+    "stage": "Lift",
+    "january2026": {
+      "total_followers": 10203, "avg_reach_per_day": 1252, "new_followers": 318,
+      "shares": 74, "total_views": 119954, "profile_visits": 1977,
+      "avg_watch_time": 5.29, "retention_pct": 44, "saves": 21,
+      "comments": 119, "ctr": 14.11, "link_taps": 279, "pcr": 16.08,
+      "monthly_score": 8.6
+    },
+    "february2026": {
+      "total_followers": 10200, "avg_reach_per_day": 627, "new_followers": 84,
+      "shares": 40, "total_views": 51588, "profile_visits": 1015,
+      "avg_watch_time": 5.25, "retention_pct": 49, "saves": 3,
+      "comments": 118, "ctr": 13.00, "link_taps": 132, "pcr": 8.28,
+      "monthly_score": null
+    }
+  },
+  "upandrunningoh": {
+    "stage": "Spark",
+    "january2026": {
+      "total_followers": 2304, "avg_reach_per_day": 166, "new_followers": 24,
+      "shares": 13, "total_views": 15715, "profile_visits": 200,
+      "avg_watch_time": 6.00, "retention_pct": 23, "saves": 1,
+      "comments": 7, "ctr": 5.00, "link_taps": 10, "pcr": 12.00,
+      "monthly_score": 7.5
+    },
+    "february2026": {
+      "total_followers": 2307, "avg_reach_per_day": 1772, "new_followers": 27,
+      "shares": 41, "total_views": 35614, "profile_visits": 249,
+      "avg_watch_time": 7.50, "retention_pct": 32, "saves": 3,
+      "comments": 24, "ctr": 2.41, "link_taps": 6, "pcr": 10.84,
+      "monthly_score": 8.2
+    }
+  }
+}
