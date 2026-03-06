@@ -304,6 +304,23 @@
     .goal-card.goal-ontrack::before { background: var(--azure); }
     .goal-card.goal-building::before { background: #f59e0b; }
     .goal-card.goal-watch::before { background: #ef4444; }
+    /* Cumulative funnel health */
+    .goal-health-bar-wrap{display:flex;align-items:center;gap:.625rem;margin:.125rem 0 .5rem}
+    .goal-health-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+    .goal-health-fill{height:100%;border-radius:3px;transition:width .4s ease}
+    .goal-health-label{font-size:.6875rem;font-weight:600;color:var(--text-muted);white-space:nowrap}
+    .goal-metric-mini-grid{display:flex;flex-direction:column;gap:.375rem;background:var(--porcelain);border-radius:8px;padding:.75rem .875rem}
+    .goal-mini-metric{display:flex;align-items:center;gap:.5rem}
+    .goal-mini-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .goal-mini-dot.exceed{background:#10b981}
+    .goal-mini-dot.ontrack{background:var(--azure)}
+    .goal-mini-dot.watch{background:#f59e0b}
+    .goal-mini-name{font-size:.75rem;color:var(--text-muted);flex:1;font-weight:500}
+    .goal-mini-val{font-size:.75rem;font-weight:700;color:var(--shadow)}
+    .goal-mini-badge{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .45rem;border-radius:10px;white-space:nowrap;margin-left:.25rem}
+    .goal-mini-badge.exceed{background:rgba(16,185,129,.1);color:#059669}
+    .goal-mini-badge.ontrack{background:rgba(12,51,135,.1);color:var(--azure)}
+    .goal-mini-badge.watch{background:rgba(245,158,11,.1);color:#d97706}
     .goal-funnel-tag {
       display: inline-flex;
       align-items: center;
@@ -786,64 +803,144 @@
 </div>
 </div>
 
-<!-- BUSINESS GOALS SECTION -->
+<!-- BUSINESS GOALS SECTION — Cumulative Funnel Health -->
 <div class="goals-section wrap">
-<div class="goals-section-header">
-<p class="goals-section-label">Business Goals</p>
-<h2 class="goals-section-title">How January Moves the Needle</h2>
-<p class="goals-section-sub">Your three core business goals, mapped to January’s social performance. Every metric we track connects directly to one of these outcomes.</p>
-</div>
-<div class="goals-grid">
-<div class="goal-card goal-building">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot tofu"></span>
-          Top of Funnel — Awareness
+  <div class="goals-section-header">
+    <p class="goals-section-label">Business Goals</p>
+    <h2 class="goals-section-title">Funnel Health Check</h2>
+    <p class="goals-section-sub">January performance evaluated across all three funnel stages &mdash; each goal assessed by the full set of metrics that drive it, not a single KPI.</p>
+  </div>
+  <div class="goals-grid">
+
+    <!-- TOFU CARD -->
+    <div class="goal-card goal-ontrack">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot tofu"></span>Top of Funnel &mdash; Awareness</div>
+      <div class="goal-title">Build Reach & Discoverability for Skincare Education</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:50%;background:#0c3387"></div>
         </div>
-<div class="goal-title">Drive E-Commerce Discovery for Perimenopause Skincare</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Total Views</div>
-<div class="goal-kpi-value">181,257</div>
-<div class="goal-kpi-delta pos">↑ +37.7% vs. Dec — Strongest month since launch</div>
-</div>
-<span class="goal-status-badge building">Building</span>
-</div>
-<p class="goal-narrative">Views surged 37.7% MoM to 181,257 — the account’s highest total since launch. Avg Reach/Day (2,238) is still below the Rise floor (5,000), but the trajectory is strong. The authority-builder format is driving the growth. Shares (77) doubled MoM, expanding organic reach beyond the existing audience.</p>
-</div>
-<div class="goal-card goal-exceed">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot bofu"></span>
-          Bottom of Funnel — Conversion
+        <span class="goal-health-label">2 of 4 metrics on track</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Avg Reach/Day</span>
+            <span class="goal-mini-val">2,238</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">New Followers</span>
+            <span class="goal-mini-val">359</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Shares</span>
+            <span class="goal-mini-val">91</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Total Views</span>
+            <span class="goal-mini-val">181,257</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">New Followers (359) and Views (181,257) are on track — strong organic distribution. Reach/Day (2,238) and Shares (91) are below the Rise floor. The perimenopause content series is driving views and follows; shareable formats need more emphasis to push Shares above floor.</p>
+        <span class="goal-status-badge ontrack">On Track</span>
+      </div>
+    </div>
+
+    <!-- MOFU CARD -->
+    <div class="goal-card goal-ontrack">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot mofu"></span>Middle of Funnel &mdash; Engagement</div>
+      <div class="goal-title">Establish Authority & Trust Through Educational Content</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:40%;background:#ef4444"></div>
         </div>
-<div class="goal-title">Drive Skin Quiz Sign-Ups &amp; E-Commerce Product Sales</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Click-Through Rate</div>
-<div class="goal-kpi-value">16.4%</div>
-<div class="goal-kpi-delta neg">↓ 1.44pts vs. Dec — Still 3× the Rise ceiling</div>
-</div>
-<span class="goal-status-badge exceed">Exceeding</span>
-</div>
-<p class="goal-narrative">CTR at 16.4% is more than 3× the Rise stage ceiling (5%). Link Taps hit 330 — just below the 350 floor but confirming the bio link strategy is driving consistent traffic to the Skin Quiz and shop. PCR at 17.8% is also above the Rise ceiling, confirming the profile-to-follower conversion path is strong.</p>
-</div>
-<div class="goal-card goal-ontrack">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot mofu"></span>
-          Middle of Funnel — Engagement
+        <span class="goal-health-label">2 of 5 metrics on track</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Profile Visits</span>
+            <span class="goal-mini-val">2,018</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Avg Watch Time</span>
+            <span class="goal-mini-val">8.8s</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Retention %</span>
+            <span class="goal-mini-val">39%</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Saves</span>
+            <span class="goal-mini-val">111</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Comments</span>
+            <span class="goal-mini-val">153</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">Profile Visits (2,018) and Watch Time (8.8s) are on track — the content is holding attention. Retention (39%), Saves (111), and Comments (153) are below the Rise floor. The audience is watching but not saving or commenting at scale. More opinion-led and save-worthy content is the path forward.</p>
+        <span class="goal-status-badge ontrack">On Track</span>
+      </div>
+    </div>
+
+    <!-- BOFU CARD -->
+    <div class="goal-card goal-exceed">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot bofu"></span>Bottom of Funnel &mdash; Conversion</div>
+      <div class="goal-title">Drive Product Sales & Skin Quiz Completions</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:100%;background:#10b981"></div>
         </div>
-<div class="goal-title">Build Trust Through Expert Skincare Education</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Saves</div>
-<div class="goal-kpi-value">112</div>
-<div class="goal-kpi-delta pos">↑ +69 vs. Dec — 2.6× improvement MoM</div>
+        <span class="goal-health-label">3 of 3 metrics on track or exceeding</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">CTR</span>
+            <span class="goal-mini-val">16.4%</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Link Taps</span>
+            <span class="goal-mini-val">330</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">PCR</span>
+            <span class="goal-mini-val">17.8%</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">CTR (16.4%) and PCR (17.8%) are both exceeding — the profile-to-product conversion path is strong. Link Taps (330) are on track. All CTAs are aligned to product sales and the skin quiz — the right direction for this account.</p>
+        <span class="goal-status-badge exceed">Exceeding</span>
+      </div>
+    </div>
+
+  </div>
 </div>
-<span class="goal-status-badge ontrack">On Track</span>
-</div>
-<p class="goal-narrative">Saves jumped from 43 in December to 112 in January — a 2.6× improvement. The authority-builder format (“5 Things to Stop After a Facial”) drove 32 saves alone. Watch Time climbed to 8.8s, approaching the Rise floor of 10s. The audience is spending more time with the content and saving it for future reference — both signals of growing trust.</p>
-</div>
-</div>
-</div>
+
 <!-- END BUSINESS GOALS SECTION -->
 <section class="sec">
 <p class="sec-label">Performance Dashboard</p>

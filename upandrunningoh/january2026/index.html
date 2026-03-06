@@ -191,6 +191,23 @@
     .goal-action{font-size:.75rem;font-weight:600;color:var(--azure);display:flex;align-items:flex-start;gap:.375rem;padding-top:.625rem;border-top:1px solid var(--border)}
     .goal-action-label{font-size:.625rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--azure);white-space:nowrap;margin-top:.05rem}
     .goal-action-text{font-size:.8125rem;color:var(--text);font-weight:500;line-height:1.5}
+    /* Cumulative funnel health */
+    .goal-health-bar-wrap{display:flex;align-items:center;gap:.625rem;margin:.125rem 0 .5rem}
+    .goal-health-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+    .goal-health-fill{height:100%;border-radius:3px;transition:width .4s ease}
+    .goal-health-label{font-size:.6875rem;font-weight:600;color:var(--text-muted);white-space:nowrap}
+    .goal-metric-mini-grid{display:flex;flex-direction:column;gap:.375rem;background:var(--porcelain);border-radius:8px;padding:.75rem .875rem}
+    .goal-mini-metric{display:flex;align-items:center;gap:.5rem}
+    .goal-mini-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .goal-mini-dot.exceed{background:#10b981}
+    .goal-mini-dot.ontrack{background:var(--azure)}
+    .goal-mini-dot.watch{background:#f59e0b}
+    .goal-mini-name{font-size:.75rem;color:var(--text-muted);flex:1;font-weight:500}
+    .goal-mini-val{font-size:.75rem;font-weight:700;color:var(--shadow)}
+    .goal-mini-badge{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .45rem;border-radius:10px;white-space:nowrap;margin-left:.25rem}
+    .goal-mini-badge.exceed{background:rgba(16,185,129,.1);color:#059669}
+    .goal-mini-badge.ontrack{background:rgba(12,51,135,.1);color:var(--azure)}
+    .goal-mini-badge.watch{background:rgba(245,158,11,.1);color:#d97706}
     .hero-niche-row{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
     .hero-niche-badge{display:inline-flex;align-items:center;font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .75rem;border-radius:20px}
     .hero-niche-badge.niche{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)}
@@ -507,56 +524,141 @@
     </div>
   </div>
 
-  <!-- BUSINESS GOALS SECTION -->
+  <!-- BUSINESS GOALS SECTION — Cumulative Funnel Health -->
   <div class="goals-section wrap">
     <div class="goals-section-header">
       <p class="goals-section-label">Business Goals</p>
-      <h2 class="goals-section-title">How January Moves the Needle</h2>
-      <p class="goals-section-sub">Your three core business goals, mapped to January&rsquo;s social performance.</p>
+      <h2 class="goals-section-title">Funnel Health Check</h2>
+      <p class="goals-section-sub">January performance evaluated across all three funnel stages &mdash; each goal assessed by the full set of metrics that drive it, not a single KPI.</p>
     </div>
     <div class="goals-grid">
-      <div class="goal-card goal-exceed">
-        <div class="goal-funnel-tag"><span class="goal-funnel-dot tofu"></span>Top of Funnel &mdash; Awareness</div>
-        <div class="goal-title">Build Brand Awareness in the Dayton &amp; Troy Running Community</div>
-        <div class="goal-status-row">
-          <div class="goal-kpi-block" style="flex:1">
-            <div class="goal-kpi-label">Avg. Reach / Day</div>
-            <div class="goal-kpi-value">166</div>
-            <div class="goal-kpi-delta neg">&darr; 724 vs. Dec &mdash; Post-holiday baseline</div>
-          </div>
-          <span class="goal-status-badge watch">Building</span>
-        </div>
-        <p class="goal-narrative">Avg Reach/Day at 166 is below the Spark floor of 300 &mdash; but this is a post-holiday baseline for a Month 3 account. The Frozen Feet Challenge (7,226 views) drove 46% of January&rsquo;s total reach from a single post. Community challenge and event content is the lever to push Avg Reach/Day above 300 in February.</p>
-      </div>
-      <div class="goal-card goal-exceed">
-        <div class="goal-funnel-tag"><span class="goal-funnel-dot mofu"></span>Middle of Funnel &mdash; Engagement</div>
-        <div class="goal-title">Build a Loyal Running Community Around the Store</div>
-        <div class="goal-status-row">
-          <div class="goal-kpi-block" style="flex:1">
-            <div class="goal-kpi-label">Avg Watch Time</div>
-            <div class="goal-kpi-value">6.0s</div>
-            <div class="goal-kpi-delta pos">At Spark ceiling &mdash; improving MoM</div>
-          </div>
-          <span class="goal-status-badge exceed">Exceeding</span>
-        </div>
-        <p class="goal-narrative">Watch Time at 6.0s is at the Spark ceiling and improving MoM. Retention at 23% is on track within the 20&ndash;30% range. Comments at 7 are below the 10 floor &mdash; the fix is explicit question CTAs on every post. The brand intro Reel (9.23s watch time) confirms that authentic, community-first store identity content is the engagement driver.</p>
-      </div>
+
+      <!-- TOFU CARD -->
       <div class="goal-card goal-ontrack">
-        <div class="goal-funnel-tag"><span class="goal-funnel-dot bofu"></span>Bottom of Funnel &mdash; Conversion</div>
-        <div class="goal-title">Drive In-Store Foot Traffic &amp; Event Registrations</div>
-        <div class="goal-status-row">
-          <div class="goal-kpi-block" style="flex:1">
-            <div class="goal-kpi-label">Shares</div>
-               <div class="goal-kpi-value">13</div>
-            <div class="goal-kpi-delta pos">&uarr; 7 vs. Dec &mdash; On track within Spark range</div>
+        <div class="goal-funnel-tag"><span class="goal-funnel-dot tofu"></span>Top of Funnel &mdash; Awareness</div>
+        <div class="goal-title">Build Brand Awareness & Local Discoverability</div>
+        <div class="goal-health-bar-wrap">
+          <div class="goal-health-bar">
+            <div class="goal-health-fill" style="width:100%;background:#10b981"></div>
           </div>
+          <span class="goal-health-label">All 4 metrics on track or exceeding</span>
+        </div>
+        <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Avg Reach/Day</span>
+            <span class="goal-mini-val">166</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">New Followers</span>
+            <span class="goal-mini-val">24</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Shares</span>
+            <span class="goal-mini-val">13</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Total Views</span>
+            <span class="goal-mini-val">15,715</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+        </div>
+        <div class="goal-status-row" style="margin-top:auto">
+          <p class="goal-narrative">All four TOFU metrics are on track for a Spark-stage account — Reach/Day (166), New Followers (24), Shares (13), and Views (15,715) are all within the Spark range. A clean first month with solid distribution fundamentals in place.</p>
           <span class="goal-status-badge ontrack">On Track</span>
         </div>
-        <p class="goal-narrative">Shares at 13 are on track within the Spark range (10&ndash;60). The brand intro Reel (48 shares) drove the majority of January&rsquo;s total &mdash; confirming that authentic store identity content has strong pass-along value. Link Taps at 10 are on track. For a local running store, the primary conversion mechanism is in-store foot traffic, not link clicks &mdash; the Frozen Feet Challenge registration link in bio is the primary conversion path.</p>
-          <span class="goal-action-label">Feb Focus</span>
-          <span class="goal-action-text">Lead every Frozen Feet Challenge post with an explicit &ldquo;Register now &mdash; link in bio&rdquo; CTA to drive measurable online-to-offline conversion.</span>
+      </div>
+
+      <!-- MOFU CARD -->
+      <div class="goal-card goal-ontrack">
+        <div class="goal-funnel-tag"><span class="goal-funnel-dot mofu"></span>Middle of Funnel &mdash; Engagement</div>
+        <div class="goal-title">Establish Trust & Community Connection</div>
+        <div class="goal-health-bar-wrap">
+          <div class="goal-health-bar">
+            <div class="goal-health-fill" style="width:60%;background:#0c3387"></div>
+          </div>
+          <span class="goal-health-label">3 of 5 metrics on track</span>
+        </div>
+        <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Profile Visits</span>
+            <span class="goal-mini-val">200</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">Avg Watch Time</span>
+            <span class="goal-mini-val">6.0s</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Retention %</span>
+            <span class="goal-mini-val">23%</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Saves</span>
+            <span class="goal-mini-val">1</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Comments</span>
+            <span class="goal-mini-val">7</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+        </div>
+        <div class="goal-status-row" style="margin-top:auto">
+          <p class="goal-narrative">Watch Time (6.0s) is exceeding and Profile Visits (200) and Comments (7) are on track. Retention (23%) and Saves (1) are below floor. The audience is watching but not saving — more reference-worthy, save-worthy content (product guides, local tips) is the path to improving both metrics.</p>
+          <span class="goal-status-badge ontrack">On Track</span>
         </div>
       </div>
+
+      <!-- BOFU CARD -->
+      <div class="goal-card goal-watch">
+        <div class="goal-funnel-tag"><span class="goal-funnel-dot bofu"></span>Bottom of Funnel &mdash; Conversion</div>
+        <div class="goal-title">Drive Store Visits & Product Inquiries</div>
+        <div class="goal-health-bar-wrap">
+          <div class="goal-health-bar">
+            <div class="goal-health-fill" style="width:33%;background:#ef4444"></div>
+          </div>
+          <span class="goal-health-label">1 of 3 metrics on track</span>
+        </div>
+        <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">CTR</span>
+            <span class="goal-mini-val">5.0%</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Link Taps</span>
+            <span class="goal-mini-val">10</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">PCR</span>
+            <span class="goal-mini-val">12.0%</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+        </div>
+        <div class="goal-status-row" style="margin-top:auto">
+          <p class="goal-narrative">PCR (12.0%) is on track. CTR (5.0%) and Link Taps (10) are below the Spark floor — the profile-to-link conversion path needs a stronger bio link CTA and a more compelling destination. This is a first-month baseline; improvement is expected as content volume and consistency build.</p>
+          <span class="goal-status-badge watch">Watch</span>
+        </div>
+      </div>
+
     </div>
   </div>
 

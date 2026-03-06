@@ -304,6 +304,23 @@
     .goal-card.goal-ontrack::before { background: var(--azure); }
     .goal-card.goal-building::before { background: #f59e0b; }
     .goal-card.goal-watch::before { background: #ef4444; }
+    /* Cumulative funnel health */
+    .goal-health-bar-wrap{display:flex;align-items:center;gap:.625rem;margin:.125rem 0 .5rem}
+    .goal-health-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+    .goal-health-fill{height:100%;border-radius:3px;transition:width .4s ease}
+    .goal-health-label{font-size:.6875rem;font-weight:600;color:var(--text-muted);white-space:nowrap}
+    .goal-metric-mini-grid{display:flex;flex-direction:column;gap:.375rem;background:var(--porcelain);border-radius:8px;padding:.75rem .875rem}
+    .goal-mini-metric{display:flex;align-items:center;gap:.5rem}
+    .goal-mini-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .goal-mini-dot.exceed{background:#10b981}
+    .goal-mini-dot.ontrack{background:var(--azure)}
+    .goal-mini-dot.watch{background:#f59e0b}
+    .goal-mini-name{font-size:.75rem;color:var(--text-muted);flex:1;font-weight:500}
+    .goal-mini-val{font-size:.75rem;font-weight:700;color:var(--shadow)}
+    .goal-mini-badge{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .45rem;border-radius:10px;white-space:nowrap;margin-left:.25rem}
+    .goal-mini-badge.exceed{background:rgba(16,185,129,.1);color:#059669}
+    .goal-mini-badge.ontrack{background:rgba(12,51,135,.1);color:var(--azure)}
+    .goal-mini-badge.watch{background:rgba(245,158,11,.1);color:#d97706}
     .goal-funnel-tag {
       display: inline-flex;
       align-items: center;
@@ -786,64 +803,144 @@
 </div>
 </div>
 
-<!-- BUSINESS GOALS SECTION -->
+<!-- BUSINESS GOALS SECTION — Cumulative Funnel Health -->
 <div class="goals-section wrap">
-<div class="goals-section-header">
-<p class="goals-section-label">Business Goals</p>
-<h2 class="goals-section-title">How January Moves the Needle</h2>
-<p class="goals-section-sub">Your three core business goals, mapped to January’s social performance. Every metric we track connects directly to one of these outcomes.</p>
-</div>
-<div class="goals-grid">
-<div class="goal-card goal-building">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot tofu"></span>
-          Top of Funnel — Awareness
+  <div class="goals-section-header">
+    <p class="goals-section-label">Business Goals</p>
+    <h2 class="goals-section-title">Funnel Health Check</h2>
+    <p class="goals-section-sub">January performance evaluated across all three funnel stages &mdash; each goal assessed by the full set of metrics that drive it, not a single KPI.</p>
+  </div>
+  <div class="goals-grid">
+
+    <!-- TOFU CARD -->
+    <div class="goal-card goal-watch">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot tofu"></span>Top of Funnel &mdash; Awareness</div>
+      <div class="goal-title">Grow Brand Awareness & Discoverability in the Jewelry Market</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:25%;background:#ef4444"></div>
         </div>
-<div class="goal-title">Drive Discovery &amp; Brand Awareness for Custom Jewelry</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Avg. Reach / Day</div>
-<div class="goal-kpi-value">446</div>
-<div class="goal-kpi-delta neg">↓ 301 vs. Dec — Post-holiday normalization</div>
-</div>
-<span class="goal-status-badge building">Building</span>
-</div>
-<p class="goal-narrative">December’s reach was inflated by holiday gifting traffic. January’s 446/day is below the Lift floor, but the Jan 22 Product Feature Reel (3,554 views) shows the account can generate strong individual post performance. Consistent product storytelling is the reach lever for February.</p>
-</div>
-<div class="goal-card goal-exceed">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot bofu"></span>
-          Bottom of Funnel — Conversion
+        <span class="goal-health-label">1 of 4 metrics on track</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Avg Reach/Day</span>
+            <span class="goal-mini-val">446</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">New Followers</span>
+            <span class="goal-mini-val">78</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Shares</span>
+            <span class="goal-mini-val">63</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Total Views</span>
+            <span class="goal-mini-val">39,612</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">Shares (63) are on track — the content is shareable when it lands. But Reach/Day (446), New Followers (78), and Views (39,612) are all below the Lift floor. Distribution is the core constraint for this account in January.</p>
+        <span class="goal-status-badge watch">Watch</span>
+      </div>
+    </div>
+
+    <!-- MOFU CARD -->
+    <div class="goal-card goal-ontrack">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot mofu"></span>Middle of Funnel &mdash; Engagement</div>
+      <div class="goal-title">Build an Engaged Community of Jewelry Enthusiasts</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:40%;background:#ef4444"></div>
         </div>
-<div class="goal-title">Drive Qualified Consultations &amp; Custom Bookings</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Click-Through Rate</div>
-<div class="goal-kpi-value">21.5%</div>
-<div class="goal-kpi-delta pos">↑ +5.64pts vs. Dec — 3× the Lift ceiling</div>
-</div>
-<span class="goal-status-badge exceed">Exceeding</span>
-</div>
-<p class="goal-narrative">At 21.5%, CTR is more than 3× the Lift stage ceiling of 6%. The people discovering Lane &amp; Kate are converting to profile visits — and from there, to consultation bookings — at an extraordinary rate. Link Taps hit 149, confirming the bio link strategy is working. This is the strongest conversion signal in the account’s history.</p>
-</div>
-<div class="goal-card goal-ontrack">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot mofu"></span>
-          Middle of Funnel — Engagement
+        <span class="goal-health-label">2 of 5 metrics on track</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Profile Visits</span>
+            <span class="goal-mini-val">694</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Avg Watch Time</span>
+            <span class="goal-mini-val">3.5s</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Retention %</span>
+            <span class="goal-mini-val">30%</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Saves</span>
+            <span class="goal-mini-val">87</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Comments</span>
+            <span class="goal-mini-val">42</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">Profile Visits (694) and Saves (87) are on track — the audience that finds the content engages meaningfully. Watch Time (3.5s), Retention (30%), and Comments (42) are below floor. Longer, more structured content is the path to improving completion and conversation.</p>
+        <span class="goal-status-badge ontrack">On Track</span>
+      </div>
+    </div>
+
+    <!-- BOFU CARD -->
+    <div class="goal-card goal-exceed">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot bofu"></span>Bottom of Funnel &mdash; Conversion</div>
+      <div class="goal-title">Drive In-Store Consultations & Custom Order Inquiries</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:100%;background:#10b981"></div>
         </div>
-<div class="goal-title">Build Community &amp; Trust Through Education-Led Content</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Saves</div>
-<div class="goal-kpi-value">87</div>
-<div class="goal-kpi-delta pos">↑ +70 vs. Dec — 5× improvement MoM</div>
+        <span class="goal-health-label">3 of 3 metrics on track or exceeding</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">CTR</span>
+            <span class="goal-mini-val">21.5%</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Link Taps</span>
+            <span class="goal-mini-val">149</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">PCR</span>
+            <span class="goal-mini-val">11.2%</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">CTR at 21.5% is exceptional — nearly 4x the Lift ceiling. Link Taps (149) and PCR (11.2%) are both on track. The conversion infrastructure is working; the only constraint is reach volume feeding the top of the funnel.</p>
+        <span class="goal-status-badge exceed">Exceeding</span>
+      </div>
+    </div>
+
+  </div>
 </div>
-<span class="goal-status-badge ontrack">On Track</span>
-</div>
-<p class="goal-narrative">Saves jumped from 17 in December to 87 in January — a 5× improvement. The Jan 22 Product Feature Carousel drove 73 of those saves. The formula is confirmed: aspirational product reveal + specific design language + authentic brand voice = saves. This is the template to replicate in February.</p>
-</div>
-</div>
-</div>
+
 <!-- END BUSINESS GOALS SECTION -->
 <section class="sec">
 <p class="sec-label">Performance Dashboard</p>

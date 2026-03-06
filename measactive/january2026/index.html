@@ -304,6 +304,23 @@
     .goal-card.goal-ontrack::before { background: var(--azure); }
     .goal-card.goal-building::before { background: #f59e0b; }
     .goal-card.goal-watch::before { background: #ef4444; }
+    /* Cumulative funnel health */
+    .goal-health-bar-wrap{display:flex;align-items:center;gap:.625rem;margin:.125rem 0 .5rem}
+    .goal-health-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+    .goal-health-fill{height:100%;border-radius:3px;transition:width .4s ease}
+    .goal-health-label{font-size:.6875rem;font-weight:600;color:var(--text-muted);white-space:nowrap}
+    .goal-metric-mini-grid{display:flex;flex-direction:column;gap:.375rem;background:var(--porcelain);border-radius:8px;padding:.75rem .875rem}
+    .goal-mini-metric{display:flex;align-items:center;gap:.5rem}
+    .goal-mini-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .goal-mini-dot.exceed{background:#10b981}
+    .goal-mini-dot.ontrack{background:var(--azure)}
+    .goal-mini-dot.watch{background:#f59e0b}
+    .goal-mini-name{font-size:.75rem;color:var(--text-muted);flex:1;font-weight:500}
+    .goal-mini-val{font-size:.75rem;font-weight:700;color:var(--shadow)}
+    .goal-mini-badge{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .45rem;border-radius:10px;white-space:nowrap;margin-left:.25rem}
+    .goal-mini-badge.exceed{background:rgba(16,185,129,.1);color:#059669}
+    .goal-mini-badge.ontrack{background:rgba(12,51,135,.1);color:var(--azure)}
+    .goal-mini-badge.watch{background:rgba(245,158,11,.1);color:#d97706}
     .goal-funnel-tag {
       display: inline-flex;
       align-items: center;
@@ -786,64 +803,144 @@
 </div>
 </div>
 
-<!-- BUSINESS GOALS SECTION -->
+<!-- BUSINESS GOALS SECTION — Cumulative Funnel Health -->
 <div class="goals-section wrap">
-<div class="goals-section-header">
-<p class="goals-section-label">Business Goals</p>
-<h2 class="goals-section-title">How January Moves the Needle</h2>
-<p class="goals-section-sub">Your three core business goals, mapped to January’s social performance. Every metric we track connects directly to one of these outcomes.</p>
-</div>
-<div class="goals-grid">
-<div class="goal-card goal-ontrack">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot tofu"></span>
-          Top of Funnel — Awareness
+  <div class="goals-section-header">
+    <p class="goals-section-label">Business Goals</p>
+    <h2 class="goals-section-title">Funnel Health Check</h2>
+    <p class="goals-section-sub">January performance evaluated across all three funnel stages &mdash; each goal assessed by the full set of metrics that drive it, not a single KPI.</p>
+  </div>
+  <div class="goals-grid">
+
+    <!-- TOFU CARD -->
+    <div class="goal-card goal-exceed">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot tofu"></span>Top of Funnel &mdash; Awareness</div>
+      <div class="goal-title">Grow Brand Awareness & Community Reach</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:75%;background:#10b981"></div>
         </div>
-<div class="goal-title">Drive E-Commerce Discovery &amp; DTC Sales for Performance Activewear</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Total Views</div>
-<div class="goal-kpi-value">119,954</div>
-<div class="goal-kpi-delta pos">↑ +35.2% vs. Dec — Account’s highest month</div>
-</div>
-<span class="goal-status-badge ontrack">On Track</span>
-</div>
-<p class="goal-narrative">Views surged 35.2% to 119,954 — the account’s highest total since launch. The Ambassador Program launch sequence (teaser + launch carousel) drove the bulk of the growth. New Followers hit 318 — above the Lift ceiling of 270 — confirming the content is reaching new audiences and converting them to followers.</p>
-</div>
-<div class="goal-card goal-exceed">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot bofu"></span>
-          Bottom of Funnel — Conversion
+        <span class="goal-health-label">3 of 4 metrics on track</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Avg Reach/Day</span>
+            <span class="goal-mini-val">1,252</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">New Followers</span>
+            <span class="goal-mini-val">318</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Shares</span>
+            <span class="goal-mini-val">74</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">Total Views</span>
+            <span class="goal-mini-val">119,954</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">New Followers (318) and Views (119,954) are both exceeding — the Ambassador re-opening campaign drove exceptional top-of-funnel performance. Shares (74) are on track. Reach/Day (1,252) is just below the 1,500 floor but trending in the right direction.</p>
+        <span class="goal-status-badge exceed">Exceeding</span>
+      </div>
+    </div>
+
+    <!-- MOFU CARD -->
+    <div class="goal-card goal-ontrack">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot mofu"></span>Middle of Funnel &mdash; Engagement</div>
+      <div class="goal-title">Build an Engaged Fitness & Lifestyle Community</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:60%;background:#0c3387"></div>
         </div>
-<div class="goal-title">Drive Wholesale Partnerships &amp; DTC E-Commerce Revenue</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">Link Taps</div>
-<div class="goal-kpi-value">279</div>
-<div class="goal-kpi-delta pos">↑ +147% vs. Dec — Nearly tripled MoM</div>
-</div>
-<span class="goal-status-badge exceed">Exceeding</span>
-</div>
-<p class="goal-narrative">Link Taps nearly tripled MoM (113 → 279) — the strongest conversion signal in the account’s history. CTR hit 14.1% (more than 2× the Lift ceiling). The Ambassador Program launch drove qualified traffic to the bio link, confirming that community-driven content converts to shop visits at a higher rate than product-only content.</p>
-</div>
-<div class="goal-card goal-exceed">
-<div class="goal-funnel-tag">
-<span class="goal-funnel-dot mofu"></span>
-          Middle of Funnel — Community
+        <span class="goal-health-label">3 of 5 metrics on track</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Profile Visits</span>
+            <span class="goal-mini-val">1,977</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Avg Watch Time</span>
+            <span class="goal-mini-val">5.3s</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Retention %</span>
+            <span class="goal-mini-val">44%</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot watch"></span>
+            <span class="goal-mini-name">Saves</span>
+            <span class="goal-mini-val">21</span>
+            <span class="goal-mini-badge watch">Watch</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">Comments</span>
+            <span class="goal-mini-val">119</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">Profile Visits (1,977), Watch Time (5.3s), and Comments (119) are all on track — strong content quality and community engagement. Retention (44%) and Saves (21) are below floor. More save-worthy, reference content (product guides, training tips) is the path to improving both metrics.</p>
+        <span class="goal-status-badge ontrack">On Track</span>
+      </div>
+    </div>
+
+    <!-- BOFU CARD -->
+    <div class="goal-card goal-exceed">
+      <div class="goal-funnel-tag"><span class="goal-funnel-dot bofu"></span>Bottom of Funnel &mdash; Conversion</div>
+      <div class="goal-title">Drive Ambassador Applications & Product Sales</div>
+      <div class="goal-health-bar-wrap">
+        <div class="goal-health-bar">
+          <div class="goal-health-fill" style="width:100%;background:#10b981"></div>
         </div>
-<div class="goal-title">Build the MEAS Community &amp; Ambassador Network</div>
-<div class="goal-status-row">
-<div class="goal-kpi-block" style="flex:1">
-<div class="goal-kpi-label">New Followers</div>
-<div class="goal-kpi-value">318</div>
-<div class="goal-kpi-delta pos">↑ +27.7% vs. Dec — Above the Lift ceiling</div>
+        <span class="goal-health-label">3 of 3 metrics on track or exceeding</span>
+      </div>
+      <div class="goal-metric-mini-grid">
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">CTR</span>
+            <span class="goal-mini-val">14.1%</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot exceed"></span>
+            <span class="goal-mini-name">Link Taps</span>
+            <span class="goal-mini-val">279</span>
+            <span class="goal-mini-badge exceed">Exceeding</span>
+          </div>
+          <div class="goal-mini-metric">
+            <span class="goal-mini-dot ontrack"></span>
+            <span class="goal-mini-name">PCR</span>
+            <span class="goal-mini-val">16.1%</span>
+            <span class="goal-mini-badge ontrack">On Track</span>
+          </div>
+      </div>
+      <div class="goal-status-row" style="margin-top:auto">
+        <p class="goal-narrative">CTR (14.1%) and Link Taps (279) are both exceeding — the Ambassador campaign drove exceptional conversion activity. PCR (16.1%) is on track at the top of the Lift range. January is the benchmark for what event-driven content can do for this account.</p>
+        <span class="goal-status-badge exceed">Exceeding</span>
+      </div>
+    </div>
+
+  </div>
 </div>
-<span class="goal-status-badge exceed">Exceeding</span>
-</div>
-<p class="goal-narrative">New Followers hit 318 — above the Lift ceiling of 270 and the account’s highest month. The Ambassador Program launch is the primary driver: community-driven content attracts community-minded followers. Comments hit 119 (on track) and Shares doubled (36 → 74), confirming the audience is actively sharing MEAS content within their networks.</p>
-</div>
-</div>
-</div>
+
 <!-- END BUSINESS GOALS SECTION -->
 <section class="sec">
 <p class="sec-label">Performance Dashboard</p>
