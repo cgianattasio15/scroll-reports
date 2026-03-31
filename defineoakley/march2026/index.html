@@ -159,8 +159,7 @@
     .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.55}
 
     /* ── TOP POSTS ── */
-    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.125rem}
-    @media(max-width:640px){.posts-grid{grid-template-columns:1fr}}
+    .posts-grid{display:grid;grid-template-columns:1fr;gap:1.75rem;max-width:600px;margin:0 auto}
     .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:visible;box-shadow:0 1px 6px rgba(21,21,22,.05);display:flex;flex-direction:column}
     .post-rank{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;font-size:.75rem;font-weight:700}
     .post-rank.r1{background:linear-gradient(90deg,var(--azure),#1a4fc4);color:#fff}
@@ -175,12 +174,20 @@
     .pstat{background:var(--porcelain);border-radius:6px;padding:.625rem .875rem}
     .pstat-lbl{display:block;font-size:.625rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
     .pstat-val{font-size:1.375rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
-    .post-caption{font-size:.8125rem;color:var(--muted);line-height:1.6;margin-bottom:.75rem;font-style:italic;border-left:2px solid var(--border);padding-left:.75rem}
     .post-insight{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .875rem;background:rgba(14,51,135,.04);border-left:3px solid var(--azure);border-radius:0 6px 6px 0;margin-bottom:1rem;display:flex;gap:.5rem;align-items:flex-start}
     .insight-icon{color:var(--azure);font-size:.5rem;margin-top:.45rem;flex-shrink:0}
     .post-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);padding:.5rem 0;margin-top:auto}
     .post-link:hover{color:#1a4fc4;text-decoration:underline}
 
+    .post-format-row{display:flex;align-items:center;gap:.625rem;margin-bottom:.875rem;flex-wrap:wrap}
+    .post-format-tag{display:inline-flex;align-items:center;gap:.35rem;background:rgba(14,51,135,.08);border:1px solid rgba(14,51,135,.15);color:var(--azure);font-size:.75rem;font-weight:700;padding:.3rem .75rem;border-radius:20px;letter-spacing:.02em}
+    .post-format-tag::before{content:'';width:6px;height:6px;background:var(--azure);border-radius:50%;flex-shrink:0}
+    .post-retention-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.875rem;padding:.5rem .875rem;background:rgba(124,58,237,.05);border:1px solid rgba(124,58,237,.12);border-radius:6px}
+    .post-retention-label{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mofu)}
+    .post-retention-val{font-size:1.0625rem;font-weight:800;color:var(--mofu);margin-left:auto}
+    .post-retention-note{font-size:.6875rem;color:var(--muted)}
+    .post-learning{font-size:.8125rem;color:var(--text);line-height:1.6;padding:.75rem 1rem;background:rgba(226,237,122,.06);border:1px solid rgba(226,237,122,.2);border-radius:6px;margin-bottom:1rem}
+    .post-learning-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a9a2a;margin-bottom:.3rem}
     /* ── STRATEGY ADJUSTMENTS ── */
     .adj-grid{display:flex;flex-direction:column;gap:.875rem}
     .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
@@ -496,26 +503,35 @@
   <section class="sec" aria-labelledby="posts-title">
     <p class="sec-label">Content Performance</p>
     <h2 class="sec-title" id="posts-title">Top 3 Posts &mdash; March 2026</h2>
-    <p class="sec-sub">Your highest-performing content this month, ranked by total views. Total Interactions = likes + comments + shares + saves.</p>
+    <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
-      <div class="post-card">
+            <div class="post-card">
   <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">Reel</span></div>
   <div class="post-body">
-    <p class="post-date">March 12, 2026 &middot; Behind-the-Scenes / Personality Reel</p>
-    <p class="post-hook">&ldquo;This one&rsquo;s for the morning crew, a little crazy but always motivated.&rdquo;</p>
-    <p class="post-caption">Fun fact: We offer a 6:00am class Monday&ndash;Friday. Whether it&rsquo;s Rev, Barre, Bounce, or 30/30, if you&rsquo;re ready for that early sweat, we&rsquo;re here.</p>
+    <p class="post-date">March 12, 2026</p>
+    <div class="post-format-row">
+      <span class="post-format-tag">Behind-the-Scenes / Personality Reel</span>
+    </div>
+    <p class="post-hook">&ldquo;This one&rsquo;s for the morning crew &mdash; a little crazy but always motivated.&rdquo;</p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">5,230</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">116</span></div>
     </div>
-    <div class="post-insight"><span class="insight-icon">&#9679;</span>Personality-driven content that speaks directly to a specific audience segment. The relatable hook + practical class info (6am schedule, class types) made it both entertaining and useful &mdash; a strong combination for saves and shares.</div>
-
+    <div class="post-retention-row">
+      <span class="post-retention-label">Retention</span>
+      <span class="post-retention-note">Avg % of reel watched</span>
+      <span class="post-retention-val">81.3%</span>
+    </div>
+    <div class="post-learning">
+      <div class="post-learning-label">&#9650; Why It Worked</div>
+      Personality-driven content targeting a specific audience segment (early risers) drove the highest retention of the month. The relatable hook + practical class schedule info made it entertaining <em>and</em> useful &mdash; a format worth repeating.
+    </div>
     <div class="post-embed">
       <blockquote class="instagram-media"
         data-instgrm-captioned
         data-instgrm-permalink="https://www.instagram.com/reel/DVgdzqnDURd/?utm_source=ig_embed&amp;utm_campaign=loading"
         data-instgrm-version="14"
-        style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:400px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);">
+        style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);">
         <div style="padding:16px;text-align:center">
           <a href="https://www.instagram.com/reel/DVgdzqnDURd/" target="_blank" rel="noopener"
              style="display:inline-flex;align-items:center;gap:.375rem;font-size:.75rem;font-weight:600;color:#0e3387;text-decoration:none;border:1px solid rgba(14,51,135,.2);padding:.375rem .75rem;border-radius:4px">
@@ -524,26 +540,34 @@
         </div>
       </blockquote>
     </div>
-    <a href="https://www.instagram.com/reel/DVgdzqnDURd/" class="post-link" target="_blank" rel="noopener">View on Instagram &#8599;</a>
   </div>
 </div><div class="post-card">
   <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">Reel</span></div>
   <div class="post-body">
-    <p class="post-date">March 24, 2026 &middot; Milestone / Event Announcement Reel</p>
+    <p class="post-date">March 24, 2026</p>
+    <div class="post-format-row">
+      <span class="post-format-tag">Milestone / Event Announcement Reel</span>
+    </div>
     <p class="post-hook">&ldquo;12 years! We still can&rsquo;t believe it.&rdquo;</p>
-    <p class="post-caption">Over a decade of community, commitment, hard work, fire music, and more muscle burns than we can count &mdash; and we&rsquo;re just getting started. Come celebrate with us April 11th &amp; 12th. RSVP via link in bio.</p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">3,500</span></div>
-      <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">79</span></div>
+      <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">89</span></div>
     </div>
-    <div class="post-insight"><span class="insight-icon">&#9679;</span>Community milestone content with a clear event CTA. Anniversary announcements consistently drive profile visits and link taps &mdash; viewers want to know how to attend. Strong BOFU signal for the April event.</div>
-
+    <div class="post-retention-row">
+      <span class="post-retention-label">Retention</span>
+      <span class="post-retention-note">Avg % of reel watched</span>
+      <span class="post-retention-val">65.9%</span>
+    </div>
+    <div class="post-learning">
+      <div class="post-learning-label">&#9650; Why It Worked</div>
+      Community milestone content with a clear event CTA. Anniversary announcements drive profile visits and link taps because viewers want to know how to attend &mdash; a strong BOFU signal. The on-screen &ldquo;Save the Dates&rdquo; text created urgency.
+    </div>
     <div class="post-embed">
       <blockquote class="instagram-media"
         data-instgrm-captioned
         data-instgrm-permalink="https://www.instagram.com/reel/DWRKovhDs6_/?utm_source=ig_embed&amp;utm_campaign=loading"
         data-instgrm-version="14"
-        style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:400px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);">
+        style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);">
         <div style="padding:16px;text-align:center">
           <a href="https://www.instagram.com/reel/DWRKovhDs6_/" target="_blank" rel="noopener"
              style="display:inline-flex;align-items:center;gap:.375rem;font-size:.75rem;font-weight:600;color:#0e3387;text-decoration:none;border:1px solid rgba(14,51,135,.2);padding:.375rem .75rem;border-radius:4px">
@@ -552,26 +576,34 @@
         </div>
       </blockquote>
     </div>
-    <a href="https://www.instagram.com/reel/DWRKovhDs6_/" class="post-link" target="_blank" rel="noopener">View on Instagram &#8599;</a>
   </div>
 </div><div class="post-card">
   <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">Reel</span></div>
   <div class="post-body">
-    <p class="post-date">March 6, 2026 &middot; Humor / Community Engagement Reel</p>
+    <p class="post-date">March 6, 2026</p>
+    <div class="post-format-row">
+      <span class="post-format-tag">Humor / Community Engagement Reel</span>
+    </div>
     <p class="post-hook">&ldquo;We all have a love&ndash;hate relationship with sliders&hellip; and let&rsquo;s be honest, it&rsquo;s mostly hate.&rdquo;</p>
-    <p class="post-caption">What&rsquo;s the one exercise or move you dread seeing on the board before class? Let us know in the comments! &#8595;</p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">2,848</span></div>
-      <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">56</span></div>
+      <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">55</span></div>
     </div>
-    <div class="post-insight"><span class="insight-icon">&#9679;</span>Humor-led engagement with a direct question CTA. The &ldquo;dread move&rdquo; format is universally relatable to any group fitness member &mdash; it invites comments and creates a sense of shared community experience.</div>
-
+    <div class="post-retention-row">
+      <span class="post-retention-label">Retention</span>
+      <span class="post-retention-note">Avg % of reel watched</span>
+      <span class="post-retention-val">77.6%</span>
+    </div>
+    <div class="post-learning">
+      <div class="post-learning-label">&#9650; Why It Worked</div>
+      Humor-led engagement with a direct question CTA. The &ldquo;dread move&rdquo; format is universally relatable to any group fitness member &mdash; it invites comments and creates community. High retention (77.6%) despite lower views confirms the content held attention.
+    </div>
     <div class="post-embed">
       <blockquote class="instagram-media"
         data-instgrm-captioned
         data-instgrm-permalink="https://www.instagram.com/reel/DVbTQ7nDToh/?utm_source=ig_embed&amp;utm_campaign=loading"
         data-instgrm-version="14"
-        style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:400px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);">
+        style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;width:-webkit-calc(100% - 2px);width:calc(100% - 2px);">
         <div style="padding:16px;text-align:center">
           <a href="https://www.instagram.com/reel/DVbTQ7nDToh/" target="_blank" rel="noopener"
              style="display:inline-flex;align-items:center;gap:.375rem;font-size:.75rem;font-weight:600;color:#0e3387;text-decoration:none;border:1px solid rgba(14,51,135,.2);padding:.375rem .75rem;border-radius:4px">
@@ -580,7 +612,6 @@
         </div>
       </blockquote>
     </div>
-    <a href="https://www.instagram.com/reel/DVbTQ7nDToh/" class="post-link" target="_blank" rel="noopener">View on Instagram &#8599;</a>
   </div>
 </div>
     </div>
@@ -598,9 +629,9 @@
         <div class="adj-num doubling" aria-hidden="true">1</div>
         <div class="adj-content">
           <p class="adj-type doubling">Doubling Down</p>
-          <p class="adj-headline">Keep scaling the 30:30 format content</p>
-          <p class="adj-context">Retention &amp; Comments &middot; Community Goal</p>
-          <div class="adj-move">Retention is at 72% — the highest signal we track. More 30:30 explainer and first-timer experience Reels will sustain this and push into broader discovery.</div>
+          <p class="adj-headline">Scale personality-driven and community Reels</p>
+          <p class="adj-context">Retention &amp; Views &middot; Awareness &amp; Community Goals</p>
+          <div class="adj-move">The top 3 posts this month were all personality, milestone, or humor-led Reels &mdash; averaging 75% retention. More content in these formats will sustain high retention and push views into broader discovery.</div>
         </div>
       </div>
       <div class="adj-card">
