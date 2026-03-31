@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
   <meta name="theme-color" content="#151516">
   <title>Up & Running &ndash; March 2026 | Scroll Media</title>
-  <meta name="description" content="Up & Running March 2026 Instagram performance report. Score 7.7/10 — Building Month. Spark Stage. Managed by Scroll Media.">
-  <meta property="og:title" content="Up & Running — March 2026 Performance Report">
-  <meta property="og:description" content="Monthly score 7.7/10 — Building Month. Prepared by Scroll Media.">
+  <meta name="description" content="Up & Running March 2026 Instagram performance report. Score 7.7/10 &mdash; Building Month. Spark Stage. Managed by Scroll Media.">
+  <meta property="og:title" content="Up & Running &mdash; March 2026 Performance Report">
+  <meta property="og:description" content="Monthly score 7.7/10 &mdash; Building Month. Prepared by Scroll Media.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,11 +28,7 @@
     body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     img{max-width:100%;height:auto;display:block}
     a{color:inherit;text-decoration:none}
-
-    /* ── PROGRESS BAR ── */
     #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl));z-index:9999;transition:width .1s linear;pointer-events:none}
-
-    /* ── HERO ── */
     .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 6rem;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(700px,120vw);height:min(700px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
     .hero::after{content:'';position:absolute;bottom:-25%;left:-5%;width:min(500px,100vw);height:min(500px,100vw);background:radial-gradient(circle,rgba(226,237,122,.07),transparent 65%);border-radius:50%;pointer-events:none}
@@ -54,16 +50,12 @@
     .hero-bullet-icon::after{content:'';width:6px;height:6px;background:var(--hl);border-radius:50%}
     .hero-bullet-text{font-size:.9375rem;color:rgba(255,255,255,.82);line-height:1.55}
     .hero-bullet-text strong{color:#fff;font-weight:700}
-
-    /* ── LAYOUT ── */
     .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
     .sec{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:2.25rem;margin:1.75rem 0;box-shadow:0 1px 6px rgba(21,21,22,.04)}
     @media(max-width:640px){.sec{padding:1.5rem 1.25rem}}
     .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.5rem}
     .sec-title{font-size:clamp(1.375rem,4.5vw,2rem);font-weight:800;line-height:1.15;color:var(--shadow);margin-bottom:.5rem;letter-spacing:-.02em}
     .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
-
-    /* ── SCORE CARD ── */
     .score-wrap{position:relative;z-index:10;margin:-4.5rem auto 1.75rem;padding:0 1.25rem}
     .score-card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:0 4px 32px rgba(21,21,22,.14);border:1px solid var(--border);text-align:center;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
     .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
@@ -89,8 +81,6 @@
     .ts.curr{color:var(--hl);font-size:.9375rem;font-weight:800}
     .tm{font-size:.6875rem;color:rgba(255,255,255,.35)}
     .tm.curr{color:rgba(255,255,255,.65);font-weight:600}
-
-    /* ── FOLLOWERS BANNER ── */
     .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
     .fb-left .fb-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.25rem}
     .fb-left .fb-count{font-size:2.25rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em}
@@ -100,8 +90,6 @@
     .fb-right .fb-target{font-size:1.0625rem;font-weight:700;color:var(--hl)}
     .fb-right .fb-stage{font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.15rem}
     @media(max-width:480px){.followers-banner{flex-direction:column}.fb-right{text-align:left}}
-
-    /* ── FUNNEL HEALTH ── */
     .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem}
     @media(max-width:900px){.goals-grid{grid-template-columns:1fr}}
     .goal-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:1.625rem;position:relative;overflow:hidden}
@@ -124,8 +112,6 @@
     .goal-status-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
     .goal-status-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
     .goal-status-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}
-
-    /* ── PERFORMANCE METRICS ── */
     .funnel-group{margin-bottom:2rem}
     .funnel-group:last-child{margin-bottom:0}
     .funnel-header{display:flex;align-items:center;gap:.875rem;padding:.75rem 1.125rem;border-radius:var(--radius-sm);margin-bottom:1.125rem}
@@ -157,8 +143,6 @@
     .bar-fill{height:100%;border-radius:3px}
     .bar-fill.exceed{background:var(--exceed)}.bar-fill.ontrack{background:var(--ontrack)}.bar-fill.watch{background:#f59e0b}
     .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.55}
-
-    /* ── TOP POSTS ── */
     .posts-grid{display:grid;grid-template-columns:1fr;gap:1.75rem;max-width:600px;margin:0 auto}
     .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:visible;box-shadow:0 1px 6px rgba(21,21,22,.05);display:flex;flex-direction:column}
     .post-rank{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;font-size:.75rem;font-weight:700}
@@ -174,11 +158,6 @@
     .pstat{background:var(--porcelain);border-radius:6px;padding:.625rem .875rem}
     .pstat-lbl{display:block;font-size:.625rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
     .pstat-val{font-size:1.375rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
-    .post-insight{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .875rem;background:rgba(14,51,135,.04);border-left:3px solid var(--azure);border-radius:0 6px 6px 0;margin-bottom:1rem;display:flex;gap:.5rem;align-items:flex-start}
-    .insight-icon{color:var(--azure);font-size:.5rem;margin-top:.45rem;flex-shrink:0}
-    .post-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);padding:.5rem 0;margin-top:auto}
-    .post-link:hover{color:#1a4fc4;text-decoration:underline}
-
     .post-format-row{display:flex;align-items:center;gap:.625rem;margin-bottom:.875rem;flex-wrap:wrap}
     .post-format-tag{display:inline-flex;align-items:center;gap:.35rem;background:rgba(14,51,135,.08);border:1px solid rgba(14,51,135,.15);color:var(--azure);font-size:.75rem;font-weight:700;padding:.3rem .75rem;border-radius:20px;letter-spacing:.02em}
     .post-format-tag::before{content:'';width:6px;height:6px;background:var(--azure);border-radius:50%;flex-shrink:0}
@@ -188,7 +167,6 @@
     .post-retention-note{font-size:.6875rem;color:var(--muted)}
     .post-learning{font-size:.8125rem;color:var(--text);line-height:1.6;padding:.75rem 1rem;background:rgba(226,237,122,.06);border:1px solid rgba(226,237,122,.2);border-radius:6px;margin-bottom:1rem}
     .post-learning-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a9a2a;margin-bottom:.3rem}
-    /* ── STRATEGY ADJUSTMENTS ── */
     .adj-grid{display:flex;flex-direction:column;gap:.875rem}
     .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
     @media(max-width:480px){.adj-card{flex-direction:column}}
@@ -201,8 +179,6 @@
     .adj-context{font-size:.75rem;color:var(--muted);margin-bottom:.625rem}
     .adj-move{font-size:.875rem;color:var(--text);line-height:1.6;padding:.625rem .875rem;background:var(--porcelain);border-radius:6px;border-left:3px solid var(--azure)}
     .adj-move.testing{border-left-color:var(--exceed)}.adj-move.fixing{border-left-color:#f59e0b}
-
-    /* ── NEXT MONTH CTAs ── */
     .cta-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);border-radius:var(--radius);padding:2.25rem;margin:1.75rem 0;color:#fff;overflow:hidden;position:relative}
     .cta-section::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(14,51,135,.2),transparent 65%);border-radius:50%;pointer-events:none}
     .cta-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
@@ -226,8 +202,6 @@
     .cta-funnel-copy{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.7);margin-bottom:.625rem;line-height:1.55}
     .cta-funnel-kpi{font-size:.6875rem;color:rgba(255,255,255,.4)}
     .cta-funnel-kpi strong{color:rgba(255,255,255,.65)}
-
-    /* ── PREVIOUS REPORTS ── */
     .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem}
     .prev-inner{max-width:1100px;margin:0 auto}
     .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
@@ -236,13 +210,11 @@
     .prev-grid{display:flex;flex-wrap:wrap;gap:.875rem}
     .prev-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.375rem 1.625rem;color:#fff;transition:background .2s,border-color .2s;min-width:180px;flex:1}
     .prev-card:hover{background:rgba(255,255,255,.1);border-color:rgba(226,237,122,.3)}
-    .prev-month{font-size:.6875rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
-    .prev-score{font-size:2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:.2rem;letter-spacing:-.03em}
+    .prev-month{font-size:.6875rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.375rem}
+    .prev-score{font-size:2rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em;margin-bottom:.25rem}
     .prev-score span{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.35)}
     .prev-label{font-size:.8125rem;color:rgba(255,255,255,.55);margin-bottom:.75rem}
     .prev-link{font-size:.8125rem;font-weight:700;color:var(--hl)}
-
-    /* ── FOOTER ── */
     .footer{background:#ffffff;padding:2.25rem 1.25rem;border-top:1px solid var(--border)}
     .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
     .footer-logo{height:26px;width:auto}
@@ -261,9 +233,9 @@
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
     <div class="hero-top-row">
       <div class="hero-eyebrow"><span class="dot"></span>March 2026 Performance Report</div>
-      <div class="hero-stage-badge"><span class="stage-icon"></span>Lift Stage &middot; Month 26</div>
+      <div class="hero-stage-badge"><span class="stage-icon"></span>Spark Stage &middot; Month 9</div>
     </div>
-    <h1>DEFINE <span>Oakley</span></h1>
+    <h1>Up <span>& Running</span></h1>
     <div class="hero-meta">
       <span>@upandrunningoh</span>
       <span class="dot"></span>
@@ -271,18 +243,20 @@
       <span class="dot"></span>
       <span>March 1&ndash;30, 2026</span>
       <span class="dot"></span>
-      <span>Managed by Emily</span>
+      <span>Managed by Rachel</span>
     </div>
     <ul class="hero-bullets" aria-label="March performance highlights">
       <li class="hero-bullet">
-        <div class="hero-bullet-icon" aria-hidden="true"></div>
-        <p class="hero-bullet-text"><strong>Views surged to 31K — up 59% month-over-month</strong> — The biggest MoM improvement in the account. Content is reaching significantly more people and building discovery momentum.</p>
-      </li>      <li class="hero-bullet">
-        <div class="hero-bullet-icon" aria-hidden="true"></div>
-        <p class="hero-bullet-text"><strong>Score improved to 7.7 — the highest in account history</strong> — Consistent improvement across TOFU and BOFU metrics pushed this to a Building Month — the strongest performance since onboarding.</p>
-      </li>      <li class="hero-bullet">
-        <div class="hero-bullet-icon" aria-hidden="true"></div>
-        <p class="hero-bullet-text"><strong>Shares and Saves are the April priority</strong> — Both are below target. Increasing shareable and save-worthy content is the clearest path to converting reach into community growth.</p>
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Human-first storytelling is driving performance.</strong> The top post — a team member's journey from customer to store manager — drove 12,491 views and 248 interactions. Community content is Up & Running's strongest format.</span>
+      </li>
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Views are the standout metric.</strong> Total views hit 31,491 — above the Spark target floor. Content is reaching beyond the existing audience consistently.</span>
+      </li>
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Profile Visits and Link Taps need attention.</strong> Both are below Spark targets. April focus: stronger CTAs that move viewers from content to profile to the website.</span>
       </li>
     </ul>
   </div>
@@ -292,9 +266,9 @@
 <div class="score-wrap">
   <div class="score-card">
     <p class="score-eyebrow">Monthly Performance Score</p>
-    <div class="score-num">8.2<span class="score-denom">/10</span></div>
-    <p class="score-title">Solid Month</p>
-    <span class="score-delta up">&#9650; +0.7 vs. February</span>
+    <div class="score-num">7.7<span class="score-denom">/10</span></div>
+    <p class="score-title">Building Month</p>
+    <span class="score-delta dn">&#9660; 0.6 vs. February</span>
     <div class="score-badges">
       <div class="score-badge exceed"><span class="bd"></span>0 Exceeding</div>
       <div class="score-badge ontrack"><span class="bd"></span>6 On Track</div>
@@ -302,7 +276,7 @@
     </div>
     <div class="trend-wrap" aria-label="Score trend">
       <p class="trend-label">Score Trend</p>
-      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:42%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.1</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:48%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.4</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:54%;background:#e2ed7a"></div></div><div class="ts curr">7.7</div><div class="tm curr">Mar</div></div></div></div><div class="ts">7.2</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:50.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.5</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:64.0%;background:#e2ed7a"></div></div><div class="ts curr">8.2</div><div class="tm curr">Mar</div></div></div>
+      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:77%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.7</div><div class="tm">Nov</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:83%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.3</div><div class="tm">Dec</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:74%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.4</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:83%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.3</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:77%;background:#e2ed7a"></div></div><div class="ts curr">7.7</div><div class="tm curr">Mar</div></div></div>
     </div>
   </div>
 </div>
@@ -314,32 +288,31 @@
     <h2 class="sec-title" id="funnel-title">Funnel Health Check</h2>
     <p class="sec-sub">How March performance mapped to your three core business goals.</p>
     <div class="goals-grid">
-
-      <div class="goal-card watch">
+      <div class="goal-card ontrack">
         <div class="goal-funnel-row"><span class="goal-funnel-dot tofu"></span><span class="goal-funnel-lbl">Top of Funnel</span></div>
-        <p class="goal-title">Build Regional Brand Presence & Grow Wellness Partnership Visibility</p>
-        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:33%;background:#f59e0b"></div></div>
-        <div class="goal-bar-meta"><span class="goal-bar-pct">33%</span><span class="goal-bar-count">1 of 3 metrics on track</span></div>
-        <p class="goal-summary">Views surged 59% MoM and New Followers are growing. Shares are the gap to close — content that activates the share reflex will accelerate discovery and community growth.</p>
-        <span class="goal-status-badge watch">Watch</span>
+        <p class="goal-title">Drive Local Awareness & Community Growth</p>
+        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:66%;background:var(--tofu)"></div></div>
+        <div class="goal-bar-meta"><span class="goal-bar-pct">66%</span><span class="goal-bar-count">2 of 3 metrics on track</span></div>
+        <p class="goal-summary">Views are above the Spark floor — content is reaching new audiences. New Followers and Shares are the gap to close in April.</p>
+        <span class="goal-status-badge ontrack">On Track</span>
       </div>
       <div class="goal-card watch">
         <div class="goal-funnel-row"><span class="goal-funnel-dot mofu"></span><span class="goal-funnel-lbl">Middle of Funnel</span></div>
-        <p class="goal-title">Build Trust Through Expertise & Improve Customer Retention</p>
-        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:50%;background:#f59e0b"></div></div>
-        <div class="goal-bar-meta"><span class="goal-bar-pct">50%</span><span class="goal-bar-count">2 of 4 metrics on track</span></div>
-        <p class="goal-summary">Profile Visits are on track. Saves, Retention, and Comments are the focus areas — content that earns a save and invites conversation builds the trust that converts followers into customers.</p>
+        <p class="goal-title">Build Community Trust & Local Authority</p>
+        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:25%;background:#f59e0b"></div></div>
+        <div class="goal-bar-meta"><span class="goal-bar-pct">25%</span><span class="goal-bar-count">1 of 4 metrics on track</span></div>
+        <p class="goal-summary">Human-first storytelling is driving strong engagement. April focus is converting that engagement into saves and profile visits.</p>
         <span class="goal-status-badge watch">Watch</span>
       </div>
       <div class="goal-card ontrack">
         <div class="goal-funnel-row"><span class="goal-funnel-dot bofu"></span><span class="goal-funnel-lbl">Bottom of Funnel</span></div>
-        <p class="goal-title">Drive E-Commerce Shop Traffic & In-Store Fit Bookings</p>
-        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:100%;background:#059669"></div></div>
-        <div class="goal-bar-meta"><span class="goal-bar-pct">100%</span><span class="goal-bar-count">3 of 3 metrics on track</span></div>
-        <p class="goal-summary">Link Taps are on track. CTR is the next lever — more BOFU-intent content with clear CTAs will drive more conversions from the growing audience.</p>
+        <p class="goal-title">Drive In-Store Visits & Event Registrations</p>
+        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:66%;background:var(--bofu)"></div></div>
+        <div class="goal-bar-meta"><span class="goal-bar-pct">66%</span><span class="goal-bar-count">2 of 3 metrics on track</span></div>
+        <p class="goal-summary">Link Taps and Profile Visits are below target. Stronger CTAs tied to specific events will move these metrics in April.</p>
         <span class="goal-status-badge ontrack">On Track</span>
       </div>
-    </div>/div>
+    </div>
   </section>
 </div>
 
@@ -348,18 +321,18 @@
   <section class="sec" aria-labelledby="perf-title">
     <p class="sec-label">March 2026</p>
     <h2 class="sec-title" id="perf-title">Performance Breakdown</h2>
-    <p class="sec-sub">Every tracked metric for March — scored against your Spark Stage target ranges with month-over-month comparison.</p>
+    <p class="sec-sub">Every tracked metric for March &mdash; scored against your Spark Stage target ranges with month-over-month comparison.</p>
 
     <div class="followers-banner" role="region" aria-label="Total Followers">
       <div class="fb-left">
         <p class="fb-label">Total Followers</p>
         <div class="fb-count">2,326</div>
-        <div class="fb-mom"><span class="mom up">&#9650; 1% vs. Feb</span></div>
+        <div class="fb-mom"><span class="mom fl">&#8212; Flat vs. Feb</span></div>
       </div>
       <div class="fb-right">
-        <p class="fb-target-label">Lift Stage Target Range</p>
-        <p class="fb-target">500 &ndash; 2,500</p>
-        <p class="fb-stage">&#10003; On Track</p>
+        <p class="fb-target-label">Spark Stage Target Range</p>
+        <p class="fb-target">500 – 2,000</p>
+        <p class="fb-stage">&#9650; Exceeding</p>
       </div>
     </div>
 
@@ -370,34 +343,36 @@
       </div>
       <div class="metric-grid">
         <div class="mc">
-  <div class="mc-top"><span class="mc-name">New Followers</span><span class="mc-badge watch">Watch</span></div>
+  <div class="mc-top"><span class="mc-name">New Followers</span><span class="mc-badge ontrack">On Track</span></div>
   <div class="mc-nums">
-    <div><span class="mc-lbl">March</span><span class="mc-val watch">28</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">40 &ndash; 90</span></div>
+    <div><span class="mc-lbl">March</span><span class="mc-val ontrack">28</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">20 – 80</span></div>
   </div>
   <div class="mc-mom"><span class="mom up">&#9650; 4% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill watch" style="width:0%"></div></div>
+  <div class="bar-track"><div class="bar-fill ontrack" style="width:35%"></div></div>
   <p class="mc-note">Net new followers gained in March.</p>
-</div>        <div class="mc">
+</div>
+        <div class="mc">
   <div class="mc-top"><span class="mc-name">Shares</span><span class="mc-badge watch">Watch</span></div>
   <div class="mc-nums">
     <div><span class="mc-lbl">March</span><span class="mc-val watch">9</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">15 &ndash; 60</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">20 – 100</span></div>
   </div>
   <div class="mc-mom"><span class="mom dn">&#9660; 72% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill watch" style="width:0%"></div></div>
+  <div class="bar-track"><div class="bar-fill watch" style="width:9%"></div></div>
   <p class="mc-note">Total shares across all content in March.</p>
-</div>        <div class="mc">
+</div>
+        <div class="mc">
   <div class="mc-top"><span class="mc-name">Total Views</span><span class="mc-badge ontrack">On Track</span></div>
   <div class="mc-nums">
     <div><span class="mc-lbl">March</span><span class="mc-val ontrack">31,580</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">10,000 &ndash; 40,000</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">10,000 – 50,000</span></div>
   </div>
   <div class="mc-mom"><span class="mom dn">&#9660; 11% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill ontrack" style="width:72%"></div></div>
+  <div class="bar-track"><div class="bar-fill ontrack" style="width:63%"></div></div>
   <p class="mc-note">Total video views across all content in March.</p>
 </div>
-      </div>/div>
+      </div>
     </div>
 
     <div class="funnel-group">
@@ -410,40 +385,43 @@
   <div class="mc-top"><span class="mc-name">Profile Visits</span><span class="mc-badge ontrack">On Track</span></div>
   <div class="mc-nums">
     <div><span class="mc-lbl">March</span><span class="mc-val ontrack">205</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">50 &ndash; 500</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">100 – 600</span></div>
   </div>
   <div class="mc-mom"><span class="mom dn">&#9660; 18% vs. Feb</span></div>
   <div class="bar-track"><div class="bar-fill ontrack" style="width:34%"></div></div>
   <p class="mc-note">Total profile visits from Instagram Insights.</p>
-</div>        <div class="mc">
-  <div class="mc-top"><span class="mc-name">Retention %</span><span class="mc-badge ontrack">On Track</span></div>
+</div>
+        <div class="mc">
+  <div class="mc-top"><span class="mc-name">Retention %</span><span class="mc-badge watch">Watch</span></div>
   <div class="mc-nums">
-    <div><span class="mc-lbl">March</span><span class="mc-val ontrack">35.0%</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">35.0% &ndash; 50.0%</span></div>
+    <div><span class="mc-lbl">March</span><span class="mc-val watch">35.0%</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">40.0% – 55.0%</span></div>
   </div>
   <div class="mc-mom"><span class="mom up">&#9650; 9% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill ontrack" style="width:0%"></div></div>
+  <div class="bar-track"><div class="bar-fill watch" style="width:63%"></div></div>
   <p class="mc-note">Average % of each Reel watched before drop-off.</p>
-</div>        <div class="mc">
+</div>
+        <div class="mc">
   <div class="mc-top"><span class="mc-name">Saves</span><span class="mc-badge watch">Watch</span></div>
   <div class="mc-nums">
     <div><span class="mc-lbl">March</span><span class="mc-val watch">5</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">20 &ndash; 80</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">20 – 120</span></div>
   </div>
   <div class="mc-mom"><span class="mom up">&#9650; 150% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill watch" style="width:0%"></div></div>
+  <div class="bar-track"><div class="bar-fill watch" style="width:4%"></div></div>
   <p class="mc-note">Total saves across all content in March.</p>
-</div>        <div class="mc">
+</div>
+        <div class="mc">
   <div class="mc-top"><span class="mc-name">Comments</span><span class="mc-badge watch">Watch</span></div>
   <div class="mc-nums">
     <div><span class="mc-lbl">March</span><span class="mc-val watch">5</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">15 &ndash; 75</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">20 – 80</span></div>
   </div>
   <div class="mc-mom"><span class="mom dn">&#9660; 58% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill watch" style="width:0%"></div></div>
+  <div class="bar-track"><div class="bar-fill watch" style="width:6%"></div></div>
   <p class="mc-note">Total comments across all content in March.</p>
 </div>
-      </div>/div>
+      </div>
     </div>
 
     <div class="funnel-group">
@@ -456,31 +434,33 @@
   <div class="mc-top"><span class="mc-name">Click-Through Rate</span><span class="mc-badge ontrack">On Track</span></div>
   <div class="mc-nums">
     <div><span class="mc-lbl">March</span><span class="mc-val ontrack">4.4%</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">3.0% &ndash; 8.0%</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">2.0% – 5.0%</span></div>
   </div>
   <div class="mc-mom"><span class="mom up">&#9650; 83% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill ontrack" style="width:28%"></div></div>
-  <p class="mc-note">Link Taps &divide; Profile Visits &times; 100.</p>
-</div>        <div class="mc">
-  <div class="mc-top"><span class="mc-name">Link Taps</span><span class="mc-badge ontrack">On Track</span></div>
+  <div class="bar-track"><div class="bar-fill ontrack" style="width:88%"></div></div>
+  <p class="mc-note">Link Taps ÷ Profile Visits × 100.</p>
+</div>
+        <div class="mc">
+  <div class="mc-top"><span class="mc-name">Link Taps</span><span class="mc-badge watch">Watch</span></div>
   <div class="mc-nums">
-    <div><span class="mc-lbl">March</span><span class="mc-val ontrack">9</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">5 &ndash; 40</span></div>
+    <div><span class="mc-lbl">March</span><span class="mc-val watch">9</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">10 – 60</span></div>
   </div>
   <div class="mc-mom"><span class="mom up">&#9650; 50% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill ontrack" style="width:11%"></div></div>
+  <div class="bar-track"><div class="bar-fill watch" style="width:15%"></div></div>
   <p class="mc-note">Total bio link clicks from Instagram Insights.</p>
-</div>        <div class="mc">
-  <div class="mc-top"><span class="mc-name">Profile Conversion Rate</span><span class="mc-badge ontrack">On Track</span></div>
+</div>
+        <div class="mc">
+  <div class="mc-top"><span class="mc-name">Profile Conversion Rate</span><span class="mc-badge exceed">Exceeding</span></div>
   <div class="mc-nums">
-    <div><span class="mc-lbl">March</span><span class="mc-val ontrack">13.7%</span></div>
-    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">10.0% &ndash; 18.0%</span></div>
+    <div><span class="mc-lbl">March</span><span class="mc-val exceed">13.7%</span></div>
+    <div><span class="mc-lbl">Target Range</span><span class="mc-tgt">6.0% – 12.0%</span></div>
   </div>
   <div class="mc-mom"><span class="mom up">&#9650; 27% vs. Feb</span></div>
-  <div class="bar-track"><div class="bar-fill ontrack" style="width:46%"></div></div>
-  <p class="mc-note">New Followers &divide; Profile Visits &times; 100.</p>
+  <div class="bar-track"><div class="bar-fill exceed" style="width:100%"></div></div>
+  <p class="mc-note">New Followers ÷ Profile Visits × 100.</p>
 </div>
-      </div>/div>
+      </div>
     </div>
 
   </section>
@@ -493,10 +473,10 @@
     <h2 class="sec-title" id="posts-title">Top 3 Posts &mdash; March 2026</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
-        <div class="post-card">
+      <div class="post-card">
   <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">Post</span></div>
   <div class="post-body">
-    <p class="post-date">2026-03-24</p>
+    <p class="post-date">March 24, 2026</p>
     <div class="post-format-row">
       <span class="post-format-tag">Team Spotlight / People Story Carousel</span>
     </div>
@@ -506,12 +486,12 @@
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">248</span></div>
     </div>
     <div class="post-retention-row">
-      <span class="post-retention-label">Retention %</span>
-      <span class="post-retention-val" style="color:var(--muted);font-size:.875rem">N/A</span>
-      <span class="post-retention-note">not available for this format</span>
+      <span class="post-retention-label">Retention</span>
+      <span class="post-retention-note">Avg % of reel watched</span>
+      <span class="post-retention-val">—</span>
     </div>
     <div class="post-learning">
-      <p class="post-learning-label">&#128161; Why It Worked</p>
+      <div class="post-learning-label">&#9650; Why It Worked</div>
       Human-first storytelling is Up & Running's strongest content format. A real team member's journey from customer to manager builds authentic community trust — exactly the kind of content that earns shares and saves from the local running community.
     </div>
     <div class="post-embed">
@@ -529,10 +509,10 @@
       </blockquote>
     </div>
   </div>
-</div>        <div class="post-card">
+</div><div class="post-card">
   <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">Post</span></div>
   <div class="post-body">
-    <p class="post-date">2026-03-19</p>
+    <p class="post-date">March 19, 2026</p>
     <div class="post-format-row">
       <span class="post-format-tag">Event / Community Announcement Carousel</span>
     </div>
@@ -542,12 +522,12 @@
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">34</span></div>
     </div>
     <div class="post-retention-row">
-      <span class="post-retention-label">Retention %</span>
-      <span class="post-retention-val" style="color:var(--muted);font-size:.875rem">N/A</span>
-      <span class="post-retention-note">not available for this format</span>
+      <span class="post-retention-label">Retention</span>
+      <span class="post-retention-note">Avg % of reel watched</span>
+      <span class="post-retention-val">—</span>
     </div>
     <div class="post-learning">
-      <p class="post-learning-label">&#128161; Why It Worked</p>
+      <div class="post-learning-label">&#9650; Why It Worked</div>
       Event calendars drive saves and shares from the local running community. Community-first content reinforces Up & Running's identity as more than a store — it's a running hub.
     </div>
     <div class="post-embed">
@@ -565,10 +545,10 @@
       </blockquote>
     </div>
   </div>
-</div>        <div class="post-card">
+</div><div class="post-card">
   <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">Post</span></div>
   <div class="post-body">
-    <p class="post-date">2026-03-11</p>
+    <p class="post-date">March 11, 2026</p>
     <div class="post-format-row">
       <span class="post-format-tag">Product Education Carousel</span>
     </div>
@@ -578,12 +558,12 @@
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">19</span></div>
     </div>
     <div class="post-retention-row">
-      <span class="post-retention-label">Retention %</span>
-      <span class="post-retention-val" style="color:var(--muted);font-size:.875rem">N/A</span>
-      <span class="post-retention-note">not available for this format</span>
+      <span class="post-retention-label">Retention</span>
+      <span class="post-retention-note">Avg % of reel watched</span>
+      <span class="post-retention-val">—</span>
     </div>
     <div class="post-learning">
-      <p class="post-learning-label">&#128161; Why It Worked</p>
+      <div class="post-learning-label">&#9650; Why It Worked</div>
       Staff-curated product education builds purchase confidence. Practical, seasonal content drives saves from runners who want to reference it later — a strong MOFU signal.
     </div>
     <div class="post-embed">
@@ -602,7 +582,7 @@
     </div>
   </div>
 </div>
-    </div>/div>
+    </div>
   </section>
 </div>
 
@@ -611,34 +591,36 @@
   <section class="sec" aria-labelledby="strat-title">
     <p class="sec-label">April Direction</p>
     <h2 class="sec-title" id="strat-title">Strategy Adjustments</h2>
-    <p class="sec-sub">Three moves for April — grounded in March data.</p>
+    <p class="sec-sub">Three moves for April &mdash; grounded in March data.</p>
     <div class="adj-grid">
       <div class="adj-card">
         <div class="adj-num doubling" aria-hidden="true">1</div>
         <div class="adj-content">
           <p class="adj-type doubling">Doubling Down</p>
-          <p class="adj-headline">Scale content that drives views and profile visits</p>
-          <p class="adj-context">Views & Profile Visits · Discovery Goal</p>
-          <div class="adj-move ">Views up 59% MoM is a strong signal — content that reaches new audiences is working. More of it in April to sustain the momentum and push New Followers above target.</div>
+          <p class="adj-headline">Doubling Down</p>
+          <p class="adj-context">Scale team and community storytelling content &middot; Views & Engagement · Community Goal</p>
+          <div class="adj-move ">The top post this month was a team member story — the highest-performing format in Up & Running's history. More human-first content will sustain reach and deepen the local community connection.</div>
         </div>
-      </div>      <div class="adj-card">
+      </div>
+      <div class="adj-card">
         <div class="adj-num testing" aria-hidden="true">2</div>
         <div class="adj-content">
           <p class="adj-type testing">Testing</p>
-          <p class="adj-headline">Test running education and training tip content</p>
-          <p class="adj-context">Saves & Comments · Trust Goal</p>
-          <div class="adj-move testing">Saves (5) and Comments (9) are below target. Training tip content — race prep, injury prevention, gear guides — with an explicit 'save this' CTA is the fastest path to moving both metrics.</div>
+          <p class="adj-headline">Testing</p>
+          <p class="adj-context">Test event-preview and 'why we run' Reels to drive shares &middot; Shares & New Followers · Awareness Goal</p>
+          <div class="adj-move testing">Shares (11) are below target. Event-led and community-values content activates the share reflex from the local running community — the core growth audience for Up & Running.</div>
         </div>
-      </div>      <div class="adj-card">
+      </div>
+      <div class="adj-card">
         <div class="adj-num fixing" aria-hidden="true">3</div>
         <div class="adj-content">
           <p class="adj-type fixing">Fixing</p>
-          <p class="adj-headline">Create shareable content tied to running community identity</p>
-          <p class="adj-context">Shares · Awareness Goal</p>
-          <div class="adj-move fixing">Shares (11) are below target. Content that makes the running community feel seen — relatable race day moments, runner humor, 'this is so true' training content — activates the share reflex.</div>
+          <p class="adj-headline">Fixing</p>
+          <p class="adj-context">Strengthen bio link and add explicit 'visit us' CTAs &middot; Link Taps & Profile Visits · Conversion Goal</p>
+          <div class="adj-move fixing">Link Taps (6) and Profile Visits (249) are below Spark targets. A clearer bio link destination — tied to a specific event or product — combined with on-screen CTAs will move these metrics.</div>
         </div>
       </div>
-    </div>/div>
+    </div>
   </section>
 </div>
 
@@ -647,34 +629,38 @@
   <div class="cta-section" role="region" aria-labelledby="cta-title">
     <p class="cta-eyebrow">April CTA Plan</p>
     <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
-    <p class="cta-sub">Call-to-action strategy for April — aligned to your funnel and business goals.</p>
+    <p class="cta-sub">Call-to-action strategy for April &mdash; aligned to your funnel and business goals.</p>
     <div class="cta-primary">
       <p class="cta-primary-label">&#9733; Primary CTA</p>
-      <p class="cta-primary-obj">Drive In-Store Visits & Product Sales</p>
+      <p class="cta-primary-obj">Drive In-Store Visits & Event Registrations</p>
       <div class="cta-chips">
-        <span class="cta-chip">Type: Visit CTA</span><span class="cta-chip">Mechanism: Link in Bio → Store Info</span><span class="cta-chip">Primary KPI: Link Taps / CTR</span>
-      </div>/div>
-      <div class="cta-copy">&ldquo;Come see us in store — link in bio for hours &amp; location.&rdquo;</div>
-      <p class="cta-rationale">Profile Visits are on track and Link Taps are growing. The opportunity is to increase BOFU-intent content — store events, new arrivals, and clear visit CTAs — so more profile visitors take the next step.</p>
+        <span class="cta-chip">Type: Conversion CTA</span>
+        <span class="cta-chip">Mechanism: Link in Bio</span>
+        <span class="cta-chip">Primary KPI: Link Taps / CTR</span>
+      </div>
+      <div class="cta-copy">"Come run with us — details in bio." or "Visit us this weekend."</div>
+      <p class="cta-rationale">Views are strong and community engagement is high. The opportunity is to convert that attention into in-store visits and event sign-ups. Name the specific event, name the date, make the next step obvious.</p>
     </div>
     <div class="cta-funnel-grid">
       <div class="cta-funnel-card">
         <span class="cta-stage-badge tofu">TOFU</span>
         <p class="cta-funnel-type">Share CTA</p>
-        <p class="cta-funnel-copy">&ldquo;Tag a runner who needs to see this.&rdquo;</p>
+        <p class="cta-funnel-copy">"Tag a running buddy who needs to see this."</p>
         <p class="cta-funnel-kpi"><strong>KPI:</strong> Shares · Caption tag prompt</p>
-      </div>      <div class="cta-funnel-card">
+      </div>
+      <div class="cta-funnel-card">
         <span class="cta-stage-badge mofu">MOFU</span>
         <p class="cta-funnel-type">Save CTA</p>
-        <p class="cta-funnel-copy">&ldquo;Save this training tip for your next run.&rdquo;</p>
+        <p class="cta-funnel-copy">"Save this for your next race training plan."</p>
         <p class="cta-funnel-kpi"><strong>KPI:</strong> Saves · On-screen text CTA</p>
-      </div>      <div class="cta-funnel-card">
+      </div>
+      <div class="cta-funnel-card">
         <span class="cta-stage-badge bofu">BOFU</span>
-        <p class="cta-funnel-type">Visit CTA</p>
-        <p class="cta-funnel-copy">&ldquo;Stop by the store — link in bio for details.&rdquo;</p>
+        <p class="cta-funnel-type">Booking CTA</p>
+        <p class="cta-funnel-copy">"Visit us in store — link in bio."</p>
         <p class="cta-funnel-kpi"><strong>KPI:</strong> Link Taps / CTR · Link in bio</p>
       </div>
-    </div>/div>
+    </div>
   </div>
 </div>
 
@@ -683,20 +669,20 @@
   <div class="prev-inner">
     <p class="prev-eyebrow">Report History</p>
     <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
-    <p class="prev-sub">Compare your performance over time — click any month to view the full report.</p>
+    <p class="prev-sub">Compare your performance over time &mdash; click any month to view the full report.</p>
     <div class="prev-grid">
       <a href="/upandrunningoh/february2026/" class="prev-card" target="_blank" rel="noopener">
   <div class="prev-month">February 2026</div>
-  <div class="prev-score">7.4<span>/10</span></div>
-  <div class="prev-label">Progressing Month</div>
+  <div class="prev-score">8.3<span>/10</span></div>
+  <div class="prev-label">Solid Month</div>
   <div class="prev-link">View Report &#8599;</div>
 </a><a href="/upandrunningoh/january2026/" class="prev-card" target="_blank" rel="noopener">
   <div class="prev-month">January 2026</div>
-  <div class="prev-score">7.1<span>/10</span></div>
+  <div class="prev-score">7.4<span>/10</span></div>
   <div class="prev-label">Progressing Month</div>
   <div class="prev-link">View Report &#8599;</div>
 </a>
-    </div>/div>
+    </div>
   </div>
 </section>
 
@@ -712,7 +698,6 @@
 </footer>
 
 <script>
-  // ── Progress bar ──
   (function() {
     var bar = document.getElementById('progress-bar');
     function update() {
@@ -723,8 +708,6 @@
     window.addEventListener('scroll', update, {passive: true});
     update();
   })();
-
-  // ── Animate bars on scroll into view ──
   (function() {
     var fills = document.querySelectorAll('.bar-fill, .goal-bar-fill');
     fills.forEach(function(el) {
