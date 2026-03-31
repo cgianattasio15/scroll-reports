@@ -2,324 +2,248 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Reports – Scroll Media</title>
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+  <meta name="theme-color" content="#151516">
+  <title>Client Reports &ndash; Scroll Media</title>
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-    :root{
-      --shadow:#151516;
-      --azure:#0c3387;
-      --lucid:#cbe9ff;
-      --hl:#e2ed7a;
-      --ink-mid:rgba(255,255,255,0.65);
-      --ink-light:rgba(255,255,255,0.35);
-      --porcelain:#f2f3f4;
-      --ghost:#fafdff;
-      --border:rgba(21,21,22,0.08);
-      --text:#151516;
-      --text-muted:#5a5a5c;
-      --green:#10b981;
-      --amber:#f59e0b;
-      --red:#ef4444;
-      --purple:#7c3aed;
-    }
-    body{font-family:'Source Sans 3',sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding:2rem 1.5rem}
-    
-    .container{max-width:1200px;margin:0 auto}
-    
-    .header{text-align:center;margin-bottom:3rem}
-    .logo{margin-bottom:1.5rem}
-    .logo img{height:48px;width:auto}
-    h1{font-size:clamp(2rem,5vw,2.5rem);font-weight:700;color:var(--text);margin-bottom:.5rem;letter-spacing:-.02em}
-    .subtitle{font-size:1.125rem;color:var(--text-muted)}
-    
-    .clients-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-top:3rem}
-    
-    .client-card{background:white;border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all .3s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block}
-    .client-card:hover{box-shadow:0 8px 24px rgba(21,21,22,.12);transform:translateY(-2px);border-color:var(--azure)}
-    .client-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#1a4fc4)}
-    
-    .client-header{margin-bottom:1rem}
-    .client-name{font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:.25rem}
-    .client-handle{font-size:.875rem;color:var(--azure);font-weight:500}
-    
-    .client-meta{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
-    .meta-row{display:flex;flex-direction:column;gap:.125rem}
-    .meta-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
-    .meta-value{font-size:.875rem;color:var(--text);font-weight:500}
-    
-    .latest-report{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .report-info{flex:1}
-    .report-badge{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.25rem}
-    .report-score{font-size:1.5rem;font-weight:700;color:var(--text)}
-    .report-score span{font-size:.875rem;color:var(--text-muted);font-weight:400}
-    .no-reports{font-size:.875rem;color:var(--text-muted);font-style:italic}
-    
-    .view-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.875rem;font-weight:600;color:var(--azure);text-decoration:none;transition:gap .2s}
-    .view-link::after{content:'→'}
-    
-    .stage-badge{display:inline-block;font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .5rem;border-radius:4px;margin-top:.5rem}
-    .stage-spark{background:rgba(245,158,11,.1);color:#d97706;border:1px solid rgba(245,158,11,.2)}
-    .stage-lift{background:rgba(16,185,129,.1);color:#059669;border:1px solid rgba(16,185,129,.2)}
-    .stage-rise{background:rgba(124,58,237,.1);color:var(--purple);border:1px solid rgba(124,58,237,.2)}
-    
-    @media (max-width: 768px){
-      body{padding:1.5rem 1rem}
-      .clients-grid{grid-template-columns:1fr}
-      .client-meta{grid-template-columns:1fr}
-    }
+
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    :root{--shadow:#151516;--azure:#0e3387;--hl:#e2ed7a;--ghost:#f7f8fc;--text:#151516;--muted:#6b7280;--border:rgba(21,21,22,.09);--exceed:#7c3aed;--radius:12px;}
+    body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(600px,120vw);height:min(600px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .hero-logo{height:28px;width:auto;margin-bottom:2rem}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.12);border:1px solid rgba(226,237,122,.28);padding:.3rem .75rem;border-radius:4px;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.875rem}
+    .hero-eyebrow .dot{width:5px;height:5px;background:var(--hl);border-radius:50%}
+    .hero h1{font-size:clamp(1.875rem,6vw,3rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:.625rem}
+    .hero h1 span{color:var(--hl)}
+    .hero-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:520px}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+    .section-header{padding:2.25rem 0 1.125rem}
+    .section-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.375rem}
+    .section-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:var(--shadow);letter-spacing:-.02em}
+    .reports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.125rem;padding-bottom:3rem}
+    .report-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:box-shadow .2s,transform .2s,border-color .2s;position:relative;overflow:hidden;display:block;color:inherit}
+    .report-card:hover{box-shadow:0 6px 24px rgba(21,21,22,.11);transform:translateY(-2px);border-color:rgba(14,51,135,.22)}
+    .report-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .report-card.spark::before{background:linear-gradient(90deg,#d97706,#f59e0b)}
+    .report-card.rise::before{background:linear-gradient(90deg,var(--exceed),#a855f7)}
+    .rc-month{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.375rem}
+    .rc-score{font-size:2rem;font-weight:800;color:var(--shadow);line-height:1;letter-spacing:-.03em}
+    .rc-score span{font-size:.875rem;color:var(--muted);font-weight:400}
+    .rc-label{font-size:.8125rem;color:var(--muted);margin-top:.25rem;margin-bottom:1.25rem}
+    .rc-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);padding:.45rem .8rem;border:1.5px solid rgba(14,51,135,.2);border-radius:6px;transition:background .15s,border-color .15s}
+    .report-card:hover .rc-link{background:rgba(14,51,135,.06);border-color:rgba(14,51,135,.35)}
+    .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;color:rgba(255,255,255,.65);margin-bottom:1.75rem;transition:color .15s}
+    .back-link:hover{color:#fff}
+    .back-link::before{content:'←'}
+    .client-hero-name{font-size:clamp(1.75rem,5vw,2.75rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:.5rem}
+    .client-hero-handle{font-size:1rem;color:rgba(255,255,255,.5);margin-bottom:1rem}
+    .stage-pill{display:inline-flex;align-items:center;gap:.375rem;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .625rem;border-radius:4px}
+    .stage-pill.lift{background:rgba(226,237,122,.15);color:var(--hl);border:1px solid rgba(226,237,122,.3)}
+    .stage-pill.spark{background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.3)}
+    .stage-pill.rise{background:rgba(167,139,250,.15);color:#c4b5fd;border:1px solid rgba(167,139,250,.3)}
+    .footer{background:#fff;border-top:1px solid var(--border);padding:1.75rem 1.5rem;margin-top:1rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+    .footer-logo{height:22px;width:auto}
+    .footer-text{font-size:.8125rem;color:var(--muted)}
+    .footer-text a{color:var(--azure);font-weight:600}
+    @media(max-width:640px){.hero{padding:2rem 1rem 2.5rem}.wrap{padding:0 1rem}.reports-grid{grid-template-columns:1fr;gap:1rem}}
+
+    .clients-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;padding-bottom:3rem}
+    .client-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:box-shadow .2s,transform .2s,border-color .2s;position:relative;overflow:hidden;display:block;color:inherit}
+    .client-card:hover{box-shadow:0 8px 28px rgba(21,21,22,.12);transform:translateY(-2px);border-color:rgba(14,51,135,.25)}
+    .client-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .client-card.spark::before{background:linear-gradient(90deg,#d97706,#f59e0b)}
+    .client-card.rise::before{background:linear-gradient(90deg,var(--exceed),#a855f7)}
+    .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+    .card-name{font-size:1.125rem;font-weight:800;color:var(--shadow);line-height:1.2;margin-bottom:.25rem}
+    .card-handle{font-size:.8125rem;color:var(--azure);font-weight:600}
+    .stage-badge{display:inline-flex;align-items:center;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .625rem;border-radius:4px;white-space:nowrap;flex-shrink:0}
+    .card-meta{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:1.25rem}
+    .meta-item{display:flex;flex-direction:column;gap:.125rem}
+    .meta-lbl{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+    .meta-val{font-size:.875rem;font-weight:600;color:var(--text)}
+    .card-report{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .report-month{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.25rem}
+    .report-score{font-size:1.625rem;font-weight:800;line-height:1;letter-spacing:-.03em}
+    .report-score span{font-size:.875rem;color:var(--muted);font-weight:400}
+    .report-label{font-size:.75rem;color:var(--muted);margin-top:.125rem}
+    .view-btn{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);white-space:nowrap;padding:.5rem .875rem;border:1.5px solid rgba(14,51,135,.2);border-radius:6px;transition:background .15s,border-color .15s}
+    .client-card:hover .view-btn{background:rgba(14,51,135,.06);border-color:rgba(14,51,135,.35)}
+    @media(max-width:640px){.clients-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="logo">
-        <img src="/assets/scroll-logo.svg" alt="Scroll Media">
-      </div>
-      <h1>Client Performance Reports</h1>
-      <p class="subtitle">Monthly social media analytics and strategic insights</p>
-    </div>
-    
-    <div class="clients-grid">
-      
-      <!-- Lane & Kate -->
-      <a href="/laneandkate/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">Lane & Kate</h3>
-          <div class="client-handle">@laneandkate</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Fine Jewelry</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Rachel Dina</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">March 2026</div>
-            <div class="report-score">7.5<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-lift">Lift Stage</div>
-      </a>
-      
-      <!-- Launch Party -->
-      <a href="/shoplaunchparty/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">Launch Party</h3>
-          <div class="client-handle">@shoplaunchparty</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Beauty Boutique</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Riley Walker</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">March 2026</div>
-            <div class="report-score">7.7<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-lift">Lift Stage</div>
-      </a>
-      
-      <!-- Skin by Brownlee -->
-      <a href="/skinbybrownleeandco/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">Skin by Brownlee</h3>
-          <div class="client-handle">@skinbybrownleeandco</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Med Spa</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Riley Walker</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">March 2026</div>
-            <div class="report-score">7.9<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-rise">Rise Stage</div>
-      </a>
-      
-      <!-- MEAS Active -->
-      <a href="/measactive/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">MEAS Active</h3>
-          <div class="client-handle">@meas_active</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Athletic Wear</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Riley Walker</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">March 2026</div>
-            <div class="report-score">7.4<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-lift">Lift Stage</div>
-      </a>
-      
-      <!-- DEFINE Oakley -->
-      <a href="/defineoakley/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">DEFINE Oakley</h3>
-          <div class="client-handle">@defineoakley</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Fitness Studio</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Emily Krintz</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">March 2026</div>
-            <div class="report-score">7.5<span>/10</span></div>
-          </div>
-          <span class="view-link">View Report</span>
-        </div>
-        <div class="stage-badge stage-lift">Lift Stage</div>
-      </a>
-      
-      <!-- Ombré Gallery -->
-      <a href="/ombregallery/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">Ombré Gallery</h3>
-          <div class="client-handle">@ombregallery</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Brow & Beauty</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Emily Krintz</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">March 2026</div>
-            <div class="report-score">7.2<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-lift">Lift Stage</div>
-      </a>
-      
-      <!-- Plas Dentistry -->
-      <a href="/plasdentistry/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">Plas Dentistry</h3>
-          <div class="client-handle">@plasdentistry</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Dental Practice</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Riley Walker</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">February 2026</div>
-            <div class="report-score">7.2<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-spark">Spark Stage</div>
-      </a>
-      
-      <!-- Up & Running -->
-      <a href="/upandrunningoh/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">Up &amp; Running</h3>
-          <div class="client-handle">@upandrunningoh</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Specialty Running &amp; Fitness Retail</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Rachel Dina</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">March 2026</div>
-            <div class="report-score">7.4<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-spark">Spark Stage</div>
-      </a>
-      
-      <!-- Holos House -->
-      <a href="/holoshousencincy/" class="client-card">
-        <div class="client-header">
-          <h3 class="client-name">Holos House</h3>
-          <div class="client-handle">@holoshousencincy</div>
-        </div>
-        <div class="client-meta">
-          <div class="meta-row">
-            <div class="meta-label">Niche</div>
-            <div class="meta-value">Wellness Center</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Manager</div>
-            <div class="meta-value">Rachel Dina</div>
-          </div>
-        </div>
-        <div class="latest-report">
-          <div class="report-info">
-            <div class="report-badge">February 2026</div>
-            <div class="report-score">7.2<span>/10</span></div>
-          </div>
-          <span class="view-link">View Reports</span>
-        </div>
-        <div class="stage-badge stage-spark">Spark Stage</div>
-      </a>
-      
-    </div>
+<header class="hero">
+  <div class="hero-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png" alt="Scroll Media" class="hero-logo" width="140" height="32">
+    <div class="hero-eyebrow"><div class="dot"></div>Client Performance Reports</div>
+    <h1>Monthly <span>Instagram</span><br>Performance Reports</h1>
+    <p class="hero-sub">Prepared by Scroll Media &mdash; data-driven performance reporting for every active client account.</p>
   </div>
+</header>
+<div class="wrap">
+  <div class="section-header">
+    <p class="section-label">Active Accounts</p>
+    <h2 class="section-title">March 2026 Reports</h2>
+  </div>
+  <div class="clients-grid">
+    <a href="/shoplaunchparty/" class="client-card lift">
+      <div class="card-top">
+        <div><div class="card-name">Launch Party</div><div class="card-handle">@shoplaunchparty</div></div>
+        <div class="stage-badge lift" style="background:rgba(14,51,135,.08);color:#0e3387;border:1px solid rgba(14,51,135,.15)">Lift Stage</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Indie Beauty Retail</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Riley Walker</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 19</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Active</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">March 2026</div>
+          <div class="report-score" style="color:#d97706">7.4<span>/10</span></div>
+          <div class="report-label">Progressing Month</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+    <a href="/laneandkate/" class="client-card lift">
+      <div class="card-top">
+        <div><div class="card-name">Lane & Kate</div><div class="card-handle">@laneandkate</div></div>
+        <div class="stage-badge lift" style="background:rgba(14,51,135,.08);color:#0e3387;border:1px solid rgba(14,51,135,.15)">Lift Stage</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Fine Jewelry</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Rachel Dina</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 22</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Active</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">March 2026</div>
+          <div class="report-score" style="color:#d97706">7.4<span>/10</span></div>
+          <div class="report-label">Progressing Month</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+    <a href="/skinbybrownleeandco/" class="client-card rise">
+      <div class="card-top">
+        <div><div class="card-name">Skin by Brownlee &amp; Co</div><div class="card-handle">@skinbybrownleeandco</div></div>
+        <div class="stage-badge rise" style="background:rgba(124,58,237,.08);color:#7c3aed;border:1px solid rgba(124,58,237,.15)">Rise Stage</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Med Spa / Aesthetics</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Riley Walker</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 20</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#d97706">Pending Data</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">February 2026</div>
+          <div class="report-score" style="color:#0e3387">7.9<span>/10</span></div>
+          <div class="report-label">Building Month</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+    <a href="/measactive/" class="client-card lift">
+      <div class="card-top">
+        <div><div class="card-name">MEAS Active</div><div class="card-handle">@measactive</div></div>
+        <div class="stage-badge lift" style="background:rgba(14,51,135,.08);color:#0e3387;border:1px solid rgba(14,51,135,.15)">Lift Stage</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Activewear / Apparel</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Riley Walker</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 18</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Active</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">March 2026</div>
+          <div class="report-score" style="color:#0e3387">7.6<span>/10</span></div>
+          <div class="report-label">Building Month</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+    <a href="/upandrunningoh/" class="client-card spark">
+      <div class="card-top">
+        <div><div class="card-name">Up &amp; Running OH</div><div class="card-handle">@upandrunningoh</div></div>
+        <div class="stage-badge spark" style="background:rgba(217,119,6,.08);color:#d97706;border:1px solid rgba(217,119,6,.15)">Spark Stage</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Running &amp; Fitness Retail</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Rachel Dina</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 9</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Active</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">March 2026</div>
+          <div class="report-score" style="color:#0e3387">7.7<span>/10</span></div>
+          <div class="report-label">Building Month</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+    <a href="/defineoakley/" class="client-card lift">
+      <div class="card-top">
+        <div><div class="card-name">DEFINE Oakley</div><div class="card-handle">@defineoakley</div></div>
+        <div class="stage-badge lift" style="background:rgba(14,51,135,.08);color:#0e3387;border:1px solid rgba(14,51,135,.15)">Lift Stage</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Fitness Studio</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Emily Krintz</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 26</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Active</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">March 2026</div>
+          <div class="report-score" style="color:#059669">8.2<span>/10</span></div>
+          <div class="report-label">Solid Month</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+    <a href="/ombregallery/" class="client-card lift">
+      <div class="card-top">
+        <div><div class="card-name">Ombr&eacute; Gallery</div><div class="card-handle">@ombregallery</div></div>
+        <div class="stage-badge lift" style="background:rgba(14,51,135,.08);color:#0e3387;border:1px solid rgba(14,51,135,.15)">Lift Stage</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Brow &amp; Beauty Studio</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Emily Krintz</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 20</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Active</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">March 2026</div>
+          <div class="report-score" style="color:#0e3387">7.9<span>/10</span></div>
+          <div class="report-label">Building Month</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="120" height="24">
+    <p class="footer-text">&copy; 2026 <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &mdash; Monthly Client Performance Reports &middot; Confidential</p>
+  </div>
+</footer>
 </body>
 </html>
