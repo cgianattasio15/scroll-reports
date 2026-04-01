@@ -243,9 +243,77 @@
     .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
     .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
     .cap-toggle:hover{color:var(--navy)}
-    </style>
+    
+    /* ── CAPTION EXPAND/COLLAPSE ── */
+    .cap-preview{display:inline}
+    .cap-rest{display:none}
+    .cap-rest.open{display:inline}
+    .cap-ellipsis{display:inline}
+    .cap-ellipsis.hidden{display:none}
+  
+    /* ── STICKY NAV BAR ── */
+    .report-nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#0b2a6e;
+      border-bottom:2px solid #c8d94a;
+      padding:0;
+      width:100%;
+    }
+    .report-nav-inner{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:0;
+      overflow-x:auto;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .report-nav-inner::-webkit-scrollbar{display:none}
+    .report-nav-link{
+      display:inline-block;
+      padding:.625rem 1rem;
+      font-size:.75rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.7);
+      text-decoration:none;
+      white-space:nowrap;
+      border-bottom:2px solid transparent;
+      transition:color .15s, border-color .15s;
+      margin-bottom:-2px;
+    }
+    .report-nav-link:hover{
+      color:#c8d94a;
+      border-bottom-color:#c8d94a;
+    }
+    .report-nav-link.active{
+      color:#c8d94a;
+      border-bottom-color:#c8d94a;
+    }
+    @media(max-width:700px){
+      .report-nav-link{padding:.5rem .75rem;font-size:.6875rem}
+    }
+
+  </style>
 </head>
 <body>
+<!-- ═══ STICKY NAV ═══ -->
+<nav class="report-nav" aria-label="Report sections">
+  <div class="report-nav-inner">
+    <a class="report-nav-link" href="#score-section">Score</a>
+    <a class="report-nav-link" href="#funnel-title">Goals</a>
+    <a class="report-nav-link" href="#perf-title">Performance</a>
+    <a class="report-nav-link" href="#posts-title">Top Posts</a>
+    <a class="report-nav-link" href="#strat-title">Strategy</a>
+    <a class="report-nav-link" href="#cta-title">CTAs</a>
+    <a class="report-nav-link" href="#prev-title">History</a>
+  </div>
+</nav>
+
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
 
 <header class="hero">
@@ -573,5 +641,29 @@
     }
   }
   </script>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.report-nav-link');
+  var sections = [];
+  links.forEach(function(l){
+    var id = l.getAttribute('href').replace('#','');
+    var el = document.getElementById(id);
+    if(el) sections.push({el:el, link:l});
+  });
+  function onScroll(){
+    var scrollY = window.scrollY + 80;
+    var active = null;
+    sections.forEach(function(s){
+      if(s.el.getBoundingClientRect().top + window.scrollY <= scrollY) active = s;
+    });
+    links.forEach(function(l){ l.classList.remove('active'); });
+    if(active) active.link.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
 </body>
 </html>

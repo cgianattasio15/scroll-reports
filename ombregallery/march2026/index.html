@@ -196,10 +196,142 @@
     .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
     .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
     .cap-toggle:hover{color:var(--navy)}
-    </style>
+    
+    /* ── STRATEGY ADJUSTMENTS ── */
+.adj-grid{display:flex;flex-direction:column;gap:.875rem}
+    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
+    @media(max-width:480px){.adj-card{flex-direction:column}}
+    .adj-num{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;flex-shrink:0;color:#fff}
+    .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
+    .adj-content{flex:1;min-width:0}
+    .adj-type{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
+    .adj-type.doubling{color:var(--azure)}.adj-type.testing{color:var(--exceed)}.adj-type.fixing{color:var(--watch)}
+    .adj-headline{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.3}
+    .adj-context{font-size:.75rem;color:var(--muted);margin-bottom:.625rem}
+    .adj-move{font-size:.875rem;color:var(--text);line-height:1.6;padding:.625rem .875rem;background:var(--porcelain);border-radius:6px;border-left:3px solid var(--azure)}
+    .adj-move.testing{border-left-color:var(--exceed)}.adj-move.fixing{border-left-color:#f59e0b}
+
+    /* ── NEXT MONTH CTAs ── */
+    .cta-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);border-radius:var(--radius);padding:2.25rem;margin:1.75rem 0;color:#fff;overflow:hidden;position:relative}
+    .cta-section::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(14,51,135,.2),transparent 65%);border-radius:50%;pointer-events:none}
+    .cta-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .cta-title{font-size:clamp(1.375rem,4vw,1.875rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
+    .cta-sub{font-size:.9375rem;color:rgba(255,255,255,.55);margin-bottom:1.75rem;max-width:560px;line-height:1.65}
+    .cta-primary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.22);border-radius:10px;padding:1.375rem;margin-bottom:1.5rem;position:relative;z-index:1}
+    .cta-primary-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .cta-primary-obj{font-size:1.0625rem;font-weight:700;color:#fff;margin-bottom:.75rem}
+    .cta-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.875rem}
+    .cta-chip{font-size:.6875rem;font-weight:600;padding:.25rem .625rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.7)}
+    .cta-copy{font-size:.9375rem;font-style:italic;color:rgba(255,255,255,.85);padding:.75rem 1rem;background:rgba(255,255,255,.06);border-radius:6px;border-left:3px solid var(--hl);margin-bottom:.75rem}
+    .cta-rationale{font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.65}
+    .cta-funnel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;position:relative;z-index:1}
+    @media(max-width:760px){.cta-funnel-grid{grid-template-columns:1fr}}
+    .cta-funnel-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:1.125rem}
+    .cta-stage-badge{display:inline-block;font-size:.625rem;font-weight:700;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.625rem}
+    .cta-stage-badge.tofu{background:rgba(14,51,135,.4);color:var(--lucid)}
+    .cta-stage-badge.mofu{background:rgba(124,58,237,.3);color:#c4b5fd}
+    .cta-stage-badge.bofu{background:rgba(5,150,105,.25);color:#6ee7b7}
+    .cta-funnel-type{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+    .cta-funnel-copy{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.7);margin-bottom:.625rem;line-height:1.55}
+    .cta-funnel-kpi{font-size:.6875rem;color:rgba(255,255,255,.4)}
+    .cta-funnel-kpi strong{color:rgba(255,255,255,.65)}
+
+    /* ── PREVIOUS REPORTS ── */
+    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem}
+    .prev-inner{max-width:1100px;margin:0 auto}
+    .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .prev-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
+    .prev-sub{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
+    .prev-grid{display:flex;flex-wrap:wrap;gap:.875rem}
+    .prev-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.375rem 1.625rem;color:#fff;transition:background .2s,border-color .2s;min-width:180px;flex:1}
+    .prev-card:hover{background:rgba(255,255,255,.1);border-color:rgba(226,237,122,.3)}
+    .prev-month{font-size:.6875rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+    .prev-score{font-size:2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:.2rem;letter-spacing:-.03em}
+    .prev-score span{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.35)}
+    .prev-label{font-size:.8125rem;color:rgba(255,255,255,.55);margin-bottom:.75rem}
+    .prev-link{font-size:.8125rem;font-weight:700;color:var(--hl)}
+
+    /* ── FOOTER ── */
+    .footer{background:#ffffff;padding:2.25rem 1.25rem;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+    .footer-logo{height:26px;width:auto}
+    .footer-text{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-text a{color:var(--azure);font-weight:600}
+    .footer-text a:hover{text-decoration:underline}
+    @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
+
+    /* ── CAPTION EXPAND/COLLAPSE ── */
+    .cap-preview{display:inline}
+    .cap-rest{display:none}
+    .cap-rest.open{display:inline}
+    .cap-ellipsis{display:inline}
+    .cap-ellipsis.hidden{display:none}
+
+  
+    /* ── STICKY NAV BAR ── */
+    .report-nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#0b2a6e;
+      border-bottom:2px solid #c8d94a;
+      padding:0;
+      width:100%;
+    }
+    .report-nav-inner{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:0;
+      overflow-x:auto;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .report-nav-inner::-webkit-scrollbar{display:none}
+    .report-nav-link{
+      display:inline-block;
+      padding:.625rem 1rem;
+      font-size:.75rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.7);
+      text-decoration:none;
+      white-space:nowrap;
+      border-bottom:2px solid transparent;
+      transition:color .15s, border-color .15s;
+      margin-bottom:-2px;
+    }
+    .report-nav-link:hover{
+      color:#c8d94a;
+      border-bottom-color:#c8d94a;
+    }
+    .report-nav-link.active{
+      color:#c8d94a;
+      border-bottom-color:#c8d94a;
+    }
+    @media(max-width:700px){
+      .report-nav-link{padding:.5rem .75rem;font-size:.6875rem}
+    }
+
+  </style>
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+<!-- ═══ STICKY NAV ═══ -->
+<nav class="report-nav" aria-label="Report sections">
+  <div class="report-nav-inner">
+    <a class="report-nav-link" href="#score-section">Score</a>
+    <a class="report-nav-link" href="#funnel-title">Goals</a>
+    <a class="report-nav-link" href="#perf-title">Performance</a>
+    <a class="report-nav-link" href="#posts-title">Top Posts</a>
+    <a class="report-nav-link" href="#strat-title">Strategy</a>
+    <a class="report-nav-link" href="#cta-title">CTAs</a>
+    <a class="report-nav-link" href="#prev-title">History</a>
+  </div>
+</nav>
 
 <!-- ═══ HERO ═══ -->
 <header class="hero">
@@ -237,6 +369,7 @@
 </header>
 
 <!-- ═══ SCORE CARD ═══ -->
+<div id="score-section" style="position:absolute;margin-top:-70px"></div>
 <div class="score-wrap">
   <div class="score-card">
     <p class="score-eyebrow">Monthly Performance Score</p>
@@ -712,5 +845,29 @@
     }
   }
   </script>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.report-nav-link');
+  var sections = [];
+  links.forEach(function(l){
+    var id = l.getAttribute('href').replace('#','');
+    var el = document.getElementById(id);
+    if(el) sections.push({el:el, link:l});
+  });
+  function onScroll(){
+    var scrollY = window.scrollY + 80;
+    var active = null;
+    sections.forEach(function(s){
+      if(s.el.getBoundingClientRect().top + window.scrollY <= scrollY) active = s;
+    });
+    links.forEach(function(l){ l.classList.remove('active'); });
+    if(active) active.link.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
 </body>
 </html>
