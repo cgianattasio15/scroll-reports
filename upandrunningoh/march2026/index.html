@@ -145,102 +145,46 @@
     .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.55}
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
-    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow: hidden;box-shadow:0 1px 6px rgba(21,21,22,.05);display:flex;flex-direction:column}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:0 1px 6px rgba(21,21,22,.05);display:flex;flex-direction:column}
     .post-rank{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;font-size:.75rem;font-weight:700}
     .post-rank.r1{background:linear-gradient(90deg,var(--azure),#1a4fc4);color:#fff}
     .post-rank.r2{background:linear-gradient(90deg,#1e293b,#334155);color:#fff}
     .post-rank.r3{background:var(--porcelain);color:var(--muted)}
+    .post-rank.r4{background:linear-gradient(90deg,#065f46,#059669);color:#fff}
     .post-fmt{font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#fff}
-    .post-rank.r3 .post-fmt{font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#fff}
+    .post-rank.r3 .post-fmt{background:rgba(0,0,0,.1);color:var(--muted)}
     .post-body{padding:1rem;flex:1;display:flex;flex-direction:column}
     .post-date{font-size:.75rem;color:var(--muted);margin-bottom:.5rem}
     .post-hook{font-size:.875rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:.75rem;font-style:italic}
-    .post-stats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem}
+    .post-caption{background:var(--porcelain);border-radius:6px;padding:.625rem .875rem;margin-bottom:.75rem;font-size:.8rem}
+    .post-caption-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.35rem}
+    .post-caption-text{color:var(--text);line-height:1.55;font-size:.8125rem}
+    .cap-toggle{background:none;border:none;color:var(--azure);font-size:.75rem;font-weight:700;cursor:pointer;padding:.25rem 0 0;display:block}
+    .cap-toggle:hover{text-decoration:underline}
+    .post-stats{display:grid;grid-template-columns:1fr;gap:.5rem;margin-bottom:.75rem}
+    .post-stats-outlier{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.75rem}
     .pstat{background:var(--porcelain);border-radius:6px;padding:.5rem .75rem}
+    .pstat-outlier{background:var(--porcelain);border-radius:6px;padding:.5rem .75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.25rem}
     .pstat-lbl{display:block;font-size:.625rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
+    .pstat-outlier .pstat-lbl{margin-bottom:0;flex:0 0 auto}
     .pstat-val{font-size:1.125rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
+    .pstat-outlier .pstat-val{font-size:.9375rem;font-weight:800;color:var(--text)}
+    .pstat-mult{font-size:.6875rem;font-weight:700;padding:.2rem .5rem;border-radius:20px;white-space:nowrap}
+    .mult-high{background:rgba(5,150,105,.12);color:#065f46}
+    .mult-med{background:rgba(14,51,135,.1);color:var(--azure)}
+    .mult-base{background:rgba(100,116,139,.1);color:var(--muted)}
+    .post-insight{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .875rem;background:rgba(14,51,135,.04);border-left:3px solid var(--azure);border-radius:0 6px 6px 0;margin-bottom:1rem;display:flex;gap:.5rem;align-items:flex-start}
     .post-format-row{display:flex;align-items:center;gap:.625rem;margin-bottom:.875rem;flex-wrap:wrap}
     .post-format-tag{display:inline-flex;align-items:center;gap:.35rem;background:rgba(14,51,135,.08);border:1px solid rgba(14,51,135,.15);color:var(--azure);font-size:.75rem;font-weight:700;padding:.3rem .75rem;border-radius:20px;letter-spacing:.02em}
     .post-format-tag::before{content:'';width:6px;height:6px;background:var(--azure);border-radius:50%;flex-shrink:0}
     .post-retention-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;padding:.4rem .75rem;background:rgba(124,58,237,.05);border:1px solid rgba(124,58,237,.12);border-radius:6px}
-    .post-retention-label{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mofu)}
-    .post-retention-val{font-size:1.0625rem;font-weight:800;color:var(--mofu);margin-left:auto}
-    .post-retention-note{font-size:.6875rem;color:var(--muted)}
-    .post-learning{font-size:.75rem;color:var(--text);line-height:1.55;padding:.625rem .875rem;background:rgba(226,237,122,.06);border:1px solid rgba(226,237,122,.2);border-radius:6px;margin-bottom:.875rem}
-    .post-learning-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a9a2a;margin-bottom:.3rem}
-    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
-    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
-    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem}
-    
-    .adj-num{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:800;flex-shrink:0;color:#fff;margin-bottom:.25rem}
-    .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
-    .adj-content{flex:1;min-width:0;width:100%}
-    .adj-type{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
-    .adj-type.doubling{color:var(--azure)}.adj-type.testing{color:var(--exceed)}.adj-type.fixing{color:var(--watch)}
-    .adj-headline{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.3}
-    .adj-context{font-size:.75rem;color:var(--muted);margin-bottom:.625rem}
-    .adj-move{font-size:.875rem;color:var(--text);line-height:1.6;padding:.625rem .875rem;background:var(--porcelain);border-radius:6px;border-left:3px solid var(--azure)}
-    .adj-move.testing{border-left-color:var(--exceed)}.adj-move.fixing{border-left-color:#f59e0b}
-    .cta-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);border-radius:var(--radius);padding:2.25rem;margin:1.75rem 0;color:#fff;overflow:hidden;position:relative}
-    .cta-section::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(14,51,135,.2),transparent 65%);border-radius:50%;pointer-events:none}
-    .cta-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
-    .cta-title{font-size:clamp(1.375rem,4vw,1.875rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
-    .cta-sub{font-size:.9375rem;color:rgba(255,255,255,.55);margin-bottom:1.75rem;max-width:560px;line-height:1.65}
-    .cta-primary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.22);border-radius:10px;padding:1.375rem;margin-bottom:1.5rem;position:relative;z-index:1}
-    .cta-primary-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
-    .cta-primary-obj{font-size:1.0625rem;font-weight:700;color:#fff;margin-bottom:.75rem}
-    .cta-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.875rem}
-    .cta-chip{font-size:.6875rem;font-weight:600;padding:.25rem .625rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.7)}
-    .cta-copy{font-size:.9375rem;font-style:italic;color:rgba(255,255,255,.85);padding:.75rem 1rem;background:rgba(255,255,255,.06);border-radius:6px;border-left:3px solid var(--hl);margin-bottom:.75rem}
-    .cta-rationale{font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.65}
-    .cta-funnel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;position:relative;z-index:1}
-    @media(max-width:760px){.cta-funnel-grid{grid-template-columns:1fr}}
-    .cta-funnel-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:1.125rem}
-    .cta-stage-badge{display:inline-block;font-size:.625rem;font-weight:700;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.625rem}
-    .cta-stage-badge.tofu{background:rgba(14,51,135,.4);color:var(--lucid)}
-    .cta-stage-badge.mofu{background:rgba(124,58,237,.3);color:#c4b5fd}
-    .cta-stage-badge.bofu{background:rgba(5,150,105,.25);color:#6ee7b7}
-    .cta-funnel-type{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:.4rem}
-    .cta-funnel-copy{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.7);margin-bottom:.625rem;line-height:1.55}
-    .cta-funnel-kpi{font-size:.6875rem;color:rgba(255,255,255,.4)}
-    .cta-funnel-kpi strong{color:rgba(255,255,255,.65)}
-    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem}
-    .prev-inner{max-width:1100px;margin:0 auto}
-    .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
-    .prev-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
-    .prev-sub{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
-    .prev-grid{display:flex;flex-wrap:wrap;gap:.875rem}
-    .prev-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.375rem 1.625rem;color:#fff;transition:background .2s,border-color .2s;min-width:180px;flex:1}
-    .prev-card:hover{background:rgba(255,255,255,.1);border-color:rgba(226,237,122,.3)}
-    .prev-month{font-size:.6875rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.375rem}
-    .prev-score{font-size:2rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em;margin-bottom:.25rem}
-    .prev-score span{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.35)}
-    .prev-label{font-size:.8125rem;color:rgba(255,255,255,.55);margin-bottom:.75rem}
-    .prev-link{font-size:.8125rem;font-weight:700;color:var(--hl)}
-    .footer{background:#ffffff;padding:2.25rem 1.25rem;border-top:1px solid var(--border)}
-    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
-    .footer-logo{height:26px;width:auto}
-    .footer-text{font-size:.8125rem;color:var(--muted);line-height:1.6}
-    .footer-text a{color:var(--azure);font-weight:600}
-    .footer-text a:hover{text-decoration:underline}
-    @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
-  
-  /* v7.1: View on Instagram button */
-  .post-ig-btn {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 10px 24px;
-    background: var(--azure);
-    color: #fff;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 600;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    letter-spacing: 0.01em;
-  }
-  .post-ig-btn:hover {
+    .post-retention-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#7c3aed}
+    .post-retention-note{font-size:.75rem;color:var(--muted);flex:1}
+    .post-retention-val{font-size:.9375rem;font-weight:800;color:#7c3aed}
+    .post-learning{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .875rem;background:rgba(234,179,8,.06);border-left:3px solid var(--lime);border-radius:0 6px 6px 0;margin-bottom:1rem;flex:1}
+    .post-learning-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lime);margin-bottom:.35rem}
+    .post-ig-btn{display:block;text-align:center;background:linear-gradient(90deg,var(--azure),#1a4fc4);color:#fff;font-size:.875rem;font-weight:700;padding:.75rem 1.25rem;border-radius:8px;text-decoration:none;margin-top:auto;transition:opacity .15s}
+    .post-ig-btn:hover{opacity:.88}
     background: #0b2a6e;
     transform: translateY(-1px);
   }
@@ -504,102 +448,110 @@
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
 <div class="post-card">
-  <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">Post</span></div>
+  <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">REEL</span></div>
   <div class="post-body">
-    <p class="post-date">March 24, 2026</p>
+    <p class="post-date">March 18, 2026</p>
     <div class="post-format-row">
-      <span class="post-format-tag">Team Spotlight / People Story Carousel</span>
+      <span class="post-format-tag">Reel</span>
     </div>
-    <p class="post-hook">&ldquo;From Customer to Store Manager and many roles in between.&rdquo;
+    <p class="post-hook">&ldquo;Woah woah woah. A custom shoe fitting isn’t just trying on shoes, it’s an analysis of how you mov...&rdquo;</p>
     <div class="post-caption">
       <div class="post-caption-label">Caption</div>
       <div class="post-caption-text">
-        <span class="cap-preview" id="capupandrunningoh1-preview">From Customer to Store Manager and many roles in between.<br><br>When Up and Running was getting ready to open, I had heard about this new business and thought to myself how much I would love to work there—or at least shop<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capupandrunningoh1-rest" style="display:none"> there.<br><br>I had always been an athlete and got more into running as an adult, so this seemed like the perfect fit.<br><br>After being a customer for years, I joined the company in 2012 as a very part-time employee. Over the years, my roles at UAR have ebbed and flowed, eventually leading me to become Store Manager in 2020.<br><br>I love being out on the floor, welcoming customers in and getting to know their “why.” Whether someone is just starting their running journey or training for their next big race, or simply needing an everyday shoe being part of that process is incredibly rewarding.<br><br>I also have a passion for fashion and apparel, and I enjoy helping curate pieces that not only perform well but make people feel confident. Being able to blend function with style and help customers find what works best for them is one of my favorite parts of the job.<br><br>- Laurie<br><br>…<br>#upandrunning #daytonohio #troyohio</span>
+        <span class="cap-preview" id="capupandrunningoh1-preview">Woah woah woah. A custom shoe fitting isn’t just trying on shoes, it’s an analysis of how you move, what your feet need, and finding the shoe that actually works for your<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capupandrunningoh1-rest" style="display:none"> body.<br><br>If you’re on your feet all day, running your first 5K, or just getting back into movement after a long break, a custom shoe fitting is for YOU. <br><br>Not just for elite runners. For nurses, teachers, new moms, and everyone in between. We fit every body. Every pace. Every goal. 🙌<br><br>...<br>#daytonrunningstore #troyrunningstore #customshoefit</span>
       </div>
       <button class="cap-toggle" onclick="toggleCap('capupandrunningoh1')" id="capupandrunningoh1-btn">Show more</button>
     </div>
-    </p>
-    <div class="post-stats">
-      <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">12,491</span></div>
-      <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">248</span></div>
+<div class="post-stats post-stats-outlier">
+      <div class="pstat pstat-outlier">
+        <span class="pstat-lbl">Saves</span>
+        <span class="pstat-val">2</span>
+        <span class="pstat-mult mult-high">3.2x account avg</span>
+      </div>
+      <div class="pstat pstat-outlier">
+        <span class="pstat-lbl">Avg Retention</span>
+        <span class="pstat-val">99.9%</span>
+        <span class="pstat-mult mult-high">2.9x account avg</span>
+      </div>
+      <div class="pstat pstat-outlier">
+        <span class="pstat-lbl">Shares</span>
+        <span class="pstat-val">3</span>
+        <span class="pstat-mult mult-high">2.2x account avg</span>
+      </div>
     </div>
-        <div class="post-retention-row">
+    <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">&mdash;</span>
+      <span class="post-retention-val">99.9%</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
-      Human-first storytelling is Up & Running's strongest content format. A real team member's journey from customer to manager builds authentic community trust — exactly the kind of content that earns shares and saves from the local running community.
+      Powered by save density at 3.2x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value. Retention also over-indexed at 2.9x average — confirming strong content quality.
+    </div>
+    <a href="https://www.instagram.com/reel/DWB_QjRDa6h/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
+    </div>
+  </div>
+<div class="post-card">
+  <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">STATIC IMAGE</span></div>
+  <div class="post-body">
+    <p class="post-date">March 24, 2026</p>
+    <div class="post-format-row">
+      <span class="post-format-tag">Static Image</span>
+    </div>
+    <p class="post-hook">&ldquo;From Customer to Store Manager and many roles in between.&rdquo;</p>
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capupandrunningoh2-preview">From Customer to Store Manager and many roles in between.<br><br>When Up and Running was getting ready to open, I had heard about this new business and thought to myself how much I<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capupandrunningoh2-rest" style="display:none"> would love to work there—or at least shop there.<br><br>I had always been an athlete and got more into running as an adult, so this seemed like the perfect fit.<br><br>After being a customer for years, I joined the company in 2012 as a very part-time employee. Over the years, my roles at UAR have ebbed and flowed, eventually leading me to become Store Manager in 2020.<br><br>I love being out on the floor, welcoming customers in and getting to know their “why.” Whether someone is just starting their running journey or training for their next big race, or simply needing an everyday shoe being part of that process is incredibly rewarding.<br><br>I also have a passion for fashion and apparel, and I enjoy helping curate pieces that not only perform well but make people feel confident. Being able to blend function with style and help customers find what works best for them is one of my favorite parts of the job.<br><br>- Laurie<br><br>…<br>#upandrunning #daytonohio #troyohio</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh2')" id="capupandrunningoh2-btn">Show more</button>
+    </div>
+<div class="post-stats post-stats-outlier">
+      <div class="pstat pstat-outlier">
+        <span class="pstat-lbl">Total Views</span>
+        <span class="pstat-val">12,719</span>
+        <span class="pstat-mult mult-high">5.1x account avg</span>
+      </div>
+    </div>
+
+    <div class="post-learning">
+      <div class="post-learning-label">&#9650; Why It Worked</div>
+      A reach outlier at 5.1x the account's average views. The hook successfully broke content out of the core audience and into the wider algorithm — a strong signal to double down on this format and topic.
     </div>
     <a href="https://www.instagram.com/p/DWRh5UwDbME/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
     </div>
   </div>
 <div class="post-card">
-  <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">Post</span></div>
+  <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">STATIC IMAGE</span></div>
   <div class="post-body">
-    <p class="post-date">March 19, 2026</p>
+    <p class="post-date">March 10, 2026</p>
     <div class="post-format-row">
-      <span class="post-format-tag">Event / Community Announcement Carousel</span>
+      <span class="post-format-tag">Static Image</span>
     </div>
-    <p class="post-hook">&ldquo;April is packed. Here's what's coming.&rdquo;
+    <p class="post-hook">&ldquo;Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!&rdquo;</p>
     <div class="post-caption">
       <div class="post-caption-label">Caption</div>
       <div class="post-caption-text">
-        <span class="cap-preview" id="capupandrunningoh2-preview">It’ more than bikes and shoes with this crew...it’s community!  We love when our neighbors from K&amp;G Bikes pay us a visit. <br><br>There’s something really meaningful about connecting with people who care so deeply about this<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capupandrunningoh2-rest" style="display:none"> community—we feel lucky to be part of it here in Dayton.<br><br>When you shop local, you’re supporting real people, real families, and the places that make this city feel like home. 🧡<br><br>#supportlocal #shopdayton</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh2')" id="capupandrunningoh2-btn">Show more</button>
-    </div>
-    </p>
-    <div class="post-stats">
-      <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">2,915</span></div>
-      <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">34</span></div>
-    </div>
-        <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">&mdash;</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Event calendars drive saves and shares from the local running community. Community-first content reinforces Up & Running's identity as more than a store — it's a running hub.
-    </div>
-    <a href="https://www.instagram.com/p/DWHB_eBDbCu/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">Post</span></div>
-  <div class="post-body">
-    <p class="post-date">March 11, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Product Education Carousel</span>
-    </div>
-    <p class="post-hook">&ldquo;The UAR Waterproof Guide — what to wear when the weather won't cooperate.&rdquo;
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capupandrunningoh3-preview">Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!<br><br>This scenic race through Woodland Cemetery features a hilly course, incredible views of Dayton, and a chance to experience local history<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capupandrunningoh3-rest" style="display:none"> along the way. Proceeds benefit the Woodland Foundation.<br><br>Plus, new this year we have the Centerville Better Blend Food Truck on site after the race for a delicious refuel ⚡️<br><br>April 26, 2026 | 9AM<br>Woodland Cemetery &amp; Arboretum <br><br>See you there! 👀<br>Link to register in bio<br><br>#dayton5k #ohio5k #ohio10k</span>
+        <span class="cap-preview" id="capupandrunningoh3-preview">Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!<br><br>This scenic race through Woodland Cemetery features a hilly course, incredible views of Dayton,<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capupandrunningoh3-rest" style="display:none"> and a chance to experience local history along the way. Proceeds benefit the Woodland Foundation.<br><br>Plus, new this year we have the Centerville Better Blend Food Truck on site after the race for a delicious refuel ⚡️<br><br>April 26, 2026 | 9AM<br>Woodland Cemetery &amp; Arboretum <br><br>See you there! 👀<br>Link to register in bio<br><br>#dayton5k #ohio5k #ohio10k</span>
       </div>
       <button class="cap-toggle" onclick="toggleCap('capupandrunningoh3')" id="capupandrunningoh3-btn">Show more</button>
     </div>
-    </p>
-    <div class="post-stats">
-      <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">1,276</span></div>
-      <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">19</span></div>
+<div class="post-stats post-stats-outlier">
+      <div class="pstat pstat-outlier">
+        <span class="pstat-lbl">Saves</span>
+        <span class="pstat-val">1</span>
+        <span class="pstat-mult mult-med">1.6x account avg</span>
+      </div>
     </div>
-        <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">&mdash;</span>
-    </div>
+
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
-      Staff-curated product education builds purchase confidence. Practical, seasonal content drives saves from runners who want to reference it later — a strong MOFU signal.
+      Powered by save density at 1.6x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
     </div>
     <a href="https://www.instagram.com/p/DVtZCx2jaHE/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
     </div>
   </div>
-    </div>
+</div>
 </div>
   </div>
 </div>
