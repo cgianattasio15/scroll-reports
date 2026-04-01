@@ -245,7 +245,14 @@
     transform: translateY(-1px);
   }
 
-  </style>
+  
+    /* ── POST CAPTIONS ── */
+    .post-caption{margin:.75rem 0;padding:.75rem;background:#f8f9fa;border-radius:8px;border:1px solid var(--border)}
+    .post-caption-label{font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+    .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
+    .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
+    .cap-toggle:hover{color:var(--navy)}
+    </style>
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -503,7 +510,12 @@
     <div class="post-format-row">
       <span class="post-format-tag">Aesthetic Carousel — Product Lifestyle</span>
     </div>
-    <p class="post-hook">&ldquo;Camera rolls bits and pieces&rdquo;</p>
+    <p class="post-hook">&ldquo;Camera rolls bits and pieces&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">Camera rolls bits and pieces<br><br>…<br>#finejewelry #everydayjewelry #fashionjewlery [fine jewelry, fashion jewelry, style, jewelry collection]</div>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">2,952</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">7</span></div>
@@ -527,7 +539,15 @@
     <div class="post-format-row">
       <span class="post-format-tag">Product Styling Carousel</span>
     </div>
-    <p class="post-hook">&ldquo;Effortless is a design choice.&rdquo;</p>
+    <p class="post-hook">&ldquo;Effortless is a design choice.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="caplaneandkate2-preview">Join us on Tuesday, March 24th at 6:30 inside Studio Eleven in otr to cleanse the jewels x spirit for Mother Earth’s New Year.<br><br>Gold carries energy. It absorbs moments, environments, emotions, as do we.  During this<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="caplaneandkate2-rest" style="display:none"> guided sound immersion, you’ll be bathed in healing frequencies during meditation while your jewelry is mindfully cleansed to reset by yours truly.<br><br>A ritual to realign your mind, restore your body, and refresh the pieces closest to your soul.<br><br>bring a yoga mat, dress cozy, bring all the blankets and pillows you need. &amp; of course your gold and gemstone jewelry, filled or fine, alongside a journal if you wish for this meditative cleansing experience.<br><br>limited spots available.<br>book now, link in bio. <br>located at:  18 E 15th St, OTR</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('caplaneandkate2')" id="caplaneandkate2-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">1,847</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">9</span></div>
@@ -551,15 +571,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Brand Story / Milestone Reel</span>
     </div>
-    <p class="post-hook">&ldquo;A lifetime of moments. A collection that grows with you.&rdquo;</p>
+    <p class="post-hook">&ldquo;A lifetime of moments. A collection that grows with you.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="caplaneandkate3-preview">The stack. The jeweler. The boutique.<br><br>Ellana’s everyday lineup is a reminder that fine jewelry is meant to be worn — layered, loved, and never taken off.<br><br>Come  build your collection with us in OTR/Cincinnati<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="caplaneandkate3-rest" style="display:none"> 🤍<br><br>…<br>#cincinnatijewelry #jewelrycollection #jewelrystack</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('caplaneandkate3')" id="caplaneandkate3-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">1,392</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">28</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—*</span>
+      <span class="post-retention-val">13.5%</span>
     </div>
     <p style="font-size:.7rem;color:var(--muted);margin:.25rem 0 .75rem;line-height:1.4">*Per-post retention data unavailable via API for this account. Account-level retention avg: 21%.</p>
     <div class="post-learning">
@@ -722,5 +750,23 @@
     }
   })();
 </script>
+
+  <script>
+  function toggleCap(uid) {
+    var preview = document.getElementById(uid + '-preview');
+    var rest = document.getElementById(uid + '-rest');
+    var btn = document.getElementById(uid + '-btn');
+    var ellipsis = preview ? preview.querySelector('.cap-ellipsis') : null;
+    if (rest.style.display === 'none') {
+      rest.style.display = 'inline';
+      if (ellipsis) ellipsis.style.display = 'none';
+      btn.textContent = 'Show less';
+    } else {
+      rest.style.display = 'none';
+      if (ellipsis) ellipsis.style.display = 'inline';
+      btn.textContent = 'Show more';
+    }
+  }
+  </script>
 </body>
 </html>

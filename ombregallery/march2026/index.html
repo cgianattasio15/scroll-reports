@@ -245,7 +245,14 @@
     transform: translateY(-1px);
   }
 
-  </style>
+  
+    /* ── POST CAPTIONS ── */
+    .post-caption{margin:.75rem 0;padding:.75rem;background:#f8f9fa;border-radius:8px;border:1px solid var(--border)}
+    .post-caption-label{font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+    .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
+    .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
+    .cap-toggle:hover{color:var(--navy)}
+    </style>
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -503,15 +510,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Relatable / Trending Audio Reel</span>
     </div>
-    <p class="post-hook">&ldquo;How it feels as a small business these days.&rdquo;</p>
+    <p class="post-hook">&ldquo;How it feels as a small business these days.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capombregallery1-preview">The world is heavy right now. <br><br>Anyone else feeling this way? <br><br>Continue to create. Support artists and creatives. Raise your voice. Art is resistance. <br><br>#artjewelry #supportlocalartists #artasresistance #artadvocacy<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capombregallery1-rest" style="display:none"> #artprotest</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capombregallery1')" id="capombregallery1-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">3,880</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">40</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">74.2%</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -527,15 +542,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Artist Feature / Collection Showcase Carousel</span>
     </div>
-    <p class="post-hook">&ldquo;Meet the artist behind this week's collection.&rdquo;</p>
+    <p class="post-hook">&ldquo;Meet the artist behind this week's collection.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capombregallery2-preview">I’m so excited to share that I have been accepted into CreativeOhio’s 2026 Advocacy Leadership Institute (ALI), a first-of-its-kind initiative which has become a nationally recognized model for statewide arts advocacy.<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capombregallery2-rest" style="display:none"> I also received a full scholarship!!!! <br><br>The program is aimed at empowering Ohio’s arts<br>and culture leaders with the skills and strategies needed to advocate for a stronger creative sector. I am one of 25 leaders chosen through a competitive application process, representing 13 cities across Ohio.<br><br>I am thrilled to connect with amazing leaders throughout this state to learn how to empower artists, art organizations, and cultural institutions. <br><br>With the 2026 Institute launching in May, the six-month immersive program includes hands-on workshops, site visits to cultural hubs, and in-depth policy discussions with lawmakers and advocacy experts to gain practical tools to influence public policy, secure funding, and strengthen the statewide network of arts<br>advocates. <br><br>The CreativeOhio Advocacy Leadership Institute is made possible with support from The George Gund Foundation, Greater Cincinnati Foundation, Greater Columbus Arts Council, Carol Ann &amp; Ralph V. Haile , Jr. Foundation, Edwards Companies, Envisage Wealth, and Charles F. Kettering Foundation.<br><br>For more information about the CreativeOhio Advocacy Leadership Institute and to<br>see the full cohort, visit creativeoh.org/advocacy-leadership-institute-2026-cohort/.<br>About CreativeOhio<br><br>@creativeohio_  @ombregallery #arts #artadvocacy #ohio #jewelry @snagmetalsmith @artjewelryforum_org</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capombregallery2')" id="capombregallery2-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">1,851</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">28</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">&mdash;</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -551,15 +574,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Curated Collection / Product Drop Carousel</span>
     </div>
-    <p class="post-hook">&ldquo;New work just dropped. Here's what's available.&rdquo;</p>
+    <p class="post-hook">&ldquo;New work just dropped. Here's what's available.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capombregallery3-preview">There are so many ways to show up for artists, and most of them start small.<br><br>Share a piece of work that stopped you mid-scroll. Visit a gallery on a Tuesday afternoon when you have nowhere to be. Buy the handmade thing<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capombregallery3-rest" style="display:none"> instead of the mass-produced one. Wear jewelry that has a story behind it. <br><br>Supporting the arts is not about grand gestures. It is about intention. <br><br>Swipe through for ways to start, or keep going, with a little more purpose.<br><br>What is your favorite way to support artists? Tell us in the comments.<br><br>#artjewelry #supportartists #wearableart #contemporaryjewelry #ombregallery</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capombregallery3')" id="capombregallery3-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">1,342</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">22</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">&mdash;</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -711,5 +742,23 @@
     }
   })();
 </script>
+
+  <script>
+  function toggleCap(uid) {
+    var preview = document.getElementById(uid + '-preview');
+    var rest = document.getElementById(uid + '-rest');
+    var btn = document.getElementById(uid + '-btn');
+    var ellipsis = preview ? preview.querySelector('.cap-ellipsis') : null;
+    if (rest.style.display === 'none') {
+      rest.style.display = 'inline';
+      if (ellipsis) ellipsis.style.display = 'none';
+      btn.textContent = 'Show less';
+    } else {
+      rest.style.display = 'none';
+      if (ellipsis) ellipsis.style.display = 'inline';
+      btn.textContent = 'Show more';
+    }
+  }
+  </script>
 </body>
 </html>

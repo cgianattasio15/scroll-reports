@@ -245,7 +245,14 @@
     transform: translateY(-1px);
   }
 
-  </style>
+  
+    /* ── POST CAPTIONS ── */
+    .post-caption{margin:.75rem 0;padding:.75rem;background:#f8f9fa;border-radius:8px;border:1px solid var(--border)}
+    .post-caption-label{font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+    .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
+    .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
+    .cap-toggle:hover{color:var(--navy)}
+    </style>
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -503,15 +510,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Team Spotlight / People Story Carousel</span>
     </div>
-    <p class="post-hook">&ldquo;From Customer to Store Manager and many roles in between.&rdquo;</p>
+    <p class="post-hook">&ldquo;From Customer to Store Manager and many roles in between.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capupandrunningoh1-preview">From Customer to Store Manager and many roles in between.<br><br>When Up and Running was getting ready to open, I had heard about this new business and thought to myself how much I would love to work there—or at least shop<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capupandrunningoh1-rest" style="display:none"> there.<br><br>I had always been an athlete and got more into running as an adult, so this seemed like the perfect fit.<br><br>After being a customer for years, I joined the company in 2012 as a very part-time employee. Over the years, my roles at UAR have ebbed and flowed, eventually leading me to become Store Manager in 2020.<br><br>I love being out on the floor, welcoming customers in and getting to know their “why.” Whether someone is just starting their running journey or training for their next big race, or simply needing an everyday shoe being part of that process is incredibly rewarding.<br><br>I also have a passion for fashion and apparel, and I enjoy helping curate pieces that not only perform well but make people feel confident. Being able to blend function with style and help customers find what works best for them is one of my favorite parts of the job.<br><br>- Laurie<br><br>…<br>#upandrunning #daytonohio #troyohio</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh1')" id="capupandrunningoh1-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">12,491</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">248</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">&mdash;</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -527,15 +542,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Event / Community Announcement Carousel</span>
     </div>
-    <p class="post-hook">&ldquo;April is packed. Here's what's coming.&rdquo;</p>
+    <p class="post-hook">&ldquo;April is packed. Here's what's coming.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capupandrunningoh2-preview">It’ more than bikes and shoes with this crew...it’s community!  We love when our neighbors from K&amp;G Bikes pay us a visit. <br><br>There’s something really meaningful about connecting with people who care so deeply about this<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capupandrunningoh2-rest" style="display:none"> community—we feel lucky to be part of it here in Dayton.<br><br>When you shop local, you’re supporting real people, real families, and the places that make this city feel like home. 🧡<br><br>#supportlocal #shopdayton</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh2')" id="capupandrunningoh2-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">2,915</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">34</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">&mdash;</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -551,15 +574,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Product Education Carousel</span>
     </div>
-    <p class="post-hook">&ldquo;The UAR Waterproof Guide — what to wear when the weather won't cooperate.&rdquo;</p>
+    <p class="post-hook">&ldquo;The UAR Waterproof Guide — what to wear when the weather won't cooperate.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capupandrunningoh3-preview">Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!<br><br>This scenic race through Woodland Cemetery features a hilly course, incredible views of Dayton, and a chance to experience local history<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capupandrunningoh3-rest" style="display:none"> along the way. Proceeds benefit the Woodland Foundation.<br><br>Plus, new this year we have the Centerville Better Blend Food Truck on site after the race for a delicious refuel ⚡️<br><br>April 26, 2026 | 9AM<br>Woodland Cemetery &amp; Arboretum <br><br>See you there! 👀<br>Link to register in bio<br><br>#dayton5k #ohio5k #ohio10k</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh3')" id="capupandrunningoh3-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">1,276</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">19</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">&mdash;</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -721,5 +752,23 @@
     }
   })();
 </script>
+
+  <script>
+  function toggleCap(uid) {
+    var preview = document.getElementById(uid + '-preview');
+    var rest = document.getElementById(uid + '-rest');
+    var btn = document.getElementById(uid + '-btn');
+    var ellipsis = preview ? preview.querySelector('.cap-ellipsis') : null;
+    if (rest.style.display === 'none') {
+      rest.style.display = 'inline';
+      if (ellipsis) ellipsis.style.display = 'none';
+      btn.textContent = 'Show less';
+    } else {
+      rest.style.display = 'none';
+      if (ellipsis) ellipsis.style.display = 'inline';
+      btn.textContent = 'Show more';
+    }
+  }
+  </script>
 </body>
 </html>

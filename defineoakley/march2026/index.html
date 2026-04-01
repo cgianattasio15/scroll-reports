@@ -273,7 +273,14 @@
     transform: translateY(-1px);
   }
 
-  </style>
+  
+    /* ── POST CAPTIONS ── */
+    .post-caption{margin:.75rem 0;padding:.75rem;background:#f8f9fa;border-radius:8px;border:1px solid var(--border)}
+    .post-caption-label{font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+    .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
+    .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
+    .cap-toggle:hover{color:var(--navy)}
+    </style>
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -535,15 +542,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Behind-the-Scenes / Personality Reel</span>
     </div>
-    <p class="post-hook">&ldquo;This one&rsquo;s for the morning crew &mdash; a little crazy but always motivated.&rdquo;</p>
+    <p class="post-hook">&ldquo;This one&rsquo;s for the morning crew &mdash; a little crazy but always motivated.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capdefineoakley1-preview">This one’s for the morning crew, a little crazy but always motivated. 🤪<br><br>Fun fact: We offer a 6:00am class Monday–Friday. Whether it’s Rev, Barre, Bounce, or 30/30, if you’re ready for that early sweat, we’re here.<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capdefineoakley1-rest" style="display:none"> <br><br>#fitness #workoutstudio #cincinnati #community</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capdefineoakley1')" id="capdefineoakley1-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">5,230</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">116</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">81.3%</span>
+      <span class="post-retention-val">81.4%</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -559,15 +574,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Milestone / Event Announcement Reel</span>
     </div>
-    <p class="post-hook">&ldquo;12 years! We still can&rsquo;t believe it.&rdquo;</p>
+    <p class="post-hook">&ldquo;12 years! We still can&rsquo;t believe it.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capdefineoakley2-preview">12 years! We still can’t believe it. <br><br>Over a decade of community, commitment, hard work, fire music, and more muscle burns than we can count and we’re just getting started. <br><br>Come celebrate with us at Define Oakley on<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capdefineoakley2-rest" style="display:none"> Saturday April 11th &amp; Sunday April 12th.<br><br>RSVP through the link in our bio or story to be the first to get event details and times. Save the dates, we cannot wait to see you there. 💙<br><br>#community #anniversaryparty #cincinnati #cincinnatifitness</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capdefineoakley2')" id="capdefineoakley2-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">3,500</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">89</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">65.9%</span>
+      <span class="post-retention-val">66.1%</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -583,15 +606,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Humor / Community Engagement Reel</span>
     </div>
-    <p class="post-hook">&ldquo;We all have a love&ndash;hate relationship with sliders&hellip; and let&rsquo;s be honest, it&rsquo;s mostly hate.&rdquo;</p>
+    <p class="post-hook">&ldquo;We all have a love&ndash;hate relationship with sliders&hellip; and let&rsquo;s be honest, it&rsquo;s mostly hate.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capdefineoakley3-preview">We all have a love–hate relationship with sliders… and let’s be honest... it’s mostly hate. 😅<br><br>What’s the one exercise or move you dread seeing on the board before class? <br><br>Let us know in the comments! ⬇️<br><br>#fitnesshumor<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capdefineoakley3-rest" style="display:none"> #cincinnati #workout #fitnessstudio</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capdefineoakley3')" id="capdefineoakley3-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">2,848</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">55</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">77.6%</span>
+      <span class="post-retention-val">90.9%</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -756,5 +787,23 @@
     }
   })();
 </script>
+
+  <script>
+  function toggleCap(uid) {
+    var preview = document.getElementById(uid + '-preview');
+    var rest = document.getElementById(uid + '-rest');
+    var btn = document.getElementById(uid + '-btn');
+    var ellipsis = preview ? preview.querySelector('.cap-ellipsis') : null;
+    if (rest.style.display === 'none') {
+      rest.style.display = 'inline';
+      if (ellipsis) ellipsis.style.display = 'none';
+      btn.textContent = 'Show less';
+    } else {
+      rest.style.display = 'none';
+      if (ellipsis) ellipsis.style.display = 'inline';
+      btn.textContent = 'Show more';
+    }
+  }
+  </script>
 </body>
 </html>

@@ -245,7 +245,14 @@
     transform: translateY(-1px);
   }
 
-  </style>
+  
+    /* ── POST CAPTIONS ── */
+    .post-caption{margin:.75rem 0;padding:.75rem;background:#f8f9fa;border-radius:8px;border:1px solid var(--border)}
+    .post-caption-label{font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+    .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
+    .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
+    .cap-toggle:hover{color:var(--navy)}
+    </style>
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -503,15 +510,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Event / Community Calendar Carousel</span>
     </div>
-    <p class="post-hook">&ldquo;Spring is a time for renewal! 🌸 We've got a packed month with some exciting new things up our sleeves.&rdquo;</p>
+    <p class="post-hook">&ldquo;Spring is a time for renewal! 🌸 We've got a packed month with some exciting new things up our sleeves.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capmeasactive1-preview">Spring is a time for renewal! 🌸<br><br>We’ve got a packed month with some exciting new things up our sleeves.<br><br>🩷 Mar 8: Move with MEAS x Title Boxing Club <br>🩷 Mar 9: Big announcement (yes, it’s a big one 👀) <br>🩷 Mar 21: The<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capmeasactive1-rest" style="display:none"> Beauty Boost Sip &amp; Shop <br>🩷 Mar 27: OTR Final Friday <br>🩷 Mar 28: Project MEAS Run Club <br>🩷 Mar 29: Move with MEAS<br><br>Swipe through and mark your dates, babes.<br><br>What are you most excited for? Drop it below 👇</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capmeasactive1')" id="capmeasactive1-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">6,203</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">60</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">&mdash;</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -527,15 +542,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Founder Story / Brand Values Reel</span>
     </div>
-    <p class="post-hook">&ldquo;Why MEAS means gold — and why that matters.&rdquo;</p>
+    <p class="post-hook">&ldquo;Why MEAS means gold — and why that matters.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capmeasactive2-preview">Green with envy over these sets? We don’t blame you. 🍀<br><br>Cute, functional, and completely yours if you want them ( just saying).<br><br>This is how we do St. Patrick’s Day at MEAS Active 💚 Luck be a lady!<br><br>Bring a little luck<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capmeasactive2-rest" style="display:none"> to your wardrobe and shop our activewear at the link.<br><br>#MEASactive #athleticwear #activewear #springfashion #greensets</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capmeasactive2')" id="capmeasactive2-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">3,088</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">45</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">45.5%</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -551,15 +574,23 @@
     <div class="post-format-row">
       <span class="post-format-tag">Product Styling / Outfit Reel</span>
     </div>
-    <p class="post-hook">&ldquo;Your spring workout wardrobe, sorted.&rdquo;</p>
+    <p class="post-hook">&ldquo;Your spring workout wardrobe, sorted.&rdquo;
+    <div class="post-caption">
+      <div class="post-caption-label">Caption</div>
+      <div class="post-caption-text">
+        <span class="cap-preview" id="capmeasactive3-preview">This one’s for the women who lead, inspire, and show up every single day. 🤍<br><br>At MEAS, we’re proud to stand alongside women who are bold enough to dream bigger, work harder, and push boundaries in everything they do.<span class="cap-ellipsis">…</span></span><span class="cap-rest" id="capmeasactive3-rest" style="display:none"> Your strength, your vision, and your voice matter - not just this month, but every single day of the year.<br><br>Here’s to the women of the past, the women of the present, and the women of the future. We honor you. We celebrate you. We are you.<br><br>Happy Women’s History Month from all of us at MEAS Active. 🌸<br><br>Send this to the ride-or-die women in your life!<br><br>#womenshistorymonth #community #activewear #womenempowerment</span>
+      </div>
+      <button class="cap-toggle" onclick="toggleCap('capmeasactive3')" id="capmeasactive3-btn">Show more</button>
+    </div>
+    </p>
     <div class="post-stats">
       <div class="pstat"><span class="pstat-lbl">Total Views</span><span class="pstat-val">1,782</span></div>
       <div class="pstat"><span class="pstat-lbl">Total Interactions</span><span class="pstat-val">38</span></div>
     </div>
-    <div class="post-retention-row">
+        <div class="post-retention-row">
       <span class="post-retention-label">Retention</span>
       <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">—</span>
+      <span class="post-retention-val">37.2%</span>
     </div>
     <div class="post-learning">
       <div class="post-learning-label">&#9650; Why It Worked</div>
@@ -721,5 +752,23 @@
     }
   })();
 </script>
+
+  <script>
+  function toggleCap(uid) {
+    var preview = document.getElementById(uid + '-preview');
+    var rest = document.getElementById(uid + '-rest');
+    var btn = document.getElementById(uid + '-btn');
+    var ellipsis = preview ? preview.querySelector('.cap-ellipsis') : null;
+    if (rest.style.display === 'none') {
+      rest.style.display = 'inline';
+      if (ellipsis) ellipsis.style.display = 'none';
+      btn.textContent = 'Show less';
+    } else {
+      rest.style.display = 'none';
+      if (ellipsis) ellipsis.style.display = 'inline';
+      btn.textContent = 'Show more';
+    }
+  }
+  </script>
 </body>
 </html>
