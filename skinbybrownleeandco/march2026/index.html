@@ -301,14 +301,14 @@
     /* ── TOP POSTS SECTION ── */
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
-    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;height:100%}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
     .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between}
     .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em}
     .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase}
     .reel-badge{background:var(--lime);color:var(--navy)}
     .carousel-badge{background:#e0e7ff;color:#3730a3}
     .static-badge{background:#f0fdf4;color:#166534}
-    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
     .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
     .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
     .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--lime);padding-left:.75rem;line-height:1.5}
@@ -329,19 +329,20 @@
     .outlier-2x{background:#dcfce7;color:#15803d}
     .outlier-1x{background:#dbeafe;color:#1d4ed8}
     /* Retention row */
-    .post-retention{display:flex;align-items:center;gap:.5rem;background:#f5f3ff;border-radius:8px;padding:.5rem .75rem}
-    .ret-label{font-size:.72rem;font-weight:800;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em}
-    .ret-sub{font-size:.7rem;color:#7c3aed;opacity:.8;flex:1}
-    .ret-val{font-size:1rem;font-weight:800;color:#7c3aed}
+    
+    
+    
+    
     /* Why it worked */
     .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
     .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
     .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
     /* IG button */
-    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:.75rem;transition:background .2s}
-    .post-ig-btn:hover{background:#0f2a5e}
+    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s;position:relative;z-index:2;opacity:1 !important;visibility:visible !important}
+    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
     </style>
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <!-- ═══ STICKY NAV ═══ -->
@@ -393,7 +394,7 @@
   </div>
 </header>
 
-<div class="score-wrap">
+<div class="score-wrap" id="score-section">
   <div class="score-card">
     <p class="score-eyebrow">Monthly Performance Score</p>
     <div class="score-num">8.3<span class="score-denom">/10</span></div>
@@ -554,7 +555,7 @@
   <section class="sec" aria-labelledby="posts-title">
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
-    <p class="sec-sub">Your highest-performing content this month, ranked by total views.</p>
+    <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model — posts that over-indexed on reach, saves, shares, or retention relative to account averages.</p>
     <div class="posts-grid">
       <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 20, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"You always have options in men and in skincare. 😅
 
@@ -570,7 +571,7 @@ You’ll be happy with your choice.
 
 🔗 Link in bio.
 
-#skinbybrownlee #cincinnatiskincare #cincinnatiesthetician #skincareroutine</span><button class="cap-toggle" id="capskinbybrownleeandco1-btn" onclick="(function(){var r=document.getElementById('capskinbybrownleeandco1-rest');var e=document.getElementById('capskinbybrownleeandco1-ellipsis');var b=document.getElementById('capskinbybrownleeandco1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">61.4%</span><span class="sm-badge outlier-2x">2.6x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">3,289</span><span class="sm-badge outlier-1x">1.8x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">10</span><span class="sm-badge outlier-1x">1.6x account avg</span></div></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">61.4%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Anchored by exceptional retention at 2.6x the account average. Viewers watched a disproportionate amount of this Reel, signaling the hook delivered on its promise and the pacing held attention throughout. Reach also over-indexed at 1.8x average.</p></div><a href="https://www.instagram.com/reel/DWHETKlIlZw/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 27, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"I’m an esthetician and even I didn’t see this coming...
+#skinbybrownlee #cincinnatiskincare #cincinnatiesthetician #skincareroutine</span><button class="cap-toggle" id="capskinbybrownleeandco1-btn" onclick="(function(){var r=document.getElementById('capskinbybrownleeandco1-rest');var e=document.getElementById('capskinbybrownleeandco1-ellipsis');var b=document.getElementById('capskinbybrownleeandco1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">61.4%</span><span class="sm-badge outlier-2x">2.6x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">3,289</span><span class="sm-badge outlier-1x">1.8x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">10</span><span class="sm-badge outlier-1x">1.6x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Anchored by exceptional retention at 2.6x the account average. Viewers watched a disproportionate amount of this Reel, signaling the hook delivered on its promise and the pacing held attention throughout. Reach also over-indexed at 1.8x average.</p></div><a href="https://www.instagram.com/reel/DWHETKlIlZw/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 27, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"I’m an esthetician and even I didn’t see this coming...
 
 You hear about perimenopause like it’s far..."</blockquote><div class="post-caption"><span class="cap-preview" id="capskinbybrownleeandco2-preview">I’m an esthetician and even I didn’t see this coming...
 
@@ -619,6 +620,125 @@ Ready for a real game plan? Book your virtual consult through the link in bio. �
     }
   }
   </script>
+
+
+<!-- ═══ STRATEGY ADJUSTMENTS ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="strat-title">
+    <p class="sec-label">April Direction</p>
+    <h2 class="sec-title" id="strat-title">Strategy Adjustments</h2>
+    <p class="sec-sub">Three moves for April &mdash; grounded in March data.</p>
+    <div class="adj-grid">
+      <div class="adj-card">
+        <div class="adj-header">
+          <span class="adj-num">01</span>
+          <span class="adj-type">Double Down</span>
+        </div>
+        <p class="adj-headline">Scale the Perimenopause Authority Content Series</p>
+        <p class="adj-context">The breakout month (170K views, 491 new followers) was driven by educational perimenopause content. This is the clear content-market fit signal. April should lean heavily into this format: skin changes during hormonal transitions, product recommendations for mature skin, and myth-busting content that positions Dr. Brownlee as the authority.</p>
+        <div class="adj-action">
+          <span class="adj-action-label">April Action</span>
+          <p>Create 3–4 Reels specifically on perimenopause skin changes with strong hooks targeting women 40–55. Use the "You always have options" hook framework that drove the top post.</p>
+        </div>
+      </div>
+      <div class="adj-card">
+        <div class="adj-header">
+          <span class="adj-num">02</span>
+          <span class="adj-type">Improve</span>
+        </div>
+        <p class="adj-headline">Tighten Hooks to Improve Reel Retention Past 30%</p>
+        <p class="adj-context">Average retention at 24% is the primary improvement lever. The account is reaching massive audiences (170K views) but losing viewers early. The top Reel hit 61.4% retention — the gap between top and average is wide. The fix is front-loading the specific benefit or insight in the first 2 seconds before any setup or context.</p>
+        <div class="adj-action">
+          <span class="adj-action-label">April Action</span>
+          <p>Open every Reel with the payoff first: "Here's the one product that changed my perimenopause skin" before any intro. Test pattern-interrupt hooks (bold text on screen, direct address) to stop the scroll faster.</p>
+        </div>
+      </div>
+      <div class="adj-card">
+        <div class="adj-header">
+          <span class="adj-num">03</span>
+          <span class="adj-type">Activate</span>
+        </div>
+        <p class="adj-headline">Convert the Warm Audience Into Consultation Bookings</p>
+        <p class="adj-context">CTR (19.1%) and PCR (22.8%) are both above Rise-stage targets — the conversion funnel is firing. 412 link taps confirm the audience is taking action. The next step is adding a clear consultation CTA to high-save and high-retention content to convert warm viewers into booked appointments.</p>
+        <div class="adj-action">
+          <span class="adj-action-label">April Action</span>
+          <p>Add "Book a skin consultation — link in bio" to the end of every educational Reel. Test a lead magnet (free skin quiz or guide) as a mid-funnel conversion point to capture emails before the booking ask.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ CTAs ═══ -->
+<div class="wrap">
+  <section class="cta-sec" aria-labelledby="cta-title">
+    <p class="cta-eyebrow">April CTA Plan</p>
+    <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
+    <p class="cta-sub">Call-to-action strategy for April &mdash; aligned to your funnel and business goals.</p>
+    <div class="cta-primary">
+      <p class="cta-primary-label">&#9733; Primary CTA</p>
+      <p class="cta-primary-name">Drive Qualified Consultation Bookings</p>
+      <p class="cta-primary-meta">Type: Conversion CTA &nbsp;&middot;&nbsp; Mechanism: Link in Bio &nbsp;&middot;&nbsp; Primary KPI: Link Taps / CTR</p>
+      <p class="cta-primary-copy">&ldquo;Book your complimentary skin consultation &mdash; link in bio.&rdquo; or &ldquo;Take our skin quiz and get a personalized routine built for you.&rdquo;</p>
+      <p class="cta-primary-rationale">CTR and PCR are both above stage targets this month &mdash; profile visitors are clicking through and converting at an exceptional rate. The gap is converting those clicks into booked consultations. Every April post should reference the consultation process and make booking feel like the obvious next step for someone in the research phase.</p>
+    </div>
+    <div class="cta-secondary">
+      <div class="cta-secondary-item">
+        <p class="cta-stage-label">TOFU</p>
+        <p class="cta-secondary-name">Share CTA</p>
+        <p class="cta-secondary-copy">&ldquo;Tag a friend who needs to hear this.&rdquo;</p>
+        <p class="cta-secondary-kpi"><strong>KPI:</strong> Shares &middot; Caption tag prompt</p>
+      </div>
+      <div class="cta-secondary-item">
+        <p class="cta-stage-label">MOFU</p>
+        <p class="cta-secondary-name">Save CTA</p>
+        <p class="cta-secondary-copy">&ldquo;Save this for your next skincare routine refresh.&rdquo;</p>
+        <p class="cta-secondary-kpi"><strong>KPI:</strong> Saves &middot; On-screen text CTA</p>
+      </div>
+      <div class="cta-secondary-item">
+        <p class="cta-stage-label">BOFU</p>
+        <p class="cta-secondary-name">Booking CTA</p>
+        <p class="cta-secondary-copy">&ldquo;Ready for a personalized routine? Book your consultation &mdash; link in bio.&rdquo;</p>
+        <p class="cta-secondary-kpi"><strong>KPI:</strong> Link Taps / CTR &middot; Link in bio</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PREV REPORTS ═══ -->
+<footer class="prev-section">
+  <div class="prev-inner">
+    <p class="prev-eyebrow">Report History</p>
+    <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
+    <p class="prev-sub">Compare your performance over time &mdash; click any month to view the full report.</p>
+    <div class="prev-grid">
+      <a href="/skinbybrownleeandco/february2026/" class="prev-card">
+        <span class="prev-month">February 2026</span>
+        <span class="prev-score">8.1<span>/10</span></span>
+        <span class="prev-label">Strong Month</span>
+      </a>
+      <a href="/skinbybrownleeandco/january2026/" class="prev-card">
+        <span class="prev-month">January 2026</span>
+        <span class="prev-score">7.8<span>/10</span></span>
+        <span class="prev-label">Building Month</span>
+      </a>
+      <a href="/skinbybrownleeandco/december2025/" class="prev-card">
+        <span class="prev-month">December 2025</span>
+        <span class="prev-score">7.7<span>/10</span></span>
+        <span class="prev-label">Building Month</span>
+      </a>
+      <a href="/skinbybrownleeandco/november2025/" class="prev-card">
+        <span class="prev-month">November 2025</span>
+        <span class="prev-score">7.9<span>/10</span></span>
+        <span class="prev-label">Building Month</span>
+      </a>
+    </div>
+    <p class="prev-footnote">
+      Data sources: Instagram Insights &middot; Metricool &middot; Scroll Media Scoring Framework v2.0
+    </p>
+  </div>
+</footer>
+
 
 <script>
 (function(){

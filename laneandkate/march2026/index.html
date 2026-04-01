@@ -318,14 +318,14 @@
     /* ── TOP POSTS SECTION ── */
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
-    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;height:100%}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
     .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between}
     .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em}
     .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase}
     .reel-badge{background:var(--lime);color:var(--navy)}
     .carousel-badge{background:#e0e7ff;color:#3730a3}
     .static-badge{background:#f0fdf4;color:#166534}
-    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
     .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
     .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
     .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--lime);padding-left:.75rem;line-height:1.5}
@@ -346,19 +346,20 @@
     .outlier-2x{background:#dcfce7;color:#15803d}
     .outlier-1x{background:#dbeafe;color:#1d4ed8}
     /* Retention row */
-    .post-retention{display:flex;align-items:center;gap:.5rem;background:#f5f3ff;border-radius:8px;padding:.5rem .75rem}
-    .ret-label{font-size:.72rem;font-weight:800;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em}
-    .ret-sub{font-size:.7rem;color:#7c3aed;opacity:.8;flex:1}
-    .ret-val{font-size:1rem;font-weight:800;color:#7c3aed}
+    
+    
+    
+    
     /* Why it worked */
     .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
     .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
     .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
     /* IG button */
-    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:.75rem;transition:background .2s}
-    .post-ig-btn:hover{background:#0f2a5e}
+    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s;position:relative;z-index:2;opacity:1 !important;visibility:visible !important}
+    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
     </style>
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -621,7 +622,7 @@
   <section class="sec" aria-labelledby="posts-title">
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
-    <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
+    <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model — posts that over-indexed on reach, saves, shares, or retention relative to account averages. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
       <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 10, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"Camera rolls bits and pieces
 
@@ -637,14 +638,14 @@ Each piece marks a milestone. Love, growth, celebration, remembrance.
 
 Our handcrafted fine jewelry is designed to be collected, layered, an</span><span class="cap-ellipsis" id="caplaneandkate2-ellipsis">… </span><span class="cap-rest" id="caplaneandkate2-rest">d cherished over time, becoming part of your personal story.
 
-#everydayjewelry #cincinnatifinejewelry #heirloom</span><button class="cap-toggle" id="caplaneandkate2-btn" onclick="(function(){var r=document.getElementById('caplaneandkate2-rest');var e=document.getElementById('caplaneandkate2-ellipsis');var b=document.getElementById('caplaneandkate2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">24.2%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DVb8jQvES0L/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 24, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"For the ones who love the process as much as the piece. 
+#everydayjewelry #cincinnatifinejewelry #heirloom</span><button class="cap-toggle" id="caplaneandkate2-btn" onclick="(function(){var r=document.getElementById('caplaneandkate2-rest');var e=document.getElementById('caplaneandkate2-ellipsis');var b=document.getElementById('caplaneandkate2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DVb8jQvES0L/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 24, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"For the ones who love the process as much as the piece. 
 
 A look at the diamonds we’re setting this..."</blockquote><div class="post-caption"><span class="cap-preview" id="caplaneandkate3-preview">For the ones who love the process as much as the piece. 
 
 A look at the diamonds we’re setting this week — each one chosen, considered, and about to become forever.
 
 #engagementring #heirloom #customd</span><span class="cap-ellipsis" id="caplaneandkate3-ellipsis">… </span><span class="cap-rest" id="caplaneandkate3-rest">esigns 
-[heirloom] [engagementring] [engagement]</span><button class="cap-toggle" id="caplaneandkate3-btn" onclick="(function(){var r=document.getElementById('caplaneandkate3-rest');var e=document.getElementById('caplaneandkate3-ellipsis');var b=document.getElementById('caplaneandkate3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">17.8%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DWSCtzLEZUV/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
+[heirloom] [engagementring] [engagement]</span><button class="cap-toggle" id="caplaneandkate3-btn" onclick="(function(){var r=document.getElementById('caplaneandkate3-rest');var e=document.getElementById('caplaneandkate3-ellipsis');var b=document.getElementById('caplaneandkate3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DWSCtzLEZUV/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
     </div>
 </div>
   </div>

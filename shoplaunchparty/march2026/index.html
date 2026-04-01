@@ -318,14 +318,14 @@
     /* ── TOP POSTS SECTION ── */
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
-    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;height:100%}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
     .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between}
     .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em}
     .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase}
     .reel-badge{background:var(--lime);color:var(--navy)}
     .carousel-badge{background:#e0e7ff;color:#3730a3}
     .static-badge{background:#f0fdf4;color:#166534}
-    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
     .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
     .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
     .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--lime);padding-left:.75rem;line-height:1.5}
@@ -346,19 +346,20 @@
     .outlier-2x{background:#dcfce7;color:#15803d}
     .outlier-1x{background:#dbeafe;color:#1d4ed8}
     /* Retention row */
-    .post-retention{display:flex;align-items:center;gap:.5rem;background:#f5f3ff;border-radius:8px;padding:.5rem .75rem}
-    .ret-label{font-size:.72rem;font-weight:800;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em}
-    .ret-sub{font-size:.7rem;color:#7c3aed;opacity:.8;flex:1}
-    .ret-val{font-size:1rem;font-weight:800;color:#7c3aed}
+    
+    
+    
+    
     /* Why it worked */
     .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
     .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
     .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
     /* IG button */
-    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:.75rem;transition:background .2s}
-    .post-ig-btn:hover{background:#0f2a5e}
+    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s;position:relative;z-index:2;opacity:1 !important;visibility:visible !important}
+    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
     </style>
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
@@ -621,7 +622,7 @@
   <section class="sec" aria-labelledby="posts-title">
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
-    <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
+    <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model — posts that over-indexed on reach, saves, shares, or retention relative to account averages. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
       <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 17, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.
 
@@ -633,7 +634,7 @@ Whether you’re stepping into your single season, focu</span><span class="cap-e
 
 Because the best revenge? Feeling amazing and never looking back.
 
-#perfume #fragrance #dedcool #shopsmall #indiebeauty</span><button class="cap-toggle" id="capshoplaunchparty1-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty1-rest');var e=document.getElementById('capshoplaunchparty1-ellipsis');var b=document.getElementById('capshoplaunchparty1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">10</span><span class="sm-badge outlier-2x">3.0x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">4,174</span><span class="sm-badge outlier-2x">2.2x account avg</span></div><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">76.3%</span><span class="sm-badge outlier-2x">2.1x account avg</span></div></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">76.3%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 3.0x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 2.2x average.</p></div><a href="https://www.instagram.com/reel/DV_PKHHDpC5/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 3, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"Experiencing burnout? Reset with us.
+#perfume #fragrance #dedcool #shopsmall #indiebeauty</span><button class="cap-toggle" id="capshoplaunchparty1-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty1-rest');var e=document.getElementById('capshoplaunchparty1-ellipsis');var b=document.getElementById('capshoplaunchparty1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">10</span><span class="sm-badge outlier-2x">3.0x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">4,174</span><span class="sm-badge outlier-2x">2.2x account avg</span></div><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">76.3%</span><span class="sm-badge outlier-2x">2.1x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 3.0x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 2.2x average.</p></div><a href="https://www.instagram.com/reel/DV_PKHHDpC5/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 3, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"Experiencing burnout? Reset with us.
 
 If your brain feels like 27 tabs are open, this is your sign t..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunchparty2-preview">Experiencing burnout? Reset with us.
 
@@ -658,7 +659,7 @@ Every look starts with intention. Hydrated, prepped skin that feels as good as i
 
 Save this for your next get ready with me and comment which product you want a deeper dive on! 💕
 
-#skincare #beauty #makeuprecs #makeuplook</span><button class="cap-toggle" id="capshoplaunchparty3-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty3-rest');var e=document.getElementById('capshoplaunchparty3-ellipsis');var b=document.getElementById('capshoplaunchparty3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">48.7%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.</p></div><a href="https://www.instagram.com/reel/DWMJhNcjkmG/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
+#skincare #beauty #makeuprecs #makeuplook</span><button class="cap-toggle" id="capshoplaunchparty3-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty3-rest');var e=document.getElementById('capshoplaunchparty3-ellipsis');var b=document.getElementById('capshoplaunchparty3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.</p></div><a href="https://www.instagram.com/reel/DWMJhNcjkmG/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
     </div>
 </div>
   </div>
