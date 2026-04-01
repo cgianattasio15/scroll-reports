@@ -147,7 +147,7 @@
     .post-rank.r1{background:linear-gradient(90deg,#0e3387,#1a4fc4);color:#fff}
     .post-rank.r2{background:linear-gradient(90deg,#1e293b,#334155);color:#fff}
     .post-rank.r3{background:linear-gradient(90deg,#374151,#4b5563);color:#fff}
-    .post-fmt{background:rgba(255,255,255,.2);padding:.15rem .5rem;border-radius:3px}
+    .post-fmt{font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#fff}
     .post-body{padding:1.125rem}
     .post-date{font-size:.75rem;color:var(--muted);margin-bottom:.375rem}
     .post-format-row{margin-bottom:.625rem}
@@ -165,9 +165,9 @@
     .post-learning-label{font-size:.625rem;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.375rem}
     .post-ig-btn{display:inline-block;margin-top:4px;padding:10px 24px;background:var(--azure);color:#fff;font-family:'Source Sans 3',sans-serif;font-size:.92rem;font-weight:600;border-radius:999px;text-decoration:none;transition:background .2s,transform .15s;letter-spacing:.01em}
     .post-ig-btn:hover{background:#0b2a6e;transform:translateY(-1px)}
-    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem}
+    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
     @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
-    .adj-card{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.375rem;display:flex;gap:1rem}
+    .adj-card{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem}
     .adj-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;color:#fff;flex-shrink:0}
     .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
     .adj-content{flex:1}
@@ -271,7 +271,7 @@
     </div>
     <div class="trend-wrap" aria-label="Score trend">
       <p class="trend-label">Score Trend</p>
-      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:78%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.8</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:81%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.1</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:83%;background:#e2ed7a"></div></div><div class="ts curr">8.3</div><div class="tm curr">Mar</div></div></div>
+      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:44.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">Nov</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:20.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.7</div><div class="tm">Dec</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:32.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.8</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:68.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.1</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:92.0%;background:#e2ed7a"></div></div><div class="ts curr">8.3</div><div class="tm curr">Mar</div></div></div></div></div>
     </div>
   </div>
 </div>
@@ -417,8 +417,8 @@
 
 <div class="wrap">
   <section class="sec" aria-labelledby="posts-title">
-    <p class="sec-label">Content Performance</p>
-    <h2 class="sec-title" id="posts-title">Top 3 Posts &mdash; March 2026</h2>
+    <p class="sec-label">Top Posts of the Month</p>
+    <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views.</p>
     <div class="posts-grid">
       <div class="post-card">
@@ -502,7 +502,7 @@
         <div class="adj-content">
           <p class="adj-type doubling">Doubling Down</p>
           <p class="adj-headline">Scale founder POV and lesson-learned Reels</p>
-          <p class="adj-context">Views &amp; New Followers &middot; Awareness Goal</p>
+          <p class="adj-context">Views & New Followers · Awareness Goal</p>
           <div class="adj-move">The top 3 posts this month were all founder-voice formats &mdash; vulnerability, humor, and contrarian authority. These are the formats driving the reach breakout. More of these in April will sustain the 170K+ views trajectory and push follower growth past 500/month.</div>
         </div>
       </div>
@@ -510,8 +510,8 @@
         <div class="adj-num testing" aria-hidden="true">2</div>
         <div class="adj-content">
           <p class="adj-type testing">Testing</p>
-          <p class="adj-headline">Add explicit &ldquo;save this&rdquo; CTAs to educational content</p>
-          <p class="adj-context">Saves &middot; Community Goal</p>
+          <p class="adj-headline">Add explicit save CTAs to educational content</p>
+          <p class="adj-context">Saves · Community Goal</p>
           <div class="adj-move testing">Saves (152) are below the Rise floor of 300. Educational content &mdash; ingredient breakdowns, routine guides, myth-busting carousels &mdash; with an on-screen &ldquo;save this for your routine&rdquo; CTA is the fastest path to moving this metric.</div>
         </div>
       </div>
@@ -519,8 +519,8 @@
         <div class="adj-num fixing" aria-hidden="true">3</div>
         <div class="adj-content">
           <p class="adj-type fixing">Fixing</p>
-          <p class="adj-headline">Test shorter Reels (under 20s) to improve retention</p>
-          <p class="adj-context">Retention % &middot; Engagement Goal</p>
+          <p class="adj-headline">Test shorter Reels under 20 seconds to improve retention</p>
+          <p class="adj-context">Retention % · Engagement Goal</p>
           <div class="adj-move fixing">Retention (24%) is significantly below the Rise floor of 65%. The reach is there &mdash; viewers are finding the content &mdash; but dropping off early. Tighter hooks, faster payoffs, and shorter formats will improve completion rates and signal quality to the algorithm.</div>
         </div>
       </div>

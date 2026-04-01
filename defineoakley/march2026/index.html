@@ -166,8 +166,8 @@
     .post-rank.r1{background:linear-gradient(90deg,var(--azure),#1a4fc4);color:#fff}
     .post-rank.r2{background:linear-gradient(90deg,#1e293b,#334155);color:#fff}
     .post-rank.r3{background:var(--porcelain);color:var(--muted)}
-    .post-fmt{font-size:.5625rem;font-weight:700;padding:.2rem .5rem;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.15)}
-    .post-rank.r3 .post-fmt{background:rgba(21,21,22,.08);color:var(--muted)}
+    .post-fmt{font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#fff}
+    .post-rank.r3 .post-fmt{font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#fff}
     .post-body{padding:1rem;flex:1;display:flex;flex-direction:column}
     .post-date{font-size:.75rem;color:var(--muted);margin-bottom:.5rem}
     .post-hook{font-size:.875rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:.75rem;font-style:italic}
@@ -190,12 +190,13 @@
     .post-learning{font-size:.75rem;color:var(--text);line-height:1.55;padding:.625rem .875rem;background:rgba(226,237,122,.06);border:1px solid rgba(226,237,122,.2);border-radius:6px;margin-bottom:.875rem}
     .post-learning-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8a9a2a;margin-bottom:.3rem}
     /* ── STRATEGY ADJUSTMENTS ── */
-    .adj-grid{display:flex;flex-direction:column;gap:.875rem}
-    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
-    @media(max-width:480px){.adj-card{flex-direction:column}}
-    .adj-num{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;flex-shrink:0;color:#fff}
+    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
+    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.25rem;display:flex;flex-direction:column;gap:.75rem}
+    
+    .adj-num{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:800;flex-shrink:0;color:#fff;margin-bottom:.25rem}
     .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
-    .adj-content{flex:1;min-width:0}
+    .adj-content{flex:1;min-width:0;width:100%}
     .adj-type{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
     .adj-type.doubling{color:var(--azure)}.adj-type.testing{color:var(--exceed)}.adj-type.fixing{color:var(--watch)}
     .adj-headline{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.3}
@@ -326,7 +327,7 @@
     </div>
     <div class="trend-wrap" aria-label="Score trend">
       <p class="trend-label">Score Trend</p>
-      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:44.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.2</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:50.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.5</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:64.0%;background:#e2ed7a"></div></div><div class="ts curr">8.2</div><div class="tm curr">Mar</div></div></div>
+      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:41.6%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.5</div><div class="tm">Oct</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:77.6%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.0</div><div class="tm">Nov</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:34.4%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.4</div><div class="tm">Dec</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:27.2%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.3</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:20.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.2</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:92.0%;background:#e2ed7a"></div></div><div class="ts curr">8.2</div><div class="tm curr">Mar</div></div></div></div></div>
     </div>
   </div>
 </div>
@@ -523,8 +524,8 @@
 <!-- ═══ TOP 3 POSTS ═══ -->
 <div class="wrap">
   <section class="sec" aria-labelledby="posts-title">
-    <p class="sec-label">Content Performance</p>
-    <h2 class="sec-title" id="posts-title">Top 3 Posts &mdash; March 2026</h2>
+    <p class="sec-label">Top Posts of the Month</p>
+    <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
             <div class="post-card">
@@ -616,7 +617,7 @@
         <div class="adj-content">
           <p class="adj-type doubling">Doubling Down</p>
           <p class="adj-headline">Scale personality-driven and community Reels</p>
-          <p class="adj-context">Retention &amp; Views &middot; Awareness &amp; Community Goals</p>
+          <p class="adj-context">Retention & Views · Awareness & Community Goals</p>
           <div class="adj-move">The top 3 posts this month were all personality, milestone, or humor-led Reels &mdash; averaging 75% retention. More content in these formats will sustain high retention and push views into broader discovery.</div>
         </div>
       </div>
@@ -625,7 +626,7 @@
         <div class="adj-content">
           <p class="adj-type testing">Testing</p>
           <p class="adj-headline">Test childcare-focused content to drive shares</p>
-          <p class="adj-context">Shares &amp; New Followers &middot; Awareness Goal</p>
+          <p class="adj-context">Shares & New Followers · Awareness Goal</p>
           <div class="adj-move testing">Shares (22) are below target. Content that speaks to the "I want to work out but I have kids" objection activates the share reflex among Cincinnati moms — the core growth audience.</div>
         </div>
       </div>
@@ -634,7 +635,7 @@
         <div class="adj-content">
           <p class="adj-type fixing">Fixing</p>
           <p class="adj-headline">Add save CTAs to class-prep and workout-tip content</p>
-          <p class="adj-context">Saves &middot; Community Goal</p>
+          <p class="adj-context">Saves · Community Goal</p>
           <div class="adj-move fixing">Saves (6) are well below target. Practical content — what to wear, what to expect, how to prep — with an explicit "save this" CTA is the fastest path to moving this metric.</div>
         </div>
       </div>
