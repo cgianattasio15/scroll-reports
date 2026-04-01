@@ -198,9 +198,9 @@
     .cap-toggle:hover{color:var(--navy)}
     
     /* ── STRATEGY ADJUSTMENTS ── */
-.adj-grid{display:flex;flex-direction:column;gap:.875rem}
-    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
-    @media(max-width:480px){.adj-card{flex-direction:column}}
+.adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+    .adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}
+    @media(max-width:480px){.adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}}
     .adj-num{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;flex-shrink:0;color:#fff}
     .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
     .adj-content{flex:1;min-width:0}
@@ -580,114 +580,29 @@
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
-<div class="post-card">
-  <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">STATIC IMAGE</span></div>
-  <div class="post-body">
-    <p class="post-date">March 10, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Static Image</span>
-    </div>
-    <p class="post-hook">&ldquo;Camera rolls bits and pieces&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span>Camera rolls bits and pieces<br><br>…<br>#finejewelry #everydayjewelry #fashionjewlery [fine jewelry, fashion jewelry, style, jewelry collection]</span>
-      </div>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Shares</span>
-        <span class="pstat-val">7</span>
-        <span class="pstat-mult mult-high">2.1x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">1</span>
-        <span class="pstat-mult mult-high">2.0x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Total Views</span>
-        <span class="pstat-val">2,954</span>
-        <span class="pstat-mult mult-med">1.9x account avg</span>
-      </div>
-    </div>
+      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 10, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"Camera rolls bits and pieces
 
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Driven by share velocity at 2.1x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Saves also over-indexed at 2.0x average — a dual signal of reach and intent.
+…
+#finejewelry #everydayjewelry #fashionjewlery [fine jewelry, fashion..."</blockquote><div class="post-caption">Camera rolls bits and pieces
+
+…
+#finejewelry #everydayjewelry #fashionjewlery [fine jewelry, fashion jewelry, style, jewelry collection]</div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">7</span><span class="sm-badge outlier-2x">2.1x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">2,954</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.1x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 1.9x average.</p></div><a href="https://www.instagram.com/p/DVtkmD5jss2/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 3, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"A lifetime of moments. A collection that grows with you. 
+
+Each piece marks a milestone. Love, growt..."</blockquote><div class="post-caption"><span class="cap-preview" id="caplaneandkate2-preview">A lifetime of moments. A collection that grows with you. 
+
+Each piece marks a milestone. Love, growth, celebration, remembrance. 
+
+Our handcrafted fine jewelry is designed to be collected, layered, an</span><span class="cap-ellipsis" id="caplaneandkate2-ellipsis">… </span><span class="cap-rest" id="caplaneandkate2-rest">d cherished over time, becoming part of your personal story.
+
+#everydayjewelry #cincinnatifinejewelry #heirloom</span><button class="cap-toggle" id="caplaneandkate2-btn" onclick="(function(){var r=document.getElementById('caplaneandkate2-rest');var e=document.getElementById('caplaneandkate2-ellipsis');var b=document.getElementById('caplaneandkate2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">24.2%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DVb8jQvES0L/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 24, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"For the ones who love the process as much as the piece. 
+
+A look at the diamonds we’re setting this..."</blockquote><div class="post-caption"><span class="cap-preview" id="caplaneandkate3-preview">For the ones who love the process as much as the piece. 
+
+A look at the diamonds we’re setting this week — each one chosen, considered, and about to become forever.
+
+#engagementring #heirloom #customd</span><span class="cap-ellipsis" id="caplaneandkate3-ellipsis">… </span><span class="cap-rest" id="caplaneandkate3-rest">esigns 
+[heirloom] [engagementring] [engagement]</span><button class="cap-toggle" id="caplaneandkate3-btn" onclick="(function(){var r=document.getElementById('caplaneandkate3-rest');var e=document.getElementById('caplaneandkate3-ellipsis');var b=document.getElementById('caplaneandkate3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">17.8%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DWSCtzLEZUV/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
     </div>
-    <a href="https://www.instagram.com/p/DVtkmD5jss2/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 3, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;A lifetime of moments. A collection that grows with you.&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="caplaneandkate2-preview">A lifetime of moments. A collection that grows with you. <br><br>Each piece marks a milestone. Love, growth, celebration, remembrance. <br><br>Our handcrafted fine jewelry is designed to be<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="caplaneandkate2-rest" style="display:none"> collected, layered, and cherished over time, becoming part of your personal story.<br><br>#everydayjewelry #cincinnatifinejewelry #heirloom</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('caplaneandkate2')" id="caplaneandkate2-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">1</span>
-        <span class="pstat-mult mult-high">2.0x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">24.2%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
-    </div>
-    <a href="https://www.instagram.com/reel/DVb8jQvES0L/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 24, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;For the ones who love the process as much as the piece.&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="caplaneandkate3-preview">For the ones who love the process as much as the piece. <br><br>A look at the diamonds we’re setting this week — each one chosen, considered, and about to become<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="caplaneandkate3-rest" style="display:none"> forever.<br><br>#engagementring #heirloom #customdesigns <br>[heirloom] [engagementring] [engagement]</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('caplaneandkate3')" id="caplaneandkate3-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">1</span>
-        <span class="pstat-mult mult-high">2.0x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">17.8%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
-    </div>
-    <a href="https://www.instagram.com/reel/DWSCtzLEZUV/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-</div>
 </div>
   </div>
 </div>

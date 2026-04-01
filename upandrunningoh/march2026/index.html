@@ -198,9 +198,9 @@
     .cap-toggle:hover{color:var(--navy)}
     
     /* ── STRATEGY ADJUSTMENTS ── */
-.adj-grid{display:flex;flex-direction:column;gap:.875rem}
-    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
-    @media(max-width:480px){.adj-card{flex-direction:column}}
+.adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+    .adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}
+    @media(max-width:480px){.adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}}
     .adj-num{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;flex-shrink:0;color:#fff}
     .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
     .adj-content{flex:1;min-width:0}
@@ -580,111 +580,46 @@
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
-<div class="post-card">
-  <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 18, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;Woah woah woah. A custom shoe fitting isn’t just trying on shoes, it’s an analysis of how you mov...&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capupandrunningoh1-preview">Woah woah woah. A custom shoe fitting isn’t just trying on shoes, it’s an analysis of how you move, what your feet need, and finding the shoe that actually works for your<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capupandrunningoh1-rest" style="display:none"> body.<br><br>If you’re on your feet all day, running your first 5K, or just getting back into movement after a long break, a custom shoe fitting is for YOU. <br><br>Not just for elite runners. For nurses, teachers, new moms, and everyone in between. We fit every body. Every pace. Every goal. 🙌<br><br>...<br>#daytonrunningstore #troyrunningstore #customshoefit</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh1')" id="capupandrunningoh1-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">2</span>
-        <span class="pstat-mult mult-high">3.2x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Avg Retention</span>
-        <span class="pstat-val">99.9%</span>
-        <span class="pstat-mult mult-high">2.9x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Shares</span>
-        <span class="pstat-val">3</span>
-        <span class="pstat-mult mult-high">2.2x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">99.9%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 3.2x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value. Retention also over-indexed at 2.9x average — confirming strong content quality.
-    </div>
-    <a href="https://www.instagram.com/reel/DWB_QjRDa6h/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">STATIC IMAGE</span></div>
-  <div class="post-body">
-    <p class="post-date">March 24, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Static Image</span>
-    </div>
-    <p class="post-hook">&ldquo;From Customer to Store Manager and many roles in between.&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capupandrunningoh2-preview">From Customer to Store Manager and many roles in between.<br><br>When Up and Running was getting ready to open, I had heard about this new business and thought to myself how much I<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capupandrunningoh2-rest" style="display:none"> would love to work there—or at least shop there.<br><br>I had always been an athlete and got more into running as an adult, so this seemed like the perfect fit.<br><br>After being a customer for years, I joined the company in 2012 as a very part-time employee. Over the years, my roles at UAR have ebbed and flowed, eventually leading me to become Store Manager in 2020.<br><br>I love being out on the floor, welcoming customers in and getting to know their “why.” Whether someone is just starting their running journey or training for their next big race, or simply needing an everyday shoe being part of that process is incredibly rewarding.<br><br>I also have a passion for fashion and apparel, and I enjoy helping curate pieces that not only perform well but make people feel confident. Being able to blend function with style and help customers find what works best for them is one of my favorite parts of the job.<br><br>- Laurie<br><br>…<br>#upandrunning #daytonohio #troyohio</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh2')" id="capupandrunningoh2-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Total Views</span>
-        <span class="pstat-val">12,719</span>
-        <span class="pstat-mult mult-high">5.1x account avg</span>
-      </div>
-    </div>
+      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 18, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Woah woah woah. A custom shoe fitting isn’t just trying on shoes, it’s an analysis of how you move,..."</blockquote><div class="post-caption"><span class="cap-preview" id="capupandrunningoh1-preview">Woah woah woah. A custom shoe fitting isn’t just trying on shoes, it’s an analysis of how you move, what your feet need, and finding the shoe that actually works for your body.
 
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      A reach outlier at 5.1x the account's average views. The hook successfully broke content out of the core audience and into the wider algorithm — a strong signal to double down on this format and topic.
-    </div>
-    <a href="https://www.instagram.com/p/DWRh5UwDbME/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">STATIC IMAGE</span></div>
-  <div class="post-body">
-    <p class="post-date">March 10, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Static Image</span>
-    </div>
-    <p class="post-hook">&ldquo;Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capupandrunningoh3-preview">Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!<br><br>This scenic race through Woodland Cemetery features a hilly course, incredible views of Dayton,<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capupandrunningoh3-rest" style="display:none"> and a chance to experience local history along the way. Proceeds benefit the Woodland Foundation.<br><br>Plus, new this year we have the Centerville Better Blend Food Truck on site after the race for a delicious refuel ⚡️<br><br>April 26, 2026 | 9AM<br>Woodland Cemetery &amp; Arboretum <br><br>See you there! 👀<br>Link to register in bio<br><br>#dayton5k #ohio5k #ohio10k</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capupandrunningoh3')" id="capupandrunningoh3-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">1</span>
-        <span class="pstat-mult mult-med">1.6x account avg</span>
-      </div>
-    </div>
+If you’re on your feet</span><span class="cap-ellipsis" id="capupandrunningoh1-ellipsis">… </span><span class="cap-rest" id="capupandrunningoh1-rest"> all day, running your first 5K, or just getting back into movement after a long break, a custom shoe fitting is for YOU. 
 
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 1.6x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
+Not just for elite runners. For nurses, teachers, new moms, and everyone in between. We fit every body. Every pace. Every goal. 🙌
+
+...
+#daytonrunningstore #troyrunningstore #customshoefit</span><button class="cap-toggle" id="capupandrunningoh1-btn" onclick="(function(){var r=document.getElementById('capupandrunningoh1-rest');var e=document.getElementById('capupandrunningoh1-ellipsis');var b=document.getElementById('capupandrunningoh1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">99.9%</span><span class="sm-badge outlier-2x">2.9x account avg</span></div></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">99.9%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Anchored by exceptional retention at 2.9x the account average. Viewers watched a disproportionate amount of this Reel, signaling the hook delivered on its promise and the pacing held attention throughout.</p></div><a href="https://www.instagram.com/reel/DWB_QjRDa6h/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 24, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"From Customer to Store Manager and many roles in between.
+
+When Up and Running was getting ready to..."</blockquote><div class="post-caption"><span class="cap-preview" id="capupandrunningoh2-preview">From Customer to Store Manager and many roles in between.
+
+When Up and Running was getting ready to open, I had heard about this new business and thought to myself how much I would love to work there—</span><span class="cap-ellipsis" id="capupandrunningoh2-ellipsis">… </span><span class="cap-rest" id="capupandrunningoh2-rest">or at least shop there.
+
+I had always been an athlete and got more into running as an adult, so this seemed like the perfect fit.
+
+After being a customer for years, I joined the company in 2012 as a very part-time employee. Over the years, my roles at UAR have ebbed and flowed, eventually leading me to become Store Manager in 2020.
+
+I love being out on the floor, welcoming customers in and getting to know their “why.” Whether someone is just starting their running journey or training for their next big race, or simply needing an everyday shoe being part of that process is incredibly rewarding.
+
+I also have a passion for fashion and apparel, and I enjoy helping curate pieces that not only perform well but make people feel confident. Being able to blend function with style and help customers find what works best for them is one of my favorite parts of the job.
+
+- Laurie
+
+…
+#upandrunning #daytonohio #troyohio</span><button class="cap-toggle" id="capupandrunningoh2-btn" onclick="(function(){var r=document.getElementById('capupandrunningoh2-rest');var e=document.getElementById('capupandrunningoh2-ellipsis');var b=document.getElementById('capupandrunningoh2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">12,719</span><span class="sm-badge outlier-2x">5.1x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">A reach outlier at 5.1x the account's average views. The hook successfully broke content out of the core audience and into the wider algorithm — a strong signal to double down on this format and topic.</p></div><a href="https://www.instagram.com/p/DWRh5UwDbME/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 10, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!
+
+This scenic race t..."</blockquote><div class="post-caption"><span class="cap-preview" id="capupandrunningoh3-preview">Join us for one of our favorite events of the spring: The Free Your Sole 5k/10k!
+
+This scenic race through Woodland Cemetery features a hilly course, incredible views of Dayton, and a chance to experi</span><span class="cap-ellipsis" id="capupandrunningoh3-ellipsis">… </span><span class="cap-rest" id="capupandrunningoh3-rest">ence local history along the way. Proceeds benefit the Woodland Foundation.
+
+Plus, new this year we have the Centerville Better Blend Food Truck on site after the race for a delicious refuel ⚡️
+
+April 26, 2026 | 9AM
+Woodland Cemetery & Arboretum 
+
+See you there! 👀
+Link to register in bio
+
+#dayton5k #ohio5k #ohio10k</span><button class="cap-toggle" id="capupandrunningoh3-btn" onclick="(function(){var r=document.getElementById('capupandrunningoh3-rest');var e=document.getElementById('capupandrunningoh3-ellipsis');var b=document.getElementById('capupandrunningoh3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/p/DVtZCx2jaHE/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
     </div>
-    <a href="https://www.instagram.com/p/DVtZCx2jaHE/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-</div>
 </div>
   </div>
 </div>

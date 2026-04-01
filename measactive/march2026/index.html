@@ -198,9 +198,9 @@
     .cap-toggle:hover{color:var(--navy)}
     
     /* ── STRATEGY ADJUSTMENTS ── */
-.adj-grid{display:flex;flex-direction:column;gap:.875rem}
-    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
-    @media(max-width:480px){.adj-card{flex-direction:column}}
+.adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+    .adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}
+    @media(max-width:480px){.adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}}
     .adj-num{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;flex-shrink:0;color:#fff}
     .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
     .adj-content{flex:1;min-width:0}
@@ -580,81 +580,33 @@
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
-<div class="post-card">
-  <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">STATIC IMAGE</span></div>
-  <div class="post-body">
-    <p class="post-date">March 5, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Static Image</span>
-    </div>
-    <p class="post-hook">&ldquo;Spring is a time for renewal! 🌸&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capmeasactive1-preview">Spring is a time for renewal! 🌸<br><br>We’ve got a packed month with some exciting new things up our sleeves.<br><br>🩷 Mar 8: Move with MEAS x Title Boxing Club <br>🩷 Mar 9: Big announcement<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capmeasactive1-rest" style="display:none"> (yes, it’s a big one 👀) <br>🩷 Mar 21: The Beauty Boost Sip &amp; Shop <br>🩷 Mar 27: OTR Final Friday <br>🩷 Mar 28: Project MEAS Run Club <br>🩷 Mar 29: Move with MEAS<br><br>Swipe through and mark your dates, babes.<br><br>What are you most excited for? Drop it below 👇</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capmeasactive1')" id="capmeasactive1-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">4</span>
-        <span class="pstat-mult mult-high">4.0x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Shares</span>
-        <span class="pstat-val">16</span>
-        <span class="pstat-mult mult-high">3.6x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Total Views</span>
-        <span class="pstat-val">6,228</span>
-        <span class="pstat-mult mult-high">2.5x account avg</span>
-      </div>
-    </div>
+      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 5, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"Spring is a time for renewal! 🌸
 
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 4.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value. Shares also over-indexed at 3.6x average — compounding the reach effect.
+We’ve got a packed month with some exciting new things up our sleev..."</blockquote><div class="post-caption"><span class="cap-preview" id="capmeasactive1-preview">Spring is a time for renewal! 🌸
+
+We’ve got a packed month with some exciting new things up our sleeves.
+
+🩷 Mar 8: Move with MEAS x Title Boxing Club 
+🩷 Mar 9: Big announcement (yes, it’s a big one 👀) </span><span class="cap-ellipsis" id="capmeasactive1-ellipsis">… </span><span class="cap-rest" id="capmeasactive1-rest">
+🩷 Mar 21: The Beauty Boost Sip & Shop 
+🩷 Mar 27: OTR Final Friday 
+🩷 Mar 28: Project MEAS Run Club 
+🩷 Mar 29: Move with MEAS
+
+Swipe through and mark your dates, babes.
+
+What are you most excited for? Drop it below 👇</span><button class="cap-toggle" id="capmeasactive1-btn" onclick="(function(){var r=document.getElementById('capmeasactive1-rest');var e=document.getElementById('capmeasactive1-ellipsis');var b=document.getElementById('capmeasactive1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">4</span><span class="sm-badge outlier-2x">4.0x account avg</span></div><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">16</span><span class="sm-badge outlier-2x">3.6x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">6,228</span><span class="sm-badge outlier-2x">2.5x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Powered by save density at 4.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value. Shares also over-indexed at 3.6x average — compounding the reach effect.</p></div><a href="https://www.instagram.com/p/DVhH8nalkYg/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 17, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Green with envy over these sets? We don’t blame you. 🍀
+
+Cute, functional, and completely yours if yo..."</blockquote><div class="post-caption"><span class="cap-preview" id="capmeasactive2-preview">Green with envy over these sets? We don’t blame you. 🍀
+
+Cute, functional, and completely yours if you want them ( just saying).
+
+This is how we do St. Patrick’s Day at MEAS Active 💚 Luck be a lady!
+
+B</span><span class="cap-ellipsis" id="capmeasactive2-ellipsis">… </span><span class="cap-rest" id="capmeasactive2-rest">ring a little luck to your wardrobe and shop our activewear at the link.
+
+#MEASactive #athleticwear #activewear #springfashion #greensets</span><button class="cap-toggle" id="capmeasactive2-btn" onclick="(function(){var r=document.getElementById('capmeasactive2-rest');var e=document.getElementById('capmeasactive2-ellipsis');var b=document.getElementById('capmeasactive2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">45.5%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DV_SG9rDh6T/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
     </div>
-    <a href="https://www.instagram.com/p/DVhH8nalkYg/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 17, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;Green with envy over these sets? We don’t blame you. 🍀&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capmeasactive2-preview">Green with envy over these sets? We don’t blame you. 🍀<br><br>Cute, functional, and completely yours if you want them ( just saying).<br><br>This is how we do St. Patrick’s Day at MEAS Active<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capmeasactive2-rest" style="display:none"> 💚 Luck be a lady!<br><br>Bring a little luck to your wardrobe and shop our activewear at the link.<br><br>#MEASactive #athleticwear #activewear #springfashion #greensets</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capmeasactive2')" id="capmeasactive2-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">2</span>
-        <span class="pstat-mult mult-high">2.0x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">45.5%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
-    </div>
-    <a href="https://www.instagram.com/reel/DV_SG9rDh6T/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-</div>
 </div>
   </div>
 </div>

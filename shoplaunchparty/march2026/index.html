@@ -198,9 +198,9 @@
     .cap-toggle:hover{color:var(--navy)}
     
     /* ── STRATEGY ADJUSTMENTS ── */
-.adj-grid{display:flex;flex-direction:column;gap:.875rem}
-    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
-    @media(max-width:480px){.adj-card{flex-direction:column}}
+.adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+    .adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}
+    @media(max-width:480px){.adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}}
     .adj-num{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;flex-shrink:0;color:#fff}
     .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
     .adj-content{flex:1;min-width:0}
@@ -580,120 +580,43 @@
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
-<div class="post-card">
-  <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 17, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capshoplaunchparty1-preview">We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.<br><br>Moving on is hard, but it’s also the perfect excuse to switch up your signature scent. <br><br>Whether you’re stepping into<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capshoplaunchparty1-rest" style="display:none"> your single season, focusing on yourself, or just ready to smell unforgettable for someone new, DedCool is that first step forward. <br><br>Because the best revenge? Feeling amazing and never looking back.<br><br>#perfume #fragrance #dedcool #shopsmall #indiebeauty</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capshoplaunchparty1')" id="capshoplaunchparty1-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Shares</span>
-        <span class="pstat-val">10</span>
-        <span class="pstat-mult mult-high">3.0x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Total Views</span>
-        <span class="pstat-val">4,174</span>
-        <span class="pstat-mult mult-high">2.2x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Avg Retention</span>
-        <span class="pstat-val">76.3%</span>
-        <span class="pstat-mult mult-high">2.1x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">76.3%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Driven by share velocity at 3.0x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 2.2x average.
-    </div>
-    <a href="https://www.instagram.com/reel/DV_PKHHDpC5/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">STATIC IMAGE</span></div>
-  <div class="post-body">
-    <p class="post-date">March 3, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Static Image</span>
-    </div>
-    <p class="post-hook">&ldquo;Experiencing burnout? Reset with us.&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capshoplaunchparty2-preview">Experiencing burnout? Reset with us.<br><br>If your brain feels like 27 tabs are open, this is your sign to take a Reset Day. <br><br>Here’s the vibe: <br>Hair treatment <br>Everything shower<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capshoplaunchparty2-rest" style="display:none"> <br>Journal + reflect <br>Skincare reset <br>Manicure maintenance <br><br>No pressure to do it all. Pick 1–2 steps and call it a win. <br><br>Save this for the next day you need a fresh start and tell us: which step are you doing first? 👇<br><br>#resetday #selfcareroutine #cleanbeauty #sundayreset #skincareritual</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capshoplaunchparty2')" id="capshoplaunchparty2-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Shares</span>
-        <span class="pstat-val">9</span>
-        <span class="pstat-mult mult-high">2.7x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">5</span>
-        <span class="pstat-mult mult-high">2.0x account avg</span>
-      </div>
-    </div>
+      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 17, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.
 
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Driven by share velocity at 2.7x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Saves also over-indexed at 2.0x average — a dual signal of reach and intent.
+Moving on is hard, but it’s also the perfe..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunchparty1-preview">We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.
+
+Moving on is hard, but it’s also the perfect excuse to switch up your signature scent. 
+
+Whether you’re stepping into your single season, focu</span><span class="cap-ellipsis" id="capshoplaunchparty1-ellipsis">… </span><span class="cap-rest" id="capshoplaunchparty1-rest">sing on yourself, or just ready to smell unforgettable for someone new, DedCool is that first step forward. 
+
+Because the best revenge? Feeling amazing and never looking back.
+
+#perfume #fragrance #dedcool #shopsmall #indiebeauty</span><button class="cap-toggle" id="capshoplaunchparty1-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty1-rest');var e=document.getElementById('capshoplaunchparty1-ellipsis');var b=document.getElementById('capshoplaunchparty1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">10</span><span class="sm-badge outlier-2x">3.0x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">4,174</span><span class="sm-badge outlier-2x">2.2x account avg</span></div><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">76.3%</span><span class="sm-badge outlier-2x">2.1x account avg</span></div></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">76.3%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 3.0x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 2.2x average.</p></div><a href="https://www.instagram.com/reel/DV_PKHHDpC5/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">STATIC IMAGE</span></div><div class="post-body"><div class="post-date">March 3, 2026</div><div class="post-format-pill">Static Image</div><blockquote class="post-hook">"Experiencing burnout? Reset with us.
+
+If your brain feels like 27 tabs are open, this is your sign t..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunchparty2-preview">Experiencing burnout? Reset with us.
+
+If your brain feels like 27 tabs are open, this is your sign to take a Reset Day. 
+
+Here’s the vibe: 
+Hair treatment 
+Everything shower 
+Journal + reflect 
+Skinca</span><span class="cap-ellipsis" id="capshoplaunchparty2-ellipsis">… </span><span class="cap-rest" id="capshoplaunchparty2-rest">re reset 
+Manicure maintenance 
+
+No pressure to do it all. Pick 1–2 steps and call it a win. 
+
+Save this for the next day you need a fresh start and tell us: which step are you doing first? 👇
+
+#resetday #selfcareroutine #cleanbeauty #sundayreset #skincareritual</span><button class="cap-toggle" id="capshoplaunchparty2-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty2-rest');var e=document.getElementById('capshoplaunchparty2-ellipsis');var b=document.getElementById('capshoplaunchparty2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">9</span><span class="sm-badge outlier-2x">2.7x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.7x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Saves also over-indexed at 2.0x average — a dual signal of reach and intent.</p></div><a href="https://www.instagram.com/p/DVbNLLnDqqa/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 22, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Skincare first, then makeup.
+
+Every look starts with intention. Hydrated, prepped skin that feels as..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunchparty3-preview">Skincare first, then makeup.
+
+Every look starts with intention. Hydrated, prepped skin that feels as good as it looks. Then comes the fun part! Complexion that still looks like skin, blush that actual</span><span class="cap-ellipsis" id="capshoplaunchparty3-ellipsis">… </span><span class="cap-rest" id="capshoplaunchparty3-rest">ly pops and a lip that pulls it all together.
+
+Save this for your next get ready with me and comment which product you want a deeper dive on! 💕
+
+#skincare #beauty #makeuprecs #makeuplook</span><button class="cap-toggle" id="capshoplaunchparty3-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty3-rest');var e=document.getElementById('capshoplaunchparty3-ellipsis');var b=document.getElementById('capshoplaunchparty3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">48.7%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.</p></div><a href="https://www.instagram.com/reel/DWMJhNcjkmG/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
     </div>
-    <a href="https://www.instagram.com/p/DVbNLLnDqqa/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 22, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;Skincare first, then makeup.&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capshoplaunchparty3-preview">Skincare first, then makeup.<br><br>Every look starts with intention. Hydrated, prepped skin that feels as good as it looks. Then comes the fun part! Complexion that still looks like<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capshoplaunchparty3-rest" style="display:none"> skin, blush that actually pops and a lip that pulls it all together.<br><br>Save this for your next get ready with me and comment which product you want a deeper dive on! 💕<br><br>#skincare #beauty #makeuprecs #makeuplook</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capshoplaunchparty3')" id="capshoplaunchparty3-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">5</span>
-        <span class="pstat-mult mult-high">2.0x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">48.7%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
-    </div>
-    <a href="https://www.instagram.com/reel/DWMJhNcjkmG/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-</div>
 </div>
   </div>
 </div>

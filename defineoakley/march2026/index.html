@@ -214,9 +214,9 @@
     .cap-toggle:hover{color:var(--navy)}
     
     /* ── STRATEGY ADJUSTMENTS ── */
-.adj-grid{display:flex;flex-direction:column;gap:.875rem}
-    .adj-card{background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);padding:1.375rem;display:flex;gap:1.125rem;align-items:flex-start}
-    @media(max-width:480px){.adj-card{flex-direction:column}}
+.adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+    .adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}
+    @media(max-width:480px){.adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}}
     .adj-num{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;flex-shrink:0;color:#fff}
     .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
     .adj-content{flex:1;min-width:0}
@@ -600,119 +600,26 @@
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, ranked by total views. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
     <div class="posts-grid">
-<div class="post-card">
-  <div class="post-rank r1"><span>#1 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 5, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
+      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 5, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"This one’s for the morning crew, a little crazy but always motivated. 🤪
+
+Fun fact: We offer a 6:00am..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley1-preview">This one’s for the morning crew, a little crazy but always motivated. 🤪
+
+Fun fact: We offer a 6:00am class Monday–Friday. Whether it’s Rev, Barre, Bounce, or 30/30, if you’re ready for that early swea</span><span class="cap-ellipsis" id="capdefineoakley1-ellipsis">… </span><span class="cap-rest" id="capdefineoakley1-rest">t, we’re here. 
+
+#fitness #workoutstudio #cincinnati #community</span><button class="cap-toggle" id="capdefineoakley1-btn" onclick="(function(){var r=document.getElementById('capdefineoakley1-rest');var e=document.getElementById('capdefineoakley1-ellipsis');var b=document.getElementById('capdefineoakley1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">6</span><span class="sm-badge outlier-2x">2.4x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">5,253</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">81.4%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.4x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 1.9x average.</p></div><a href="https://www.instagram.com/reel/DVgdzqnDURd/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 19, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Ready to try a  bounce class? 👀 
+
+Our DEFINE BOUNCE class combines HIIT on a personal trampoline wit..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley2-preview">Ready to try a  bounce class? 👀 
+
+Our DEFINE BOUNCE class combines HIIT on a personal trampoline with targeted barre work, so you get a killer workout that’s 20% more cardio-effective than a treadmill</span><span class="cap-ellipsis" id="capdefineoakley2-ellipsis">… </span><span class="cap-rest" id="capdefineoakley2-rest"> AND 80% easier on your knees.
+
+Book your bounce class today in our app! 💙
+
+#bounce #workoutclass #cincinnati #cincinnatiworkout</span><button class="cap-toggle" id="capdefineoakley2-btn" onclick="(function(){var r=document.getElementById('capdefineoakley2-rest');var e=document.getElementById('capdefineoakley2-ellipsis');var b=document.getElementById('capdefineoakley2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">58.0%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DWEbxXFjTdi/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">March 12, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our lives..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley3-preview">Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our lives when that alarm goes off. 😅
+
+But that post-class feeling? That’s what makes it worth it every single</span><span class="cap-ellipsis" id="capdefineoakley3-ellipsis">… </span><span class="cap-rest" id="capdefineoakley3-rest"> time.
+
+#morningmotivation #fitnessroutine #community #cincinnatiworkout</span><button class="cap-toggle" id="capdefineoakley3-btn" onclick="(function(){var r=document.getElementById('capdefineoakley3-rest');var e=document.getElementById('capdefineoakley3-ellipsis');var b=document.getElementById('capdefineoakley3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-retention"><span class="ret-label">Retention</span><span class="ret-sub">Avg % of reel watched</span><span class="ret-val">86.7%</span></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DVydQw8DZtC/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
     </div>
-    <p class="post-hook">&ldquo;This one’s for the morning crew, a little crazy but always motivated. 🤪&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capdefineoakley1-preview">This one’s for the morning crew, a little crazy but always motivated. 🤪<br><br>Fun fact: We offer a 6:00am class Monday–Friday. Whether it’s Rev, Barre, Bounce, or 30/30, if you’re<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capdefineoakley1-rest" style="display:none"> ready for that early sweat, we’re here. <br><br>#fitness #workoutstudio #cincinnati #community</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capdefineoakley1')" id="capdefineoakley1-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Shares</span>
-        <span class="pstat-val">6</span>
-        <span class="pstat-mult mult-high">2.4x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Total Views</span>
-        <span class="pstat-val">5,253</span>
-        <span class="pstat-mult mult-med">1.9x account avg</span>
-      </div>
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">1</span>
-        <span class="pstat-mult mult-med">1.6x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">81.4%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Driven by share velocity at 2.4x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 1.9x average.
-    </div>
-    <a href="https://www.instagram.com/reel/DVgdzqnDURd/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r2"><span>#2 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 19, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;Ready to try a  bounce class? 👀&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capdefineoakley2-preview">Ready to try a  bounce class? 👀 <br><br>Our DEFINE BOUNCE class combines HIIT on a personal trampoline with targeted barre work, so you get a killer workout that’s 20% more<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capdefineoakley2-rest" style="display:none"> cardio-effective than a treadmill AND 80% easier on your knees.<br><br>Book your bounce class today in our app! 💙<br><br>#bounce #workoutclass #cincinnati #cincinnatiworkout</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capdefineoakley2')" id="capdefineoakley2-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">2</span>
-        <span class="pstat-mult mult-high">3.2x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">58.0%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 3.2x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
-    </div>
-    <a href="https://www.instagram.com/reel/DWEbxXFjTdi/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-<div class="post-card">
-  <div class="post-rank r3"><span>#3 Top Post</span><span class="post-fmt">REEL</span></div>
-  <div class="post-body">
-    <p class="post-date">March 12, 2026</p>
-    <div class="post-format-row">
-      <span class="post-format-tag">Reel</span>
-    </div>
-    <p class="post-hook">&ldquo;Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our liv...&rdquo;</p>
-    <div class="post-caption">
-      <div class="post-caption-label">Caption</div>
-      <div class="post-caption-text">
-        <span class="cap-preview" id="capdefineoakley3-preview">Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our lives when that alarm goes off. 😅<br><br>But that post-class feeling? That’s what makes it<span class="cap-ellipsis">&hellip;</span></span><span class="cap-rest" id="capdefineoakley3-rest" style="display:none"> worth it every single time.<br><br>#morningmotivation #fitnessroutine #community #cincinnatiworkout</span>
-      </div>
-      <button class="cap-toggle" onclick="toggleCap('capdefineoakley3')" id="capdefineoakley3-btn">Show more</button>
-    </div>
-<div class="post-stats post-stats-outlier">
-      <div class="pstat pstat-outlier">
-        <span class="pstat-lbl">Saves</span>
-        <span class="pstat-val">1</span>
-        <span class="pstat-mult mult-med">1.6x account avg</span>
-      </div>
-    </div>
-    <div class="post-retention-row">
-      <span class="post-retention-label">Retention</span>
-      <span class="post-retention-note">Avg % of reel watched</span>
-      <span class="post-retention-val">86.7%</span>
-    </div>
-    <div class="post-learning">
-      <div class="post-learning-label">&#9650; Why It Worked</div>
-      Powered by save density at 1.6x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.
-    </div>
-    <a href="https://www.instagram.com/reel/DVydQw8DZtC/" class="post-ig-btn" target="_blank" rel="noopener">View on Instagram &rarr;</a>
-    </div>
-  </div>
-</div>
 </div>
   </div>
 </div>
