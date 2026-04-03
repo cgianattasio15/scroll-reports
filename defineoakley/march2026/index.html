@@ -376,7 +376,108 @@
     .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
     .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
-</style>
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE OPTIMISATION — 480px and below
+       ═══════════════════════════════════════════════════ */
+    @media(max-width:480px){
+
+      /* ── NAV ── */
+      .report-nav-inner{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 .5rem}
+      .report-nav-inner::-webkit-scrollbar{display:none}
+      .report-nav-link{padding:.5rem .6rem;font-size:.6rem;white-space:nowrap;flex-shrink:0}
+
+      /* ── HERO ── */
+      .hero{padding:2rem 1rem 5rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .hero-title{font-size:clamp(2rem,10vw,3rem)}
+      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.75rem}
+      .hero-meta-sep{display:none}
+      .hero-bullets{padding:1rem}
+      .hero-bullet{font-size:.8125rem;gap:.5rem}
+
+      /* ── SCORE CARD ── */
+      .score-wrap{margin:-3rem auto 1.25rem;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .score-badges{flex-wrap:wrap;gap:.5rem;justify-content:center}
+      .trend-bar-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .trend-bars{min-width:320px}
+
+      /* ── FOLLOWERS BANNER ── */
+      .followers-banner{flex-direction:column;gap:.75rem;text-align:center}
+      .followers-count{font-size:clamp(1.75rem,8vw,2.5rem)}
+      .followers-meta{align-items:center}
+
+      /* ── GOALS GRID ── */
+      .goals-grid{grid-template-columns:1fr}
+      .goal-card{padding:1.25rem}
+
+      /* ── METRIC CARDS ── */
+      .metric-grid{grid-template-columns:1fr}
+      .metric-card{padding:1.25rem}
+      .metric-value-row{flex-wrap:wrap;gap:.35rem}
+      .metric-value{font-size:clamp(1.5rem,7vw,2rem)}
+      .metric-badge{font-size:.6875rem}
+      .metric-target-row{flex-wrap:wrap;gap:.25rem}
+
+      /* ── TOP POSTS ── */
+      .posts-grid{grid-template-columns:1fr}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-rank{font-size:.8rem}
+      .post-type-badge,.reel-badge,.post-badge{font-size:.6rem;padding:.15rem .4rem}
+      .post-score{font-size:.65rem;padding:.1rem .5rem;margin-left:auto}
+      .post-body{padding:1rem}
+      .post-hook{font-size:.875rem}
+      .standout-metric{flex-wrap:wrap;gap:.25rem}
+      .sm-label{font-size:.65rem}
+      .sm-value{font-size:1rem}
+      .sm-badge{font-size:.65rem;padding:.15rem .45rem}
+      .post-ig-btn{padding:.75rem 1rem;font-size:.875rem}
+
+      /* ── STRATEGY ADJUSTMENTS ── */
+      .adj-grid{grid-template-columns:1fr}
+      .adj-card{padding:1.25rem}
+      .adj-type{font-size:.65rem;padding:.2rem .6rem}
+      .adj-num{width:2rem;height:2rem;font-size:.875rem}
+
+      /* ── CTA SECTION ── */
+      .cta-funnel-grid{grid-template-columns:1fr}
+      .cta-primary-obj{padding:1.25rem}
+      .cta-chips{flex-wrap:wrap;gap:.35rem}
+      .cta-chip{font-size:.6875rem;padding:.25rem .6rem}
+      .cta-funnel-card{padding:1.25rem}
+
+      /* ── PREVIOUS REPORTS ── */
+      .prev-grid{grid-template-columns:1fr}
+      .prev-card{padding:1.25rem}
+      .prev-month{font-size:.65rem}
+      .prev-score{font-size:2rem}
+
+      /* ── WHAT WE LEARNED ── */
+      .learned-grid{grid-template-columns:1fr}
+      .learned-card{padding:1.25rem}
+
+      /* ── GENERAL SECTION PADDING ── */
+      .sec{padding:1.25rem 1rem}
+      .sec-eyebrow{font-size:.6rem}
+      h2{font-size:clamp(1.25rem,6vw,1.75rem)}
+    }
+
+    /* ── TABLET (481–768px) ── */
+    @media(min-width:481px) and (max-width:768px){
+      .hero{padding:2.5rem 1.5rem 5.5rem}
+      .hero-title{font-size:clamp(2.25rem,8vw,3.5rem)}
+      .posts-grid{grid-template-columns:1fr}
+      .adj-grid{grid-template-columns:1fr}
+      .metric-grid{grid-template-columns:1fr}
+      .goals-grid{grid-template-columns:1fr}
+      .prev-grid{grid-template-columns:repeat(2,1fr)}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-score{margin-left:auto}
+    }
+
+  </style>
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -645,27 +746,25 @@
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model — posts that over-indexed on reach, saves, shares, or retention relative to account averages. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
-    <div class="posts-grid">
-      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 5, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"This one’s for the morning crew, a little crazy but always motivated. 🤪
+    <div class="posts-grid"><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 5, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"This one’s for the morning crew, a little crazy but always motivated. 🤪
 
-Fun fact: We offer a 6:00am..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley1-preview">This one’s for the morning crew, a little crazy but always motivated. 🤪
+Fun fact: We offer a 6:00am class Monday–Friday..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley1-preview">This one’s for the morning crew, a little crazy but always motivated. 🤪
 
-Fun fact: We offer a 6:00am class Monday–Friday. Whether it’s Rev, Barre, Bounce, or 30/30, if you’re ready for that early swea</span><span class="cap-ellipsis" id="capdefineoakley1-ellipsis">… </span><span class="cap-rest" id="capdefineoakley1-rest">t, we’re here. 
+Fun fact: We offer a 6:00am class Monday–Friday. Whether it’s Rev, Barre, Bounce, or 30/30, if you’re ready for that early</span><span class="cap-rest open" id="capdefineoakley1-rest" style="display:none">sweat, we’re here. 
 
-#fitness #workoutstudio #cincinnati #community</span><button class="cap-toggle" id="capdefineoakley1-btn" onclick="(function(){var r=document.getElementById('capdefineoakley1-rest');var e=document.getElementById('capdefineoakley1-ellipsis');var b=document.getElementById('capdefineoakley1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">6</span><span class="sm-badge outlier-2x">2.4x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">5,253</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.4x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 1.9x average.</p></div><a href="https://www.instagram.com/reel/DVgdzqnDURd/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 85/100</span></div><div class="post-body"><div class="post-date">March 19, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Ready to try a  bounce class? 👀 
+#fitness #workoutstudio #cincinnati #community</span><span class="cap-ellipsis" id="capdefineoakley1-ellipsis">…</span><button class="cap-toggle" id="capdefineoakley1-btn" onclick="(function(){var r=document.getElementById('capdefineoakley1-rest');var e=document.getElementById('capdefineoakley1-ellipsis');var b=document.getElementById('capdefineoakley1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">6</span><span class="sm-badge outlier-2x">2.4x account avg</span></div><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">5,265</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.4x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 1.9x average.</p></div><a href="https://www.instagram.com/reel/DVgdzqnDURd/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 85/100</span></div><div class="post-body"><div class="post-date">March 19, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Ready to try a  bounce class? 👀 
 
-Our DEFINE BOUNCE class combines HIIT on a personal trampoline wit..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley2-preview">Ready to try a  bounce class? 👀 
+Our DEFINE BOUNCE class combines HIIT on a personal trampoline with targeted barre wor..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley2-preview">Ready to try a  bounce class? 👀 
 
-Our DEFINE BOUNCE class combines HIIT on a personal trampoline with targeted barre work, so you get a killer workout that’s 20% more cardio-effective than a treadmill</span><span class="cap-ellipsis" id="capdefineoakley2-ellipsis">… </span><span class="cap-rest" id="capdefineoakley2-rest"> AND 80% easier on your knees.
+Our DEFINE BOUNCE class combines HIIT on a personal trampoline with targeted barre work, so you get a killer workout that’s 20% more cardio-effective than a</span><span class="cap-rest open" id="capdefineoakley2-rest" style="display:none">treadmill AND 80% easier on your knees.
 
 Book your bounce class today in our app! 💙
 
-#bounce #workoutclass #cincinnati #cincinnatiworkout</span><button class="cap-toggle" id="capdefineoakley2-btn" onclick="(function(){var r=document.getElementById('capdefineoakley2-rest');var e=document.getElementById('capdefineoakley2-ellipsis');var b=document.getElementById('capdefineoakley2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Scored in the top 3 this month on composite performance. Saves came in at 3.2x the account average — a strong intent signal — though the absolute volume didn't clear the floor threshold. Retention at 58% confirms the hook held attention. A post worth repeating in format and topic.</p></div><a href="https://www.instagram.com/reel/DWEbxXFjTdi/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 61/100</span></div><div class="post-body"><div class="post-date">March 12, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our lives..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley3-preview">Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our lives when that alarm goes off. 😅
+#bounce #workoutclass #cincinnati #cincinnatiworkout</span><span class="cap-ellipsis" id="capdefineoakley2-ellipsis">…</span><button class="cap-toggle" id="capdefineoakley2-btn" onclick="(function(){var r=document.getElementById('capdefineoakley2-rest');var e=document.getElementById('capdefineoakley2-ellipsis');var b=document.getElementById('capdefineoakley2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DWEbxXFjTdi/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 61/100</span></div><div class="post-body"><div class="post-date">March 12, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our lives when that alarm goes..."</blockquote><div class="post-caption"><span class="cap-preview" id="capdefineoakley3-preview">Just because we voluntarily sign up for a 6am workout doesn’t mean we’re not fighting for our lives when that alarm goes off. 😅
 
-But that post-class feeling? That’s what makes it worth it every single</span><span class="cap-ellipsis" id="capdefineoakley3-ellipsis">… </span><span class="cap-rest" id="capdefineoakley3-rest"> time.
+But that post-class feeling? That’s what makes it worth it every</span><span class="cap-rest open" id="capdefineoakley3-rest" style="display:none">single time.
 
-#morningmotivation #fitnessroutine #community #cincinnatiworkout</span><button class="cap-toggle" id="capdefineoakley3-btn" onclick="(function(){var r=document.getElementById('capdefineoakley3-rest');var e=document.getElementById('capdefineoakley3-ellipsis');var b=document.getElementById('capdefineoakley3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Scored in the top 3 this month on composite performance. Retention at 86.7% is the standout signal — viewers watched nearly the full Reel, confirming the hook and pacing landed. The low save and share volume keeps it out of outlier territory, but the quality signal is real.</p></div><a href="https://www.instagram.com/reel/DVydQw8DZtC/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
-    </div>
+#morningmotivation #fitnessroutine #community #cincinnatiworkout</span><span class="cap-ellipsis" id="capdefineoakley3-ellipsis">…</span><button class="cap-toggle" id="capdefineoakley3-btn" onclick="(function(){var r=document.getElementById('capdefineoakley3-rest');var e=document.getElementById('capdefineoakley3-ellipsis');var b=document.getElementById('capdefineoakley3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/reel/DVydQw8DZtC/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
 </div>
   </div>
 </div>

@@ -343,7 +343,108 @@
     .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
     .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
-</style>
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE OPTIMISATION — 480px and below
+       ═══════════════════════════════════════════════════ */
+    @media(max-width:480px){
+
+      /* ── NAV ── */
+      .report-nav-inner{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 .5rem}
+      .report-nav-inner::-webkit-scrollbar{display:none}
+      .report-nav-link{padding:.5rem .6rem;font-size:.6rem;white-space:nowrap;flex-shrink:0}
+
+      /* ── HERO ── */
+      .hero{padding:2rem 1rem 5rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .hero-title{font-size:clamp(2rem,10vw,3rem)}
+      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.75rem}
+      .hero-meta-sep{display:none}
+      .hero-bullets{padding:1rem}
+      .hero-bullet{font-size:.8125rem;gap:.5rem}
+
+      /* ── SCORE CARD ── */
+      .score-wrap{margin:-3rem auto 1.25rem;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .score-badges{flex-wrap:wrap;gap:.5rem;justify-content:center}
+      .trend-bar-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .trend-bars{min-width:320px}
+
+      /* ── FOLLOWERS BANNER ── */
+      .followers-banner{flex-direction:column;gap:.75rem;text-align:center}
+      .followers-count{font-size:clamp(1.75rem,8vw,2.5rem)}
+      .followers-meta{align-items:center}
+
+      /* ── GOALS GRID ── */
+      .goals-grid{grid-template-columns:1fr}
+      .goal-card{padding:1.25rem}
+
+      /* ── METRIC CARDS ── */
+      .metric-grid{grid-template-columns:1fr}
+      .metric-card{padding:1.25rem}
+      .metric-value-row{flex-wrap:wrap;gap:.35rem}
+      .metric-value{font-size:clamp(1.5rem,7vw,2rem)}
+      .metric-badge{font-size:.6875rem}
+      .metric-target-row{flex-wrap:wrap;gap:.25rem}
+
+      /* ── TOP POSTS ── */
+      .posts-grid{grid-template-columns:1fr}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-rank{font-size:.8rem}
+      .post-type-badge,.reel-badge,.post-badge{font-size:.6rem;padding:.15rem .4rem}
+      .post-score{font-size:.65rem;padding:.1rem .5rem;margin-left:auto}
+      .post-body{padding:1rem}
+      .post-hook{font-size:.875rem}
+      .standout-metric{flex-wrap:wrap;gap:.25rem}
+      .sm-label{font-size:.65rem}
+      .sm-value{font-size:1rem}
+      .sm-badge{font-size:.65rem;padding:.15rem .45rem}
+      .post-ig-btn{padding:.75rem 1rem;font-size:.875rem}
+
+      /* ── STRATEGY ADJUSTMENTS ── */
+      .adj-grid{grid-template-columns:1fr}
+      .adj-card{padding:1.25rem}
+      .adj-type{font-size:.65rem;padding:.2rem .6rem}
+      .adj-num{width:2rem;height:2rem;font-size:.875rem}
+
+      /* ── CTA SECTION ── */
+      .cta-funnel-grid{grid-template-columns:1fr}
+      .cta-primary-obj{padding:1.25rem}
+      .cta-chips{flex-wrap:wrap;gap:.35rem}
+      .cta-chip{font-size:.6875rem;padding:.25rem .6rem}
+      .cta-funnel-card{padding:1.25rem}
+
+      /* ── PREVIOUS REPORTS ── */
+      .prev-grid{grid-template-columns:1fr}
+      .prev-card{padding:1.25rem}
+      .prev-month{font-size:.65rem}
+      .prev-score{font-size:2rem}
+
+      /* ── WHAT WE LEARNED ── */
+      .learned-grid{grid-template-columns:1fr}
+      .learned-card{padding:1.25rem}
+
+      /* ── GENERAL SECTION PADDING ── */
+      .sec{padding:1.25rem 1rem}
+      .sec-eyebrow{font-size:.6rem}
+      h2{font-size:clamp(1.25rem,6vw,1.75rem)}
+    }
+
+    /* ── TABLET (481–768px) ── */
+    @media(min-width:481px) and (max-width:768px){
+      .hero{padding:2.5rem 1.5rem 5.5rem}
+      .hero-title{font-size:clamp(2.25rem,8vw,3.5rem)}
+      .posts-grid{grid-template-columns:1fr}
+      .adj-grid{grid-template-columns:1fr}
+      .metric-grid{grid-template-columns:1fr}
+      .goals-grid{grid-template-columns:1fr}
+      .prev-grid{grid-template-columns:repeat(2,1fr)}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-score{margin-left:auto}
+    }
+
+  </style>
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -558,12 +659,11 @@
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model — posts that over-indexed on reach, saves, shares, or retention relative to account averages.</p>
-    <div class="posts-grid">
-      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 20, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"You always have options in men and in skincare. 😅
+    <div class="posts-grid"><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 20, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"You always have options in men and in skincare. 😅
 
-Skincare isn’t one size fits all. Finding the rig..."</blockquote><div class="post-caption"><span class="cap-preview" id="capskinbybrownleeandco1-preview">You always have options in men and in skincare. 😅
+Skincare isn’t one size fits all. Finding the right routine for your..."</blockquote><div class="post-caption"><span class="cap-preview" id="capskinbybrownlee1-preview">You always have options in men and in skincare. 😅
 
-Skincare isn’t one size fits all. Finding the right routine for your skin type, concerns, and lifestyle can feel just as complicated as finding the r</span><span class="cap-ellipsis" id="capskinbybrownleeandco1-ellipsis">… </span><span class="cap-rest" id="capskinbybrownleeandco1-rest">ight man.
+Skincare isn’t one size fits all. Finding the right routine for your skin type, concerns, and lifestyle can feel just as complicated as finding the</span><span class="cap-rest open" id="capskinbybrownlee1-rest" style="display:none">right man.
 
 But I’m here to help. 
 
@@ -573,11 +673,11 @@ You’ll be happy with your choice.
 
 🔗 Link in bio.
 
-#skinbybrownlee #cincinnatiskincare #cincinnatiesthetician #skincareroutine</span><button class="cap-toggle" id="capskinbybrownleeandco1-btn" onclick="(function(){var r=document.getElementById('capskinbybrownleeandco1-rest');var e=document.getElementById('capskinbybrownleeandco1-ellipsis');var b=document.getElementById('capskinbybrownleeandco1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">61.4%</span><span class="sm-badge outlier-2x">2.6x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">3,289</span><span class="sm-badge outlier-1x">1.8x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">10</span><span class="sm-badge outlier-1x">1.6x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Anchored by exceptional retention at 2.6x the account average. Viewers watched a disproportionate amount of this Reel, signaling the hook delivered on its promise and the pacing held attention throughout. Reach also over-indexed at 1.8x average.</p></div><a href="https://www.instagram.com/reel/DWHETKlIlZw/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 80/100</span></div><div class="post-body"><div class="post-date">March 27, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"I’m an esthetician and even I didn’t see this coming...
+#skinbybrownlee #cincinnatiskincare #cincinnatiesthetician #skincareroutine</span><span class="cap-ellipsis" id="capskinbybrownlee1-ellipsis">…</span><button class="cap-toggle" id="capskinbybrownlee1-btn" onclick="(function(){var r=document.getElementById('capskinbybrownlee1-rest');var e=document.getElementById('capskinbybrownlee1-ellipsis');var b=document.getElementById('capskinbybrownlee1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">AVG RETENTION</span><span class="sm-value">61.3%</span><span class="sm-badge outlier-2x">2.5x account avg</span></div><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">3,331</span><span class="sm-badge outlier-1x">1.8x account avg</span></div><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">10</span><span class="sm-badge outlier-1x">1.6x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Anchored by exceptional retention at 2.5x the account average. Viewers watched a disproportionate amount of this Reel, signaling the hook delivered on its promise and the pacing held attention throughout. Reach also over-indexed at 1.8x average.</p></div><a href="https://www.instagram.com/reel/DWHETKlIlZw/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 80/100</span></div><div class="post-body"><div class="post-date">March 27, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"I’m an esthetician and even I didn’t see this coming...
 
-You hear about perimenopause like it’s far..."</blockquote><div class="post-caption"><span class="cap-preview" id="capskinbybrownleeandco2-preview">I’m an esthetician and even I didn’t see this coming...
+You hear about perimenopause like it’s far off, something for w..."</blockquote><div class="post-caption"><span class="cap-preview" id="capskinbybrownlee2-preview">I’m an esthetician and even I didn’t see this coming...
 
-You hear about perimenopause like it’s far off, something for women in their 50s. Nobody tells you the shifts can start earlier, quietly changi</span><span class="cap-ellipsis" id="capskinbybrownleeandco2-ellipsis">… </span><span class="cap-rest" id="capskinbybrownleeandco2-rest">ng your skin, your energy, and your confidence all at once.
+You hear about perimenopause like it’s far off, something for women in their 50s. Nobody tells you the shifts can start earlier, quietly</span><span class="cap-rest open" id="capskinbybrownlee2-rest" style="display:none">changing your skin, your energy, and your confidence all at once.
 
 I went from trusted esthetician with a solid routine to not recognizing my own skin in the mirror. Once I understood what was happening, I stopped fighting it and started supporting my skin through the shift.
 
@@ -587,18 +687,17 @@ This is my 60-day result. Real skin. No editing.
 
 Get your Perimenopause Silent Shift Kit at the link in bio.
 
-#perimenopause #skintransformation #hormonalhealth #sensitiveskin #40swomenskincare</span><button class="cap-toggle" id="capskinbybrownleeandco2-btn" onclick="(function(){var r=document.getElementById('capskinbybrownleeandco2-rest');var e=document.getElementById('capskinbybrownleeandco2-ellipsis');var b=document.getElementById('capskinbybrownleeandco2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">3,816</span><span class="sm-badge outlier-2x">2.1x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">A reach outlier at 2.1x the account's average views. The hook successfully broke content out of the core audience and into the wider algorithm — a strong signal to double down on this format and topic.</p></div><a href="https://www.instagram.com/p/DWZDv_PFZkB/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 77/100</span></div><div class="post-body"><div class="post-date">March 4, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"Skincare is more than products. 👀
+#perimenopause #skintransformation #hormonalhealth #sensitiveskin #40swomenskincare</span><span class="cap-ellipsis" id="capskinbybrownlee2-ellipsis">…</span><button class="cap-toggle" id="capskinbybrownlee2-btn" onclick="(function(){var r=document.getElementById('capskinbybrownlee2-rest');var e=document.getElementById('capskinbybrownlee2-ellipsis');var b=document.getElementById('capskinbybrownlee2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">3,962</span><span class="sm-badge outlier-2x">2.1x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A reach outlier at 2.1x the account's average views. The hook successfully broke content out of the core audience and into the wider algorithm — a strong signal to double down on this format and topic.</p></div><a href="https://www.instagram.com/p/DWZDv_PFZkB/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 77/100</span></div><div class="post-body"><div class="post-date">March 4, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"Skincare is more than products. 👀
 
-The truth is, your sleep, hydration, movement, stress, and what y..."</blockquote><div class="post-caption"><span class="cap-preview" id="capskinbybrownleeandco3-preview">Skincare is more than products. 👀
+The truth is, your sleep, hydration, movement, stress, and what you’re eating all sho..."</blockquote><div class="post-caption"><span class="cap-preview" id="capskinbybrownlee3-preview">Skincare is more than products. 👀
 
-The truth is, your sleep, hydration, movement, stress, and what you’re eating all show up on your skin. That’s why I take a holistic approach. I’m not here to just s</span><span class="cap-ellipsis" id="capskinbybrownleeandco3-ellipsis">… </span><span class="cap-rest" id="capskinbybrownleeandco3-rest">lap products on top, I’m here to help you solve the root of the concern.
+The truth is, your sleep, hydration, movement, stress, and what you’re eating all show up on your skin. That’s why I take a holistic approach. I’m not here to just</span><span class="cap-rest open" id="capskinbybrownlee3-rest" style="display:none">slap products on top, I’m here to help you solve the root of the concern.
 
 If you’re tired of guessing, book a Virtual Consultation with me. I’ll dive into your skin history, diet, lifestyle, and current routine, then build you a personalized plan that actually gets results.
 
 Ready for a real game plan? Book your virtual consult through the link in bio. 🤍
 
-#skinbybrownlee #virtualskincareconsultation #skincareroutine #cincyskincare #personalizedskincare</span><button class="cap-toggle" id="capskinbybrownleeandco3-btn" onclick="(function(){var r=document.getElementById('capskinbybrownleeandco3-rest');var e=document.getElementById('capskinbybrownleeandco3-ellipsis');var b=document.getElementById('capskinbybrownleeandco3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">5</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 1.9x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available.</p></div><a href="https://www.instagram.com/p/DVeWE8RgS9O/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
-    </div>
+#skinbybrownlee #virtualskincareconsultation #skincareroutine #cincyskincare #personalizedskincare</span><span class="cap-ellipsis" id="capskinbybrownlee3-ellipsis">…</span><button class="cap-toggle" id="capskinbybrownlee3-btn" onclick="(function(){var r=document.getElementById('capskinbybrownlee3-rest');var e=document.getElementById('capskinbybrownlee3-ellipsis');var b=document.getElementById('capskinbybrownlee3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">5</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 1.9x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available.</p></div><a href="https://www.instagram.com/p/DVeWE8RgS9O/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
 </footer>
 
 <script>

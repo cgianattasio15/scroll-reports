@@ -360,7 +360,108 @@
     .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
     .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
-</style>
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE OPTIMISATION — 480px and below
+       ═══════════════════════════════════════════════════ */
+    @media(max-width:480px){
+
+      /* ── NAV ── */
+      .report-nav-inner{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 .5rem}
+      .report-nav-inner::-webkit-scrollbar{display:none}
+      .report-nav-link{padding:.5rem .6rem;font-size:.6rem;white-space:nowrap;flex-shrink:0}
+
+      /* ── HERO ── */
+      .hero{padding:2rem 1rem 5rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .hero-title{font-size:clamp(2rem,10vw,3rem)}
+      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.75rem}
+      .hero-meta-sep{display:none}
+      .hero-bullets{padding:1rem}
+      .hero-bullet{font-size:.8125rem;gap:.5rem}
+
+      /* ── SCORE CARD ── */
+      .score-wrap{margin:-3rem auto 1.25rem;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .score-badges{flex-wrap:wrap;gap:.5rem;justify-content:center}
+      .trend-bar-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .trend-bars{min-width:320px}
+
+      /* ── FOLLOWERS BANNER ── */
+      .followers-banner{flex-direction:column;gap:.75rem;text-align:center}
+      .followers-count{font-size:clamp(1.75rem,8vw,2.5rem)}
+      .followers-meta{align-items:center}
+
+      /* ── GOALS GRID ── */
+      .goals-grid{grid-template-columns:1fr}
+      .goal-card{padding:1.25rem}
+
+      /* ── METRIC CARDS ── */
+      .metric-grid{grid-template-columns:1fr}
+      .metric-card{padding:1.25rem}
+      .metric-value-row{flex-wrap:wrap;gap:.35rem}
+      .metric-value{font-size:clamp(1.5rem,7vw,2rem)}
+      .metric-badge{font-size:.6875rem}
+      .metric-target-row{flex-wrap:wrap;gap:.25rem}
+
+      /* ── TOP POSTS ── */
+      .posts-grid{grid-template-columns:1fr}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-rank{font-size:.8rem}
+      .post-type-badge,.reel-badge,.post-badge{font-size:.6rem;padding:.15rem .4rem}
+      .post-score{font-size:.65rem;padding:.1rem .5rem;margin-left:auto}
+      .post-body{padding:1rem}
+      .post-hook{font-size:.875rem}
+      .standout-metric{flex-wrap:wrap;gap:.25rem}
+      .sm-label{font-size:.65rem}
+      .sm-value{font-size:1rem}
+      .sm-badge{font-size:.65rem;padding:.15rem .45rem}
+      .post-ig-btn{padding:.75rem 1rem;font-size:.875rem}
+
+      /* ── STRATEGY ADJUSTMENTS ── */
+      .adj-grid{grid-template-columns:1fr}
+      .adj-card{padding:1.25rem}
+      .adj-type{font-size:.65rem;padding:.2rem .6rem}
+      .adj-num{width:2rem;height:2rem;font-size:.875rem}
+
+      /* ── CTA SECTION ── */
+      .cta-funnel-grid{grid-template-columns:1fr}
+      .cta-primary-obj{padding:1.25rem}
+      .cta-chips{flex-wrap:wrap;gap:.35rem}
+      .cta-chip{font-size:.6875rem;padding:.25rem .6rem}
+      .cta-funnel-card{padding:1.25rem}
+
+      /* ── PREVIOUS REPORTS ── */
+      .prev-grid{grid-template-columns:1fr}
+      .prev-card{padding:1.25rem}
+      .prev-month{font-size:.65rem}
+      .prev-score{font-size:2rem}
+
+      /* ── WHAT WE LEARNED ── */
+      .learned-grid{grid-template-columns:1fr}
+      .learned-card{padding:1.25rem}
+
+      /* ── GENERAL SECTION PADDING ── */
+      .sec{padding:1.25rem 1rem}
+      .sec-eyebrow{font-size:.6rem}
+      h2{font-size:clamp(1.25rem,6vw,1.75rem)}
+    }
+
+    /* ── TABLET (481–768px) ── */
+    @media(min-width:481px) and (max-width:768px){
+      .hero{padding:2.5rem 1.5rem 5.5rem}
+      .hero-title{font-size:clamp(2.25rem,8vw,3.5rem)}
+      .posts-grid{grid-template-columns:1fr}
+      .adj-grid{grid-template-columns:1fr}
+      .metric-grid{grid-template-columns:1fr}
+      .goals-grid{grid-template-columns:1fr}
+      .prev-grid{grid-template-columns:repeat(2,1fr)}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-score{margin-left:auto}
+    }
+
+  </style>
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -625,44 +726,41 @@
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model — posts that over-indexed on reach, saves, shares, or retention relative to account averages. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
-    <div class="posts-grid">
-      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 17, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.
+    <div class="posts-grid"><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 17, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.
 
-Moving on is hard, but it’s also the perfe..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunchparty1-preview">We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.
+Moving on is hard, but it’s also the perfect excuse to switch..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunch1-preview">We’re a girl’s girl. 🩷 Whatever you need, we’ve got you.
 
 Moving on is hard, but it’s also the perfect excuse to switch up your signature scent. 
 
-Whether you’re stepping into your single season, focu</span><span class="cap-ellipsis" id="capshoplaunchparty1-ellipsis">… </span><span class="cap-rest" id="capshoplaunchparty1-rest">sing on yourself, or just ready to smell unforgettable for someone new, DedCool is that first step forward. 
+Whether you’re stepping into your single season,</span><span class="cap-rest open" id="capshoplaunch1-rest" style="display:none">focusing on yourself, or just ready to smell unforgettable for someone new, DedCool is that first step forward. 
 
 Because the best revenge? Feeling amazing and never looking back.
 
-#perfume #fragrance #dedcool #shopsmall #indiebeauty</span><button class="cap-toggle" id="capshoplaunchparty1-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty1-rest');var e=document.getElementById('capshoplaunchparty1-ellipsis');var b=document.getElementById('capshoplaunchparty1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">10</span><span class="sm-badge outlier-2x">3.0x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">4,174</span><span class="sm-badge outlier-2x">2.2x account avg</span></div><div class="standout-metric"><span class="sm-label">Avg Retention</span><span class="sm-value">76.3%</span><span class="sm-badge outlier-2x">2.1x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 3.0x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 2.2x average.</p></div><a href="https://www.instagram.com/reel/DV_PKHHDpC5/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 93/100</span></div><div class="post-body"><div class="post-date">March 3, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"Experiencing burnout? Reset with us.
+#perfume #fragrance #dedcool #shopsmall #indiebeauty</span><span class="cap-ellipsis" id="capshoplaunch1-ellipsis">…</span><button class="cap-toggle" id="capshoplaunch1-btn" onclick="(function(){var r=document.getElementById('capshoplaunch1-rest');var e=document.getElementById('capshoplaunch1-ellipsis');var b=document.getElementById('capshoplaunch1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">14</span><span class="sm-badge outlier-3x">3.8x account avg</span></div><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">4,218</span><span class="sm-badge outlier-2x">2.2x account avg</span></div><div class="standout-metric"><span class="sm-label">AVG RETENTION</span><span class="sm-value">76.1%</span><span class="sm-badge outlier-2x">2.1x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 3.8x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Reach also over-indexed at 2.2x average.</p></div><a href="https://www.instagram.com/reel/DV_PKHHDpC5/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 81/100</span></div><div class="post-body"><div class="post-date">March 3, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"Experiencing burnout? Reset with us.
 
-If your brain feels like 27 tabs are open, this is your sign t..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunchparty2-preview">Experiencing burnout? Reset with us.
+If your brain feels like 27 tabs are open, this is your sign to take a Reset Day...."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunch2-preview">Experiencing burnout? Reset with us.
 
 If your brain feels like 27 tabs are open, this is your sign to take a Reset Day. 
 
 Here’s the vibe: 
 Hair treatment 
 Everything shower 
-Journal + reflect 
-Skinca</span><span class="cap-ellipsis" id="capshoplaunchparty2-ellipsis">… </span><span class="cap-rest" id="capshoplaunchparty2-rest">re reset 
+Journal + reflect</span><span class="cap-rest open" id="capshoplaunch2-rest" style="display:none">Skincare reset 
 Manicure maintenance 
 
 No pressure to do it all. Pick 1–2 steps and call it a win. 
 
 Save this for the next day you need a fresh start and tell us: which step are you doing first? 👇
 
-#resetday #selfcareroutine #cleanbeauty #sundayreset #skincareritual</span><button class="cap-toggle" id="capshoplaunchparty2-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty2-rest');var e=document.getElementById('capshoplaunchparty2-ellipsis');var b=document.getElementById('capshoplaunchparty2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">9</span><span class="sm-badge outlier-2x">2.7x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.7x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Saves also over-indexed at 2.0x average — a dual signal of reach and intent.</p></div><a href="https://www.instagram.com/p/DVbNLLnDqqa/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 69/100</span></div><div class="post-body"><div class="post-date">March 22, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Skincare first, then makeup.
+#resetday #selfcareroutine #cleanbeauty #sundayreset #skincareritual</span><span class="cap-ellipsis" id="capshoplaunch2-ellipsis">…</span><button class="cap-toggle" id="capshoplaunch2-btn" onclick="(function(){var r=document.getElementById('capshoplaunch2-rest');var e=document.getElementById('capshoplaunch2-ellipsis');var b=document.getElementById('capshoplaunch2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">9</span><span class="sm-badge outlier-2x">2.5x account avg</span></div><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.5x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Saves also over-indexed at 2.0x average — a dual signal of reach and intent.</p></div><a href="https://www.instagram.com/p/DVbNLLnDqqa/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 61/100</span></div><div class="post-body"><div class="post-date">March 22, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"Skincare first, then makeup.
 
-Every look starts with intention. Hydrated, prepped skin that feels as..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunchparty3-preview">Skincare first, then makeup.
+Every look starts with intention. Hydrated, prepped skin that feels as good as it looks. T..."</blockquote><div class="post-caption"><span class="cap-preview" id="capshoplaunch3-preview">Skincare first, then makeup.
 
-Every look starts with intention. Hydrated, prepped skin that feels as good as it looks. Then comes the fun part! Complexion that still looks like skin, blush that actual</span><span class="cap-ellipsis" id="capshoplaunchparty3-ellipsis">… </span><span class="cap-rest" id="capshoplaunchparty3-rest">ly pops and a lip that pulls it all together.
+Every look starts with intention. Hydrated, prepped skin that feels as good as it looks. Then comes the fun part! Complexion that still looks like skin, blush that</span><span class="cap-rest open" id="capshoplaunch3-rest" style="display:none">actually pops and a lip that pulls it all together.
 
 Save this for your next get ready with me and comment which product you want a deeper dive on! 💕
 
-#skincare #beauty #makeuprecs #makeuplook</span><button class="cap-toggle" id="capshoplaunchparty3-btn" onclick="(function(){var r=document.getElementById('capshoplaunchparty3-rest');var e=document.getElementById('capshoplaunchparty3-ellipsis');var b=document.getElementById('capshoplaunchparty3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.</p></div><a href="https://www.instagram.com/reel/DWMJhNcjkmG/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
-    </div>
+#skincare #beauty #makeuprecs #makeuplook</span><span class="cap-ellipsis" id="capshoplaunch3-ellipsis">…</span><button class="cap-toggle" id="capshoplaunch3-btn" onclick="(function(){var r=document.getElementById('capshoplaunch3-rest');var e=document.getElementById('capshoplaunch3-ellipsis');var b=document.getElementById('capshoplaunch3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Powered by save density at 2.0x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.</p></div><a href="https://www.instagram.com/reel/DWMJhNcjkmG/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
 </div>
   </div>
 </div>

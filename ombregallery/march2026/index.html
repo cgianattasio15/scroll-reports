@@ -360,7 +360,108 @@
     .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
     .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
-</style>
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE OPTIMISATION — 480px and below
+       ═══════════════════════════════════════════════════ */
+    @media(max-width:480px){
+
+      /* ── NAV ── */
+      .report-nav-inner{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 .5rem}
+      .report-nav-inner::-webkit-scrollbar{display:none}
+      .report-nav-link{padding:.5rem .6rem;font-size:.6rem;white-space:nowrap;flex-shrink:0}
+
+      /* ── HERO ── */
+      .hero{padding:2rem 1rem 5rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .hero-title{font-size:clamp(2rem,10vw,3rem)}
+      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.75rem}
+      .hero-meta-sep{display:none}
+      .hero-bullets{padding:1rem}
+      .hero-bullet{font-size:.8125rem;gap:.5rem}
+
+      /* ── SCORE CARD ── */
+      .score-wrap{margin:-3rem auto 1.25rem;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .score-badges{flex-wrap:wrap;gap:.5rem;justify-content:center}
+      .trend-bar-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .trend-bars{min-width:320px}
+
+      /* ── FOLLOWERS BANNER ── */
+      .followers-banner{flex-direction:column;gap:.75rem;text-align:center}
+      .followers-count{font-size:clamp(1.75rem,8vw,2.5rem)}
+      .followers-meta{align-items:center}
+
+      /* ── GOALS GRID ── */
+      .goals-grid{grid-template-columns:1fr}
+      .goal-card{padding:1.25rem}
+
+      /* ── METRIC CARDS ── */
+      .metric-grid{grid-template-columns:1fr}
+      .metric-card{padding:1.25rem}
+      .metric-value-row{flex-wrap:wrap;gap:.35rem}
+      .metric-value{font-size:clamp(1.5rem,7vw,2rem)}
+      .metric-badge{font-size:.6875rem}
+      .metric-target-row{flex-wrap:wrap;gap:.25rem}
+
+      /* ── TOP POSTS ── */
+      .posts-grid{grid-template-columns:1fr}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-rank{font-size:.8rem}
+      .post-type-badge,.reel-badge,.post-badge{font-size:.6rem;padding:.15rem .4rem}
+      .post-score{font-size:.65rem;padding:.1rem .5rem;margin-left:auto}
+      .post-body{padding:1rem}
+      .post-hook{font-size:.875rem}
+      .standout-metric{flex-wrap:wrap;gap:.25rem}
+      .sm-label{font-size:.65rem}
+      .sm-value{font-size:1rem}
+      .sm-badge{font-size:.65rem;padding:.15rem .45rem}
+      .post-ig-btn{padding:.75rem 1rem;font-size:.875rem}
+
+      /* ── STRATEGY ADJUSTMENTS ── */
+      .adj-grid{grid-template-columns:1fr}
+      .adj-card{padding:1.25rem}
+      .adj-type{font-size:.65rem;padding:.2rem .6rem}
+      .adj-num{width:2rem;height:2rem;font-size:.875rem}
+
+      /* ── CTA SECTION ── */
+      .cta-funnel-grid{grid-template-columns:1fr}
+      .cta-primary-obj{padding:1.25rem}
+      .cta-chips{flex-wrap:wrap;gap:.35rem}
+      .cta-chip{font-size:.6875rem;padding:.25rem .6rem}
+      .cta-funnel-card{padding:1.25rem}
+
+      /* ── PREVIOUS REPORTS ── */
+      .prev-grid{grid-template-columns:1fr}
+      .prev-card{padding:1.25rem}
+      .prev-month{font-size:.65rem}
+      .prev-score{font-size:2rem}
+
+      /* ── WHAT WE LEARNED ── */
+      .learned-grid{grid-template-columns:1fr}
+      .learned-card{padding:1.25rem}
+
+      /* ── GENERAL SECTION PADDING ── */
+      .sec{padding:1.25rem 1rem}
+      .sec-eyebrow{font-size:.6rem}
+      h2{font-size:clamp(1.25rem,6vw,1.75rem)}
+    }
+
+    /* ── TABLET (481–768px) ── */
+    @media(min-width:481px) and (max-width:768px){
+      .hero{padding:2.5rem 1.5rem 5.5rem}
+      .hero-title{font-size:clamp(2.25rem,8vw,3.5rem)}
+      .posts-grid{grid-template-columns:1fr}
+      .adj-grid{grid-template-columns:1fr}
+      .metric-grid{grid-template-columns:1fr}
+      .goals-grid{grid-template-columns:1fr}
+      .prev-grid{grid-template-columns:repeat(2,1fr)}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-score{margin-left:auto}
+    }
+
+  </style>
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -625,22 +726,21 @@
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model — posts that over-indexed on reach, saves, shares, or retention relative to account averages. Retention % shows how much of each Reel viewers watched on average &mdash; a key signal of content quality.</p>
-    <div class="posts-grid">
-      <div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 6, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"The world is heavy right now. 
+    <div class="posts-grid"><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 100/100</span></div><div class="post-body"><div class="post-date">March 6, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">"The world is heavy right now. 
 
 Anyone else feeling this way? 
 
-Continue to create. Support artists..."</blockquote><div class="post-caption"><span class="cap-preview" id="capombregallery1-preview">The world is heavy right now. 
+Continue to create. Support artists and creatives. Raise..."</blockquote><div class="post-caption"><span class="cap-preview" id="capombregallery1-preview">The world is heavy right now. 
 
 Anyone else feeling this way? 
 
 Continue to create. Support artists and creatives. Raise your voice. Art is resistance. 
 
-#artjewelry #supportlocalartists #artasresista</span><span class="cap-ellipsis" id="capombregallery1-ellipsis">… </span><span class="cap-rest" id="capombregallery1-rest">nce #artadvocacy #artprotest</span><button class="cap-toggle" id="capombregallery1-btn" onclick="(function(){var r=document.getElementById('capombregallery1-rest');var e=document.getElementById('capombregallery1-ellipsis');var b=document.getElementById('capombregallery1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">23</span><span class="sm-badge outlier-2x">4.0x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">8</span><span class="sm-badge outlier-2x">3.0x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">3,892</span><span class="sm-badge outlier-2x">2.8x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 4.0x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Saves also over-indexed at 3.0x average — a dual signal of reach and intent.</p></div><a href="https://www.instagram.com/reel/DVjOcjokXqB/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 47/100</span></div><div class="post-body"><div class="post-date">March 19, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"There are so many ways to show up for artists, and most of them start small.
+#artjewelry #supportlocalartists</span><span class="cap-rest open" id="capombregallery1-rest" style="display:none">#artasresistance #artadvocacy #artprotest</span><span class="cap-ellipsis" id="capombregallery1-ellipsis">…</span><button class="cap-toggle" id="capombregallery1-btn" onclick="(function(){var r=document.getElementById('capombregallery1-rest');var e=document.getElementById('capombregallery1-ellipsis');var b=document.getElementById('capombregallery1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">23</span><span class="sm-badge outlier-3x">4.0x account avg</span></div><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">8</span><span class="sm-badge outlier-3x">3.0x account avg</span></div><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">3,901</span><span class="sm-badge outlier-2x">2.8x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 4.0x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available. Saves also over-indexed at 3.0x average — a dual signal of reach and intent.</p></div><a href="https://www.instagram.com/reel/DVjOcjokXqB/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 47/100</span></div><div class="post-body"><div class="post-date">March 19, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"There are so many ways to show up for artists, and most of them start small.
 
-Share a piece of work..."</blockquote><div class="post-caption"><span class="cap-preview" id="capombregallery2-preview">There are so many ways to show up for artists, and most of them start small.
+Share a piece of work that stopped you mid..."</blockquote><div class="post-caption"><span class="cap-preview" id="capombregallery2-preview">There are so many ways to show up for artists, and most of them start small.
 
-Share a piece of work that stopped you mid-scroll. Visit a gallery on a Tuesday afternoon when you have nowhere to be. Buy</span><span class="cap-ellipsis" id="capombregallery2-ellipsis">… </span><span class="cap-rest" id="capombregallery2-rest"> the handmade thing instead of the mass-produced one. Wear jewelry that has a story behind it. 
+Share a piece of work that stopped you mid-scroll. Visit a gallery on a Tuesday afternoon when you have nowhere to be.</span><span class="cap-rest open" id="capombregallery2-rest" style="display:none">Buy the handmade thing instead of the mass-produced one. Wear jewelry that has a story behind it. 
 
 Supporting the arts is not about grand gestures. It is about intention. 
 
@@ -648,7 +748,7 @@ Swipe through for ways to start, or keep going, with a little more purpose.
 
 What is your favorite way to support artists? Tell us in the comments.
 
-#artjewelry #supportartists #wearableart #contemporaryjewelry #ombregallery</span><button class="cap-toggle" id="capombregallery2-btn" onclick="(function(){var r=document.getElementById('capombregallery2-rest');var e=document.getElementById('capombregallery2-ellipsis');var b=document.getElementById('capombregallery2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">11</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Driven by share velocity at 1.9x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available.</p></div><a href="https://www.instagram.com/p/DWEci7jEYIS/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 40/100</span></div><div class="post-body"><div class="post-date">March 16, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"I’m so excited to share that I have been accepted into CreativeOhio’s 2026 Advocacy Leadership Insti..."</blockquote><div class="post-caption"><span class="cap-preview" id="capombregallery3-preview">I’m so excited to share that I have been accepted into CreativeOhio’s 2026 Advocacy Leadership Institute (ALI), a first-of-its-kind initiative which has become a nationally recognized model for statew</span><span class="cap-ellipsis" id="capombregallery3-ellipsis">… </span><span class="cap-rest" id="capombregallery3-rest">ide arts advocacy. I also received a full scholarship!!!! 
+#artjewelry #supportartists #wearableart #contemporaryjewelry #ombregallery</span><span class="cap-ellipsis" id="capombregallery2-ellipsis">…</span><button class="cap-toggle" id="capombregallery2-btn" onclick="(function(){var r=document.getElementById('capombregallery2-rest');var e=document.getElementById('capombregallery2-ellipsis');var b=document.getElementById('capombregallery2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">11</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 1.9x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available.</p></div><a href="https://www.instagram.com/p/DWEci7jEYIS/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge post-badge">CAROUSEL / IMAGE</span><span class="post-score">Post Score: 40/100</span></div><div class="post-body"><div class="post-date">March 16, 2026</div><div class="post-format-pill">Carousel / Image</div><blockquote class="post-hook">"I’m so excited to share that I have been accepted into CreativeOhio’s 2026 Advocacy Leadership Institute (ALI), a first-..."</blockquote><div class="post-caption"><span class="cap-preview" id="capombregallery3-preview">I’m so excited to share that I have been accepted into CreativeOhio’s 2026 Advocacy Leadership Institute (ALI), a first-of-its-kind initiative which has become a nationally recognized model for</span><span class="cap-rest open" id="capombregallery3-rest" style="display:none">statewide arts advocacy. I also received a full scholarship!!!! 
 
 The program is aimed at empowering Ohio’s arts
 and culture leaders with the skills and strategies needed to advocate for a stronger creative sector. I am one of 25 leaders chosen through a competitive application process, representing 13 cities across Ohio.
@@ -664,8 +764,7 @@ For more information about the CreativeOhio Advocacy Leadership Institute and to
 see the full cohort, visit creativeoh.org/advocacy-leadership-institute-2026-cohort/.
 About CreativeOhio
 
-@creativeohio_  @ombregallery #arts #artadvocacy #ohio #jewelry @snagmetalsmith @artjewelryforum_org</span><button class="cap-toggle" id="capombregallery3-btn" onclick="(function(){var r=document.getElementById('capombregallery3-rest');var e=document.getElementById('capombregallery3-ellipsis');var b=document.getElementById('capombregallery3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">4</span><span class="sm-badge outlier-1x">1.5x account avg</span></div></div><div class="post-why"><div class="why-label">▲ WHY IT WORKED</div><p class="why-text">Powered by save density at 1.5x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.</p></div><a href="https://www.instagram.com/p/DV9dfMBEdrj/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram →</a></div></div>
-    </div>
+@creativeohio_  @ombregallery #arts #artadvocacy #ohio #jewelry @snagmetalsmith @artjewelryforum_org</span><span class="cap-ellipsis" id="capombregallery3-ellipsis">…</span><button class="cap-toggle" id="capombregallery3-btn" onclick="(function(){var r=document.getElementById('capombregallery3-rest');var e=document.getElementById('capombregallery3-ellipsis');var b=document.getElementById('capombregallery3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">4</span><span class="sm-badge outlier-1x">1.5x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Powered by save density at 1.5x the account average. Saves this high signal that viewers found the content worth returning to — a strong indicator of consideration-stage intent and educational value.</p></div><a href="https://www.instagram.com/p/DV9dfMBEdrj/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
 </div>
   </div>
 </div>

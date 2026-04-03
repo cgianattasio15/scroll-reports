@@ -319,11 +319,11 @@
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
     .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
-    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem}
-    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+    .post-header{background:var(--navy,#0e3387);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;flex-wrap:nowrap}
+    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em}
     .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase}
-    .reel-badge{background:#fff;color:#0e3387;flex-shrink:0}
-    .post-badge{background:#fff;color:#0e3387;flex-shrink:0}
+    .reel-badge{background:#fff;color:#0e3387}
+    .post-badge{background:#fff;color:#0e3387}
     .carousel-badge{background:#e0e7ff;color:#3730a3}
     .static-badge{background:#f0fdf4;color:#166534}
     .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
@@ -359,8 +359,108 @@
     .post-ig-btn{display:block;background:var(--navy,#0e3387);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s;position:relative;z-index:2;opacity:1 !important;visibility:visible !important}
     .post-ig-btn:hover{background:#1a3a7a;color:#fff}
 
-    .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
-</style>
+    
+    /* ═══════════════════════════════════════════════════
+       MOBILE OPTIMISATION — 480px and below
+       ═══════════════════════════════════════════════════ */
+    @media(max-width:480px){
+
+      /* ── NAV ── */
+      .report-nav-inner{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 .5rem}
+      .report-nav-inner::-webkit-scrollbar{display:none}
+      .report-nav-link{padding:.5rem .6rem;font-size:.6rem;white-space:nowrap;flex-shrink:0}
+
+      /* ── HERO ── */
+      .hero{padding:2rem 1rem 5rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .hero-title{font-size:clamp(2rem,10vw,3rem)}
+      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.75rem}
+      .hero-meta-sep{display:none}
+      .hero-bullets{padding:1rem}
+      .hero-bullet{font-size:.8125rem;gap:.5rem}
+
+      /* ── SCORE CARD ── */
+      .score-wrap{margin:-3rem auto 1.25rem;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .score-badges{flex-wrap:wrap;gap:.5rem;justify-content:center}
+      .trend-bar-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .trend-bars{min-width:320px}
+
+      /* ── FOLLOWERS BANNER ── */
+      .followers-banner{flex-direction:column;gap:.75rem;text-align:center}
+      .followers-count{font-size:clamp(1.75rem,8vw,2.5rem)}
+      .followers-meta{align-items:center}
+
+      /* ── GOALS GRID ── */
+      .goals-grid{grid-template-columns:1fr}
+      .goal-card{padding:1.25rem}
+
+      /* ── METRIC CARDS ── */
+      .metric-grid{grid-template-columns:1fr}
+      .metric-card{padding:1.25rem}
+      .metric-value-row{flex-wrap:wrap;gap:.35rem}
+      .metric-value{font-size:clamp(1.5rem,7vw,2rem)}
+      .metric-badge{font-size:.6875rem}
+      .metric-target-row{flex-wrap:wrap;gap:.25rem}
+
+      /* ── TOP POSTS ── */
+      .posts-grid{grid-template-columns:1fr}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-rank{font-size:.8rem}
+      .post-type-badge,.reel-badge,.post-badge{font-size:.6rem;padding:.15rem .4rem}
+      .post-score{font-size:.65rem;padding:.1rem .5rem;margin-left:auto}
+      .post-body{padding:1rem}
+      .post-hook{font-size:.875rem}
+      .standout-metric{flex-wrap:wrap;gap:.25rem}
+      .sm-label{font-size:.65rem}
+      .sm-value{font-size:1rem}
+      .sm-badge{font-size:.65rem;padding:.15rem .45rem}
+      .post-ig-btn{padding:.75rem 1rem;font-size:.875rem}
+
+      /* ── STRATEGY ADJUSTMENTS ── */
+      .adj-grid{grid-template-columns:1fr}
+      .adj-card{padding:1.25rem}
+      .adj-type{font-size:.65rem;padding:.2rem .6rem}
+      .adj-num{width:2rem;height:2rem;font-size:.875rem}
+
+      /* ── CTA SECTION ── */
+      .cta-funnel-grid{grid-template-columns:1fr}
+      .cta-primary-obj{padding:1.25rem}
+      .cta-chips{flex-wrap:wrap;gap:.35rem}
+      .cta-chip{font-size:.6875rem;padding:.25rem .6rem}
+      .cta-funnel-card{padding:1.25rem}
+
+      /* ── PREVIOUS REPORTS ── */
+      .prev-grid{grid-template-columns:1fr}
+      .prev-card{padding:1.25rem}
+      .prev-month{font-size:.65rem}
+      .prev-score{font-size:2rem}
+
+      /* ── WHAT WE LEARNED ── */
+      .learned-grid{grid-template-columns:1fr}
+      .learned-card{padding:1.25rem}
+
+      /* ── GENERAL SECTION PADDING ── */
+      .sec{padding:1.25rem 1rem}
+      .sec-eyebrow{font-size:.6rem}
+      h2{font-size:clamp(1.25rem,6vw,1.75rem)}
+    }
+
+    /* ── TABLET (481–768px) ── */
+    @media(min-width:481px) and (max-width:768px){
+      .hero{padding:2.5rem 1.5rem 5.5rem}
+      .hero-title{font-size:clamp(2.25rem,8vw,3.5rem)}
+      .posts-grid{grid-template-columns:1fr}
+      .adj-grid{grid-template-columns:1fr}
+      .metric-grid{grid-template-columns:1fr}
+      .goals-grid{grid-template-columns:1fr}
+      .prev-grid{grid-template-columns:repeat(2,1fr)}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-score{margin-left:auto}
+    }
+
+  </style>
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -639,7 +739,7 @@ We&rsquo;ve got a packed month with some exciting new things up our sleeves.
 
 Swipe through and mark your dates, babes.
 
-What are you most excited for? Drop it below 👇</span><button class="cap-toggle" id="capmeasactive1-btn" onclick="(function(){var r=document.getElementById('capmeasactive1-rest');var e=document.getElementById('capmeasactive1-ellipsis');var b=document.getElementById('capmeasactive1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">16</span><span class="sm-badge outlier-2x">2.8x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">4</span><span class="sm-badge outlier-1x">1.6x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">6,252</span><span class="sm-badge outlier-1x">1.3x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.8x the account average — the strongest organic amplification signal of the month. Saves at 1.6x confirm the content had utility: viewers bookmarked it to reference the event calendar. The combination of reach, shares, and saves makes this the clearest content-market fit signal in March.</p></div><a href="https://www.instagram.com/p/DVhH8nalkYg/?img_index=1" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 65/100</span></div><div class="post-body"><div class="post-date">March 24, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;💖This is big. HUGE. 💪 MEAS is moving &mdash; same street, new space, bigger vision. Last day at 1425 Vine is March 31...&rdquo;</blockquote><div class="post-caption"><span class="cap-preview" id="capmeasactive2-preview">💖This is big. HUGE. 💪
+What are you most excited for? Drop it below 👇</span><button class="cap-toggle" id="capmeasactive1-btn" onclick="(function(){var r=document.getElementById('capmeasactive1-rest');var e=document.getElementById('capmeasactive1-ellipsis');var b=document.getElementById('capmeasactive1-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Shares</span><span class="sm-value">16</span><span class="sm-badge outlier-2x">2.8x account avg</span></div><div class="standout-metric"><span class="sm-label">Saves</span><span class="sm-value">4</span><span class="sm-badge outlier-1x">1.6x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">6,252</span><span class="sm-badge outlier-1x">1.3x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 2.8x the account average — the strongest organic amplification signal of the month. Saves at 1.6x confirm the content had utility: viewers bookmarked it to reference the event calendar. The combination of reach, shares, and saves makes this the clearest content-market fit signal in March.</p></div><a href="https://www.instagram.com/p/DVhH8nalkYg/?img_index=1" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 30/100</span></div><div class="post-body"><div class="post-date">March 24, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;💖This is big. HUGE. 💪 MEAS is moving &mdash; same street, new space, bigger vision. Last day at 1425 Vine is March 31...&rdquo;</blockquote><div class="post-caption"><span class="cap-preview" id="capmeasactive2-preview">💖This is big. HUGE. 💪
 ✨I don&rsquo;t even know how to start this one&hellip;
 
 💖7 years ago I had an idea, a name I found in Cambodia, and absolutely no idea how to run a business and thought &ldquo;would anyone even care!?&rdquo;. You did!
@@ -655,14 +755,14 @@ What are you most excited for? Drop it below 👇</span><button class="cap-toggl
 
 ✨Thank you for believing in something that was just a dream. You keep showing up and YOU made it real 💪
 
-&mdash; Erin</span><button class="cap-toggle" id="capmeasactive2-btn" onclick="(function(){var r=document.getElementById('capmeasactive2-rest');var e=document.getElementById('capmeasactive2-ellipsis');var b=document.getElementById('capmeasactive2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Comments</span><span class="sm-value">110</span><span class="sm-badge outlier-2x">2.8x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">6,672</span><span class="sm-badge outlier-1x">1.4x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">The store move announcement drove 110 comments &mdash; 2.8x the account average and the highest comment count of the month by a wide margin. This is a community response signal: the audience showed up to celebrate a milestone, not just consume content. High-emotion founder moments like this are the strongest trust-building format in the MEAS playbook.</p></div><a href="https://www.instagram.com/p/DWSRZGcDVWE/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 36/100</span></div><div class="post-body"><div class="post-date">March 17, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;Green with envy over these sets? We don&rsquo;t blame you. 🍀 Cute, functional, and completely yours if yo...&rdquo;</blockquote><div class="post-caption"><span class="cap-preview" id="capmeasactive3-preview">Green with envy over these sets? We don&rsquo;t blame you. 🍀
+&mdash; Erin</span><button class="cap-toggle" id="capmeasactive2-btn" onclick="(function(){var r=document.getElementById('capmeasactive2-rest');var e=document.getElementById('capmeasactive2-ellipsis');var b=document.getElementById('capmeasactive2-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">Comments</span><span class="sm-value">110</span><span class="sm-badge outlier-2x">2.8x account avg</span></div><div class="standout-metric"><span class="sm-label">Total Views</span><span class="sm-value">6,672</span><span class="sm-badge outlier-1x">1.4x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">The store move announcement drove 110 comments &mdash; 2.8x the account average and the highest comment count of the month by a wide margin. This is a community response signal: the audience showed up to celebrate a milestone, not just consume content. High-emotion founder moments like this are the strongest trust-building format in the MEAS playbook.</p></div><a href="https://www.instagram.com/p/DWSRZGcDVWE/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Post Score: 34/100</span></div><div class="post-body"><div class="post-date">March 17, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;Green with envy over these sets? We don&rsquo;t blame you. 🍀 Cute, functional, and completely yours if yo...&rdquo;</blockquote><div class="post-caption"><span class="cap-preview" id="capmeasactive3-preview">Green with envy over these sets? We don&rsquo;t blame you. 🍀
 
 Cute, functional, and completely yours if you want them (just saying).
 
 This is how we do St. Patrick&rsquo;s Day at MEAS Active 💚 Luck be a lady!</span><span class="cap-ellipsis" id="capmeasactive3-ellipsis">&hellip; </span><span class="cap-rest" id="capmeasactive3-rest">
 Bring a little luck to your wardrobe and shop our activewear at the link.
 
-#MEASactive #athleticwear #activewear #springfashion #greensets</span><button class="cap-toggle" id="capmeasactive3-btn" onclick="(function(){var r=document.getElementById('capmeasactive3-rest');var e=document.getElementById('capmeasactive3-ellipsis');var b=document.getElementById('capmeasactive3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Scored in the top 3 this month on composite performance. Views at 3,419 and above-average saves and shares indicate the product-forward content resonated with the core audience. No single metric broke out at scale, but the seasonal hook (St. Patrick&rsquo;s Day) and product visibility drove consistent engagement across all signals.</p></div><a href="https://www.instagram.com/reel/DV_SG9rDh6T/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
+#MEASactive #athleticwear #activewear #springfashion #greensets</span><button class="cap-toggle" id="capmeasactive3-btn" onclick="(function(){var r=document.getElementById('capmeasactive3-rest');var e=document.getElementById('capmeasactive3-ellipsis');var b=document.getElementById('capmeasactive3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Scored in the top 3 this month on composite performance. Views at 3,419 and above-average saves and shares indicate the product-forward content resonated with the core audience. No single metric broke out at scale, but the seasonal hook (St. Patrick's Day) and product visibility drove consistent engagement across all signals.</p></div><a href="https://www.instagram.com/reel/DV_SG9rDh6T/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
     </div>
   </section>
 </div>
