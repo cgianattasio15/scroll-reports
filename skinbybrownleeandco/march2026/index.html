@@ -216,7 +216,7 @@
     .cta-funnel-copy{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.7);margin-bottom:.625rem;line-height:1.55}
     .cta-funnel-kpi{font-size:.6875rem;color:rgba(255,255,255,.4)}
     .cta-funnel-kpi strong{color:rgba(255,255,255,.65)}
-    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem}
+    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem;display:block;width:100%;box-sizing:border-box}
     .prev-inner{max-width:1100px;margin:0 auto}
     .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
     .prev-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
@@ -302,9 +302,9 @@
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
     .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
-    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem}
+    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;overflow:hidden}
     .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
-    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase}
+    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
     .reel-badge{background:#fff;color:#0e3387;flex-shrink:0}
     .post-badge{background:#fff;color:#0e3387;flex-shrink:0}
     .carousel-badge{background:#e0e7ff;color:#3730a3}
@@ -329,6 +329,7 @@
     .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
     .outlier-2x{background:#dcfce7;color:#15803d}
     .outlier-1x{background:#dbeafe;color:#1d4ed8}
+    .outlier-3x{background:#f3e8ff;color:#7c3aed}
     /* Retention row */
     
     
@@ -698,7 +699,7 @@ If you’re tired of guessing, book a Virtual Consultation with me. I’ll dive 
 Ready for a real game plan? Book your virtual consult through the link in bio. 🤍
 
 #skinbybrownlee #virtualskincareconsultation #skincareroutine #cincyskincare #personalizedskincare</span><span class="cap-ellipsis" id="capskinbybrownlee3-ellipsis">…</span><button class="cap-toggle" id="capskinbybrownlee3-btn" onclick="(function(){var r=document.getElementById('capskinbybrownlee3-rest');var e=document.getElementById('capskinbybrownlee3-ellipsis');var b=document.getElementById('capskinbybrownlee3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">5</span><span class="sm-badge outlier-1x">1.9x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Driven by share velocity at 1.9x the account average. High shares indicate the content tapped into a universal emotion or pain point the audience wanted to pass along — the strongest organic amplification signal available.</p></div><a href="https://www.instagram.com/p/DVeWE8RgS9O/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
-</footer>
+</section>
 
 <script>
   (function(){var bar=document.getElementById('progress-bar');function u(){var s=window.pageYOffset||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=h>0?(Math.min(s/h,1)*100)+'%':'0%';}window.addEventListener('scroll',u,{passive:true});u();})();
@@ -802,7 +803,7 @@ Ready for a real game plan? Book your virtual consult through the link in bio. �
 </div>
 
 <!-- ═══ PREV REPORTS ═══ -->
-<footer class="prev-section">
+<section class="prev-section" aria-labelledby="prev-title">
   <div class="prev-inner">
     <p class="prev-eyebrow">Report History</p>
     <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
@@ -821,7 +822,7 @@ Ready for a real game plan? Book your virtual consult through the link in bio. �
 </a>
     </div>
   </div>
-</footer>
+</section>
 <footer class="footer">
   <div class="footer-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">

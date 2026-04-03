@@ -144,8 +144,8 @@
     .bar-fill.exceed{background:var(--exceed)}.bar-fill.ontrack{background:var(--ontrack)}.bar-fill.watch{background:#f59e0b}
     .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.55}
     
-    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
-    .post-rank{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;font-size:.75rem;font-weight:700}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%;min-width:0;overflow:hidden}
+    .post-rank{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;font-size:.75rem;font-weight:700;white-space:nowrap;flex-shrink:0}
     .post-rank.r1{background:linear-gradient(90deg,var(--azure),#1a4fc4);color:#fff}
     .post-rank.r2{background:linear-gradient(90deg,#1e293b,#334155);color:#fff}
     .post-rank.r3{background:var(--porcelain);color:var(--muted)}
@@ -319,9 +319,9 @@
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
     .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
-    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem}
+    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;overflow:hidden}
     .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
-    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase}
+    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
     .reel-badge{background:#fff;color:#0e3387;flex-shrink:0}
     .post-badge{background:#fff;color:#0e3387;flex-shrink:0}
     .carousel-badge{background:#e0e7ff;color:#3730a3}
@@ -345,6 +345,7 @@
     .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
     .outlier-2x{background:#dcfce7;color:#15803d}
     .outlier-1x{background:#dbeafe;color:#1d4ed8}
+    .outlier-3x{background:#f3e8ff;color:#7c3aed}
     
     
     
@@ -760,7 +761,7 @@ Woodland Cemetery & Arboretum
 See you there! 👀
 Link to register in bio
 
-#dayton5k #ohio5k #ohio10k</span><span class="cap-ellipsis" id="capupandrunning3-ellipsis">…</span><button class="cap-toggle" id="capupandrunning3-btn" onclick="(function(){var r=document.getElementById('capupandrunning3-rest');var e=document.getElementById('capupandrunning3-ellipsis');var b=document.getElementById('capupandrunning3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Performed above the account average across multiple metrics this month.</p></div><a href="https://www.instagram.com/p/DVtZCx2jaHE/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
+#dayton5k #ohio5k #ohio10k</span><span class="cap-ellipsis" id="capupandrunning3-ellipsis">…</span><button class="cap-toggle" id="capupandrunning3-btn" onclick="(function(){var r=document.getElementById('capupandrunning3-rest');var e=document.getElementById('capupandrunning3-ellipsis');var b=document.getElementById('capupandrunning3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">1</span><span class="sm-badge outlier-1x">1.6x account avg</span></div><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">2</span><span class="sm-badge outlier-1x">1.5x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">This post qualified on composite score — no single metric dominated, but saves and shares both came in above account average for a static post. The event-specific hook (Free Your Sole 5k/10k) gave the audience a clear reason to save it for reference and share it with running friends. Community-anchored content consistently earns disproportionate intent signals even when reach is modest.</p></div><a href="https://www.instagram.com/p/DVtZCx2jaHE/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
 </div>
   </div>
 </div>

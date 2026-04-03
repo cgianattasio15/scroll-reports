@@ -319,9 +319,9 @@
     .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
     @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
     .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
-    .post-header{background:var(--navy,#0e3387);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;flex-wrap:nowrap}
-    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em}
-    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase}
+    .post-header{background:var(--navy,#0e3387);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;flex-wrap:nowrap;overflow:hidden}
+    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
     .reel-badge{background:#fff;color:#0e3387}
     .post-badge{background:#fff;color:#0e3387}
     .carousel-badge{background:#e0e7ff;color:#3730a3}
@@ -346,6 +346,7 @@
     .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
     .outlier-2x{background:#dcfce7;color:#15803d}
     .outlier-1x{background:#dbeafe;color:#1d4ed8}
+    .outlier-3x{background:#f3e8ff;color:#7c3aed}
     /* Retention row */
     
     
@@ -409,7 +410,7 @@
       .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
       .post-rank{font-size:.8rem}
       .post-type-badge,.reel-badge,.post-badge{font-size:.6rem;padding:.15rem .4rem}
-      .post-score{font-size:.65rem;padding:.1rem .5rem;margin-left:auto}
+      .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
       .post-body{padding:1rem}
       .post-hook{font-size:.875rem}
       .standout-metric{flex-wrap:wrap;gap:.25rem}
@@ -762,7 +763,7 @@ Cute, functional, and completely yours if you want them (just saying).
 This is how we do St. Patrick&rsquo;s Day at MEAS Active 💚 Luck be a lady!</span><span class="cap-ellipsis" id="capmeasactive3-ellipsis">&hellip; </span><span class="cap-rest" id="capmeasactive3-rest">
 Bring a little luck to your wardrobe and shop our activewear at the link.
 
-#MEASactive #athleticwear #activewear #springfashion #greensets</span><button class="cap-toggle" id="capmeasactive3-btn" onclick="(function(){var r=document.getElementById('capmeasactive3-rest');var e=document.getElementById('capmeasactive3-ellipsis');var b=document.getElementById('capmeasactive3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Scored in the top 3 this month on composite performance. Views at 3,419 and above-average saves and shares indicate the product-forward content resonated with the core audience. No single metric broke out at scale, but the seasonal hook (St. Patrick's Day) and product visibility drove consistent engagement across all signals.</p></div><a href="https://www.instagram.com/reel/DV_SG9rDh6T/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
+#MEASactive #athleticwear #activewear #springfashion #greensets</span><button class="cap-toggle" id="capmeasactive3-btn" onclick="(function(){var r=document.getElementById('capmeasactive3-rest');var e=document.getElementById('capmeasactive3-ellipsis');var b=document.getElementById('capmeasactive3-btn');var open=r.classList.toggle('open');e.classList.toggle('hidden',open);b.textContent=open?'Show less':'Show more';})()">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">2</span><span class="sm-badge outlier-2x">2.0x account avg</span></div><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">3,116</span><span class="sm-badge outlier-1x">1.3x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Saves came in at 2x the account average — the strongest intent signal on this post. Product-forward content with a clear desire hook ("Green with envy over these sets?") drives saves because viewers bookmark it to come back. Views also ran 1.3x average and retention held at 45.6%, confirming the visual held attention past the hook. This format — product showcase with a playful, relatable angle — is worth repeating.</p></div><a href="https://www.instagram.com/reel/DV_SG9rDh6T/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
     </div>
   </section>
 </div>
