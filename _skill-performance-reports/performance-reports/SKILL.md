@@ -132,9 +132,23 @@ Both the monthly account score and the top post outlier engine use the same inte
 | Lane & Kate | `laneandkate` | `reports.scrollmedia.co/laneandkate/` |
 | Skin by Brownlee & Co | `skinbybrownleeandco` | `reports.scrollmedia.co/skinbybrownleeandco/` |
 | MEAS Active | `measactive` | `reports.scrollmedia.co/measactive/` |
-| Up & Running OH | `upandrunningoh` | `reports.scrollmedia.co/upandrunningoh/` |
+| Up and Running OH | `upandrunningoh` | `reports.scrollmedia.co/upandrunningoh/` |
 | DEFINE Oakley | `defineoakley` | `reports.scrollmedia.co/defineoakley/` |
 | Ombre Gallery | `ombregallery` | `reports.scrollmedia.co/ombregallery/` |
+
+---
+
+## Client Naming Rules
+
+These are hard rules — not preferences. Apply them in every report, every email, every document.
+
+| Client | Correct Name | Never Use |
+|---|---|---|
+| Up and Running OH | **Up and Running** | ~~Up & Running~~ — the client is extremely particular about this |
+| Skin by Brownlee & Co | Skin by Brownlee & Co | No restriction on & for this client |
+| Lane & Kate | Lane & Kate | No restriction on & for this client |
+
+> **Rule:** Any time the agent writes "Up & Running" or "Up &amp; Running" in any context — report HTML, email copy, strategy docs, skill files — it must be corrected to "Up and Running" before delivery.
 
 ---
 

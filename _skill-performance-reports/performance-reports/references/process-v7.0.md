@@ -576,7 +576,7 @@ GitHub repo: `cgianattasio15/scroll-reports`. Hosted at `reports.scrollmedia.co`
 | Lane & Kate | `laneandkate` | `reports.scrollmedia.co/laneandkate/` |
 | Skin by Brownlee & Co | `skinbybrownleeandco` | `reports.scrollmedia.co/skinbybrownleeandco/` |
 | MEAS Active | `measactive` | `reports.scrollmedia.co/measactive/` |
-| Up & Running OH | `upandrunningoh` | `reports.scrollmedia.co/upandrunningoh/` |
+| Up and Running OH | `upandrunningoh` | `reports.scrollmedia.co/upandrunningoh/` |
 | DEFINE Oakley | `defineoakley` | `reports.scrollmedia.co/defineoakley/` |
 | Ombre Gallery | `ombregallery` | `reports.scrollmedia.co/ombregallery/` |
 
