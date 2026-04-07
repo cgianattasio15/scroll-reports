@@ -80,6 +80,22 @@
     .view-btn{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);white-space:nowrap;padding:.5rem .875rem;border:1.5px solid rgba(14,51,135,.2);border-radius:6px;transition:background .15s,border-color .15s}
     .client-card:hover .view-btn{background:rgba(14,51,135,.06);border-color:rgba(14,51,135,.35)}
     @media(max-width:640px){.clients-grid{grid-template-columns:1fr}}
+
+    .proposals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;padding-bottom:3rem}
+    .proposal-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:box-shadow .2s,transform .2s,border-color .2s;position:relative;overflow:hidden;display:block;color:inherit}
+    .proposal-card:hover{box-shadow:0 8px 28px rgba(21,21,22,.12);transform:translateY(-2px);border-color:rgba(14,51,135,.25)}
+    .proposal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d97706,#f59e0b)}
+    .proposal-card.active::before{background:linear-gradient(90deg,#059669,#34d399)}
+    .proposal-name{font-size:1.125rem;font-weight:800;color:var(--shadow);line-height:1.2;margin-bottom:.25rem}
+    .proposal-sub{font-size:.8125rem;color:var(--azure);font-weight:600;margin-bottom:1.25rem}
+    .proposal-meta{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:1.25rem}
+    .proposal-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .proposal-badge{display:inline-flex;align-items:center;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .625rem;border-radius:4px;white-space:nowrap}
+    .proposal-badge.v1{background:rgba(217,119,6,.08);color:#d97706;border:1px solid rgba(217,119,6,.2)}
+    .proposal-badge.v2{background:rgba(5,150,105,.08);color:#059669;border:1px solid rgba(5,150,105,.2)}
+    .proposal-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);white-space:nowrap;padding:.5rem .875rem;border:1.5px solid rgba(14,51,135,.2);border-radius:6px;transition:background .15s,border-color .15s}
+    .proposal-card:hover .proposal-link{background:rgba(14,51,135,.06);border-color:rgba(14,51,135,.35)}
+    @media(max-width:640px){.proposals-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -239,6 +255,54 @@
     </a>
   </div>
 </div>
+
+<div class="wrap">
+  <div class="section-header">
+    <p class="section-label">Active Pitches</p>
+    <h2 class="section-title">Proposals &amp; Pitch Decks</h2>
+  </div>
+  <div class="proposals-grid">
+    <a href="/parachutestudio/april2026/" class="proposal-card">
+      <div class="card-top">
+        <div><div class="proposal-name">Parachute Studio</div><div class="proposal-sub">@theparachutestudio &mdash; Dallas, TX</div></div>
+        <div class="proposal-badge v1">V1</div>
+      </div>
+      <div class="proposal-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Creative &amp; Brand Studio</span></div>
+        <div class="meta-item"><span class="meta-lbl">Source</span><span class="meta-val">Breef RFP</span></div>
+        <div class="meta-item"><span class="meta-lbl">Budget</span><span class="meta-val">$2.5K&ndash;$5K/mo</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#d97706">Pitch Active</span></div>
+      </div>
+      <div class="proposal-footer">
+        <div>
+          <div class="report-month">April 2026</div>
+          <div class="proposal-name" style="font-size:.9375rem">Original Proposal</div>
+        </div>
+        <span class="proposal-link">View Deck &#8599;</span>
+      </div>
+    </a>
+    <a href="/parachutestudio/april2026-v2/" class="proposal-card active">
+      <div class="card-top">
+        <div><div class="proposal-name">Parachute Studio</div><div class="proposal-sub">@theparachutestudio &mdash; Dallas, TX</div></div>
+        <div class="proposal-badge v2">V2</div>
+      </div>
+      <div class="proposal-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Creative &amp; Brand Studio</span></div>
+        <div class="meta-item"><span class="meta-lbl">Source</span><span class="meta-val">Breef RFP</span></div>
+        <div class="meta-item"><span class="meta-lbl">Budget</span><span class="meta-val">$2.5K&ndash;$5K/mo</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Latest Version</span></div>
+      </div>
+      <div class="proposal-footer">
+        <div>
+          <div class="report-month">April 2026</div>
+          <div class="proposal-name" style="font-size:.9375rem">Revised Proposal</div>
+        </div>
+        <span class="proposal-link">View Deck &#8599;</span>
+      </div>
+    </a>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="footer-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="120" height="24">
