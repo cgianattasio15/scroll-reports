@@ -1,0 +1,2415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#FAFDFF">
+<title>DEFINE Oakley · Instagram performance overview.</title>
+<meta name="description" content="Performance overview · Confidential.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="https://tools.scrollmedia.co/scroll-favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DEFINE Oakley Performance Overview — refined
+   Brand spec: brand_system.md §6.2 Performance Reports
+   Light theme, hairline grid, hard corners, type-led
+============================================================ */
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+
+:root {
+  --ghost:#FAFDFF;
+  --azure:#0C3387;
+  --azure-900:#071d4f;
+  --azure-600:#254fb0;
+  --lucid:#CBE9FF;
+  --lucid-soft:#e4f3ff;
+  --lucid-deep:#9ecee8;
+  --highlighter:#E2ED7A;
+  --shadow:#151516;
+
+  --bg:var(--ghost);
+  --fg:var(--shadow);
+  --fg-heading:var(--azure);
+  --fg-muted:#5a6070;
+  --fg-subtle:#9097a6;
+  --rule:rgba(12,51,135,0.20);
+  --rule-strong:rgba(12,51,135,0.40);
+  --rule-faint:rgba(12,51,135,0.08);
+
+  --fs-xs:11px;
+  --fs-sm:13px;
+  --fs-base:15px;
+  --fs-md:17px;
+  --fs-lg:20px;
+  --fs-xl:24px;
+  --fs-2xl:32px;
+  --fs-3xl:44px;
+  --fs-4xl:64px;
+  --fs-5xl:88px;
+
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px;
+  --s-5:20px; --s-6:24px; --s-8:32px; --s-10:40px;
+  --s-12:48px; --s-14:56px; --s-16:64px; --s-20:80px; --s-24:96px;
+
+  --tracking-tight:-0.015em;
+  --tracking-snug:-0.005em;
+  --tracking-wide:0.08em;
+  --tracking-wider:0.14em;
+
+  /* Tweak scalars — get retuned by Mode and Rule weight controls */
+  --space-mult:1;
+  --rule-mult:1;
+  --rule-bw:1px;
+  --heading-case:none;
+  --heading-tracking:var(--tracking-snug);
+  --num-features:"tnum";
+}
+
+/* ============================================================
+   TWEAK SYSTEM — Mode / Palette / Rule weight overrides
+   These selectors reshape the doc when toggled by the Tweaks panel.
+============================================================ */
+
+/* MODE: Brief — tighter, more confident */
+html[data-mode="brief"] {
+  --space-mult:0.82;
+  --fs-base:16px;
+  --heading-tracking:var(--tracking-tight);
+}
+html[data-mode="brief"] body { line-height:1.55; }
+html[data-mode="brief"] .h1, html[data-mode="brief"] .h2, html[data-mode="brief"] .h3 {
+  font-weight:700;
+}
+html[data-mode="brief"] .kpi-value, html[data-mode="brief"] .stat-num,
+html[data-mode="brief"] .score-num { font-weight:700; }
+
+/* MODE: Audit — clinical, all-caps headings, tabular everywhere */
+html[data-mode="audit"] {
+  --space-mult:0.9;
+  --fg-heading:var(--shadow);
+  --heading-case:uppercase;
+  --heading-tracking:var(--tracking-wider);
+}
+html[data-mode="audit"] body { line-height:1.55; }
+html[data-mode="audit"] .h1, html[data-mode="audit"] .h2, html[data-mode="audit"] .h3,
+html[data-mode="audit"] .section-title, html[data-mode="audit"] .section-eyebrow {
+  text-transform:var(--heading-case);
+  letter-spacing:var(--heading-tracking);
+}
+html[data-mode="audit"] .num, html[data-mode="audit"] .kpi-value,
+html[data-mode="audit"] .stat-num, html[data-mode="audit"] .score-num,
+html[data-mode="audit"] .data-table td, html[data-mode="audit"] .data-table th {
+  font-feature-settings:"tnum","lnum";
+  font-variant-numeric:tabular-nums lining-nums;
+}
+html[data-mode="audit"] .data-table { border-top-width:2px; border-bottom-width:2px; }
+html[data-mode="audit"] mark, html[data-mode="audit"] .highlighter,
+html[data-mode="audit"] .azure-highlight { background:transparent !important; padding:0 !important; }
+
+/* Apply space multiplier to a curated list of layout-affecting properties.
+   We can't redefine --s-* tokens themselves (they're used in calc) without breaking
+   layout — instead we scale the section-level rhythm where it shows most. */
+html[data-mode="brief"] .section, html[data-mode="audit"] .section {
+  padding-top:calc(var(--s-16) * var(--space-mult));
+  padding-bottom:calc(var(--s-16) * var(--space-mult));
+}
+html[data-mode="brief"] .section + .section, html[data-mode="audit"] .section + .section {
+  margin-top:0;
+}
+
+/* PALETTE: Lucid — atmospheric tinted page */
+html[data-palette="lucid"] {
+  --bg:var(--lucid-soft);
+  --rule:rgba(12,51,135,0.28);
+  --rule-strong:rgba(12,51,135,0.50);
+  --rule-faint:rgba(12,51,135,0.12);
+}
+html[data-palette="lucid"] body { background:var(--bg); }
+html[data-palette="lucid"] .section--quiet, html[data-palette="lucid"] .section--breath {
+  background:transparent;
+}
+
+/* PALETTE: Inverse — dark financial-document feel */
+html[data-palette="inverse"] {
+  --bg:#0a0e1a;
+  --ghost:#0a0e1a;
+  --fg:#e8ecf2;
+  --fg-heading:#9ec4ff;
+  --fg-muted:#9099ad;
+  --fg-subtle:#5a6376;
+  --azure:#9ec4ff;
+  --azure-600:#cfdcf5;
+  --azure-900:#e8ecf2;
+  --lucid:#1a2540;
+  --lucid-soft:#101626;
+  --lucid-deep:#26334d;
+  --shadow:#e8ecf2;
+  --rule:rgba(232,236,242,0.18);
+  --rule-strong:rgba(232,236,242,0.38);
+  --rule-faint:rgba(232,236,242,0.08);
+}
+html[data-palette="inverse"] body { background:var(--bg); color:var(--fg); }
+html[data-palette="inverse"] .section--quiet, html[data-palette="inverse"] .section--breath {
+  background:transparent;
+}
+html[data-palette="inverse"] .section-nav { background:var(--bg); }
+html[data-palette="inverse"] .b-exceed { background:#1d3a1d; color:#9adb9a; }
+html[data-palette="inverse"] .b-ontrack { background:#1a2540; color:#9ec4ff; }
+html[data-palette="inverse"] .b-watch { background:#3a2d1a; color:#dbb88a; }
+html[data-palette="inverse"] mark, html[data-palette="inverse"] .azure-highlight {
+  background:rgba(158,196,255,0.18); color:inherit;
+}
+html[data-palette="inverse"] img, html[data-palette="inverse"] svg.no-invert { /* leave alone */ }
+html[data-palette="inverse"] .section-nav-link.is-active { color:var(--azure); border-bottom-color:var(--azure); }
+
+/* RULE WEIGHT — scale all rule borders by --rule-mult */
+.section, .table-frame, .data-table, .data-table th, .data-table td,
+.kpi, .chart-frame, .badge-legend, .badge-legend-item + .badge-legend-item,
+.section-nav, hr {
+  /* No-op selector grouping; actual rule rescaling happens via the alpha vars
+     and the --rule-bw scalar below. */
+}
+html[data-rule-weight] .section { border-top-width:var(--rule-bw); }
+html[data-rule-weight] .table-frame { border-width:var(--rule-bw); }
+html[data-rule-weight] .data-table { border-top-width:calc(var(--rule-bw) * 2); border-bottom-width:calc(var(--rule-bw) * 2); }
+html[data-rule-weight] .data-table th, html[data-rule-weight] .data-table td { border-bottom-width:var(--rule-bw); }
+html[data-rule-weight] .badge-legend { border-top-width:var(--rule-bw); border-bottom-width:var(--rule-bw); }
+html[data-rule-weight] .section-nav { border-bottom-width:var(--rule-bw); }
+html[data-rule-weight] hr { border-top-width:var(--rule-bw); }
+
+body {
+  font-family:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:var(--fs-base);
+  line-height:1.6;
+  color:var(--fg);
+  background:var(--bg);
+  font-feature-settings:"ss01","cv11";
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+img { max-width:100%; height:auto; display:block; }
+a { color:var(--azure); text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px; }
+a:hover { color:var(--azure-900); }
+
+/* ============================================================
+   STICKY SECTION NAV — appears below title block, hides in print
+============================================================ */
+
+.section-nav {
+  position:sticky; top:0; z-index:50;
+  background:var(--ghost);
+  border-bottom:1px solid var(--rule);
+  /* Full-bleed without leaking horizontal scroll: pin to viewport width via 100vw + negative-half-vw shift. */
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  margin-bottom:var(--s-10);
+}
+html, body { overflow-x:hidden; }
+.section-nav-inner {
+  max-width:1080px;
+  margin:0 auto;
+  padding:var(--s-3) var(--s-10);
+  display:flex; align-items:center;
+  gap:var(--s-3);
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.section-nav-inner::-webkit-scrollbar { display:none; }
+.section-nav-link {
+  flex:0 0 auto;
+  display:flex; align-items:baseline; gap:6px;
+  padding:6px 10px;
+  font-size:var(--fs-xs);
+  font-weight:500;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  border:none;
+  border-bottom:2px solid transparent;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:color 0.15s ease, border-color 0.15s ease;
+}
+.section-nav-link:hover { color:var(--azure); }
+.section-nav-link .nav-num {
+  color:var(--fg-subtle);
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0.04em;
+}
+.section-nav-link.is-active { color:var(--azure); border-bottom-color:var(--azure); }
+.section-nav-link.is-active .nav-num { color:var(--azure); }.section-nav-print {
+  flex:0 0 auto;
+  margin-left:auto;
+  padding:6px 10px;
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--azure);
+  background:transparent;
+  border:1px solid var(--rule-strong);
+  cursor:pointer;
+  font-family:inherit;
+  white-space:nowrap;
+}
+.section-nav-print:hover { background:var(--lucid-soft); border-color:var(--azure); }
+@media (max-width:720px) {
+  .section-nav-inner { padding:var(--s-3) var(--s-4); }
+  .section-nav-print { display:none; }
+}
+
+/* Anchor offset so #section-N jumps don't land under the sticky nav */
+.section[id^="section-"] { scroll-margin-top:60px; }
+
+/* ============================================================
+   STATUS BADGE LEGEND — explains 8W / 1E 2T 5W / etc.
+============================================================ */
+
+.badge-legend {
+  display:flex; flex-wrap:wrap;
+  gap:0;
+  margin-bottom:var(--s-4);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.badge-legend-item {
+  flex:1 1 auto;
+  min-width:200px;
+  display:flex; align-items:baseline; gap:var(--s-3);
+  padding:var(--s-3) var(--s-4) var(--s-3) 0;
+}
+.badge-legend-item + .badge-legend-item { padding-left:var(--s-5); border-left:1px solid var(--rule-faint); }
+.badge-legend-item .b { flex:0 0 auto; font-size:10px; padding:2px 6px; margin:0; }
+.badge-legend-item .legend-label {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--shadow);
+  flex:0 0 auto;
+}
+.badge-legend-item .legend-def {
+  font-size:var(--fs-xs);
+  color:var(--fg-muted);
+  line-height:1.5;
+  letter-spacing:0.01em;
+}
+@media (max-width:720px) {
+  .badge-legend-item { min-width:100%; padding-left:0 !important; border-left:none !important; border-bottom:1px solid var(--rule-faint); }
+  .badge-legend-item:last-child { border-bottom:none; }
+}
+
+/* ============================================================
+   STORY ARC — narrative summary that frames the data:
+   before Scroll → the brief → what's happened since.
+============================================================ */
+
+.story-arc {
+  max-width:1080px;
+  margin:0 auto var(--s-16);
+  padding:var(--s-12) var(--s-10) var(--s-14);
+  position:relative;
+}
+.story-arc-eyebrow {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--azure);
+  margin-bottom:var(--s-2);
+}
+.story-arc-title {
+  font-size:var(--fs-xl);
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:var(--tracking-snug);
+  color:var(--shadow);
+  max-width:62ch;
+  margin-bottom:var(--s-10);
+  text-wrap:balance;
+}
+.story-arc-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:var(--s-10);
+  position:relative;
+}
+/* through-line: a hairline runs from dot 1's center to dot 3's center.
+   Math: with 3 equal columns and gap=var(--s-10) (40px), dot centers sit 5.5px
+   into columns 1 and 3. The right edge needs to land at column-3-left + 5.5px,
+   which is (100% - column-3-width) + 5.5px from the left, i.e. distance from
+   the right is (column-width - 5.5px). column-width = (100% - 2*gap) / 3. */
+.story-arc-grid::before {
+  content:"";
+  position:absolute;
+  top:8.8px;  /* dot center: marker row ~17.6px tall with align-items:center, dot vertical center sits ~8.8px from marker top */
+  left:5.5px;
+  right:calc((100% - 2 * var(--s-10)) / 3 - 5.5px);
+  height:1px;
+  background:var(--rule);
+  z-index:0;
+}
+.story-phase {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:var(--s-3);
+}
+.story-phase-marker {
+  display:flex; align-items:center; gap:var(--s-3);
+  position:relative;
+  z-index:1;
+}
+.story-phase-dot {
+  width:11px; height:11px;
+  border-radius:50%;
+  background:var(--bg);
+  border:1.5px solid var(--rule-strong);
+  flex:0 0 auto;
+}
+.story-phase--now .story-phase-dot {
+  background:var(--azure);
+  border-color:var(--azure);
+}
+.story-phase-num {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:var(--tracking-wider);
+  color:var(--fg-subtle);
+  /* Knock out the through-line where the text crosses it */
+  background:var(--bg);
+  padding:0 var(--s-2);
+  position:relative;
+  z-index:1;
+}
+.story-phase--now .story-phase-num { color:var(--azure); }
+.story-phase-stage {
+  display:block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  margin-top:var(--s-2);
+}
+.story-phase-h {
+  font-size:var(--fs-md);
+  font-weight:600;
+  line-height:1.3;
+  letter-spacing:var(--tracking-snug);
+  color:var(--shadow);
+  text-wrap:balance;
+}
+.story-phase-body {
+  font-size:var(--fs-sm);
+  line-height:1.65;
+  color:var(--fg-muted);
+}
+.story-phase-body strong { color:var(--shadow); font-weight:600; }
+.story-phase-anchor {
+  margin-top:var(--s-3);
+  padding-top:var(--s-3);
+  border-top:1px solid var(--rule-faint);
+  display:flex;
+  align-items:baseline;
+  gap:var(--s-3);
+}
+.story-phase-anchor-num {
+  font-size:var(--fs-xl);
+  font-weight:600;
+  line-height:1;
+  color:var(--azure);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:var(--tracking-tight);
+  flex:0 0 auto;
+}
+.story-phase-anchor-lbl {
+  font-size:var(--fs-xs);
+  line-height:1.4;
+  color:var(--fg-muted);
+}
+@media (max-width:820px) {
+  .story-arc-grid { grid-template-columns:1fr; gap:var(--s-8); }
+  .story-arc-grid::before { display:none; }
+  .story-phase + .story-phase { padding-top:var(--s-6); border-top:1px solid var(--rule-faint); }
+}
+@media print {
+  .story-arc { page-break-inside:avoid; break-inside:avoid; padding:var(--s-6) 0 var(--s-10); }
+  .story-arc-grid { gap:var(--s-6); }
+}
+
+/* ============================================================
+   PAGE STRUCTURE
+============================================================ */
+
+.page { max-width:1080px; margin:0 auto; padding:var(--s-12) var(--s-10) var(--s-10); }
+@media (max-width:720px) { .page { padding:var(--s-6) var(--s-4); } }
+
+/* ============================================================
+   TITLE BLOCK — editorial opener with single big-stat anchor
+============================================================ */
+
+.title-block { padding-top:var(--s-6); margin-bottom:var(--s-20); }
+
+.title-meta-row {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--s-6);
+  padding-bottom:var(--s-6);
+  border-bottom:1px solid var(--rule);
+  margin-bottom:var(--s-14);
+  flex-wrap:wrap;
+}
+
+.title-logo { height:44px; width:auto; max-width:120px; object-fit:contain; }
+
+.title-meta-right {
+  display:flex; align-items:center; gap:var(--s-3);
+  font-size:var(--fs-xs);
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  font-weight:500;
+}
+.title-meta-right .azure { color:var(--azure); font-weight:600; }
+.title-meta-right .div { width:1px; height:10px; background:var(--rule); }
+
+.title-eyebrow {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--azure);
+  margin-bottom:var(--s-6);
+}
+
+.title-h1 {
+  font-size:var(--fs-4xl);
+  font-weight:300;
+  line-height:1.02;
+  letter-spacing:var(--tracking-tight);
+  color:var(--shadow);
+  max-width:920px;
+  margin-bottom:var(--s-10);
+}
+.title-h1 strong { font-weight:700; color:var(--azure); }
+
+@media (max-width:720px) {
+  .title-h1 { font-size:var(--fs-3xl); }
+}
+
+.title-deck {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--s-10);
+  padding-top:var(--s-8);
+  border-top:1px solid var(--rule);
+  margin-bottom:var(--s-12);
+}
+@media (max-width:720px) { .title-deck { grid-template-columns:1fr; gap:var(--s-6); } }
+
+.title-summary {
+  font-size:var(--fs-md);
+  line-height:1.6;
+  color:var(--shadow);
+}
+.title-summary p + p { margin-top:var(--s-3); }
+.title-summary strong { color:var(--azure); font-weight:600; }
+
+.title-anchor {
+  display:flex; flex-direction:column; gap:var(--s-3);
+  border-left:1px solid var(--rule);
+  padding-left:var(--s-8);
+}
+@media (max-width:720px) {
+  .title-anchor { border-left:none; padding-left:0; border-top:1px solid var(--rule); padding-top:var(--s-6); }
+}
+
+.title-anchor-label {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+.title-anchor-num {
+  font-size:var(--fs-5xl);
+  font-weight:700;
+  color:var(--azure);
+  line-height:0.95;
+  letter-spacing:var(--tracking-tight);
+  font-variant-numeric:tabular-nums;
+}
+.title-anchor-context {
+  font-size:var(--fs-sm);
+  color:var(--fg-muted);
+  line-height:1.55;
+  max-width:340px;
+}
+.title-anchor-context strong { color:var(--shadow); font-weight:600; }
+
+.title-tags {
+  display:flex; flex-wrap:wrap;
+  gap:var(--s-1) 0;
+  border-top:1px solid var(--rule);
+  padding-top:var(--s-4);
+}
+
+.title-tag {
+  font-size:var(--fs-xs);
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  position:relative;
+  padding:0 var(--s-4);
+  font-weight:500;
+}
+.title-tag:first-child { padding-left:0; }
+.title-tag::after {
+  content:''; position:absolute; right:0; top:50%; transform:translateY(-50%);
+  width:1px; height:10px; background:var(--rule);
+}
+.title-tag:last-child::after { display:none; }
+.title-tag.signal { color:var(--azure); font-weight:600; }
+
+/* ============================================================
+   SECTION RHYTHM — varied openings, sharper hierarchy
+============================================================ */
+
+.section { padding-top:var(--s-14); margin-top:var(--s-14); border-top:1px solid var(--rule); }
+.section--quiet { padding-top:var(--s-10); margin-top:var(--s-10); }
+.section--breath { padding-top:var(--s-20); margin-top:var(--s-16); }
+
+.section-head { margin-bottom:var(--s-10); }
+.section-head--tight { margin-bottom:var(--s-8); }
+
+.section-marker {
+  display:flex; align-items:baseline; gap:var(--s-3);
+  margin-bottom:var(--s-4);
+}
+.section-num {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--azure);
+}
+.section-num-rule {
+  flex:1; height:1px; background:var(--rule); margin-left:var(--s-2);
+}
+.section-kicker {
+  font-size:var(--fs-xs);
+  font-weight:500;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+
+.section-h2 {
+  font-size:var(--fs-3xl);
+  font-weight:700;
+  letter-spacing:var(--tracking-tight);
+  color:var(--shadow);
+  line-height:1.05;
+  margin-bottom:var(--s-5);
+  max-width:880px;
+}
+.section-h2-light { font-weight:300; }
+.section-h2-light strong { font-weight:700; color:var(--azure); }
+
+.section-sub {
+  font-size:var(--fs-md);
+  color:var(--fg-muted);
+  line-height:1.6;
+  max-width:760px;
+}
+.section-sub strong { color:var(--shadow); font-weight:600; }
+
+/* Stat-led opener (used on Section 3 trajectory) */
+.section-statline {
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:var(--s-10);
+  align-items:end;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:var(--s-8);
+  margin-bottom:var(--s-10);
+}
+@media (max-width:720px) { .section-statline { grid-template-columns:1fr; gap:var(--s-4); } }
+
+.statline-num {
+  font-size:var(--fs-5xl);
+  font-weight:700;
+  color:var(--azure);
+  line-height:0.95;
+  letter-spacing:var(--tracking-tight);
+  font-variant-numeric:tabular-nums;
+}
+.statline-body {
+  display:flex; flex-direction:column; gap:var(--s-2);
+  padding-bottom:var(--s-2);
+}
+.statline-label {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+.statline-context {
+  font-size:var(--fs-sm);
+  color:var(--shadow);
+  line-height:1.55;
+  max-width:520px;
+}
+
+/* Definition-led opener (Section 2 methodology) */
+.section-deflist {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--s-10);
+  margin-bottom:var(--s-10);
+}
+@media (max-width:720px) { .section-deflist { grid-template-columns:1fr; gap:var(--s-6); } }
+
+/* ============================================================
+   KPI GRID — refined air, weight balance
+============================================================ */
+
+.kpi-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+@media (max-width:720px) { .kpi-grid { grid-template-columns:1fr; } }
+
+.kpi {
+  padding:var(--s-8) var(--s-6);
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  display:flex; flex-direction:column; gap:var(--s-3);
+}
+
+.kpi-label {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+
+.kpi-value {
+  font-size:var(--fs-3xl);
+  font-weight:700;
+  color:var(--shadow);
+  line-height:1;
+  letter-spacing:var(--tracking-tight);
+  font-variant-numeric:tabular-nums;
+}
+
+.kpi-context {
+  font-size:var(--fs-sm);
+  color:var(--fg-muted);
+  line-height:1.55;
+  margin-top:auto;
+  padding-top:var(--s-2);
+}
+.kpi-context strong { color:var(--shadow); font-weight:600; }
+.kpi-context .azure { color:var(--azure); font-weight:600; }
+
+/* ============================================================
+   FUNNEL CARDS
+============================================================ */
+
+.funnel-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+@media (max-width:720px) { .funnel-grid { grid-template-columns:1fr; } }
+
+.funnel-cell {
+  padding:var(--s-6);
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  display:flex; flex-direction:column; gap:var(--s-3);
+}
+
+.funnel-tag {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+.funnel-h3 {
+  font-size:var(--fs-xl);
+  font-weight:700;
+  color:var(--shadow);
+  letter-spacing:var(--tracking-tight);
+  line-height:1.1;
+}
+.funnel-body {
+  font-size:var(--fs-sm);
+  color:var(--fg-muted);
+  line-height:1.6;
+}
+
+/* ============================================================
+   MATURITY STAGES
+============================================================ */
+
+.maturity { margin-top:var(--s-10); padding-top:var(--s-8); border-top:1px solid var(--rule); }
+
+.maturity-h3 {
+  font-size:var(--fs-lg);
+  font-weight:700;
+  color:var(--shadow);
+  letter-spacing:var(--tracking-tight);
+  margin-bottom:var(--s-5);
+}
+
+.maturity-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+@media (max-width:720px) { .maturity-grid { grid-template-columns:repeat(2, 1fr); } }
+
+.stage {
+  padding:var(--s-5) var(--s-4);
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  background:var(--ghost);
+  display:flex; flex-direction:column; gap:var(--s-2);
+}
+.stage.current { background:var(--lucid-soft); }
+
+.stage-name {
+  font-size:var(--fs-md);
+  font-weight:700;
+  color:var(--shadow);
+  letter-spacing:var(--tracking-tight);
+  display:flex; align-items:center; gap:var(--s-2);
+}
+.stage.current .stage-name { color:var(--azure); }
+
+.stage-range { font-size:var(--fs-sm); color:var(--fg-muted); font-variant-numeric:tabular-nums; }
+
+.stage-current-marker {
+  display:inline-block;
+  border:1px solid var(--azure);
+  color:var(--azure);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  padding:1px 5px;
+}
+
+.maturity-note {
+  font-size:var(--fs-sm);
+  color:var(--fg-muted);
+  line-height:1.65;
+  margin-top:var(--s-5);
+  max-width:780px;
+}
+
+.status-label {
+  font-weight:600;
+  font-size:10px;
+  letter-spacing:var(--tracking-wide);
+  text-transform:uppercase;
+  padding:1px 5px;
+}
+.status-exceed { color:#5b2db8; background:rgba(124,45,184,0.08); }
+.status-ontrack { color:var(--azure); background:rgba(12,51,135,0.08); }
+.status-watch { color:#95610b; background:rgba(149,97,11,0.08); }
+
+/* ============================================================
+   CHARTS — Stripe-grade frame, integrated annotations
+============================================================ */
+
+.chart-block { margin-bottom:var(--s-10); }
+
+.chart-header {
+  display:flex; justify-content:space-between; align-items:baseline;
+  flex-wrap:wrap; gap:var(--s-3);
+  padding-bottom:var(--s-3);
+  border-bottom:1px solid var(--rule);
+  margin-bottom:var(--s-2);
+}
+.chart-h3 {
+  font-size:var(--fs-md);
+  font-weight:700;
+  color:var(--shadow);
+  letter-spacing:var(--tracking-snug);
+  flex:1 1 auto; min-width:0;
+}
+.chart-meta {
+  font-size:var(--fs-xs);
+  color:var(--fg-muted);
+  letter-spacing:var(--tracking-wide);
+  text-transform:uppercase;
+  font-weight:500;
+}
+.chart-sub {
+  font-size:var(--fs-sm);
+  color:var(--fg-muted);
+  line-height:1.6;
+  margin-bottom:var(--s-6);
+  max-width:780px;
+}
+.chart-sub strong { color:var(--shadow); font-weight:600; }
+
+.chart-frame { padding:var(--s-2) 0 var(--s-3); }
+
+/* ============================================================
+   TABLE — hairline, tabular numerals, breathing rows
+============================================================ */
+
+.data-table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:var(--fs-sm);
+  font-variant-numeric:tabular-nums;
+}
+.data-table thead th {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  text-align:left;
+  padding:var(--s-3) var(--s-3) var(--s-2);
+  border-bottom:1.5px solid var(--azure);
+  white-space:nowrap;
+}
+.data-table tbody td {
+  padding:var(--s-4) var(--s-3);
+  border-bottom:1px solid var(--rule-faint);
+  vertical-align:middle;
+}
+.data-table tbody tr:last-child td { border-bottom:none; }
+.data-table .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.data-table .month { font-weight:600; white-space:nowrap; color:var(--shadow); }
+.data-table .row-preliminary { background:var(--lucid-soft); }
+.data-table .row-preliminary .month { color:var(--azure); }
+
+.score-cell { white-space:nowrap; }
+.score-num {
+  font-size:var(--fs-md);
+  font-weight:700;
+  color:var(--shadow);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:var(--tracking-snug);
+}
+.row-preliminary .score-num { color:var(--azure); }
+
+.score-flag {
+  display:inline-block;
+  margin-left:5px;
+  background:var(--highlighter);
+  color:var(--shadow);
+  font-size:9px;
+  font-weight:700;
+  padding:1px 5px;
+  letter-spacing:var(--tracking-wider);
+  vertical-align:1px;
+}
+.score-flag-r {
+  display:inline-block;
+  margin-left:5px;
+  border:1px solid var(--rule-strong);
+  color:var(--fg-muted);
+  font-size:9px;
+  font-weight:600;
+  padding:0 4px;
+  letter-spacing:var(--tracking-wider);
+  vertical-align:1px;
+}
+
+.band { font-size:var(--fs-sm); color:var(--fg-muted); }
+
+.b {
+  display:inline-block;
+  font-size:10px;
+  font-weight:700;
+  padding:1px 5px;
+  margin-right:2px;
+  letter-spacing:0.04em;
+}
+.b-exceed { background:rgba(124,45,184,0.10); color:#5b2db8; }
+.b-ontrack { background:rgba(12,51,135,0.10); color:var(--azure); }
+.b-watch { background:rgba(149,97,11,0.10); color:#95610b; }
+
+.table-frame { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+
+.table-note {
+  font-size:var(--fs-xs);
+  color:var(--fg-muted);
+  margin-top:var(--s-4);
+  line-height:1.6;
+  max-width:780px;
+}
+.table-note strong { color:var(--shadow); font-weight:600; }
+
+/* ============================================================
+   APRIL CALLOUT — refined editorial leading stat
+============================================================ */
+
+.april-callout {
+  margin-top:var(--s-12);
+  background:var(--lucid-soft);
+  border-top:1.5px solid var(--azure);
+  border-bottom:1px solid var(--rule);
+  padding:var(--s-10) var(--s-8) var(--s-8);
+}
+
+.april-callout-eyebrow {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--azure);
+  margin-bottom:var(--s-4);
+  display:flex; align-items:center; gap:var(--s-2);
+}
+.april-callout-eyebrow .signal-dot {
+  display:inline-block;
+  width:8px; height:8px;
+  background:var(--highlighter);
+}
+
+.april-callout-h3 {
+  font-size:var(--fs-2xl);
+  font-weight:300;
+  color:var(--shadow);
+  letter-spacing:var(--tracking-tight);
+  line-height:1.15;
+  margin-bottom:var(--s-5);
+  max-width:820px;
+}
+.april-callout-h3 strong { font-weight:700; color:var(--azure); }
+
+.april-callout-body {
+  font-size:var(--fs-sm);
+  color:var(--shadow);
+  line-height:1.7;
+  margin-bottom:var(--s-8);
+  max-width:740px;
+}
+
+.april-stats {
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  border-top:1px solid var(--rule);
+}
+@media (max-width:720px) { .april-stats { grid-template-columns:repeat(3, 1fr); } }
+
+.april-stat {
+  padding:var(--s-4) var(--s-3);
+  border-right:1px solid var(--rule);
+  display:flex; flex-direction:column; gap:var(--s-1);
+}
+.april-stat:nth-child(6n) { border-right:none; }
+@media (max-width:720px) {
+  .april-stat:nth-child(3n) { border-right:none; }
+  .april-stat:nth-child(6n) { border-right:none; }
+  .april-stat:nth-child(n+4) { border-top:1px solid var(--rule); }
+}
+
+.april-stat-num {
+  font-size:var(--fs-xl);
+  font-weight:700;
+  color:var(--azure);
+  letter-spacing:var(--tracking-tight);
+  font-variant-numeric:tabular-nums;
+  line-height:1;
+}
+.april-stat-label {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+
+/* ============================================================
+   ENGAGEMENT QUALITY READOUT — quiet inline pull-quote
+============================================================ */
+
+.readout {
+  margin-top:var(--s-10);
+  padding:var(--s-2) 0 var(--s-2) var(--s-8);
+  border-left:1.5px solid var(--azure);
+  max-width:820px;
+}
+.readout p {
+  font-size:var(--fs-lg);
+  font-weight:300;
+  color:var(--shadow);
+  line-height:1.5;
+  letter-spacing:var(--tracking-snug);
+}
+.readout p strong { color:var(--azure); font-weight:700; }
+
+/* ============================================================
+   AUDIENCE GRID
+============================================================ */
+
+.audience-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+@media (max-width:720px) { .audience-grid { grid-template-columns:1fr; } }
+
+.audience-cell {
+  padding:var(--s-8) var(--s-6);
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  display:flex; flex-direction:column;
+}
+
+.audience-h3 {
+  font-size:var(--fs-md);
+  font-weight:700;
+  color:var(--shadow);
+  letter-spacing:var(--tracking-snug);
+  margin-bottom:var(--s-5);
+  padding-bottom:var(--s-3);
+  border-bottom:1px solid var(--rule);
+}
+
+.bar-row {
+  display:flex; align-items:center;
+  gap:var(--s-3);
+  padding:var(--s-2) 0;
+  font-size:var(--fs-sm);
+}
+.bar-label { flex:0 0 56px; font-weight:500; color:var(--shadow); font-variant-numeric:tabular-nums; }
+.bar-track { flex:1; height:4px; background:var(--rule-faint); position:relative; }
+.bar-fill { height:100%; background:var(--azure); }
+.bar-pct { flex:0 0 48px; text-align:right; font-weight:600; color:var(--shadow); font-variant-numeric:tabular-nums; }
+
+.gender-row {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+.gender-cell {
+  padding:var(--s-5) var(--s-3);
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  display:flex; flex-direction:column; gap:var(--s-2);
+}
+.gender-num {
+  font-size:var(--fs-2xl);
+  font-weight:700;
+  color:var(--azure);
+  letter-spacing:var(--tracking-tight);
+  font-variant-numeric:tabular-nums;
+  line-height:1;
+}
+.gender-label {
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+
+.audience-note {
+  font-size:var(--fs-sm);
+  color:var(--fg-muted);
+  line-height:1.6;
+  margin-top:var(--s-5);
+  padding-top:var(--s-4);
+  border-top:1px solid var(--rule-faint);
+}
+.audience-note strong { color:var(--shadow); font-weight:600; }
+
+.demo-mini-table { width:100%; border-collapse:collapse; font-size:var(--fs-sm); }
+.demo-mini-table th {
+  text-align:left;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  padding:var(--s-2) var(--s-2);
+  border-bottom:1.5px solid var(--azure);
+}
+.demo-mini-table th.num { text-align:right; }
+.demo-mini-table td {
+  padding:var(--s-3) var(--s-2);
+  border-bottom:1px solid var(--rule-faint);
+}
+.demo-mini-table tr:last-child td { border-bottom:none; }
+.demo-mini-table td.num { text-align:right; font-variant-numeric:tabular-nums; }
+
+/* ============================================================
+   TOP POSTS — sharper hierarchy, stat row breathing
+============================================================ */
+
+.year-block { margin-bottom:var(--s-12); }
+.year-block:last-child { margin-bottom:0; }
+
+.year-h3 {
+  font-size:var(--fs-xl);
+  font-weight:700;
+  color:var(--shadow);
+  letter-spacing:var(--tracking-tight);
+  padding-bottom:var(--s-4);
+  border-bottom:1.5px solid var(--azure);
+  margin-bottom:var(--s-6);
+  display:flex; align-items:baseline; justify-content:space-between;
+  flex-wrap:wrap; gap:var(--s-3);
+}
+.year-h3 .year-meta {
+  font-size:var(--fs-xs);
+  font-weight:500;
+  color:var(--fg-muted);
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+}
+
+.post-card {
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:var(--s-5);
+  padding:var(--s-6) 0;
+  border-bottom:1px solid var(--rule-faint);
+}
+.year-block .post-card:last-child { border-bottom:none; }
+@media (max-width:720px) {
+  .post-card { grid-template-columns:1fr; gap:var(--s-3); }
+}
+
+.post-rank {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  color:var(--fg-subtle);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:var(--tracking-wider);
+  padding-top:2px;
+}
+
+.post-body { min-width:0; }
+
+.post-meta-line {
+  display:flex; align-items:center; gap:var(--s-3);
+  flex-wrap:wrap;
+  margin-bottom:var(--s-3);
+  font-size:var(--fs-xs);
+  letter-spacing:var(--tracking-wide);
+}
+.post-type {
+  color:var(--azure);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:var(--tracking-wider);
+}
+.post-date { color:var(--fg-muted); font-variant-numeric:tabular-nums; letter-spacing:var(--tracking-wide); }
+.post-link {
+  color:var(--azure);
+  font-weight:600;
+  margin-left:auto;
+  text-transform:uppercase;
+  letter-spacing:var(--tracking-wider);
+  border:none;
+  font-size:10px;
+}
+.post-link:hover { color:var(--azure-900); }
+
+.post-excerpt {
+  font-size:var(--fs-sm);
+  color:var(--shadow);
+  line-height:1.65;
+  margin-bottom:var(--s-5);
+  max-width:780px;
+}
+
+.post-stats {
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:0;
+  padding-top:var(--s-3);
+  border-top:1px solid var(--rule-faint);
+}
+@media (max-width:720px) { .post-stats { grid-template-columns:repeat(3, 1fr); gap:var(--s-3); } }
+
+.post-stat { display:flex; flex-direction:column; gap:2px; }
+
+.post-stat dt {
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+}
+.post-stat dd {
+  font-size:var(--fs-md);
+  font-weight:700;
+  color:var(--shadow);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:var(--tracking-snug);
+}
+
+/* ============================================================
+   METHODOLOGY DISCLOSURE — editorial blocks, no border boxes
+============================================================ */
+
+.disclosure { padding:var(--s-8) 0; border-top:1px solid var(--rule-faint); }
+.disclosure:first-of-type { padding-top:var(--s-4); border-top:none; }
+.disclosure:last-of-type { padding-bottom:0; }
+
+.disclosure-grid {
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:var(--s-8);
+}
+@media (max-width:720px) { .disclosure-grid { grid-template-columns:1fr; gap:var(--s-3); } }
+
+.disclosure-h3 {
+  font-size:var(--fs-xs);
+  font-weight:600;
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--azure);
+  line-height:1.4;
+  padding-top:3px;
+}
+
+.disclosure-body { max-width:780px; }
+.disclosure-body p {
+  font-size:var(--fs-sm);
+  color:var(--shadow);
+  line-height:1.7;
+  margin-bottom:var(--s-3);
+}
+.disclosure-body p:last-child { margin-bottom:0; }
+.disclosure-body strong { color:var(--azure); font-weight:600; }
+.disclosure-body .lead-in { color:var(--shadow); font-weight:700; }
+
+.disclosure-table { margin-top:var(--s-5); page-break-inside:avoid; break-inside:avoid; }
+.disclosure-row {
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:var(--s-4);
+  padding:var(--s-3) 0;
+  border-bottom:1px solid var(--rule-faint);
+  font-size:var(--fs-sm);
+}
+.disclosure-row:first-child { padding-top:0; }
+.disclosure-row:last-child { border-bottom:none; padding-bottom:0; }
+.disclosure-row strong { color:var(--shadow); font-weight:600; }
+.disclosure-row span { color:var(--fg-muted); }
+@media (max-width:720px) { .disclosure-row { grid-template-columns:1fr; gap:var(--s-1); } }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.report-footer {
+  margin-top:var(--s-20);
+  padding-top:var(--s-6);
+  border-top:1px solid var(--rule);
+  font-size:var(--fs-xs);
+  letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;
+  color:var(--fg-muted);
+  display:flex; justify-content:space-between;
+  flex-wrap:wrap; gap:var(--s-3);
+  font-weight:500;
+}
+.report-footer-left, .report-footer-right { display:flex; gap:var(--s-3); align-items:center; flex-wrap:wrap; }
+.report-footer .sep { color:var(--rule-strong); }
+.report-footer strong { color:var(--shadow); font-weight:600; }
+
+/* ============================================================
+   PRINT — WeasyPrint letter, 0.55in margins
+============================================================ */
+
+/* ============================================================
+   MOBILE QA — consolidated small-viewport polish
+   Standard breakpoints: 480px (tight phone), 720px (phone), 820px (tablet).
+============================================================ */
+
+/* Phone: type scale comes down so heroes don't wrap to 5 lines */
+@media (max-width:720px) {
+  .title-h1 { font-size:var(--fs-2xl); line-height:1.05; }
+  .section-h2 { font-size:var(--fs-xl); }
+  .section-h2-light { font-size:var(--fs-md); }
+  .statline-num { font-size:var(--fs-3xl); }
+  .title-anchor-num { font-size:var(--fs-3xl); }
+  .kpi-value { font-size:var(--fs-2xl); }
+  .story-arc-title { font-size:var(--fs-md); }
+  .story-phase-anchor-num { font-size:var(--fs-lg); }
+  .april-callout-h3 { font-size:var(--fs-lg); }
+
+  /* Tables: let wide tables horizontal-scroll inside their frame instead of
+     breaking page layout. Scroll affordance via subtle inner shadow. */
+  .table-frame {
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    background:
+      linear-gradient(to right, var(--bg) 30%, rgba(250,253,255,0)),
+      linear-gradient(to right, rgba(250,253,255,0), var(--bg) 70%) 100% 0,
+      radial-gradient(farthest-side at 0 50%, rgba(12,51,135,0.12), rgba(0,0,0,0)),
+      radial-gradient(farthest-side at 100% 50%, rgba(12,51,135,0.12), rgba(0,0,0,0)) 100% 0;
+    background-repeat:no-repeat;
+    background-size:40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-attachment:local, local, scroll, scroll;
+  }
+  .data-table { min-width:560px; }
+
+  /* Section nav: bump tap target to 44px and let it wrap onto two lines if needed */
+  .section-nav-inner { gap:var(--s-2); padding:var(--s-2) var(--s-4); }
+  .section-nav-link {
+    min-height:44px;
+    padding:10px 12px;
+    font-size:12px;
+    align-items:center;
+  }
+  .section-nav-link .nav-num { display:none; }
+
+  /* Disclosure prose: long inline tokens (URLs, IDs) shouldn't push the row wider */
+  .disclosure-body, .disclosure-row span, .post-excerpt, .chart-sub, .table-note {
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+
+  /* Story arc: phase anchors stack the number and label on tight screens */
+  .story-phase-anchor { flex-direction:column; align-items:flex-start; gap:var(--s-1); }
+
+  /* Title meta row: prevent the meta info from running off-screen */
+  .title-meta-row { flex-wrap:wrap; gap:var(--s-3); }
+}
+
+/* Tight phone (≤480px): collapse the last few stubborn 2-up grids to single column */
+@media (max-width:480px) {
+  .maturity-grid { grid-template-columns:1fr; }
+  .maturity-grid > * { border-left:none; border-top:1px solid var(--rule); padding-top:var(--s-4); padding-left:0; }
+  .maturity-grid > *:first-child { border-top:none; padding-top:0; }
+  .april-stats { grid-template-columns:repeat(2, 1fr); }
+  .april-stat:nth-child(2n) { border-right:none; }
+  .post-stats { grid-template-columns:repeat(2, 1fr); }
+  .title-h1 { font-size:var(--fs-xl); }
+  .section-h2 { font-size:var(--fs-lg); }
+}
+
+/* Long-form readability everywhere: prevent any overflow surprise from runaway content */
+img, svg, video { max-width:100%; height:auto; }
+pre, code { overflow-wrap:anywhere; word-break:break-word; }
+.post-link { overflow-wrap:anywhere; }
+
+/* ============================================================
+   PRINT
+============================================================ */
+
+@page { size:letter; margin:0.55in; }
+
+@media print {
+  body { font-size:10pt; }
+  .page { padding:0; max-width:100%; }
+  .section { padding-top:24pt; margin-top:24pt; }
+  .section--breath { padding-top:30pt; margin-top:24pt; }
+  .section--quiet { padding-top:18pt; margin-top:18pt; }
+  .title-block { margin-bottom:32pt; }
+  .title-h1 { font-size:38pt; }
+  .section-h2 { font-size:24pt; }
+  .section-h2, .title-h1, .funnel-h3, .audience-h3, .year-h3, .april-callout-h3, .disclosure-h3 { page-break-after:avoid; }
+  .post-card, .chart-block, .audience-cell, .april-callout, .readout, .funnel-grid, .maturity, .table-frame, .kpi { page-break-inside:avoid; break-inside:avoid; }
+  .disclosure { page-break-inside:auto; }
+  .disclosure-h3 { page-break-after:avoid; break-after:avoid; }
+  .disclosure-table, .disclosure-grid > .disclosure-body > p { page-break-inside:avoid; break-inside:avoid; }
+  .year-block { page-break-inside:auto; }
+  .post-stats { grid-template-columns:repeat(6, 1fr) !important; }
+  .audience-grid { grid-template-columns:1fr 1fr !important; }
+  .funnel-grid { grid-template-columns:repeat(3, 1fr) !important; }
+  .maturity-grid { grid-template-columns:repeat(4, 1fr) !important; }
+  .kpi-grid { grid-template-columns:repeat(3, 1fr) !important; }
+  .disclosure-grid { grid-template-columns:200px 1fr !important; }
+  .disclosure-row { grid-template-columns:240px 1fr !important; }
+  .title-deck { grid-template-columns:1fr 1fr !important; }
+  .section-deflist { grid-template-columns:1fr 1fr !important; }
+  .april-stats { grid-template-columns:repeat(6, 1fr) !important; }
+  .april-stat:nth-child(n+4) { border-top:none !important; }
+  .section-nav, .section-nav * { display:none !important; }
+  .badge-legend { page-break-inside:avoid; break-inside:avoid; }
+  a { border-bottom:none; color:var(--azure); }
+}
+</style>
+</head>
+<body>
+
+<main class="page">
+
+  <!-- TITLE BLOCK -->
+  <header class="title-block">
+
+    <div class="title-meta-row">
+      <img src="assets/logos/scroll-primary-azure.png" alt="Scroll Media" class="title-logo">
+      <div class="title-meta-right">
+        <span class="azure">Performance overview</span>
+        <span class="div"></span>
+        <span>May 2026</span>
+        <span class="div"></span>
+        <span>Confidential</span>
+      </div>
+    </div>
+
+    <div class="title-eyebrow">DEFINE Oakley · Instagram performance</div>
+
+    <h1 class="title-h1">A continuously managed Instagram account, <strong>27 months</strong> of growth under Scroll Media, presented in full at the granularity third-party platforms retain.</h1>
+
+    <div class="title-deck">
+      <div class="title-summary">
+        <p>DEFINE Oakley's Instagram has been under continuous Scroll Media management since February 2024. This document presents the account's performance trajectory across the most recent measurement window with daily-granularity third-party data, October 2025 through April 2026.</p>
+        <p>The score trajectory accelerates through the window. April 2026 is marked by single-reel viral distribution and the strongest monthly performance in the dataset.</p>
+      </div>
+      <div class="title-anchor">
+        <div class="title-anchor-label">Cumulative reach, 7-month window</div>
+        <div class="title-anchor-num">655K</div>
+        <div class="title-anchor-context">Approximately <strong>171×</strong> the current follower base. Reach across reels, posts, and stories at an aggregate engagement rate of <strong>8.9%</strong>.</div>
+      </div>
+    </div>
+
+    <div class="title-tags">
+      <span class="title-tag signal">Lift Stage</span>
+      <span class="title-tag">@defineoakley</span>
+      <span class="title-tag">Cincinnati fitness studio</span>
+      <span class="title-tag">3,810 followers</span>
+      <span class="title-tag">2.5K to 10K band</span>
+      <span class="title-tag">Continuous since Feb 2024</span>
+    </div>
+  </header>
+
+  <!-- STICKY SECTION NAV -->
+  <nav class="section-nav" aria-label="Section navigation">
+    <div class="section-nav-inner">
+      <a href="#section-0" class="section-nav-link"><span class="nav-num">00</span> Story</a>
+      <a href="#section-1" class="section-nav-link"><span class="nav-num">01</span> Snapshot</a>
+      <a href="#section-2" class="section-nav-link"><span class="nav-num">02</span> Framework</a>
+      <a href="#section-3" class="section-nav-link"><span class="nav-num">03</span> Trajectory</a>
+      <a href="#section-4" class="section-nav-link"><span class="nav-num">04</span> Engagement</a>
+      <a href="#section-5" class="section-nav-link"><span class="nav-num">05</span> Audience</a>
+      <a href="#section-6" class="section-nav-link"><span class="nav-num">06</span> Content</a>
+      <a href="#section-7" class="section-nav-link"><span class="nav-num">07</span> Top posts</a>
+      <a href="#section-8" class="section-nav-link"><span class="nav-num">08</span> Disclosures</a>
+      <button type="button" class="section-nav-print" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </nav>
+
+  <!-- SECTION 0: STORY ARC — the narrative frame for the data that follows -->
+  <section class="section section--breath story-arc" id="section-0" aria-label="Engagement story">
+    <div class="story-arc-eyebrow">The story in three movements</div>
+    <h2 class="story-arc-title">From a personal Instagram with no analytics infrastructure to a top-of-class service-business account, under continuous Scroll Media management since February 2024.</h2>
+
+    <div class="story-arc-grid">
+
+      <div class="story-phase">
+        <div class="story-phase-marker">
+          <span class="story-phase-dot"></span>
+          <span class="story-phase-num">01 · BEFORE</span>
+        </div>
+        <span class="story-phase-stage">January 2024</span>
+        <h3 class="story-phase-h">A studio account without the infrastructure to measure itself.</h3>
+        <p class="story-phase-body">Heading into 2024, DEFINE Oakley's Instagram was managed in-house alongside the day-to-day of running a studio. The account was not yet a Meta Business profile, which meant no Insights, no daily reach data, and no audience or content analytics retained at the platform level. <strong>The first 90 days of Meta-direct performance history in this report don't exist.</strong> Not because they weren't happening. Because no one was capturing them.</p>
+        <div class="story-phase-anchor">
+          <span class="story-phase-anchor-num">0</span>
+          <span class="story-phase-anchor-lbl">Months of retained Insights data prior to the engagement.</span>
+        </div>
+      </div>
+
+      <div class="story-phase">
+        <div class="story-phase-marker">
+          <span class="story-phase-dot"></span>
+          <span class="story-phase-num">02 · THE BRIEF</span>
+        </div>
+        <span class="story-phase-stage">February 2024</span>
+        <h3 class="story-phase-h">Take social off the owner's plate without losing the brand voice.</h3>
+        <p class="story-phase-body">DEFINE Oakley engaged Scroll Media on <strong>February 5, 2024</strong>. The owner was spending more time on content and channel management than the business could justify, with no formal social strategy in place. The ask was for a partner who could match the studio's brand, tone, and aesthetic closely enough to operate the account end-to-end on her behalf. The first three months were foundational: <strong>Business profile activation</strong> on April 30, 2024 (the moment Meta Insights began recording data), content cadence calibration, and audience baseline establishment. Performance data from this onboarding window is not retained at the platform level by design. The work was the setup itself.</p>
+        <div class="story-phase-anchor">
+          <span class="story-phase-anchor-num">3</span>
+          <span class="story-phase-anchor-lbl">Months of platform setup before the data spine begins.</span>
+        </div>
+      </div>
+
+      <div class="story-phase story-phase--now">
+        <div class="story-phase-marker">
+          <span class="story-phase-dot"></span>
+          <span class="story-phase-num">03 · NOW</span>
+        </div>
+        <span class="story-phase-stage">April 2026 · 27 months in</span>
+        <h3 class="story-phase-h">A top-of-class service-business account, with the data trail to prove it.</h3>
+        <p class="story-phase-body">Across the seven-month measurement window, monthly performance scores have moved from <strong>7.0 to 9.0</strong>, the EXCEEDING-status badge count is climbing every month, and an aggregate engagement rate of <strong>8.9%</strong> sits materially above the <strong>3–5%</strong> service-business benchmark. April 2026 alone produced a single-reel viral moment that drove cumulative window reach to <strong>655K</strong> (approximately 171× the current follower base).</p>
+        <div class="story-phase-anchor">
+          <span class="story-phase-anchor-num">9.0</span>
+          <span class="story-phase-anchor-lbl">April 2026 monthly score (preliminary). Up from 4.7 at window start.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 1: EXECUTIVE SNAPSHOT -->
+  <section class="section section--quiet" id="section-1">
+    <div class="section-head">
+      <div class="section-marker">
+        <span class="section-num">01</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Executive snapshot</span>
+      </div>
+      <h2 class="section-h2 section-h2-light">Six headline indicators across the seven-month detailed measurement window.</h2>
+      <p class="section-sub">October 1, 2025 to April 30, 2026. Each metric is the sum or end-state for the period unless otherwise noted.</p>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Followers, end of period</div>
+        <div class="kpi-value">3,810</div>
+        <div class="kpi-context">Net gain of <strong>203</strong> during the window. <span class="azure">5.6% growth</span> on a 3,607 starting base.</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">Cumulative reach</div>
+        <div class="kpi-value">655K</div>
+        <div class="kpi-context">Account reach across reels, posts, and stories. Approximately <strong>171×</strong> the current follower base.</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">Cumulative views</div>
+        <div class="kpi-value">913K</div>
+        <div class="kpi-context">Reels are the dominant format, <strong>87%</strong> of long-form content output.</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">Aggregate engagement rate</div>
+        <div class="kpi-value">8.9%</div>
+        <div class="kpi-context">Total interactions divided by total reach. Service-business fitness benchmark sits at <strong>3% to 5%</strong>. The window rate sits materially above benchmark.</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">Long-form output</div>
+        <div class="kpi-value">61</div>
+        <div class="kpi-context"><strong>53 reels</strong> and <strong>8 carousel and static posts</strong> over seven months, plus <strong>825 stories</strong>.</div>
+      </div>
+
+      <div class="kpi">
+        <div class="kpi-label">Saves and shares</div>
+        <div class="kpi-value">24.2K</div>
+        <div class="kpi-context"><strong>1.5K saves</strong> and <strong>22.7K shares</strong>. The two metrics Instagram weights most heavily for organic distribution.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: METHODOLOGY -->
+  <section class="section" id="section-2">
+    <div class="section-head">
+      <div class="section-marker">
+        <span class="section-num">02</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Performance methodology</span>
+      </div>
+      <h2 class="section-h2 section-h2-light">The analytical framework. Each metric maps to a stage of the <strong>Instagram funnel</strong> and a maturity stage based on follower count.</h2>
+      <p class="section-sub">Stage targets are taken from a 2025 calibration of Instagram benchmarks for service businesses.</p>
+    </div>
+
+    <div class="funnel-grid">
+      <div class="funnel-cell">
+        <div class="funnel-tag">Top of funnel</div>
+        <h3 class="funnel-h3">Awareness</h3>
+        <p class="funnel-body">Reach, views, and impressions. How many unique accounts encounter the brand on Instagram, and how often. The upstream pool from which engagement and conversion are drawn.</p>
+      </div>
+      <div class="funnel-cell">
+        <div class="funnel-tag">Middle of funnel</div>
+        <h3 class="funnel-h3">Engagement</h3>
+        <p class="funnel-body">Saves, shares, comments, retention rate, and watch time. Signals of audience intent and content quality. Saves and shares are the two metrics Instagram's 2025 algorithm weights most heavily for organic distribution.</p>
+      </div>
+      <div class="funnel-cell">
+        <div class="funnel-tag">Bottom of funnel</div>
+        <h3 class="funnel-h3">Conversion</h3>
+        <p class="funnel-body">Profile visits, click-through rate, and link taps. The bridge from Instagram to revenue actions. Service-business benchmarks differ from CPG and retail and are calibrated separately.</p>
+      </div>
+    </div>
+
+    <div class="maturity">
+      <h3 class="maturity-h3">Maturity stages</h3>
+      <div class="maturity-grid">
+        <div class="stage"><div class="stage-name">Spark</div><div class="stage-range">0 to 2.5K followers</div></div>
+        <div class="stage current"><div class="stage-name">Lift <span class="stage-current-marker">Current</span></div><div class="stage-range">2.5K to 10K followers</div></div>
+        <div class="stage"><div class="stage-name">Rise</div><div class="stage-range">10K to 100K followers</div></div>
+        <div class="stage"><div class="stage-name">Thrive</div><div class="stage-range">100K to 500K followers</div></div>
+      </div>
+      <p class="maturity-note">Each stage maps to its own metric target ranges. Performance is graded against the targets for the active stage at month end. The three status labels used throughout this report are <span class="status-label status-exceed">EXCEEDING</span> above the upper target, <span class="status-label status-ontrack">ON TRACK</span> within the target range, and <span class="status-label status-watch">WATCH</span> below the lower target.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TRAJECTORY — opens with single big stat -->
+  <section class="section section--breath" id="section-3">
+    <div class="section-head section-head--tight">
+      <div class="section-marker">
+        <span class="section-num">03</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Monthly scoring trajectory</span>
+      </div>
+    </div>
+
+    <div class="section-statline">
+      <div class="statline-num">7.0 <span style="color:var(--fg-subtle); font-weight:300;">→</span> 9.0</div>
+      <div class="statline-body">
+        <div class="statline-label">Composite score, October 2025 to April 2026</div>
+        <div class="statline-context">Each month receives a composite score on a 6.0 to 10.0 scale against Lift Stage targets. The window covers seven months: three scored officially in the live monthly client reporting cycle, three scored retroactively using the same framework, and April 2026 shown as preliminary pending publication of the formal monthly report.</div>
+      </div>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <h3 class="chart-h3">Monthly score, Oct 2025 to Apr 2026</h3>
+        <span class="chart-meta">6.0 to 10.0 scale</span>
+      </div>
+      <p class="chart-sub">April 2026 is shown as a preliminary score (open marker). The formal April 2026 monthly performance report is scheduled for client publication within days of this document's preparation.</p>
+      <div class="chart-frame"><svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Monthly score line chart" style="width:100%;height:auto;display:block;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums"><line x1="64" y1="204.0" x2="788" y2="204.0" stroke="rgba(12,51,135,0.40)" stroke-width="1"/><text x="52" y="208.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">6.0</text><line x1="64" y1="160.0" x2="788" y2="160.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="164.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">7.0</text><line x1="64" y1="116.0" x2="788" y2="116.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="120.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">8.0</text><line x1="64" y1="72.0" x2="788" y2="72.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="76.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">9.0</text><line x1="64" y1="28.0" x2="788" y2="28.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="32.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">10.0</text><text x="64.0" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Oct</text><text x="184.7" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Nov</text><text x="305.3" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Dec</text><text x="426.0" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Jan</text><text x="546.7" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Feb</text><text x="667.3" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Mar</text><text x="788.0" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Apr</text><text x="64.0" y="242" text-anchor="middle" font-size="10" fill="#b9c0cf" letter-spacing="0.06em">2025</text><text x="426.0" y="242" text-anchor="middle" font-size="10" fill="#b9c0cf" letter-spacing="0.06em">2026</text><path d="M64.0 160.0 L184.7 160.0 L305.3 160.0 L426.0 138.0 L546.7 138.0 L667.3 107.2 L788.0 72.0" fill="none" stroke="#0C3387" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"/><circle cx="64.0" cy="160.0" r="4" fill="#0C3387"/><circle cx="184.7" cy="160.0" r="4" fill="#0C3387"/><circle cx="305.3" cy="160.0" r="4" fill="#0C3387"/><circle cx="426.0" cy="138.0" r="4" fill="#0C3387"/><circle cx="546.7" cy="138.0" r="4" fill="#0C3387"/><circle cx="667.3" cy="107.2" r="4" fill="#0C3387"/><circle cx="788.0" cy="72.0" r="5" fill="#FAFDFF" stroke="#0C3387" stroke-width="1.75"/><text x="64.0" y="146.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="#151516" letter-spacing="-0.005em">7.0</text><text x="184.7" y="146.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="#151516" letter-spacing="-0.005em">7.0</text><text x="305.3" y="146.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="#151516" letter-spacing="-0.005em">7.0</text><text x="426.0" y="124.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="#151516" letter-spacing="-0.005em">7.5</text><text x="546.7" y="124.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="#151516" letter-spacing="-0.005em">7.5</text><text x="667.3" y="93.2" text-anchor="middle" font-size="11.5" font-weight="600" fill="#151516" letter-spacing="-0.005em">8.2</text><text x="788.0" y="58.0" text-anchor="middle" font-size="11.5" font-weight="600" fill="#151516" letter-spacing="-0.005em">9.0</text><line x1="788.0" y1="50.0" x2="788.0" y2="42.0" stroke="rgba(12,51,135,0.30)" stroke-width="1"/><text x="788.0" y="36.0" text-anchor="end" font-size="10" fill="#5a6070" letter-spacing="0.06em" text-transform="uppercase">PRELIMINARY</text></svg></div>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <h3 class="chart-h3">End-of-month followers</h3>
+        <span class="chart-meta">absolute count, monthly closing values</span>
+      </div>
+      <p class="chart-sub">Followers grew from <strong>3,607</strong> on October 1, 2025 to <strong>3,810</strong> on April 30, 2026, a gain of 203 (5.6%). The April 2026 acceleration coincides with the viral reel.</p>
+      <div class="chart-frame"><svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Followers line chart" style="width:100%;height:auto;display:block;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums"><line x1="64" y1="204.0" x2="788" y2="204.0" stroke="rgba(12,51,135,0.40)" stroke-width="1"/><text x="52" y="208.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">3,500</text><line x1="64" y1="153.7" x2="788" y2="153.7" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="157.7" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">3,600</text><line x1="64" y1="103.4" x2="788" y2="103.4" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="107.4" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">3,700</text><line x1="64" y1="53.1" x2="788" y2="53.1" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="57.1" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">3,800</text><text x="64.0" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Oct</text><text x="184.7" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Nov</text><text x="305.3" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Dec</text><text x="426.0" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Jan</text><text x="546.7" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Feb</text><text x="667.3" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Mar</text><text x="788.0" y="226" text-anchor="middle" font-size="11" fill="#9097a6" letter-spacing="0.04em">Apr</text><text x="64.0" y="242" text-anchor="middle" font-size="10" fill="#b9c0cf" letter-spacing="0.06em">2025</text><text x="426.0" y="242" text-anchor="middle" font-size="10" fill="#b9c0cf" letter-spacing="0.06em">2026</text><path d="M64.0 146.7 L184.7 133.6 L305.3 132.1 L426.0 129.6 L546.7 126.1 L667.3 116.5 L788.0 48.1 L 788.0 204.0 L 64.0 204.0 Z" fill="#e4f3ff" opacity="0.6"/><path d="M64.0 146.7 L184.7 133.6 L305.3 132.1 L426.0 129.6 L546.7 126.1 L667.3 116.5 L788.0 48.1" fill="none" stroke="#0C3387" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"/><circle cx="64.0" cy="146.7" r="3" fill="#0C3387"/><circle cx="184.7" cy="133.6" r="3" fill="#0C3387"/><circle cx="305.3" cy="132.1" r="3" fill="#0C3387"/><circle cx="426.0" cy="129.6" r="3" fill="#0C3387"/><circle cx="546.7" cy="126.1" r="3" fill="#0C3387"/><circle cx="667.3" cy="116.5" r="3" fill="#0C3387"/><circle cx="788.0" cy="48.1" r="3" fill="#0C3387"/><text x="72.0" y="138.7" font-size="11" font-weight="600" fill="#151516">3,614</text><text x="780.0" y="36.1" text-anchor="end" font-size="11.5" font-weight="700" fill="#0C3387">3,810</text><text x="780.0" y="22.1" text-anchor="end" font-size="10" fill="#5a6070" letter-spacing="0.04em">+203 net</text></svg></div>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <h3 class="chart-h3">Monthly performance detail</h3>
+        <span class="chart-meta">seven monthly readings, status badges against Lift Stage targets</span>
+      </div>
+      <p class="chart-sub">Each row is one month. Badge counts show how many of eight evaluated metrics finished in each status. The lift in <strong>EXCEEDING</strong> badges through the window is the principal trajectory signal.</p>
+      <div class="badge-legend" aria-label="Status badge key">
+        <div class="badge-legend-item">
+          <span class="b b-exceed">E</span>
+          <span class="legend-label">Exceeding</span>
+          <span class="legend-def">Above the upper Lift Stage target.</span>
+        </div>
+        <div class="badge-legend-item">
+          <span class="b b-ontrack">T</span>
+          <span class="legend-label">On track</span>
+          <span class="legend-def">Within the Lift Stage target range.</span>
+        </div>
+        <div class="badge-legend-item">
+          <span class="b b-watch">W</span>
+          <span class="legend-label">Watch</span>
+          <span class="legend-def">Below the lower Lift Stage target.</span>
+        </div>
+      </div>
+      <div class="table-frame">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Month</th><th>Score</th><th>Band</th><th>Badges</th>
+              <th class="num">Reels</th><th class="num">Views</th><th class="num">Avg reach/day</th><th class="num">Saves</th><th class="num">Shares</th><th class="num">Followers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="month">Oct 2025</td>
+              <td class="score-cell"><span class="score-num">7.0<span class="score-flag-r">R</span></span></td>
+              <td class="band">Progressing</td>
+              <td class="badges-cell"><span class="b b-watch">8W</span></td>
+              <td class="num">7</td><td class="num">19.2K</td><td class="num">245</td><td class="num">6</td><td class="num">29</td><td class="num">3,614</td>
+            </tr>
+            <tr>
+              <td class="month">Nov 2025</td>
+              <td class="score-cell"><span class="score-num">7.0<span class="score-flag-r">R</span></span></td>
+              <td class="band">Progressing</td>
+              <td class="badges-cell"><span class="b b-watch">8W</span></td>
+              <td class="num">6</td><td class="num">17.0K</td><td class="num">231</td><td class="num">5</td><td class="num">16</td><td class="num">3,640</td>
+            </tr>
+            <tr>
+              <td class="month">Dec 2025</td>
+              <td class="score-cell"><span class="score-num">7.0<span class="score-flag-r">R</span></span></td>
+              <td class="band">Progressing</td>
+              <td class="badges-cell"><span class="b b-watch">8W</span></td>
+              <td class="num">9</td><td class="num">34.4K</td><td class="num">666</td><td class="num">4</td><td class="num">25</td><td class="num">3,643</td>
+            </tr>
+            <tr>
+              <td class="month">Jan 2026</td>
+              <td class="score-cell"><span class="score-num">7.5</span></td>
+              <td class="band">Building</td>
+              <td class="badges-cell"><span class="b b-exceed">1E</span><span class="b b-ontrack">1T</span><span class="b b-watch">6W</span></td>
+              <td class="num">9</td><td class="num">20.8K</td><td class="num">398</td><td class="num">38</td><td class="num">107</td><td class="num">3,648</td>
+            </tr>
+            <tr>
+              <td class="month">Feb 2026</td>
+              <td class="score-cell"><span class="score-num">7.5</span></td>
+              <td class="band">Building</td>
+              <td class="badges-cell"><span class="b b-watch">8W</span></td>
+              <td class="num">6</td><td class="num">15.1K</td><td class="num">291</td><td class="num">4</td><td class="num">31</td><td class="num">3,655</td>
+            </tr>
+            <tr>
+              <td class="month">Mar 2026</td>
+              <td class="score-cell"><span class="score-num">8.2</span></td>
+              <td class="band">Solid</td>
+              <td class="badges-cell"><span class="b b-exceed">1E</span><span class="b b-ontrack">2T</span><span class="b b-watch">5W</span></td>
+              <td class="num">8</td><td class="num">26.7K</td><td class="num">511</td><td class="num">9</td><td class="num">30</td><td class="num">3,674</td>
+            </tr>
+            <tr class="row-preliminary">
+              <td class="month">Apr 2026</td>
+              <td class="score-cell"><span class="score-num">9.0<span class="score-flag">P</span></span></td>
+              <td class="band">Exceptional</td>
+              <td class="badges-cell"><span class="b b-exceed">5E</span><span class="b b-ontrack">2T</span><span class="b b-watch">1W</span></td>
+              <td class="num">8</td><td class="num">780K</td><td class="num">19.4K</td><td class="num">1,447</td><td class="num">22,420</td><td class="num">3,810</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note"><strong>P</strong> indicates a preliminary score. The April 2026 monthly performance report has not yet been formally published to the client. <strong>R</strong> indicates a retroactive score, applied using the published methodology to data that pre-dates the formal monthly reporting cycle. Months without a flag (Jan, Feb, Mar 2026) carry the official score from the live monthly client report.</p>
+    </div>
+
+    <div class="april-callout">
+      <div class="april-callout-eyebrow"><span class="signal-dot"></span>April 2026 · single-reel viral distribution</div>
+      <h3 class="april-callout-h3">A single reel reached <strong>568,330</strong> unique accounts in seven days.</h3>
+      <p class="april-callout-body">A reel published April 7, 2026 generated 22,315 shares, 1,432 saves, and 30,773 likes. Distribution at this scale reflects both the algorithm rewarding the content type (high-shareability rehearsal humor) and the audience density already built into the account. Reels of this scale are by definition rare, but the account's capability to produce one is a real signal for a buyer evaluating future organic distribution potential.</p>
+      <div class="april-stats">
+        <div class="april-stat"><div class="april-stat-num">757K</div><div class="april-stat-label">Views</div></div>
+        <div class="april-stat"><div class="april-stat-num">568K</div><div class="april-stat-label">Reach</div></div>
+        <div class="april-stat"><div class="april-stat-num">31K</div><div class="april-stat-label">Likes</div></div>
+        <div class="april-stat"><div class="april-stat-num">22K</div><div class="april-stat-label">Shares</div></div>
+        <div class="april-stat"><div class="april-stat-num">1.4K</div><div class="april-stat-label">Saves</div></div>
+        <div class="april-stat"><div class="april-stat-num">255</div><div class="april-stat-label">Comments</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ENGAGEMENT QUALITY -->
+  <section class="section" id="section-4">
+    <div class="section-head">
+      <div class="section-marker">
+        <span class="section-num">04</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Engagement quality</span>
+      </div>
+      <h2 class="section-h2 section-h2-light">Quality is measured by <strong>saves and shares</strong>, not raw likes. Both signal audience intent and both are weighted heavily by the 2025 Instagram algorithm.</h2>
+      <p class="section-sub">The chart below aggregates these two metrics by quarter across all available reel-level data.</p>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <h3 class="chart-h3">Quarterly saves and shares</h3>
+        <span class="chart-meta">reel-level data, Q2 2024 to Q2 2026</span>
+      </div>
+      <p class="chart-sub">Reel-level data is available back to Q2 2024 because Instagram retains reel insights at the platform level. Q2 2026 contains the April viral moment and is preserved at scale rather than truncated.</p>
+      <div class="chart-frame"><svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Quarterly saves and shares" style="width:100%;height:auto;display:block;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums"><line x1="64" y1="204.0" x2="788" y2="204.0" stroke="rgba(12,51,135,0.40)" stroke-width="1"/><text x="52" y="208.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">0</text><line x1="64" y1="159.8" x2="788" y2="159.8" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="163.8" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">6.7K</text><line x1="64" y1="115.7" x2="788" y2="115.7" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="119.7" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">13.4K</text><line x1="64" y1="72.2" x2="788" y2="72.2" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="76.2" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">20.0K</text><line x1="64" y1="28.0" x2="788" y2="28.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="52" y="32.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">26.7K</text><rect x="79.3" y="203.2" width="49.9" height="0.8" fill="#0C3387"/><rect x="79.3" y="203.1" width="49.9" height="0.1" fill="#9ecee8"/><text x="104.2" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">24 Q2</text><rect x="159.7" y="202.4" width="49.9" height="1.6" fill="#0C3387"/><rect x="159.7" y="202.2" width="49.9" height="0.2" fill="#9ecee8"/><text x="184.7" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">24 Q3</text><rect x="240.2" y="202.7" width="49.9" height="1.3" fill="#0C3387"/><rect x="240.2" y="202.4" width="49.9" height="0.3" fill="#9ecee8"/><text x="265.1" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">24 Q4</text><rect x="320.6" y="201.9" width="49.9" height="2.1" fill="#0C3387"/><rect x="320.6" y="201.5" width="49.9" height="0.4" fill="#9ecee8"/><text x="345.6" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">25 Q1</text><rect x="401.1" y="200.8" width="49.9" height="3.2" fill="#0C3387"/><rect x="401.1" y="200.3" width="49.9" height="0.6" fill="#9ecee8"/><text x="426.0" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">25 Q2</text><rect x="481.5" y="199.5" width="49.9" height="4.5" fill="#0C3387"/><rect x="481.5" y="198.8" width="49.9" height="0.7" fill="#9ecee8"/><text x="506.4" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">25 Q3</text><rect x="562.0" y="198.2" width="49.9" height="5.8" fill="#0C3387"/><rect x="562.0" y="197.1" width="49.9" height="1.1" fill="#9ecee8"/><text x="586.9" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">25 Q4</text><rect x="642.4" y="197.5" width="49.9" height="6.5" fill="#0C3387"/><rect x="642.4" y="196.4" width="49.9" height="1.2" fill="#9ecee8"/><text x="667.3" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">26 Q1</text><rect x="722.8" y="55.7" width="49.9" height="148.3" fill="#0C3387"/><rect x="722.8" y="45.8" width="49.9" height="9.9" fill="#9ecee8"/><text x="747.8" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.06em">26 Q2</text><text x="747.8" y="35.8" text-anchor="middle" font-size="11" font-weight="700" fill="#151516">24.0K</text><text x="747.8" y="21.8" text-anchor="middle" font-size="9.5" fill="#5a6070" letter-spacing="0.06em">APRIL VIRAL</text><rect x="64" y="23.0" width="10" height="10" fill="#0C3387"/><text x="80.0" y="32" font-size="10.5" fill="#5a6070" letter-spacing="0.04em">Shares</text><rect x="142.0" y="23.0" width="10" height="10" fill="#9ecee8"/><text x="158.0" y="32" font-size="10.5" fill="#5a6070" letter-spacing="0.04em">Saves</text></svg></div>
+    </div>
+
+    <div class="readout">
+      <p>Setting aside the April 2026 outlier, baseline engagement quality has compounded gradually across the trailing 24-month window. The seven-month measurement window aggregates approximately <strong>1.5K saves</strong> and <strong>22.7K shares</strong>, an aggregate engagement rate of <strong>8.9%</strong>. For reference, 2025 service-business Instagram benchmarks place average engagement rate at 0.45% to 0.61% (SocialInsider) and 3% to 5% for fitness and wellness verticals specifically.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 5: AUDIENCE -->
+  <section class="section" id="section-5">
+    <div class="section-head">
+      <div class="section-marker">
+        <span class="section-num">05</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Audience composition</span>
+      </div>
+      <h2 class="section-h2 section-h2-light">Current audience snapshot from Instagram demographic insights.</h2>
+      <p class="section-sub">Demographics are reported as a current snapshot only. Historical month-by-month audience composition is not retained at the platform level by Instagram or by third-party tools.</p>
+    </div>
+
+    <div class="audience-grid">
+      <div class="audience-cell">
+        <h3 class="audience-h3">Age distribution</h3>
+        <div class="bar-row"><div class="bar-label">13-17</div><div class="bar-track"><div class="bar-fill" style="width:0.9%"></div></div><div class="bar-pct">0.4%</div></div>
+        <div class="bar-row"><div class="bar-label">18-24</div><div class="bar-track"><div class="bar-fill" style="width:7.7%"></div></div><div class="bar-pct">3.5%</div></div>
+        <div class="bar-row"><div class="bar-label">25-34</div><div class="bar-track"><div class="bar-fill" style="width:73.7%"></div></div><div class="bar-pct">33.5%</div></div>
+        <div class="bar-row"><div class="bar-label">35-44</div><div class="bar-track"><div class="bar-fill" style="width:93.9%"></div></div><div class="bar-pct">42.7%</div></div>
+        <div class="bar-row"><div class="bar-label">45-54</div><div class="bar-track"><div class="bar-fill" style="width:27.5%"></div></div><div class="bar-pct">12.5%</div></div>
+        <div class="bar-row"><div class="bar-label">55-64</div><div class="bar-track"><div class="bar-fill" style="width:11.7%"></div></div><div class="bar-pct">5.3%</div></div>
+        <div class="bar-row"><div class="bar-label">65+</div><div class="bar-track"><div class="bar-fill" style="width:4.6%"></div></div><div class="bar-pct">2.1%</div></div>
+        <p class="audience-note">Concentrated in the <strong>25 to 44 bracket (77%)</strong>, the demographic most likely to maintain consistent fitness studio memberships and pay for premium group fitness.</p>
+      </div>
+
+      <div class="audience-cell">
+        <h3 class="audience-h3">Gender composition</h3>
+        <div class="gender-row">
+          <div class="gender-cell"><div class="gender-num">76%</div><div class="gender-label">Female</div></div>
+          <div class="gender-cell"><div class="gender-num">8%</div><div class="gender-label">Male</div></div>
+          <div class="gender-cell"><div class="gender-num">16%</div><div class="gender-label">Unspecified</div></div>
+        </div>
+        <p class="audience-note">Predominantly female audience aligns with the studio's product positioning around high-energy, low-impact group fitness with barre, cycling, and method classes.</p>
+      </div>
+
+      <div class="audience-cell">
+        <h3 class="audience-h3">Top countries</h3>
+        <table class="demo-mini-table">
+          <thead><tr><th>Country</th><th class="num">Followers</th><th class="num">Share</th></tr></thead>
+          <tbody>
+            <tr><td>US</td><td class="num">3,504</td><td class="num">95.7%</td></tr>
+            <tr><td>GB</td><td class="num">20</td><td class="num">0.5%</td></tr>
+            <tr><td>IN</td><td class="num">13</td><td class="num">0.4%</td></tr>
+            <tr><td>AU</td><td class="num">12</td><td class="num">0.3%</td></tr>
+            <tr><td>CA</td><td class="num">9</td><td class="num">0.2%</td></tr>
+          </tbody>
+        </table>
+        <p class="audience-note">United States dominates. International tail is small and unsegmented for a single-location fitness studio.</p>
+      </div>
+
+      <div class="audience-cell">
+        <h3 class="audience-h3">Top cities</h3>
+        <table class="demo-mini-table">
+          <thead><tr><th>City</th><th class="num">Followers</th><th class="num">Share</th></tr></thead>
+          <tbody>
+            <tr><td>Cincinnati, Ohio</td><td class="num">1,119</td><td class="num">46.2%</td></tr>
+            <tr><td>Norwood, Ohio</td><td class="num">84</td><td class="num">3.5%</td></tr>
+            <tr><td>Turpin Hills, Ohio</td><td class="num">73</td><td class="num">3.0%</td></tr>
+            <tr><td>Covington, Kentucky</td><td class="num">62</td><td class="num">2.6%</td></tr>
+            <tr><td>Sycamore, Ohio</td><td class="num">60</td><td class="num">2.5%</td></tr>
+            <tr><td>Montgomery, Ohio</td><td class="num">59</td><td class="num">2.4%</td></tr>
+            <tr><td>Indian Hill, Ohio</td><td class="num">57</td><td class="num">2.4%</td></tr>
+            <tr><td>Loveland, Ohio</td><td class="num">52</td><td class="num">2.1%</td></tr>
+          </tbody>
+        </table>
+        <p class="audience-note">Geographic concentration in greater Cincinnati is a feature for a single-location fitness studio. Hyperlocal density indicates content reaches the population most likely to convert to memberships.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CONTENT OUTPUT -->
+  <section class="section" id="section-6">
+    <div class="section-head">
+      <div class="section-marker">
+        <span class="section-num">06</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Content output and consistency</span>
+      </div>
+      <h2 class="section-h2 section-h2-light">Operational rigor measured by <strong>output cadence</strong> and <strong>variance</strong>. A managed account is one where the publishing rhythm is predictable.</h2>
+      <p class="section-sub">Reel-level data is available back to May 2024 (24 months) due to Instagram's lifetime retention of reel insights.</p>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <h3 class="chart-h3">Reels published per month, May 2024 to April 2026</h3>
+        <span class="chart-meta">24 months · 188 reels total</span>
+      </div>
+      <p class="chart-sub">Mean output is <strong>8.8 long-form pieces per month</strong> with a standard deviation of <strong>1.1</strong> (12% coefficient of variation). Tightly controlled output cadence by any operational standard.</p>
+      <div class="chart-frame"><svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Reels published per month" style="width:100%;height:auto;display:block;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums"><line x1="56" y1="204.0" x2="896" y2="204.0" stroke="rgba(12,51,135,0.40)" stroke-width="1"/><text x="46" y="208.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">0</text><line x1="56" y1="170.4" x2="896" y2="170.4" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="174.4" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">2</text><line x1="56" y1="120.0" x2="896" y2="120.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="124.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">5</text><line x1="56" y1="86.4" x2="896" y2="86.4" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="90.4" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">7</text><line x1="56" y1="36.0" x2="896" y2="36.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="40.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">10</text><line x1="56" y1="56.2" x2="896" y2="56.2" stroke="rgba(12,51,135,0.32)" stroke-width="1" stroke-dasharray="3 3"/><text x="896" y="50.2" text-anchor="end" font-size="10" fill="#0C3387" letter-spacing="0.06em" font-weight="600">MEAN 8.8</text><rect x="62.6" y="103.2" width="21.7" height="100.8" fill="#0C3387"/><text x="73.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">24/05</text><rect x="97.7" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><rect x="132.7" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><rect x="167.7" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><text x="178.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">24/08</text><rect x="202.7" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><rect x="237.7" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><rect x="272.6" y="103.2" width="21.7" height="100.8" fill="#0C3387"/><text x="283.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">24/11</text><rect x="307.6" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><rect x="342.6" y="103.2" width="21.7" height="100.8" fill="#0C3387"/><rect x="377.6" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><text x="388.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/02</text><rect x="412.6" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><rect x="447.6" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><rect x="482.6" y="86.4" width="21.7" height="117.6" fill="#0C3387"/><text x="493.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/05</text><rect x="517.6" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><rect x="552.6" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><rect x="587.6" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><text x="598.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/08</text><rect x="622.6" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><rect x="657.6" y="86.4" width="21.7" height="117.6" fill="#0C3387"/><rect x="692.6" y="103.2" width="21.7" height="100.8" fill="#0C3387"/><text x="703.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/11</text><rect x="727.6" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><rect x="762.6" y="52.8" width="21.7" height="151.2" fill="#0C3387"/><rect x="797.6" y="103.2" width="21.7" height="100.8" fill="#0C3387"/><text x="808.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">26/02</text><rect x="832.6" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><rect x="867.6" y="69.6" width="21.7" height="134.4" fill="#0C3387"/><text x="878.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">26/04</text></svg></div>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <h3 class="chart-h3">Total monthly reach, May 2024 to April 2026</h3>
+        <span class="chart-meta">Meta direct, daily account reach aggregated monthly</span>
+      </div>
+      <p class="chart-sub">Daily account reach pulled directly from Meta. The account became eligible for Insights data on April 30, 2024 (Business profile activation, standard onboarding). Monthly reach held a 15K to 35K baseline across 23 of 24 months. April 2026 reached 591,776 unique accounts, the single-reel viral moment.</p>
+      <div class="chart-frame"><svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Total monthly reach" style="width:100%;height:auto;display:block;font-family:'Source Sans 3',sans-serif;font-variant-numeric:tabular-nums"><line x1="56" y1="204" x2="896" y2="204" stroke="rgba(12,51,135,0.40)" stroke-width="1"/><text x="46" y="208" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">0</text><line x1="56" y1="162.0" x2="896" y2="162.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="166.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">150K</text><line x1="56" y1="120.0" x2="896" y2="120.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="124.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">300K</text><line x1="56" y1="78.0" x2="896" y2="78.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="82.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">450K</text><line x1="56" y1="36.0" x2="896" y2="36.0" stroke="rgba(12,51,135,0.10)" stroke-width="1"/><text x="46" y="40.0" text-anchor="end" font-size="11" fill="#9097a6" letter-spacing="0.04em">600K</text><rect x="62.6" y="196.9" width="21.7" height="7.1" fill="#0C3387"/><text x="73.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">24/05</text><rect x="97.7" y="196.7" width="21.7" height="7.3" fill="#0C3387"/><rect x="132.7" y="195.5" width="21.7" height="8.5" fill="#0C3387"/><rect x="167.7" y="194.1" width="21.7" height="9.9" fill="#0C3387"/><text x="178.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">24/08</text><rect x="202.7" y="194.5" width="21.7" height="9.5" fill="#0C3387"/><rect x="237.7" y="199.6" width="21.7" height="4.4" fill="#0C3387"/><rect x="272.6" y="196.0" width="21.7" height="8.0" fill="#0C3387"/><text x="283.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">24/11</text><rect x="307.6" y="198.0" width="21.7" height="6.0" fill="#0C3387"/><rect x="342.6" y="194.3" width="21.7" height="9.7" fill="#0C3387"/><rect x="377.6" y="199.1" width="21.7" height="4.9" fill="#0C3387"/><text x="388.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/02</text><rect x="412.6" y="197.3" width="21.7" height="6.7" fill="#0C3387"/><rect x="447.6" y="196.2" width="21.7" height="7.8" fill="#0C3387"/><rect x="482.6" y="198.0" width="21.7" height="6.0" fill="#0C3387"/><text x="493.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/05</text><rect x="517.6" y="198.1" width="21.7" height="5.9" fill="#0C3387"/><rect x="552.6" y="199.1" width="21.7" height="4.9" fill="#0C3387"/><rect x="587.6" y="199.7" width="21.7" height="4.3" fill="#0C3387"/><text x="598.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/08</text><rect x="622.6" y="199.4" width="21.7" height="4.6" fill="#0C3387"/><rect x="657.6" y="200.5" width="21.7" height="3.5" fill="#0C3387"/><rect x="692.6" y="200.4" width="21.7" height="3.6" fill="#0C3387"/><text x="703.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">25/11</text><rect x="727.6" y="196.2" width="21.7" height="7.8" fill="#0C3387"/><rect x="762.6" y="199.3" width="21.7" height="4.7" fill="#0C3387"/><rect x="797.6" y="200.0" width="21.7" height="4.0" fill="#0C3387"/><text x="808.5" y="226" text-anchor="middle" font-size="10" fill="#9097a6" letter-spacing="0.04em">26/02</text><rect x="832.6" y="197.7" width="21.7" height="6.3" fill="#0C3387"/><rect x="867.6" y="38.3" width="21.7" height="165.7" fill="#0C3387"/><text x="889.4" y="28.3" text-anchor="end" font-size="11" font-weight="700" fill="#151516" letter-spacing="0.02em">592K</text></svg></div>
+    </div>
+
+    <div class="chart-block">
+      <div class="chart-header">
+        <h3 class="chart-h3">Monthly output ledger</h3>
+        <span class="chart-meta">every month with documented activity since May 2024</span>
+      </div>
+      <p class="chart-sub">Cells marked n/a indicate no data captured for that surface in that month at platform retention. This reflects platform retention behavior, not an output gap.</p>
+      <div class="table-frame">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Month</th><th class="num">Reels</th><th class="num">Posts</th><th class="num">Stories</th>
+              <th class="num">Reach</th><th class="num">Views</th><th class="num">Engagement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="month">2024-05</td><td class="num">6</td><td class="num">0</td><td class="num">n/a</td><td class="num">9.4K</td><td class="num">0</td><td class="num">483</td></tr>
+            <tr><td class="month">2024-06</td><td class="num">8</td><td class="num">0</td><td class="num">n/a</td><td class="num">12.2K</td><td class="num">0</td><td class="num">542</td></tr>
+            <tr><td class="month">2024-07</td><td class="num">8</td><td class="num">0</td><td class="num">n/a</td><td class="num">9.9K</td><td class="num">18.2K</td><td class="num">528</td></tr>
+            <tr><td class="month">2024-08</td><td class="num">9</td><td class="num">0</td><td class="num">n/a</td><td class="num">12.3K</td><td class="num">22.7K</td><td class="num">561</td></tr>
+            <tr><td class="month">2024-09</td><td class="num">8</td><td class="num">0</td><td class="num">n/a</td><td class="num">11.0K</td><td class="num">19.2K</td><td class="num">503</td></tr>
+            <tr><td class="month">2024-10</td><td class="num">9</td><td class="num">0</td><td class="num">n/a</td><td class="num">10.0K</td><td class="num">18.1K</td><td class="num">530</td></tr>
+            <tr><td class="month">2024-11</td><td class="num">6</td><td class="num">1</td><td class="num">n/a</td><td class="num">8.6K</td><td class="num">14.1K</td><td class="num">455</td></tr>
+            <tr><td class="month">2024-12</td><td class="num">8</td><td class="num">2</td><td class="num">n/a</td><td class="num">12.0K</td><td class="num">19.2K</td><td class="num">655</td></tr>
+            <tr><td class="month">2025-01</td><td class="num">6</td><td class="num">3</td><td class="num">n/a</td><td class="num">19.5K</td><td class="num">29.7K</td><td class="num">900</td></tr>
+            <tr><td class="month">2025-02</td><td class="num">8</td><td class="num">0</td><td class="num">n/a</td><td class="num">14.0K</td><td class="num">24.2K</td><td class="num">512</td></tr>
+            <tr><td class="month">2025-03</td><td class="num">8</td><td class="num">1</td><td class="num">n/a</td><td class="num">12.4K</td><td class="num">22.1K</td><td class="num">476</td></tr>
+            <tr><td class="month">2025-04</td><td class="num">9</td><td class="num">2</td><td class="num">n/a</td><td class="num">12.4K</td><td class="num">23.8K</td><td class="num">591</td></tr>
+            <tr><td class="month">2025-05</td><td class="num">7</td><td class="num">2</td><td class="num">n/a</td><td class="num">9.4K</td><td class="num">18.6K</td><td class="num">600</td></tr>
+            <tr><td class="month">2025-06</td><td class="num">9</td><td class="num">1</td><td class="num">n/a</td><td class="num">18.4K</td><td class="num">32.4K</td><td class="num">688</td></tr>
+            <tr><td class="month">2025-07</td><td class="num">9</td><td class="num">1</td><td class="num">n/a</td><td class="num">11.1K</td><td class="num">20.3K</td><td class="num">486</td></tr>
+            <tr><td class="month">2025-08</td><td class="num">8</td><td class="num">0</td><td class="num">n/a</td><td class="num">10.6K</td><td class="num">17.7K</td><td class="num">478</td></tr>
+            <tr><td class="month">2025-09</td><td class="num">9</td><td class="num">1</td><td class="num">4</td><td class="num">10.8K</td><td class="num">22.4K</td><td class="num">462</td></tr>
+            <tr><td class="month">2025-10</td><td class="num">7</td><td class="num">2</td><td class="num">118</td><td class="num">7.6K</td><td class="num">19.2K</td><td class="num">331</td></tr>
+            <tr><td class="month">2025-11</td><td class="num">6</td><td class="num">2</td><td class="num">105</td><td class="num">6.9K</td><td class="num">17.0K</td><td class="num">465</td></tr>
+            <tr><td class="month">2025-12</td><td class="num">9</td><td class="num">0</td><td class="num">160</td><td class="num">20.7K</td><td class="num">34.4K</td><td class="num">618</td></tr>
+            <tr><td class="month">2026-01</td><td class="num">9</td><td class="num">0</td><td class="num">92</td><td class="num">12.3K</td><td class="num">20.8K</td><td class="num">530</td></tr>
+            <tr><td class="month">2026-02</td><td class="num">6</td><td class="num">2</td><td class="num">126</td><td class="num">8.2K</td><td class="num">15.1K</td><td class="num">316</td></tr>
+            <tr><td class="month">2026-03</td><td class="num">8</td><td class="num">1</td><td class="num">109</td><td class="num">15.8K</td><td class="num">26.7K</td><td class="num">585</td></tr>
+            <tr class="row-preliminary"><td class="month">2026-04</td><td class="num">8</td><td class="num">1</td><td class="num">115</td><td class="num">583K</td><td class="num">780K</td><td class="num">55,497</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: TOP CONTENT -->
+  <section class="section" id="section-7">
+    <div class="section-head">
+      <div class="section-marker">
+        <span class="section-num">07</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Top-performing content</span>
+      </div>
+      <h2 class="section-h2 section-h2-light">The five highest-performing pieces of content in each year of the data window.</h2>
+      <p class="section-sub">Ranked by a composite engagement score weighted toward saves, shares, and comments. Each entry links to the live Instagram post.</p>
+    </div>
+
+    <div class="year-block">
+      <div class="year-h3"><span>2026 year to date</span><span class="year-meta">35 reels and posts published, Jan 1 to Apr 30</span></div>
+
+      <article class="post-card">
+        <div class="post-rank">01</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2026-04-07</span>
+            <a href="https://www.instagram.com/reel/DW1Suw4DbnG/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Can you spot the difference (impossible edition)? 🎶  Oh wait… there is none. Who needs a sound system when we’ve got live performances every...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>757K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>568K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>30,773</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>1,432</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>22,315</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>255</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">02</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2026-01-20</span>
+            <a href="https://www.instagram.com/reel/DTvLsB9jSOg/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Everyone needs a rest day… especially after snow days and the whirlwind of New Year’s resolutions! ❄️  We definitely miss you when you take ...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>8.1K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>4.9K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>105</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>33</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>89</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>5</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">03</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2026-04-16</span>
+            <a href="https://www.instagram.com/reel/DXMfCEcNFmF/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Nothing to see here, just a perfectly timed beat drop rehearsal before class.  Because you thought the playlist just happened? No no, this i...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>4.2K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>3.2K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>156</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>6</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>56</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>10</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">04</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2026-04-21</span>
+            <a href="https://www.instagram.com/reel/DXZVTnlN8cD/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">When your instructor asks, “How we feeling!” there is only one correct answer… WOOO! It’s part of the workout.  So next class, don’t hold ba...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>4.5K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>3.1K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>101</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>5</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>27</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>9</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">05</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2026-03-05</span>
+            <a href="https://www.instagram.com/reel/DVgdzqnDURd/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">This one’s for the morning crew, a little crazy but always motivated. 🤪  Fun fact: We offer a 6:00am class Monday–Friday. Whether it’s Rev, ...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>5.7K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>3.3K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>95</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>3</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>6</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>20</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+
+    <div class="year-block">
+      <div class="year-h3"><span>2025</span><span class="year-meta">110 reels and posts published</span></div>
+
+      <article class="post-card">
+        <div class="post-rank">01</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Carousel</span>
+            <span class="post-date">2025-01-21</span>
+            <a href="https://www.instagram.com/p/DFFziUcOD3y/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">JUMPSTART JANUARY: Giveaway #3!   We hope it’s obvious how much we encourage and prioritize self care - and sometimes that looks like treati...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>8.1K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>6.0K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>92</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>5</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>50</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>114</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">02</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Carousel</span>
+            <span class="post-date">2025-05-11</span>
+            <a href="https://www.instagram.com/p/DJg6BteO1YJ/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Strong, resilient, unstoppable — just like mom. 🩵  Celebrating all the moms who show up, push through, and inspire us everyday. Here’s to AL...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>4.0K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>1.7K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>215</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>0</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>4</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>9</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">03</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Carousel</span>
+            <span class="post-date">2025-06-13</span>
+            <a href="https://www.instagram.com/p/DK15FLxOxZ-/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">We had sooo much fun with @valleycreativeco on picture day and can we just say we. are. OBSESSED!! 🩵🤩  More pics to come, but here’s your sn...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>6.8K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>2.8K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>184</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>1</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>6</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>7</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">04</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Post</span>
+            <span class="post-date">2025-01-26</span>
+            <a href="https://www.instagram.com/p/DFSyvaYOZRm/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Beyondddd grateful for this community committed to changing lives through wellbeing and fitness. There is no other team in the world I’d do ...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>7.5K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>4.8K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>141</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>4</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>15</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>4</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">05</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2025-08-26</span>
+            <a href="https://www.instagram.com/reel/DN0iYeFWhZX/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Lol buuut seriously — thank you all ALWAYS for the reviews. As a small business, its helps promote our studio and means SO much to us. 💙  We...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>2.7K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>1.8K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>119</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>6</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>7</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>19</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+
+    <div class="year-block">
+      <div class="year-h3"><span>2024</span><span class="year-meta">65 reels and posts published, May to December</span></div>
+
+      <article class="post-card">
+        <div class="post-rank">01</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2024-05-20</span>
+            <a href="https://www.instagram.com/reel/C7MemWruqHE/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Emojis that describe the @thebeautyboostcincy Fitness Sampler energy: 🔥😤♥️🥵✨🤩🤌🏽  We lovedddd getting out there and showing Cincy what we do ...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>0</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>3.1K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>156</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>1</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>5</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>16</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">02</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2024-09-05</span>
+            <a href="https://www.instagram.com/reel/C_iTddQu_Ye/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Let’s start a movement in the comments. 💙  Tag someone you’re proud of and remind them they didn’t come this far to only come this far. If w...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>2.3K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>1.4K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>40</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>4</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>8</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>41</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">03</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2024-10-24</span>
+            <a href="https://www.instagram.com/reel/DBgoh7BuSBi/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Something VERY frightening is coming...🎃 👻 🕸️ 🕷️ 🧛‍♂️  Check your emails for early access and back here this coming Monday 10.28...BEWARE!!!...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>2.3K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>1.0K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>101</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>2</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>10</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>10</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">04</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2024-12-24</span>
+            <a href="https://www.instagram.com/reel/DD9t7uCOYe0/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Happiest of Holidays to our DEFINE family. You all are what bring the true magic of the holiday season. 💙✨  #happyholidays #fitnessfamily</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>2.7K</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>1.7K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>119</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>2</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>1</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>12</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-rank">05</div>
+        <div class="post-body">
+          <div class="post-meta-line">
+            <span class="post-type">Reel</span>
+            <span class="post-date">2024-06-27</span>
+            <a href="https://www.instagram.com/reel/C8uKWEIuaEN/" class="post-link" target="_blank" rel="noopener">View on Instagram</a>
+          </div>
+          <p class="post-excerpt">Buuut really. 😂   We all know Eli is our top greeter at DEFINE. If you haven’t been into the studio yet, swing by, meet the team, and let’s ...</p>
+          <dl class="post-stats">
+            <div class="post-stat"><dt>Views</dt><dd>0</dd></div>
+            <div class="post-stat"><dt>Reach</dt><dd>1.5K</dd></div>
+            <div class="post-stat"><dt>Likes</dt><dd>104</dd></div>
+            <div class="post-stat"><dt>Saves</dt><dd>0</dd></div>
+            <div class="post-stat"><dt>Shares</dt><dd>10</dd></div>
+            <div class="post-stat"><dt>Comments</dt><dd>10</dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION 8: METHODOLOGY DISCLOSURE -->
+  <section class="section" id="section-8">
+    <div class="section-head">
+      <div class="section-marker">
+        <span class="section-num">08</span>
+        <span class="section-num-rule"></span>
+        <span class="section-kicker">Methodology and data scope</span>
+      </div>
+      <h2 class="section-h2 section-h2-light">Full disclosure of <strong>data sources</strong>, retention boundaries, scoring methodology, and known limitations.</h2>
+      <p class="section-sub">This section is the basis for any independent verification of the report.</p>
+    </div>
+
+    <div class="disclosure">
+      <div class="disclosure-grid">
+        <h3 class="disclosure-h3">Data sources</h3>
+        <div class="disclosure-body">
+          <p>This report draws from two independent data sources. Meta direct (via Meta Business Suite) is the primary source for daily account-level metrics: reach, profile visits, link clicks, and content interactions. Metricool, a third-party social analytics platform pulling from the official Instagram Graph API, is the primary source for per-content lifetime data (reels, posts, stories) and daily follower count. Secondary references: Instagram-published 2025 industry benchmarks for service-business engagement rates (SocialInsider, Dash Social) for context where labeled.</p>
+          <p><span class="lead-in">Cross-validation:</span> Meta and Metricool reach for the seven-month overlap period (October 2025 to April 2026) match within 6.7%, within standard third-party platform tolerance. The agreement between two independent sources is the data integrity check on every figure in this report.</p>
+          <div class="disclosure-table">
+            <div class="disclosure-row"><strong>Daily account-level metrics (Meta direct)</strong><span>April 30, 2024 to April 30, 2026 (24 months, 731 days with data)</span></div>
+            <div class="disclosure-row"><strong>Detailed measurement window (Metricool)</strong><span>October 1, 2025 to April 30, 2026 (213 days)</span></div>
+            <div class="disclosure-row"><strong>Reel-level data range</strong><span>May 14, 2024 to April 30, 2026 (24 months, 188 reels)</span></div>
+            <div class="disclosure-row"><strong>Post-level data range</strong><span>November 19, 2024 to April 30, 2026 (18 months, 22 posts; backfill is partial prior to platform connection)</span></div>
+            <div class="disclosure-row"><strong>Story-level data range</strong><span>September 30, 2025 to April 30, 2026 (7 months, 829 stories)</span></div>
+            <div class="disclosure-row"><strong>Audience demographics</strong><span>Current snapshot only (April 2026). Historical demographic composition is not retained at the platform level.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <div class="disclosure-grid">
+        <h3 class="disclosure-h3">Why the data layers differ in granularity</h3>
+        <div class="disclosure-body">
+          <p>Three layers of data feed this report and each has its own retention boundary. Meta retains daily account-level metrics (reach, profile visits, link clicks) from the date the account became a Business profile, April 30, 2024 in DEFINE Oakley's case. That gives 24 months of authoritative daily-granularity Meta-direct data and forms the spine of the multi-year reach trajectory in Section 6. Metricool, the third-party tool, captures everything Meta provides plus per-content lifetime metrics and daily follower count, but only from the date the brand was added to Metricool, October 1, 2025. That gives a deeper seven-month window for content-level analysis. Instagram itself retains reel-level insights for the lifetime of each reel, which is why reel data extends back to May 2024 across both sources.</p>
+          <p>The account has been under continuous Scroll Media management since February 5, 2024, a 27-month track record at the time of this report. The first three months of the engagement (February to April 2024) precede the Business profile activation; performance data from that onboarding window is not retained at the platform level by design.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <div class="disclosure-grid">
+        <h3 class="disclosure-h3">Scoring methodology</h3>
+        <div class="disclosure-body">
+          <p>Each month receives a composite score on the 6.0 to 10.0 scale. The score reflects performance against Lift Stage targets across eight evaluated metrics. Metrics are organized in three weighted bands: quality and conversion signals (saves, shares, retention rate, click-through rate, profile conversion rate) carry the highest weight, volume and distribution signals (reach, follower change, views, profile visits, link taps) carry standard weight, and context signals (comments, average watch time) carry lower weight.</p>
+          <p>The specific weighting coefficients used to combine these statuses into the final score are proprietary to the methodology. The output of the framework, the numeric score and the badge counts, is presented in full and is auditable against the underlying data. Existing scores for January, February, and March 2026 (7.5, 7.5, 8.2) were issued in the live monthly client reporting cycle and are reproduced unchanged. Scores for October, November, and December 2025 are retroactive applications using the same framework. The April 2026 score is preliminary.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <div class="disclosure-grid">
+        <h3 class="disclosure-h3">Known limitations</h3>
+        <div class="disclosure-body">
+          <p>Conversion-stage metrics (click-through rate from profile, profile visits, link taps, profile conversion rate) are not included in the trajectory charts because they were not captured by the third-party platform prior to October 2025 and are not retained historically by Instagram. The seven-month detailed window does include these metrics in the live monthly reporting cycle and they are available on request.</p>
+          <p>Reach values reported at the daily and monthly aggregate level reflect the sum of reach attributed to content published in the period, not unique-account reach across the account. Where the report distinguishes, it does so explicitly.</p>
+          <p>Saves and shares figures rely on Metricool's pull from the Instagram Graph API. Minor lag and discrepancy versus native Instagram Insights is normal at the daily level. Aggregate weekly and monthly figures match within typical industry tolerance, under 2%.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclosure">
+      <div class="disclosure-grid">
+        <h3 class="disclosure-h3">Independent verification</h3>
+        <div class="disclosure-body">
+          <p>The raw daily-granularity data underlying this report is provided alongside it in two files. <strong>define_oakley_daily_meta.csv</strong> contains 731 days of Meta-direct daily metrics from April 30, 2024 to April 30, 2026. <strong>define_oakley_daily.csv</strong> contains 213 days of Metricool detailed metrics for the seven-month measurement window (October 2025 to April 2026). Any figure presented in this document can be independently verified by aggregating either file. The post-level lifetime data (188 reels, 22 posts) is provided in <strong>monthly_aggregates.json</strong>. Top content URLs in Section 7 have been independently verified against the live @defineoakley account; the audit record is in <strong>handoff/05_url_verification.json</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="report-footer">
+    <div class="report-footer-left">
+      <strong>DEFINE Oakley</strong>
+      <span class="sep">/</span>
+      <span>Instagram performance overview</span>
+    </div>
+    <div class="report-footer-right">
+      <span>Prepared by Scroll Media</span>
+      <span class="sep">/</span>
+      <span>May 2026</span>
+      <span class="sep">/</span>
+      <strong>Confidential</strong>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function() {
+  var links = document.querySelectorAll('.section-nav-link');
+  var byId = {};
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    byId[id] = a;
+  });
+  var sections = document.querySelectorAll('.section[id^="section-"]');
+  if (!('IntersectionObserver' in window) || !sections.length) return;
+
+  var visible = new Map();
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) visible.set(e.target.id, e.intersectionRatio);
+      else visible.delete(e.target.id);
+    });
+    var topId = null, topRatio = -1;
+    visible.forEach(function(r, id) { if (r > topRatio) { topRatio = r; topId = id; } });
+    if (!topId) return;
+    links.forEach(function(a) { a.classList.remove('is-active'); });
+    if (byId[topId]) byId[topId].classList.add('is-active');
+  }, { rootMargin: '-80px 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+  sections.forEach(function(s) { io.observe(s); });
+})();
+</script>
+
+</body>
+</html>

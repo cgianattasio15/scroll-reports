@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /defineoakley/diligence/
+
+# Confidential client diligence material. Page-level meta robots
+# noindex,nofollow already in place on the HTML; this is belt-and-suspenders
+# at the path level for any crawler that hits the directory directly.
