@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+  <meta name="theme-color" content="#151516">
+  <title>Skin by Brownlee &ndash; May 2026 Final Report | Scroll Media</title>
+  <meta name="description" content="Skin by Brownlee May 2026 Final Performance Report. Score 8.2/10. Solid Month. Rise Stage. Prepared by Scroll Media.">
+  <meta property="og:title" content="Skin by Brownlee, May 2026 Final Performance Report">
+  <meta property="og:description" content="Final monthly score 8.2/10. Solid Month. Prepared by Scroll Media.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    :root{
+      --shadow:#151516;--navy:#0e3387;--azure:#0e3387;--hl:#e2ed7a;
+      --lucid:#cbe9ff;--porcelain:#f2f3f4;--ghost:#f7f8fc;
+      --text:#151516;--muted:#6b7280;--border:rgba(21,21,22,.09);
+      --exceed:#7c3aed;--ontrack:#0e3387;--watch:#d97706;
+      --tofu:#0e3387;--mofu:#7c3aed;--bofu:#059669;
+      --radius:12px;--radius-sm:8px;
+    }
+    body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl));z-index:9999;transition:width .1s linear;pointer-events:none}
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 6rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(700px,120vw);height:min(700px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .hero-logo{height:28px;width:auto;margin-bottom:2rem}
+    .hero-top-row{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.12);border:1px solid rgba(226,237,122,.28);padding:.35rem .875rem;border-radius:4px;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl)}
+    .hero-eyebrow .dot{width:5px;height:5px;background:var(--hl);border-radius:50%;flex-shrink:0}
+    .hero-stage-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.18);border:1.5px solid rgba(226,237,122,.5);padding:.4rem 1rem;border-radius:20px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--hl)}
+    .hero-stage-badge .stage-icon{width:7px;height:7px;background:var(--hl);border-radius:50%}
+    .hero h1{font-size:clamp(2.25rem,8vw,4.25rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.625rem}
+    .hero h1 span{color:var(--hl)}
+    .hero-meta{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
+    .hero-meta .dot{width:3px;height:3px;background:rgba(255,255,255,.3);border-radius:50%}
+    .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:.875rem;max-width:700px}
+    .hero-bullet{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px}
+    .hero-bullet-icon{width:22px;height:22px;background:rgba(226,237,122,.15);border:1px solid rgba(226,237,122,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+    .hero-bullet-icon::after{content:'';width:6px;height:6px;background:var(--hl);border-radius:50%}
+    .hero-bullet-text{font-size:.9375rem;color:rgba(255,255,255,.82);line-height:1.55}
+    .hero-bullet-text strong{color:#fff;font-weight:700}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .sec{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:2.25rem;margin:1.75rem 0;box-shadow:0 1px 6px rgba(21,21,22,.04)}
+    @media(max-width:640px){.sec{padding:1.5rem 1.25rem}}
+    .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.5rem}
+    .sec-title{font-size:clamp(1.375rem,4.5vw,2rem);font-weight:800;line-height:1.15;color:var(--shadow);margin-bottom:.5rem;letter-spacing:-.02em}
+    .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
+    .score-wrap{position:relative;z-index:10;margin:-4.5rem auto 1.75rem;padding:0 1.25rem}
+    .score-card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:0 4px 32px rgba(21,21,22,.14);border:1px solid var(--border);text-align:center;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
+    .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
+    .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
+    .score-num{font-size:clamp(3.5rem,12vw,5rem);font-weight:800;color:var(--azure);line-height:1;letter-spacing:-.04em}
+    .score-denom{font-size:1.375rem;color:var(--muted);font-weight:400}
+    .score-title{font-size:1.125rem;font-weight:700;color:var(--text);margin:.375rem 0}
+    .score-delta{font-size:.9375rem;font-weight:700;margin-bottom:1.5rem;display:block}
+    .score-delta.up{color:#059669}.score-delta.dn{color:#dc2626}.score-delta.fl{color:#94a3b8}
+    .score-badges{display:flex;justify-content:center;gap:.625rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .score-badge{display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border-radius:6px;font-size:.75rem;font-weight:700}
+    .score-badge .bd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .score-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}.score-badge.exceed .bd{background:var(--exceed)}
+    .score-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}.score-badge.ontrack .bd{background:var(--ontrack)}
+    .score-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}.score-badge.watch .bd{background:#f59e0b}
+    .trend-wrap{background:linear-gradient(135deg,#1a1f3a,#0c1a3a);border-radius:10px;padding:1.375rem;max-width:420px;margin:0 auto}
+    .trend-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.875rem;text-align:left}
+    .trend-bars{display:flex;align-items:flex-end;gap:1rem;height:72px;justify-content:center}
+    .tc{display:flex;flex-direction:column;align-items:center;gap:.3rem;flex:1;max-width:80px}
+    .tbw{height:52px;display:flex;align-items:flex-end;width:100%}
+    .tb{width:100%;border-radius:3px 3px 0 0;min-height:4px}
+    .ts{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.5)}
+    .ts.curr{color:var(--hl);font-size:.9375rem;font-weight:800}
+    .tm{font-size:.6875rem;color:rgba(255,255,255,.35)}
+    .tm.curr{color:rgba(255,255,255,.65);font-weight:600}
+    .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+    .fb-left .fb-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.25rem}
+    .fb-left .fb-count{font-size:2.25rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em}
+    .fb-left .fb-mom{font-size:.8125rem;color:rgba(255,255,255,.65);margin-top:.2rem}
+    .fb-right{text-align:right}
+    .fb-right .fb-target-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.25rem}
+    .fb-right .fb-target{font-size:1.0625rem;font-weight:700;color:var(--hl)}
+    .fb-right .fb-stage{font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.15rem}
+    @media(max-width:480px){.followers-banner{flex-direction:column}.fb-right{text-align:left}}
+    .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem}
+    @media(max-width:900px){.goals-grid{grid-template-columns:1fr}}
+    .goal-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:1.625rem;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.75rem}
+    .goal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius) var(--radius) 0 0}
+    .goal-card.exceed::before{background:linear-gradient(90deg,var(--exceed),#a855f7)}
+    .goal-card.ontrack::before{background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .goal-card.watch::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+    .goal-funnel-row{display:flex;align-items:center;gap:.5rem}
+    .goal-funnel-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .goal-funnel-dot.tofu{background:var(--tofu)}.goal-funnel-dot.mofu{background:var(--mofu)}.goal-funnel-dot.bofu{background:var(--bofu)}
+    .goal-funnel-lbl{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .goal-title{font-size:.9375rem;font-weight:700;color:var(--text);line-height:1.35}
+    .goal-bar-track{height:8px;background:var(--porcelain);border-radius:4px;overflow:hidden}
+    .goal-bar-fill{height:100%;border-radius:4px}
+    .goal-bar-meta{display:flex;justify-content:space-between;align-items:center}
+    .goal-bar-pct{font-size:1.25rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
+    .goal-bar-count{font-size:.75rem;color:var(--muted)}
+    .goal-summary{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .75rem;background:var(--porcelain);border-radius:6px}
+    .goal-status-badge{display:inline-flex;align-items:center;gap:.375rem;font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;align-self:flex-start}
+    .goal-status-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
+    .goal-status-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
+    .goal-status-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}
+    .funnel-group{margin-bottom:1.75rem}
+    .funnel-header{display:flex;align-items:center;gap:.625rem;padding:.625rem .875rem;border-radius:6px;margin-bottom:1rem}
+    .funnel-header.tofu{background:rgba(14,51,135,.06)}
+    .funnel-header.mofu{background:rgba(124,58,237,.06)}
+    .funnel-header.bofu{background:rgba(5,150,105,.06)}
+    .funnel-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .funnel-dot.tofu{background:var(--tofu)}.funnel-dot.mofu{background:var(--mofu)}.funnel-dot.bofu{background:var(--bofu)}
+    .funnel-lbl{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .funnel-lbl.tofu{color:var(--tofu)}.funnel-lbl.mofu{color:var(--mofu)}.funnel-lbl.bofu{color:var(--bofu)}
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .mc{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.125rem}
+    .mc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.625rem}
+    .mc-name{font-size:.8125rem;font-weight:700;color:var(--text)}
+    .mc-badge{font-size:.625rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em}
+    .mc-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
+    .mc-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
+    .mc-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}
+    .mc-nums{display:flex;gap:1.25rem;margin-bottom:.5rem}
+    .mc-lbl{font-size:.6875rem;color:var(--muted);display:block;margin-bottom:.15rem}
+    .mc-val{font-size:1.375rem;font-weight:800;letter-spacing:-.02em}
+    .mc-val.exceed{color:var(--exceed)}.mc-val.ontrack{color:var(--ontrack)}.mc-val.watch{color:var(--watch)}
+    .mc-tgt{font-size:.9375rem;font-weight:600;color:var(--muted)}
+    .mc-mom{margin-bottom:.5rem}
+    .mom{font-size:.75rem;font-weight:700;padding:.15rem .5rem;border-radius:4px}
+    .mom.up{background:rgba(5,150,105,.1);color:#059669}
+    .mom.dn{background:rgba(220,38,38,.1);color:#dc2626}
+    .mom.fl{background:rgba(148,163,184,.1);color:#94a3b8}
+    .bar-track{height:6px;background:var(--porcelain);border-radius:3px;overflow:hidden;margin-bottom:.5rem}
+    .bar-fill{height:100%;border-radius:3px;transition:width .7s cubic-bezier(.4,0,.2,1)}
+    .bar-fill.exceed{background:var(--exceed)}.bar-fill.ontrack{background:var(--ontrack)}.bar-fill.watch{background:#f59e0b}
+    .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.5}
+
+    /* ── INSIGHTS GRID ── */
+    .insights-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    @media(max-width:760px){.insights-grid{grid-template-columns:1fr}}
+    .insight-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;display:flex;flex-direction:column;gap:.65rem;position:relative;overflow:hidden}
+    .insight-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+    .insight-card.win::before{background:linear-gradient(90deg,#059669,#10b981)}
+    .insight-card.signal::before{background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .insight-card.watch::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+    .insight-flag{display:inline-flex;align-items:center;gap:.375rem;font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;width:fit-content}
+    .insight-flag.win{background:rgba(5,150,105,.1);color:#059669}
+    .insight-flag.signal{background:rgba(14,51,135,.1);color:var(--azure)}
+    .insight-flag.watch{background:rgba(245,158,11,.1);color:var(--watch)}
+    .insight-title{font-size:1rem;font-weight:800;color:var(--text);line-height:1.3;letter-spacing:-.01em}
+    .insight-body{font-size:.875rem;color:var(--muted);line-height:1.65}
+
+    /* ── CARRY FORWARD GRID ── */
+    .carry-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    @media(max-width:760px){.carry-grid{grid-template-columns:1fr}}
+    .carry-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.625rem;display:flex;flex-direction:column;gap:.625rem;position:relative;overflow:hidden}
+    .carry-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+    .carry-card.mofu::before{background:linear-gradient(90deg,var(--mofu),#a855f7)}
+    .carry-card.tofu::before{background:linear-gradient(90deg,var(--tofu),#4f6ef7)}
+    .carry-card.bofu::before{background:linear-gradient(90deg,var(--bofu),#10b981)}
+    .carry-eyebrow{display:inline-flex;align-items:center;gap:.375rem;font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;width:fit-content}
+    .carry-eyebrow.mofu{background:rgba(124,58,237,.1);color:var(--mofu)}
+    .carry-eyebrow.tofu{background:rgba(14,51,135,.1);color:var(--tofu)}
+    .carry-eyebrow.bofu{background:rgba(5,150,105,.1);color:var(--bofu)}
+    .carry-title{font-size:1.0625rem;font-weight:800;color:var(--text);line-height:1.3;letter-spacing:-.01em}
+    .carry-body{font-size:.875rem;color:var(--muted);line-height:1.65}
+
+    /* ── GOING FORWARD CARDS ── */
+    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
+    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
+    .adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}
+    .adj-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;color:#fff;flex-shrink:0}
+    .adj-num.continue{background:#059669}
+    .adj-num.test{background:var(--azure)}
+    .adj-num.watch{background:#f59e0b}
+    .adj-content{flex:1}
+    .adj-type{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.375rem}
+    .adj-type.continue{color:#059669}
+    .adj-type.test{color:var(--azure)}
+    .adj-type.watch{color:#d97706}
+    .adj-headline{font-size:.9375rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:.375rem}
+    .adj-context{font-size:.75rem;color:var(--muted);margin-bottom:.625rem}
+    .adj-move{font-size:.875rem;color:var(--text);line-height:1.6;padding:.625rem .875rem;background:var(--porcelain);border-radius:6px;border-left:3px solid var(--azure)}
+    .adj-move.continue{border-left-color:#059669}
+    .adj-move.test{border-left-color:var(--azure)}
+    .adj-move.watch{border-left-color:#f59e0b}
+
+    /* ── PREVIOUS REPORTS ── */
+    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem;display:block;width:100%;box-sizing:border-box}
+    .prev-inner{max-width:1100px;margin:0 auto}
+    .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .prev-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
+    .prev-sub{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
+    .prev-grid{display:flex;flex-wrap:wrap;gap:.875rem}
+    .prev-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.375rem 1.625rem;color:#fff;transition:background .2s,border-color .2s;min-width:180px;flex:1}
+    .prev-card:hover{background:rgba(255,255,255,.1);border-color:rgba(226,237,122,.3)}
+    .prev-month{font-size:.6875rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+    .prev-score{font-size:2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:.2rem;letter-spacing:-.03em}
+    .prev-score span{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.35)}
+    .prev-label{font-size:.8125rem;color:rgba(255,255,255,.55);margin-bottom:.75rem}
+    .prev-link{font-size:.8125rem;font-weight:700;color:var(--hl)}
+
+    /* ── FOOTER ── */
+    .footer{background:#fff;padding:2.25rem 1.25rem;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+    .footer-logo{height:26px;width:auto}
+    .footer-text{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-text a{color:var(--azure);font-weight:600}
+    .footer-closeout{max-width:1100px;margin:0 auto 1.25rem;text-align:center;font-size:.9375rem;font-style:italic;color:var(--azure);font-weight:600;line-height:1.5;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+    @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
+
+    /* ── STICKY NAV BAR ── */
+    .report-nav{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:#0b2a6e;
+      border-bottom:2px solid #c8d94a;
+      padding:0;
+      width:100%;
+    }
+    .report-nav-inner{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:0;
+      overflow-x:auto;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .report-nav-inner::-webkit-scrollbar{display:none}
+    .report-nav-link{
+      display:inline-block;
+      padding:.625rem 1rem;
+      font-size:.75rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.7);
+      text-decoration:none;
+      white-space:nowrap;
+      border-bottom:2px solid transparent;
+      transition:color .15s, border-color .15s;
+      margin-bottom:-2px;
+    }
+    .report-nav-link:hover{color:#c8d94a;border-bottom-color:#c8d94a}
+    .report-nav-link.active{color:#c8d94a;border-bottom-color:#c8d94a}
+    @media(max-width:700px){
+      .report-nav-link{padding:.5rem .75rem;font-size:.6875rem}
+    }
+
+    /* ── TOP POSTS SECTION ── */
+    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
+    @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
+    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;overflow:hidden}
+    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
+    .reel-badge{background:#fff;color:#0e3387;flex-shrink:0}
+    .post-badge{background:#fff;color:#0e3387;flex-shrink:0}
+    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
+    .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
+    .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
+    .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--hl);padding-left:.75rem;line-height:1.5}
+    .standout-metrics{display:flex;flex-direction:column;gap:.4rem}
+    .standout-metric{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .sm-label{font-size:.72rem;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.04em;min-width:80px}
+    .sm-value{font-size:.95rem;font-weight:800;color:var(--navy)}
+    .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
+    .outlier-2x{background:#dcfce7;color:#15803d}
+    .outlier-1x{background:#dbeafe;color:#1d4ed8}
+    .outlier-3x{background:#f3e8ff;color:#7c3aed}
+    .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
+    .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+    .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
+    .post-ig-btn{display:block;background:var(--navy,#0e3387);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s;position:relative;z-index:2;opacity:1 !important;visibility:visible !important}
+    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
+    .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE OPTIMISATION
+       ═══════════════════════════════════════════════════ */
+    @media(max-width:480px){
+      .report-nav-inner{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 .5rem}
+      .report-nav-inner::-webkit-scrollbar{display:none}
+      .report-nav-link{padding:.5rem .6rem;font-size:.6875rem;white-space:nowrap;flex-shrink:0}
+
+      .hero{padding:2rem 1rem 5rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.75rem}
+      .hero-bullet{font-size:.875rem;gap:.5rem}
+
+      .score-wrap{margin:-3rem auto 1.25rem;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .score-badges{flex-wrap:wrap;gap:.5rem;justify-content:center}
+
+      .followers-banner{flex-direction:column;gap:.75rem;text-align:center}
+      .fb-right{text-align:center}
+
+      .goals-grid{grid-template-columns:1fr}
+      .goal-card{padding:1.25rem}
+
+      .metrics-grid{grid-template-columns:1fr}
+      .mc{padding:1.25rem}
+
+      .insights-grid{grid-template-columns:1fr}
+      .insight-card{padding:1.25rem}
+      .carry-grid{grid-template-columns:1fr}
+      .carry-card{padding:1.375rem}
+
+      .posts-grid{grid-template-columns:1fr}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-rank{font-size:.8rem}
+      .post-type-badge,.reel-badge,.post-badge{font-size:.6875rem;padding:.15rem .4rem}
+      .post-score{font-size:.6875rem;padding:.1rem .5rem;margin-left:auto}
+      .post-body{padding:1rem}
+      .post-hook{font-size:.9375rem}
+      .standout-metric{flex-wrap:wrap;gap:.25rem}
+      .sm-label{font-size:.75rem}
+      .sm-value{font-size:1rem}
+      .sm-badge{font-size:.75rem;padding:.15rem .45rem}
+      .post-ig-btn{padding:.75rem 1rem;font-size:.9375rem}
+      .why-text{font-size:.875rem}
+
+      .adj-grid{grid-template-columns:1fr}
+      .adj-card{padding:1.25rem}
+      .adj-type{font-size:.75rem;padding:.2rem .6rem}
+      .adj-num{width:2rem;height:2rem;font-size:.875rem}
+      .adj-move{font-size:.9375rem}
+
+      .prev-grid{flex-direction:column;gap:.75rem}
+      .prev-card{padding:1.25rem;min-width:auto}
+      .prev-month{font-size:.75rem}
+      .prev-score{font-size:2rem}
+
+      .sec{padding:1.25rem 1rem}
+      h2{font-size:clamp(1.25rem,6vw,1.75rem)}
+    }
+
+    @media(min-width:481px) and (max-width:768px){
+      .hero{padding:2.5rem 1.5rem 5.5rem}
+      .posts-grid{grid-template-columns:1fr}
+      .adj-grid{grid-template-columns:1fr}
+      .metrics-grid{grid-template-columns:1fr}
+      .goals-grid{grid-template-columns:1fr}
+      .insights-grid{grid-template-columns:1fr}
+      .carry-grid{grid-template-columns:1fr}
+      .prev-grid{flex-wrap:wrap}
+      .prev-card{flex:1 1 calc(50% - .875rem);min-width:200px}
+      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
+      .post-score{margin-left:auto}
+    }
+  </style>
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<nav class="report-nav" aria-label="Report sections">
+  <div class="report-nav-inner">
+    <a class="report-nav-link" href="#score-section">Score</a>
+    <a class="report-nav-link" href="#funnel-title">Goals</a>
+    <a class="report-nav-link" href="#perf-title">Performance</a>
+    <a class="report-nav-link" href="#posts-title">Top Posts</a>
+    <a class="report-nav-link" href="#insights-title">Insights</a>
+    <a class="report-nav-link" href="#carry-title">Carry Forward</a>
+    <a class="report-nav-link" href="#going-title">Going Forward</a>
+    <a class="report-nav-link" href="#prev-title">History</a>
+  </div>
+</nav>
+
+<div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
+    <div class="hero-top-row">
+      <div class="hero-eyebrow"><span class="dot"></span>Final Performance Report</div>
+      <div class="hero-stage-badge"><span class="stage-icon"></span>Rise Stage &middot; Month 8</div>
+    </div>
+    <h1>Skin by <span>Brownlee</span></h1>
+    <div class="hero-meta">
+      <span>@skinbybrownleeandco</span>
+      <span class="dot"></span>
+      <span>E-Commerce Skincare for Perimenopause &amp; Hormonal Skin</span>
+      <span class="dot"></span>
+      <span>May 1&ndash;24, 2026</span>
+      <span class="dot"></span>
+      <span>Managed by Riley</span>
+    </div>
+    <ul class="hero-bullets" aria-label="May performance highlights">
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Q2 commitment landed.</strong> Saves jumped 53% and Retention climbed 8 points. Those are the two metrics we committed to growing this quarter.</span>
+      </li>
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>CTR and PCR exceeding the Rise stage range.</strong> Click-through hit 17.2%. Profile-to-follower conversion hit 18.0%. Both buyer-intent signals well above target.</span>
+      </li>
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Eight months of work, one clear body of proof.</strong> Educational Reels became the format that consistently outperformed for the perimenopause audience.</span>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="score-wrap" id="score-section">
+  <div class="score-card">
+    <p class="score-eyebrow">Monthly Performance Score</p>
+    <div class="score-num">8.2<span class="score-denom">/10</span></div>
+    <p class="score-title">Solid Month</p>
+    <span class="score-delta up">&#9650; +0.2 vs Apr</span>
+    <div class="score-badges">
+      <div class="score-badge exceed"><span class="bd"></span>2 Exceeding</div>
+      <div class="score-badge ontrack"><span class="bd"></span>2 On Track</div>
+      <div class="score-badge watch"><span class="bd"></span>6 Watch</div>
+    </div>
+    <div class="trend-wrap" aria-label="Score trend">
+      <p class="trend-label">Score Trend</p>
+      <div class="trend-bars">
+        <div class="tc"><div class="tbw"><div class="tb" style="height:80.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.1</div><div class="tm">Feb</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:100.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.3</div><div class="tm">Mar</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:70.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.0</div><div class="tm">Apr</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:90.0%;background:#e2ed7a"></div></div><div class="ts curr">8.2</div><div class="tm curr">May</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="funnel-title">
+    <p class="sec-label">Business Goals</p>
+    <h2 class="sec-title" id="funnel-title">Funnel Health Check</h2>
+    <p class="sec-sub">How the final reporting period mapped to your three core business goals.</p>
+    <div class="goals-grid">
+      <div class="goal-card watch">
+        <div class="goal-funnel-row"><span class="goal-funnel-dot tofu"></span><span class="goal-funnel-lbl">Top of Funnel</span></div>
+        <p class="goal-title">Establish Sylvia as the Perimenopause Skin Authority &amp; Drive New Audience Discovery</p>
+        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:33%;background:#f59e0b"></div></div>
+        <div class="goal-bar-meta"><span class="goal-bar-pct">33%</span><span class="goal-bar-count">1 of 3 metrics on track</span></div>
+        <p class="goal-summary">Reach softened in this final period, but New Followers and Profile Visits stayed on track for the Rise stage. The authority positioning is established.</p>
+        <span class="goal-status-badge watch">Watch</span>
+      </div>
+      <div class="goal-card watch">
+        <div class="goal-funnel-row"><span class="goal-funnel-dot mofu"></span><span class="goal-funnel-lbl">Middle of Funnel</span></div>
+        <p class="goal-title">Build Trust Through Education &amp; Drive Skin Quiz Completions</p>
+        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:25%;background:#f59e0b"></div></div>
+        <div class="goal-bar-meta"><span class="goal-bar-pct">25%</span><span class="goal-bar-count">1 of 4 metrics on track</span></div>
+        <p class="goal-summary">The two metrics we committed to in Q2, Saves and Retention, both moved significantly. Saves grew 53% MoM and Retention climbed 8 points. The educational content engine is converting the right audience into buyer-adjacent behavior.</p>
+        <span class="goal-status-badge watch">Watch</span>
+      </div>
+      <div class="goal-card ontrack">
+        <div class="goal-funnel-row"><span class="goal-funnel-dot bofu"></span><span class="goal-funnel-lbl">Bottom of Funnel</span></div>
+        <p class="goal-title">Drive Skin Quiz Completions &amp; E-Commerce Product Sales</p>
+        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:67%;background:#0e3387"></div></div>
+        <div class="goal-bar-meta"><span class="goal-bar-pct">67%</span><span class="goal-bar-count">2 of 3 metrics on track</span></div>
+        <p class="goal-summary">CTR and PCR both exceeded the Rise stage target range this period. The Skin Quiz is the conversion mechanism that worked, and the click-through math shows the audience is willing to act.</p>
+        <span class="goal-status-badge ontrack">On Track</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="perf-title">
+    <p class="sec-label">May 2026</p>
+    <h2 class="sec-title" id="perf-title">Performance Breakdown</h2>
+    <p class="sec-sub">All tracked metrics from May 1 through May 24, 2026. The shorter reporting window reflects the engagement closeout ahead of contract end May 31.</p>
+    <div class="followers-banner" role="region" aria-label="Total Followers">
+      <div class="fb-left">
+        <p class="fb-label">Total Followers</p>
+        <div class="fb-count">33,238</div>
+        <div class="fb-mom"><span class="mom dn">&#9660; -70 vs. Apr</span></div>
+      </div>
+      <div class="fb-right">
+        <p class="fb-target-label">Rise Stage Range</p>
+        <p class="fb-target">10,000 &ndash; 100,000</p>
+        <p class="fb-stage">&#10003; On Track</p>
+      </div>
+    </div>
+
+    <div class="funnel-group">
+      <div class="funnel-header tofu"><span class="funnel-dot tofu"></span><span class="funnel-lbl tofu">Top of Funnel &middot; Awareness</span></div>
+      <div class="metrics-grid">
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">New Followers</span><span class="mc-badge ontrack">On Track</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val ontrack">323</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">300 &ndash; 2,500</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; -41.7% vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-w="6" style="width:0%"></div></div>
+          <p class="mc-note">Inside the Rise floor in a 24-day window. New follower velocity stayed in range even as reach softened in the closing period.</p>
+        </div>
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Shares</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val watch">103</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">200 &ndash; 2,000</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; -5.5% vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="5" style="width:0%"></div></div>
+          <p class="mc-note">Held within a few points of April&rsquo;s share total despite the shorter window. Share velocity stayed steady through the close.</p>
+        </div>
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Total Views</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val watch">121,239</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">150,000 &ndash; 800,000</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; -30.7% vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="5" style="width:0%"></div></div>
+          <p class="mc-note">Reach softened in this final period, partly the shorter window. The lower reach came with significantly higher engagement quality.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="funnel-group">
+      <div class="funnel-header mofu"><span class="funnel-dot mofu"></span><span class="funnel-lbl mofu">Middle of Funnel &middot; Engagement</span></div>
+      <div class="metrics-grid">
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Profile Visits</span><span class="mc-badge ontrack">On Track</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val ontrack">1,792</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">1,500 &ndash; 10,000</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; -15.0% vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-w="18" style="width:0%"></div></div>
+          <p class="mc-note">Inside the Rise floor. The audience that finds the profile is still showing up at a healthy clip even in the closing window.</p>
+        </div>
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Retention %</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val watch">29%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">65% &ndash; 80%</span></div></div>
+          <div class="mc-mom"><span class="mom up">&#9650; +8pp vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="10" style="width:0%"></div></div>
+          <p class="mc-note">+8 points MoM and a clear close-out of the Q2 retention commitment. The May 18 Tough Love Reel cleared 77% retention, proof of what the right hook can do.</p>
+        </div>
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Saves</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val watch">224</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">300 &ndash; 2,500</span></div></div>
+          <div class="mc-mom"><span class="mom up">&#9650; +53.4% vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="10" style="width:0%"></div></div>
+          <p class="mc-note">+53% MoM in a 24-day window. The strongest pre-purchase signal organic social can produce, and proof the educational Reel format converted the right audience.</p>
+        </div>
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Comments</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val watch">199</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">250 &ndash; 900</span></div></div>
+          <div class="mc-mom"><span class="mom up">&#9650; +43.2% vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="13" style="width:0%"></div></div>
+          <p class="mc-note">+43% MoM. The May 1 SPF Reel alone drove 60 comments. The audience moved from passive follower to active community.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="funnel-group">
+      <div class="funnel-header bofu"><span class="funnel-dot bofu"></span><span class="funnel-lbl bofu">Bottom of Funnel &middot; Conversion</span></div>
+      <div class="metrics-grid">
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">CTR</span><span class="mc-badge exceed">Exceeding</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val exceed">17.2%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">2% &ndash; 5%</span></div></div>
+          <div class="mc-mom"><span class="mom up">&#9650; +0.6pp vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill exceed" data-w="100" style="width:0%"></div></div>
+          <p class="mc-note">Still 3x+ above the Rise ceiling. Profile visitors are clicking through at exceptional rates. The BOFU mechanics are working.</p>
+        </div>
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Link Taps</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val watch">308</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">350 &ndash; 3,000</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; -12.0% vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="8" style="width:0%"></div></div>
+          <p class="mc-note">Just below the Rise floor at 308 in a 24-day window. The conversion architecture is intact; the volume tracks the slightly softer reach.</p>
+        </div>
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Profile Conversion Rate</span><span class="mc-badge exceed">Exceeding</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">May</span><span class="mc-val exceed">18.0%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">8% &ndash; 14%</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; -8.3pp vs. Apr</span></div>
+          <div class="bar-track"><div class="bar-fill exceed" data-w="100" style="width:0%"></div></div>
+          <p class="mc-note">PCR softened from April&rsquo;s peak but still clears the Rise ceiling by 4 full points. The visitors who showed up converted at a strong rate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="posts-title">
+    <p class="sec-label">Top Posts of the Month</p>
+    <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
+    <p class="sec-sub">The highest-performing content this period, identified by our outlier scoring model. Posts that over-indexed on saves, shares, comments, or retention relative to account averages.</p>
+    <div class="posts-grid">
+
+      <div class="post-card">
+        <div class="post-header">
+          <span class="post-rank">#1 Top Post</span>
+          <span class="post-type-badge reel-badge">REEL</span>
+          <span class="post-score">Outlier Score: 165.3</span>
+        </div>
+        <div class="post-body">
+          <div class="post-date">May 11, 2026</div>
+          <div class="post-format-pill">Educational MOFU Reel</div>
+          <blockquote class="post-hook">&ldquo;No one prepares you for how much your skin changes after 40.&rdquo;</blockquote>
+          <div class="standout-metrics">
+            <div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">29</span><span class="sm-badge outlier-3x">2.68x account avg</span></div>
+            <div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">12</span><span class="sm-badge outlier-2x">1.74x account avg</span></div>
+            <div class="standout-metric"><span class="sm-label">VIEWS</span><span class="sm-value">2,944</span><span class="sm-badge outlier-1x">1.34x account avg</span></div>
+          </div>
+          <div class="post-why">
+            <div class="why-label">&#9650; WHY IT WORKED</div>
+            <p class="why-text">29 saves is the highest single-post Saves total of the period and a 2.68x lift over the May average. The &ldquo;no one prepares you for&rdquo; opener is a reveal-pattern hook that gives the IVP a name for what they&rsquo;re experiencing. This single post is the clearest proof that educational MOFU content converts the perimenopause audience into bookmarking behavior.</p>
+          </div>
+          <a href="https://www.instagram.com/reel/DYM7Tkboe2l/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-header">
+          <span class="post-rank">#2 Top Post</span>
+          <span class="post-type-badge reel-badge">REEL</span>
+          <span class="post-score">Outlier Score: 164.9</span>
+        </div>
+        <div class="post-body">
+          <div class="post-date">May 6, 2026</div>
+          <div class="post-format-pill">Educational MOFU Reel</div>
+          <blockquote class="post-hook">&ldquo;Wondering why you&rsquo;re not seeing the results you want?&rdquo;</blockquote>
+          <div class="standout-metrics">
+            <div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">19</span><span class="sm-badge outlier-3x">2.75x account avg</span></div>
+            <div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">16</span><span class="sm-badge outlier-1x">1.48x account avg</span></div>
+            <div class="standout-metric"><span class="sm-label">COMMENTS</span><span class="sm-value">23</span><span class="sm-badge outlier-1x">1.32x account avg</span></div>
+          </div>
+          <div class="post-why">
+            <div class="why-label">&#9650; WHY IT WORKED</div>
+            <p class="why-text">Triple outlier with 2.75x shares, 1.48x saves, and 1.32x comments. The &ldquo;why aren&rsquo;t you seeing results&rdquo; opener invites the viewer in, and the breadth of the answer (diet, water, routine, brushes, pillowcase) signals the educational depth that drove the share. This format hits the algorithm signal and the depth signal in one post.</p>
+          </div>
+          <a href="https://www.instagram.com/reel/DYAcT82IH8C/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-header">
+          <span class="post-rank">#3 Top Post</span>
+          <span class="post-type-badge reel-badge">REEL</span>
+          <span class="post-score">Outlier Score: 151.2</span>
+        </div>
+        <div class="post-body">
+          <div class="post-date">May 1, 2026</div>
+          <div class="post-format-pill">Engagement Reel</div>
+          <blockquote class="post-hook">&ldquo;Who&rsquo;s wearing SPF????&rdquo;</blockquote>
+          <div class="standout-metrics">
+            <div class="standout-metric"><span class="sm-label">COMMENTS</span><span class="sm-value">60</span><span class="sm-badge outlier-3x">3.46x account avg</span></div>
+            <div class="standout-metric"><span class="sm-label">RETENTION</span><span class="sm-value">55.9%</span><span class="sm-badge outlier-2x">1.94x account avg</span></div>
+            <div class="standout-metric"><span class="sm-label">VIEWS</span><span class="sm-value">4,289</span><span class="sm-badge outlier-2x">1.95x account avg</span></div>
+          </div>
+          <div class="post-why">
+            <div class="why-label">&#9650; WHY IT WORKED</div>
+            <p class="why-text">60 comments is 3.46x the May average and the highest single-post comment total of the period. The &ldquo;who&rsquo;s wearing SPF&rdquo; direct-callout hook activates the audience in the first second, and the retention of 55.9% is nearly double the May average. This post is the engagement breakthrough, proof that the IVP is no longer just watching, they are responding.</p>
+          </div>
+          <a href="https://www.instagram.com/reel/DXzKzc3oJp0/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="insights-title">
+    <p class="sec-label">Reading the Data</p>
+    <h2 class="sec-title" id="insights-title">What We Learned</h2>
+    <p class="sec-sub">Four readings from the final period and the eight-month arc that backs them.</p>
+    <div class="insights-grid">
+      <div class="insight-card win">
+        <span class="insight-flag win">&#9650; Win</span>
+        <h3 class="insight-title">Retention Crossed the Q2 Target on the May 18 Reel</h3>
+        <p class="insight-body">The &ldquo;I would never yell at a client&rdquo; Reel posted May 18 hit 77.3% retention, just shy of the Rise stage high target of 80%. This is the proof that when the hook lands and the pacing holds, content can perform at the very top of the stage. The format and structure of this post are the template.</p>
+      </div>
+      <div class="insight-card win">
+        <span class="insight-flag win">&#9650; Win</span>
+        <h3 class="insight-title">Saves Moved 53% MoM, Driven by Education</h3>
+        <p class="insight-body">Saves jumped from 146 in April to 224 in May, a 53% increase in a shorter reporting window. The May 11 Reel on hormonal skin changes after 40 drove 29 saves on its own. Educational MOFU content is the format that converts the perimenopause IVP into bookmarking behavior, which is the strongest pre-purchase signal organic social can produce.</p>
+      </div>
+      <div class="insight-card signal">
+        <span class="insight-flag signal">&#9679; Signal</span>
+        <h3 class="insight-title">Comments Volume Grew 43%, Community Is Active</h3>
+        <p class="insight-body">Total comments grew from 139 in April to 199 in May. The May 1 SPF Reel alone drove 60 comments, more than three and a half times the May average per post. The audience is not just watching, they are responding. That is the signal that the IVP has moved from passive follower to engaged community.</p>
+      </div>
+      <div class="insight-card watch">
+        <span class="insight-flag watch">&#9650; Watch</span>
+        <h3 class="insight-title">Reach Slowed, Quality Held</h3>
+        <p class="insight-body">Views dropped from 174,968 in April to 121,239 in May. Some of that is the shorter reporting window. The more meaningful read is that lower reach came with significantly higher engagement quality. The algorithm is rewarding the depth signals (Saves, Retention, Comments) over volume, which is the trade we wanted to see.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="carry-title">
+    <p class="sec-label">Asset Handoff</p>
+    <h2 class="sec-title" id="carry-title">What You Carry Forward</h2>
+    <p class="sec-sub">The patterns, formats, and audience signals that the engagement proved out. Yours to keep running.</p>
+    <div class="carry-grid">
+
+      <div class="carry-card mofu">
+        <span class="carry-eyebrow mofu">Proven Format</span>
+        <h3 class="carry-title">Educational Reels Are the Proven Format</h3>
+        <p class="carry-body">Reels grounded in education for women experiencing hormonal skin changes are the format that consistently outperformed across the engagement. The May 11 hormonal-shifts Reel (29 saves) and the May 6 lifestyle-factors Reel (19 shares) are both versions of this format. Lead with a specific question or unexpected fact. Educate with concrete examples. Close with a clear next step. This template is yours to keep running.</p>
+      </div>
+
+      <div class="carry-card tofu">
+        <span class="carry-eyebrow tofu">Audience Signal</span>
+        <h3 class="carry-title">The IVP Pattern That Worked</h3>
+        <p class="carry-body">Women 40 to 60 experiencing hormonal skin changes responded most when content named the experience specifically (not generic &ldquo;anti-aging,&rdquo; not generic &ldquo;skin health&rdquo;) and positioned Sylvia as the licensed esthetician who has lived it. Three specific phrases consistently moved engagement: &ldquo;after 40,&rdquo; &ldquo;hormonal shifts,&rdquo; and &ldquo;perimenopause.&rdquo; Use them. They are not just keywords, they are recognition signals for the audience.</p>
+      </div>
+
+      <div class="carry-card mofu">
+        <span class="carry-eyebrow mofu">Hook Library</span>
+        <h3 class="carry-title">Hook Patterns That Moved Metrics</h3>
+        <p class="carry-body">Three hook patterns consistently outperformed. (1) The &ldquo;are you doing this&rdquo; callout (May 1 SPF Reel, 60 comments). (2) The contrarian &ldquo;I would never but&rdquo; setup (May 18 Tough Love Reel, 77% retention). (3) The &ldquo;no one tells you&rdquo; reveal (May 11 Hormonal Shifts Reel, 29 saves). These three structures map to comments, retention, and saves respectively. Match the hook to the metric you most want to move.</p>
+      </div>
+
+      <div class="carry-card bofu">
+        <span class="carry-eyebrow bofu">Conversion Architecture</span>
+        <h3 class="carry-title">Skin Quiz Is the BOFU Conversion Mechanism</h3>
+        <p class="carry-body">CTR and PCR both exceeded the Rise stage target range this period. The Skin Quiz is the low-friction conversion mechanism that turned profile visits into qualified leads. Keep it as the primary CTA on BOFU content. Pair it with the product shop as the secondary path. The conversion architecture is working, and the click-through math says the audience is willing to act.</p>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="going-title">
+    <p class="sec-label">Direction</p>
+    <h2 class="sec-title" id="going-title">Going Forward</h2>
+    <p class="sec-sub">Three moves to consider continuing solo or with future help.</p>
+    <div class="adj-grid">
+
+      <div class="adj-card">
+        <div class="adj-num continue" aria-hidden="true">1</div>
+        <div class="adj-content">
+          <p class="adj-type continue">Continue</p>
+          <p class="adj-headline">Lead with educational Reels for the perimenopause audience.</p>
+          <p class="adj-context">Saves, Retention, Comments &middot; MOFU goal</p>
+          <div class="adj-move continue">Post 3 to 4 educational Reels per week. Lead each with a specific question or contrarian framing. Use &ldquo;after 40,&rdquo; &ldquo;hormonal shifts,&rdquo; or &ldquo;perimenopause&rdquo; in the hook within the first 3 seconds.</div>
+        </div>
+      </div>
+
+      <div class="adj-card">
+        <div class="adj-num test" aria-hidden="true">2</div>
+        <div class="adj-content">
+          <p class="adj-type test">Test</p>
+          <p class="adj-headline">Add a weekly transformation client story to the rotation.</p>
+          <p class="adj-context">New Followers, Profile Visits &middot; TOFU and MOFU goals</p>
+          <div class="adj-move test">Publish one client transformation Reel per week, structured around the specific problem, the protocol, and the outcome. This is the highest-trust format for the IVP that is still under-tested in the data.</div>
+        </div>
+      </div>
+
+      <div class="adj-card">
+        <div class="adj-num watch" aria-hidden="true">3</div>
+        <div class="adj-content">
+          <p class="adj-type watch">Watch</p>
+          <p class="adj-headline">Reach is the lever that needs the most attention solo.</p>
+          <p class="adj-context">Views, New Followers &middot; TOFU goal</p>
+          <div class="adj-move watch">Reach softened in May. If you continue solo, prioritize one high-share content piece per week (cultural moments, relatable scenarios, share-bait hooks) to keep the algorithm distributing educational content to fresh audiences.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<section class="prev-section" aria-labelledby="prev-title">
+  <div class="prev-inner">
+    <p class="prev-eyebrow">Report History</p>
+    <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
+    <p class="prev-sub">The full engagement archive. Click any month to view the report.</p>
+    <div class="prev-grid">
+      <a href="/skinbybrownleeandco/april2026/" class="prev-card" target="_blank" rel="noopener">
+        <div class="prev-month">April 2026</div>
+        <div class="prev-score">8.0<span>/10</span></div>
+        <div class="prev-label">Solid Month</div>
+        <div class="prev-link">View Report &#8599;</div>
+      </a>
+      <a href="/skinbybrownleeandco/march2026/" class="prev-card" target="_blank" rel="noopener">
+        <div class="prev-month">March 2026</div>
+        <div class="prev-score">8.3<span>/10</span></div>
+        <div class="prev-label">Strong Month</div>
+        <div class="prev-link">View Report &#8599;</div>
+      </a>
+      <a href="/skinbybrownleeandco/february2026/" class="prev-card" target="_blank" rel="noopener">
+        <div class="prev-month">February 2026</div>
+        <div class="prev-score">7.9<span>/10</span></div>
+        <div class="prev-label">Building Month</div>
+        <div class="prev-link">View Report &#8599;</div>
+      </a>
+      <a href="/skinbybrownleeandco/january2026/" class="prev-card" target="_blank" rel="noopener">
+        <div class="prev-month">January 2026</div>
+        <div class="prev-score">7.6<span>/10</span></div>
+        <div class="prev-label">Building Month</div>
+        <div class="prev-link">View Report &#8599;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-closeout">Eight months of partnership. Thank you, Sylvia. The door is always open.</p>
+  <div class="footer-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">
+    <p class="footer-text">
+      Prepared by <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; May 2026 Performance Report<br>
+      Data sources: Instagram Insights, Metricool &middot; Scoring: Scroll Media Weighted Performance Framework v2.0
+    </p>
+  </div>
+</footer>
+
+<script>
+  (function(){var bar=document.getElementById('progress-bar');function u(){var s=window.pageYOffset||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=h>0?(Math.min(s/h,1)*100)+'%':'0%';}window.addEventListener('scroll',u,{passive:true});u();})();
+  (function(){var fills=document.querySelectorAll('.bar-fill[data-w],.goal-bar-fill');fills.forEach(function(el){var t=el.dataset.w||el.style.width;el.style.width='0%';el.dataset.target=t;});var obs=new Set();if('IntersectionObserver' in window){var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting&&!obs.has(e.target)){obs.add(e.target);e.target.style.transition='width 0.7s cubic-bezier(0.4,0,0.2,1)';e.target.style.width=e.target.dataset.target+(e.target.dataset.w?'%':'');}});},{threshold:0.1});fills.forEach(function(el){io.observe(el);});}else{fills.forEach(function(el){el.style.width=el.dataset.target+(el.dataset.w?'%':'');});}})();
+</script>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.report-nav-link');
+  var sections = [];
+  links.forEach(function(l){
+    var id = l.getAttribute('href').replace('#','');
+    var el = document.getElementById(id);
+    if(el) sections.push({el:el, link:l});
+  });
+  function onScroll(){
+    var scrollY = window.scrollY + 80;
+    var active = null;
+    sections.forEach(function(s){
+      if(s.el.getBoundingClientRect().top + window.scrollY <= scrollY) active = s;
+    });
+    links.forEach(function(l){ l.classList.remove('active'); });
+    if(active) active.link.classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
