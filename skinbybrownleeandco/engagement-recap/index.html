@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+  <meta name="theme-color" content="#151516">
+  <title>Skin by Brownlee &times; Scroll Media &ndash; Engagement Recap</title>
+  <meta name="description" content="Skin by Brownlee &times; Scroll Media. An 8-month engagement recap. October 2025 &ndash; May 2026.">
+  <meta property="og:title" content="Skin by Brownlee &times; Scroll Media &middot; Engagement Recap">
+  <meta property="og:description" content="An 8-month engagement recap. October 2025 &ndash; May 2026.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    :root{
+      --shadow:#151516;--navy:#0e3387;--azure:#0e3387;--hl:#e2ed7a;
+      --lucid:#cbe9ff;--porcelain:#f2f3f4;--ghost:#f7f8fc;
+      --text:#151516;--muted:#6b7280;--border:rgba(21,21,22,.09);
+      --exceed:#7c3aed;--ontrack:#0e3387;--watch:#d97706;
+      --tofu:#0e3387;--mofu:#7c3aed;--bofu:#059669;
+      --radius:12px;--radius-sm:8px;
+    }
+    body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl));z-index:9999;transition:width .1s linear;pointer-events:none}
+
+    /* ── STICKY NAV ── */
+    .report-nav{position:sticky;top:0;z-index:100;background:#0b2a6e;border-bottom:2px solid #c8d94a;width:100%}
+    .report-nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+    .report-nav-inner::-webkit-scrollbar{display:none}
+    .report-nav-link{display:inline-block;padding:.625rem 1rem;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.7);white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;margin-bottom:-2px}
+    .report-nav-link:hover{color:#c8d94a;border-bottom-color:#c8d94a}
+    .report-nav-link.active{color:#c8d94a;border-bottom-color:#c8d94a}
+    @media(max-width:700px){.report-nav-link{padding:.5rem .75rem;font-size:.6875rem}}
+
+    /* ── HERO (recap variant: lime accent line + recap-specific treatment) ── */
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 3.5rem;position:relative;overflow:hidden;border-top:4px solid var(--hl)}
+    .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(700px,120vw);height:min(700px,120vw);background:radial-gradient(circle,rgba(226,237,122,.14),transparent 65%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .hero-logo{height:28px;width:auto;margin-bottom:2rem}
+    .hero-top-row{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.12);border:1px solid rgba(226,237,122,.28);padding:.35rem .875rem;border-radius:4px;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl)}
+    .hero-eyebrow .dot{width:5px;height:5px;background:var(--hl);border-radius:50%;flex-shrink:0}
+    .hero-stage-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.18);border:1.5px solid rgba(226,237,122,.5);padding:.4rem 1rem;border-radius:20px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--hl)}
+    .hero-stage-badge .stage-icon{width:7px;height:7px;background:var(--hl);border-radius:50%}
+    .hero h1{font-size:clamp(2.25rem,8vw,4.25rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.625rem}
+    .hero h1 span{color:var(--hl)}
+    .hero-sub{font-size:1.0625rem;color:rgba(255,255,255,.62);margin-bottom:.75rem;font-weight:500}
+    .hero-meta{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
+    .hero-meta .dot{width:3px;height:3px;background:rgba(255,255,255,.3);border-radius:50%;align-self:center}
+    .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:.875rem;max-width:720px}
+    .hero-bullet{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px}
+    .hero-bullet-icon{width:22px;height:22px;background:rgba(226,237,122,.15);border:1px solid rgba(226,237,122,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+    .hero-bullet-icon::after{content:'';width:6px;height:6px;background:var(--hl);border-radius:50%}
+    .hero-bullet-text{font-size:.9375rem;color:rgba(255,255,255,.82);line-height:1.55}
+    .hero-bullet-text strong{color:#fff;font-weight:700}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .sec{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:2.25rem;margin:1.75rem 0;box-shadow:0 1px 6px rgba(21,21,22,.04)}
+    @media(max-width:640px){.sec{padding:1.5rem 1.25rem}}
+    .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.5rem}
+    .sec-title{font-size:clamp(1.375rem,4.5vw,2rem);font-weight:800;line-height:1.15;color:var(--shadow);margin-bottom:.5rem;letter-spacing:-.02em}
+    .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
+
+    /* ── THE ARC (prose-forward centerpiece) ── */
+    .arc-sec{text-align:center}
+    .arc-prose{max-width:680px;margin:0 auto;font-size:1.125rem;line-height:1.78;color:var(--text)}
+    .arc-prose strong{font-weight:700;color:var(--navy)}
+    @media(max-width:640px){.arc-prose{font-size:1.0625rem}}
+
+    /* ── KPI CARDS ── */
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    @media(max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.kpi-grid{grid-template-columns:1fr}}
+    .kpi-card{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius);padding:1.625rem 1.375rem;display:flex;flex-direction:column;gap:.5rem;position:relative;overflow:hidden}
+    .kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+    .kpi-card.bofu::before{background:linear-gradient(90deg,var(--bofu),#10b981)}
+    .kpi-card.mofu::before{background:linear-gradient(90deg,var(--mofu),#a855f7)}
+    .kpi-num{font-size:clamp(2.25rem,6vw,2.75rem);font-weight:800;line-height:1;letter-spacing:-.03em}
+    .kpi-card.bofu .kpi-num{color:var(--bofu)}
+    .kpi-card.mofu .kpi-num{color:var(--mofu)}
+    .kpi-label{font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text)}
+    .kpi-insight{font-size:.8125rem;color:var(--muted);line-height:1.6;margin-top:.125rem}
+
+    /* ── SCORE TRAJECTORY ── */
+    .trend-wrap{background:linear-gradient(135deg,#1a1f3a,#0c1a3a);border-radius:10px;padding:1.75rem 1.5rem;max-width:620px;margin:0 auto}
+    .trend-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.125rem;text-align:left}
+    .trend-bars{display:flex;align-items:flex-end;gap:.75rem;height:130px;justify-content:center}
+    .tc{display:flex;flex-direction:column;align-items:center;gap:.35rem;flex:1;max-width:72px;height:100%;justify-content:flex-end}
+    .tbw{height:84px;display:flex;align-items:flex-end;width:100%}
+    .tb{width:100%;border-radius:3px 3px 0 0;min-height:4px}
+    .ts{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.5)}
+    .ts.curr{color:var(--hl);font-size:.9375rem;font-weight:800}
+    .tm{font-size:.6875rem;color:rgba(255,255,255,.35)}
+    .tm.curr{color:rgba(255,255,255,.65);font-weight:600}
+    .trend-caption{font-size:.8125rem;color:var(--muted);line-height:1.7;max-width:620px;margin:1.25rem auto 0;text-align:center}
+
+    /* ── RETENTION CALLOUT (dark card) ── */
+    .retention-callout{background:linear-gradient(135deg,#1a1f3a,#0c1a3a);border-radius:var(--radius);padding:2.25rem;margin:1.75rem 0;color:#fff;border:1px solid rgba(255,255,255,.08);box-shadow:0 1px 6px rgba(21,21,22,.04)}
+    @media(max-width:640px){.retention-callout{padding:1.5rem 1.25rem}}
+    .rc-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .rc-title{font-size:clamp(1.25rem,4vw,1.625rem);font-weight:800;line-height:1.2;color:#fff;margin-bottom:1rem;letter-spacing:-.02em}
+    .rc-body{font-size:.9375rem;color:rgba(255,255,255,.78);line-height:1.75;max-width:720px;margin-bottom:1.5rem}
+    .rc-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .rc-table{width:100%;border-collapse:collapse;min-width:480px}
+    .rc-table th{font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:left;padding:.625rem .75rem;border-bottom:1px solid rgba(255,255,255,.12)}
+    .rc-table td{font-size:.875rem;color:rgba(255,255,255,.82);padding:.625rem .75rem;border-bottom:1px solid rgba(255,255,255,.06)}
+    .rc-table tr:last-child td{border-bottom:none}
+    .rc-table td:first-child{font-weight:700;color:#fff}
+    .rc-table tr.is-high td{color:var(--hl)}
+    .rc-table tr.is-high td:first-child{color:var(--hl)}
+
+    /* ── SIGNATURE WINS ── */
+    .wins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem;align-items:start}
+    @media(max-width:900px){.wins-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.wins-grid{grid-template-columns:1fr}}
+    .win-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);display:flex;flex-direction:column;height:100%;overflow:hidden}
+    .win-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.6rem .9rem;background:var(--navy);color:#fff}
+    .win-date{font-size:.75rem;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+    .win-type{font-size:.625rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:#fff;color:var(--navy);padding:.2rem .5rem;border-radius:4px;white-space:nowrap}
+    .win-body{padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column;gap:.7rem}
+    .win-hook{margin:0;font-style:italic;font-size:.875rem;color:var(--navy);border-left:3px solid var(--hl);padding-left:.75rem;line-height:1.5}
+    .win-standout{display:flex;flex-direction:column;gap:.15rem;padding:.65rem .75rem;background:var(--porcelain);border-radius:8px}
+    .win-standout-val{font-size:1.0625rem;font-weight:800;color:var(--navy);line-height:1.25;letter-spacing:-.01em}
+    .win-why{margin-top:auto;display:flex;flex-direction:column;gap:.3rem}
+    .win-why-label{font-size:.625rem;font-weight:800;color:var(--watch);text-transform:uppercase;letter-spacing:.06em}
+    .win-why-text{font-size:.8125rem;color:var(--muted);line-height:1.6;margin:0}
+    .win-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.7rem 1rem;font-weight:700;font-size:.8125rem;border-radius:0 0 var(--radius) var(--radius);margin-top:.25rem;transition:background .2s}
+    .win-ig-btn:hover{background:#1a3a7a;color:#fff}
+
+    /* ── ARCHITECTURAL PATTERNS ── */
+    .patterns-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    @media(max-width:760px){.patterns-grid{grid-template-columns:1fr}}
+    .pattern-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.625rem;display:flex;flex-direction:column;gap:.625rem;position:relative;overflow:hidden}
+    .pattern-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+    .pattern-card.audience::before{background:linear-gradient(90deg,var(--tofu),#4f6ef7)}
+    .pattern-card.format::before{background:linear-gradient(90deg,var(--mofu),#a855f7)}
+    .pattern-card.conversion::before{background:linear-gradient(90deg,var(--bofu),#10b981)}
+    .pattern-card.hooks::before{background:linear-gradient(90deg,#c8d94a,var(--hl))}
+    .pattern-eyebrow{display:inline-flex;align-items:center;gap:.375rem;font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;width:fit-content}
+    .pattern-card.audience .pattern-eyebrow{background:rgba(14,51,135,.1);color:var(--tofu)}
+    .pattern-card.format .pattern-eyebrow{background:rgba(124,58,237,.1);color:var(--mofu)}
+    .pattern-card.conversion .pattern-eyebrow{background:rgba(5,150,105,.1);color:var(--bofu)}
+    .pattern-card.hooks .pattern-eyebrow{background:rgba(202,217,74,.18);color:#6b7406}
+    .pattern-title{font-size:1.0625rem;font-weight:800;color:var(--text);line-height:1.3;letter-spacing:-.01em}
+    .pattern-body{font-size:.875rem;color:var(--muted);line-height:1.65}
+    .patterns-callback{font-size:.8125rem;color:var(--muted);line-height:1.7;text-align:center;max-width:680px;margin:1.5rem auto 0}
+    .patterns-callback a{color:var(--azure);font-weight:700}
+
+    /* ── FOOTER ── */
+    .footer{background:#fff;padding:2.25rem 1.25rem;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+    .footer-logo{height:26px;width:auto}
+    .footer-text{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-text a{color:var(--azure);font-weight:600}
+    .footer-closeout{max-width:1100px;margin:0 auto 1.25rem;text-align:center;font-size:.9375rem;font-style:italic;color:var(--azure);font-weight:600;line-height:1.5;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+    @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
+
+    /* ── MOBILE ── */
+    @media(max-width:480px){
+      .hero{padding:2rem 1rem 2.75rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.8125rem}
+      .hero-bullet{font-size:.875rem;gap:.5rem}
+      .sec{padding:1.5rem 1.25rem}
+      .kpi-grid{grid-template-columns:1fr}
+      .wins-grid{grid-template-columns:1fr}
+      .patterns-grid{grid-template-columns:1fr}
+      .trend-bars{gap:.4rem}
+      .ts{font-size:.875rem}
+      .kpi-insight{font-size:.875rem}
+      .win-why-text{font-size:.875rem}
+      .trend-caption{font-size:.875rem}
+    }
+    @media(min-width:481px) and (max-width:768px){
+      .hero{padding:2.5rem 1.5rem 3rem}
+      .wins-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="report-nav" aria-label="Recap sections">
+  <div class="report-nav-inner">
+    <a class="report-nav-link" href="#arc-title">The Arc</a>
+    <a class="report-nav-link" href="#numbers-title">The Numbers</a>
+    <a class="report-nav-link" href="#score-title">Score Trajectory</a>
+    <a class="report-nav-link" href="#retention-title">On Retention</a>
+    <a class="report-nav-link" href="#wins-title">Signature Wins</a>
+    <a class="report-nav-link" href="#patterns-title">The Patterns</a>
+  </div>
+</nav>
+
+<div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
+    <div class="hero-top-row">
+      <div class="hero-eyebrow"><span class="dot"></span>Engagement Recap</div>
+      <div class="hero-stage-badge"><span class="stage-icon"></span>Rise Stage &middot; 8 Months</div>
+    </div>
+    <h1>Skin by Brownlee <span>&times; Scroll Media</span></h1>
+    <p class="hero-sub">October 2025 &ndash; May 2026 &middot; 8-month partnership &middot; Rise Stage</p>
+    <div class="hero-meta">
+      <span>Managed by Riley Walker</span>
+      <span class="dot"></span>
+      <span>Strategy build October 2025</span>
+      <span class="dot"></span>
+      <span>Posting November 2025 &ndash; May 2026</span>
+    </div>
+    <ul class="hero-bullets" aria-label="Engagement highlights">
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Foundation built fast.</strong> Within the first 90 days of posting, the conversion mechanics that turn profile visits into Skin Quiz completions were exceeding Rise stage targets, and they held the entire engagement.</span>
+      </li>
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Strategy adapted to the data.</strong> When Q2 surfaced gaps in Saves and Retention, we pivoted to educational MOFU Reels grounded in the perimenopause experience.</span>
+      </li>
+      <li class="hero-bullet">
+        <span class="hero-bullet-icon" aria-hidden="true"></span>
+        <span class="hero-bullet-text"><strong>Proof landed in the close.</strong> The May 25 Dark Spots Reel set the engagement Saves record. May closed with the highest single-month score of the run.</span>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="sec arc-sec" aria-labelledby="arc-title">
+    <p class="sec-label">What We Built Together</p>
+    <h2 class="sec-title" id="arc-title">The Arc</h2>
+    <p class="sec-sub" style="margin-left:auto;margin-right:auto">A plain-English summary of the 8-month engagement.</p>
+    <p class="arc-prose">Over the 8-month engagement, the goal was to position Sylvia as the perimenopause skin authority and build a content engine that converts the right audience into Skin Quiz completions and product buyers. October was the strategy build (voice, audience, content pillars, conversion architecture) with posting beginning in November. The early months built the foundation: voice, audience, the conversion mechanics. From January onwards, CTR and PCR consistently exceeded the Rise stage target range, evidence that visitors who landed on the profile were ready to act. The bigger strategic question was depth. Were people saving the content? Watching it through? In Q2, we made an explicit commitment to grow Saves and Retention by pivoting the content format toward educational MOFU Reels that named the perimenopause experience specifically. April was the diagnostic month. May was the proof. Saves jumped 80% MoM, Retention recovered 10 points, and the May 25 Dark Spots Reel drove 62 saves on its own, the engagement Saves record. The strategy worked. <strong>The content engine is yours to keep running.</strong></p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="numbers-title">
+    <p class="sec-label">The Numbers</p>
+    <h2 class="sec-title" id="numbers-title">What the Data Says</h2>
+    <p class="sec-sub">Four metrics that prove out the strategy.</p>
+    <div class="kpi-grid">
+      <div class="kpi-card bofu">
+        <div class="kpi-num">17.5%</div>
+        <div class="kpi-label">CTR in May</div>
+        <p class="kpi-insight">3.5x the Rise stage target range. Consistently exceeded the ceiling from Month 3 onwards.</p>
+      </div>
+      <div class="kpi-card bofu">
+        <div class="kpi-num">18.3%</div>
+        <div class="kpi-label">PCR in May</div>
+        <p class="kpi-insight">4.3pp above the Rise stage ceiling. The conversion architecture worked throughout.</p>
+      </div>
+      <div class="kpi-card mofu">
+        <div class="kpi-num">+137%</div>
+        <div class="kpi-label">Saves Growth (Jan &rarr; May)</div>
+        <p class="kpi-insight">From 111 in January to 263 in May. The Q2 format pivot turned Saves into the strongest pre-purchase signal.</p>
+      </div>
+      <div class="kpi-card mofu">
+        <div class="kpi-num">+49%</div>
+        <div class="kpi-label">Comments Growth (Jan &rarr; May)</div>
+        <p class="kpi-insight">From 153 in January to 228 in May. The community moved from passive viewers to active participants.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="score-title">
+    <p class="sec-label">Performance Score</p>
+    <h2 class="sec-title" id="score-title">Score Trajectory</h2>
+    <p class="sec-sub">Monthly performance scores across the engagement.</p>
+    <div class="trend-wrap" aria-label="Monthly score trajectory">
+      <p class="trend-label">Monthly Performance Score</p>
+      <div class="trend-bars">
+        <div class="tc"><div class="tbw"><div class="tb" style="height:50.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">Nov</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:30.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.7</div><div class="tm">Dec</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:40.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.8</div><div class="tm">Jan</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:70.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.1</div><div class="tm">Feb</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:90.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.3</div><div class="tm">Mar</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:60.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.0</div><div class="tm">Apr</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:100.0%;background:#e2ed7a"></div></div><div class="ts curr">8.4</div><div class="tm curr">May</div></div>
+      </div>
+    </div>
+    <p class="trend-caption">Foundation phase through January. Climbed through March. The Q2 commitment dipped in April as the format pivot started. Recovered to the engagement high in May.</p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="retention-callout" aria-labelledby="retention-title">
+    <p class="rc-label">A Note on Retention</p>
+    <h2 class="rc-title" id="retention-title">Reading the Data Honestly</h2>
+    <p class="rc-body">Retention % declined January to April before recovering in May. The honest read is more nuanced. Watch time in absolute seconds actually improved (January 8.4s to March 11.9s) as Reels got longer. The percentage dropped because the denominator grew, not because the content got less engaging. When the Q2 commitment surfaced retention as a focus, we recalibrated content length and approach. May closed with retention at 31% (+10pp MoM) and the May 18 Tough Love Reel hit 77% retention, the engagement record. The lesson: depth signals are about more than one ratio.</p>
+    <div class="rc-table-wrap">
+      <table class="rc-table">
+        <thead>
+          <tr><th>Month</th><th>Reels Published</th><th>Avg Retention</th><th>Avg Watch Time</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Jan 2026</td><td>7</td><td>40.5%</td><td>8.4s</td></tr>
+          <tr><td>Feb 2026</td><td>10</td><td>25.3%</td><td>8.9s</td></tr>
+          <tr><td>Mar 2026</td><td>9</td><td>24.6%</td><td>11.9s</td></tr>
+          <tr><td>Apr 2026</td><td>11</td><td>21.5%</td><td>9.6s</td></tr>
+          <tr class="is-high"><td>May 2026</td><td>13</td><td>30.9%</td><td>9.8s</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="wins-title">
+    <p class="sec-label">Signature Wins</p>
+    <h2 class="sec-title" id="wins-title">The Posts That Broke Through</h2>
+    <p class="sec-sub">Five posts across the engagement that set the records that defined what worked.</p>
+    <div class="wins-grid">
+
+      <div class="win-card">
+        <div class="win-top"><span class="win-date">May 25, 2026</span><span class="win-type">Reel</span></div>
+        <div class="win-body">
+          <span class="post-format-pill" style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content">Educational MOFU Reel</span>
+          <blockquote class="win-hook">&ldquo;Dark spots don&rsquo;t disappear overnight, but they do disappear with the right plan.&rdquo;</blockquote>
+          <div class="win-standout"><span class="win-standout-val">Saves record &middot; 62 &middot; 7.07x avg</span></div>
+          <div class="win-why">
+            <span class="win-why-label">&#9650; Why It Worked</span>
+            <p class="win-why-text">The engagement Saves record. The &ldquo;specific outcome plus the right plan&rdquo; hook structure named a clear problem and delivered the full protocol in the caption. This is the format the Q2 commitment proved out.</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/reel/DYw9qOsoWBh/" target="_blank" rel="noopener" class="win-ig-btn">View on Instagram &rarr;</a>
+      </div>
+
+      <div class="win-card">
+        <div class="win-top"><span class="win-date">January 12, 2026</span><span class="win-type">Reel</span></div>
+        <div class="win-body">
+          <span class="post-format-pill" style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content">PSA Reel</span>
+          <blockquote class="win-hook">&ldquo;PSA: You&rsquo;re throwing your money away if you do these 5 things after a facial...&rdquo;</blockquote>
+          <div class="win-standout"><span class="win-standout-val">Shares record &middot; 35 &middot; 7.52x avg</span></div>
+          <div class="win-why">
+            <span class="win-why-label">&#9650; Why It Worked</span>
+            <p class="win-why-text">The engagement Shares record. Combines high stakes (financial waste), insider authority, and clear list structure. Built for sharing, and the algorithm rewarded it accordingly.</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/reel/DTafgITjYuO/" target="_blank" rel="noopener" class="win-ig-btn">View on Instagram &rarr;</a>
+      </div>
+
+      <div class="win-card">
+        <div class="win-top"><span class="win-date">December 5, 2025</span><span class="win-type">Reel</span></div>
+        <div class="win-body">
+          <span class="post-format-pill" style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content">Wholesale Announcement Reel</span>
+          <blockquote class="win-hook">&ldquo;SURPRISE! You asked, and we&rsquo;re delivering! Calling all estheticians, spas and salons...&rdquo;</blockquote>
+          <div class="win-standout"><span class="win-standout-val">5,760 views &middot; 62 comments &middot; B2B breakthrough</span></div>
+          <div class="win-why">
+            <span class="win-why-label">&#9650; Why It Worked</span>
+            <p class="win-why-text">A B2B inflection moment. The wholesale partnership announcement opened a new audience segment and proved the content could activate beyond direct consumers.</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/reel/DR4rtmzjZmK/" target="_blank" rel="noopener" class="win-ig-btn">View on Instagram &rarr;</a>
+      </div>
+
+      <div class="win-card">
+        <div class="win-top"><span class="win-date">November 24, 2025</span><span class="win-type">Carousel</span></div>
+        <div class="win-body">
+          <span class="post-format-pill" style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content">Brand Re-introduction Carousel</span>
+          <blockquote class="win-hook">&ldquo;New faces, clients, followers, and more. We&rsquo;re taking a quick moment to reintroduce ourselves...&rdquo;</blockquote>
+          <div class="win-standout"><span class="win-standout-val">Views record &middot; 7,037 &middot; 3.23x avg</span></div>
+          <div class="win-why">
+            <span class="win-why-label">&#9650; Why It Worked</span>
+            <p class="win-why-text">The engagement Views record, set in the opening month. The brand re-introduction gave new visitors permission to follow at exactly the moment they were deciding whether to.</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/p/DRc9Lcfgfjk/" target="_blank" rel="noopener" class="win-ig-btn">View on Instagram &rarr;</a>
+      </div>
+
+      <div class="win-card">
+        <div class="win-top"><span class="win-date">March 20, 2026</span><span class="win-type">Reel</span></div>
+        <div class="win-body">
+          <span class="post-format-pill" style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content">Relatability Reel</span>
+          <blockquote class="win-hook">&ldquo;You always have options in men and in skincare.&rdquo;</blockquote>
+          <div class="win-standout"><span class="win-standout-val">Comments record &middot; 79 &middot; 7.58x avg &middot; 60.6% retention</span></div>
+          <div class="win-why">
+            <span class="win-why-label">&#9650; Why It Worked</span>
+            <p class="win-why-text">The engagement Comments record AND a 60% retention hit in one post. The &ldquo;men and skincare&rdquo; framing landed on relatability and humor, and the comments section turned into a conversation. This is what depth and community look like in one post.</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/reel/DWHETKlIlZw/" target="_blank" rel="noopener" class="win-ig-btn">View on Instagram &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sec" aria-labelledby="patterns-title">
+    <p class="sec-label">The Patterns</p>
+    <h2 class="sec-title" id="patterns-title">What Worked Architecturally</h2>
+    <p class="sec-sub">Four lessons the engagement proved about Sylvia&rsquo;s audience and the business.</p>
+    <div class="patterns-grid">
+      <div class="pattern-card audience">
+        <span class="pattern-eyebrow">Audience</span>
+        <h3 class="pattern-title">The IVP Pattern</h3>
+        <p class="pattern-body">Women 40 to 60 experiencing hormonal skin changes responded most when content named the experience specifically. &ldquo;Perimenopause,&rdquo; &ldquo;after 40,&rdquo; &ldquo;hormonal shifts&rdquo; functioned as recognition signals, not just keywords.</p>
+      </div>
+      <div class="pattern-card format">
+        <span class="pattern-eyebrow">Format</span>
+        <h3 class="pattern-title">The Educational MOFU Reel</h3>
+        <p class="pattern-body">Reels that named a specific outcome and delivered a clear sequence (&ldquo;dark spots plus the right plan,&rdquo; &ldquo;5 things you&rsquo;re doing wrong&rdquo;) consistently outperformed across the engagement. This is the format template.</p>
+      </div>
+      <div class="pattern-card conversion">
+        <span class="pattern-eyebrow">Conversion</span>
+        <h3 class="pattern-title">The Conversion Architecture</h3>
+        <p class="pattern-body">The Skin Quiz worked as the primary CTA from Month 3 onwards. CTR and PCR both exceeded the Rise stage range throughout. The infrastructure is built and proven.</p>
+      </div>
+      <div class="pattern-card hooks">
+        <span class="pattern-eyebrow">Hooks</span>
+        <h3 class="pattern-title">Hook Patterns That Move Metrics</h3>
+        <p class="pattern-body">Three structures consistently outperformed: the &ldquo;are you doing this&rdquo; callout for community engagement (May 1 SPF Reel, 60 comments), the contrarian &ldquo;I would never but&rdquo; setup for retention (May 18 Tough Love Reel, 77% retention), and the &ldquo;specific outcome plus the right plan&rdquo; promise for saves (May 25 Dark Spots Reel, 62 saves). Match the hook to the metric you most want to move.</p>
+      </div>
+    </div>
+    <p class="patterns-callback">The full asset handoff with the complete carry-forward playbook lives in the <a href="https://reports.scrollmedia.co/skinbybrownleeandco/may2026/#carry-title" target="_blank" rel="noopener">May 2026 performance report&rsquo;s &ldquo;What You Carry Forward&rdquo; section</a>.</p>
+  </section>
+</div>
+
+<footer class="footer">
+  <p class="footer-closeout">Eight months of partnership. Thank you, Sylvia. The door is always open.</p>
+  <div class="footer-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">
+    <p class="footer-text">
+      Prepared by <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; Skin by Brownlee Engagement Recap<br>
+      Data sources: Instagram Insights, Metricool &middot; Scoring: Scroll Media Weighted Performance Framework v2.0
+    </p>
+  </div>
+</footer>
+
+<script>
+  (function(){var bar=document.getElementById('progress-bar');function u(){var s=window.pageYOffset||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=h>0?(Math.min(s/h,1)*100)+'%':'0%';}window.addEventListener('scroll',u,{passive:true});u();})();
+  (function(){
+    var links=document.querySelectorAll('.report-nav-link');
+    var sections=[];
+    links.forEach(function(l){var id=l.getAttribute('href').replace('#','');var el=document.getElementById(id);if(el)sections.push({el:el,link:l});});
+    function onScroll(){var scrollY=window.scrollY+80;var active=null;sections.forEach(function(s){if(s.el.getBoundingClientRect().top+window.scrollY<=scrollY)active=s;});links.forEach(function(l){l.classList.remove('active');});if(active)active.link.classList.add('active');}
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  })();
+</script>
+
+</body>
+</html>
