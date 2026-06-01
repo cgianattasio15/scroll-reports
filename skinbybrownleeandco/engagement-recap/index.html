@@ -94,12 +94,27 @@
 
     /* ── THE ARC (editorial treatment) ── */
     .arc-sec{text-align:center}
-    .arc-prose{max-width:600px;margin:2rem auto 0;font-size:1.1875rem;line-height:1.8;color:var(--text);text-align:left}
-    .arc-prose::first-letter{float:left;font-size:3.9rem;line-height:.78;font-weight:800;color:var(--hl);padding:.06em .14em 0 0}
+    .arc-prose{max-width:600px;margin:1.5rem auto 0;font-size:1.1875rem;line-height:1.8;color:var(--text);text-align:left}
+    .arc-prose.arc-lead{margin-top:2rem}
+    .arc-lead::first-letter{float:left;font-size:3.9rem;line-height:.78;font-weight:800;color:var(--hl);padding:.06em .14em 0 0}
     .arc-prose strong{font-weight:700;color:var(--navy)}
     .arc-prose em{font-style:italic;color:var(--navy);font-weight:600}
     .arc-pullquote{max-width:600px;margin:2.5rem auto 0;text-align:center;font-size:1.5rem;font-style:italic;font-weight:600;color:var(--navy);line-height:1.4;padding:1.5rem 0;border-top:2px solid #c8d94a;border-bottom:2px solid #c8d94a}
-    @media(max-width:640px){.arc-prose{font-size:1.0625rem;margin-top:1.25rem}.arc-prose::first-letter{font-size:3.4rem}.arc-pullquote{font-size:1.25rem;margin-top:2rem}}
+    @media(max-width:640px){.arc-prose{font-size:1.0625rem}.arc-prose.arc-lead{margin-top:1.25rem}.arc-lead::first-letter{font-size:3.4rem}.arc-pullquote{font-size:1.25rem;margin-top:2rem}}
+
+    /* ── WHERE WE GREW (growth section) ── */
+    .growth-headline{text-align:center;font-size:clamp(1.875rem,5.5vw,2.625rem);font-weight:800;color:var(--bofu);line-height:1;letter-spacing:-.02em;margin-bottom:1.5rem}
+    .growth-headline span{display:block;font-size:.9375rem;font-weight:600;color:var(--muted);letter-spacing:0;margin-top:.45rem}
+    .saves-chart .trend-bars{height:150px}
+    .saves-chart .tbw{height:104px}
+    .growth-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.75rem}
+    .growth-stat{background:rgba(226,237,122,.14);border:1px solid rgba(202,217,74,.4);border-left:3px solid var(--hl);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:1.125rem 1rem;text-align:center}
+    .growth-stat-num{font-size:1.75rem;font-weight:800;color:var(--bofu);line-height:1;letter-spacing:-.02em}
+    .growth-stat.alt .growth-stat-num{color:var(--mofu)}
+    .growth-stat-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text);margin-top:.45rem}
+    .growth-stat-ctx{font-size:.75rem;color:var(--muted);margin-top:.3rem}
+    @media(max-width:760px){.growth-stats{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:440px){.growth-stats{grid-template-columns:1fr}}
 
     /* ── CLOSEOUT SIGNATURE ── */
     .closeout-sig{background:linear-gradient(135deg,#fbfcf0,#f3f6da);border-top:1px solid rgba(202,217,74,.45);padding:4rem 1.25rem;text-align:center}
@@ -236,7 +251,7 @@
     <a class="report-nav-link" href="#arc-title">The Arc</a>
     <a class="report-nav-link" href="#numbers-title">The Numbers</a>
     <a class="report-nav-link" href="#score-title">Score Trajectory</a>
-    <a class="report-nav-link" href="#retention-title">On Retention</a>
+    <a class="report-nav-link" href="#growth-title">Where We Grew</a>
     <a class="report-nav-link" href="#wins-title">Signature Wins</a>
     <a class="report-nav-link" href="#patterns-title">The Patterns</a>
   </div>
@@ -316,7 +331,8 @@
     <p class="sec-label">What We Built Together</p>
     <h2 class="sec-title" id="arc-title">The Arc</h2>
     <p class="sec-sub" style="margin-left:auto;margin-right:auto">A plain-English summary of the 8-month engagement.</p>
-    <p class="arc-prose">The engagement was structured around a focused content strategy: prioritizing the formats and signals that drive the right audience to action. Over the 8 months, the goal was to position you as the perimenopause skin authority and build a content engine that converts the right audience into Skin Quiz completions and product buyers. October was the strategy build (voice, audience, content pillars, conversion architecture) with posting beginning in November. The early months built the foundation. From January onwards, CTR and PCR consistently exceeded the Rise stage target range, evidence that visitors who landed on the profile were ready to act. The bigger strategic question was depth: were people saving the content, watching it through? In Q2, we made an explicit commitment to grow Saves and Retention by pivoting the content format toward educational MOFU Reels that named the perimenopause experience specifically. <em>April was the diagnostic month. May was the proof.</em> Saves jumped 80% MoM, Retention recovered 10 points, and the May 25 Dark Spots Reel drove 62 saves on its own, the engagement Saves record. The strategy worked. <strong>The content engine is yours to keep running.</strong></p>
+    <p class="arc-prose arc-lead">The goal of the engagement was to use social media as a lead-generation engine for Skin by Brownlee &amp; Co, the Cincinnati skincare clinic specializing in the prevention and treatment of acne and hyperpigmentation. The strategy was a clear content funnel: discovery content building reach and awareness, engagement content driving education and consideration, and conversion content moving qualified viewers into action on the Skin Quiz and product purchases. Every piece of content was calibrated to a specific stage of the purchasing journey, designed to get you in front of the highest-quality audience and convert that audience into leads.</p>
+    <p class="arc-prose">Over the 8 months, that machine got built and proven. October was the strategy build, with posting beginning in November. The early months built the foundation. From January onwards, CTR and PCR consistently exceeded the Rise stage target range, evidence that visitors who landed on the profile were ready to act. In Q2, we focused on growing the depth signals (Saves and Retention) by pivoting the content format toward more educational engagement-stage content. <em>April was the diagnostic month. May was the proof.</em> Saves jumped 80% MoM. Retention recovered 10 points. The May 25 Dark Spots Reel drove 62 saves on its own, the engagement Saves record. <strong>The content engine is yours to keep running.</strong></p>
     <blockquote class="arc-pullquote">The content engine is yours to keep running.</blockquote>
   </section>
 </div>
@@ -377,23 +393,43 @@
 </div>
 
 <div class="wrap">
-  <section class="retention-callout" aria-labelledby="retention-title">
-    <p class="rc-label">A Note on Retention</p>
-    <h2 class="rc-title" id="retention-title">Reading the Data Honestly</h2>
-    <p class="rc-body">Retention % declined January to April before recovering in May. The honest read is more nuanced. Watch time in absolute seconds actually improved (January 8.4s to March 11.9s) as Reels got longer. The percentage dropped because the denominator grew, not because the content got less engaging. When the Q2 commitment surfaced retention as a focus, we recalibrated content length and approach. May closed with retention at 31% (+10pp MoM) and the May 18 Tough Love Reel hit 77% retention, the engagement record. The lesson: depth signals are about more than one ratio.</p>
-    <div class="rc-table-wrap">
-      <table class="rc-table">
-        <thead>
-          <tr><th>Month</th><th>Reels Published</th><th>Avg Retention</th><th>Avg Watch Time</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Jan 2026</td><td>7</td><td>40.5%</td><td>8.4s</td></tr>
-          <tr><td>Feb 2026</td><td>10</td><td>25.3%</td><td>8.9s</td></tr>
-          <tr><td>Mar 2026</td><td>9</td><td>24.6%</td><td>11.9s</td></tr>
-          <tr><td>Apr 2026</td><td>11</td><td>21.5%</td><td>9.6s</td></tr>
-          <tr class="is-high"><td>May 2026</td><td>13</td><td>30.9%</td><td>9.8s</td></tr>
-        </tbody>
-      </table>
+  <section class="sec" aria-labelledby="growth-title">
+    <p class="sec-label">Growth Curve</p>
+    <h2 class="sec-title" id="growth-title">Where We Grew</h2>
+    <p class="sec-sub">The depth signals we committed to growing in Q2 grew across the engagement.</p>
+    <p class="growth-headline">+137%<span>Saves growth from January to May</span></p>
+    <div class="trend-wrap saves-chart" aria-label="Saves by month, January through May 2026">
+      <p class="trend-label">Saves by Month</p>
+      <div class="trend-bars">
+        <div class="tc"><div class="tbw"><div class="tb" style="height:20.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">111</div><div class="tm">Jan</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:43.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">154</div><div class="tm">Feb</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:42.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">152</div><div class="tm">Mar</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:38.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">146</div><div class="tm">Apr</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:100.0%;background:#e2ed7a"></div></div><div class="ts curr">263</div><div class="tm curr">May</div></div>
+      </div>
+    </div>
+    <p class="trend-caption">Saves grew from 111 in January to 263 in May, a 137% increase across the five months of full reporting data. The May 25 Dark Spots Reel drove 62 saves on its own, the engagement record.</p>
+    <div class="growth-stats">
+      <div class="growth-stat">
+        <div class="growth-stat-num">+137%</div>
+        <div class="growth-stat-label">Saves Growth</div>
+        <div class="growth-stat-ctx">Jan 111 &rarr; May 263</div>
+      </div>
+      <div class="growth-stat alt">
+        <div class="growth-stat-num">+49%</div>
+        <div class="growth-stat-label">Comments Growth</div>
+        <div class="growth-stat-ctx">Jan 153 &rarr; May 228</div>
+      </div>
+      <div class="growth-stat alt">
+        <div class="growth-stat-num">+35%</div>
+        <div class="growth-stat-label">Shares Growth</div>
+        <div class="growth-stat-ctx">Jan 91 &rarr; May 123</div>
+      </div>
+      <div class="growth-stat">
+        <div class="growth-stat-num">77%</div>
+        <div class="growth-stat-label">Retention Record</div>
+        <div class="growth-stat-ctx">May 18 Tough Love Reel</div>
+      </div>
     </div>
   </section>
 </div>
