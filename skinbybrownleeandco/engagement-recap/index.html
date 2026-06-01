@@ -61,6 +61,30 @@
     .hero-bullet-text{font-size:.9375rem;color:rgba(255,255,255,.82);line-height:1.55}
     .hero-bullet-text strong{color:#fff;font-weight:700}
 
+    /* ── HERO ENGAGEMENT TIMELINE ── */
+    .htl-desktop{max-width:88%;margin:2rem auto .25rem}
+    .htl-phases{display:grid;grid-template-columns:repeat(8,1fr);margin-bottom:1.1rem}
+    .htl-phase{font-size:.625rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--hl);text-align:center;padding-bottom:.45rem;border-bottom:1.5px solid rgba(226,237,122,.4);margin:0 .3rem}
+    .htl-phase.p-strategy{grid-column:1/2}
+    .htl-phase.p-foundation{grid-column:2/7}
+    .htl-phase.p-q2{grid-column:7/8}
+    .htl-phase.p-proof{grid-column:8/9}
+    .htl-track{display:grid;grid-template-columns:repeat(8,1fr);position:relative}
+    .htl-track::before{content:'';position:absolute;top:6px;left:6.25%;right:6.25%;height:2px;background:linear-gradient(90deg,rgba(255,255,255,.22),rgba(226,237,122,.92));z-index:0}
+    .htl-node{display:flex;flex-direction:column;align-items:center;gap:.6rem;position:relative;z-index:1}
+    .htl-dot{width:14px;height:14px;border-radius:50%;background:#0d1a3a;border:1.5px solid rgba(255,255,255,.45)}
+    .htl-month{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+    .htl-node.is-peak .htl-dot{width:20px;height:20px;margin-top:-3px;background:var(--hl);border-color:var(--hl);box-shadow:0 0 0 4px rgba(226,237,122,.16),0 0 18px rgba(226,237,122,.55)}
+    .htl-node.is-peak .htl-month{color:var(--hl);font-weight:800}
+    .htl-mobile{display:none}
+    .htl-m-group{display:flex;align-items:center;gap:1rem;position:relative}
+    .htl-m-nodes{display:flex;flex-direction:column;gap:.7rem;position:relative}
+    .htl-m-node{display:flex;align-items:center;gap:.7rem;position:relative;z-index:1}
+    .htl-m-node .htl-month{color:rgba(255,255,255,.6)}
+    .htl-m-node.is-peak .htl-dot{width:20px;height:20px;background:var(--hl);border-color:var(--hl);box-shadow:0 0 0 3px rgba(226,237,122,.16),0 0 14px rgba(226,237,122,.5)}
+    .htl-m-node.is-peak .htl-month{color:var(--hl);font-weight:800}
+    .htl-m-phase{font-size:.6875rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--hl)}
+
     .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
     .sec{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:2.25rem;margin:1.75rem 0;box-shadow:0 1px 6px rgba(21,21,22,.04)}
     @media(max-width:640px){.sec{padding:1.5rem 1.25rem}}
@@ -68,11 +92,20 @@
     .sec-title{font-size:clamp(1.375rem,4.5vw,2rem);font-weight:800;line-height:1.15;color:var(--shadow);margin-bottom:.5rem;letter-spacing:-.02em}
     .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
 
-    /* ── THE ARC (prose-forward centerpiece) ── */
+    /* ── THE ARC (editorial treatment) ── */
     .arc-sec{text-align:center}
-    .arc-prose{max-width:680px;margin:0 auto;font-size:1.125rem;line-height:1.78;color:var(--text)}
+    .arc-prose{max-width:600px;margin:2rem auto 0;font-size:1.1875rem;line-height:1.8;color:var(--text);text-align:left}
+    .arc-prose::first-letter{float:left;font-size:3.9rem;line-height:.78;font-weight:800;color:var(--hl);padding:.06em .14em 0 0}
     .arc-prose strong{font-weight:700;color:var(--navy)}
-    @media(max-width:640px){.arc-prose{font-size:1.0625rem}}
+    .arc-prose em{font-style:italic;color:var(--navy);font-weight:600}
+    .arc-pullquote{max-width:600px;margin:2.5rem auto 0;text-align:center;font-size:1.5rem;font-style:italic;font-weight:600;color:var(--navy);line-height:1.4;padding:1.5rem 0;border-top:2px solid #c8d94a;border-bottom:2px solid #c8d94a}
+    @media(max-width:640px){.arc-prose{font-size:1.0625rem;margin-top:1.25rem}.arc-prose::first-letter{font-size:3.4rem}.arc-pullquote{font-size:1.25rem;margin-top:2rem}}
+
+    /* ── CLOSEOUT SIGNATURE ── */
+    .closeout-sig{background:linear-gradient(135deg,#fbfcf0,#f3f6da);border-top:1px solid rgba(202,217,74,.45);padding:4rem 1.25rem;text-align:center}
+    .closeout-line{max-width:680px;margin:0 auto;font-size:1.5rem;font-style:italic;font-weight:600;color:var(--navy);line-height:1.5}
+    .closeout-sign{margin-top:1rem;font-size:1rem;font-weight:400;color:var(--navy);opacity:.82}
+    @media(max-width:560px){.closeout-sig{padding:2.75rem 1.25rem}.closeout-line{font-size:1.1875rem}}
 
     /* ── KPI CARDS ── */
     .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
@@ -162,6 +195,14 @@
     .footer-closeout{max-width:1100px;margin:0 auto 1.25rem;text-align:center;font-size:.9375rem;font-style:italic;color:var(--azure);font-weight:600;line-height:1.5;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
     @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
 
+    /* ── TIMELINE BREAKPOINT ── */
+    @media(max-width:900px){
+      .htl-desktop{display:none}
+      .htl-mobile{display:flex;flex-direction:column;gap:0;max-width:340px;margin:1.5rem auto 0;position:relative;padding-left:2px}
+      .htl-mobile::before{content:'';position:absolute;left:7px;top:18px;bottom:18px;width:2px;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(226,237,122,.92));z-index:0}
+      .htl-m-group{padding:.45rem 0}
+    }
+
     /* ── MOBILE ── */
     @media(max-width:480px){
       .hero{padding:2rem 1rem 2.75rem}
@@ -215,20 +256,54 @@
       <span class="dot"></span>
       <span>Posting November 2025 &ndash; May 2026</span>
     </div>
-    <ul class="hero-bullets" aria-label="Engagement highlights">
-      <li class="hero-bullet">
-        <span class="hero-bullet-icon" aria-hidden="true"></span>
-        <span class="hero-bullet-text"><strong>Foundation built fast.</strong> Within the first 90 days of posting, the conversion mechanics that turn profile visits into Skin Quiz completions were exceeding Rise stage targets, and they held the entire engagement.</span>
-      </li>
-      <li class="hero-bullet">
-        <span class="hero-bullet-icon" aria-hidden="true"></span>
-        <span class="hero-bullet-text"><strong>Strategy adapted to the data.</strong> When Q2 surfaced gaps in Saves and Retention, we pivoted to educational MOFU Reels grounded in the perimenopause experience.</span>
-      </li>
-      <li class="hero-bullet">
-        <span class="hero-bullet-icon" aria-hidden="true"></span>
-        <span class="hero-bullet-text"><strong>Proof landed in the close.</strong> The May 25 Dark Spots Reel set the engagement Saves record. May closed with the highest single-month score of the run.</span>
-      </li>
-    </ul>
+    <div class="htl-desktop" aria-label="Engagement timeline, October 2025 through May 2026">
+      <div class="htl-phases">
+        <span class="htl-phase p-strategy">Strategy Build</span>
+        <span class="htl-phase p-foundation">Foundation</span>
+        <span class="htl-phase p-q2">Q2 Commitment</span>
+        <span class="htl-phase p-proof">Proof Landed</span>
+      </div>
+      <div class="htl-track">
+        <div class="htl-node"><span class="htl-dot"></span><span class="htl-month">Oct</span></div>
+        <div class="htl-node"><span class="htl-dot"></span><span class="htl-month">Nov</span></div>
+        <div class="htl-node"><span class="htl-dot"></span><span class="htl-month">Dec</span></div>
+        <div class="htl-node"><span class="htl-dot"></span><span class="htl-month">Jan</span></div>
+        <div class="htl-node"><span class="htl-dot"></span><span class="htl-month">Feb</span></div>
+        <div class="htl-node"><span class="htl-dot"></span><span class="htl-month">Mar</span></div>
+        <div class="htl-node"><span class="htl-dot"></span><span class="htl-month">Apr</span></div>
+        <div class="htl-node is-peak"><span class="htl-dot"></span><span class="htl-month">May</span></div>
+      </div>
+    </div>
+    <div class="htl-mobile" aria-hidden="true">
+      <div class="htl-m-group">
+        <div class="htl-m-nodes">
+          <div class="htl-m-node"><span class="htl-dot"></span><span class="htl-month">Oct</span></div>
+        </div>
+        <span class="htl-m-phase">Strategy Build</span>
+      </div>
+      <div class="htl-m-group">
+        <div class="htl-m-nodes">
+          <div class="htl-m-node"><span class="htl-dot"></span><span class="htl-month">Nov</span></div>
+          <div class="htl-m-node"><span class="htl-dot"></span><span class="htl-month">Dec</span></div>
+          <div class="htl-m-node"><span class="htl-dot"></span><span class="htl-month">Jan</span></div>
+          <div class="htl-m-node"><span class="htl-dot"></span><span class="htl-month">Feb</span></div>
+          <div class="htl-m-node"><span class="htl-dot"></span><span class="htl-month">Mar</span></div>
+        </div>
+        <span class="htl-m-phase">Foundation</span>
+      </div>
+      <div class="htl-m-group">
+        <div class="htl-m-nodes">
+          <div class="htl-m-node"><span class="htl-dot"></span><span class="htl-month">Apr</span></div>
+        </div>
+        <span class="htl-m-phase">Q2 Commitment</span>
+      </div>
+      <div class="htl-m-group">
+        <div class="htl-m-nodes">
+          <div class="htl-m-node is-peak"><span class="htl-dot"></span><span class="htl-month">May</span></div>
+        </div>
+        <span class="htl-m-phase">Proof Landed</span>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -237,7 +312,8 @@
     <p class="sec-label">What We Built Together</p>
     <h2 class="sec-title" id="arc-title">The Arc</h2>
     <p class="sec-sub" style="margin-left:auto;margin-right:auto">A plain-English summary of the 8-month engagement.</p>
-    <p class="arc-prose">Over the 8-month engagement, the goal was to position Sylvia as the perimenopause skin authority and build a content engine that converts the right audience into Skin Quiz completions and product buyers. October was the strategy build (voice, audience, content pillars, conversion architecture) with posting beginning in November. The early months built the foundation: voice, audience, the conversion mechanics. From January onwards, CTR and PCR consistently exceeded the Rise stage target range, evidence that visitors who landed on the profile were ready to act. The bigger strategic question was depth. Were people saving the content? Watching it through? In Q2, we made an explicit commitment to grow Saves and Retention by pivoting the content format toward educational MOFU Reels that named the perimenopause experience specifically. April was the diagnostic month. May was the proof. Saves jumped 80% MoM, Retention recovered 10 points, and the May 25 Dark Spots Reel drove 62 saves on its own, the engagement Saves record. The strategy worked. <strong>The content engine is yours to keep running.</strong></p>
+    <p class="arc-prose">Over the 8-month engagement, the goal was to position Sylvia as the perimenopause skin authority and build a content engine that converts the right audience into Skin Quiz completions and product buyers. October was the strategy build (voice, audience, content pillars, conversion architecture) with posting beginning in November. The early months built the foundation: voice, audience, the conversion mechanics. From January onwards, CTR and PCR consistently exceeded the Rise stage target range, evidence that visitors who landed on the profile were ready to act. The bigger strategic question was depth. Were people saving the content? Watching it through? In Q2, we made an explicit commitment to grow Saves and Retention by pivoting the content format toward educational MOFU Reels that named the perimenopause experience specifically. <em>April was the diagnostic month. May was the proof.</em> Saves jumped 80% MoM, Retention recovered 10 points, and the May 25 Dark Spots Reel drove 62 saves on its own, the engagement Saves record. The strategy worked. <strong>The content engine is yours to keep running.</strong></p>
+    <blockquote class="arc-pullquote">The content engine is yours to keep running.</blockquote>
   </section>
 </div>
 
@@ -281,8 +357,8 @@
       <div class="trend-bars">
         <div class="tc"><div class="tbw"><div class="tb" style="height:50.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">Nov</div></div>
         <div class="tc"><div class="tbw"><div class="tb" style="height:30.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.7</div><div class="tm">Dec</div></div>
-        <div class="tc"><div class="tbw"><div class="tb" style="height:40.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.8</div><div class="tm">Jan</div></div>
-        <div class="tc"><div class="tbw"><div class="tb" style="height:70.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.1</div><div class="tm">Feb</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:20.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.6</div><div class="tm">Jan</div></div>
+        <div class="tc"><div class="tbw"><div class="tb" style="height:50.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">Feb</div></div>
         <div class="tc"><div class="tbw"><div class="tb" style="height:90.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.3</div><div class="tm">Mar</div></div>
         <div class="tc"><div class="tbw"><div class="tb" style="height:60.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.0</div><div class="tm">Apr</div></div>
         <div class="tc"><div class="tbw"><div class="tb" style="height:100.0%;background:#e2ed7a"></div></div><div class="ts curr">8.4</div><div class="tm curr">May</div></div>
@@ -426,8 +502,12 @@
   </section>
 </div>
 
+<section class="closeout-sig" aria-label="Closeout">
+  <p class="closeout-line">Eight months of partnership. Thank you, Sylvia. The door is always open.</p>
+  <p class="closeout-sign">&mdash; Riley &amp; the Scroll Media team</p>
+</section>
+
 <footer class="footer">
-  <p class="footer-closeout">Eight months of partnership. Thank you, Sylvia. The door is always open.</p>
   <div class="footer-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">
     <p class="footer-text">
