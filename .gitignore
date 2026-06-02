@@ -1,0 +1,11 @@
+.claude/settings.local.json
+.DS_Store
+
+# Secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+*_api_key
+*.token
+.metricool_api_key

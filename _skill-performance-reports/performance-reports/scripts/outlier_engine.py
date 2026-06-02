@@ -15,16 +15,35 @@ Usage:
     results = get_top_posts(blog_id=5321970, month=3, year=2026)
 """
 
+import os
+import sys
 import requests
 import json
 from datetime import datetime
 from typing import Optional
 
 # ── METRICOOL CONFIG ──────────────────────────────────────────────────────────
-METRICOOL_TOKEN = "HNYJZNBHPSWJYCSSLWTMFDPTQAYIFEMWAJAYBVLVLVYSLBTXLYRLZDKHCJWVZIWL"
+# Token is never hardcoded. It is read at call time from, in order:
+#   1. env var  METRICOOL_TOKEN
+#   2. file     ~/.metricool_api_key   (single line: the token)
+# Mirrors get_token() in metricool_reconciliation.py. `.metricool_api_key` is gitignored.
 METRICOOL_USER_ID = 3745914
-HEADERS = {"X-Mc-Auth": METRICOOL_TOKEN, "Accept": "application/json"}
 BASE_URL = "https://app.metricool.com/api/v2"
+
+
+def get_token() -> str:
+    tok = os.environ.get("METRICOOL_TOKEN")
+    if tok:
+        return tok.strip()
+    keyfile = os.path.expanduser("~/.metricool_api_key")
+    if os.path.exists(keyfile):
+        with open(keyfile) as f:
+            return f.read().strip()
+    sys.exit("No Metricool token. Set METRICOOL_TOKEN or create ~/.metricool_api_key")
+
+
+def _headers() -> dict:
+    return {"X-Mc-Auth": get_token(), "Accept": "application/json"}
 
 # ── CLIENT BLOG IDS ───────────────────────────────────────────────────────────
 CLIENT_BLOG_IDS = {
@@ -100,7 +119,7 @@ def fetch_posts(blog_id: int, month: int, year: int) -> list:
     try:
         r = requests.get(
             f"{BASE_URL}/analytics/posts/instagram",
-            headers=HEADERS,
+            headers=_headers(),
             params={
                 "userId": METRICOOL_USER_ID,
                 "blogId": blog_id,
@@ -127,7 +146,7 @@ def fetch_reels(blog_id: int, month: int, year: int) -> list:
     try:
         r = requests.get(
             f"{BASE_URL}/analytics/reels/instagram",
-            headers=HEADERS,
+            headers=_headers(),
             params={
                 "userId": METRICOOL_USER_ID,
                 "blogId": blog_id,
