@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+<meta name="theme-color" content="#0C3387">
+<meta name="robots" content="noindex, nofollow">
+<title>Up and Running &times; Scroll Media &ndash; Performance Snapshot</title>
+<meta name="description" content="Up and Running. Performance snapshot, January to May 2026. Where you stand, what is working, and the plan from here.">
+<meta property="og:title" content="Up and Running &times; Scroll Media &middot; Performance Snapshot">
+<meta property="og:description" content="Where your Instagram stands, what is working, and the plan from here. January to May 2026.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Scroll Media Web Patterns v2. See /04_Web_Build/design_system/web_patterns_v2.md
+   Display face Space Grotesk is a per-request deviation from the Source-Sans-only canon. */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+:root{
+  --ghost:#FAFDFF;--azure:#0C3387;--azure-900:#071d4f;--azure-700:#1a44a0;--azure-600:#254fb0;
+  --azure-500:#4070cc;--azure-400:#7a9ad8;--azure-300:#9cb5e3;--azure-200:#b9cdee;--azure-100:#d4e0f5;
+  --lucid:#CBE9FF;--lucid-soft:#e4f3ff;--highlighter:#E2ED7A;
+  --shadow:#151516;--shadow-soft:#1c1c1f;--shadow-2:#25262a;
+  --cream:#fff8dc;--cream-soft:#fffbe8;--gold-300:#d4b73a;--gold-600:#8a7000;--gold-700:#735f00;
+  --bg:var(--ghost);--bg-alt:#f5f8fb;--fg:var(--shadow);--fg-muted:#5a6070;--fg-subtle:#9097a6;
+  --rule:rgba(12,51,135,.20);--rule-strong:rgba(12,51,135,.40);--rule-faint:rgba(12,51,135,.08);
+  --sans:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --disp:'Space Grotesk','Source Sans 3',sans-serif;
+  --ease:cubic-bezier(0.22,0.61,0.36,1);
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--highlighter);color:var(--shadow)}
+:focus-visible{outline:2px solid var(--azure);outline-offset:2px}
+strong{font-weight:700}
+em{font-style:italic}
+.u{text-decoration:underline;text-decoration-color:var(--highlighter);text-decoration-thickness:3px;text-underline-offset:3px;font-weight:600}
+
+/* PROGRESS BAR */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--azure),var(--azure-400),var(--highlighter));z-index:9999;transition:width .1s linear;pointer-events:none}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:100;background:transparent;border-bottom:1px solid var(--rule)}
+.topbar::before{content:'';position:absolute;inset:0;background:rgba(250,253,255,.85);backdrop-filter:saturate(150%) blur(12px);-webkit-backdrop-filter:saturate(150%) blur(12px);z-index:-1}
+.topbar-inner{max-width:1180px;margin:0 auto;padding:12px 24px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;white-space:nowrap}
+.brand-logo{height:26px;width:auto;display:block;flex-shrink:0}
+.brand-mark{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--azure);line-height:1}
+.brand-mark span{color:var(--azure-400)}
+.brand .tag{color:var(--fg-muted);font-weight:600;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding-left:11px;border-left:1px solid var(--rule)}
+.nav-links{display:flex;gap:22px;align-items:center;justify-content:center;flex-wrap:wrap}
+.nav-links a{color:var(--fg-muted);font-size:12px;font-weight:600;letter-spacing:.04em;padding:6px 0;position:relative;transition:color .15s var(--ease)}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--azure);transform:scaleX(0);transform-origin:center;transition:transform .2s var(--ease)}
+.nav-links a:hover{color:var(--azure)}.nav-links a:hover::after{transform:scaleX(1)}
+.topbar-meta{font-size:10.5px;color:var(--fg-muted);letter-spacing:.14em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.topbar-meta strong{color:var(--azure)}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px;align-items:center;justify-content:center}
+.nav-toggle-box{position:relative;width:22px;height:14px}
+.nav-toggle-box span{position:absolute;left:0;width:100%;height:2px;background:var(--azure);transition:transform .3s var(--ease),opacity .2s var(--ease)}
+.nav-toggle-box span:nth-child(1){top:0}.nav-toggle-box span:nth-child(2){top:6px}.nav-toggle-box span:nth-child(3){top:12px}
+body.nav-open .nav-toggle-box span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.nav-open .nav-toggle-box span:nth-child(2){opacity:0}
+body.nav-open .nav-toggle-box span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:920px){
+  .topbar-inner{grid-template-columns:1fr auto}
+  .nav-toggle{display:flex}
+  .nav-links{position:fixed;top:59px;left:0;right:0;bottom:0;background:var(--ghost);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:0;padding:8px 24px;transform:translateX(100%);transition:transform .35s var(--ease);z-index:99;overflow-y:auto}
+  body.nav-open .nav-links{transform:translateX(0)}
+  body.nav-open{overflow:hidden}
+  .nav-links a{font-size:17px;width:100%;padding:18px 0;border-bottom:1px solid var(--rule-faint)}
+  .nav-links a::after{display:none}
+  .topbar-meta{display:none}
+}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#071d4f 0%,#0C3387 55%,#1a44a0 120%);color:#fff;padding:4rem 1.5rem 4.5rem}
+.hero::before{content:'';position:absolute;top:-25%;right:-8%;width:min(640px,110vw);height:min(640px,110vw);background:radial-gradient(circle,rgba(226,237,122,.16),transparent 62%);pointer-events:none}
+.hero-route{position:absolute;left:0;bottom:0;width:100%;height:160px;opacity:.5;pointer-events:none}
+.hero-route path{stroke:var(--highlighter);stroke-width:2;fill:none;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.6s var(--ease) .3s forwards}
+.hero-route circle{fill:var(--highlighter);opacity:0;animation:pip .5s var(--ease) 2.6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pip{to{opacity:1}}
+.hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:2}
+.hero-logo{height:30px;width:auto;margin-bottom:2.25rem;opacity:.96}
+.hero-row{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.14);border:1px solid rgba(226,237,122,.4);padding:.4rem 1rem;border-radius:4px;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--highlighter)}
+.hero-badge .pulse{width:7px;height:7px;border-radius:50%;background:var(--highlighter);box-shadow:0 0 0 0 rgba(226,237,122,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,237,122,.5)}70%{box-shadow:0 0 0 9px rgba(226,237,122,0)}100%{box-shadow:0 0 0 0 rgba(226,237,122,0)}}
+.hero h1{font-family:var(--disp);font-size:clamp(2.4rem,7.5vw,4.6rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;margin-bottom:1rem}
+.hero h1 .lime{color:var(--highlighter)}
+.hero-sub{font-size:1.125rem;color:rgba(255,255,255,.72);max-width:620px;line-height:1.6;margin-bottom:1.5rem;font-weight:400}
+.hero-meta{font-size:.8125rem;color:rgba(255,255,255,.5);display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem;letter-spacing:.02em}
+.hero-meta .d{width:3px;height:3px;background:rgba(255,255,255,.35);border-radius:50%;align-self:center}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:680px}
+.hstat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:1.2rem 1.1rem}
+.hstat-num{font-family:var(--disp);font-size:clamp(1.9rem,5vw,2.5rem);font-weight:700;line-height:1;color:#fff;letter-spacing:-.02em}
+.hstat-num .lime{color:var(--highlighter)}
+.hstat-lbl{font-size:.75rem;color:rgba(255,255,255,.62);margin-top:.5rem;line-height:1.4;font-weight:500}
+@media(max-width:560px){.hero{padding:2.75rem 1.25rem 3rem}.hero-stats{grid-template-columns:1fr;gap:.6rem}.hstat{display:flex;align-items:baseline;gap:.75rem}.hstat-lbl{margin-top:0}}
+
+/* LAYOUT */
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.5rem}
+.sec{margin:2.5rem 0}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-route path{animation:none;stroke-dashoffset:0}}
+.card-sec{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:2.5rem;box-shadow:0 6px 24px rgba(12,51,135,.05)}
+@media(max-width:640px){.card-sec{padding:1.6rem 1.3rem}}
+.eyebrow{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--azure-500);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+.eyebrow .tick{width:18px;height:2px;background:var(--azure-400)}
+h2.title{font-family:var(--disp);font-size:clamp(1.55rem,4.5vw,2.4rem);font-weight:700;line-height:1.1;color:var(--azure);letter-spacing:-.025em;margin-bottom:.6rem}
+.lead{font-size:1rem;color:var(--fg-muted);max-width:680px;line-height:1.7;margin-bottom:1.75rem}
+
+/* BIG PICTURE editorial */
+.prose{max-width:640px;font-size:1.125rem;line-height:1.85;color:var(--fg)}
+.prose p{margin-bottom:1.1rem}
+.prose .lead-cap::first-letter{float:left;font-family:var(--disp);font-size:3.6rem;line-height:.8;font-weight:700;color:var(--azure);padding:.05em .12em 0 0}
+.prose strong{color:var(--azure)}
+.prose em{color:var(--azure-700)}
+blockquote{margin:1.75rem 0 0;padding:1.4rem 1.6rem;background:linear-gradient(120deg,var(--lucid-soft),#fff);border-left:4px solid var(--highlighter);border-radius:0 10px 10px 0;font-size:1.2rem;font-style:italic;font-weight:600;color:var(--azure);line-height:1.45}
+blockquote cite{display:block;font-style:normal;font-weight:600;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted);margin-top:.7rem}
+
+/* GOAL CARDS */
+.goal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+@media(max-width:680px){.goal-grid{grid-template-columns:1fr}}
+.goal{position:relative;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:1.6rem;overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.goal:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(12,51,135,.1)}
+.goal::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.goal.g1::before{background:var(--azure)}.goal.g2::before{background:var(--azure-500)}
+.goal.g3::before{background:var(--lucid)}.goal.g4::before{background:var(--gold-300)}
+.goal-ico{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.goal.g1 .goal-ico{background:rgba(12,51,135,.09)}.goal.g2 .goal-ico{background:rgba(64,112,204,.12)}
+.goal.g3 .goal-ico{background:rgba(203,233,255,.45)}.goal.g4 .goal-ico{background:rgba(212,183,58,.16)}
+.goal-ico svg{width:24px;height:24px;stroke:var(--azure);fill:none;stroke-width:1.8}
+.goal.g4 .goal-ico svg{stroke:var(--gold-700)}
+.goal-eyebrow{font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-subtle);margin-bottom:.4rem}
+.goal h3{font-family:var(--disp);font-size:1.12rem;font-weight:600;color:var(--azure);line-height:1.25;margin-bottom:.45rem;letter-spacing:-.01em}
+.goal p{font-size:.9rem;color:var(--fg-muted);line-height:1.6}
+
+/* KPI CARDS */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:860px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.kpi-grid{grid-template-columns:1fr}}
+.kpi{background:var(--bg-alt);border:1px solid var(--rule);border-radius:12px;padding:1.5rem 1.35rem;position:relative;overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.kpi:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(12,51,135,.09)}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),var(--azure-400))}
+.kpi.alt::before{background:linear-gradient(90deg,var(--gold-600),var(--gold-300))}
+.kpi-num{font-family:var(--disp);font-size:clamp(2rem,5.5vw,2.6rem);font-weight:700;line-height:1;color:var(--azure);letter-spacing:-.03em}
+.kpi.alt .kpi-num{color:var(--gold-700)}
+.kpi-lbl{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--fg);margin:.55rem 0 .4rem}
+.kpi-ins{font-size:.8rem;color:var(--fg-muted);line-height:1.55}
+.callout{margin-top:1.6rem;padding:1.2rem 1.4rem;background:rgba(226,237,122,.14);border-left:3px solid var(--highlighter);border-radius:0 8px 8px 0}
+.callout .ce{font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-700);margin-bottom:.4rem}
+.callout p{font-size:.92rem;color:var(--fg);line-height:1.6}
+.callout ul{list-style:none;margin-top:.6rem;display:flex;flex-direction:column;gap:.35rem}
+.callout li{font-size:.9rem;color:var(--fg);padding-left:1.1rem;position:relative;line-height:1.5}
+.callout li::before{content:'';position:absolute;left:0;top:.5em;width:6px;height:6px;background:var(--azure-400);border-radius:50%}
+
+/* SCORE CHART */
+.chart-wrap{background:linear-gradient(140deg,var(--shadow),#0c1730);border-radius:14px;padding:2rem 1.75rem 1.6rem}
+.chart-lbl{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1.4rem}
+.bars{display:flex;align-items:flex-end;gap:1rem;height:170px;justify-content:space-between}
+.bar-col{display:flex;flex-direction:column;align-items:center;gap:.55rem;flex:1;height:100%;justify-content:flex-end}
+.bar-track{width:100%;max-width:60px;height:118px;display:flex;align-items:flex-end;margin:0 auto}
+.bar{width:100%;border-radius:4px 4px 0 0;height:0;background:linear-gradient(180deg,var(--azure-400),var(--azure));transition:height 1s var(--ease)}
+.in-view .bar{height:var(--h)}
+.bar.curr{background:linear-gradient(180deg,var(--highlighter),var(--gold-300))}
+.bar-score{font-family:var(--disp);font-size:.9rem;font-weight:700;color:rgba(255,255,255,.6)}
+.bar-score.curr{color:var(--highlighter)}
+.bar-mo{font-size:.7rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em}
+.bar-mo.curr{color:rgba(255,255,255,.75)}
+.chart-cap{font-size:.85rem;color:var(--fg-muted);line-height:1.65;margin-top:1.3rem;text-align:center;max-width:620px;margin-left:auto;margin-right:auto}
+
+/* DETAILS / DROPDOWN */
+.drop{background:#fff;border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin-top:1rem;transition:box-shadow .2s var(--ease)}
+.drop[open]{box-shadow:0 8px 28px rgba(12,51,135,.08)}
+.drop summary{list-style:none;cursor:pointer;padding:1.3rem 1.5rem;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;transition:background .2s var(--ease);user-select:none}
+.drop summary::-webkit-details-marker{display:none}
+.drop summary:hover{background:var(--bg-alt)}
+.drop-ico-wrap{width:42px;height:42px;border-radius:10px;background:rgba(12,51,135,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.drop-ico-wrap svg{width:22px;height:22px;stroke:var(--azure);fill:none;stroke-width:1.8}
+.drop.warm .drop-ico-wrap{background:rgba(212,183,58,.16)}.drop.warm .drop-ico-wrap svg{stroke:var(--gold-700)}
+.drop-head .d-eyebrow{font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--azure-500);margin-bottom:.2rem}
+.drop.warm .drop-head .d-eyebrow{color:var(--gold-700)}
+.drop-head h3{font-family:var(--disp);font-size:1.12rem;font-weight:600;color:var(--azure);line-height:1.25;letter-spacing:-.01em}
+.drop-head .d-sub{font-size:.85rem;color:var(--fg-muted);margin-top:.25rem;line-height:1.5}
+.expand{width:30px;height:30px;border:1.5px solid var(--azure);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--azure);font-size:18px;font-weight:600;flex-shrink:0;transition:transform .3s var(--ease),background .2s var(--ease),color .2s var(--ease)}
+.drop[open] .expand{transform:rotate(45deg);background:var(--azure);color:#fff}
+.drop-body{padding:0 1.5rem 1.5rem;animation:revealDown .4s var(--ease)}
+.drop-body .divider{border-top:1px solid var(--rule-faint);margin-bottom:1.2rem}
+@keyframes revealDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.drop-body p{font-size:.94rem;color:var(--fg-muted);line-height:1.7;margin-bottom:.8rem}
+.drop-body p strong{color:var(--azure)}
+.do-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin:.4rem 0 .9rem}
+.do-list li{font-size:.92rem;color:var(--fg);line-height:1.55;padding-left:1.6rem;position:relative}
+.do-list li::before{content:'\2713';position:absolute;left:0;top:0;color:var(--gold-600);font-weight:800}
+.do-list li strong{color:var(--azure)}
+.serves{display:inline-block;font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);background:rgba(12,51,135,.07);padding:.3rem .7rem;border-radius:5px}
+.stat-pill{display:inline-flex;align-items:baseline;gap:.4rem;background:var(--bg-alt);border:1px solid var(--rule);border-radius:7px;padding:.5rem .8rem;margin:.2rem .4rem .2rem 0;font-size:.82rem;color:var(--fg-muted)}
+.stat-pill b{font-family:var(--disp);font-size:1.05rem;color:var(--azure);font-weight:700}
+
+/* DATA TABLE */
+.tbl-scroll{overflow-x:auto;margin-top:.4rem}
+table.data{width:100%;border-collapse:collapse;font-size:.88rem;min-width:480px}
+table.data th{text-align:left;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-subtle);padding:.6rem .7rem;border-bottom:1.5px solid var(--rule)}
+table.data td{padding:.65rem .7rem;border-bottom:1px solid var(--rule-faint);color:var(--fg)}
+table.data tr:last-child td{border-bottom:0}
+table.data td.mo{font-weight:700;color:var(--azure)}
+table.data tr.now{background:rgba(226,237,122,.12)}
+table.data .up{color:var(--gold-700);font-weight:700}
+
+/* ENGINE */
+.engine{position:relative;background:linear-gradient(180deg,var(--shadow),var(--shadow-soft));color:var(--ghost);border:1px solid var(--shadow-2);border-radius:16px;padding:3rem 2.25rem 3.25rem;overflow:hidden}
+.engine::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--highlighter) 50%,transparent);opacity:.7}
+.engine::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--highlighter) 50%,transparent);opacity:.35}
+.engine .e-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--highlighter);margin-bottom:.8rem}
+.engine h2{font-family:var(--disp);font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:700;line-height:1.08;letter-spacing:-.025em;margin-bottom:1rem;color:#fff}
+.engine p{font-size:1.05rem;color:rgba(255,255,255,.78);line-height:1.7;max-width:680px}
+.engine p strong{color:#fff}
+.engine-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:1.9rem}
+@media(max-width:600px){.engine-proof{grid-template-columns:1fr}}
+.ep{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.2rem}
+.ep-mo{font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--highlighter);margin-bottom:.5rem}
+.ep-t{font-family:var(--disp);font-size:1rem;font-weight:600;color:#fff;line-height:1.3;margin-bottom:.35rem}
+.ep-m{font-size:.82rem;color:rgba(255,255,255,.6)}
+
+/* CLOSEOUT */
+.closeout{background:linear-gradient(135deg,var(--cream-soft),var(--cream));border-top:1px solid var(--gold-300);padding:4rem 1.5rem;text-align:center;margin-top:3rem}
+.closeout .ce-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-700);margin-bottom:1rem}
+.closeout p.line{max-width:680px;margin:0 auto;font-family:var(--disp);font-size:clamp(1.3rem,3.5vw,1.7rem);font-weight:500;color:var(--azure);line-height:1.4;letter-spacing:-.01em}
+.closeout .sign{margin-top:1.1rem;font-size:.95rem;color:var(--fg-muted)}
+
+/* FOOTER */
+.footer{background:var(--shadow);color:rgba(255,255,255,.6);padding:2.5rem 1.5rem}
+.footer-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+.footer-logo{height:26px;width:auto;opacity:.85}
+.footer-text{font-size:.8rem;line-height:1.6}
+.footer-text a{color:var(--azure-200);font-weight:600}
+@media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
+@media print{.topbar,#progress,.nav-toggle{display:none}.reveal{opacity:1;transform:none}.engine{background:#fff;color:#000;border-color:#ccc}.drop{open:true}}
+</style>
+</head>
+<body>
+
+<div id="progress" role="progressbar" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="https://scrollmedia.co" class="brand" aria-label="Scroll Media">
+      <img src="https://reports.scrollmedia.co/assets/scroll-logo-navy.png" alt="Scroll Media" class="brand-logo" width="56" height="26" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+      <span class="brand-mark" style="display:none">scroll<span>media</span></span>
+      <span class="tag">Performance Snapshot</span>
+    </a>
+    <nav class="nav-links" id="nav" aria-label="Page navigation">
+      <a href="#bigpic">Big Picture</a>
+      <a href="#goals">Your Goals</a>
+      <a href="#working">What&rsquo;s Working</a>
+      <a href="#score">Score</a>
+      <a href="#struggle">Struggles</a>
+      <a href="#plan">The Plan</a>
+    </nav>
+    <span class="topbar-meta">Jan&ndash;May <strong>2026</strong></span>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span class="nav-toggle-box"><span></span><span></span><span></span></span></button>
+  </div>
+</header>
+
+<header class="hero">
+  <svg class="hero-route" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,130 C150,130 180,40 320,60 C460,80 470,150 620,120 C760,92 800,20 960,50 C1080,72 1120,110 1200,90"/>
+    <circle cx="1200" cy="90" r="6"/>
+  </svg>
+  <div class="hero-inner">
+    <img src="https://reports.scrollmedia.co/assets/scroll-logo-white.png" alt="Scroll Media" class="hero-logo" width="65" height="30" onerror="this.style.display='none'">
+    <div class="hero-row">
+      <span class="hero-badge"><span class="pulse"></span>Performance Snapshot &middot; Spark Stage</span>
+    </div>
+    <h1>The first five months, <span class="lime">in full.</span></h1>
+    <p class="hero-sub">Where your Instagram stands, what is working, where we are struggling, and the specific plan from here. January to May 2026.</p>
+    <div class="hero-meta">
+      <span>Up and Running</span><span class="d"></span>
+      <span>Managed by Rachel Dina</span><span class="d"></span>
+      <span>Partnership since October 2025</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num" data-count="46" data-prefix="+" data-suffix="%">+0%</div><div class="hstat-lbl">More new followers per month, January to May</div></div>
+      <div class="hstat"><div class="hstat-num" data-count="16.7" data-suffix="%" data-dec="1">0%</div><div class="hstat-lbl">Profile conversion in May, your year high</div></div>
+      <div class="hstat"><div class="hstat-num"><span class="lime" data-count="5">0</span> of 5</div><div class="hstat-lbl">Months your top post was community-led</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- BIG PICTURE -->
+  <section class="sec reveal" id="bigpic">
+    <div class="card-sec">
+      <p class="eyebrow"><span class="tick"></span>The Big Picture</p>
+      <h2 class="title">Where things stand</h2>
+      <div class="prose">
+        <p class="lead-cap">Since October, the goal has been simple. Get Up and Running in front of the right local audience, build a real community around the brand, and turn that attention into store visits, fittings, and loyal customers. The first half of 2026 built a <strong>strong foundation</strong>. Your monthly performance score held in a healthy band, between <strong>7.9 and 8.3</strong>, every single month.</p>
+        <p>New followers grew <em>steadily</em>. The people who reach your profile are converting to followers at the highest rate all year. And one pattern showed up again and again: your <span class="u">community and story-led content</span> outperforms everything else. The founder story. The team spotlights. The Free Your Sole 5K. The Mother&rsquo;s Day feature. That is your brand&rsquo;s voice working.</p>
+        <p>Any single month moves around. May was a quieter month for reach and comments, and that is normal. What matters is the <strong>trend over time</strong>, and the trend is a foundation worth building on. The next chapter is about depth: more people in the conversation, more reasons to save and come back, and fixing the parts of the strategy that are not pulling their weight yet.</p>
+        <blockquote>
+          Strong foundation built. The next phase is turning attention into conversation and community.
+          <cite>The honest read, January to May</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUR GOALS -->
+  <section class="sec reveal" id="goals">
+    <p class="eyebrow"><span class="tick"></span>Your Goals</p>
+    <h2 class="title">What matters to your business</h2>
+    <p class="lead">These are the goals you have told us matter most. <strong>Everything in this plan is built around them.</strong> When we talk about what to fix and what to do next, each move ties back to one or more of these.</p>
+    <div class="goal-grid">
+      <div class="goal g1">
+        <div class="goal-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M15.5 14.5c2.4.2 4 2 4 4.5"/></svg></div>
+        <div class="goal-eyebrow">Goal 01</div>
+        <h3>A community-forward brand</h3>
+        <p>Warm, authentic, and genuinely part of the local running community. A brand that never feels salesy, even while it grows.</p>
+      </div>
+      <div class="goal g2">
+        <div class="goal-ico"><svg viewBox="0 0 24 24"><path d="M4 17l5-5 3 3 4-5 4 4"/><path d="M3 20h18"/><circle cx="9" cy="12" r="0.6" fill="currentColor"/></svg></div>
+        <div class="goal-eyebrow">Goal 02</div>
+        <h3>Grow corporate fittings</h3>
+        <p>More on-site fittings for local businesses and teams. A real growth line for the store, and one with a clear story to tell.</p>
+      </div>
+      <div class="goal g3">
+        <div class="goal-ico"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></div>
+        <div class="goal-eyebrow">Goal 03</div>
+        <h3>Promote the Up and Running app</h3>
+        <p>Get the app into more runners&rsquo; hands as a tool they actually use, not just download.</p>
+      </div>
+      <div class="goal g4">
+        <div class="goal-ico"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></div>
+        <div class="goal-eyebrow">Goal 04</div>
+        <h3>Drive local shopping</h3>
+        <p>More in-store visits and online orders. Championing shopping small and local over the big online giants.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S WORKING -->
+  <section class="sec reveal" id="working">
+    <div class="card-sec">
+      <p class="eyebrow"><span class="tick"></span>What&rsquo;s Working</p>
+      <h2 class="title">Where you&rsquo;re winning</h2>
+      <p class="lead">Four signals from the first half of the year that prove the strategy is on the right track.</p>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="kpi-num" data-count="46" data-prefix="+" data-suffix="%">+0%</div>
+          <div class="kpi-lbl">New follower pace</div>
+          <p class="kpi-ins">New followers climbed from 24 in January to 35 in May, growing <em>every single month</em>. Steady, consistent community growth.</p>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num" data-count="16.7" data-suffix="%" data-dec="1">0%</div>
+          <div class="kpi-lbl">Profile conversion, year high</div>
+          <p class="kpi-ins">In May, nearly 1 in 6 people who visited your profile chose to follow. The strongest rate of the year.</p>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num" data-count="3.3" data-suffix="%" data-dec="1">0%</div>
+          <div class="kpi-lbl">Click-through, back in range</div>
+          <p class="kpi-ins">Click-through to your bio link recovered into a healthy range in May. The people who reach your profile are taking the next step.</p>
+        </div>
+        <div class="kpi alt">
+          <div class="kpi-num"><span data-count="5">0</span>/5</div>
+          <div class="kpi-lbl">Months community led</div>
+          <p class="kpi-ins">Every month this year, your top post was a community or story-led piece. This is your winning format, and it repeats.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p class="ce">Keep running this</p>
+        <p>The plays that are working stay in the rotation:</p>
+        <ul>
+          <li><strong>Community and story-led posts.</strong> Founder and team features, event recaps, real customer moments.</li>
+          <li><strong>A clear bio-link path.</strong> The conversion route that is already turning profile visits into action.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCORE -->
+  <section class="sec reveal" id="score">
+    <div class="card-sec">
+      <p class="eyebrow"><span class="tick"></span>Performance Score</p>
+      <h2 class="title">Steady all year</h2>
+      <p class="lead">Your monthly performance score, January to May. A snapshot of how each month performed against your stage targets.</p>
+      <div class="chart-wrap">
+        <div class="chart-lbl">Monthly performance score</div>
+        <div class="bars">
+          <div class="bar-col"><div class="bar-track"><div class="bar" style="--h:42px"></div></div><div class="bar-score">7.4</div><div class="bar-mo">Jan</div></div>
+          <div class="bar-col"><div class="bar-track"><div class="bar" style="--h:104px"></div></div><div class="bar-score">8.3</div><div class="bar-mo">Feb</div></div>
+          <div class="bar-col"><div class="bar-track"><div class="bar" style="--h:83px"></div></div><div class="bar-score">8.0</div><div class="bar-mo">Mar</div></div>
+          <div class="bar-col"><div class="bar-track"><div class="bar" style="--h:76px"></div></div><div class="bar-score">7.9</div><div class="bar-mo">Apr</div></div>
+          <div class="bar-col"><div class="bar-track"><div class="bar curr" style="--h:76px"></div></div><div class="bar-score curr">7.9</div><div class="bar-mo curr">May</div></div>
+        </div>
+      </div>
+      <p class="chart-cap">Your score held between 7.9 and 8.3 every month. A stable, healthy band, and a sign of a consistent foundation. The next phase is about lifting the engagement metrics that move this number higher.</p>
+
+      <details class="drop">
+        <summary>
+          <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg></span>
+          <span class="drop-head">
+            <span class="d-eyebrow">Optional detail</span>
+            <h3>See the month-by-month numbers</h3>
+            <span class="d-sub">The metrics behind the score, January to May.</span>
+          </span>
+          <span class="expand" aria-hidden="true">+</span>
+        </summary>
+        <div class="drop-body">
+          <div class="divider"></div>
+          <div class="tbl-scroll">
+            <table class="data">
+              <thead><tr><th>Month</th><th>Score</th><th>New followers</th><th>Profile conversion</th><th>Saves</th><th>Comments</th></tr></thead>
+              <tbody>
+                <tr><td class="mo">Jan</td><td>7.4</td><td>24</td><td>12.0%</td><td>1</td><td>7</td></tr>
+                <tr><td class="mo">Feb</td><td>8.3</td><td>27</td><td>10.8%</td><td>2</td><td>12</td></tr>
+                <tr><td class="mo">Mar</td><td>8.0</td><td>28</td><td>13.7%</td><td>5</td><td>5</td></tr>
+                <tr><td class="mo">Apr</td><td>7.9</td><td>32</td><td>12.8%</td><td>12</td><td>9</td></tr>
+                <tr class="now"><td class="mo">May</td><td>7.9</td><td class="up">35</td><td class="up">16.7%</td><td class="up">13</td><td>3</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:.8rem;color:var(--fg-subtle);margin-top:.9rem">Figures as reported in your delivered monthly reports. New followers and profile conversion trended up across the period; comments are the metric we are most focused on rebuilding.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+</div>
+
+<!-- ENGINE -->
+<div class="wrap">
+  <section class="sec reveal">
+    <div class="engine">
+      <p class="e-eyebrow">The pattern that never broke</p>
+      <h2>Your community is the algorithm.</h2>
+      <p>Five months. <strong>Every single month, your number-one post was community or story-led.</strong> Not a product graphic. Not a promotion. The story of the people behind the brand and the runners who show up. That is not a coincidence, it is your voice doing the work, and the entire plan from here leans into the one thing that has worked every time.</p>
+      <div class="engine-proof">
+        <div class="ep"><div class="ep-mo">February</div><div class="ep-t">The founder story</div><div class="ep-m">15,157 views &middot; 104 comments</div></div>
+        <div class="ep"><div class="ep-mo">March</div><div class="ep-t">Customer to store manager</div><div class="ep-m">12,743 views &middot; 5.1x your average</div></div>
+        <div class="ep"><div class="ep-mo">May</div><div class="ep-t">Free Your Sole 5K recap</div><div class="ep-m">Top post &middot; shares 3x your average</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+
+  <!-- STRUGGLES -->
+  <section class="sec reveal" id="struggle">
+    <p class="eyebrow"><span class="tick"></span>The Honest Picture</p>
+    <h2 class="title">Where we&rsquo;re struggling</h2>
+    <p class="lead">Three areas holding performance back. Open each one for the detail. These are the parts of the strategy we are most focused on fixing next.</p>
+
+    <details class="drop">
+      <summary>
+        <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 5-7 4 4"/></svg></span>
+        <span class="drop-head"><span class="d-eyebrow">Reach</span><h3>Reach is inconsistent</h3><span class="d-sub">Big months, then quiet months. The swing is the problem.</span></span>
+        <span class="expand" aria-hidden="true">+</span>
+      </summary>
+      <div class="drop-body"><div class="divider"></div>
+        <p>Some months reach a lot of new people, others pull back. Total views swung from around <strong>45,000 in April</strong> to about <strong>16,000 in May</strong>. When we post the community content that travels, reach jumps. The fix is a steadier drumbeat of it, so reach compounds instead of spiking and dropping.</p>
+        <span class="stat-pill"><b>45k</b> April views</span><span class="stat-pill"><b>16k</b> May views</span>
+      </div>
+    </details>
+
+    <details class="drop">
+      <summary>
+        <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+        <span class="drop-head"><span class="d-eyebrow">Engagement</span><h3>The conversation is quiet</h3><span class="d-sub">People are watching, but few are talking back.</span></span>
+        <span class="expand" aria-hidden="true">+</span>
+      </summary>
+      <div class="drop-body"><div class="divider"></div>
+        <p>Comments and replies are the softest area. Comments dropped to <strong>single digits in May</strong>. That two-way engagement is what builds loyalty, and it is also a signal that tells the algorithm to show your content to more people. Quiet comments hold back both relationship and reach.</p>
+        <span class="stat-pill"><b>3</b> comments in May</span><span class="stat-pill"><b>15+</b> the target</span>
+      </div>
+    </details>
+
+    <details class="drop warm">
+      <summary>
+        <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <span class="drop-head"><span class="d-eyebrow">Stories &middot; biggest opportunity</span><h3>Stories are underperforming</h3><span class="d-sub">A lot of effort going in, not much coming back out.</span></span>
+        <span class="expand" aria-hidden="true">+</span>
+      </summary>
+      <div class="drop-body"><div class="divider"></div>
+        <p>This is the <strong>biggest opportunity</strong> on the account. You are posting a lot of stories, but each one reaches only a small slice of your followers, and they generate very few replies, often fewer than five a month across dozens of stories. The good news: a more focused, interactive story strategy can turn this around quickly. You flagged stories yourself, and the data agrees with you.</p>
+        <span class="stat-pill"><b>~90</b> stories / month</span><span class="stat-pill"><b>&lt;5</b> replies / month</span>
+      </div>
+    </details>
+  </section>
+
+  <!-- PLAN -->
+  <section class="sec reveal" id="plan">
+    <p class="eyebrow"><span class="tick"></span>The Plan</p>
+    <h2 class="title">The plan in action</h2>
+    <p class="lead">Four focused moves for the next phase. Open each for exactly what it looks like in your feed and stories. <strong>No change to your current scope</strong>, just a sharper strategy aimed at the gaps above. Each move ties back to one or more of your goals.</p>
+
+    <details class="drop" open>
+      <summary>
+        <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M2.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M15 14.5c2.4.2 4 2 4 4.5"/></svg></span>
+        <span class="drop-head"><span class="d-eyebrow">Move 01</span><h3>Build a consistent community drumbeat</h3><span class="d-sub">Make the content that travels a weekly habit, not a one-off.</span></span>
+        <span class="expand" aria-hidden="true">+</span>
+      </summary>
+      <div class="drop-body"><div class="divider"></div>
+        <p>Lock a steady weekly cadence of the community and event content that <em>already travels</em> for you, so reach builds month over month instead of spiking once and fading.</p>
+        <ul class="do-list">
+          <li>A recurring <strong>&ldquo;Faces of the Run Club&rdquo;</strong> customer and runner spotlight.</li>
+          <li>Event recaps from 5Ks and group runs, on a set rhythm.</li>
+          <li>Team features that put the people behind the store front and center.</li>
+        </ul>
+        <span class="serves">Serves: Community-forward brand</span>
+      </div>
+    </details>
+
+    <details class="drop">
+      <summary>
+        <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h7M8.5 8.5h7"/></svg></span>
+        <span class="drop-head"><span class="d-eyebrow">Move 02</span><h3>Start more conversations</h3><span class="d-sub">The fastest lever for comments, replies, and reach.</span></span>
+        <span class="expand" aria-hidden="true">+</span>
+      </summary>
+      <div class="drop-body"><div class="divider"></div>
+        <p>Put one clear question on <strong>every post</strong>, and add interactive stickers to stories. The fastest way to rebuild comments and replies, and the same lever that pushes reach back up.</p>
+        <ul class="do-list">
+          <li><strong>Story polls</strong> like &ldquo;road or trail?&rdquo; and &ldquo;this or that&rdquo; gear matchups.</li>
+          <li><strong>Caption prompts</strong> like &ldquo;what is your next race?&rdquo;</li>
+          <li>Quick question stickers that invite a tap, not a paragraph.</li>
+        </ul>
+        <span class="serves">Serves: Community + engagement</span>
+      </div>
+    </details>
+
+    <details class="drop">
+      <summary>
+        <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-3-6 3V4z"/></svg></span>
+        <span class="drop-head"><span class="d-eyebrow">Move 03</span><h3>Give people a reason to save and come back</h3><span class="d-sub">Reference content runners bookmark, plus the app.</span></span>
+        <span class="expand" aria-hidden="true">+</span>
+      </summary>
+      <div class="drop-body"><div class="divider"></div>
+        <p>Build save-worthy reference content runners bookmark, and use it to put the Up and Running app in front of them as a tool they return to, not just download.</p>
+        <ul class="do-list">
+          <li><strong>&ldquo;Which shoe for your foot type&rdquo;</strong> guides and fit-tip carousels.</li>
+          <li><strong>&ldquo;What to wear on race day&rdquo;</strong> checklists.</li>
+          <li>Simple, real walkthroughs of the <strong>Up and Running app</strong>.</li>
+        </ul>
+        <span class="serves">Serves: Local shopping + app promotion</span>
+      </div>
+    </details>
+
+    <details class="drop warm">
+      <summary>
+        <span class="drop-ico-wrap"><svg viewBox="0 0 24 24"><path d="M3 13l2-5h11l3 4h2v4h-2"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></span>
+        <span class="drop-head"><span class="d-eyebrow">Move 04 &middot; growth</span><h3>Put corporate fittings on the map, and fix stories</h3><span class="d-sub">Document the service, win the next business.</span></span>
+        <span class="expand" aria-hidden="true">+</span>
+      </summary>
+      <div class="drop-body"><div class="divider"></div>
+        <p>Fewer, sharper, more authentic stories built to invite interaction, plus a dedicated series documenting your on-site corporate fittings, which <em>doubles as proof</em> that wins the next business.</p>
+        <ul class="do-list">
+          <li>An <strong>&ldquo;On the Road&rdquo;</strong> series from corporate fit days.</li>
+          <li>A clear <strong>&ldquo;book a fit day for your team&rdquo;</strong> path.</li>
+          <li>Raw behind-the-scenes and shop-local moments in stories.</li>
+        </ul>
+        <span class="serves">Serves: Corporate fittings + community + local shopping</span>
+      </div>
+    </details>
+  </section>
+
+</div>
+
+<section class="closeout">
+  <p class="ce-eyebrow">Where we go from here</p>
+  <p class="line">There is a lot to be proud of in the first half of the year, and a clear path to make the second half even stronger. We are excited to keep building this with you.</p>
+  <p class="sign">The Scroll Media team</p>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="https://reports.scrollmedia.co/assets/scroll-logo-white.png" alt="Scroll Media" class="footer-logo" width="56" height="26" onerror="this.style.display='none'">
+    <p class="footer-text">
+      Prepared by <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; Up and Running Performance Snapshot &middot; January to May 2026<br>
+      Data sources: Instagram Insights, Metricool
+    </p>
+  </div>
+</footer>
+
+<script>
+/* progress bar */
+(function(){var b=document.getElementById('progress');function u(){var s=window.pageYOffset||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=h>0?(Math.min(s/h,1)*100)+'%':'0%';}window.addEventListener('scroll',u,{passive:true});u();})();
+
+/* mobile nav */
+(function(){var t=document.getElementById('navToggle'),nav=document.getElementById('nav');if(!t)return;
+function close(){document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false');}
+t.addEventListener('click',function(){var o=document.body.classList.toggle('nav-open');t.setAttribute('aria-expanded',o?'true':'false');});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+window.addEventListener('resize',function(){if(window.innerWidth>920)close();});})();
+
+/* scroll reveal */
+(function(){var els=document.querySelectorAll('.reveal');
+if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in-view');});return;}
+var o=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in-view');o.unobserve(x.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+els.forEach(function(e){o.observe(e);});})();
+
+/* count up */
+(function(){var nums=document.querySelectorAll('[data-count]');
+function run(el){var target=parseFloat(el.getAttribute('data-count'));var dec=parseInt(el.getAttribute('data-dec')||'0');var pre=el.getAttribute('data-prefix')||'';var suf=el.getAttribute('data-suffix')||'';var start=null,dur=1100;
+function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);var ease=1-Math.pow(1-p,3);var val=target*ease;el.textContent=pre+(dec?val.toFixed(dec):Math.round(val))+suf;if(p<1)requestAnimationFrame(step);else el.textContent=pre+(dec?target.toFixed(dec):Math.round(target))+suf;}
+requestAnimationFrame(step);}
+if(!('IntersectionObserver'in window)){nums.forEach(run);return;}
+var o=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);o.unobserve(x.target);}});},{threshold:0.4});
+nums.forEach(function(e){o.observe(e);});})();
+</script>
+
+</body>
+</html>

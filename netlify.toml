@@ -8,6 +8,13 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Tier 2 client-data snapshot: belt-and-suspenders noindex at the header level,
+# matching the page-level meta robots + robots.txt Disallow.
+[[headers]]
+  for = "/upandrunningoh/performance-snapshot/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
 [[redirects]]
   from = "/launchparty"
   to = "/launchparty/"

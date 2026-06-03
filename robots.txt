@@ -1,6 +1,11 @@
 User-agent: *
 Disallow: /defineoakley/diligence/
+Disallow: /upandrunningoh/performance-snapshot/
 
 # Confidential client diligence material. Page-level meta robots
 # noindex,nofollow already in place on the HTML; this is belt-and-suspenders
 # at the path level for any crawler that hits the directory directly.
+#
+# /upandrunningoh/performance-snapshot/ is a Tier 2 client-data snapshot
+# (URL-obscured, noindex). Page-level meta robots + X-Robots-Tag header
+# (see netlify.toml) carry the primary protection; this is path-level backup.
