@@ -150,15 +150,26 @@ table.mx td.chg{font-weight:700}
 .zone .zv{float:right;letter-spacing:.06em;padding:.15rem .6rem;border-radius:4px}
 .zv.good{background:rgba(12,51,135,.1);color:var(--azure)}
 .zv.focus{background:rgba(212,183,58,.2);color:var(--gold-700)}
-.st{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .55rem;border-radius:4px;min-width:66px;text-align:center}
-.tgt{color:var(--fg-subtle);font-weight:600}
-.legend{font-size:.74rem;color:var(--fg-subtle);margin-top:.55rem}
+.st{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .55rem;border-radius:4px;min-width:76px;text-align:center}
+.st::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:.35rem;vertical-align:1px}
+.st.strong{background:rgba(14,122,78,.12);color:#0e7a4e}.st.strong::before{background:#0e7a4e}
+.st.mixed{background:rgba(212,183,58,.22);color:var(--gold-700)}.st.mixed::before{background:var(--gold-300)}
+.st.fix{background:rgba(177,58,54,.11);color:#b13a36}.st.fix::before{background:#b13a36}
+table.mx th.tgt-h,table.mx td.tgt{background:var(--lucid-soft);border-left:1px solid var(--rule);border-right:1px solid var(--rule)}
+table.mx td.tgt{color:var(--azure-600);font-weight:600;font-size:.78rem}
+table.mx td.lo{color:#b13a36}
+table.mx td.hi{color:#0e7a4e;font-weight:700}
+table.mx td.ol-up{background:rgba(14,122,78,.10)}
+table.mx td.ol-dn{background:rgba(177,58,54,.08)}
+table.mx td.may.ol-up{background:rgba(14,122,78,.14)}
+table.mx td.may.ol-dn{background:rgba(177,58,54,.12)}
+table.mx td.may.lo{color:#b13a36}
+.ol{font-size:.58rem;opacity:.9}
+td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
+.legend{font-size:.74rem;color:var(--fg-subtle);margin-top:.55rem;line-height:1.7}
 .legend b{font-weight:800;letter-spacing:.04em}
-.legend .l1{color:var(--azure)}.legend .l2{color:var(--azure-600)}.legend .l3{color:var(--gold-700)}
-.st.strong{background:rgba(12,51,135,.1);color:var(--azure)}
-.st.mixed{background:var(--lucid-soft);color:var(--azure-600)}
-.st.fix{background:rgba(212,183,58,.2);color:var(--gold-700)}
-.up{color:var(--azure-600)}.dn{color:var(--gold-700)}
+.legend .l1{color:#0e7a4e}.legend .l2{color:var(--gold-700)}.legend .l3{color:#b13a36}
+.up{color:#0e7a4e}.dn{color:#b13a36}
 .mx-note{font-size:.78rem;color:var(--fg-subtle);margin-top:.8rem}
 
 /* S6 VERDICT */
@@ -347,25 +358,25 @@ table.mx td.chg{font-weight:700}
     <p class="lead">The complete view, including the parts that need work. The target column shows your Spark stage range, so you can see where you are against what strong performance looks like.</p>
     <div class="tbl-scroll">
       <table class="mx">
-        <thead><tr><th>Metric</th><th>Target range</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jan &rarr; May</th><th>Status</th></tr></thead>
+        <thead><tr><th>Metric</th><th class="tgt-h">Target range</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jan &rarr; May</th><th>Status</th></tr></thead>
         <tbody>
           <tr class="zone"><td colspan="9">Top of funnel &middot; Awareness <span class="zv good">Working</span></td></tr>
-          <tr><td>Total views</td><td class="tgt">10,000 &ndash; 40,000</td><td>15,715</td><td>35,614</td><td>31,580</td><td>45,117</td><td class="may">15,859</td><td class="chg">volatile</td><td><span class="st mixed">Mixed</span></td></tr>
-          <tr><td>New followers</td><td class="tgt">40 &ndash; 90</td><td>24</td><td>27</td><td>28</td><td>32</td><td class="may">35</td><td class="chg up">+46%</td><td><span class="st mixed">Mixed</span></td></tr>
-          <tr><td>Shares</td><td class="tgt">15 &ndash; 60</td><td>13</td><td>32</td><td>9</td><td>28</td><td class="may">17</td><td class="chg up">+31%</td><td><span class="st strong">Strong</span></td></tr>
+          <tr><td>Total views</td><td class="tgt">10,000 &ndash; 40,000</td><td>15,715</td><td>35,614</td><td>31,580</td><td class="hi ol-up">45,117 <span class="ol">&#9650;</span></td><td class="may ol-dn">15,859 <span class="ol">&#9660;</span></td><td class="chg">volatile</td><td><span class="st mixed">Mixed</span></td></tr>
+          <tr><td>New followers</td><td class="tgt">40 &ndash; 90</td><td class="lo">24</td><td class="lo">27</td><td class="lo">28</td><td class="lo">32</td><td class="may lo">35</td><td class="chg up">+46%</td><td><span class="st mixed">Mixed</span></td></tr>
+          <tr><td>Shares</td><td class="tgt">15 &ndash; 60</td><td class="lo">13</td><td class="ol-up">32 <span class="ol">&#9650;</span></td><td class="lo ol-dn">9 <span class="ol">&#9660;</span></td><td>28</td><td class="may">17</td><td class="chg up">+31%</td><td><span class="st strong">Strong</span></td></tr>
           <tr class="zone"><td colspan="9">Middle of funnel &middot; Engagement <span class="zv focus">The bottleneck</span></td></tr>
           <tr><td>Profile visits</td><td class="tgt">50 &ndash; 500</td><td>200</td><td>249</td><td>205</td><td>250</td><td class="may">210</td><td class="chg up">+5%</td><td><span class="st strong">Strong</span></td></tr>
-          <tr><td>Retention</td><td class="tgt">35% &ndash; 50%</td><td>23%</td><td>32%</td><td>35%</td><td>25%</td><td class="may">32%</td><td class="chg up">+9pts</td><td><span class="st fix">Focus</span></td></tr>
-          <tr><td>Saves</td><td class="tgt">20 &ndash; 80</td><td>1</td><td>2</td><td>5</td><td>20</td><td class="may">13</td><td class="chg up">1 &rarr; 13</td><td><span class="st fix">Focus</span></td></tr>
-          <tr><td>Comments</td><td class="tgt">15 &ndash; 75</td><td>7</td><td>12</td><td>5</td><td>12</td><td class="may">3</td><td class="chg dn">&minus;57%</td><td><span class="st fix">Focus</span></td></tr>
+          <tr><td>Retention</td><td class="tgt">35% &ndash; 50%</td><td class="lo">23%</td><td class="lo">32%</td><td>35%</td><td class="lo ol-dn">25% <span class="ol">&#9660;</span></td><td class="may lo">32%</td><td class="chg up">+9pts</td><td><span class="st fix">Focus</span></td></tr>
+          <tr><td>Saves</td><td class="tgt">20 &ndash; 80</td><td class="lo">1</td><td class="lo">2</td><td class="lo">5</td><td class="ol-up">20 <span class="ol">&#9650;</span></td><td class="may lo">13</td><td class="chg up">1 &rarr; 13</td><td><span class="st fix">Focus</span></td></tr>
+          <tr><td>Comments</td><td class="tgt">15 &ndash; 75</td><td class="lo">7</td><td class="lo">12</td><td class="lo">5</td><td class="lo">12</td><td class="may lo ol-dn">3 <span class="ol">&#9660;</span></td><td class="chg dn">&minus;57%</td><td><span class="st fix">Focus</span></td></tr>
           <tr class="zone"><td colspan="9">Bottom of funnel &middot; Conversion <span class="zv good">Efficient, needs volume</span></td></tr>
-          <tr><td>Click-through rate</td><td class="tgt">3% &ndash; 8%</td><td>5.0%</td><td>2.4%</td><td>4.4%</td><td>2.4%</td><td class="may">3.3%</td><td class="chg dn">&minus;1.7pts</td><td><span class="st mixed">Mixed</span></td></tr>
+          <tr><td>Click-through rate</td><td class="tgt">3% &ndash; 8%</td><td>5.0%</td><td class="lo">2.4%</td><td>4.4%</td><td class="lo">2.4%</td><td class="may">3.3%</td><td class="chg dn">&minus;1.7pts</td><td><span class="st mixed">Mixed</span></td></tr>
           <tr><td>Link taps</td><td class="tgt">5 &ndash; 40</td><td>10</td><td>6</td><td>9</td><td>6</td><td class="may">7</td><td class="chg dn">&minus;30%</td><td><span class="st mixed">Mixed</span></td></tr>
-          <tr><td>Profile conversion</td><td class="tgt">10% &ndash; 18%</td><td>12.0%</td><td>10.8%</td><td>13.7%</td><td>12.8%</td><td class="may">16.7%</td><td class="chg up">+4.7pts</td><td><span class="st strong">Strong</span></td></tr>
+          <tr><td>Profile conversion</td><td class="tgt">10% &ndash; 18%</td><td>12.0%</td><td>10.8%</td><td>13.7%</td><td>12.8%</td><td class="may ol-up">16.7% <span class="ol">&#9650;</span></td><td class="chg up">+4.7pts</td><td><span class="st strong">Strong</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="legend"><b class="l1">Strong</b> = inside the target range and holding &middot; <b class="l2">Mixed</b> = at the edge of range or inconsistent &middot; <b class="l3">Focus</b> = below range, where the plan aims</p>
+    <p class="legend"><b class="l1">Green</b> = on target or better &middot; <b class="l2">Yellow</b> = at the edge of range or inconsistent &middot; <b class="l3">Red</b> = below the target range &middot; red numbers sit below range, green above &middot; &#9650;&#9660; flag an unusual spike or drop vs. the metric&rsquo;s own trend</p>
     <p class="mx-note">Figures and target ranges as reported in your delivered monthly reports (Spark stage). Total followers grew 2,307 &rarr; 2,355 over the period.</p>
   </div>
 </section>
