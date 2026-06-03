@@ -150,7 +150,11 @@ table.mx td.chg{font-weight:700}
 .zone .zv{float:right;letter-spacing:.06em;padding:.15rem .6rem;border-radius:4px}
 .zv.good{background:rgba(12,51,135,.1);color:var(--azure)}
 .zv.focus{background:rgba(212,183,58,.2);color:var(--gold-700)}
-.st{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .55rem;border-radius:4px}
+.st{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .55rem;border-radius:4px;min-width:66px;text-align:center}
+.tgt{color:var(--fg-subtle);font-weight:600}
+.legend{font-size:.74rem;color:var(--fg-subtle);margin-top:.55rem}
+.legend b{font-weight:800;letter-spacing:.04em}
+.legend .l1{color:var(--azure)}.legend .l2{color:var(--azure-600)}.legend .l3{color:var(--gold-700)}
 .st.strong{background:rgba(12,51,135,.1);color:var(--azure)}
 .st.mixed{background:var(--lucid-soft);color:var(--azure-600)}
 .st.fix{background:rgba(212,183,58,.2);color:var(--gold-700)}
@@ -196,6 +200,18 @@ table.mx td.chg{font-weight:700}
 .fix p strong{color:var(--azure)}
 .engine-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(21,21,22,.05);border:1px solid var(--rule-faint);padding:.4rem .9rem;border-radius:6px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:1.2rem}
 .engine-tag b{color:var(--azure)}
+.fd{margin-top:.75rem;border-top:1px dashed var(--rule);padding-top:.65rem}
+.fd summary{list-style:none;cursor:pointer;font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--azure-500);display:flex;align-items:center;gap:.55rem;user-select:none}
+.fd summary::-webkit-details-marker{display:none}
+.fd summary .pm{width:20px;height:20px;border:1.5px solid var(--azure-400);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--azure-500);transition:transform .3s var(--ease),background .2s var(--ease),color .2s var(--ease)}
+.fd[open] summary .pm{transform:rotate(45deg);background:var(--azure);color:#fff;border-color:var(--azure)}
+.fd .fd-body{padding-top:.7rem;animation:revealDown .35s var(--ease)}
+@keyframes revealDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.fd ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.fd li{font-size:.86rem;color:var(--fg);line-height:1.55;padding-left:1.35rem;position:relative}
+.fd li::before{content:'';position:absolute;left:.2rem;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--azure-400)}
+.fd li strong{color:var(--azure)}
+.fix.warm .fd li::before{background:var(--gold-300)}
 
 /* S10 PLAN RECAP */
 .plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
@@ -328,28 +344,29 @@ table.mx td.chg{font-weight:700}
   <div class="slide-inner reveal">
     <p class="eyebrow"><span class="tick"></span>The Full Picture</p>
     <h2 class="title">Every metric we track, every month</h2>
-    <p class="lead">The complete view, including the parts that need work. Grouped by where each metric sits in your funnel.</p>
+    <p class="lead">The complete view, including the parts that need work. The target column shows your Spark stage range, so you can see where you are against what strong performance looks like.</p>
     <div class="tbl-scroll">
       <table class="mx">
-        <thead><tr><th>Metric</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jan &rarr; May</th><th>Status</th></tr></thead>
+        <thead><tr><th>Metric</th><th>Target range</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jan &rarr; May</th><th>Status</th></tr></thead>
         <tbody>
-          <tr class="zone"><td colspan="8">Top of funnel &middot; Awareness <span class="zv good">Working</span></td></tr>
-          <tr><td>Total views</td><td>15,715</td><td>35,614</td><td>31,580</td><td>45,117</td><td class="may">15,859</td><td class="chg">volatile</td><td><span class="st mixed">Mixed</span></td></tr>
-          <tr><td>New followers</td><td>24</td><td>27</td><td>28</td><td>32</td><td class="may">35</td><td class="chg up">+46%</td><td><span class="st strong">Strong</span></td></tr>
-          <tr><td>Shares</td><td>13</td><td>32</td><td>9</td><td>28</td><td class="may">17</td><td class="chg up">+31%</td><td><span class="st mixed">Mixed</span></td></tr>
-          <tr class="zone"><td colspan="8">Middle of funnel &middot; Engagement <span class="zv focus">The bottleneck</span></td></tr>
-          <tr><td>Profile visits</td><td>200</td><td>249</td><td>205</td><td>250</td><td class="may">210</td><td class="chg up">+5%</td><td><span class="st mixed">Mixed</span></td></tr>
-          <tr><td>Retention</td><td>23%</td><td>32%</td><td>35%</td><td>25%</td><td class="may">32%</td><td class="chg up">+9pts</td><td><span class="st fix">Focus</span></td></tr>
-          <tr><td>Saves</td><td>1</td><td>2</td><td>5</td><td>20</td><td class="may">13</td><td class="chg up">1 &rarr; 13</td><td><span class="st fix">Focus</span></td></tr>
-          <tr><td>Comments</td><td>7</td><td>12</td><td>5</td><td>12</td><td class="may">3</td><td class="chg dn">&minus;57%</td><td><span class="st fix">Focus</span></td></tr>
-          <tr class="zone"><td colspan="8">Bottom of funnel &middot; Conversion <span class="zv good">Efficient, needs volume</span></td></tr>
-          <tr><td>Click-through rate</td><td>5.0%</td><td>2.4%</td><td>4.4%</td><td>2.4%</td><td class="may">3.3%</td><td class="chg dn">&minus;1.7pts</td><td><span class="st mixed">Mixed</span></td></tr>
-          <tr><td>Link taps</td><td>10</td><td>6</td><td>9</td><td>6</td><td class="may">7</td><td class="chg dn">&minus;30%</td><td><span class="st fix">Focus</span></td></tr>
-          <tr><td>Profile conversion</td><td>12.0%</td><td>10.8%</td><td>13.7%</td><td>12.8%</td><td class="may">16.7%</td><td class="chg up">+4.7pts</td><td><span class="st strong">Strong</span></td></tr>
+          <tr class="zone"><td colspan="9">Top of funnel &middot; Awareness <span class="zv good">Working</span></td></tr>
+          <tr><td>Total views</td><td class="tgt">10,000 &ndash; 40,000</td><td>15,715</td><td>35,614</td><td>31,580</td><td>45,117</td><td class="may">15,859</td><td class="chg">volatile</td><td><span class="st mixed">Mixed</span></td></tr>
+          <tr><td>New followers</td><td class="tgt">40 &ndash; 90</td><td>24</td><td>27</td><td>28</td><td>32</td><td class="may">35</td><td class="chg up">+46%</td><td><span class="st mixed">Mixed</span></td></tr>
+          <tr><td>Shares</td><td class="tgt">15 &ndash; 60</td><td>13</td><td>32</td><td>9</td><td>28</td><td class="may">17</td><td class="chg up">+31%</td><td><span class="st strong">Strong</span></td></tr>
+          <tr class="zone"><td colspan="9">Middle of funnel &middot; Engagement <span class="zv focus">The bottleneck</span></td></tr>
+          <tr><td>Profile visits</td><td class="tgt">50 &ndash; 500</td><td>200</td><td>249</td><td>205</td><td>250</td><td class="may">210</td><td class="chg up">+5%</td><td><span class="st strong">Strong</span></td></tr>
+          <tr><td>Retention</td><td class="tgt">35% &ndash; 50%</td><td>23%</td><td>32%</td><td>35%</td><td>25%</td><td class="may">32%</td><td class="chg up">+9pts</td><td><span class="st fix">Focus</span></td></tr>
+          <tr><td>Saves</td><td class="tgt">20 &ndash; 80</td><td>1</td><td>2</td><td>5</td><td>20</td><td class="may">13</td><td class="chg up">1 &rarr; 13</td><td><span class="st fix">Focus</span></td></tr>
+          <tr><td>Comments</td><td class="tgt">15 &ndash; 75</td><td>7</td><td>12</td><td>5</td><td>12</td><td class="may">3</td><td class="chg dn">&minus;57%</td><td><span class="st fix">Focus</span></td></tr>
+          <tr class="zone"><td colspan="9">Bottom of funnel &middot; Conversion <span class="zv good">Efficient, needs volume</span></td></tr>
+          <tr><td>Click-through rate</td><td class="tgt">3% &ndash; 8%</td><td>5.0%</td><td>2.4%</td><td>4.4%</td><td>2.4%</td><td class="may">3.3%</td><td class="chg dn">&minus;1.7pts</td><td><span class="st mixed">Mixed</span></td></tr>
+          <tr><td>Link taps</td><td class="tgt">5 &ndash; 40</td><td>10</td><td>6</td><td>9</td><td>6</td><td class="may">7</td><td class="chg dn">&minus;30%</td><td><span class="st mixed">Mixed</span></td></tr>
+          <tr><td>Profile conversion</td><td class="tgt">10% &ndash; 18%</td><td>12.0%</td><td>10.8%</td><td>13.7%</td><td>12.8%</td><td class="may">16.7%</td><td class="chg up">+4.7pts</td><td><span class="st strong">Strong</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="mx-note">Figures as reported in your delivered monthly reports. Total followers grew 2,307 &rarr; 2,355 over the period.</p>
+    <p class="legend"><b class="l1">Strong</b> = inside the target range and holding &middot; <b class="l2">Mixed</b> = at the edge of range or inconsistent &middot; <b class="l3">Focus</b> = below range, where the plan aims</p>
+    <p class="mx-note">Figures and target ranges as reported in your delivered monthly reports (Spark stage). Total followers grew 2,307 &rarr; 2,355 over the period.</p>
   </div>
 </section>
 
@@ -401,15 +418,51 @@ table.mx td.chg{font-weight:700}
     <div class="fix-list">
       <div class="fix">
         <div class="fix-num">1</div>
-        <div><h3>Save-first formats</h3><p>Content designed for the bookmark: <strong>gear-guide carousels</strong>, <strong>fit-tip checklists</strong>, and <strong>&ldquo;save this for race day&rdquo;</strong> lists. Reference content runners come back to.</p></div>
+        <div>
+          <h3>Prioritize save-first and share-first formats</h3>
+          <p>Content designed for the <strong>bookmark and the send</strong>. Saves and shares are the strongest signals the algorithm rewards, and the clearest sign of a future customer.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>What this looks like for Up and Running</summary>
+            <div class="fd-body"><ul>
+              <li><strong>&ldquo;The right shoe for how you run&rdquo;</strong> series: stability vs neutral, cushion vs speed, matched to foot type. The save-before-your-fitting post.</li>
+              <li><strong>&ldquo;What to wear at every temperature&rdquo;</strong> race-day guide: the classic running save, screenshotted every season.</li>
+              <li><strong>&ldquo;5 mistakes first-time 5K runners make&rdquo;</strong>: a save and a send-to-a-friend in one post.</li>
+              <li><strong>&ldquo;Tag your running partner&rdquo;</strong> prompts on event recaps: the share reflex your 5K content already earns.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
       <div class="fix">
         <div class="fix-num">2</div>
-        <div><h3>Sharper hooks, one idea per post</h3><p>Every Reel opens with the <strong>payoff in the first two seconds</strong> (the fit reveal, the tip, the gear close-up). Holds attention and lifts retention past the target floor.</p></div>
+        <div>
+          <h3>Hold curiosity and attention all the way through</h3>
+          <p>The first two seconds earn the view; the <strong>rest of the post has to keep it</strong>. Retention sits below target because attention leaks mid-post, not just at the open.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>What this looks like for Up and Running</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Open with the payoff</strong> (the fit reveal, the tip), then hold with an open loop: &ldquo;the third one surprises most runners.&rdquo;</li>
+              <li><strong>Pattern interrupts</strong> every few seconds: cuts, angle changes, props, on-screen text teasing the next beat.</li>
+              <li><strong>Countdown and list structures</strong> that pay off at the end: &ldquo;3 fits for fall, save the last one.&rdquo;</li>
+              <li><strong>One idea per post.</strong> A tight promise is what keeps attention through the close.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
       <div class="fix">
         <div class="fix-num">3</div>
-        <div><h3>Conversation triggers</h3><p><strong>One direct question on every caption</strong>, polls and this-or-that on stories, and fast replies. The fastest path from 3 comments back to 15 and beyond.</p></div>
+        <div>
+          <h3>Stronger stories: real, behind the scenes, alive</h3>
+          <p>Shift stories from polished graphics to <strong>authentic, in-real-life moments</strong> built to invite interaction. This is where the community actually talks back.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>What this looks like for Up and Running</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Raw fitting moments and staff picks</strong>, shot on a phone, not designed graphics.</li>
+              <li><strong>New-arrival unboxings</strong> and &ldquo;the first thing you see walking in this week.&rdquo;</li>
+              <li><strong>Race-weekend takeovers</strong> from the team, live from the course.</li>
+              <li><strong>Polls and this-or-that woven into real moments:</strong> &ldquo;which colorway gets the wall display?&rdquo;</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
     </div>
   </div>
@@ -419,20 +472,54 @@ table.mx td.chg{font-weight:700}
 <section class="slide" id="s9">
   <div class="slide-inner reveal">
     <p class="eyebrow"><span class="tick"></span>The Fix &middot; Bottom of Funnel</p>
-    <h2 class="title">Three moves to feed the conversion path</h2>
-    <div class="engine-tag">Conversion works at <b>16.7%</b> &middot; the job is volume</div>
+    <h2 class="title">Make people want what you sell</h2>
+    <div class="engine-tag">Your link in bio and app are already in good shape &middot; the job is <b>making people want to tap</b></div>
     <div class="fix-list">
       <div class="fix warm">
         <div class="fix-num">1</div>
-        <div><h3>Comment-trigger DM</h3><p><strong>&ldquo;Comment FIT&rdquo;</strong> and the booking link arrives by DM. Removes the bio-link friction entirely for engaged followers.</p></div>
+        <div>
+          <h3>An athlete spotlight signature series</h3>
+          <p>Follow up with every customer who got fitted and raced, then <strong>celebrate them on your page</strong>. Proof without a pitch: people buy to belong, and every spotlight recruits the next athlete.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>How the series works</summary>
+            <div class="fd-body"><ul>
+              <li><strong>The motion:</strong> fitting &rarr; they race &rarr; we follow up (&ldquo;how did it go?&rdquo;) &rarr; &ldquo;can we spotlight you?&rdquo; &rarr; feature post.</li>
+              <li><strong>A named series</strong> (think &ldquo;Finish Line&rdquo; spotlights) so followers expect it and athletes want in.</li>
+              <li><strong>Frictionless entry:</strong> &ldquo;comment RACE and we&rsquo;ll set up your spotlight&rdquo; via DM automation.</li>
+              <li><strong>Why it converts:</strong> recurring customer-feature series are among the highest-converting plays in local retail, and nobody else in the market is doing the race follow-up.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
       <div class="fix warm">
         <div class="fix-num">2</div>
-        <div><h3>One clear destination</h3><p>The bio link points at <strong>one thing per month</strong> (fit booking or the featured event), named on screen in the content so the next step is obvious.</p></div>
+        <div>
+          <h3>Monthly themes that mirror the store</h3>
+          <p>One product focus per month, and <strong>what you see walking in is what you see on Instagram</strong>. The feed and the front-of-store display tell the same story.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>What this looks like for Up and Running</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Shoes month, apparel month, recovery month:</strong> the in-store promotion becomes the content theme, framed as &ldquo;this month we&rsquo;re obsessed with,&rdquo; never &ldquo;sale.&rdquo;</li>
+              <li><strong>A fun in-store series:</strong> a kid (or a customer) picks any item in the store, and an expert explains what it actually does.</li>
+              <li><strong>Corporate fittings stay on the map:</strong> the &ldquo;On the Road&rdquo; fit-day series keeps proof in front of the next business.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
       <div class="fix warm">
         <div class="fix-num">3</div>
-        <div><h3>Show the service that sells</h3><p>An <strong>&ldquo;On the Road&rdquo;</strong> series from your corporate fit days. Proof that books the next business, with a clear &ldquo;book a fit day for your team&rdquo; path.</p></div>
+        <div>
+          <h3>Expert point-of-view content, built on your ideal customer</h3>
+          <p>Reverse-engineer who you serve: their <strong>challenges, obstacles, and dream outcomes</strong>, then publish the expertise that solves them. Authority is what makes buying feel obvious.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>What this looks like for Up and Running</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Solution content mapped to real problems:</strong> shin splints, first-5K nerves, shoes that never quite fit, the PR chase.</li>
+              <li><strong>Point-of-view commentary:</strong> &ldquo;Why Brooks took off this year,&rdquo; &ldquo;what nobody tells you about carbon plates.&rdquo; Takes only a real expert can make.</li>
+              <li><strong>The journey stays easy:</strong> the content builds the want; your organized site and app catch the click.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
     </div>
   </div>
@@ -446,9 +533,9 @@ table.mx td.chg{font-weight:700}
     <p class="lead">No change to your current scope. A sharper strategy aimed at the gaps.</p>
     <div class="plan-grid">
       <div class="pl"><div class="pl-num">Move 01</div><h3>A consistent community drumbeat</h3><p>&ldquo;Faces of the Run Club&rdquo; spotlights, event recaps, team features on a set weekly rhythm.</p><span class="serves">Community-forward brand</span></div>
-      <div class="pl"><div class="pl-num">Move 02</div><h3>Start more conversations</h3><p>A question on every post, interactive stickers on stories, fast replies.</p><span class="serves">Community + engagement</span></div>
-      <div class="pl"><div class="pl-num">Move 03</div><h3>Reasons to save and return</h3><p>Gear guides, race-day checklists, and real walkthroughs of the Up and Running app.</p><span class="serves">Local shopping + app</span></div>
-      <div class="pl"><div class="pl-num">Move 04</div><h3>Corporate fittings on the map</h3><p>The &ldquo;On the Road&rdquo; series plus sharper, more authentic stories built to invite replies.</p><span class="serves">Corporate fittings + community</span></div>
+      <div class="pl"><div class="pl-num">Move 02</div><h3>Save-first formats, attention held throughout</h3><p>Shoe guides and race-day saves, with curiosity craft that keeps people watching to the end.</p><span class="serves">Engagement + saves</span></div>
+      <div class="pl"><div class="pl-num">Move 03</div><h3>Authentic stories, real moments</h3><p>In-real-life fitting moments, behind the scenes, race-weekend takeovers built to invite replies.</p><span class="serves">Community + engagement</span></div>
+      <div class="pl"><div class="pl-num">Move 04</div><h3>Conversion through community</h3><p>Athlete spotlight series, monthly store-mirror themes, expert point-of-view, and On the Road fit days.</p><span class="serves">Local shopping + fittings + app</span></div>
     </div>
   </div>
 </section>
