@@ -116,6 +116,7 @@ h2.title{font-size:clamp(1.7rem,4.8vw,2.7rem);font-weight:800;line-height:1.06;c
 .goal.g4 .goal-ico{background:rgba(212,183,58,.16)}
 .goal-ico svg{width:23px;height:23px;stroke:var(--azure);fill:none;stroke-width:1.8}
 .goal.g4 .goal-ico svg{stroke:var(--gold-700)}
+.goal>div:last-child{flex:1;min-width:0}
 .goal-eyebrow{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-subtle);margin-bottom:.25rem}
 .goal h3{font-size:1.08rem;font-weight:800;color:var(--azure);line-height:1.25;margin-bottom:.3rem;letter-spacing:-.01em}
 .goal p{font-size:.86rem;color:var(--fg-muted);line-height:1.5}
@@ -150,8 +151,8 @@ table.mx td.chg{font-weight:700}
 .zone .zv{float:right;letter-spacing:.06em;padding:.15rem .6rem;border-radius:4px}
 .zv.good{background:rgba(12,51,135,.1);color:var(--azure)}
 .zv.focus{background:rgba(212,183,58,.2);color:var(--gold-700)}
-.st{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.18rem .55rem;border-radius:4px;min-width:76px;text-align:center}
-.st::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:.35rem;vertical-align:1px}
+.st{display:inline-flex;align-items:center;justify-content:center;gap:.32rem;width:92px;font-size:.62rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.22rem 0;border-radius:4px;box-sizing:border-box;white-space:nowrap}
+.st::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .st.strong{background:rgba(14,122,78,.12);color:#0e7a4e}.st.strong::before{background:#0e7a4e}
 .st.mixed{background:rgba(212,183,58,.22);color:var(--gold-700)}.st.mixed::before{background:var(--gold-300)}
 .st.fix{background:rgba(177,58,54,.11);color:#b13a36}.st.fix::before{background:#b13a36}
@@ -183,22 +184,17 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
 .verd h3{font-size:1.45rem;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin-bottom:.55rem}
 .verd.v1 h3{color:var(--azure)}.verd.v2 h3{color:var(--gold-700)}.verd.v3 h3{color:var(--azure-600)}
 .verd p{font-size:.9rem;color:var(--fg-muted);line-height:1.55}
+.arc-strip{display:flex;align-items:center;justify-content:center;gap:.7rem;margin:1.1rem 0 1.4rem;flex-wrap:wrap}
+.arc-step{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border-radius:999px;border:1.5px solid var(--rule);background:#fff}
+.arc-step.a1{color:var(--azure);border-color:var(--azure-300)}
+.arc-step.a2{color:var(--gold-700);border-color:var(--gold-300)}
+.arc-step.a3{color:#0e7a4e;border-color:rgba(14,122,78,.4)}
+.arc-arrow{color:var(--fg-subtle);font-weight:700}
+.verd-job{margin-top:.85rem;padding-top:.75rem;border-top:1px dashed var(--rule)}
+.verd-job .vj-l{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-subtle);margin-bottom:.3rem}
+.verd-job p{font-size:.85rem;color:var(--fg);line-height:1.55}
+.verd-job p em{color:var(--azure);font-weight:600}
 
-/* S7 ENGINE (dark) */
-.slide.engine-slide{background:linear-gradient(180deg,var(--shadow),var(--shadow-soft));color:var(--ghost)}
-.slide.engine-slide::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--highlighter) 50%,transparent);opacity:.7}
-.slide.engine-slide::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--highlighter) 50%,transparent);opacity:.35}
-.e-eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--highlighter);margin-bottom:.8rem}
-.slide.engine-slide h2{font-size:clamp(1.9rem,5vw,3rem);font-weight:900;line-height:1.06;letter-spacing:-.025em;margin-bottom:1rem;color:#fff}
-.slide.engine-slide p.e-lead{font-size:1.08rem;color:rgba(255,255,255,.78);line-height:1.65;max-width:640px}
-.slide.engine-slide p.e-lead strong{color:#fff}
-.engine-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:1.8rem}
-@media(max-width:600px){.engine-proof{grid-template-columns:1fr}}
-.ep{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.15rem;transition:border-color .2s var(--ease)}
-.ep:hover{border-color:rgba(226,237,122,.45)}
-.ep-mo{font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--highlighter);margin-bottom:.45rem}
-.ep-t{font-size:1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.3rem}
-.ep-m{font-size:.8rem;color:rgba(255,255,255,.6)}
 
 /* S8/S9 FIX SLIDES */
 .fix-list{display:flex;flex-direction:column;gap:1rem}
@@ -224,14 +220,6 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
 .fd li strong{color:var(--azure)}
 .fix.warm .fd li::before{background:var(--gold-300)}
 
-/* S10 PLAN RECAP */
-.plan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-@media(max-width:680px){.plan-grid{grid-template-columns:1fr}}
-.pl{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:1.4rem 1.5rem;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
-.pl:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(12,51,135,.09)}
-.pl-num{font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--azure-400);margin-bottom:.35rem}
-.pl h3{font-size:1.05rem;font-weight:800;color:var(--azure);line-height:1.25;margin-bottom:.35rem}
-.pl p{font-size:.85rem;color:var(--fg-muted);line-height:1.5;margin-bottom:.7rem}
 .serves{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);background:rgba(12,51,135,.07);padding:.28rem .65rem;border-radius:5px}
 
 /* S11 CLOSE */
@@ -249,7 +237,7 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
 .footer-text a{color:var(--azure-200);font-weight:600}
 @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
 @media(max-width:767px){.slide{padding:68px 18px 40px;min-height:auto}html{scroll-snap-type:none}}
-@media print{.topbar,#progress,.dots,.hint{display:none}.reveal{opacity:1;transform:none}.slide{min-height:auto;page-break-inside:avoid}.slide.engine-slide{background:#fff;color:#000}}
+@media print{.topbar,#progress,.dots,.hint{display:none}.reveal{opacity:1;transform:none}.slide{min-height:auto;page-break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -263,7 +251,7 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
       <span class="brand-mark" style="display:none">scroll<span>media</span></span>
       <span class="tag">Performance Snapshot</span>
     </a>
-    <span class="counter"><strong id="cur">01</strong> / <span id="tot">11</span></span>
+    <span class="counter"><strong id="cur">01</strong> / <span id="tot">10</span></span>
   </div>
 </header>
 
@@ -313,19 +301,55 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
     <div class="goal-grid">
       <div class="goal g1">
         <div class="goal-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M15.5 14.5c2.4.2 4 2 4 4.5"/></svg></div>
-        <div><div class="goal-eyebrow">Goal 01</div><h3>A community-forward brand</h3><p>Warm and authentic. Never salesy, even while it grows.</p></div>
+        <div><div class="goal-eyebrow">Goal 01</div><h3>A community-forward brand</h3><p>Warm and authentic. Never salesy, even while it grows.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>How we get there</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Content:</strong> &ldquo;Faces of the Run Club&rdquo; spotlights, event recaps, team features, race-weekend stories.</li>
+              <li><strong>Optimizes for:</strong> shares and comments, the metrics that measure belonging.</li>
+              <li><strong>Who it reaches:</strong> everyday local runners and walkers who want to be part of something, not just buy from it.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
       <div class="goal g2">
         <div class="goal-ico"><svg viewBox="0 0 24 24"><path d="M4 17l5-5 3 3 4-5 4 4"/><path d="M3 20h18"/></svg></div>
-        <div><div class="goal-eyebrow">Goal 02</div><h3>Grow corporate fittings</h3><p>On-site fittings for local businesses. A real growth line.</p></div>
+        <div><div class="goal-eyebrow">Goal 02</div><h3>Grow corporate fittings</h3><p>On-site fittings for local businesses. A real growth line.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>How we get there</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Content:</strong> the &ldquo;On the Road&rdquo; fit-day series, partner spotlights, and a simple &ldquo;how a fit day works&rdquo; explainer.</li>
+              <li><strong>Optimizes for:</strong> shares and direct inquiries from local businesses.</li>
+              <li><strong>Who it reaches:</strong> HR leads, office managers, and healthcare or fitness teams on their feet all day.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
       <div class="goal g3">
         <div class="goal-ico"><svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></div>
-        <div><div class="goal-eyebrow">Goal 03</div><h3>Promote the Up and Running app</h3><p>A tool runners actually use, not just download.</p></div>
+        <div><div class="goal-eyebrow">Goal 03</div><h3>Promote the Up and Running app</h3><p>A tool runners actually use, not just download.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>How we get there</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Content:</strong> real walkthroughs, a feature-of-the-month story, and app-first perks worth talking about.</li>
+              <li><strong>Optimizes for:</strong> link taps and saves, the signals of a tool people return to.</li>
+              <li><strong>Who it reaches:</strong> existing customers and regulars who want a reason to come back between visits.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
       <div class="goal g4">
         <div class="goal-ico"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></div>
-        <div><div class="goal-eyebrow">Goal 04</div><h3>Drive local shopping</h3><p>In-store visits and online orders. Shop small over the giants.</p></div>
+        <div><div class="goal-eyebrow">Goal 04</div><h3>Drive local shopping</h3><p>In-store visits and online orders. Shop small over the giants.</p>
+          <details class="fd">
+            <summary><span class="pm" aria-hidden="true">+</span>How we get there</summary>
+            <div class="fd-body"><ul>
+              <li><strong>Content:</strong> monthly store-mirror themes, new-arrival moments, shop-small storytelling, expert point-of-view takes.</li>
+              <li><strong>Optimizes for:</strong> profile visits, link taps, and saves, the path from feed to store.</li>
+              <li><strong>Who it reaches:</strong> values-driven locals who would rather back a neighborhood expert than a big online giant.</li>
+            </ul></div>
+          </details>
+        </div>
       </div>
     </div>
   </div>
@@ -385,47 +409,52 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
 <section class="slide" id="s6">
   <div class="slide-inner reveal">
     <p class="eyebrow"><span class="tick"></span>What The Data Says</p>
-    <h2 class="title">The funnel, in three sentences</h2>
-    <div class="verd-grid" style="margin-top:1.4rem">
+    <h2 class="title">Where you stand, and the job at each stage</h2>
+    <div class="arc-strip" aria-label="The customer journey">
+      <span class="arc-step a1">Interested</span>
+      <span class="arc-arrow">&rarr;</span>
+      <span class="arc-step a2">Trust</span>
+      <span class="arc-arrow">&rarr;</span>
+      <span class="arc-step a3">Customer</span>
+    </div>
+    <div class="verd-grid">
       <div class="verd v1">
-        <div class="verd-zone">Top of funnel</div>
+        <div class="verd-zone">Top of funnel &middot; Awareness</div>
         <h3>Working.</h3>
         <p>Awareness grows every time we feed it community content. The gap is consistency, not capability.</p>
+        <div class="verd-job">
+          <div class="vj-l">The job at this stage</div>
+          <p>Relatable content that makes the right people think <em>&ldquo;this is me, I get this brand.&rdquo;</em> Yours already does: the founder story, the team story, every top post this year was community-led.</p>
+        </div>
       </div>
       <div class="verd v2">
-        <div class="verd-zone">Middle of funnel</div>
+        <div class="verd-zone">Middle of funnel &middot; Engagement</div>
         <h3>The bottleneck.</h3>
         <p>Saves, comments, and retention all run under target. This is where attention leaks before it becomes a customer.</p>
+        <div class="verd-job">
+          <div class="vj-l">The job at this stage</div>
+          <p>Education that builds trust. Show the expertise, so <em>&ldquo;I&rsquo;m interested&rdquo;</em> becomes <em>&ldquo;these people know their stuff.&rdquo;</em></p>
+        </div>
       </div>
       <div class="verd v3">
-        <div class="verd-zone">Bottom of funnel</div>
+        <div class="verd-zone">Bottom of funnel &middot; Conversion</div>
         <h3>Efficient, starved.</h3>
         <p>The people who arrive convert well, and better every month. There just are not enough of them yet.</p>
+        <div class="verd-job">
+          <div class="vj-l">The job at this stage</div>
+          <p>Proof. Customer stories, real results, answered objections, so <em>&ldquo;I trust you&rdquo;</em> becomes <em>&ldquo;I want in.&rdquo;</em></p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- S7 · ENGINE -->
-<section class="slide engine-slide" id="s7">
-  <div class="slide-inner reveal">
-    <p class="e-eyebrow">The pattern that never broke</p>
-    <h2>Your community is the algorithm.</h2>
-    <p class="e-lead"><strong>Every single month, your number-one post was community or story-led.</strong> That is your voice doing the work, and the entire plan leans into the one thing that has worked every time.</p>
-    <div class="engine-proof">
-      <div class="ep"><div class="ep-mo">February</div><div class="ep-t">The founder story</div><div class="ep-m">15,157 views &middot; 104 comments</div></div>
-      <div class="ep"><div class="ep-mo">March</div><div class="ep-t">Customer to store manager</div><div class="ep-m">12,743 views &middot; 5.1x your average</div></div>
-      <div class="ep"><div class="ep-mo">May</div><div class="ep-t">Free Your Sole 5K recap</div><div class="ep-m">Top post &middot; shares 3x your average</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- S8 · FIX THE MIDDLE -->
-<section class="slide" id="s8">
+<!-- S7 · FIX THE MIDDLE -->
+<section class="slide" id="s7">
   <div class="slide-inner reveal">
     <p class="eyebrow"><span class="tick"></span>The Fix &middot; Middle of Funnel</p>
     <h2 class="title">Three moves to stop the leak</h2>
-    <div class="engine-tag">From the <b>Scroll Content Engine</b> &middot; Idea &rarr; Format &rarr; Hook &rarr; Data</div>
+    <div class="engine-tag">The trust stage of the journey &middot; from the <b>Scroll Content Engine</b></div>
     <div class="fix-list">
       <div class="fix">
         <div class="fix-num">1</div>
@@ -479,12 +508,12 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
   </div>
 </section>
 
-<!-- S9 · FIX THE BOTTOM -->
-<section class="slide" id="s9">
+<!-- S8 · FIX THE BOTTOM -->
+<section class="slide" id="s8">
   <div class="slide-inner reveal">
     <p class="eyebrow"><span class="tick"></span>The Fix &middot; Bottom of Funnel</p>
     <h2 class="title">Make people want what you sell</h2>
-    <div class="engine-tag">Your link in bio and app are already in good shape &middot; the job is <b>making people want to tap</b></div>
+    <div class="engine-tag">The proof stage of the journey &middot; your link in bio and app are already in good shape, the job is <b>making people want to tap</b></div>
     <div class="fix-list">
       <div class="fix warm">
         <div class="fix-num">1</div>
@@ -527,6 +556,7 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
             <div class="fd-body"><ul>
               <li><strong>Solution content mapped to real problems:</strong> shin splints, first-5K nerves, shoes that never quite fit, the PR chase.</li>
               <li><strong>Point-of-view commentary:</strong> &ldquo;Why Brooks took off this year,&rdquo; &ldquo;what nobody tells you about carbon plates.&rdquo; Takes only a real expert can make.</li>
+              <li><strong>Answer the real objections:</strong> sizing worries, price vs. the big-box option, &ldquo;do I actually need a fitting.&rdquo; Asked and answered in content before they have to ask.</li>
               <li><strong>The journey stays easy:</strong> the content builds the want; your organized site and app catch the click.</li>
             </ul></div>
           </details>
@@ -536,23 +566,43 @@ td.ol-up .ol{color:#0e7a4e}td.ol-dn .ol{color:#b13a36}
   </div>
 </section>
 
-<!-- S10 · PLAN RECAP -->
-<section class="slide" id="s10">
+<!-- S9 · WHERE WE START -->
+<section class="slide" id="s9">
   <div class="slide-inner reveal">
-    <p class="eyebrow"><span class="tick"></span>The Plan</p>
-    <h2 class="title">Four moves, your goals, same scope</h2>
-    <p class="lead">No change to your current scope. A sharper strategy aimed at the gaps.</p>
-    <div class="plan-grid">
-      <div class="pl"><div class="pl-num">Move 01</div><h3>A consistent community drumbeat</h3><p>&ldquo;Faces of the Run Club&rdquo; spotlights, event recaps, team features on a set weekly rhythm.</p><span class="serves">Community-forward brand</span></div>
-      <div class="pl"><div class="pl-num">Move 02</div><h3>Save-first formats, attention held throughout</h3><p>Shoe guides and race-day saves, with curiosity craft that keeps people watching to the end.</p><span class="serves">Engagement + saves</span></div>
-      <div class="pl"><div class="pl-num">Move 03</div><h3>Authentic stories, real moments</h3><p>In-real-life fitting moments, behind the scenes, race-weekend takeovers built to invite replies.</p><span class="serves">Community + engagement</span></div>
-      <div class="pl"><div class="pl-num">Move 04</div><h3>Conversion through community</h3><p>Athlete spotlight series, monthly store-mirror themes, expert point-of-view, and On the Road fit days.</p><span class="serves">Local shopping + fittings + app</span></div>
+    <p class="eyebrow"><span class="tick"></span>Where We Start</p>
+    <h2 class="title">Three commitments. Not ten.</h2>
+    <p class="lead">Everything in this deck is on the menu, but chasing it all at once is how nothing gets done. We start where the payoff is biggest, inside your current scope.</p>
+    <div class="fix-list">
+      <div class="fix">
+        <div class="fix-num">1</div>
+        <div>
+          <h3>Make stories authentic and interactive</h3>
+          <p>In-real-life and behind-the-scenes moments with polls and questions built in, replacing the polished promo graphics.</p>
+          <p><strong>Moves:</strong> comments, replies, story reach &middot; <span class="serves">Community-forward brand</span></p>
+        </div>
+      </div>
+      <div class="fix">
+        <div class="fix-num">2</div>
+        <div>
+          <h3>Save-first formats, attention held throughout</h3>
+          <p>Shoe guides, race-day checklists, and payoff-first hooks with the curiosity craft to keep people watching to the end.</p>
+          <p><strong>Moves:</strong> saves, retention &middot; <span class="serves">Engagement + trust</span></p>
+        </div>
+      </div>
+      <div class="fix warm">
+        <div class="fix-num">3</div>
+        <div>
+          <h3>Launch the proof engine</h3>
+          <p>The athlete spotlight series plus On the Road corporate fit days. Real customers, real results, real proof.</p>
+          <p><strong>Moves:</strong> conversions, fitting inquiries &middot; <span class="serves">Fittings + local shopping</span></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- S11 · CLOSE -->
-<section class="slide close-slide" id="s11">
+<!-- S10 · CLOSE -->
+<section class="slide close-slide" id="s10">
   <div class="slide-inner reveal" style="text-align:center">
     <p class="close-eyebrow">Where we go from here</p>
     <p class="close-line" style="margin:0 auto">There is a lot to be proud of in the first five months, and a clear path to make the next five stronger. We are excited to keep building this with you.</p>
