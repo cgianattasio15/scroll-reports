@@ -7,6 +7,11 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    # Tier 3: every reports.scrollmedia.co surface carries client-confidential
+    # data behind the client-side access-code gate. The gate hides content
+    # visually but the HTML is still served, so crawlers must be told not to
+    # index any of it. Site-wide noindex closes the indexing leak.
+    X-Robots-Tag = "noindex, nofollow"
 
 # Tier 2 client-data snapshot: belt-and-suspenders noindex at the header level,
 # matching the page-level meta robots + robots.txt Disallow.

@@ -64,6 +64,10 @@
     .client-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#4f6ef7)}
     .client-card.spark::before{background:linear-gradient(90deg,#d97706,#f59e0b)}
     .client-card.rise::before{background:linear-gradient(90deg,var(--exceed),#a855f7)}
+    .client-card.concluded{background:#fbfbfd}
+    .client-card.concluded::before{background:linear-gradient(90deg,#9ca3af,#6b7280)}
+    .client-card.concluded .card-name{color:#4b5563}
+    .stage-badge.concluded{background:rgba(107,114,128,.1);color:#6b7280;border:1px solid rgba(107,114,128,.22)}
     .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
     .card-name{font-size:1.125rem;font-weight:800;color:var(--shadow);line-height:1.2;margin-bottom:.25rem}
     .card-handle{font-size:.8125rem;color:var(--azure);font-weight:600}
@@ -97,6 +101,8 @@
     .proposal-card:hover .proposal-link{background:rgba(14,51,135,.06);border-color:rgba(14,51,135,.35)}
     @media(max-width:640px){.proposals-grid{grid-template-columns:1fr}}
   </style>
+  <script>window.SCROLL_GATE={slug:'index',code:'scrollmedia.reports',title:'Scroll Media reports',sub:'This is the internal Scroll Media reports dashboard. Enter your access code to continue.',button:'View dashboard'};</script>
+  <script src="/access-gate.js"></script>
 </head>
 <body>
 <header class="hero">
@@ -148,26 +154,6 @@
         <div>
           <div class="report-month">May 2026</div>
           <div class="report-score" style="color:#059669">8.2<span>/10</span></div>
-          <div class="report-label">Solid Month</div>
-        </div>
-        <span class="view-btn">View Reports &#8599;</span>
-      </div>
-    </a>
-    <a href="/skinbybrownleeandco/" class="client-card rise">
-      <div class="card-top">
-        <div><div class="card-name">Skin by Brownlee &amp; Co</div><div class="card-handle">@skinbybrownleeandco</div></div>
-        <div class="stage-badge rise" style="background:rgba(124,58,237,.08);color:#7c3aed;border:1px solid rgba(124,58,237,.15)">Rise Stage</div>
-      </div>
-      <div class="card-meta">
-        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Med Spa / Aesthetics</span></div>
-        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Riley Walker</span></div>
-        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 8 (Final)</span></div>
-        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#6b7280">Concluded 5/31/26</span></div>
-      </div>
-      <div class="card-report">
-        <div>
-          <div class="report-month">May 2026 &middot; Final</div>
-          <div class="report-score" style="color:#059669">8.4<span>/10</span></div>
           <div class="report-label">Solid Month</div>
         </div>
         <span class="view-btn">View Reports &#8599;</span>
@@ -233,22 +219,70 @@
         <span class="view-btn">View Reports &#8599;</span>
       </div>
     </a>
-    <a href="/ombregallery/" class="client-card lift">
+    <a href="/carlsdeli/" class="client-card lift">
       <div class="card-top">
-        <div><div class="card-name">Ombr&eacute; Gallery</div><div class="card-handle">@ombregallery</div></div>
+        <div><div class="card-name">Carl's Deli</div><div class="card-handle">@carlsdelihydepark</div></div>
         <div class="stage-badge lift" style="background:rgba(14,51,135,.08);color:#0e3387;border:1px solid rgba(14,51,135,.15)">Lift Stage</div>
       </div>
       <div class="card-meta">
-        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Brow &amp; Beauty Studio</span></div>
-        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Emily Krintz</span></div>
-        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 20</span></div>
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Deli &amp; Catering</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Rachel Dina</span></div>
+        <div class="meta-item"><span class="meta-lbl">Month</span><span class="meta-val">Month 1</span></div>
         <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#059669">Active</span></div>
       </div>
       <div class="card-report">
         <div>
-          <div class="report-month">March 2026</div>
-          <div class="report-score" style="color:#0e3387">7.8<span>/10</span></div>
-          <div class="report-label">Building Month</div>
+          <div class="report-month">June 2026 Report</div>
+          <div class="report-label" style="margin-top:.4rem;font-weight:700;color:#d97706">Coming first week of July</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section-header">
+    <p class="section-label">Concluded Clients</p>
+    <h2 class="section-title">Past Engagements</h2>
+  </div>
+  <div class="clients-grid">
+    <a href="/skinbybrownleeandco/" class="client-card concluded">
+      <div class="card-top">
+        <div><div class="card-name">Skin by Brownlee &amp; Co</div><div class="card-handle">@skinbybrownleeandco</div></div>
+        <div class="stage-badge concluded">Concluded</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Med Spa / Aesthetics</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Riley Walker</span></div>
+        <div class="meta-item"><span class="meta-lbl">Tenure</span><span class="meta-val">8 months</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#6b7280">Concluded May 2026</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">May 2026 &middot; Final</div>
+          <div class="report-score" style="color:#6b7280">8.4<span>/10</span></div>
+          <div class="report-label">Final Report</div>
+        </div>
+        <span class="view-btn">View Reports &#8599;</span>
+      </div>
+    </a>
+    <a href="/ombregallery/" class="client-card concluded">
+      <div class="card-top">
+        <div><div class="card-name">Ombr&eacute; Gallery</div><div class="card-handle">@ombregallery</div></div>
+        <div class="stage-badge concluded">Concluded</div>
+      </div>
+      <div class="card-meta">
+        <div class="meta-item"><span class="meta-lbl">Niche</span><span class="meta-val">Artist-Made Jewelry</span></div>
+        <div class="meta-item"><span class="meta-lbl">Manager</span><span class="meta-val">Emily Krintz</span></div>
+        <div class="meta-item"><span class="meta-lbl">Tenure</span><span class="meta-val">21 months</span></div>
+        <div class="meta-item"><span class="meta-lbl">Status</span><span class="meta-val" style="color:#6b7280">Concluded April 2026</span></div>
+      </div>
+      <div class="card-report">
+        <div>
+          <div class="report-month">March 2026 &middot; Final</div>
+          <div class="report-score" style="color:#6b7280">7.8<span>/10</span></div>
+          <div class="report-label">Final Report</div>
         </div>
         <span class="view-btn">View Reports &#8599;</span>
       </div>
