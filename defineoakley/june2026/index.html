@@ -391,7 +391,7 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<div style="background:#fffbeb;border-bottom:2px solid #fcd34d;color:#92400e;font-size:.8125rem;font-weight:700;text-align:center;padding:.6rem 1rem;font-family:'Source Sans 3',system-ui,sans-serif">DRAFT &middot; June 2026 report in preparation &middot; performance metrics + goals populate at build (July 1). Remove this banner before sending.</div>
+<div style="background:#fffbeb;border-bottom:2px solid #fcd34d;color:#92400e;font-size:.8125rem;font-weight:700;text-align:center;padding:.6rem 1rem;font-family:'Source Sans 3',system-ui,sans-serif">DRAFT &middot; June 2026 report in preparation &middot; performance metrics populate at build (July 1). Remove this banner before sending.</div>
 
 <!-- ═══ STICKY NAV ═══ -->
 <nav class="report-nav" aria-label="Report sections">
@@ -454,15 +454,15 @@
       </div>
       <!-- RIGHT: client-specific headline business outcome (Workstream A locks the metric per client) -->
       <div class="ph-panel outcome">
-        <p class="ph-label">{{OUTCOME_LABEL}}</p>
+        <p class="ph-label">Link Taps</p>
         <div class="ph-bignum">{{OUTCOME_VALUE}}</div>
-        <p class="ph-title">{{OUTCOME_TITLE}}</p>
-        <p class="ph-outcome-sub">{{OUTCOME_SUB}}</p>
+        <p class="ph-title">Class Booking Path</p>
+        <p class="ph-outcome-sub">High-intent taps toward a class booking.</p>
       </div>
     </div>
 
     <!-- ONE-LINE PLAIN-ENGLISH SUMMARY (Chase fills per report) -->
-    <p class="hero-summary">Here&rsquo;s what June means for DEFINE Oakley: <strong>{{HERO_SUMMARY}}</strong></p>
+    <p class="hero-summary"><strong>June moved [X]% closer to your Q3 goal of 60 monthly link taps to class bookings.</strong></p>
 
     <!-- METHODOLOGY ONE-LINER (locked copy, v8 Callout Library — same every report) -->
     <p class="hero-method">Your score reflects how this month performed against your stage targets, weighted by what predicts buyer behavior. Monthly score is a snapshot. Strategy decisions are made on quarterly trend, not single-month signal.</p>
@@ -522,43 +522,43 @@
       <div class="gt-row tofu">
         <div class="gt-main">
           <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel</span></div>
-          <p class="gt-title">{{GOAL1_TITLE}}</p>
+          <p class="gt-title">Drive New Audience Discovery &amp; Brand Awareness</p>
           <div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL1_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL1_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL1_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL1_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL1_TARGET}}</b></span></div>
-          <p class="gt-narr">{{GOAL1_NARRATIVE}}</p>
+          <div class="gt-bct"><span class="seg">Baseline <b>~75,000/mo</b></span><span class="seg">Now <b>{{GOAL1_CURRENT}}</b></span><span class="seg">Target <b>95,000/mo</b></span></div>
+          <p class="gt-narr">Awareness held at baseline after April&rsquo;s viral wave. May&rsquo;s 74.7K views landed inside the Lift range without a viral assist. The Q3 target lifts steady reach to 95K through retention-first Reels and a consistent posting cadence.</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL1_SPARKLINE_SVG}}</div>
+        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span></div>
       </div>
 
       <div class="gt-row mofu">
         <div class="gt-main">
           <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel</span></div>
-          <p class="gt-title">{{GOAL2_TITLE}}</p>
+          <p class="gt-title">Build Trust &amp; Deepen Community Connection</p>
           <div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL2_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL2_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL2_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL2_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL2_TARGET}}</b></span></div>
-          <p class="gt-narr">{{GOAL2_NARRATIVE}}</p>
+          <div class="gt-bct"><span class="seg">Baseline <b>~52%</b></span><span class="seg">Now <b>{{GOAL2_CURRENT}}</b></span><span class="seg">Target <b>Hold 60%+</b></span></div>
+          <p class="gt-narr">Content depth is the breakthrough. Retention climbed to 61% in May, near the top of the Lift range. The Q3 target holds 60% or better each month, protecting the gain and earning the next reach lift the algorithm rewards.</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL2_SPARKLINE_SVG}}</div>
+        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span></div>
       </div>
 
       <div class="gt-row bofu">
         <div class="gt-main">
           <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel</span></div>
-          <p class="gt-title">{{GOAL3_TITLE}}</p>
+          <p class="gt-title">Drive Class Bookings &amp; New Member Sign-Ups</p>
           <div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL3_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL3_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL3_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL3_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL3_TARGET}}</b></span></div>
-          <p class="gt-narr">{{GOAL3_NARRATIVE}}</p>
+          <div class="gt-bct"><span class="seg">Baseline <b>~50/mo</b></span><span class="seg">Now <b>{{GOAL3_CURRENT}}</b></span><span class="seg">Target <b>60/mo</b></span></div>
+          <p class="gt-narr">Conversion is the focus. Link taps softened to 26 as viral traffic receded. The Q3 target rebuilds to 60 monthly link taps, turning steady reach into class bookings through a first-class offer in the bio and a comment-to-DM trigger.</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL3_SPARKLINE_SVG}}</div>
+        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span></div>
       </div>
     </div>
   </section>
@@ -727,12 +727,9 @@
       </div>
 
       <!-- LAYER 2 — Conversion path taps. POPULATED variant shown; if no UTM data, swap inner for the .empty variant below. -->
-      <div class="ls-layer">
+      <div class="ls-layer empty">
         <div class="ls-layer-top"><span class="ls-layer-num">2</span><span class="ls-layer-title">Conversion path taps</span><span class="ls-layer-sub">UTM-tracked links</span></div>
-        <div class="ls-stats">
-          <div class="ls-stat"><div class="ls-stat-val">{{LS_LINK_TAPS}}</div><div class="ls-stat-lbl">Link Taps</div></div>
-          <div class="ls-stat"><div class="ls-stat-val">{{LS_CTR}}%</div><div class="ls-stat-lbl">CTR</div></div>
-        </div>
+        <p class="ls-empty-prompt">UTM tracking rolls out this quarter. We&rsquo;ll surface the data here as soon as the links are tagged.</p>
         <!-- EMPTY-STATE variant (use instead of .ls-stats above when the client has no UTM data yet):
         <p class="ls-empty-prompt">UTM tracking rolls out this quarter. We&rsquo;ll surface the data here as soon as the links are tagged.</p>
         and add class "empty" to this .ls-layer. -->
