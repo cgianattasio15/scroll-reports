@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#151516">
   <!-- Tier 3 client-data report: noindex + nofollow (CLAUDE.md §5 Security Tiering). -->
   <meta name="robots" content="noindex, nofollow">
-  <title>{{CLIENT_NAME}} &ndash; {{REPORT_MONTH_YEAR}} | Scroll Media</title>
-  <meta name="description" content="{{CLIENT_NAME}} {{REPORT_MONTH_YEAR}} Instagram performance report. Score {{SCORE}}/10. {{SCORE_LABEL}}. {{CLIENT_STAGE}}. Managed by Scroll Media.">
-  <meta property="og:title" content="{{CLIENT_NAME}}, {{REPORT_MONTH_YEAR}} Performance Report">
+  <title>Launch Party &ndash; June 2026 | Scroll Media</title>
+  <meta name="description" content="Launch Party June 2026 Instagram performance report. Score {{SCORE}}/10. {{SCORE_LABEL}}. Lift Stage. Managed by Scroll Media.">
+  <meta property="og:title" content="Launch Party, June 2026 Performance Report">
   <meta property="og:description" content="Monthly score {{SCORE}}/10. {{SCORE_LABEL}}. Prepared by Scroll Media.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
@@ -391,6 +391,8 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<div style="background:#fffbeb;border-bottom:2px solid #fcd34d;color:#92400e;font-size:.8125rem;font-weight:700;text-align:center;padding:.6rem 1rem;font-family:'Source Sans 3',system-ui,sans-serif">DRAFT &middot; June 2026 report in preparation &middot; performance metrics + goals populate at build (July 1). Remove this banner before sending.</div>
+
 <!-- ═══ STICKY NAV ═══ -->
 <nav class="report-nav" aria-label="Report sections">
   <div class="report-nav-inner">
@@ -413,9 +415,9 @@
      If left empty / inactive, this band renders nothing (no broken player, no placeholder). -->
 <div class="loom-band" id="loom-band">
   <div class="loom-inner">
-    <div class="loom-eyebrow"><span class="dot"></span>Your {{REPORT_MONTH}} walkthrough</div>
+    <div class="loom-eyebrow"><span class="dot"></span>Your June walkthrough</div>
     <div class="loom-frame">
-      <iframe id="loom-embed" data-loom-id="" src="" title="{{REPORT_MONTH}} report walkthrough" allowfullscreen></iframe>
+      <iframe id="loom-embed" data-loom-id="" src="" title="June report walkthrough" allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -425,15 +427,15 @@
   <div class="hero-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
     <div class="hero-top-row">
-      <div class="hero-eyebrow"><span class="dot"></span>{{REPORT_MONTH_YEAR}} Performance Report</div>
-      <div class="hero-stage-badge"><span class="stage-icon"></span>{{CLIENT_STAGE}} &middot; Month {{CLIENT_MONTH_NUMBER}}</div>
+      <div class="hero-eyebrow"><span class="dot"></span>June 2026 Performance Report</div>
+      <div class="hero-stage-badge"><span class="stage-icon"></span>Lift Stage &middot; Month 23</div>
     </div>
-    <h1>{{CLIENT_NAME_H1}}</h1>
+    <h1>Launch <span>Party</span></h1>
     <div class="hero-meta">
-      <span>@{{CLIENT_HANDLE}}</span><span class="dot"></span>
+      <span>@shoplaunchparty</span><span class="dot"></span>
       <span>{{CLIENT_NICHE_DESCRIPTOR}}</span><span class="dot"></span>
-      <span>{{REPORT_DATE_RANGE}}</span><span class="dot"></span>
-      <span>Managed by {{CLIENT_AM_NAME}}</span>
+      <span>June 1&ndash;30, 2026</span><span class="dot"></span>
+      <span>Managed by Riley</span>
     </div>
 
     <!-- PAIRED HERO BLOCK -->
@@ -443,7 +445,7 @@
         <p class="ph-label">Monthly Performance Score</p>
         <div class="ph-bignum">{{SCORE}}<span class="unit">/10</span></div>
         <p class="ph-title">{{SCORE_LABEL}}</p>
-        <span class="ph-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. {{PREV_MONTH_SHORT}}</span>
+        <span class="ph-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. May</span>
         <div class="ph-badges">
           <span class="ph-badge exceed"><span class="bd"></span>{{SCORE_EXCEED_COUNT}} Exceeding</span>
           <span class="ph-badge ontrack"><span class="bd"></span>{{SCORE_ONTRACK_COUNT}} On Track</span>
@@ -460,7 +462,7 @@
     </div>
 
     <!-- ONE-LINE PLAIN-ENGLISH SUMMARY (Chase fills per report) -->
-    <p class="hero-summary">Here&rsquo;s what {{REPORT_MONTH}} means for {{CLIENT_NAME}}: <strong>{{HERO_SUMMARY}}</strong></p>
+    <p class="hero-summary">Here&rsquo;s what June means for Launch Party: <strong>{{HERO_SUMMARY}}</strong></p>
 
     <!-- METHODOLOGY ONE-LINER (locked copy, v8 Callout Library — same every report) -->
     <p class="hero-method">Your score reflects how this month performed against your stage targets, weighted by what predicts buyer behavior. Monthly score is a snapshot. Strategy decisions are made on quarterly trend, not single-month signal.</p>
@@ -473,7 +475,7 @@
     <p class="score-eyebrow">Monthly Performance Score</p>
     <div class="score-num">{{SCORE}}<span class="score-denom">/10</span></div>
     <p class="score-title">{{SCORE_LABEL}}</p>
-    <span class="score-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. {{PREV_MONTH}}</span>
+    <span class="score-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. May</span>
     <div class="score-badges">
       <div class="score-badge exceed"><span class="bd"></span>{{SCORE_EXCEED_COUNT}} Exceeding</div>
       <div class="score-badge ontrack"><span class="bd"></span>{{SCORE_ONTRACK_COUNT}} On Track</div>
@@ -481,7 +483,7 @@
     </div>
     <div class="trend-wrap" aria-label="Score trend">
       <p class="trend-label">Score Trend</p>
-      <div class="trend-bars">{{SCORE_TREND_BARS_HTML}}</div>
+      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:27%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.1</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:38%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.5</div><div class="tm">Mar</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:62%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.5</div><div class="tm">Apr</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:70%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.8</div><div class="tm">May</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:12%;background:rgba(226,237,122,0.25)"></div></div><div class="ts curr">&mdash;</div><div class="tm curr">Jun</div></div></div>
     </div>
 
     <!-- DIP-MONTH LOCKED LINE: add class "active" only when score drops >0.5 from prior month -->
@@ -495,16 +497,16 @@
     <div class="qsnap" id="qsnap">
       <div class="qsnap-head">
         <span class="qsnap-label">Quarter to date</span>
-        <span class="qsnap-traj {{QSNAP_TRAJ_CLASS}}">{{QSNAP_TRAJ_LABEL}}</span>
+        <span class="qsnap-traj strong">Strong</span>
       </div>
       <div class="qsnap-row">
-        <div class="qsnap-spark">{{QSNAP_SPARKLINE_SVG}}</div>
+        <div class="qsnap-spark"><svg width="84" height="30" viewBox="0 0 84 30" fill="none" aria-hidden="true"><polyline points="2.0,28.0 42.0,9.5 82.0,4.0" stroke="#0e3387" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82.0" cy="4.0" r="2.6" fill="#0e3387"/></svg></div>
         <div class="qsnap-avg">
-          <span class="v">{{QSNAP_AVG}}</span>
+          <span class="v">8.3</span>
           <span class="l">3-month average</span>
         </div>
       </div>
-      <p class="qsnap-narr">{{QSNAP_NARRATIVE}}</p>
+      <p class="qsnap-narr">Three straight months up, and May was the strongest yet. The trend is the story here, not any one month. (Trailing average shown is March to May. Re-point to April to June once June lands.)</p>
     </div>
   </div>
 </div>
@@ -514,7 +516,7 @@
   <section class="sec" aria-labelledby="goals-title">
     <p class="sec-label">Business Goals</p>
     <h2 class="sec-title" id="goals-title">Goal Tracker</h2>
-    <p class="sec-sub">The three goals we set for {{CLIENT_NAME}}, tracked against a real baseline and target. Each bar shows where the month landed on the path to the goal.</p>
+    <p class="sec-sub">The three goals we set for Launch Party, tracked against a real baseline and target. Each bar shows where the month landed on the path to the goal.</p>
     <div class="gt-list">
       <!-- One .gt-row per goal (3 total). Quantified data lands from the Goals Quantification Pass. -->
       <div class="gt-row tofu">
@@ -565,19 +567,19 @@
 <!-- ═══ PERFORMANCE DASHBOARD (Section 4) ═══ -->
 <div class="wrap">
   <section class="sec" aria-labelledby="perf-title">
-    <p class="sec-label">{{REPORT_MONTH_YEAR}}</p>
+    <p class="sec-label">June 2026</p>
     <h2 class="sec-title" id="perf-title">Performance Breakdown</h2>
-    <p class="sec-sub">Every tracked metric for {{REPORT_MONTH}}, scored against your {{CLIENT_STAGE}} target ranges with month-over-month comparison.</p>
+    <p class="sec-sub">Every tracked metric for June, scored against your Lift Stage target ranges with month-over-month comparison.</p>
     <div class="followers-banner" role="region" aria-label="Total Followers">
       <div class="fb-left">
         <p class="fb-label">Total Followers</p>
         <div class="fb-count">{{FOLLOWERS_COUNT}}</div>
-        <div class="fb-mom"><span class="mom {{FOLLOWERS_MOM_DIR}}">{{FOLLOWERS_MOM_ARROW}} {{FOLLOWERS_MOM_TEXT}} vs. {{PREV_MONTH_SHORT}}</span></div>
+        <div class="fb-mom"><span class="mom {{FOLLOWERS_MOM_DIR}}">{{FOLLOWERS_MOM_ARROW}} {{FOLLOWERS_MOM_TEXT}} vs. May</span></div>
       </div>
       <div class="fb-right">
         <p class="fb-target-label">Target Range</p>
         <p class="fb-target">{{FOLLOWERS_TARGET}}</p>
-        <p class="fb-stage">{{CLIENT_STAGE}}</p>
+        <p class="fb-stage">Lift Stage</p>
       </div>
     </div>
 
@@ -588,7 +590,7 @@
         <!-- New Followers -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">New Followers</span><span class="mc-badge {{NF_STATUS}}">{{NF_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{NF_STATUS}}">{{NF_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{NF_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{NF_STATUS}}">{{NF_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{NF_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{NF_MOM_DIR}}">{{NF_MOM_ARROW}} {{NF_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{NF_STATUS}}" data-w="{{NF_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{NF_NOTE}}</p>
@@ -597,7 +599,7 @@
         <!-- Shares -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Shares</span><span class="mc-badge {{SH_STATUS}}">{{SH_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{SH_STATUS}}">{{SH_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SH_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{SH_STATUS}}">{{SH_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SH_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{SH_MOM_DIR}}">{{SH_MOM_ARROW}} {{SH_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{SH_STATUS}}" data-w="{{SH_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{SH_NOTE}}</p>
@@ -606,7 +608,7 @@
         <!-- Total Views -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Total Views</span><span class="mc-badge {{TV_STATUS}}">{{TV_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{TV_STATUS}}">{{TV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{TV_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{TV_STATUS}}">{{TV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{TV_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{TV_MOM_DIR}}">{{TV_MOM_ARROW}} {{TV_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{TV_STATUS}}" data-w="{{TV_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{TV_NOTE}}</p>
@@ -622,7 +624,7 @@
         <!-- Profile Visits -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Profile Visits</span><span class="mc-badge {{PV_STATUS}}">{{PV_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{PV_STATUS}}">{{PV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PV_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{PV_STATUS}}">{{PV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PV_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{PV_MOM_DIR}}">{{PV_MOM_ARROW}} {{PV_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{PV_STATUS}}" data-w="{{PV_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{PV_NOTE}}</p>
@@ -631,7 +633,7 @@
         <!-- Retention (carries the conditional Watch Time append) -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Retention</span><span class="mc-badge {{RT_STATUS}}">{{RT_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{RT_STATUS}}">{{RT_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{RT_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{RT_STATUS}}">{{RT_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{RT_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{RT_MOM_DIR}}">{{RT_MOM_ARROW}} {{RT_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{RT_STATUS}}" data-w="{{RT_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{RT_NOTE}}</p>
@@ -646,7 +648,7 @@
         <!-- Saves -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Saves</span><span class="mc-badge {{SV_STATUS}}">{{SV_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{SV_STATUS}}">{{SV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SV_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{SV_STATUS}}">{{SV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SV_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{SV_MOM_DIR}}">{{SV_MOM_ARROW}} {{SV_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{SV_STATUS}}" data-w="{{SV_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{SV_NOTE}}</p>
@@ -655,7 +657,7 @@
         <!-- Comments -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Comments</span><span class="mc-badge {{CM_STATUS}}">{{CM_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{CM_STATUS}}">{{CM_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CM_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{CM_STATUS}}">{{CM_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CM_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{CM_MOM_DIR}}">{{CM_MOM_ARROW}} {{CM_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{CM_STATUS}}" data-w="{{CM_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{CM_NOTE}}</p>
@@ -671,7 +673,7 @@
         <!-- CTR -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">CTR</span><span class="mc-badge {{CTR_STATUS}}">{{CTR_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{CTR_STATUS}}">{{CTR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CTR_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{CTR_STATUS}}">{{CTR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CTR_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{CTR_MOM_DIR}}">{{CTR_MOM_ARROW}} {{CTR_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{CTR_STATUS}}" data-w="{{CTR_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{CTR_NOTE}}</p>
@@ -680,7 +682,7 @@
         <!-- Link Taps -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Link Taps</span><span class="mc-badge {{LT_STATUS}}">{{LT_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{LT_STATUS}}">{{LT_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{LT_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{LT_STATUS}}">{{LT_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{LT_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{LT_MOM_DIR}}">{{LT_MOM_ARROW}} {{LT_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{LT_STATUS}}" data-w="{{LT_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{LT_NOTE}}</p>
@@ -689,7 +691,7 @@
         <!-- PCR -->
         <div class="mc">
           <div class="mc-top"><span class="mc-name">PCR</span><span class="mc-badge {{PCR_STATUS}}">{{PCR_STATUS_LABEL}}</span></div>
-          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{PCR_STATUS}}">{{PCR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PCR_TARGET}}</span></div></div>
+          <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{PCR_STATUS}}">{{PCR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PCR_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{PCR_MOM_DIR}}">{{PCR_MOM_ARROW}} {{PCR_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{PCR_STATUS}}" data-w="{{PCR_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{PCR_NOTE}}</p>
@@ -809,9 +811,9 @@
 <!-- ═══ THIS MONTH'S TESTS + POSTS WE'RE WATCHING (Section 8, Change 8) ═══ -->
 <div class="wrap">
   <section class="sec" aria-labelledby="tests-title">
-    <p class="sec-label">{{NEXT_MONTH}} Direction</p>
+    <p class="sec-label">July Direction</p>
     <h2 class="sec-title" id="tests-title">This Month&rsquo;s Tests + Posts We&rsquo;re Watching</h2>
-    <p class="sec-sub">Tactical moves for {{NEXT_MONTH}}, inside the locked quarterly strategy. These are tests within the plan, not changes to it.</p>
+    <p class="sec-sub">Tactical moves for July, inside the locked quarterly strategy. These are tests within the plan, not changes to it.</p>
 
     <!-- DIP-MONTH NARRATIVE: add class "active" when score dropped >0.5 from prior month -->
     <div class="dip-narr" id="dip-narr">
@@ -843,7 +845,7 @@
 
     <!-- Tactical Tests (2-3) -->
     <div class="tw-group tests">
-      <p class="tw-group-label"><span class="ic"></span>Tactical Tests for {{NEXT_MONTH}}</p>
+      <p class="tw-group-label"><span class="ic"></span>Tactical Tests for July</p>
       <div class="tw-items">
         <div class="tw-item tests"><p class="tw-item-head">{{TEST1_HEAD}}</p><p class="tw-item-body">{{TEST1_BODY}}</p></div>
         <div class="tw-item tests"><p class="tw-item-head">{{TEST2_HEAD}}</p><p class="tw-item-body">{{TEST2_BODY}}</p></div>
@@ -856,11 +858,11 @@
 <!-- ═══ NEXT MONTH CTAs (Section 9) ═══ -->
 <div class="wrap">
   <div class="cta-section" role="region" aria-labelledby="cta-title">
-    <p class="cta-eyebrow">{{NEXT_MONTH}} CTA Plan</p>
+    <p class="cta-eyebrow">July CTA Plan</p>
     <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
-    <p class="cta-sub">The {{NEXT_MONTH}} call-to-action focus and the funnel-stage CTAs we&rsquo;ll be deploying.</p>
+    <p class="cta-sub">The July call-to-action focus and the funnel-stage CTAs we&rsquo;ll be deploying.</p>
     <div class="cta-primary">
-      <p class="cta-primary-label">&#9733; Primary {{NEXT_MONTH}} CTA</p>
+      <p class="cta-primary-label">&#9733; Primary July CTA</p>
       <p class="cta-primary-obj">{{CTA_PRIMARY_OBJ}}</p>
       <div class="cta-copy">{{CTA_PRIMARY_COPY}}</div>
       <p class="cta-rationale">{{CTA_PRIMARY_RATIONALE}}</p>
@@ -879,7 +881,7 @@
     <p class="prev-eyebrow">Report History</p>
     <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
     <p class="prev-sub">Compare your performance over time. Click any month to view the full report.</p>
-    <div class="prev-grid">{{PREV_REPORTS_HTML}}</div>
+    <div class="prev-grid"><a href="/shoplaunchparty/may2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">May 2026</div><div class="prev-score" style="color:#059669">8.8<span>/10</span></div><div class="prev-label">Strong Month</div><div class="prev-link">View Report &#8599;</div></a><a href="/shoplaunchparty/april2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">April 2026</div><div class="prev-score" style="color:#059669">8.5<span>/10</span></div><div class="prev-label">Strong Month</div><div class="prev-link">View Report &#8599;</div></a><a href="/shoplaunchparty/march2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">March 2026</div><div class="prev-score" style="color:#0e3387">7.5<span>/10</span></div><div class="prev-label">Building Month</div><div class="prev-link">View Report &#8599;</div></a></div>
   </div>
 </section>
 
@@ -887,7 +889,7 @@
   <div class="footer-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">
     <p class="footer-text">
-      Prepared by <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; {{REPORT_MONTH_YEAR}} Performance Report<br>
+      Prepared by <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; June 2026 Performance Report<br>
       Data sources: Instagram Insights &middot; Metricool &middot; Scroll Media Unified Scoring Framework v1.3
     </p>
   </div>
@@ -902,7 +904,7 @@
        retention:N|null, linktaps:N|null, ctr:N|null, url:"https://...", outlier:true|false}
      `outlier` is precomputed by the engine: true when saves >= 1.5x account-avg saves OR
      ctr >= 1.5x account-avg ctr (the two T1-High buyer signals), subject to absolute floors. */
-  var ALL_POSTS = {{ALL_POSTS_JSON}};
+  var ALL_POSTS = [];
 
   (function(){
     var tbody=document.getElementById('ap-tbody');

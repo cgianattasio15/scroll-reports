@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-<!-- ============================================================
-     CARL'S DELI - JUNE 2026  ::  INAUGURAL REPORT (DRAFT SHELL)
-     Built from canonical-template-v8.html. Verified identity is pre-filled.
-     TO COMPLETE (Chase, July 1): populate the remaining {{TOKENS}} with
-     verified June data (run build_v8_report.py with Carl's token map, or fill by hand).
-     FIRST-REPORT NOTES (no prior month exists):
-       - No MoM deltas: drop the .ph-delta / .score-delta / .mom lines or mark 'first month'.
-       - Score Trend: show June only (single bar) until a history accrues.
-       - Quarterly snapshot (#qsnap): remove for a first report (no 3-month trail yet).
-       - Goal Tracker sparklines: single point or omit until a trend exists.
-     Pull All Posts via: all_posts_data.py --client carlsdeli --blog-id <ID> --month 6 --year 2026
-       (Carl's blog id is not yet in outlier_engine.CLIENT_BLOG_IDS - add it.)
-============================================================ -->
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -41,6 +27,9 @@
       --radius:12px;--radius-sm:8px;
     }
     body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    /* Safety net: long unbroken strings (e.g. an unfilled {{TOKEN}} in a draft shell) wrap
+       instead of forcing horizontal overflow. No-op for real, short report values. */
+    .hero-inner,.score-card,.sec,.cta-section,.ls-pov,.gt-row,.followers-banner{overflow-wrap:anywhere}
     img{max-width:100%;height:auto;display:block}
     a{color:inherit;text-decoration:none}
     #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl));z-index:9999;transition:width .1s linear;pointer-events:none}
@@ -402,6 +391,8 @@
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<div style="background:#fffbeb;border-bottom:2px solid #fcd34d;color:#92400e;font-size:.8125rem;font-weight:700;text-align:center;padding:.6rem 1rem;font-family:'Source Sans 3',system-ui,sans-serif">DRAFT &middot; June 2026 inaugural report in preparation &middot; performance metrics + goals populate at build (July 1). Remove this banner before sending.</div>
+
 <!-- ═══ STICKY NAV ═══ -->
 <nav class="report-nav" aria-label="Report sections">
   <div class="report-nav-inner">
@@ -441,7 +432,7 @@
     </div>
     <h1>Carl&rsquo;s <span>Deli</span></h1>
     <div class="hero-meta">
-      <span>@carls_deli</span><span class="dot"></span>
+      <span>@carlsdelicincy</span><span class="dot"></span>
       <span>Cincinnati&rsquo;s Best Deli &middot; 80 Years, Sister-Owned</span><span class="dot"></span>
       <span>June 1&ndash;30, 2026</span><span class="dot"></span>
       <span>Managed by Rachel</span>
@@ -454,7 +445,6 @@
         <p class="ph-label">Monthly Performance Score</p>
         <div class="ph-bignum">{{SCORE}}<span class="unit">/10</span></div>
         <p class="ph-title">{{SCORE_LABEL}}</p>
-        <span class="ph-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. {{PREV_MONTH_SHORT}}</span>
         <div class="ph-badges">
           <span class="ph-badge exceed"><span class="bd"></span>{{SCORE_EXCEED_COUNT}} Exceeding</span>
           <span class="ph-badge ontrack"><span class="bd"></span>{{SCORE_ONTRACK_COUNT}} On Track</span>
@@ -484,7 +474,6 @@
     <p class="score-eyebrow">Monthly Performance Score</p>
     <div class="score-num">{{SCORE}}<span class="score-denom">/10</span></div>
     <p class="score-title">{{SCORE_LABEL}}</p>
-    <span class="score-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. {{PREV_MONTH}}</span>
     <div class="score-badges">
       <div class="score-badge exceed"><span class="bd"></span>{{SCORE_EXCEED_COUNT}} Exceeding</div>
       <div class="score-badge ontrack"><span class="bd"></span>{{SCORE_ONTRACK_COUNT}} On Track</div>
@@ -492,31 +481,17 @@
     </div>
     <div class="trend-wrap" aria-label="Score trend">
       <p class="trend-label">Score Trend</p>
-      <div class="trend-bars">{{SCORE_TREND_BARS_HTML}}</div>
+      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:12%;background:#e2ed7a"></div></div><div class="ts curr">&mdash;</div><div class="tm curr">Jun</div></div></div>
     </div>
 
     <!-- DIP-MONTH LOCKED LINE: add class "active" only when score drops >0.5 from prior month -->
-    <p class="dip-line" id="dip-line">Expected volatility. The strategy holds. A single softer month inside a strong quarter is normal, and the call on direction gets made on quarterly trend at quarter-close, not on one month.</p>
 
     <!-- QUARTERLY SNAPSHOT BLOCK (Change 6).
          Render in non-QBR months (Jan/Feb/Apr/May/Jul/Aug/Oct/Nov). SKIP in QBR months
          (Mar/Jun/Sep/Dec) from Sept 2026 onward, when the QBR artifact owns the snapshot.
          EXCEPTION: surface it for June 2026 reports (no QBR artifact ships until Aug 31).
          Trajectory class options: strong | steady | building | recovering | soft | mixed -->
-    <div class="qsnap" id="qsnap">
-      <div class="qsnap-head">
-        <span class="qsnap-label">Quarter to date</span>
-        <span class="qsnap-traj {{QSNAP_TRAJ_CLASS}}">{{QSNAP_TRAJ_LABEL}}</span>
-      </div>
-      <div class="qsnap-row">
-        <div class="qsnap-spark">{{QSNAP_SPARKLINE_SVG}}</div>
-        <div class="qsnap-avg">
-          <span class="v">{{QSNAP_AVG}}</span>
-          <span class="l">3-month average</span>
-        </div>
-      </div>
-      <p class="qsnap-narr">{{QSNAP_NARRATIVE}}</p>
-    </div>
+    <div class="qsnap" id="qsnap"><div class="qsnap-head"><span class="qsnap-label">Quarter to date</span><span class="qsnap-traj building">First month</span></div><p class="qsnap-narr">This is the first report for Carl&rsquo;s Deli, so there is no prior month to compare against. June sets the baseline. From July on, this block tracks the quarter.</p></div>
   </div>
 </div>
 
@@ -536,7 +511,7 @@
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL1_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL1_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL1_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL1_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL1_TARGET}}</b></span></div>
+          <div class="gt-bct"><span class="seg">Baseline <b>First month</b></span><span class="seg">Now <b>{{GOAL1_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL1_TARGET}}</b></span></div>
           <p class="gt-narr">{{GOAL1_NARRATIVE}}</p>
         </div>
         <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL1_SPARKLINE_SVG}}</div>
@@ -550,7 +525,7 @@
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL2_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL2_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL2_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL2_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL2_TARGET}}</b></span></div>
+          <div class="gt-bct"><span class="seg">Baseline <b>First month</b></span><span class="seg">Now <b>{{GOAL2_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL2_TARGET}}</b></span></div>
           <p class="gt-narr">{{GOAL2_NARRATIVE}}</p>
         </div>
         <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL2_SPARKLINE_SVG}}</div>
@@ -564,7 +539,7 @@
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL3_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL3_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL3_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL3_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL3_TARGET}}</b></span></div>
+          <div class="gt-bct"><span class="seg">Baseline <b>First month</b></span><span class="seg">Now <b>{{GOAL3_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL3_TARGET}}</b></span></div>
           <p class="gt-narr">{{GOAL3_NARRATIVE}}</p>
         </div>
         <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL3_SPARKLINE_SVG}}</div>
@@ -583,7 +558,6 @@
       <div class="fb-left">
         <p class="fb-label">Total Followers</p>
         <div class="fb-count">{{FOLLOWERS_COUNT}}</div>
-        <div class="fb-mom"><span class="mom {{FOLLOWERS_MOM_DIR}}">{{FOLLOWERS_MOM_ARROW}} {{FOLLOWERS_MOM_TEXT}} vs. {{PREV_MONTH_SHORT}}</span></div>
       </div>
       <div class="fb-right">
         <p class="fb-target-label">Target Range</p>
@@ -600,7 +574,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">New Followers</span><span class="mc-badge {{NF_STATUS}}">{{NF_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{NF_STATUS}}">{{NF_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{NF_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{NF_MOM_DIR}}">{{NF_MOM_ARROW}} {{NF_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{NF_STATUS}}" data-w="{{NF_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{NF_NOTE}}</p>
           <p class="mc-callout">New followers {{NF_DIR_WORD}} {{NF_X}}%. Translation: {{NF_X}}% {{NF_MORE_FEWER}} people chose to keep seeing your content after finding you. A new follow is someone deciding you are worth coming back to.</p>
@@ -609,7 +582,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Shares</span><span class="mc-badge {{SH_STATUS}}">{{SH_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{SH_STATUS}}">{{SH_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SH_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{SH_MOM_DIR}}">{{SH_MOM_ARROW}} {{SH_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{SH_STATUS}}" data-w="{{SH_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{SH_NOTE}}</p>
           <p class="mc-callout">Shares {{SH_DIR_WORD}} {{SH_X}}%. Translation: {{SH_X}}% {{SH_MORE_FEWER}} people sent your content to someone else. Shares put you in front of new audiences your posts wouldn&rsquo;t reach on their own.</p>
@@ -618,7 +590,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Total Views</span><span class="mc-badge {{TV_STATUS}}">{{TV_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{TV_STATUS}}">{{TV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{TV_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{TV_MOM_DIR}}">{{TV_MOM_ARROW}} {{TV_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{TV_STATUS}}" data-w="{{TV_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{TV_NOTE}}</p>
           <p class="mc-callout">Views {{TV_DIR_WORD}} {{TV_X}}%. Translation: your content reached {{TV_X}}% {{TV_MORE_FEWER}} screens this month. Views are the widest measure of how many people you got in front of, and everything downstream starts here.</p>
@@ -634,7 +605,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Profile Visits</span><span class="mc-badge {{PV_STATUS}}">{{PV_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{PV_STATUS}}">{{PV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PV_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{PV_MOM_DIR}}">{{PV_MOM_ARROW}} {{PV_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{PV_STATUS}}" data-w="{{PV_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{PV_NOTE}}</p>
           <p class="mc-callout">Profile visits {{PV_DIR_WORD}} {{PV_X}}%. Translation: {{PV_X}}% {{PV_MORE_FEWER}} people tapped through to look closer at who you are. A profile visit is a deliberate step toward becoming a customer, not a passive scroll.</p>
@@ -643,7 +613,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Retention</span><span class="mc-badge {{RT_STATUS}}">{{RT_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{RT_STATUS}}">{{RT_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{RT_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{RT_MOM_DIR}}">{{RT_MOM_ARROW}} {{RT_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{RT_STATUS}}" data-w="{{RT_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{RT_NOTE}}</p>
           <p class="mc-callout">Retention came in at {{RT_VAL}}%. Translation: on average, people watched {{RT_VAL}}% of your videos before moving on. The more of your video people watch, the more the algorithm trusts it and shows it to new audiences.</p>
@@ -658,7 +627,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Saves</span><span class="mc-badge {{SV_STATUS}}">{{SV_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{SV_STATUS}}">{{SV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SV_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{SV_MOM_DIR}}">{{SV_MOM_ARROW}} {{SV_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{SV_STATUS}}" data-w="{{SV_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{SV_NOTE}}</p>
           <p class="mc-callout">Saves {{SV_DIR_WORD}} {{SV_X}}%. Translation: {{SV_X}}% {{SV_MORE_FEWER}} people bookmarked your posts to act on later. Saves are the strongest signal of a future buyer.</p>
@@ -667,7 +635,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Comments</span><span class="mc-badge {{CM_STATUS}}">{{CM_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{CM_STATUS}}">{{CM_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CM_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{CM_MOM_DIR}}">{{CM_MOM_ARROW}} {{CM_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{CM_STATUS}}" data-w="{{CM_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{CM_NOTE}}</p>
           <p class="mc-callout">Comments {{CM_DIR_WORD}} {{CM_X}}%. Translation: {{CM_X}}% {{CM_MORE_FEWER}} people stopped to start a conversation with you. Comments are public proof that your audience is engaged, and they pull in the people watching from the sidelines.</p>
@@ -683,7 +650,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">CTR</span><span class="mc-badge {{CTR_STATUS}}">{{CTR_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{CTR_STATUS}}">{{CTR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CTR_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{CTR_MOM_DIR}}">{{CTR_MOM_ARROW}} {{CTR_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{CTR_STATUS}}" data-w="{{CTR_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{CTR_NOTE}}</p>
           <p class="mc-callout">Click-through rate came in at {{CTR_VAL}}%. Translation: of everyone who saw your link, {{CTR_VAL}}% acted on it. A high click-through rate means the people finding you are not just watching, they are moving toward becoming customers.</p>
@@ -692,7 +658,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">Link Taps</span><span class="mc-badge {{LT_STATUS}}">{{LT_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{LT_STATUS}}">{{LT_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{LT_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{LT_MOM_DIR}}">{{LT_MOM_ARROW}} {{LT_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{LT_STATUS}}" data-w="{{LT_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{LT_NOTE}}</p>
           <p class="mc-callout">Link taps {{LT_DIR_WORD}} {{LT_X}}%. Translation: {{LT_X}}% {{LT_MORE_FEWER}} people tapped the link in your bio to move toward your site, booking, or offer. A link tap is one of the clearest actions someone takes when they are ready to do business.</p>
@@ -701,7 +666,6 @@
         <div class="mc">
           <div class="mc-top"><span class="mc-name">PCR</span><span class="mc-badge {{PCR_STATUS}}">{{PCR_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">June</span><span class="mc-val {{PCR_STATUS}}">{{PCR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PCR_TARGET}}</span></div></div>
-          <div class="mc-mom"><span class="mom {{PCR_MOM_DIR}}">{{PCR_MOM_ARROW}} {{PCR_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{PCR_STATUS}}" data-w="{{PCR_BARW}}" style="width:0%"></div></div>
           <p class="mc-note">{{PCR_NOTE}}</p>
           <p class="mc-callout">Profile conversion came in at {{PCR_VAL}}%. Translation: {{PCR_VAL}}% of the people who visited your profile chose to follow. A strong profile conversion rate means your page is doing its job, turning curious visitors into an audience you can nurture toward buying.</p>
@@ -890,7 +854,7 @@
     <p class="prev-eyebrow">Report History</p>
     <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
     <p class="prev-sub">Compare your performance over time. Click any month to view the full report.</p>
-    <div class="prev-grid">{{PREV_REPORTS_HTML}}</div>
+    <div class="prev-grid"><a class="prev-card" style="cursor:default"><div class="prev-month">June 2026</div><div class="prev-score">&mdash;<span>/10</span></div><div class="prev-label">First report</div></a></div>
   </div>
 </section>
 
@@ -913,7 +877,7 @@
        retention:N|null, linktaps:N|null, ctr:N|null, url:"https://...", outlier:true|false}
      `outlier` is precomputed by the engine: true when saves >= 1.5x account-avg saves OR
      ctr >= 1.5x account-avg ctr (the two T1-High buyer signals), subject to absolute floors. */
-  var ALL_POSTS = {{ALL_POSTS_JSON}};
+  var ALL_POSTS = [];
 
   (function(){
     var tbody=document.getElementById('ap-tbody');
