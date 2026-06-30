@@ -9,3 +9,7 @@
 *_api_key
 *.token
 .metricool_api_key
+
+# Python
+__pycache__/
+*.pyc
