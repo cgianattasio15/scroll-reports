@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+  <meta name="theme-color" content="#151516">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Carl's Deli Reports &ndash; Scroll Media</title>
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    :root{--shadow:#151516;--azure:#0e3387;--hl:#e2ed7a;--ghost:#f7f8fc;--text:#151516;--muted:#6b7280;--border:rgba(21,21,22,.09);--exceed:#7c3aed;--radius:12px;}
+    body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.5rem 3.5rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(600px,120vw);height:min(600px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .hero-logo{height:28px;width:auto;margin-bottom:2rem}
+    .back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:600;color:rgba(255,255,255,.65);margin-bottom:1.75rem;transition:color .15s}
+    .back-link:hover{color:#fff}
+    .back-link::before{content:'←'}
+    .client-hero-name{font-size:clamp(1.75rem,5vw,2.75rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:.5rem}
+    .client-hero-handle{font-size:1rem;color:rgba(255,255,255,.5);margin-bottom:1rem}
+    .stage-pill{display:inline-flex;align-items:center;gap:.375rem;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .625rem;border-radius:4px;background:rgba(226,237,122,.15);color:var(--hl);border:1px solid rgba(226,237,122,.3)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+    .section-header{padding:2.25rem 0 1.125rem}
+    .section-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.375rem}
+    .section-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:var(--shadow);letter-spacing:-.02em}
+    .reports-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.125rem;padding-bottom:3rem}
+    .report-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:box-shadow .2s,transform .2s,border-color .2s;position:relative;overflow:hidden;display:block;color:inherit}
+    .report-card:hover{box-shadow:0 6px 24px rgba(21,21,22,.11);transform:translateY(-2px);border-color:rgba(14,51,135,.22)}
+    .report-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .rc-month{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.375rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .rc-tag{font-size:.625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:4px;background:rgba(226,237,122,.18);color:#5b6b16;border:1px solid rgba(200,217,74,.45)}
+    .rc-score{font-size:2rem;font-weight:800;color:var(--shadow);line-height:1;letter-spacing:-.03em}
+    .rc-score span{font-size:.875rem;color:var(--muted);font-weight:400}
+    .rc-label{font-size:.8125rem;color:var(--muted);margin-top:.25rem;margin-bottom:1.25rem}
+    .rc-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);padding:.45rem .8rem;border:1.5px solid rgba(14,51,135,.2);border-radius:6px;transition:background .15s,border-color .15s}
+    .report-card:hover .rc-link{background:rgba(14,51,135,.06);border-color:rgba(14,51,135,.35)}
+    .footer{background:#fff;border-top:1px solid var(--border);padding:1.75rem 1.5rem;margin-top:1rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+    .footer-logo{height:22px;width:auto}
+    .footer-text{font-size:.8125rem;color:var(--muted)}
+    .footer-text a{color:var(--azure);font-weight:600}
+    @media(max-width:640px){.hero{padding:2rem 1rem 2.5rem}.wrap{padding:0 1rem}.reports-grid{grid-template-columns:1fr;gap:1rem}}
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png" alt="Scroll Media" class="hero-logo" width="140" height="32">
+    <a href="/" class="back-link">All Clients</a>
+    <div class="client-hero-name">Carl's Deli</div>
+    <div class="client-hero-handle">@carls_deli</div>
+    <div class="stage-pill">Lift Stage</div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="section-header">
+    <p class="section-label">Performance History</p>
+    <h2 class="section-title">Monthly Reports</h2>
+  </div>
+  <div class="reports-grid">
+    <!-- Carl's first-ever monthly report (inaugural). Chase swaps the score + label below
+         for the verified values when the June report is built (July 1). Placeholder until then. -->
+    <a href="/carlsdeli/june2026/" class="report-card">
+      <div class="rc-month">June 2026 <span class="rc-tag">First Report</span></div>
+      <div class="rc-score" style="color:var(--muted)">&mdash;<span>/10</span></div>
+      <div class="rc-label">Inaugural report &middot; June 2026</div>
+      <span class="rc-link">View Report &#8599;</span>
+    </a>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="120" height="24">
+    <p class="footer-text">&copy; 2026 <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; Monthly Client Performance Reports &middot; Confidential</p>
+  </div>
+</footer>
+</body>
+</html>

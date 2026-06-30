@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+  <meta name="theme-color" content="#151516">
+  <!-- Tier 3 client-data report: noindex + nofollow (CLAUDE.md §5 Security Tiering). -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{CLIENT_NAME}} &ndash; {{REPORT_MONTH_YEAR}} | Scroll Media</title>
+  <meta name="description" content="{{CLIENT_NAME}} {{REPORT_MONTH_YEAR}} Instagram performance report. Score {{SCORE}}/10. {{SCORE_LABEL}}. {{CLIENT_STAGE}}. Managed by Scroll Media.">
+  <meta property="og:title" content="{{CLIENT_NAME}}, {{REPORT_MONTH_YEAR}} Performance Report">
+  <meta property="og:description" content="Monthly score {{SCORE}}/10. {{SCORE_LABEL}}. Prepared by Scroll Media.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    :root{
+      --shadow:#151516;--navy:#0e3387;--azure:#0e3387;--hl:#e2ed7a;--lime:#c8d94a;
+      --lucid:#cbe9ff;--porcelain:#f2f3f4;--ghost:#f7f8fc;
+      --text:#151516;--muted:#6b7280;--border:rgba(21,21,22,.09);
+      --exceed:#7c3aed;--ontrack:#0e3387;--watch:#d97706;
+      --tofu:#0e3387;--mofu:#7c3aed;--bofu:#059669;
+      --radius:12px;--radius-sm:8px;
+    }
+    body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl));z-index:9999;transition:width .1s linear;pointer-events:none}
+
+    /* ── STICKY NAV ── */
+    .report-nav{position:sticky;top:0;z-index:100;background:#0b2a6e;border-bottom:2px solid #c8d94a;width:100%}
+    .report-nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+    .report-nav-inner::-webkit-scrollbar{display:none}
+    .report-nav-link{display:inline-block;padding:.625rem 1rem;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.7);white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;margin-bottom:-2px}
+    .report-nav-link:hover,.report-nav-link.active{color:#c8d94a;border-bottom-color:#c8d94a}
+    @media(max-width:700px){.report-nav-link{padding:.5rem .75rem;font-size:.6875rem}}
+
+    /* ── LOOM WALKTHROUGH (Change 7) ── */
+    /* Empty by default — renders NOTHING when no embed id is set. Chase pastes the
+       Loom share id into data-loom-id on .loom-embed to activate. */
+    .loom-band{background:#0a0f1e;display:none}
+    .loom-band.active{display:block}
+    .loom-inner{max-width:1100px;margin:0 auto;padding:1.75rem 1.25rem}
+    .loom-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .loom-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--hl)}
+    .loom-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:var(--radius);overflow:hidden;background:#11193a;border:1px solid rgba(255,255,255,.08)}
+    .loom-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 2rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(700px,120vw);height:min(700px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .hero-logo{height:28px;width:auto;margin-bottom:2rem}
+    .hero-top-row{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.12);border:1px solid rgba(226,237,122,.28);padding:.35rem .875rem;border-radius:4px;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl)}
+    .hero-eyebrow .dot{width:5px;height:5px;background:var(--hl);border-radius:50%;flex-shrink:0}
+    .hero-stage-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.18);border:1.5px solid rgba(226,237,122,.5);padding:.4rem 1rem;border-radius:20px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--hl)}
+    .hero-stage-badge .stage-icon{width:7px;height:7px;background:var(--hl);border-radius:50%}
+    .hero h1{font-size:clamp(2.25rem,8vw,4.25rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.625rem}
+    .hero h1 span{color:var(--hl)}
+    .hero-meta{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
+    .hero-meta .dot{width:3px;height:3px;background:rgba(255,255,255,.3);border-radius:50%;align-self:center}
+
+    /* ── PAIRED HERO BLOCK (Change 1) ── */
+    .paired-hero{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem}
+    @media(max-width:760px){.paired-hero{grid-template-columns:1fr}}
+    .ph-panel{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:1.5rem 1.625rem;position:relative;overflow:hidden}
+    .ph-panel.score::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
+    .ph-panel.outcome::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#34d399)}
+    .ph-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.625rem}
+    .ph-bignum{font-size:clamp(2.75rem,9vw,3.75rem);font-weight:800;line-height:1;letter-spacing:-.04em;color:#fff}
+    .ph-bignum .unit{font-size:1.125rem;font-weight:400;color:rgba(255,255,255,.4)}
+    .ph-panel.score .ph-bignum{color:var(--hl)}
+    .ph-title{font-size:1rem;font-weight:700;color:#fff;margin:.5rem 0 .25rem}
+    .ph-delta{font-size:.875rem;font-weight:700;display:inline-block}
+    .ph-delta.up{color:#6ee7b7}.ph-delta.dn{color:#fca5a5}.ph-delta.fl{color:rgba(255,255,255,.55)}
+    .ph-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.875rem}
+    .ph-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.6875rem;font-weight:700;padding:.25rem .6rem;border-radius:5px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+    .ph-badge .bd{width:6px;height:6px;border-radius:50%}
+    .ph-badge.exceed .bd{background:#c4b5fd}.ph-badge.ontrack .bd{background:#7a9ad8}.ph-badge.watch .bd{background:#fbbf24}
+    .ph-outcome-sub{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.55;margin-top:.625rem}
+    .hero-summary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.2);border-left:3px solid var(--hl);border-radius:8px;padding:.875rem 1.125rem;font-size:.9375rem;color:rgba(255,255,255,.9);line-height:1.6}
+    .hero-summary strong{color:#fff}
+    .hero-method{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.5);line-height:1.55;max-width:680px;margin-top:1rem}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .sec{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:2.25rem;margin:1.75rem 0;box-shadow:0 1px 6px rgba(21,21,22,.04)}
+    @media(max-width:640px){.sec{padding:1.5rem 1.25rem}}
+    .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.5rem}
+    .sec-title{font-size:clamp(1.375rem,4.5vw,2rem);font-weight:800;line-height:1.15;color:var(--shadow);margin-bottom:.5rem;letter-spacing:-.02em}
+    .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
+
+    /* ── SCORE CARD (Section 2) + QUARTERLY SNAPSHOT (Change 6) ── */
+    .score-wrap{position:relative;z-index:10;margin:-2.5rem auto 1.75rem;padding:0 1.25rem}
+    .score-card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:0 4px 32px rgba(21,21,22,.14);border:1px solid var(--border);text-align:center;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
+    .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
+    .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
+    .score-num{font-size:clamp(3.5rem,12vw,5rem);font-weight:800;color:var(--azure);line-height:1;letter-spacing:-.04em}
+    .score-denom{font-size:1.375rem;color:var(--muted);font-weight:400}
+    .score-title{font-size:1.125rem;font-weight:700;color:var(--text);margin:.375rem 0}
+    .score-delta{font-size:.9375rem;font-weight:700;margin-bottom:1.25rem;display:block}
+    .score-delta.up{color:#059669}.score-delta.dn{color:#dc2626}.score-delta.fl{color:#94a3b8}
+    .score-badges{display:flex;justify-content:center;gap:.625rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .score-badge{display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border-radius:6px;font-size:.75rem;font-weight:700}
+    .score-badge .bd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .score-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}.score-badge.exceed .bd{background:var(--exceed)}
+    .score-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}.score-badge.ontrack .bd{background:var(--ontrack)}
+    .score-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}.score-badge.watch .bd{background:#f59e0b}
+    .trend-wrap{background:linear-gradient(135deg,#1a1f3a,#0c1a3a);border-radius:10px;padding:1.375rem;max-width:420px;margin:0 auto}
+    .trend-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.875rem;text-align:left}
+    .trend-bars{display:flex;align-items:flex-end;gap:1rem;height:72px;justify-content:center}
+    .tc{display:flex;flex-direction:column;align-items:center;gap:.3rem;flex:1;max-width:80px}
+    .tbw{height:52px;display:flex;align-items:flex-end;width:100%}
+    .tb{width:100%;border-radius:3px 3px 0 0;min-height:4px}
+    .ts{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.5)}
+    .ts.curr{color:var(--hl);font-size:.9375rem;font-weight:800}
+    .tm{font-size:.6875rem;color:rgba(255,255,255,.35)}
+    .tm.curr{color:rgba(255,255,255,.65);font-weight:600}
+    /* Dip-month locked line (Change 8 discipline) — render only when score drops >0.5 MoM */
+    .dip-line{display:none;font-size:.8125rem;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:.75rem 1rem;line-height:1.55;max-width:560px;margin:1.25rem auto 0;text-align:left}
+    .dip-line.active{display:block}
+    /* Quarterly snapshot block */
+    .qsnap{max-width:560px;margin:1.5rem auto 0;background:var(--ghost);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.375rem;text-align:left}
+    .qsnap-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.875rem}
+    .qsnap-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure)}
+    .qsnap-traj{font-size:.6875rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.25rem .6rem;border-radius:5px}
+    .qsnap-traj.strong,.qsnap-traj.steady{background:rgba(5,150,105,.12);color:#065f46}
+    .qsnap-traj.building,.qsnap-traj.recovering{background:rgba(14,51,135,.1);color:var(--azure)}
+    .qsnap-traj.soft,.qsnap-traj.mixed{background:rgba(245,158,11,.12);color:#92400e}
+    .qsnap-row{display:flex;align-items:center;gap:1.25rem;margin-bottom:.875rem;flex-wrap:wrap}
+    .qsnap-spark{flex-shrink:0}
+    .qsnap-avg{display:flex;flex-direction:column;gap:.1rem}
+    .qsnap-avg .v{font-size:1.5rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em}
+    .qsnap-avg .l{font-size:.6875rem;color:var(--muted);font-weight:600}
+    .qsnap-narr{font-size:.8125rem;color:var(--muted);line-height:1.6}
+
+    /* ── GOAL TRACKER (Change 2) ── */
+    .gt-list{display:flex;flex-direction:column;gap:1.125rem}
+    .gt-row{border:1px solid var(--border);border-radius:var(--radius);padding:1.375rem 1.5rem;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:1rem 1.5rem;align-items:center}
+    .gt-row::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
+    .gt-row.tofu::before{background:var(--tofu)}.gt-row.mofu::before{background:var(--mofu)}.gt-row.bofu::before{background:var(--bofu)}
+    .gt-main{min-width:0}
+    .gt-funnel{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+    .gt-dot{width:8px;height:8px;border-radius:50%}
+    .gt-dot.tofu{background:var(--tofu)}.gt-dot.mofu{background:var(--mofu)}.gt-dot.bofu{background:var(--bofu)}
+    .gt-funnel-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .gt-title{font-size:1.0625rem;font-weight:800;color:var(--text);line-height:1.25;letter-spacing:-.01em;margin-bottom:.625rem}
+    .gt-bct{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
+    .gt-bar-track{flex:1;height:10px;background:var(--porcelain);border-radius:5px;overflow:hidden}
+    .gt-bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .gt-bar-fill.lime{background:linear-gradient(90deg,#65a30d,var(--lime))}
+    .gt-pct{font-size:1.0625rem;font-weight:800;color:var(--text);letter-spacing:-.02em;flex-shrink:0;min-width:3rem;text-align:right}
+    .gt-bct{display:flex;gap:1.25rem;margin-bottom:.5rem;flex-wrap:wrap}
+    .gt-bct .seg{font-size:.75rem;color:var(--muted)}
+    .gt-bct .seg b{color:var(--text);font-weight:700}
+    .gt-narr{font-size:.8125rem;color:var(--muted);line-height:1.55}
+    .gt-side{display:flex;flex-direction:column;align-items:flex-end;gap:.625rem;flex-shrink:0}
+    .gt-spark-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+    @media(max-width:640px){.gt-row{grid-template-columns:1fr}.gt-side{flex-direction:row;align-items:center;justify-content:space-between;width:100%}}
+
+    /* ── PERFORMANCE DASHBOARD ── */
+    .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+    .fb-left .fb-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.25rem}
+    .fb-left .fb-count{font-size:2.25rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em}
+    .fb-left .fb-mom{font-size:.8125rem;color:rgba(255,255,255,.65);margin-top:.2rem}
+    .fb-right{text-align:right}
+    .fb-right .fb-target-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.25rem}
+    .fb-right .fb-target{font-size:1.0625rem;font-weight:700;color:var(--hl)}
+    .fb-right .fb-stage{font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.15rem}
+    @media(max-width:480px){.followers-banner{flex-direction:column}.fb-right{text-align:left}}
+    .funnel-group{margin-bottom:1.75rem}
+    .funnel-header{display:flex;align-items:center;gap:.625rem;padding:.625rem .875rem;border-radius:6px;margin-bottom:1rem}
+    .funnel-header.tofu{background:rgba(14,51,135,.06)}.funnel-header.mofu{background:rgba(124,58,237,.06)}.funnel-header.bofu{background:rgba(5,150,105,.06)}
+    .funnel-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .funnel-dot.tofu{background:var(--tofu)}.funnel-dot.mofu{background:var(--mofu)}.funnel-dot.bofu{background:var(--bofu)}
+    .funnel-lbl{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .funnel-lbl.tofu{color:var(--tofu)}.funnel-lbl.mofu{color:var(--mofu)}.funnel-lbl.bofu{color:var(--bofu)}
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .mc{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.125rem}
+    .mc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.625rem}
+    .mc-name{font-size:.8125rem;font-weight:700;color:var(--text)}
+    .mc-badge{font-size:.625rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em}
+    .mc-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
+    .mc-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
+    .mc-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}
+    .mc-nums{display:flex;gap:1.25rem;margin-bottom:.5rem}
+    .mc-lbl{font-size:.6875rem;color:var(--muted);display:block;margin-bottom:.15rem}
+    .mc-val{font-size:1.375rem;font-weight:800;letter-spacing:-.02em}
+    .mc-val.exceed{color:var(--exceed)}.mc-val.ontrack{color:var(--ontrack)}.mc-val.watch{color:var(--watch)}
+    .mc-tgt{font-size:.9375rem;font-weight:600;color:var(--muted)}
+    .mc-mom{margin-bottom:.5rem}
+    .mom{font-size:.75rem;font-weight:700;padding:.15rem .5rem;border-radius:4px}
+    .mom.up{background:rgba(5,150,105,.1);color:#059669}.mom.dn{background:rgba(220,38,38,.1);color:#dc2626}.mom.fl{background:rgba(148,163,184,.1);color:#94a3b8}
+    .bar-track{height:6px;background:var(--porcelain);border-radius:3px;overflow:hidden;margin-bottom:.5rem}
+    .bar-fill{height:100%;border-radius:3px;transition:width .7s cubic-bezier(.4,0,.2,1)}
+    .bar-fill.exceed{background:var(--exceed)}.bar-fill.ontrack{background:var(--ontrack)}.bar-fill.watch{background:#f59e0b}
+    .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.5}
+    .mc-callout{font-size:.6875rem;font-style:italic;color:#475569;line-height:1.45;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--border)}
+    /* Conditional Watch Time append under Retention card (Change 3 / Tier 1.5) */
+    .mc-watchtime{display:none;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--border);align-items:center;gap:.5rem}
+    .mc-watchtime.active{display:flex}
+    .mc-watchtime-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7c3aed}
+    .mc-watchtime-val{font-size:.875rem;font-weight:800;color:#7c3aed}
+    .mc-watchtime-note{font-size:.6875rem;color:var(--muted)}
+
+    /* ── LEAD SIGNAL (Change 4) ── */
+    .ls-pov{background:linear-gradient(135deg,#0f1730,#11254f);border-radius:var(--radius);padding:1.5rem 1.75rem;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,.06)}
+    .ls-pov-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.625rem}
+    .ls-pov-text{font-size:.9375rem;color:rgba(255,255,255,.85);line-height:1.7}
+    .ls-layers{display:flex;flex-direction:column;gap:1rem}
+    .ls-layer{border:1px solid var(--border);border-radius:var(--radius);padding:1.375rem 1.5rem;position:relative}
+    .ls-layer-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}
+    .ls-layer-num{width:26px;height:26px;border-radius:7px;background:var(--azure);color:#fff;font-size:.8125rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ls-layer-title{font-size:.9375rem;font-weight:800;color:var(--text)}
+    .ls-layer-sub{font-size:.75rem;color:var(--muted);font-weight:600}
+    .ls-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem}
+    .ls-stat{background:var(--ghost);border-radius:8px;padding:.875rem 1rem;text-align:center}
+    .ls-stat-val{font-size:1.5rem;font-weight:800;color:var(--azure);line-height:1;letter-spacing:-.02em}
+    .ls-stat-lbl{font-size:.6875rem;color:var(--muted);font-weight:600;margin-top:.35rem;text-transform:uppercase;letter-spacing:.04em}
+    /* Empty-state soft prompt for a layer with no data yet (graceful degradation) */
+    .ls-layer.empty{border-style:dashed;background:var(--ghost)}
+    .ls-empty-prompt{font-size:.875rem;color:var(--muted);line-height:1.6;font-style:italic}
+
+    /* ── TOP POSTS ── */
+    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
+    @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%;overflow:hidden}
+    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;overflow:hidden}
+    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
+    .reel-badge,.post-badge{background:#fff;color:#0e3387}
+    .carousel-badge{background:#e0e7ff;color:#3730a3}.static-badge{background:#f0fdf4;color:#166534}
+    .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
+    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
+    .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
+    .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
+    .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--lime);padding-left:.75rem;line-height:1.5}
+    .post-caption{font-size:.8rem;color:#475569;background:#f8fafc;border-radius:8px;padding:.6rem .8rem;line-height:1.55}
+    .cap-preview{display:inline}.cap-rest{display:none}.cap-rest.open{display:inline}.cap-ellipsis{display:inline}.cap-ellipsis.hidden{display:none}
+    .cap-toggle{background:none;border:none;color:var(--azure);font-size:.75rem;font-weight:600;cursor:pointer;padding:.4rem .1rem;margin-left:.2rem;min-height:32px}
+    .cap-toggle:hover{text-decoration:underline}
+    .standout-metrics{display:flex;flex-direction:column;gap:.4rem}
+    .standout-metric{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .sm-label{font-size:.72rem;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.04em;min-width:80px}
+    .sm-value{font-size:.95rem;font-weight:800;color:var(--navy)}
+    .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
+    .outlier-2x{background:#dcfce7;color:#15803d}.outlier-1x{background:#dbeafe;color:#1d4ed8}.outlier-3x{background:#f3e8ff;color:#7c3aed}
+    .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
+    .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+    .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
+    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s}
+    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
+
+    /* ── ALL POSTS TABLE (Change 9) ── */
+    .ap-controls{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1.125rem}
+    .ap-chip{display:inline-flex;align-items:center;font-size:.75rem;font-weight:700;padding:.5rem .95rem;border-radius:22px;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s;min-height:44px}
+    .ap-chip:hover{border-color:rgba(14,51,135,.35);color:var(--azure)}
+    .ap-chip.active{background:var(--azure);border-color:var(--azure);color:#fff}
+    .ap-mobile-sort{display:none}
+    .ap-mobile-sort select{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.875rem;font-weight:600;color:var(--text);background:#fff;min-height:44px}
+    .ap-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius)}
+    table.ap-table{width:100%;border-collapse:collapse;font-size:.8125rem;min-width:760px}
+    .ap-table thead th{background:var(--ghost);text-align:left;padding:.7rem .75rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);position:sticky;top:0}
+    .ap-table thead th:hover{color:var(--azure)}
+    .ap-table thead th .arrow{opacity:.35;font-size:.625rem;margin-left:.2rem}
+    .ap-table thead th.sorted-asc .arrow,.ap-table thead th.sorted-desc .arrow{opacity:1;color:var(--azure)}
+    .ap-table thead th.num{text-align:right}
+    .ap-table tbody td{padding:.65rem .75rem;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap}
+    .ap-table tbody td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+    .ap-table tbody tr:last-child td{border-bottom:none}
+    .ap-table tbody tr.outlier td:first-child{box-shadow:inset 3px 0 0 var(--lime)}
+    .ap-table tbody tr.outlier{background:rgba(200,217,74,.06)}
+    .ap-fmt-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.6875rem;font-weight:700;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;letter-spacing:.03em}
+    .ap-fmt-tag.reel{background:#e0e7ff;color:#3730a3}.ap-fmt-tag.carousel{background:#fef3c7;color:#92400e}.ap-fmt-tag.static{background:#dcfce7;color:#166534}.ap-fmt-tag.story{background:#f3e8ff;color:#7c3aed}
+    .ap-cap{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:default}
+    .ap-table tbody tr:hover .ap-cap{white-space:normal;overflow:visible}
+    .ap-table tbody tr:hover{background:rgba(14,51,135,.03)}
+    .ap-table tbody tr.outlier:hover{background:rgba(200,217,74,.1)}
+    .ap-iglink{color:var(--azure);font-weight:700;font-size:.875rem}
+    .ap-out-flag{font-size:.625rem;font-weight:800;color:#65a30d;text-transform:uppercase;letter-spacing:.04em;margin-left:.35rem}
+    .ap-legend{font-size:.75rem;color:var(--muted);margin-top:.875rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .ap-legend .swatch{width:14px;height:14px;border-radius:3px;background:rgba(200,217,74,.4);box-shadow:inset 3px 0 0 var(--lime);flex-shrink:0}
+    .ap-empty{padding:2rem;text-align:center;color:var(--muted);font-style:italic;font-size:.9375rem}
+    /* Mobile card collapse for All Posts (<640px) */
+    .ap-cards{display:none;flex-direction:column;gap:.875rem}
+    .ap-pc{border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.125rem;background:#fff;position:relative;overflow:hidden}
+    .ap-pc.outlier{box-shadow:inset 3px 0 0 var(--lime);background:rgba(200,217,74,.05)}
+    .ap-pc-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.625rem;flex-wrap:wrap}
+    .ap-pc-date{font-size:.75rem;color:var(--muted);font-weight:600}
+    .ap-pc-cap{font-size:.8125rem;color:#475569;line-height:1.5;margin-bottom:.75rem}
+    .ap-pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem .75rem;margin-bottom:.75rem}
+    .ap-pc-stat{display:flex;flex-direction:column;gap:.1rem}
+    .ap-pc-stat .l{font-size:.625rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .ap-pc-stat .v{font-size:.9375rem;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
+    .ap-pc-link{display:inline-block;font-size:.8125rem;font-weight:700;color:var(--azure)}
+
+    /* ── TESTS + POSTS WE'RE WATCHING (Change 8) ── */
+    /* Dip-month narrative block — surfaces at top of this section when score drops >0.5 */
+    .dip-narr{display:none;background:#fffbeb;border:1px solid #fcd34d;border-left:4px solid #f59e0b;border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+    .dip-narr.active{display:block}
+    .dip-narr-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#92400e;margin-bottom:.75rem}
+    .dip-narr-list{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+    .dip-narr-item{display:flex;gap:.75rem;font-size:.875rem;color:#451a03;line-height:1.55}
+    .dip-narr-item b{color:#78350f}
+    .tw-group{margin-bottom:1.75rem}
+    .tw-group:last-child{margin-bottom:0}
+    .tw-group-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.875rem;display:flex;align-items:center;gap:.5rem}
+    .tw-group-label .ic{width:7px;height:7px;border-radius:50%}
+    .tw-group.patterns .tw-group-label{color:var(--bofu)}.tw-group.patterns .ic{background:var(--bofu)}
+    .tw-group.watching .tw-group-label{color:var(--watch)}.tw-group.watching .ic{background:#f59e0b}
+    .tw-group.tests .tw-group-label{color:var(--exceed)}.tw-group.tests .ic{background:var(--exceed)}
+    .tw-items{display:flex;flex-direction:column;gap:.75rem}
+    .tw-item{border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;background:var(--ghost)}
+    .tw-item-head{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.35}
+    .tw-item-body{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .tw-item.patterns{border-left:3px solid var(--bofu)}
+    .tw-item.watching{border-left:3px solid #f59e0b}
+    .tw-item.tests{border-left:3px solid var(--exceed)}
+
+    /* ── CTA SECTION ── */
+    .cta-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);border-radius:var(--radius);padding:2.25rem;margin:1.75rem 0;color:#fff;overflow:hidden;position:relative}
+    .cta-section::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(14,51,135,.2),transparent 65%);border-radius:50%;pointer-events:none}
+    .cta-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .cta-title{font-size:clamp(1.375rem,4vw,1.875rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
+    .cta-sub{font-size:.9375rem;color:rgba(255,255,255,.55);margin-bottom:1.75rem;max-width:560px;line-height:1.65}
+    .cta-primary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.22);border-radius:10px;padding:1.375rem;margin-bottom:1.5rem;position:relative;z-index:1}
+    .cta-primary-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .cta-primary-obj{font-size:1.0625rem;font-weight:700;color:#fff;margin-bottom:.75rem}
+    .cta-copy{font-size:.9375rem;font-style:italic;color:rgba(255,255,255,.85);padding:.75rem 1rem;background:rgba(255,255,255,.06);border-radius:6px;border-left:3px solid var(--hl);margin-bottom:.75rem}
+    .cta-rationale{font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.65}
+    .cta-funnel-list{list-style:none;display:flex;flex-direction:column;gap:.625rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1)}
+    .cta-funnel-li{display:flex;gap:.875rem;align-items:flex-start;color:rgba(255,255,255,.85);font-size:.875rem;line-height:1.55}
+    .cta-stage-tag{flex-shrink:0;font-size:.625rem;font-weight:800;letter-spacing:.06em;padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;margin-top:.15rem}
+    .cta-stage-tag.tofu{color:#cbe9ff;background:rgba(14,51,135,.4)}
+    .cta-stage-tag.mofu{color:#c4b5fd;background:rgba(124,58,237,.3)}
+    .cta-stage-tag.bofu{color:#6ee7b7;background:rgba(5,150,105,.25)}
+
+    /* ── PREVIOUS REPORTS + FOOTER ── */
+    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem;width:100%}
+    .prev-inner{max-width:1100px;margin:0 auto}
+    .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .prev-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
+    .prev-sub{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
+    .prev-grid{display:flex;flex-wrap:wrap;gap:.875rem}
+    .prev-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.375rem 1.625rem;color:#fff;transition:background .2s,border-color .2s;min-width:180px;flex:1}
+    .prev-card:hover{background:rgba(255,255,255,.1);border-color:rgba(226,237,122,.3)}
+    .prev-month{font-size:.6875rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+    .prev-score{font-size:2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:.2rem;letter-spacing:-.03em}
+    .prev-score span{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.35)}
+    .prev-label{font-size:.8125rem;color:rgba(255,255,255,.55);margin-bottom:.75rem}
+    .prev-link{font-size:.8125rem;font-weight:700;color:var(--hl)}
+    .footer{background:#fff;padding:2.25rem 1.25rem;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+    .footer-logo{height:26px;width:auto}
+    .footer-text{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-text a{color:var(--azure);font-weight:600}
+    @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
+
+    /* ═══ MOBILE (≤640px) ═══ */
+    @media(max-width:640px){
+      .ap-table-wrap{display:none}
+      .ap-cards{display:flex}
+      .ap-mobile-sort{display:block;width:100%;order:2;margin-top:.5rem}
+      .ap-controls{gap:.4rem}
+    }
+    /* ═══ MOBILE (≤480px) ═══ */
+    @media(max-width:480px){
+      .report-nav-link{padding:.5rem .6rem;font-size:.625rem}
+      .hero{padding:2rem 1rem 1.5rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .paired-hero{grid-template-columns:1fr}
+      .score-wrap{margin:-2rem auto 1.25rem;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .followers-banner{flex-direction:column;gap:.75rem}
+      .metrics-grid{grid-template-columns:1fr}
+      .posts-grid{grid-template-columns:1fr}
+      .sec{padding:1.25rem 1rem}
+      .qsnap,.dip-line{margin-left:0;margin-right:0}
+      .ls-stats{grid-template-columns:1fr 1fr}
+      .ap-pc-stats{grid-template-columns:1fr 1fr}
+    }
+  </style>
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<!-- ═══ STICKY NAV ═══ -->
+<nav class="report-nav" aria-label="Report sections">
+  <div class="report-nav-inner">
+    <a class="report-nav-link" href="#score-section">Score</a>
+    <a class="report-nav-link" href="#goals-title">Goals</a>
+    <a class="report-nav-link" href="#perf-title">Performance</a>
+    <a class="report-nav-link" href="#leadsignal-title">Lead Signal</a>
+    <a class="report-nav-link" href="#posts-title">Top Posts</a>
+    <a class="report-nav-link" href="#allposts-title">All Posts</a>
+    <a class="report-nav-link" href="#tests-title">Tests</a>
+    <a class="report-nav-link" href="#cta-title">CTAs</a>
+    <a class="report-nav-link" href="#prev-title">History</a>
+  </div>
+</nav>
+
+<div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+<!-- ═══ LOOM WALKTHROUGH (Change 7) ═══
+     To activate: add the loom share id to data-loom-id below AND add class "active" to .loom-band.
+     If left empty / inactive, this band renders nothing (no broken player, no placeholder). -->
+<div class="loom-band" id="loom-band">
+  <div class="loom-inner">
+    <div class="loom-eyebrow"><span class="dot"></span>Your {{REPORT_MONTH}} walkthrough</div>
+    <div class="loom-frame">
+      <iframe id="loom-embed" data-loom-id="" src="" title="{{REPORT_MONTH}} report walkthrough" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HERO + PAIRED BLOCK (Change 1 + methodology one-liner Change 5) ═══ -->
+<header class="hero">
+  <div class="hero-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
+    <div class="hero-top-row">
+      <div class="hero-eyebrow"><span class="dot"></span>{{REPORT_MONTH_YEAR}} Performance Report</div>
+      <div class="hero-stage-badge"><span class="stage-icon"></span>{{CLIENT_STAGE}} &middot; Month {{CLIENT_MONTH_NUMBER}}</div>
+    </div>
+    <h1>{{CLIENT_NAME_H1}}</h1>
+    <div class="hero-meta">
+      <span>@{{CLIENT_HANDLE}}</span><span class="dot"></span>
+      <span>{{CLIENT_NICHE_DESCRIPTOR}}</span><span class="dot"></span>
+      <span>{{REPORT_DATE_RANGE}}</span><span class="dot"></span>
+      <span>Managed by {{CLIENT_AM_NAME}}</span>
+    </div>
+
+    <!-- PAIRED HERO BLOCK -->
+    <div class="paired-hero">
+      <!-- LEFT: composite score -->
+      <div class="ph-panel score">
+        <p class="ph-label">Monthly Performance Score</p>
+        <div class="ph-bignum">{{SCORE}}<span class="unit">/10</span></div>
+        <p class="ph-title">{{SCORE_LABEL}}</p>
+        <span class="ph-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. {{PREV_MONTH_SHORT}}</span>
+        <div class="ph-badges">
+          <span class="ph-badge exceed"><span class="bd"></span>{{SCORE_EXCEED_COUNT}} Exceeding</span>
+          <span class="ph-badge ontrack"><span class="bd"></span>{{SCORE_ONTRACK_COUNT}} On Track</span>
+          <span class="ph-badge watch"><span class="bd"></span>{{SCORE_WATCH_COUNT}} Watch</span>
+        </div>
+      </div>
+      <!-- RIGHT: client-specific headline business outcome (Workstream A locks the metric per client) -->
+      <div class="ph-panel outcome">
+        <p class="ph-label">{{OUTCOME_LABEL}}</p>
+        <div class="ph-bignum">{{OUTCOME_VALUE}}</div>
+        <p class="ph-title">{{OUTCOME_TITLE}}</p>
+        <p class="ph-outcome-sub">{{OUTCOME_SUB}}</p>
+      </div>
+    </div>
+
+    <!-- ONE-LINE PLAIN-ENGLISH SUMMARY (Chase fills per report) -->
+    <p class="hero-summary">Here&rsquo;s what {{REPORT_MONTH}} means for {{CLIENT_NAME}}: <strong>{{HERO_SUMMARY}}</strong></p>
+
+    <!-- METHODOLOGY ONE-LINER (locked copy, v8 Callout Library — same every report) -->
+    <p class="hero-method">Your score reflects how this month performed against your stage targets, weighted by what predicts buyer behavior. Monthly score is a snapshot. Strategy decisions are made on quarterly trend, not single-month signal.</p>
+  </div>
+</header>
+
+<!-- ═══ SCORE CARD + QUARTERLY SNAPSHOT (Section 2, Change 6) ═══ -->
+<div class="score-wrap" id="score-section">
+  <div class="score-card">
+    <p class="score-eyebrow">Monthly Performance Score</p>
+    <div class="score-num">{{SCORE}}<span class="score-denom">/10</span></div>
+    <p class="score-title">{{SCORE_LABEL}}</p>
+    <span class="score-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. {{PREV_MONTH}}</span>
+    <div class="score-badges">
+      <div class="score-badge exceed"><span class="bd"></span>{{SCORE_EXCEED_COUNT}} Exceeding</div>
+      <div class="score-badge ontrack"><span class="bd"></span>{{SCORE_ONTRACK_COUNT}} On Track</div>
+      <div class="score-badge watch"><span class="bd"></span>{{SCORE_WATCH_COUNT}} Watch</div>
+    </div>
+    <div class="trend-wrap" aria-label="Score trend">
+      <p class="trend-label">Score Trend</p>
+      <div class="trend-bars">{{SCORE_TREND_BARS_HTML}}</div>
+    </div>
+
+    <!-- DIP-MONTH LOCKED LINE: add class "active" only when score drops >0.5 from prior month -->
+    <p class="dip-line" id="dip-line">Expected volatility. The strategy holds. A single softer month inside a strong quarter is normal, and the call on direction gets made on quarterly trend at quarter-close, not on one month.</p>
+
+    <!-- QUARTERLY SNAPSHOT BLOCK (Change 6).
+         Render in non-QBR months (Jan/Feb/Apr/May/Jul/Aug/Oct/Nov). SKIP in QBR months
+         (Mar/Jun/Sep/Dec) from Sept 2026 onward, when the QBR artifact owns the snapshot.
+         EXCEPTION: surface it for June 2026 reports (no QBR artifact ships until Aug 31).
+         Trajectory class options: strong | steady | building | recovering | soft | mixed -->
+    <div class="qsnap" id="qsnap">
+      <div class="qsnap-head">
+        <span class="qsnap-label">Quarter to date</span>
+        <span class="qsnap-traj {{QSNAP_TRAJ_CLASS}}">{{QSNAP_TRAJ_LABEL}}</span>
+      </div>
+      <div class="qsnap-row">
+        <div class="qsnap-spark">{{QSNAP_SPARKLINE_SVG}}</div>
+        <div class="qsnap-avg">
+          <span class="v">{{QSNAP_AVG}}</span>
+          <span class="l">3-month average</span>
+        </div>
+      </div>
+      <p class="qsnap-narr">{{QSNAP_NARRATIVE}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GOAL TRACKER (Section 3, Change 2) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="goals-title">
+    <p class="sec-label">Business Goals</p>
+    <h2 class="sec-title" id="goals-title">Goal Tracker</h2>
+    <p class="sec-sub">The three goals we set for {{CLIENT_NAME}}, tracked against a real baseline and target. Each bar shows where the month landed on the path to the goal.</p>
+    <div class="gt-list">
+      <!-- One .gt-row per goal (3 total). Quantified data lands from the Goals Quantification Pass. -->
+      <div class="gt-row tofu">
+        <div class="gt-main">
+          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel</span></div>
+          <p class="gt-title">{{GOAL1_TITLE}}</p>
+          <div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL1_PCT}}" style="width:0%"></div></div>
+            <span class="gt-pct">{{GOAL1_PCT}}%</span>
+          </div>
+          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL1_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL1_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL1_TARGET}}</b></span></div>
+          <p class="gt-narr">{{GOAL1_NARRATIVE}}</p>
+        </div>
+        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL1_SPARKLINE_SVG}}</div>
+      </div>
+
+      <div class="gt-row mofu">
+        <div class="gt-main">
+          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel</span></div>
+          <p class="gt-title">{{GOAL2_TITLE}}</p>
+          <div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL2_PCT}}" style="width:0%"></div></div>
+            <span class="gt-pct">{{GOAL2_PCT}}%</span>
+          </div>
+          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL2_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL2_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL2_TARGET}}</b></span></div>
+          <p class="gt-narr">{{GOAL2_NARRATIVE}}</p>
+        </div>
+        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL2_SPARKLINE_SVG}}</div>
+      </div>
+
+      <div class="gt-row bofu">
+        <div class="gt-main">
+          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel</span></div>
+          <p class="gt-title">{{GOAL3_TITLE}}</p>
+          <div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL3_PCT}}" style="width:0%"></div></div>
+            <span class="gt-pct">{{GOAL3_PCT}}%</span>
+          </div>
+          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL3_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL3_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL3_TARGET}}</b></span></div>
+          <p class="gt-narr">{{GOAL3_NARRATIVE}}</p>
+        </div>
+        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL3_SPARKLINE_SVG}}</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PERFORMANCE DASHBOARD (Section 4) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="perf-title">
+    <p class="sec-label">{{REPORT_MONTH_YEAR}}</p>
+    <h2 class="sec-title" id="perf-title">Performance Breakdown</h2>
+    <p class="sec-sub">Every tracked metric for {{REPORT_MONTH}}, scored against your {{CLIENT_STAGE}} target ranges with month-over-month comparison.</p>
+    <div class="followers-banner" role="region" aria-label="Total Followers">
+      <div class="fb-left">
+        <p class="fb-label">Total Followers</p>
+        <div class="fb-count">{{FOLLOWERS_COUNT}}</div>
+        <div class="fb-mom"><span class="mom {{FOLLOWERS_MOM_DIR}}">{{FOLLOWERS_MOM_ARROW}} {{FOLLOWERS_MOM_TEXT}} vs. {{PREV_MONTH_SHORT}}</span></div>
+      </div>
+      <div class="fb-right">
+        <p class="fb-target-label">Target Range</p>
+        <p class="fb-target">{{FOLLOWERS_TARGET}}</p>
+        <p class="fb-stage">{{CLIENT_STAGE}}</p>
+      </div>
+    </div>
+
+    <!-- TOFU -->
+    <div class="funnel-group">
+      <div class="funnel-header tofu"><span class="funnel-dot tofu"></span><span class="funnel-lbl tofu">Top of funnel &middot; Awareness</span></div>
+      <div class="metrics-grid">
+        <!-- New Followers -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">New Followers</span><span class="mc-badge {{NF_STATUS}}">{{NF_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{NF_STATUS}}">{{NF_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{NF_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{NF_MOM_DIR}}">{{NF_MOM_ARROW}} {{NF_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{NF_STATUS}}" data-w="{{NF_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{NF_NOTE}}</p>
+          <p class="mc-callout">New followers {{NF_DIR_WORD}} {{NF_X}}%. Translation: {{NF_X}}% {{NF_MORE_FEWER}} people chose to keep seeing your content after finding you. A new follow is someone deciding you are worth coming back to.</p>
+        </div>
+        <!-- Shares -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Shares</span><span class="mc-badge {{SH_STATUS}}">{{SH_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{SH_STATUS}}">{{SH_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SH_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{SH_MOM_DIR}}">{{SH_MOM_ARROW}} {{SH_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{SH_STATUS}}" data-w="{{SH_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{SH_NOTE}}</p>
+          <p class="mc-callout">Shares {{SH_DIR_WORD}} {{SH_X}}%. Translation: {{SH_X}}% {{SH_MORE_FEWER}} people sent your content to someone else. Shares put you in front of new audiences your posts wouldn&rsquo;t reach on their own.</p>
+        </div>
+        <!-- Total Views -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Total Views</span><span class="mc-badge {{TV_STATUS}}">{{TV_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{TV_STATUS}}">{{TV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{TV_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{TV_MOM_DIR}}">{{TV_MOM_ARROW}} {{TV_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{TV_STATUS}}" data-w="{{TV_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{TV_NOTE}}</p>
+          <p class="mc-callout">Views {{TV_DIR_WORD}} {{TV_X}}%. Translation: your content reached {{TV_X}}% {{TV_MORE_FEWER}} screens this month. Views are the widest measure of how many people you got in front of, and everything downstream starts here.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOFU -->
+    <div class="funnel-group">
+      <div class="funnel-header mofu"><span class="funnel-dot mofu"></span><span class="funnel-lbl mofu">Middle of funnel &middot; Engagement</span></div>
+      <div class="metrics-grid">
+        <!-- Profile Visits -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Profile Visits</span><span class="mc-badge {{PV_STATUS}}">{{PV_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{PV_STATUS}}">{{PV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PV_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{PV_MOM_DIR}}">{{PV_MOM_ARROW}} {{PV_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{PV_STATUS}}" data-w="{{PV_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{PV_NOTE}}</p>
+          <p class="mc-callout">Profile visits {{PV_DIR_WORD}} {{PV_X}}%. Translation: {{PV_X}}% {{PV_MORE_FEWER}} people tapped through to look closer at who you are. A profile visit is a deliberate step toward becoming a customer, not a passive scroll.</p>
+        </div>
+        <!-- Retention (carries the conditional Watch Time append) -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Retention</span><span class="mc-badge {{RT_STATUS}}">{{RT_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{RT_STATUS}}">{{RT_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{RT_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{RT_MOM_DIR}}">{{RT_MOM_ARROW}} {{RT_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{RT_STATUS}}" data-w="{{RT_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{RT_NOTE}}</p>
+          <p class="mc-callout">Retention came in at {{RT_VAL}}%. Translation: on average, people watched {{RT_VAL}}% of your videos before moving on. The more of your video people watch, the more the algorithm trusts it and shows it to new audiences.</p>
+          <!-- CONDITIONAL WATCH TIME: add class "active" when avg watch time is meaningful and worth surfacing -->
+          <div class="mc-watchtime" id="watchtime-row">
+            <span class="mc-watchtime-lbl">Avg watch time</span>
+            <span class="mc-watchtime-val">{{WATCHTIME_VAL}}s</span>
+            <span class="mc-watchtime-note">average seconds held per video this month.</span>
+          </div>
+        </div>
+        <!-- Saves -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Saves</span><span class="mc-badge {{SV_STATUS}}">{{SV_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{SV_STATUS}}">{{SV_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{SV_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{SV_MOM_DIR}}">{{SV_MOM_ARROW}} {{SV_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{SV_STATUS}}" data-w="{{SV_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{SV_NOTE}}</p>
+          <p class="mc-callout">Saves {{SV_DIR_WORD}} {{SV_X}}%. Translation: {{SV_X}}% {{SV_MORE_FEWER}} people bookmarked your posts to act on later. Saves are the strongest signal of a future buyer.</p>
+        </div>
+        <!-- Comments -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Comments</span><span class="mc-badge {{CM_STATUS}}">{{CM_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{CM_STATUS}}">{{CM_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CM_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{CM_MOM_DIR}}">{{CM_MOM_ARROW}} {{CM_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{CM_STATUS}}" data-w="{{CM_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{CM_NOTE}}</p>
+          <p class="mc-callout">Comments {{CM_DIR_WORD}} {{CM_X}}%. Translation: {{CM_X}}% {{CM_MORE_FEWER}} people stopped to start a conversation with you. Comments are public proof that your audience is engaged, and they pull in the people watching from the sidelines.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOFU -->
+    <div class="funnel-group">
+      <div class="funnel-header bofu"><span class="funnel-dot bofu"></span><span class="funnel-lbl bofu">Bottom of funnel &middot; Conversion</span></div>
+      <div class="metrics-grid">
+        <!-- CTR -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">CTR</span><span class="mc-badge {{CTR_STATUS}}">{{CTR_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{CTR_STATUS}}">{{CTR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{CTR_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{CTR_MOM_DIR}}">{{CTR_MOM_ARROW}} {{CTR_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{CTR_STATUS}}" data-w="{{CTR_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{CTR_NOTE}}</p>
+          <p class="mc-callout">Click-through rate came in at {{CTR_VAL}}%. Translation: of everyone who saw your link, {{CTR_VAL}}% acted on it. A high click-through rate means the people finding you are not just watching, they are moving toward becoming customers.</p>
+        </div>
+        <!-- Link Taps -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Link Taps</span><span class="mc-badge {{LT_STATUS}}">{{LT_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{LT_STATUS}}">{{LT_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{LT_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{LT_MOM_DIR}}">{{LT_MOM_ARROW}} {{LT_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{LT_STATUS}}" data-w="{{LT_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{LT_NOTE}}</p>
+          <p class="mc-callout">Link taps {{LT_DIR_WORD}} {{LT_X}}%. Translation: {{LT_X}}% {{LT_MORE_FEWER}} people tapped the link in your bio to move toward your site, booking, or offer. A link tap is one of the clearest actions someone takes when they are ready to do business.</p>
+        </div>
+        <!-- PCR -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">PCR</span><span class="mc-badge {{PCR_STATUS}}">{{PCR_STATUS_LABEL}}</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{PCR_STATUS}}">{{PCR_VAL}}%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{PCR_TARGET}}</span></div></div>
+          <div class="mc-mom"><span class="mom {{PCR_MOM_DIR}}">{{PCR_MOM_ARROW}} {{PCR_MOM_TEXT}}</span></div>
+          <div class="bar-track"><div class="bar-fill {{PCR_STATUS}}" data-w="{{PCR_BARW}}" style="width:0%"></div></div>
+          <p class="mc-note">{{PCR_NOTE}}</p>
+          <p class="mc-callout">Profile conversion came in at {{PCR_VAL}}%. Translation: {{PCR_VAL}}% of the people who visited your profile chose to follow. A strong profile conversion rate means your page is doing its job, turning curious visitors into an audience you can nurture toward buying.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ LEAD SIGNAL (Section 5, Change 4) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="leadsignal-title">
+    <p class="sec-label">How the work turns into leads</p>
+    <h2 class="sec-title" id="leadsignal-title">Lead Signal</h2>
+    <p class="sec-sub">The signals that predict buying behavior, layered from what we can see on-platform to what your customers tell you directly.</p>
+
+    <!-- POV block (locked 3-sentence copy) -->
+    <div class="ls-pov">
+      <p class="ls-pov-label">How we measure leads in organic</p>
+      <p class="ls-pov-text">Most agencies sell last-click attribution. We don&rsquo;t, because organic social doesn&rsquo;t work that way. We measure leads through the signals that predict buying behavior: who&rsquo;s saving your content, who&rsquo;s tapping through, and who&rsquo;s telling you they found you through us.</p>
+    </div>
+
+    <div class="ls-layers">
+      <!-- LAYER 1 — Direct interest signals (always populates) -->
+      <div class="ls-layer">
+        <div class="ls-layer-top"><span class="ls-layer-num">1</span><span class="ls-layer-title">Direct interest signals</span><span class="ls-layer-sub">On-platform &middot; this month</span></div>
+        <div class="ls-stats">
+          <div class="ls-stat"><div class="ls-stat-val">{{LS_SAVES}}</div><div class="ls-stat-lbl">Saves</div></div>
+          <div class="ls-stat"><div class="ls-stat-val">{{LS_SHARES}}</div><div class="ls-stat-lbl">Shares</div></div>
+          <div class="ls-stat"><div class="ls-stat-val">{{LS_PROFILE_VISITS}}</div><div class="ls-stat-lbl">Profile Visits</div></div>
+        </div>
+      </div>
+
+      <!-- LAYER 2 — Conversion path taps. POPULATED variant shown; if no UTM data, swap inner for the .empty variant below. -->
+      <div class="ls-layer">
+        <div class="ls-layer-top"><span class="ls-layer-num">2</span><span class="ls-layer-title">Conversion path taps</span><span class="ls-layer-sub">UTM-tracked links</span></div>
+        <div class="ls-stats">
+          <div class="ls-stat"><div class="ls-stat-val">{{LS_LINK_TAPS}}</div><div class="ls-stat-lbl">Link Taps</div></div>
+          <div class="ls-stat"><div class="ls-stat-val">{{LS_CTR}}%</div><div class="ls-stat-lbl">CTR</div></div>
+        </div>
+        <!-- EMPTY-STATE variant (use instead of .ls-stats above when the client has no UTM data yet):
+        <p class="ls-empty-prompt">UTM tracking rolls out this quarter. We&rsquo;ll surface the data here as soon as the links are tagged.</p>
+        and add class "empty" to this .ls-layer. -->
+      </div>
+
+      <!-- LAYER 3 — Self-reported attribution (HDYHAU). Default state = EMPTY soft-prompt (most clients).
+           If the client has HDYHAU data, replace the prompt with an .ls-stats block and drop class "empty". -->
+      <div class="ls-layer empty">
+        <div class="ls-layer-top"><span class="ls-layer-num">3</span><span class="ls-layer-title">Self-reported attribution</span><span class="ls-layer-sub">&ldquo;How did you hear about us?&rdquo;</span></div>
+        <p class="ls-empty-prompt">Adding the &ldquo;How did you hear about us?&rdquo; question to your intake form? We&rsquo;ll fold the responses in here.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ TOP 3 POSTS (Section 6) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="posts-title">
+    <p class="sec-label">Top Posts of the Month</p>
+    <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
+    <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model. Posts that over-indexed on reach, saves, shares, or retention relative to account averages.</p>
+    <div class="posts-grid">{{TOP_POSTS_HTML}}</div>
+  </section>
+</div>
+
+<!-- ═══ ALL POSTS THIS MONTH (Section 7, Change 9) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="allposts-title">
+    <p class="sec-label">Full Month</p>
+    <h2 class="sec-title" id="allposts-title">All Posts This Month</h2>
+    <p class="sec-sub">Every post published this month, with the numbers behind each one. Tap any column header to sort. Rows with a lime edge over-indexed on saves or click-through, the two strongest buyer signals.</p>
+    <div class="ap-controls" id="ap-controls">
+      <button class="ap-chip active" data-fmt="all">All</button>
+      <button class="ap-chip" data-fmt="reel">Reels</button>
+      <button class="ap-chip" data-fmt="carousel">Carousels</button>
+      <button class="ap-chip" data-fmt="static">Static</button>
+      <button class="ap-chip" data-fmt="story">Stories</button>
+      <div class="ap-mobile-sort">
+        <select id="ap-mobile-sort-select" aria-label="Sort posts">
+          <option value="date|desc">Newest first</option>
+          <option value="date|asc">Oldest first</option>
+          <option value="views|desc">Most views</option>
+          <option value="saves|desc">Most saves</option>
+          <option value="shares|desc">Most shares</option>
+          <option value="comments|desc">Most comments</option>
+          <option value="ctr|desc">Highest CTR</option>
+        </select>
+      </div>
+    </div>
+    <div class="ap-table-wrap">
+      <table class="ap-table" id="ap-table">
+        <thead>
+          <tr>
+            <th data-key="date" data-type="date">Date<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="format" data-type="str">Format<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="caption" data-type="str">Caption<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="views" data-type="num">Views<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="saves" data-type="num">Saves<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="linktaps" data-type="num">Link Taps<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="" data-type="none">Post</th>
+          </tr>
+        </thead>
+        <tbody id="ap-tbody"><!-- rows rendered by JS from ALL_POSTS --></tbody>
+      </table>
+    </div>
+    <!-- Mobile card stack (rendered by JS, shown <640px) -->
+    <div class="ap-cards" id="ap-cards"></div>
+    <div class="ap-legend"><span class="swatch"></span> Lime edge = over-indexed on saves or CTR (at least 1.5&times; the account average this month).</div>
+  </section>
+</div>
+
+<!-- ═══ THIS MONTH'S TESTS + POSTS WE'RE WATCHING (Section 8, Change 8) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="tests-title">
+    <p class="sec-label">{{NEXT_MONTH}} Direction</p>
+    <h2 class="sec-title" id="tests-title">This Month&rsquo;s Tests + Posts We&rsquo;re Watching</h2>
+    <p class="sec-sub">Tactical moves for {{NEXT_MONTH}}, inside the locked quarterly strategy. These are tests within the plan, not changes to it.</p>
+
+    <!-- DIP-MONTH NARRATIVE: add class "active" when score dropped >0.5 from prior month -->
+    <div class="dip-narr" id="dip-narr">
+      <p class="dip-narr-label">On this month&rsquo;s dip</p>
+      <ul class="dip-narr-list">
+        <li class="dip-narr-item"><b>What drove it:</b>&nbsp;{{DIP_WHAT}}</li>
+        <li class="dip-narr-item"><b>Why we&rsquo;re not changing strategy:</b>&nbsp;A single softer month inside a strong quarter is expected volatility. The strategy is built on a quarter, not a month.</li>
+        <li class="dip-narr-item"><b>What we&rsquo;re watching:</b>&nbsp;{{DIP_WATCH}} We make the call on direction at quarter-close, not here.</li>
+      </ul>
+    </div>
+
+    <!-- Top Performer Patterns (1-2) -->
+    <div class="tw-group patterns">
+      <p class="tw-group-label"><span class="ic"></span>Top Performer Patterns</p>
+      <div class="tw-items">
+        <div class="tw-item patterns"><p class="tw-item-head">{{PATTERN1_HEAD}}</p><p class="tw-item-body">{{PATTERN1_BODY}}</p></div>
+        <div class="tw-item patterns"><p class="tw-item-head">{{PATTERN2_HEAD}}</p><p class="tw-item-body">{{PATTERN2_BODY}}</p></div>
+      </div>
+    </div>
+
+    <!-- Posts We're Watching (1-2) — single client-facing line per underperforming post, no deep dissection -->
+    <div class="tw-group watching">
+      <p class="tw-group-label"><span class="ic"></span>Posts We&rsquo;re Watching</p>
+      <div class="tw-items">
+        <div class="tw-item watching"><p class="tw-item-head">{{WATCH1_HEAD}}</p><p class="tw-item-body">{{WATCH1_BODY}}</p></div>
+        <div class="tw-item watching"><p class="tw-item-head">{{WATCH2_HEAD}}</p><p class="tw-item-body">{{WATCH2_BODY}}</p></div>
+      </div>
+    </div>
+
+    <!-- Tactical Tests (2-3) -->
+    <div class="tw-group tests">
+      <p class="tw-group-label"><span class="ic"></span>Tactical Tests for {{NEXT_MONTH}}</p>
+      <div class="tw-items">
+        <div class="tw-item tests"><p class="tw-item-head">{{TEST1_HEAD}}</p><p class="tw-item-body">{{TEST1_BODY}}</p></div>
+        <div class="tw-item tests"><p class="tw-item-head">{{TEST2_HEAD}}</p><p class="tw-item-body">{{TEST2_BODY}}</p></div>
+        <div class="tw-item tests"><p class="tw-item-head">{{TEST3_HEAD}}</p><p class="tw-item-body">{{TEST3_BODY}}</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ NEXT MONTH CTAs (Section 9) ═══ -->
+<div class="wrap">
+  <div class="cta-section" role="region" aria-labelledby="cta-title">
+    <p class="cta-eyebrow">{{NEXT_MONTH}} CTA Plan</p>
+    <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
+    <p class="cta-sub">The {{NEXT_MONTH}} call-to-action focus and the funnel-stage CTAs we&rsquo;ll be deploying.</p>
+    <div class="cta-primary">
+      <p class="cta-primary-label">&#9733; Primary {{NEXT_MONTH}} CTA</p>
+      <p class="cta-primary-obj">{{CTA_PRIMARY_OBJ}}</p>
+      <div class="cta-copy">{{CTA_PRIMARY_COPY}}</div>
+      <p class="cta-rationale">{{CTA_PRIMARY_RATIONALE}}</p>
+      <ul class="cta-funnel-list">
+        <li class="cta-funnel-li"><span class="cta-stage-tag tofu">TOFU</span><span>{{CTA_TOFU}}</span></li>
+        <li class="cta-funnel-li"><span class="cta-stage-tag mofu">MOFU</span><span>{{CTA_MOFU}}</span></li>
+        <li class="cta-funnel-li"><span class="cta-stage-tag bofu">BOFU</span><span>{{CTA_BOFU}}</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PREVIOUS REPORTS (Section 10) ═══ -->
+<section class="prev-section" aria-labelledby="prev-title">
+  <div class="prev-inner">
+    <p class="prev-eyebrow">Report History</p>
+    <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
+    <p class="prev-sub">Compare your performance over time. Click any month to view the full report.</p>
+    <div class="prev-grid">{{PREV_REPORTS_HTML}}</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">
+    <p class="footer-text">
+      Prepared by <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; {{REPORT_MONTH_YEAR}} Performance Report<br>
+      Data sources: Instagram Insights &middot; Metricool &middot; Scroll Media Unified Scoring Framework v1.3
+    </p>
+  </div>
+</footer>
+
+<script>
+  /* ═══ ALL POSTS DATA (Change 9) ═══
+     Rendered statically into the page at BUILD TIME by all_posts_data.py (Metricool all-posts pull).
+     No runtime API calls. Replace this array with the build-time output for the client/month.
+     Each post: {date:"YYYY-MM-DD", date_display:"Jun 4", format:"reel|carousel|static|story",
+       caption:"full caption text", views:N, saves:N, shares:N, comments:N,
+       retention:N|null, linktaps:N|null, ctr:N|null, url:"https://...", outlier:true|false}
+     `outlier` is precomputed by the engine: true when saves >= 1.5x account-avg saves OR
+     ctr >= 1.5x account-avg ctr (the two T1-High buyer signals), subject to absolute floors. */
+  var ALL_POSTS = {{ALL_POSTS_JSON}};
+
+  (function(){
+    var tbody=document.getElementById('ap-tbody');
+    var cards=document.getElementById('ap-cards');
+    if(!tbody) return;
+    var state={sortKey:'date',sortDir:'desc',filter:'all'};
+    var fmtMeta={reel:['reel','Reel'],carousel:['carousel','Carousel'],static:['static','Static'],story:['story','Story']};
+
+    function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function num(v){return (v==null)?'&mdash;':Number(v).toLocaleString('en-US');}
+    function pct(v){return (v==null)?'&mdash;':v+'%';}
+    function capPrev(c){c=c||'';return c.length>60?c.slice(0,60).trim()+'…':c;}
+
+    function sorted(rows){
+      var k=state.sortKey,dir=state.sortDir==='asc'?1:-1;
+      return rows.slice().sort(function(a,b){
+        var av=a[k],bv=b[k];
+        if(k==='caption'||k==='format'){av=(av||'').toLowerCase();bv=(bv||'').toLowerCase();return av<bv?-1*dir:av>bv?1*dir:0;}
+        if(k==='date'){av=a.date||'';bv=b.date||'';return av<bv?-1*dir:av>bv?1*dir:0;}
+        // numeric: null sinks to bottom regardless of direction
+        var an=(av==null),bn=(bv==null);
+        if(an&&bn)return 0; if(an)return 1; if(bn)return -1;
+        return (av-bv)*dir;
+      });
+    }
+    function visible(){return ALL_POSTS.filter(function(p){return state.filter==='all'||p.format===state.filter;});}
+
+    function render(){
+      var rows=sorted(visible());
+      // table
+      if(!rows.length){tbody.innerHTML='<tr><td colspan="11" class="ap-empty">No posts match this filter.</td></tr>';}
+      else{
+        tbody.innerHTML=rows.map(function(p){
+          var fm=fmtMeta[p.format]||['static',p.format];
+          var out=p.outlier?' outlier':'';
+          var flag=p.outlier?'<span class="ap-out-flag">&#9650; outlier</span>':'';
+          var link=p.url?'<a class="ap-iglink" href="'+esc(p.url)+'" target="_blank" rel="noopener" aria-label="View on Instagram">&#8599;</a>':'&mdash;';
+          return '<tr class="'+out.trim()+'">'+
+            '<td>'+esc(p.date_display||p.date)+'</td>'+
+            '<td><span class="ap-fmt-tag '+fm[0]+'">'+esc(fm[1])+'</span></td>'+
+            '<td><span class="ap-cap" title="'+esc(p.caption)+'">'+esc(capPrev(p.caption))+'</span>'+flag+'</td>'+
+            '<td class="num">'+num(p.views)+'</td>'+
+            '<td class="num">'+num(p.saves)+'</td>'+
+            '<td class="num">'+num(p.shares)+'</td>'+
+            '<td class="num">'+num(p.comments)+'</td>'+
+            '<td class="num">'+pct(p.retention)+'</td>'+
+            '<td class="num">'+num(p.linktaps)+'</td>'+
+            '<td class="num">'+pct(p.ctr)+'</td>'+
+            '<td>'+link+'</td></tr>';
+        }).join('');
+      }
+      // mobile cards
+      if(cards){
+        if(!rows.length){cards.innerHTML='<div class="ap-empty">No posts match this filter.</div>';}
+        else{
+          cards.innerHTML=rows.map(function(p){
+            var fm=fmtMeta[p.format]||['static',p.format];
+            var out=p.outlier?' outlier':'';
+            var flag=p.outlier?'<span class="ap-out-flag">&#9650; outlier</span>':'';
+            var link=p.url?'<a class="ap-pc-link" href="'+esc(p.url)+'" target="_blank" rel="noopener">View on Instagram &rarr;</a>':'';
+            return '<div class="ap-pc'+out+'">'+
+              '<div class="ap-pc-top"><span class="ap-fmt-tag '+fm[0]+'">'+esc(fm[1])+'</span><span class="ap-pc-date">'+esc(p.date_display||p.date)+'</span></div>'+
+              '<div class="ap-pc-cap">'+esc(capPrev(p.caption))+flag+'</div>'+
+              '<div class="ap-pc-stats">'+
+                '<div class="ap-pc-stat"><span class="l">Views</span><span class="v">'+num(p.views)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Saves</span><span class="v">'+num(p.saves)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Shares</span><span class="v">'+num(p.shares)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Comments</span><span class="v">'+num(p.comments)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Retention</span><span class="v">'+pct(p.retention)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">CTR</span><span class="v">'+pct(p.ctr)+'</span></div>'+
+              '</div>'+link+'</div>';
+          }).join('');
+        }
+      }
+      // header sort indicators
+      document.querySelectorAll('#ap-table thead th').forEach(function(th){
+        th.classList.remove('sorted-asc','sorted-desc');
+        if(th.dataset.key===state.sortKey)th.classList.add(state.sortDir==='asc'?'sorted-asc':'sorted-desc');
+      });
+    }
+
+    // header click → sort (toggle direction)
+    document.querySelectorAll('#ap-table thead th').forEach(function(th){
+      if(th.dataset.type==='none')return;
+      th.addEventListener('click',function(){
+        var k=th.dataset.key;if(!k)return;
+        if(state.sortKey===k){state.sortDir=state.sortDir==='asc'?'desc':'asc';}
+        else{state.sortKey=k;state.sortDir=(th.dataset.type==='num')?'desc':'asc';}
+        render();
+      });
+    });
+    // filter chips
+    document.querySelectorAll('#ap-controls .ap-chip').forEach(function(chip){
+      chip.addEventListener('click',function(){
+        document.querySelectorAll('#ap-controls .ap-chip').forEach(function(c){c.classList.remove('active');});
+        chip.classList.add('active');state.filter=chip.dataset.fmt;render();
+      });
+    });
+    // mobile sort dropdown
+    var ms=document.getElementById('ap-mobile-sort-select');
+    if(ms){ms.addEventListener('change',function(){var p=ms.value.split('|');state.sortKey=p[0];state.sortDir=p[1];render();});}
+
+    render();
+  })();
+
+  /* progress bar */
+  (function(){var bar=document.getElementById('progress-bar');function u(){var s=window.pageYOffset||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=h>0?(Math.min(s/h,1)*100)+'%':'0%';}window.addEventListener('scroll',u,{passive:true});u();})();
+  /* animate bar fills on scroll-in */
+  (function(){var fills=document.querySelectorAll('.bar-fill[data-w],.gt-bar-fill[data-w]');fills.forEach(function(el){el.dataset.target=el.dataset.w;el.style.width='0%';});if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.transition='width .7s cubic-bezier(.4,0,.2,1)';e.target.style.width=e.target.dataset.target+'%';io.unobserve(e.target);}});},{threshold:.1});fills.forEach(function(el){io.observe(el);});}else{fills.forEach(function(el){el.style.width=el.dataset.target+'%';});}})();
+  /* caption expand/collapse (Top Posts) */
+  function toggleCap(uid){var rest=document.getElementById(uid+'-rest');var btn=document.getElementById(uid+'-btn');var ell=document.getElementById(uid+'-ellipsis');if(rest.style.display==='none'){rest.style.display='inline';if(ell)ell.style.display='none';btn.textContent='Show less';}else{rest.style.display='none';if(ell)ell.style.display='inline';btn.textContent='Show more';}}
+  /* loom: activate band only if a loom id is present */
+  (function(){var f=document.getElementById('loom-embed');if(!f)return;var id=f.getAttribute('data-loom-id');if(id&&id.trim()){f.src='https://www.loom.com/embed/'+id.trim();document.getElementById('loom-band').classList.add('active');}})();
+  /* sticky nav active state */
+  (function(){var links=document.querySelectorAll('.report-nav-link');var sections=[];links.forEach(function(l){var el=document.getElementById(l.getAttribute('href').replace('#',''));if(el)sections.push({el:el,link:l});});function onScroll(){var y=window.scrollY+80;var active=null;sections.forEach(function(s){if(s.el.getBoundingClientRect().top+window.scrollY<=y)active=s;});links.forEach(function(l){l.classList.remove('active');});if(active)active.link.classList.add('active');}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
+</script>
+</body>
+</html>
