@@ -470,9 +470,7 @@
 <!-- ═══ SCORE CARD + QUARTERLY SNAPSHOT (Section 2, Change 6) ═══ -->
 <div class="score-wrap" id="score-section">
   <div class="score-card">
-    <p class="score-eyebrow">Monthly Performance Score</p>
-    <div class="score-num">{{SCORE}}<span class="score-denom">/10</span></div>
-    <p class="score-title">{{SCORE_LABEL}}</p>
+    <p class="score-eyebrow">Score Context</p>
     <span class="score-delta {{SCORE_DELTA_DIR}}">{{SCORE_DELTA_ARROW}} {{SCORE_DELTA_TEXT}} vs. {{PREV_MONTH}}</span>
     <div class="score-badges">
       <div class="score-badge exceed"><span class="bd"></span>{{SCORE_EXCEED_COUNT}} Exceeding</div>
@@ -679,7 +677,7 @@
         </div>
         <!-- Link Taps -->
         <div class="mc">
-          <div class="mc-top"><span class="mc-name">Link Taps</span><span class="mc-badge {{LT_STATUS}}">{{LT_STATUS_LABEL}}</span></div>
+          <div class="mc-top"><span class="mc-name">Bio Link Taps</span><span class="mc-badge {{LT_STATUS}}">{{LT_STATUS_LABEL}}</span></div>
           <div class="mc-nums"><div><span class="mc-lbl">{{REPORT_MONTH}}</span><span class="mc-val {{LT_STATUS}}">{{LT_VAL}}</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">{{LT_TARGET}}</span></div></div>
           <div class="mc-mom"><span class="mom {{LT_MOM_DIR}}">{{LT_MOM_ARROW}} {{LT_MOM_TEXT}}</span></div>
           <div class="bar-track"><div class="bar-fill {{LT_STATUS}}" data-w="{{LT_BARW}}" style="width:0%"></div></div>
@@ -792,7 +790,7 @@
             <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
             <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
             <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="linktaps" data-type="num">Link Taps<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="linktaps" data-type="num">Bio Link Taps<span class="arrow">&#9650;&#9660;</span></th>
             <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
             <th data-key="" data-type="none">Post</th>
           </tr>
