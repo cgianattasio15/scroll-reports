@@ -50,7 +50,7 @@ CLIENT_BLOG_IDS = {
     "ombregallery": 5321966,
     "skinbybrownleeandco": 5408849,
     "upandrunningoh": 5506230,
-    "carlsdeli": "TODO_CHASE_PROVIDES_TOMORROW_FROM_METRICOOL",  # Chase pulls Carl's blog ID from her Metricool account first thing tomorrow morning before her All Posts table can populate (first-ever report, not yet onboarded to the engine)
+    "carlsdeli": 5869607,  # Metricool blogId (userId 3745914 = global METRICOOL_USER_ID). Real ID added Jun 30, 2026.
 }
 
 # ── METRIC WEIGHTS (must sum to 100) ─────────────────────────────────────────
