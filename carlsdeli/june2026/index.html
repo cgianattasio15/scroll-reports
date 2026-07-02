@@ -198,6 +198,34 @@
     .c2b-val-card{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem;text-align:center}
     .c2b-est-note{font-size:.8125rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:1rem}
     @media(max-width:480px){.c2b-val-cards{grid-template-columns:1fr}}
+    /* ── v8.3 analogy badges (Panel 1) ── */
+    .c2b-step{align-items:flex-start}
+    .c2b-step-main{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+    .c2b-step-badge{display:inline-block;font-size:.72rem;color:#475569;background:rgba(14,51,135,.05);border:1px solid rgba(14,51,135,.08);border-radius:20px;padding:.2rem .65rem;line-height:1.4;width:fit-content;max-width:100%}
+    /* ── v8.3 two customer-type cards (Panel 2) ── */
+    .c2b-cust-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .c2b-cc{background:rgba(255,255,255,.05);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;display:flex;flex-direction:column}
+    .c2b-cc-eyebrow{font-size:.625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem}
+    .c2b-cc-num{font-size:clamp(2.5rem,8vw,3.25rem);font-weight:800;color:var(--hl);line-height:1;letter-spacing:-.03em}
+    .c2b-cc-lbl{font-size:.8125rem;color:rgba(255,255,255,.8);margin-top:.5rem;font-weight:600;line-height:1.4}
+    .c2b-cc-meta{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);text-align:left;display:flex;flex-direction:column;gap:.5rem}
+    .c2b-cc-row{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
+    .c2b-cc-mlbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5)}
+    .c2b-cc-mval{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.85);text-align:right}
+    .c2b-cc-mval.big{font-size:1.0625rem;font-weight:800;color:var(--hl)}
+    .c2b-cc-sub{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.4}
+    .c2b-combined{display:flex;align-items:baseline;justify-content:center;gap:.75rem;flex-wrap:wrap;background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.2);border-radius:8px;padding:.875rem 1.25rem;margin-bottom:1rem;text-align:center}
+    .c2b-combined-lbl{font-size:.8125rem;color:rgba(255,255,255,.7);font-weight:600}
+    .c2b-combined-val{font-size:1.375rem;font-weight:800;color:var(--hl);letter-spacing:-.01em}
+    .c2b-method{margin-bottom:1rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;overflow:hidden}
+    .c2b-method summary{cursor:pointer;font-size:.8125rem;font-weight:700;color:var(--hl);padding:.7rem 1rem;list-style:none}
+    .c2b-method summary::-webkit-details-marker{display:none}
+    .c2b-method summary::before{content:'\25B8  ';color:rgba(255,255,255,.5)}
+    .c2b-method[open] summary::before{content:'\25BE  '}
+    .c2b-method-body{padding:0 1rem 1rem;font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.6}
+    .c2b-method-body p{margin-bottom:.5rem}
+    .c2b-method-body b{color:rgba(255,255,255,.85)}
+    @media(max-width:560px){.c2b-cust-cards{grid-template-columns:1fr}}
     /* ── v8.2 CTA restructure ── */
     .cta-discuss{font-size:.875rem;color:var(--hl);background:rgba(226,237,122,.1);border:1px solid rgba(226,237,122,.2);border-radius:6px;padding:.75rem 1rem;margin-top:.875rem;line-height:1.5;font-weight:600}
     .cta-supp-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:1.5rem 0 .75rem}
@@ -438,7 +466,7 @@
     <a class="report-nav-link" href="#impact-title">Impact</a>
     <a class="report-nav-link" href="#posts-title">Top Posts</a>
     <a class="report-nav-link" href="#allposts-title">All Posts</a>
-    <a class="report-nav-link" href="#tests-title">Tests</a>
+    <a class="report-nav-link" href="#tests-title">July Focus</a>
     <a class="report-nav-link" href="#cta-title">CTAs</a>
     <a class="report-nav-link" href="#prev-title">History</a>
   </div>
@@ -707,27 +735,48 @@
     <div class="c2b-funnel">
       <p class="c2b-panel-label">The funnel this month</p>
       <div class="c2b-steps">
-        <div class="c2b-step"><span class="c2b-step-num">147,499</span><span class="c2b-step-txt">people saw your content</span></div>
-        <div class="c2b-step"><span class="c2b-step-num">2,024</span><span class="c2b-step-txt">tapped through to look closer</span></div>
-        <div class="c2b-step"><span class="c2b-step-num">255</span><span class="c2b-step-txt">bookmarked content to reference later</span></div>
-        <div class="c2b-step hi"><span class="c2b-step-num">263</span><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span></div>
+        <div class="c2b-step"><span class="c2b-step-num">147,499</span><div class="c2b-step-main"><span class="c2b-step-txt">people saw your content</span><span class="c2b-step-badge">🏟 Great American Ball Park filled 3.5x over</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">2,024</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped through to look closer</span><span class="c2b-step-badge">🎤 a sold-out Bogart&rsquo;s crowd</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">255</span><div class="c2b-step-main"><span class="c2b-step-txt">bookmarked content to reference later</span><span class="c2b-step-badge">📌 255 pre-purchase bookmarks</span></div></div>
+        <div class="c2b-step hi"><span class="c2b-step-num">263</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span><span class="c2b-step-badge">👆 263 deliberate decisions to explore your business</span></div></div>
       </div>
     </div>
 
     <!-- PANEL 2 — Conservative business estimate (two-tier) -->
     <div class="c2b-estimate">
       <p class="c2b-panel-label">Conservative business estimate</p>
-      <div class="c2b-est-hero">
-        <div class="c2b-est-num">2&ndash;4</div>
-        <p class="c2b-est-num-lbl">new customer signals in your near-term pipeline</p>
-        <p class="c2b-est-sub">Based on typical patterns for a Cincinnati deli with a growing catering business. Roughly 0&ndash;1 of these is a catering inquiry.</p>
+      <div class="c2b-cust-cards">
+        <div class="c2b-cc">
+          <div class="c2b-cc-eyebrow">Deli customer signal</div>
+          <div class="c2b-cc-num">2&ndash;4</div>
+          <p class="c2b-cc-lbl">new deli customer signals in your near-term pipeline</p>
+          <div class="c2b-cc-meta">
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">1&ndash;2 weeks</span></div>
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">$300&ndash;$1,600 total</span></div>
+            <span class="c2b-cc-sub">$150&ndash;$400 per customer &times; 2&ndash;4</span>
+          </div>
+        </div>
+        <div class="c2b-cc">
+          <div class="c2b-cc-eyebrow">Catering inquiry signal</div>
+          <div class="c2b-cc-num">1&ndash;2</div>
+          <p class="c2b-cc-lbl">catering inquiry signals</p>
+          <div class="c2b-cc-meta">
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">2&ndash;8 weeks</span></div>
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">$1,500&ndash;$6,000 total</span></div>
+            <span class="c2b-cc-sub">$1,500&ndash;$3,000 per inquiry &times; 1&ndash;2</span>
+          </div>
+        </div>
       </div>
-      <div class="c2b-timeline-badge"><span class="ic">&#9202;</span>Typical timeline: 1&ndash;2 weeks food order &middot; 2&ndash;8 weeks catering</div>
-      <div class="c2b-val-cards">
-        <div class="c2b-val-card"><span class="c2b-cell-lbl">Est. first-year value</span><span class="c2b-cell-val">$500&ndash;$2,500</span></div>
-        <div class="c2b-val-card"><span class="c2b-cell-lbl">Est. lifetime value</span><span class="c2b-cell-val">$1,000&ndash;$6,000</span></div>
-      </div>
-      <p class="c2b-est-note">This range is wide because deli customer value varies significantly between one-time visitors, occasional customers, and loyal regulars. Your actual numbers will tighten this range at your August strategic review with your own data.</p>
+      <div class="c2b-combined"><span class="c2b-combined-lbl">Combined 12-month signal for June</span><span class="c2b-combined-val">$1,800&ndash;$7,600</span></div>
+      <p class="c2b-est-note">These relationships compound over time. A returning deli customer typically reaches $500&ndash;$1,500 lifetime value. A repeat catering client typically reaches $2,500&ndash;$5,000 lifetime. The 12-month signal above is your near-term expected return, with compounding value building from there.</p>
+      <details class="c2b-method">
+        <summary>How we got here</summary>
+        <div class="c2b-method-body">
+          <p><b>Deli:</b> assumes about 65% of bio link taps head to the menu and order path, new-customer conversion of 5&ndash;10%, and a typical deli customer at $30&ndash;$40 per visit, 4&ndash;8 visits a year, over a 2&ndash;3 year relationship.</p>
+          <p><b>Catering:</b> assumes about 25% of bio link taps head to the catering path, catering inquiry conversion of 5&ndash;10%, and typical Cincinnati mid-range catering at $35&ndash;$50 per person for 30&ndash;80 person events.</p>
+          <p>Sources: ChowNow Restaurant CLV, Toast POS CLV, Catering Finder pricing.</p>
+        </div>
+      </details>
       <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
     </div>
   </section>
@@ -813,21 +862,21 @@ We love community, individuality, being bold, and LOVE. You’re welcome here. C
 <!-- ═══ THIS MONTH'S TESTS + POSTS WE'RE WATCHING (Section 8, Change 8) ═══ -->
 <div class="wrap">
   <section class="sec" aria-labelledby="tests-title">
-    <p class="sec-label">July Direction</p>
-    <h2 class="sec-title" id="tests-title">This Month&rsquo;s Tests + Posts We&rsquo;re Watching</h2>
-    <p class="sec-sub">Tactical moves for July, inside the locked quarterly strategy. These are tests within the plan, not changes to it.</p>
+    <p class="sec-label">July Focus</p>
+    <h2 class="sec-title" id="tests-title">What We Noticed + July Focus</h2>
+    <p class="sec-sub">Strategy adjustments happen at quarter-close with the full three-month picture, not month to month. What follows is what we&rsquo;re paying attention to in July, not changes to your strategy.</p>
 
     <!-- Top Performer Patterns (1-2) -->
     <div class="tw-group patterns">
-      <p class="tw-group-label"><span class="ic"></span>Top Performer Patterns</p>
+      <p class="tw-group-label"><span class="ic"></span>What worked this month</p>
       <div class="tw-items">
-        <div class="tw-item patterns"><p class="tw-item-head">Community storytelling drove the month&rsquo;s reach</p><p class="tw-item-body">Sandwich stories, family history, and Hyde Park moments earned the shares and profile visits. We&rsquo;re doubling down on this format in July with a specific focus on catering-anchor storytelling.</p></div>
+        <div class="tw-item patterns"><p class="tw-item-head">Community storytelling drove the month&rsquo;s reach</p><p class="tw-item-body">Sandwich stories, family history, and Hyde Park moments earned the shares and profile visits. We&rsquo;re leaning further into this format in July, with a focus on catering-anchor storytelling.</p></div>
       </div>
     </div>
 
     <!-- Posts We're Watching (1-2) — single client-facing line per underperforming post, no deep dissection -->
     <div class="tw-group watching">
-      <p class="tw-group-label"><span class="ic"></span>Posts We&rsquo;re Watching</p>
+      <p class="tw-group-label"><span class="ic"></span>What we&rsquo;re watching next</p>
       <div class="tw-items">
         <div class="tw-item watching"><p class="tw-item-head">Retention is the signal to lift next</p><p class="tw-item-body">25% retention across Reels tells us the video hook is landing a beat too late. We&rsquo;re testing tighter openings and shorter cuts in July to lift retention into the Lift range while holding the reach engine intact.</p></div>
       </div>
@@ -835,10 +884,10 @@ We love community, individuality, being bold, and LOVE. You’re welcome here. C
 
     <!-- Tactical Tests (2-3) -->
     <div class="tw-group tests">
-      <p class="tw-group-label"><span class="ic"></span>Tactical Tests for July</p>
+      <p class="tw-group-label"><span class="ic"></span>Where our attention is in July</p>
       <div class="tw-items">
-        <div class="tw-item tests"><p class="tw-item-head">Shorter Reels with a stronger opening hook</p><p class="tw-item-body">Test Reels under 30 seconds with a strong first-3-second hook. The goal is lifting retention from 25% toward the 50% Lift floor without losing reach.</p></div>
-        <div class="tw-item tests"><p class="tw-item-head">Catering-CTA formats across post types</p><p class="tw-item-body">Test different catering-CTA formats across post types to learn which drives the most catering-page traffic. We&rsquo;re aggregating July and August data before locking a CTA standard.</p></div>
+        <div class="tw-item tests"><p class="tw-item-head">Tighter Reel openings and retention</p><p class="tw-item-body">In July, we&rsquo;re watching how tighter Reel openings affect retention. The goal is lifting from 25% toward the 50% Lift floor without losing reach.</p></div>
+        <div class="tw-item tests"><p class="tw-item-head">Which catering-CTA formats land</p><p class="tw-item-body">We&rsquo;re paying attention to which catering-CTA formats pull the most bio link taps across post types, watching July and August together before we settle on a standard.</p></div>
       </div>
     </div>
   </section>

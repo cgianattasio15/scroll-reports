@@ -198,6 +198,35 @@
     .c2b-val-card{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem;text-align:center}
     .c2b-est-note{font-size:.8125rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:1rem}
     @media(max-width:480px){.c2b-val-cards{grid-template-columns:1fr}}
+    /* ── v8.3 analogy badges (Panel 1) ── */
+    .c2b-step{align-items:flex-start}
+    .c2b-step-main{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+    .c2b-step-badge{display:inline-block;font-size:.72rem;color:#475569;background:rgba(14,51,135,.05);border:1px solid rgba(14,51,135,.08);border-radius:20px;padding:.2rem .65rem;line-height:1.4;width:fit-content;max-width:100%}
+    /* ── v8.3 two customer-type cards (Panel 2) ── */
+    .c2b-cust-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .c2b-cust-cards.single{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+    .c2b-cc{background:rgba(255,255,255,.05);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;display:flex;flex-direction:column}
+    .c2b-cc-eyebrow{font-size:.625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem}
+    .c2b-cc-num{font-size:clamp(2.5rem,8vw,3.25rem);font-weight:800;color:var(--hl);line-height:1;letter-spacing:-.03em}
+    .c2b-cc-lbl{font-size:.8125rem;color:rgba(255,255,255,.8);margin-top:.5rem;font-weight:600;line-height:1.4}
+    .c2b-cc-meta{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);text-align:left;display:flex;flex-direction:column;gap:.5rem}
+    .c2b-cc-row{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
+    .c2b-cc-mlbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5)}
+    .c2b-cc-mval{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.85);text-align:right}
+    .c2b-cc-mval.big{font-size:1.0625rem;font-weight:800;color:var(--hl)}
+    .c2b-cc-sub{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.4}
+    .c2b-combined{display:flex;align-items:baseline;justify-content:center;gap:.75rem;flex-wrap:wrap;background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.2);border-radius:8px;padding:.875rem 1.25rem;margin-bottom:1rem;text-align:center}
+    .c2b-combined-lbl{font-size:.8125rem;color:rgba(255,255,255,.7);font-weight:600}
+    .c2b-combined-val{font-size:1.375rem;font-weight:800;color:var(--hl);letter-spacing:-.01em}
+    .c2b-method{margin-bottom:1rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;overflow:hidden}
+    .c2b-method summary{cursor:pointer;font-size:.8125rem;font-weight:700;color:var(--hl);padding:.7rem 1rem;list-style:none}
+    .c2b-method summary::-webkit-details-marker{display:none}
+    .c2b-method summary::before{content:'\25B8  ';color:rgba(255,255,255,.5)}
+    .c2b-method[open] summary::before{content:'\25BE  '}
+    .c2b-method-body{padding:0 1rem 1rem;font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.6}
+    .c2b-method-body p{margin-bottom:.5rem}
+    .c2b-method-body b{color:rgba(255,255,255,.85)}
+    @media(max-width:560px){.c2b-cust-cards{grid-template-columns:1fr}}
     /* ── v8.2 CTA restructure ── */
     .cta-discuss{font-size:.875rem;color:var(--hl);background:rgba(226,237,122,.1);border:1px solid rgba(226,237,122,.2);border-radius:6px;padding:.75rem 1rem;margin-top:.875rem;line-height:1.5;font-weight:600}
     .cta-supp-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:1.5rem 0 .75rem}
@@ -437,7 +466,7 @@
     <a class="report-nav-link" href="#impact-title">Impact</a>
     <a class="report-nav-link" href="#posts-title">Top Posts</a>
     <a class="report-nav-link" href="#allposts-title">All Posts</a>
-    <a class="report-nav-link" href="#tests-title">Tests</a>
+    <a class="report-nav-link" href="#tests-title">July Focus</a>
     <a class="report-nav-link" href="#cta-title">CTAs</a>
     <a class="report-nav-link" href="#prev-title">History</a>
   </div>
@@ -747,29 +776,49 @@
 
     <div class="c2b-funnel">
       <p class="c2b-panel-label">The funnel this month</p>
+      <!-- v8.3: each step carries a per-client analogy badge (Cincinnati-specific where a clean hit exists, else a universal scale analogy). Claude Code writes {{..._ANALOGY}} at build. -->
       <div class="c2b-steps">
-        <div class="c2b-step"><span class="c2b-step-num">{{C2B_VIEWS}}</span><span class="c2b-step-txt">people saw your content</span></div>
-        <div class="c2b-step"><span class="c2b-step-num">{{C2B_PROFILE_VISITS}}</span><span class="c2b-step-txt">tapped through to look closer</span></div>
-        <div class="c2b-step"><span class="c2b-step-num">{{C2B_SAVES}}</span><span class="c2b-step-txt">bookmarked content to reference later</span></div>
-        <div class="c2b-step hi"><span class="c2b-step-num">{{C2B_TAPS}}</span><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span></div>
+        <div class="c2b-step"><span class="c2b-step-num">{{C2B_VIEWS}}</span><div class="c2b-step-main"><span class="c2b-step-txt">people saw your content</span><span class="c2b-step-badge">{{C2B_VIEWS_ANALOGY}}</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">{{C2B_PROFILE_VISITS}}</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped through to look closer</span><span class="c2b-step-badge">{{C2B_PV_ANALOGY}}</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">{{C2B_SAVES}}</span><div class="c2b-step-main"><span class="c2b-step-txt">bookmarked content to reference later</span><span class="c2b-step-badge">{{C2B_SAVES_ANALOGY}}</span></div></div>
+        <div class="c2b-step hi"><span class="c2b-step-num">{{C2B_TAPS}}</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span><span class="c2b-step-badge">{{C2B_TAPS_ANALOGY}}</span></div></div>
       </div>
     </div>
 
     <div class="c2b-estimate">
       <p class="c2b-panel-label">Conservative business estimate</p>
-      <!-- v8.2: new-customers number is the visual hero. THIN-VOLUME variant (Spark / < ~50 taps):
-           replace this whole block with a single <p class="c2b-est-note">{{C2B_THIN_PARAGRAPH}}</p>. -->
-      <div class="c2b-est-hero">
-        <div class="c2b-est-num">{{C2B_CUSTOMERS}}</div>
-        <p class="c2b-est-num-lbl">new customer signals in your near-term pipeline</p>
-        <p class="c2b-est-sub">{{C2B_EST_SUB}}</p>
+      <!-- v8.3: customer-type cards. Lead with the 12-MONTH value (headline); lifetime is the compounding note below.
+           DUAL-CARD clients (Carl's deli/catering, Lane & Kate consultation/gift): two .c2b-cc + the .c2b-combined line.
+           SINGLE-CARD clients (DEFINE, Launch Party, MEAS): add class "single" to .c2b-cust-cards, keep Card A only, delete Card B + the .c2b-combined line.
+           THIN-VOLUME (Up & Running, Spark / < ~50 taps): replace this whole cards+combined block with a single <p class="c2b-est-note">{{C2B_THIN_PARAGRAPH}}</p>. -->
+      <div class="c2b-cust-cards">
+        <div class="c2b-cc">
+          <div class="c2b-cc-eyebrow">{{C2B_CARD_A_TITLE}}</div>
+          <div class="c2b-cc-num">{{C2B_CARD_A_NUM}}</div>
+          <p class="c2b-cc-lbl">{{C2B_CARD_A_LBL}}</p>
+          <div class="c2b-cc-meta">
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">{{C2B_CARD_A_TIMELINE}}</span></div>
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">{{C2B_CARD_A_12MO}}</span></div>
+            <span class="c2b-cc-sub">{{C2B_CARD_A_SUB}}</span>
+          </div>
+        </div>
+        <div class="c2b-cc">
+          <div class="c2b-cc-eyebrow">{{C2B_CARD_B_TITLE}}</div>
+          <div class="c2b-cc-num">{{C2B_CARD_B_NUM}}</div>
+          <p class="c2b-cc-lbl">{{C2B_CARD_B_LBL}}</p>
+          <div class="c2b-cc-meta">
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">{{C2B_CARD_B_TIMELINE}}</span></div>
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">{{C2B_CARD_B_12MO}}</span></div>
+            <span class="c2b-cc-sub">{{C2B_CARD_B_SUB}}</span>
+          </div>
+        </div>
       </div>
-      <div class="c2b-timeline-badge"><span class="ic">&#9202;</span>Typical timeline: {{C2B_TIMELINE}}</div>
-      <div class="c2b-val-cards">
-        <div class="c2b-val-card"><span class="c2b-cell-lbl">Est. first-year value</span><span class="c2b-cell-val">{{C2B_FIRST_YEAR}}</span></div>
-        <div class="c2b-val-card"><span class="c2b-cell-lbl">Est. lifetime value</span><span class="c2b-cell-val">{{C2B_LTV}}</span></div>
-      </div>
+      <div class="c2b-combined"><span class="c2b-combined-lbl">Combined 12-month signal for {{REPORT_MONTH}}</span><span class="c2b-combined-val">{{C2B_COMBINED}}</span></div>
       <p class="c2b-est-note">{{C2B_EST_NOTE}}</p>
+      <details class="c2b-method">
+        <summary>How we got here</summary>
+        <div class="c2b-method-body">{{C2B_METHOD_BODY}}</div>
+      </details>
       <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
     </div>
   </section>
@@ -837,9 +886,9 @@
 <!-- ═══ THIS MONTH'S TESTS + POSTS WE'RE WATCHING (Section 8, Change 8) ═══ -->
 <div class="wrap">
   <section class="sec" aria-labelledby="tests-title">
-    <p class="sec-label">{{NEXT_MONTH}} Direction</p>
-    <h2 class="sec-title" id="tests-title">This Month&rsquo;s Tests + Posts We&rsquo;re Watching</h2>
-    <p class="sec-sub">Tactical moves for {{NEXT_MONTH}}, inside the locked quarterly strategy. These are tests within the plan, not changes to it.</p>
+    <p class="sec-label">{{NEXT_MONTH}} Focus</p>
+    <h2 class="sec-title" id="tests-title">What We Noticed + {{NEXT_MONTH}} Focus</h2>
+    <p class="sec-sub">Strategy adjustments happen at quarter-close with the full three-month picture, not month to month. What follows is what we&rsquo;re paying attention to in {{NEXT_MONTH}}, not changes to your strategy.</p>
 
     <!-- DIP-MONTH NARRATIVE: add class "active" when score dropped >0.5 from prior month -->
     <div class="dip-narr" id="dip-narr">
@@ -851,10 +900,10 @@
       </ul>
     </div>
 
-    <!-- v8.2: target 3-4 total items here (1 pattern, 1 watching, 1-2 tactical tests). Quarterly-not-monthly discipline. -->
+    <!-- v8.3: pure-observation voice (no "test"/"change" language; use "watching"/"attention on"). Target 3-4 items (1 worked, 1 watching, 1-2 attention). Adjustments happen at quarter-close, not month to month. -->
     <!-- Top Performer Patterns (1-2) -->
     <div class="tw-group patterns">
-      <p class="tw-group-label"><span class="ic"></span>Top Performer Patterns</p>
+      <p class="tw-group-label"><span class="ic"></span>What worked this month</p>
       <div class="tw-items">
         <div class="tw-item patterns"><p class="tw-item-head">{{PATTERN1_HEAD}}</p><p class="tw-item-body">{{PATTERN1_BODY}}</p></div>
         <div class="tw-item patterns"><p class="tw-item-head">{{PATTERN2_HEAD}}</p><p class="tw-item-body">{{PATTERN2_BODY}}</p></div>
@@ -863,7 +912,7 @@
 
     <!-- Posts We're Watching (1-2) — single client-facing line per underperforming post, no deep dissection -->
     <div class="tw-group watching">
-      <p class="tw-group-label"><span class="ic"></span>Posts We&rsquo;re Watching</p>
+      <p class="tw-group-label"><span class="ic"></span>What we&rsquo;re watching next</p>
       <div class="tw-items">
         <div class="tw-item watching"><p class="tw-item-head">{{WATCH1_HEAD}}</p><p class="tw-item-body">{{WATCH1_BODY}}</p></div>
         <div class="tw-item watching"><p class="tw-item-head">{{WATCH2_HEAD}}</p><p class="tw-item-body">{{WATCH2_BODY}}</p></div>
@@ -872,7 +921,7 @@
 
     <!-- Tactical Tests (2-3) -->
     <div class="tw-group tests">
-      <p class="tw-group-label"><span class="ic"></span>Tactical Tests for {{NEXT_MONTH}}</p>
+      <p class="tw-group-label"><span class="ic"></span>Where our attention is in {{NEXT_MONTH}}</p>
       <div class="tw-items">
         <div class="tw-item tests"><p class="tw-item-head">{{TEST1_HEAD}}</p><p class="tw-item-body">{{TEST1_BODY}}</p></div>
         <div class="tw-item tests"><p class="tw-item-head">{{TEST2_HEAD}}</p><p class="tw-item-body">{{TEST2_BODY}}</p></div>
