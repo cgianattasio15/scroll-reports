@@ -164,6 +164,29 @@
     .gt-side{display:flex;flex-direction:column;align-items:flex-end;gap:.625rem;flex-shrink:0}
     .gt-spark-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
     @media(max-width:640px){.gt-row{grid-template-columns:1fr}.gt-side{flex-direction:row;align-items:center;justify-content:space-between;width:100%}}
+    /* ── GOAL TRACKER composite score (v8.1) ── */
+    .gt-score-pts{font-size:1.25rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+    .gt-score-max{font-size:.8125rem;font-weight:600;color:var(--muted)}
+    /* ── CONTENT-TO-BUSINESS IMPACT (v8.1) ── */
+    .c2b-funnel{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.75rem;margin-bottom:1.25rem}
+    .c2b-panel-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:1rem}
+    .c2b-steps{display:flex;flex-direction:column;gap:.75rem}
+    .c2b-step{display:flex;align-items:baseline;gap:.875rem;padding-bottom:.75rem;border-bottom:1px dashed var(--border)}
+    .c2b-step:last-child{border-bottom:none;padding-bottom:0}
+    .c2b-step-num{font-size:1.375rem;font-weight:800;color:var(--text);letter-spacing:-.02em;min-width:5.5rem;flex-shrink:0}
+    .c2b-step.hi .c2b-step-num{color:var(--bofu)}
+    .c2b-step-txt{font-size:.9375rem;color:var(--muted);line-height:1.5}
+    .c2b-estimate{background:linear-gradient(135deg,#0f1730,#11254f);border-radius:var(--radius);padding:1.75rem;border:1px solid rgba(255,255,255,.06)}
+    .c2b-estimate .c2b-panel-label{color:var(--hl)}
+    .c2b-lead{font-size:1rem;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:1.25rem}
+    .c2b-lead b{color:#fff}
+    .c2b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem}
+    .c2b-cell{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem}
+    .c2b-cell-lbl{display:block;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+    .c2b-cell-val{display:block;font-size:1.125rem;font-weight:800;color:var(--hl);letter-spacing:-.01em;line-height:1.2}
+    .c2b-cell-note{display:block;font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.3rem;line-height:1.4}
+    .c2b-disclaimer{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.6;font-style:italic;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
+    @media(max-width:640px){.c2b-grid{grid-template-columns:1fr}}
 
     /* ── PERFORMANCE DASHBOARD ── */
     .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
@@ -397,7 +420,7 @@
     <a class="report-nav-link" href="#score-section">Score</a>
     <a class="report-nav-link" href="#goals-title">Goals</a>
     <a class="report-nav-link" href="#perf-title">Performance</a>
-    <a class="report-nav-link" href="#leadsignal-title">Lead Signal</a>
+    <a class="report-nav-link" href="#impact-title">Impact</a>
     <a class="report-nav-link" href="#posts-title">Top Posts</a>
     <a class="report-nav-link" href="#allposts-title">All Posts</a>
     <a class="report-nav-link" href="#tests-title">Tests</a>
@@ -512,49 +535,49 @@
   <section class="sec" aria-labelledby="goals-title">
     <p class="sec-label">Business Goals</p>
     <h2 class="sec-title" id="goals-title">Goal Tracker</h2>
-    <p class="sec-sub">The three goals we set for {{CLIENT_NAME}}, tracked against a real baseline and target. Each bar shows where the month landed on the path to the goal.</p>
+    <p class="sec-sub">Your funnel stages, scored as a weighted composite of the metrics in each. Metrics that predict real buyer behavior, like saves and click-through, carry more weight than raw reach.</p>
     <div class="gt-list">
-      <!-- One .gt-row per goal (3 total). Quantified data lands from the Goals Quantification Pass. -->
+      <!-- One .gt-row per funnel stage. Bar = weighted composite % of stage potential (Scoring Framework v1.3 tier weights: T1-High Saves/CTR, T1 Retention/PCR/Bio Link Taps, T2 Profile Visits/Comments/New Followers/Views, T3 Shares). -->
       <div class="gt-row tofu">
         <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel</span></div>
+          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div>
           <p class="gt-title">{{GOAL1_TITLE}}</p>
           <div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL1_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL1_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL1_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL1_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL1_TARGET}}</b></span></div>
+          <div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div>
           <p class="gt-narr">{{GOAL1_NARRATIVE}}</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL1_SPARKLINE_SVG}}</div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">{{GOAL1_PTS}}<span class="gt-score-max">/{{GOAL1_MAX}}</span></span></div>
       </div>
 
       <div class="gt-row mofu">
         <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel</span></div>
+          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div>
           <p class="gt-title">{{GOAL2_TITLE}}</p>
           <div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL2_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL2_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL2_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL2_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL2_TARGET}}</b></span></div>
+          <div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div>
           <p class="gt-narr">{{GOAL2_NARRATIVE}}</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL2_SPARKLINE_SVG}}</div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">{{GOAL2_PTS}}<span class="gt-score-max">/{{GOAL2_MAX}}</span></span></div>
       </div>
 
       <div class="gt-row bofu">
         <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel</span></div>
+          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div>
           <p class="gt-title">{{GOAL3_TITLE}}</p>
           <div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="{{GOAL3_PCT}}" style="width:0%"></div></div>
             <span class="gt-pct">{{GOAL3_PCT}}%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>{{GOAL3_BASELINE}}</b></span><span class="seg">Now <b>{{GOAL3_CURRENT}}</b></span><span class="seg">Target <b>{{GOAL3_TARGET}}</b></span></div>
+          <div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div>
           <p class="gt-narr">{{GOAL3_NARRATIVE}}</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span>{{GOAL3_SPARKLINE_SVG}}</div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">{{GOAL3_PTS}}<span class="gt-score-max">/{{GOAL3_MAX}}</span></span></div>
       </div>
     </div>
   </section>
@@ -698,48 +721,35 @@
   </section>
 </div>
 
-<!-- ═══ LEAD SIGNAL (Section 5, Change 4) ═══ -->
+<!-- ═══ CONTENT-TO-BUSINESS IMPACT (Section 5, v8.1) ═══
+     Panel 1 = the month's funnel walk-through. Panel 2 = two-tier conservative business estimate.
+     THIN-VOLUME VARIANT: when bio link taps are too thin to model (Spark stage / < ~50 taps),
+     replace the Panel 2 grid + lead with a single {{C2B_THIN_PARAGRAPH}} note (see Up & Running). -->
 <div class="wrap">
-  <section class="sec" aria-labelledby="leadsignal-title">
-    <p class="sec-label">How the work turns into leads</p>
-    <h2 class="sec-title" id="leadsignal-title">Lead Signal</h2>
-    <p class="sec-sub">The signals that predict buying behavior, layered from what we can see on-platform to what your customers tell you directly.</p>
+  <section class="sec" aria-labelledby="impact-title">
+    <p class="sec-label">From attention to business</p>
+    <h2 class="sec-title" id="impact-title">Content to Business Impact</h2>
+    <p class="sec-sub">How this month&rsquo;s attention maps to business signal, from what we can see on-platform to a conservative estimate of what it&rsquo;s worth.</p>
 
-    <!-- POV block (locked 3-sentence copy) -->
-    <div class="ls-pov">
-      <p class="ls-pov-label">How we measure leads in organic</p>
-      <p class="ls-pov-text">Most agencies sell last-click attribution. We don&rsquo;t, because organic social doesn&rsquo;t work that way. We measure leads through the signals that predict buying behavior: who&rsquo;s saving your content, who&rsquo;s tapping through, and who&rsquo;s telling you they found you through us.</p>
+    <div class="c2b-funnel">
+      <p class="c2b-panel-label">The funnel this month</p>
+      <div class="c2b-steps">
+        <div class="c2b-step"><span class="c2b-step-num">{{C2B_VIEWS}}</span><span class="c2b-step-txt">people saw your content</span></div>
+        <div class="c2b-step"><span class="c2b-step-num">{{C2B_PROFILE_VISITS}}</span><span class="c2b-step-txt">tapped through to look closer</span></div>
+        <div class="c2b-step"><span class="c2b-step-num">{{C2B_SAVES}}</span><span class="c2b-step-txt">bookmarked content to reference later</span></div>
+        <div class="c2b-step hi"><span class="c2b-step-num">{{C2B_TAPS}}</span><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span></div>
+      </div>
     </div>
 
-    <div class="ls-layers">
-      <!-- LAYER 1 — Direct interest signals (always populates) -->
-      <div class="ls-layer">
-        <div class="ls-layer-top"><span class="ls-layer-num">1</span><span class="ls-layer-title">Direct interest signals</span><span class="ls-layer-sub">On-platform &middot; this month</span></div>
-        <div class="ls-stats">
-          <div class="ls-stat"><div class="ls-stat-val">{{LS_SAVES}}</div><div class="ls-stat-lbl">Saves</div></div>
-          <div class="ls-stat"><div class="ls-stat-val">{{LS_SHARES}}</div><div class="ls-stat-lbl">Shares</div></div>
-          <div class="ls-stat"><div class="ls-stat-val">{{LS_PROFILE_VISITS}}</div><div class="ls-stat-lbl">Profile Visits</div></div>
-        </div>
+    <div class="c2b-estimate">
+      <p class="c2b-panel-label">Conservative business estimate</p>
+      <p class="c2b-lead">Based on typical patterns for {{C2B_VERTICAL}}, June&rsquo;s {{C2B_TAPS}} bio link taps translated to an estimated <b>{{C2B_CUSTOMERS}} new customers</b> in your near-term pipeline.</p>
+      <div class="c2b-grid">
+        <div class="c2b-cell"><span class="c2b-cell-lbl">Typical timeline</span><span class="c2b-cell-val">{{C2B_TIMELINE}}</span><span class="c2b-cell-note">{{C2B_TIMELINE_NOTE}}</span></div>
+        <div class="c2b-cell"><span class="c2b-cell-lbl">Est. first-year value</span><span class="c2b-cell-val">{{C2B_FIRST_YEAR}}</span><span class="c2b-cell-note">what you&rsquo;d typically expect within 12 months</span></div>
+        <div class="c2b-cell"><span class="c2b-cell-lbl">Est. lifetime value</span><span class="c2b-cell-val">{{C2B_LTV}}</span><span class="c2b-cell-note">{{C2B_LTV_NOTE}}</span></div>
       </div>
-
-      <!-- LAYER 2 — Conversion path taps. POPULATED variant shown; if no UTM data, swap inner for the .empty variant below. -->
-      <div class="ls-layer">
-        <div class="ls-layer-top"><span class="ls-layer-num">2</span><span class="ls-layer-title">Conversion path taps</span><span class="ls-layer-sub">UTM-tracked links</span></div>
-        <div class="ls-stats">
-          <div class="ls-stat"><div class="ls-stat-val">{{LS_LINK_TAPS}}</div><div class="ls-stat-lbl">Link Taps</div></div>
-          <div class="ls-stat"><div class="ls-stat-val">{{LS_CTR}}%</div><div class="ls-stat-lbl">CTR</div></div>
-        </div>
-        <!-- EMPTY-STATE variant (use instead of .ls-stats above when the client has no UTM data yet):
-        <p class="ls-empty-prompt">UTM tracking rolls out this quarter. We&rsquo;ll surface the data here as soon as the links are tagged.</p>
-        and add class "empty" to this .ls-layer. -->
-      </div>
-
-      <!-- LAYER 3 — Self-reported attribution (HDYHAU). Default state = EMPTY soft-prompt (most clients).
-           If the client has HDYHAU data, replace the prompt with an .ls-stats block and drop class "empty". -->
-      <div class="ls-layer empty">
-        <div class="ls-layer-top"><span class="ls-layer-num">3</span><span class="ls-layer-title">Self-reported attribution</span><span class="ls-layer-sub">&ldquo;How did you hear about us?&rdquo;</span></div>
-        <p class="ls-empty-prompt">Adding the &ldquo;How did you hear about us?&rdquo; question to your intake form? We&rsquo;ll fold the responses in here.</p>
-      </div>
+      <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
     </div>
   </section>
 </div>

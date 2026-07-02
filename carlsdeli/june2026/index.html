@@ -164,6 +164,29 @@
     .gt-side{display:flex;flex-direction:column;align-items:flex-end;gap:.625rem;flex-shrink:0}
     .gt-spark-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
     @media(max-width:640px){.gt-row{grid-template-columns:1fr}.gt-side{flex-direction:row;align-items:center;justify-content:space-between;width:100%}}
+    /* ── GOAL TRACKER composite score (v8.1) ── */
+    .gt-score-pts{font-size:1.25rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+    .gt-score-max{font-size:.8125rem;font-weight:600;color:var(--muted)}
+    /* ── CONTENT-TO-BUSINESS IMPACT (v8.1) ── */
+    .c2b-funnel{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.75rem;margin-bottom:1.25rem}
+    .c2b-panel-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:1rem}
+    .c2b-steps{display:flex;flex-direction:column;gap:.75rem}
+    .c2b-step{display:flex;align-items:baseline;gap:.875rem;padding-bottom:.75rem;border-bottom:1px dashed var(--border)}
+    .c2b-step:last-child{border-bottom:none;padding-bottom:0}
+    .c2b-step-num{font-size:1.375rem;font-weight:800;color:var(--text);letter-spacing:-.02em;min-width:5.5rem;flex-shrink:0}
+    .c2b-step.hi .c2b-step-num{color:var(--bofu)}
+    .c2b-step-txt{font-size:.9375rem;color:var(--muted);line-height:1.5}
+    .c2b-estimate{background:linear-gradient(135deg,#0f1730,#11254f);border-radius:var(--radius);padding:1.75rem;border:1px solid rgba(255,255,255,.06)}
+    .c2b-estimate .c2b-panel-label{color:var(--hl)}
+    .c2b-lead{font-size:1rem;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:1.25rem}
+    .c2b-lead b{color:#fff}
+    .c2b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem}
+    .c2b-cell{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem}
+    .c2b-cell-lbl{display:block;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+    .c2b-cell-val{display:block;font-size:1.125rem;font-weight:800;color:var(--hl);letter-spacing:-.01em;line-height:1.2}
+    .c2b-cell-note{display:block;font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.3rem;line-height:1.4}
+    .c2b-disclaimer{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.6;font-style:italic;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
+    @media(max-width:640px){.c2b-grid{grid-template-columns:1fr}}
 
     /* ── PERFORMANCE DASHBOARD ── */
     .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
@@ -398,7 +421,7 @@
     <a class="report-nav-link" href="#score-section">Score</a>
     <a class="report-nav-link" href="#goals-title">Goals</a>
     <a class="report-nav-link" href="#perf-title">Performance</a>
-    <a class="report-nav-link" href="#leadsignal-title">Lead Signal</a>
+    <a class="report-nav-link" href="#impact-title">Impact</a>
     <a class="report-nav-link" href="#posts-title">Top Posts</a>
     <a class="report-nav-link" href="#allposts-title">All Posts</a>
     <a class="report-nav-link" href="#tests-title">Tests</a>
@@ -497,49 +520,49 @@
   <section class="sec" aria-labelledby="goals-title">
     <p class="sec-label">Business Goals</p>
     <h2 class="sec-title" id="goals-title">Goal Tracker</h2>
-    <p class="sec-sub">The three goals we set for Carl's Deli, tracked against a real baseline and target. Each bar shows where the month landed on the path to the goal.</p>
+    <p class="sec-sub">Your three funnel stages, scored as a weighted composite of the metrics in each. Metrics that predict real buyer behavior, like saves and click-through, carry more weight than raw reach.</p>
     <div class="gt-list">
-      <!-- One .gt-row per goal (3 total). Quantified data lands from the Goals Quantification Pass. -->
+      <!-- One .gt-row per funnel stage. Bar = weighted composite % of stage potential (Scoring Framework v1.3 tier weights). -->
       <div class="gt-row tofu">
         <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel</span></div>
+          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div>
           <p class="gt-title">Build Local Brand Awareness in Cincinnati</p>
           <div class="gt-bct">
-            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="100" style="width:0%"></div></div>
-            <span class="gt-pct">100%</span>
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="85" style="width:0%"></div></div>
+            <span class="gt-pct">85%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>First month, baseline establishing</b></span><span class="seg">Now <b>147,499</b></span><span class="seg">Target <b>60,000/mo</b></span></div>
-          <p class="gt-narr">June is your baseline month. Awareness performance this month sets the reference point we build from. The Q3 target lifts monthly reach to 60K views through local cultural content, neighborhood storytelling, and the catering-anchor strategy.</p>
+          <div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div>
+          <p class="gt-narr">Your awareness stage scored 85% of its potential this month. New followers and shares hit their ceiling, and views landed on track. For a first month, the top of your funnel is firing.</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span></div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">2.35<span class="gt-score-max">/2.75</span></span></div>
       </div>
 
       <div class="gt-row mofu">
         <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel</span></div>
+          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div>
           <p class="gt-title">Build Community Engagement &amp; Deepen Local Connection</p>
           <div class="gt-bct">
-            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="100" style="width:0%"></div></div>
-            <span class="gt-pct">100%</span>
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="56" style="width:0%"></div></div>
+            <span class="gt-pct">56%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>First month, baseline establishing</b></span><span class="seg">Now <b>255</b></span><span class="seg">Target <b>120/mo</b></span></div>
-          <p class="gt-narr">June establishes your save baseline. Saves are the pre-purchase signal we optimize for. When someone bookmarks your content, they are often thinking about an order or a catering ask. The Q3 target builds saves to 120 monthly through the save-worthy formats locked in your strategy.</p>
+          <div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div>
+          <p class="gt-narr">Your engagement stage scored 56%. Saves and profile visits are pulling their weight, and retention is the lever holding the number down. Lifting retention is the fastest way to raise this stage in July.</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span></div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">3.1<span class="gt-score-max">/5.5</span></span></div>
       </div>
 
       <div class="gt-row bofu">
         <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel</span></div>
+          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div>
           <p class="gt-title">Generate Qualified Catering Lead Signal</p>
           <div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="100" style="width:0%"></div></div>
             <span class="gt-pct">100%</span>
           </div>
-          <div class="gt-bct"><span class="seg">Baseline <b>First month, baseline establishing</b></span><span class="seg">Now <b>263</b></span><span class="seg">Target <b>80 bio link taps/mo</b></span></div>
-          <p class="gt-narr">Catering is your priority lever. June set the baseline at 263 total bio link taps. Instagram reports link taps as a single total across every link in your bio (full menu, online order, and catering), so this is the combined interest signal, not catering alone. Per-link attribution is a Q3 build (Bitly per-link tracking) that will isolate catering taps by your August strategic review. We&rsquo;ll recalibrate the Q3 target then with two to three months of trend data.</p>
+          <div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div>
+          <p class="gt-narr">Your conversion stage maxed out at 100%. Bio link taps, click-through, and profile conversion all cleared their targets. The bottom of your funnel is your strongest stage this month.</p>
         </div>
-        <div class="gt-side"><span class="gt-spark-lbl">3-mo trend</span></div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">5.0<span class="gt-score-max">/5.0</span></span></div>
       </div>
     </div>
   </section>
@@ -659,45 +682,34 @@
   </section>
 </div>
 
-<!-- ═══ LEAD SIGNAL (Section 5, Change 4) ═══ -->
+<!-- ═══ CONTENT-TO-BUSINESS IMPACT (Section 5, v8.1) ═══ -->
 <div class="wrap">
-  <section class="sec" aria-labelledby="leadsignal-title">
-    <p class="sec-label">How the work turns into leads</p>
-    <h2 class="sec-title" id="leadsignal-title">Lead Signal</h2>
-    <p class="sec-sub">The signals that predict buying behavior, layered from what we can see on-platform to what your customers tell you directly.</p>
+  <section class="sec" aria-labelledby="impact-title">
+    <p class="sec-label">From attention to business</p>
+    <h2 class="sec-title" id="impact-title">Content to Business Impact</h2>
+    <p class="sec-sub">How this month&rsquo;s attention maps to business signal, from what we can see on-platform to a conservative estimate of what it&rsquo;s worth.</p>
 
-    <!-- POV block (locked 3-sentence copy) -->
-    <div class="ls-pov">
-      <p class="ls-pov-label">How we measure leads in organic</p>
-      <p class="ls-pov-text">Most agencies sell last-click attribution. We don&rsquo;t, because organic social doesn&rsquo;t work that way. We measure leads through the signals that predict buying behavior: who&rsquo;s saving your content, who&rsquo;s tapping through, and who&rsquo;s telling you they found you through us.</p>
+    <!-- PANEL 1 — The funnel this month -->
+    <div class="c2b-funnel">
+      <p class="c2b-panel-label">The funnel this month</p>
+      <div class="c2b-steps">
+        <div class="c2b-step"><span class="c2b-step-num">147,499</span><span class="c2b-step-txt">people saw your content</span></div>
+        <div class="c2b-step"><span class="c2b-step-num">2,024</span><span class="c2b-step-txt">tapped through to look closer</span></div>
+        <div class="c2b-step"><span class="c2b-step-num">255</span><span class="c2b-step-txt">bookmarked content to reference later</span></div>
+        <div class="c2b-step hi"><span class="c2b-step-num">263</span><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span></div>
+      </div>
     </div>
 
-    <div class="ls-layers">
-      <!-- LAYER 1 — Direct interest signals (always populates) -->
-      <div class="ls-layer">
-        <div class="ls-layer-top"><span class="ls-layer-num">1</span><span class="ls-layer-title">Direct interest signals</span><span class="ls-layer-sub">On-platform &middot; this month</span></div>
-        <div class="ls-stats">
-          <div class="ls-stat"><div class="ls-stat-val">255</div><div class="ls-stat-lbl">Saves</div></div>
-          <div class="ls-stat"><div class="ls-stat-val">833</div><div class="ls-stat-lbl">Shares</div></div>
-          <div class="ls-stat"><div class="ls-stat-val">2,024</div><div class="ls-stat-lbl">Profile Visits</div></div>
-        </div>
+    <!-- PANEL 2 — Conservative business estimate (two-tier) -->
+    <div class="c2b-estimate">
+      <p class="c2b-panel-label">Conservative business estimate</p>
+      <p class="c2b-lead">Based on typical patterns for a Cincinnati deli with catering priority, June&rsquo;s 263 bio link taps translated to an estimated <b>3&ndash;6 new customers</b> in your near-term pipeline.</p>
+      <div class="c2b-grid">
+        <div class="c2b-cell"><span class="c2b-cell-lbl">Typical timeline</span><span class="c2b-cell-val">2&ndash;8 weeks</span><span class="c2b-cell-note">catering. 1&ndash;2 weeks for a food order.</span></div>
+        <div class="c2b-cell"><span class="c2b-cell-lbl">Est. first-year value</span><span class="c2b-cell-val">$1,500&ndash;$5,400</span><span class="c2b-cell-note">what you&rsquo;d typically expect within 12 months</span></div>
+        <div class="c2b-cell"><span class="c2b-cell-lbl">Est. lifetime value</span><span class="c2b-cell-val">$4,350&ndash;$8,700</span><span class="c2b-cell-note">across the full relationship, about two years</span></div>
       </div>
-
-      <!-- LAYER 2 — Conversion path taps. POPULATED variant shown; if no UTM data, swap inner for the .empty variant below. -->
-      <div class="ls-layer empty">
-        <div class="ls-layer-top"><span class="ls-layer-num">2</span><span class="ls-layer-title">Conversion path taps</span><span class="ls-layer-sub">UTM-tracked links</span></div>
-        <p class="ls-empty-prompt">UTM tracking rolls out this quarter. We&rsquo;ll surface the data here as soon as the links are tagged.</p>
-        <!-- EMPTY-STATE variant (use instead of .ls-stats above when the client has no UTM data yet):
-        <p class="ls-empty-prompt">UTM tracking rolls out this quarter. We&rsquo;ll surface the data here as soon as the links are tagged.</p>
-        and add class "empty" to this .ls-layer. -->
-      </div>
-
-      <!-- LAYER 3 — Self-reported attribution (HDYHAU). Default state = EMPTY soft-prompt (most clients).
-           If the client has HDYHAU data, replace the prompt with an .ls-stats block and drop class "empty". -->
-      <div class="ls-layer empty">
-        <div class="ls-layer-top"><span class="ls-layer-num">3</span><span class="ls-layer-title">Self-reported attribution</span><span class="ls-layer-sub">&ldquo;How did you hear about us?&rdquo;</span></div>
-        <p class="ls-empty-prompt">Adding the &ldquo;How did you hear about us?&rdquo; question to your intake form? We&rsquo;ll fold the responses in here.</p>
-      </div>
+      <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
     </div>
   </section>
 </div>
