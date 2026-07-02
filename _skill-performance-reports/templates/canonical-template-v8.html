@@ -54,7 +54,7 @@
     .loom-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
     /* ── HERO ── */
-    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 2rem;position:relative;overflow:hidden}
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 4rem;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(700px,120vw);height:min(700px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
     .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
     .hero-logo{height:28px;width:auto;margin-bottom:2rem}
@@ -187,6 +187,20 @@
     .c2b-cell-note{display:block;font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.3rem;line-height:1.4}
     .c2b-disclaimer{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.6;font-style:italic;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
     @media(max-width:640px){.c2b-grid{grid-template-columns:1fr}}
+    /* ── v8.2 Content-to-Business Impact estimate hero ── */
+    .c2b-est-hero{text-align:center;padding:.25rem 0 1rem}
+    .c2b-est-num{font-size:clamp(3rem,10vw,4.5rem);font-weight:800;color:var(--hl);line-height:1;letter-spacing:-.04em}
+    .c2b-est-num-lbl{font-size:.9375rem;color:rgba(255,255,255,.85);margin-top:.6rem;font-weight:600;line-height:1.4}
+    .c2b-est-sub{font-size:.8125rem;color:rgba(255,255,255,.55);margin:.6rem auto 0;line-height:1.55;max-width:460px}
+    .c2b-timeline-badge{display:flex;align-items:center;justify-content:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.65rem 1rem;font-size:.8125rem;color:rgba(255,255,255,.8);margin:0 0 1rem;text-align:center}
+    .c2b-timeline-badge .ic{color:var(--hl);flex-shrink:0}
+    .c2b-val-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .c2b-val-card{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem;text-align:center}
+    .c2b-est-note{font-size:.8125rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:1rem}
+    @media(max-width:480px){.c2b-val-cards{grid-template-columns:1fr}}
+    /* ── v8.2 CTA restructure ── */
+    .cta-discuss{font-size:.875rem;color:var(--hl);background:rgba(226,237,122,.1);border:1px solid rgba(226,237,122,.2);border-radius:6px;padding:.75rem 1rem;margin-top:.875rem;line-height:1.5;font-weight:600}
+    .cta-supp-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:1.5rem 0 .75rem}
 
     /* ── PERFORMANCE DASHBOARD ── */
     .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
@@ -355,7 +369,7 @@
     .cta-sub{font-size:.9375rem;color:rgba(255,255,255,.55);margin-bottom:1.75rem;max-width:560px;line-height:1.65}
     .cta-primary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.22);border-radius:10px;padding:1.375rem;margin-bottom:1.5rem;position:relative;z-index:1}
     .cta-primary-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
-    .cta-primary-obj{font-size:1.0625rem;font-weight:700;color:#fff;margin-bottom:.75rem}
+    .cta-primary-obj{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.75rem;letter-spacing:-.01em}
     .cta-copy{font-size:.9375rem;font-style:italic;color:rgba(255,255,255,.85);padding:.75rem 1rem;background:rgba(255,255,255,.06);border-radius:6px;border-left:3px solid var(--hl);margin-bottom:.75rem}
     .cta-rationale{font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.65}
     .cta-funnel-list{list-style:none;display:flex;flex-direction:column;gap:.625rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1)}
@@ -396,7 +410,7 @@
     /* ═══ MOBILE (≤480px) ═══ */
     @media(max-width:480px){
       .report-nav-link{padding:.5rem .6rem;font-size:.625rem}
-      .hero{padding:2rem 1rem 1.5rem}
+      .hero{padding:2rem 1rem 3rem}
       .hero-top-row{flex-direction:column;gap:.5rem}
       .paired-hero{grid-template-columns:1fr}
       .score-wrap{margin:-2rem auto 1.25rem;padding:0 1rem}
@@ -743,12 +757,19 @@
 
     <div class="c2b-estimate">
       <p class="c2b-panel-label">Conservative business estimate</p>
-      <p class="c2b-lead">Based on typical patterns for {{C2B_VERTICAL}}, June&rsquo;s {{C2B_TAPS}} bio link taps translated to an estimated <b>{{C2B_CUSTOMERS}} new customers</b> in your near-term pipeline.</p>
-      <div class="c2b-grid">
-        <div class="c2b-cell"><span class="c2b-cell-lbl">Typical timeline</span><span class="c2b-cell-val">{{C2B_TIMELINE}}</span><span class="c2b-cell-note">{{C2B_TIMELINE_NOTE}}</span></div>
-        <div class="c2b-cell"><span class="c2b-cell-lbl">Est. first-year value</span><span class="c2b-cell-val">{{C2B_FIRST_YEAR}}</span><span class="c2b-cell-note">what you&rsquo;d typically expect within 12 months</span></div>
-        <div class="c2b-cell"><span class="c2b-cell-lbl">Est. lifetime value</span><span class="c2b-cell-val">{{C2B_LTV}}</span><span class="c2b-cell-note">{{C2B_LTV_NOTE}}</span></div>
+      <!-- v8.2: new-customers number is the visual hero. THIN-VOLUME variant (Spark / < ~50 taps):
+           replace this whole block with a single <p class="c2b-est-note">{{C2B_THIN_PARAGRAPH}}</p>. -->
+      <div class="c2b-est-hero">
+        <div class="c2b-est-num">{{C2B_CUSTOMERS}}</div>
+        <p class="c2b-est-num-lbl">new customer signals in your near-term pipeline</p>
+        <p class="c2b-est-sub">{{C2B_EST_SUB}}</p>
       </div>
+      <div class="c2b-timeline-badge"><span class="ic">&#9202;</span>Typical timeline: {{C2B_TIMELINE}}</div>
+      <div class="c2b-val-cards">
+        <div class="c2b-val-card"><span class="c2b-cell-lbl">Est. first-year value</span><span class="c2b-cell-val">{{C2B_FIRST_YEAR}}</span></div>
+        <div class="c2b-val-card"><span class="c2b-cell-lbl">Est. lifetime value</span><span class="c2b-cell-val">{{C2B_LTV}}</span></div>
+      </div>
+      <p class="c2b-est-note">{{C2B_EST_NOTE}}</p>
       <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
     </div>
   </section>
@@ -775,7 +796,6 @@
       <button class="ap-chip" data-fmt="reel">Reels</button>
       <button class="ap-chip" data-fmt="carousel">Carousels</button>
       <button class="ap-chip" data-fmt="static">Static</button>
-      <button class="ap-chip" data-fmt="story">Stories</button>
       <div class="ap-mobile-sort">
         <select id="ap-mobile-sort-select" aria-label="Sort posts">
           <option value="date|desc">Newest first</option>
@@ -831,6 +851,7 @@
       </ul>
     </div>
 
+    <!-- v8.2: target 3-4 total items here (1 pattern, 1 watching, 1-2 tactical tests). Quarterly-not-monthly discipline. -->
     <!-- Top Performer Patterns (1-2) -->
     <div class="tw-group patterns">
       <p class="tw-group-label"><span class="ic"></span>Top Performer Patterns</p>
@@ -864,20 +885,22 @@
 <!-- ═══ NEXT MONTH CTAs (Section 9) ═══ -->
 <div class="wrap">
   <div class="cta-section" role="region" aria-labelledby="cta-title">
-    <p class="cta-eyebrow">{{NEXT_MONTH}} CTA Plan</p>
+    <p class="cta-eyebrow">{{NEXT_MONTH}} Call-to-Action Plan</p>
     <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
-    <p class="cta-sub">The {{NEXT_MONTH}} call-to-action focus and the funnel-stage CTAs we&rsquo;ll be deploying.</p>
+    <p class="cta-sub">One primary call to action for {{NEXT_MONTH}}, with three supporting CTAs across the funnel that feed it.</p>
     <div class="cta-primary">
-      <p class="cta-primary-label">&#9733; Primary {{NEXT_MONTH}} CTA</p>
+      <p class="cta-primary-label">&#9733; Primary CTA</p>
       <p class="cta-primary-obj">{{CTA_PRIMARY_OBJ}}</p>
       <div class="cta-copy">{{CTA_PRIMARY_COPY}}</div>
       <p class="cta-rationale">{{CTA_PRIMARY_RATIONALE}}</p>
-      <ul class="cta-funnel-list">
-        <li class="cta-funnel-li"><span class="cta-stage-tag tofu">TOFU</span><span>{{CTA_TOFU}}</span></li>
-        <li class="cta-funnel-li"><span class="cta-stage-tag mofu">MOFU</span><span>{{CTA_MOFU}}</span></li>
-        <li class="cta-funnel-li"><span class="cta-stage-tag bofu">BOFU</span><span>{{CTA_BOFU}}</span></li>
-      </ul>
+      <p class="cta-discuss">This CTA is your monthly discussion point. Should we hold it or adjust based on the performance data above?</p>
     </div>
+    <p class="cta-supp-label">Supporting CTAs</p>
+    <ul class="cta-funnel-list">
+      <li class="cta-funnel-li"><span class="cta-stage-tag tofu">TOFU</span><span>{{CTA_TOFU}}</span></li>
+      <li class="cta-funnel-li"><span class="cta-stage-tag mofu">MOFU</span><span>{{CTA_MOFU}}</span></li>
+      <li class="cta-funnel-li"><span class="cta-stage-tag bofu">BOFU</span><span>{{CTA_BOFU}}</span></li>
+    </ul>
   </div>
 </div>
 
@@ -936,7 +959,7 @@
         return (av-bv)*dir;
       });
     }
-    function visible(){return ALL_POSTS.filter(function(p){return state.filter==='all'||p.format===state.filter;});}
+    function visible(){return ALL_POSTS.filter(function(p){return p.format!=='story' && (state.filter==='all'||p.format===state.filter);});}
 
     function render(){
       var rows=sorted(visible());
