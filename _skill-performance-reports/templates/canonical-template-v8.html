@@ -227,6 +227,11 @@
     .c2b-method-body p{margin-bottom:.5rem}
     .c2b-method-body b{color:rgba(255,255,255,.85)}
     @media(max-width:560px){.c2b-cust-cards{grid-template-columns:1fr}}
+    /* ── v8.3.1 point estimate + confidence band ── */
+    .c2b-cc-range{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.3rem;font-style:italic}
+    .c2b-combined-block{margin-bottom:1rem}
+    .c2b-combined-block .c2b-combined{margin-bottom:.35rem}
+    .c2b-combined-sub{text-align:center;font-size:.75rem;color:rgba(255,255,255,.5)}
     /* ── v8.2 CTA restructure ── */
     .cta-discuss{font-size:.875rem;color:var(--hl);background:rgba(226,237,122,.1);border:1px solid rgba(226,237,122,.2);border-radius:6px;padding:.75rem 1rem;margin-top:.875rem;line-height:1.5;font-weight:600}
     .cta-supp-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:1.5rem 0 .75rem}
@@ -794,11 +799,14 @@
       <div class="c2b-cust-cards">
         <div class="c2b-cc">
           <div class="c2b-cc-eyebrow">{{C2B_CARD_A_TITLE}}</div>
+          <!-- v8.3.1: hero = point estimate (midpoint); range shown as subtext beneath. -->
           <div class="c2b-cc-num">{{C2B_CARD_A_NUM}}</div>
           <p class="c2b-cc-lbl">{{C2B_CARD_A_LBL}}</p>
+          <p class="c2b-cc-range">{{C2B_CARD_A_RANGE}}</p>
           <div class="c2b-cc-meta">
             <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">{{C2B_CARD_A_TIMELINE}}</span></div>
             <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">{{C2B_CARD_A_12MO}}</span></div>
+            <span class="c2b-cc-sub">{{C2B_CARD_A_12MO_RANGE}}</span>
             <span class="c2b-cc-sub">{{C2B_CARD_A_SUB}}</span>
           </div>
         </div>
@@ -806,18 +814,25 @@
           <div class="c2b-cc-eyebrow">{{C2B_CARD_B_TITLE}}</div>
           <div class="c2b-cc-num">{{C2B_CARD_B_NUM}}</div>
           <p class="c2b-cc-lbl">{{C2B_CARD_B_LBL}}</p>
+          <p class="c2b-cc-range">{{C2B_CARD_B_RANGE}}</p>
           <div class="c2b-cc-meta">
             <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">{{C2B_CARD_B_TIMELINE}}</span></div>
             <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">{{C2B_CARD_B_12MO}}</span></div>
+            <span class="c2b-cc-sub">{{C2B_CARD_B_12MO_RANGE}}</span>
             <span class="c2b-cc-sub">{{C2B_CARD_B_SUB}}</span>
           </div>
         </div>
       </div>
-      <div class="c2b-combined"><span class="c2b-combined-lbl">Combined 12-month signal for {{REPORT_MONTH}}</span><span class="c2b-combined-val">{{C2B_COMBINED}}</span></div>
+      <div class="c2b-combined-block">
+        <div class="c2b-combined"><span class="c2b-combined-lbl">Combined 12-month signal for {{REPORT_MONTH}}</span><span class="c2b-combined-val">{{C2B_COMBINED}}</span></div>
+        <p class="c2b-combined-sub">{{C2B_COMBINED_RANGE}}</p>
+      </div>
       <p class="c2b-est-note">{{C2B_EST_NOTE}}</p>
       <details class="c2b-method">
         <summary>How we got here</summary>
-        <div class="c2b-method-body">{{C2B_METHOD_BODY}}</div>
+        <div class="c2b-method-body">{{C2B_METHOD_BODY}}
+          <p>The headline number is a midpoint. The range beneath it reflects the uncertainty in conversion rates and customer mix. The midpoint gives you an expected impact to plan around; the range shows the honest spread. As Bitly per-link tracking and your own data land in Q3, both the midpoint and the range tighten.</p>
+        </div>
       </details>
       <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
     </div>
