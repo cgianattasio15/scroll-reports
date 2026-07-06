@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
   <meta name="theme-color" content="#151516">
+  <!-- Tier 3 client-data report: noindex + nofollow (CLAUDE.md §5 Security Tiering). -->
+  <meta name="robots" content="noindex, nofollow">
   <title>DEFINE Oakley &ndash; May 2026 | Scroll Media</title>
   <meta name="description" content="DEFINE Oakley May 2026 Instagram performance report. Score 7.7/10. Building Month. Lift Stage. Managed by Scroll Media.">
   <meta property="og:title" content="DEFINE Oakley, May 2026 Performance Report">
@@ -17,7 +19,7 @@
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     :root{
-      --shadow:#151516;--navy:#0e3387;--azure:#0e3387;--hl:#e2ed7a;
+      --shadow:#151516;--navy:#0e3387;--azure:#0e3387;--hl:#e2ed7a;--lime:#c8d94a;
       --lucid:#cbe9ff;--porcelain:#f2f3f4;--ghost:#f7f8fc;
       --text:#151516;--muted:#6b7280;--border:rgba(21,21,22,.09);
       --exceed:#7c3aed;--ontrack:#0e3387;--watch:#d97706;
@@ -25,10 +27,34 @@
       --radius:12px;--radius-sm:8px;
     }
     body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    /* Safety net: long unbroken strings (e.g. an unfilled {{TOKEN}} in a draft shell) wrap
+       instead of forcing horizontal overflow. No-op for real, short report values. */
+    .hero-inner,.score-card,.sec,.cta-section,.ls-pov,.gt-row,.followers-banner{overflow-wrap:anywhere}
     img{max-width:100%;height:auto;display:block}
     a{color:inherit;text-decoration:none}
     #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl));z-index:9999;transition:width .1s linear;pointer-events:none}
-    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 6rem;position:relative;overflow:hidden}
+
+    /* ── STICKY NAV ── */
+    .report-nav{position:sticky;top:0;z-index:100;background:#0b2a6e;border-bottom:2px solid #c8d94a;width:100%}
+    .report-nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+    .report-nav-inner::-webkit-scrollbar{display:none}
+    .report-nav-link{display:inline-block;padding:.625rem 1rem;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.7);white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;margin-bottom:-2px}
+    .report-nav-link:hover,.report-nav-link.active{color:#c8d94a;border-bottom-color:#c8d94a}
+    @media(max-width:700px){.report-nav-link{padding:.5rem .75rem;font-size:.6875rem}}
+
+    /* ── LOOM WALKTHROUGH (Change 7) ── */
+    /* Empty by default — renders NOTHING when no embed id is set. Chase pastes the
+       Loom share id into data-loom-id on .loom-embed to activate. */
+    .loom-band{background:#0a0f1e;display:none}
+    .loom-band.active{display:block}
+    .loom-inner{max-width:1100px;margin:0 auto;padding:1.75rem 1.25rem}
+    .loom-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .loom-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--hl)}
+    .loom-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:var(--radius);overflow:hidden;background:#11193a;border:1px solid rgba(255,255,255,.08)}
+    .loom-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 4rem;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(700px,120vw);height:min(700px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
     .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
     .hero-logo{height:28px;width:auto;margin-bottom:2rem}
@@ -40,27 +66,46 @@
     .hero h1{font-size:clamp(2.25rem,8vw,4.25rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.625rem}
     .hero h1 span{color:var(--hl)}
     .hero-meta{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
-    .hero-meta .dot{width:3px;height:3px;background:rgba(255,255,255,.3);border-radius:50%}
-    .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:.875rem;max-width:700px}
-    .hero-bullet{display:flex;align-items:flex-start;gap:.875rem;padding:.875rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px}
-    .hero-bullet-icon{width:22px;height:22px;background:rgba(226,237,122,.15);border:1px solid rgba(226,237,122,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
-    .hero-bullet-icon::after{content:'';width:6px;height:6px;background:var(--hl);border-radius:50%}
-    .hero-bullet-text{font-size:.9375rem;color:rgba(255,255,255,.82);line-height:1.55}
-    .hero-bullet-text strong{color:#fff;font-weight:700}
+    .hero-meta .dot{width:3px;height:3px;background:rgba(255,255,255,.3);border-radius:50%;align-self:center}
+
+    /* ── PAIRED HERO BLOCK (Change 1) ── */
+    .paired-hero{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem}
+    @media(max-width:760px){.paired-hero{grid-template-columns:1fr}}
+    .ph-panel{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:1.5rem 1.625rem;position:relative;overflow:hidden}
+    .ph-panel.score::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
+    .ph-panel.outcome::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#34d399)}
+    .ph-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.625rem}
+    .ph-bignum{font-size:clamp(2.75rem,9vw,3.75rem);font-weight:800;line-height:1;letter-spacing:-.04em;color:#fff}
+    .ph-bignum .unit{font-size:1.125rem;font-weight:400;color:rgba(255,255,255,.4)}
+    .ph-panel.score .ph-bignum{color:var(--hl)}
+    .ph-title{font-size:1rem;font-weight:700;color:#fff;margin:.5rem 0 .25rem}
+    .ph-delta{font-size:.875rem;font-weight:700;display:inline-block}
+    .ph-delta.up{color:#6ee7b7}.ph-delta.dn{color:#fca5a5}.ph-delta.fl{color:rgba(255,255,255,.55)}
+    .ph-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.875rem}
+    .ph-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.6875rem;font-weight:700;padding:.25rem .6rem;border-radius:5px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+    .ph-badge .bd{width:6px;height:6px;border-radius:50%}
+    .ph-badge.exceed .bd{background:#c4b5fd}.ph-badge.ontrack .bd{background:#7a9ad8}.ph-badge.watch .bd{background:#fbbf24}
+    .ph-outcome-sub{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.55;margin-top:.625rem}
+    .hero-summary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.2);border-left:3px solid var(--hl);border-radius:8px;padding:.875rem 1.125rem;font-size:.9375rem;color:rgba(255,255,255,.9);line-height:1.6}
+    .hero-summary strong{color:#fff}
+    .hero-method{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.5);line-height:1.55;max-width:680px;margin-top:1rem}
+
     .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
     .sec{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:2.25rem;margin:1.75rem 0;box-shadow:0 1px 6px rgba(21,21,22,.04)}
     @media(max-width:640px){.sec{padding:1.5rem 1.25rem}}
     .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.5rem}
     .sec-title{font-size:clamp(1.375rem,4.5vw,2rem);font-weight:800;line-height:1.15;color:var(--shadow);margin-bottom:.5rem;letter-spacing:-.02em}
     .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
-    .score-wrap{position:relative;z-index:10;margin:-4.5rem auto 1.75rem;padding:0 1.25rem}
+
+    /* ── SCORE CARD (Section 2) + QUARTERLY SNAPSHOT (Change 6) ── */
+    .score-wrap{position:relative;z-index:10;margin:-2.5rem auto 1.75rem;padding:0 1.25rem}
     .score-card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:0 4px 32px rgba(21,21,22,.14);border:1px solid var(--border);text-align:center;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
     .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
     .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
     .score-num{font-size:clamp(3.5rem,12vw,5rem);font-weight:800;color:var(--azure);line-height:1;letter-spacing:-.04em}
     .score-denom{font-size:1.375rem;color:var(--muted);font-weight:400}
     .score-title{font-size:1.125rem;font-weight:700;color:var(--text);margin:.375rem 0}
-    .score-delta{font-size:.9375rem;font-weight:700;margin-bottom:1.5rem;display:block}
+    .score-delta{font-size:.9375rem;font-weight:700;margin-bottom:1.25rem;display:block}
     .score-delta.up{color:#059669}.score-delta.dn{color:#dc2626}.score-delta.fl{color:#94a3b8}
     .score-badges{display:flex;justify-content:center;gap:.625rem;flex-wrap:wrap;margin-bottom:1.5rem}
     .score-badge{display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border-radius:6px;font-size:.75rem;font-weight:700}
@@ -78,6 +123,117 @@
     .ts.curr{color:var(--hl);font-size:.9375rem;font-weight:800}
     .tm{font-size:.6875rem;color:rgba(255,255,255,.35)}
     .tm.curr{color:rgba(255,255,255,.65);font-weight:600}
+    /* Dip-month locked line (Change 8 discipline) — render only when score drops >0.5 MoM */
+    .dip-line{display:none;font-size:.8125rem;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:.75rem 1rem;line-height:1.55;max-width:560px;margin:1.25rem auto 0;text-align:left}
+    .dip-line.active{display:block}
+    /* Quarterly snapshot block */
+    .qsnap{max-width:560px;margin:1.5rem auto 0;background:var(--ghost);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.375rem;text-align:left}
+    .qsnap-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.875rem}
+    .qsnap-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure)}
+    .qsnap-traj{font-size:.6875rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.25rem .6rem;border-radius:5px}
+    .qsnap-traj.strong,.qsnap-traj.steady{background:rgba(5,150,105,.12);color:#065f46}
+    .qsnap-traj.building,.qsnap-traj.recovering{background:rgba(14,51,135,.1);color:var(--azure)}
+    .qsnap-traj.soft,.qsnap-traj.mixed{background:rgba(245,158,11,.12);color:#92400e}
+    .qsnap-row{display:flex;align-items:center;gap:1.25rem;margin-bottom:.875rem;flex-wrap:wrap}
+    .qsnap-spark{flex-shrink:0}
+    .qsnap-avg{display:flex;flex-direction:column;gap:.1rem}
+    .qsnap-avg .v{font-size:1.5rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em}
+    .qsnap-avg .l{font-size:.6875rem;color:var(--muted);font-weight:600}
+    .qsnap-narr{font-size:.8125rem;color:var(--muted);line-height:1.6}
+
+    /* ── GOAL TRACKER (Change 2) ── */
+    .gt-list{display:flex;flex-direction:column;gap:1.125rem}
+    .gt-row{border:1px solid var(--border);border-radius:var(--radius);padding:1.375rem 1.5rem;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:1rem 1.5rem;align-items:center}
+    .gt-row::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
+    .gt-row.tofu::before{background:var(--tofu)}.gt-row.mofu::before{background:var(--mofu)}.gt-row.bofu::before{background:var(--bofu)}
+    .gt-main{min-width:0}
+    .gt-funnel{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+    .gt-dot{width:8px;height:8px;border-radius:50%}
+    .gt-dot.tofu{background:var(--tofu)}.gt-dot.mofu{background:var(--mofu)}.gt-dot.bofu{background:var(--bofu)}
+    .gt-funnel-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .gt-title{font-size:1.0625rem;font-weight:800;color:var(--text);line-height:1.25;letter-spacing:-.01em;margin-bottom:.625rem}
+    .gt-bct{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
+    .gt-bar-track{flex:1;height:10px;background:var(--porcelain);border-radius:5px;overflow:hidden}
+    .gt-bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .gt-bar-fill.lime{background:linear-gradient(90deg,#65a30d,var(--lime))}
+    .gt-pct{font-size:1.0625rem;font-weight:800;color:var(--text);letter-spacing:-.02em;flex-shrink:0;min-width:3rem;text-align:right}
+    .gt-bct{display:flex;gap:1.25rem;margin-bottom:.5rem;flex-wrap:wrap}
+    .gt-bct .seg{font-size:.75rem;color:var(--muted)}
+    .gt-bct .seg b{color:var(--text);font-weight:700}
+    .gt-narr{font-size:.8125rem;color:var(--muted);line-height:1.55}
+    .gt-side{display:flex;flex-direction:column;align-items:flex-end;gap:.625rem;flex-shrink:0}
+    .gt-spark-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+    @media(max-width:640px){.gt-row{grid-template-columns:1fr}.gt-side{flex-direction:row;align-items:center;justify-content:space-between;width:100%}}
+    /* ── GOAL TRACKER composite score (v8.1) ── */
+    .gt-score-pts{font-size:1.25rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+    .gt-score-max{font-size:.8125rem;font-weight:600;color:var(--muted)}
+    /* ── CONTENT-TO-BUSINESS IMPACT (v8.1) ── */
+    .c2b-funnel{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.75rem;margin-bottom:1.25rem}
+    .c2b-panel-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:1rem}
+    .c2b-steps{display:flex;flex-direction:column;gap:.75rem}
+    .c2b-step{display:flex;align-items:baseline;gap:.875rem;padding-bottom:.75rem;border-bottom:1px dashed var(--border)}
+    .c2b-step:last-child{border-bottom:none;padding-bottom:0}
+    .c2b-step-num{font-size:1.375rem;font-weight:800;color:var(--text);letter-spacing:-.02em;min-width:5.5rem;flex-shrink:0}
+    .c2b-step.hi .c2b-step-num{color:var(--bofu)}
+    .c2b-step-txt{font-size:.9375rem;color:var(--muted);line-height:1.5}
+    .c2b-estimate{background:linear-gradient(135deg,#0f1730,#11254f);border-radius:var(--radius);padding:1.75rem;border:1px solid rgba(255,255,255,.06)}
+    .c2b-estimate .c2b-panel-label{color:var(--hl)}
+    .c2b-lead{font-size:1rem;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:1.25rem}
+    .c2b-lead b{color:#fff}
+    .c2b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem}
+    .c2b-cell{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem}
+    .c2b-cell-lbl{display:block;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+    .c2b-cell-val{display:block;font-size:1.125rem;font-weight:800;color:var(--hl);letter-spacing:-.01em;line-height:1.2}
+    .c2b-cell-note{display:block;font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.3rem;line-height:1.4}
+    .c2b-disclaimer{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.6;font-style:italic;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
+    @media(max-width:640px){.c2b-grid{grid-template-columns:1fr}}
+    /* ── v8.2 Content-to-Business Impact estimate hero ── */
+    .c2b-est-hero{text-align:center;padding:.25rem 0 1rem}
+    .c2b-est-num{font-size:clamp(3rem,10vw,4.5rem);font-weight:800;color:var(--hl);line-height:1;letter-spacing:-.04em}
+    .c2b-est-num-lbl{font-size:.9375rem;color:rgba(255,255,255,.85);margin-top:.6rem;font-weight:600;line-height:1.4}
+    .c2b-est-sub{font-size:.8125rem;color:rgba(255,255,255,.55);margin:.6rem auto 0;line-height:1.55;max-width:460px}
+    .c2b-timeline-badge{display:flex;align-items:center;justify-content:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.65rem 1rem;font-size:.8125rem;color:rgba(255,255,255,.8);margin:0 0 1rem;text-align:center}
+    .c2b-timeline-badge .ic{color:var(--hl);flex-shrink:0}
+    .c2b-val-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .c2b-val-card{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem;text-align:center}
+    .c2b-est-note{font-size:.8125rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:1rem}
+    @media(max-width:480px){.c2b-val-cards{grid-template-columns:1fr}}
+    /* ── v8.3 analogy badges (Panel 1) ── */
+    .c2b-step{align-items:flex-start}
+    .c2b-step-main{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+    .c2b-step-badge{display:inline-block;font-size:.72rem;color:#475569;background:rgba(14,51,135,.05);border:1px solid rgba(14,51,135,.08);border-radius:20px;padding:.2rem .65rem;line-height:1.4;width:fit-content;max-width:100%}
+    /* ── v8.3 two customer-type cards (Panel 2) ── */
+    .c2b-cust-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .c2b-cc{background:rgba(255,255,255,.05);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;display:flex;flex-direction:column}
+    .c2b-cc-eyebrow{font-size:.625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem}
+    .c2b-cc-num{font-size:clamp(2.5rem,8vw,3.25rem);font-weight:800;color:var(--hl);line-height:1;letter-spacing:-.03em}
+    .c2b-cc-lbl{font-size:.8125rem;color:rgba(255,255,255,.8);margin-top:.5rem;font-weight:600;line-height:1.4}
+    .c2b-cc-meta{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);text-align:left;display:flex;flex-direction:column;gap:.5rem}
+    .c2b-cc-row{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
+    .c2b-cc-mlbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5)}
+    .c2b-cc-mval{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.85);text-align:right}
+    .c2b-cc-mval.big{font-size:1.0625rem;font-weight:800;color:var(--hl)}
+    .c2b-cc-sub{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.4}
+    .c2b-combined{display:flex;align-items:baseline;justify-content:center;gap:.75rem;flex-wrap:wrap;background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.2);border-radius:8px;padding:.875rem 1.25rem;margin-bottom:1rem;text-align:center}
+    .c2b-combined-lbl{font-size:.8125rem;color:rgba(255,255,255,.7);font-weight:600}
+    .c2b-combined-val{font-size:1.375rem;font-weight:800;color:var(--hl);letter-spacing:-.01em}
+    .c2b-method{margin-bottom:1rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;overflow:hidden}
+    .c2b-method summary{cursor:pointer;font-size:.8125rem;font-weight:700;color:var(--hl);padding:.7rem 1rem;list-style:none}
+    .c2b-method summary::-webkit-details-marker{display:none}
+    .c2b-method summary::before{content:'\25B8  ';color:rgba(255,255,255,.5)}
+    .c2b-method[open] summary::before{content:'\25BE  '}
+    .c2b-method-body{padding:0 1rem 1rem;font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.6}
+    .c2b-method-body p{margin-bottom:.5rem}
+    .c2b-method-body b{color:rgba(255,255,255,.85)}
+    @media(max-width:560px){.c2b-cust-cards{grid-template-columns:1fr}}
+    /* ── v8.3.1 point estimate + confidence band ── */
+    .c2b-cc-range{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.3rem;font-style:italic}
+    .c2b-combined-block{margin-bottom:1rem}
+    .c2b-combined-block .c2b-combined{margin-bottom:.35rem}
+    .c2b-combined-sub{text-align:center;font-size:.75rem;color:rgba(255,255,255,.5)}
+    .c2b-cust-cards.single{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+
+    /* ── PERFORMANCE DASHBOARD ── */
     .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
     .fb-left .fb-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.25rem}
     .fb-left .fb-count{font-size:2.25rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em}
@@ -87,33 +243,9 @@
     .fb-right .fb-target{font-size:1.0625rem;font-weight:700;color:var(--hl)}
     .fb-right .fb-stage{font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.15rem}
     @media(max-width:480px){.followers-banner{flex-direction:column}.fb-right{text-align:left}}
-    .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem}
-    @media(max-width:900px){.goals-grid{grid-template-columns:1fr}}
-    .goal-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:1.625rem;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.75rem}
-    .goal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius) var(--radius) 0 0}
-    .goal-card.exceed::before{background:linear-gradient(90deg,var(--exceed),#a855f7)}
-    .goal-card.ontrack::before{background:linear-gradient(90deg,var(--azure),#4f6ef7)}
-    .goal-card.watch::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
-    .goal-funnel-row{display:flex;align-items:center;gap:.5rem}
-    .goal-funnel-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-    .goal-funnel-dot.tofu{background:var(--tofu)}.goal-funnel-dot.mofu{background:var(--mofu)}.goal-funnel-dot.bofu{background:var(--bofu)}
-    .goal-funnel-lbl{font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-    .goal-title{font-size:.9375rem;font-weight:700;color:var(--text);line-height:1.35}
-    .goal-bar-track{height:8px;background:var(--porcelain);border-radius:4px;overflow:hidden}
-    .goal-bar-fill{height:100%;border-radius:4px}
-    .goal-bar-meta{display:flex;justify-content:space-between;align-items:center}
-    .goal-bar-pct{font-size:1.25rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
-    .goal-bar-count{font-size:.75rem;color:var(--muted)}
-    .goal-summary{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .75rem;background:var(--porcelain);border-radius:6px}
-    .goal-status-badge{display:inline-flex;align-items:center;gap:.375rem;font-size:.6875rem;font-weight:700;padding:.3rem .75rem;border-radius:4px;align-self:flex-start}
-    .goal-status-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
-    .goal-status-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
-    .goal-status-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}
     .funnel-group{margin-bottom:1.75rem}
     .funnel-header{display:flex;align-items:center;gap:.625rem;padding:.625rem .875rem;border-radius:6px;margin-bottom:1rem}
-    .funnel-header.tofu{background:rgba(14,51,135,.06)}
-    .funnel-header.mofu{background:rgba(124,58,237,.06)}
-    .funnel-header.bofu{background:rgba(5,150,105,.06)}
+    .funnel-header.tofu{background:rgba(14,51,135,.06)}.funnel-header.mofu{background:rgba(124,58,237,.06)}.funnel-header.bofu{background:rgba(5,150,105,.06)}
     .funnel-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
     .funnel-dot.tofu{background:var(--tofu)}.funnel-dot.mofu{background:var(--mofu)}.funnel-dot.bofu{background:var(--bofu)}
     .funnel-lbl{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
@@ -133,66 +265,134 @@
     .mc-tgt{font-size:.9375rem;font-weight:600;color:var(--muted)}
     .mc-mom{margin-bottom:.5rem}
     .mom{font-size:.75rem;font-weight:700;padding:.15rem .5rem;border-radius:4px}
-    .mom.up{background:rgba(5,150,105,.1);color:#059669}
-    .mom.dn{background:rgba(220,38,38,.1);color:#dc2626}
-    .mom.fl{background:rgba(148,163,184,.1);color:#94a3b8}
+    .mom.up{background:rgba(5,150,105,.1);color:#059669}.mom.dn{background:rgba(220,38,38,.1);color:#dc2626}.mom.fl{background:rgba(148,163,184,.1);color:#94a3b8}
     .bar-track{height:6px;background:var(--porcelain);border-radius:3px;overflow:hidden;margin-bottom:.5rem}
     .bar-fill{height:100%;border-radius:3px;transition:width .7s cubic-bezier(.4,0,.2,1)}
     .bar-fill.exceed{background:var(--exceed)}.bar-fill.ontrack{background:var(--ontrack)}.bar-fill.watch{background:#f59e0b}
     .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.5}
-    
-    
-    
-    .post-rank.r1{background:linear-gradient(90deg,var(--azure),#1a4fc4);color:#fff}
-    .post-rank.r2{background:linear-gradient(90deg,#1e293b,#334155);color:#fff}
-    .post-rank.r3{background:var(--porcelain);color:var(--muted)}
-    .post-rank.r4{background:linear-gradient(90deg,#065f46,#059669);color:#fff}
-    .post-fmt{font-size:.625rem;font-weight:800;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.18);color:#fff}
-    .post-rank.r3 .post-fmt{background:rgba(0,0,0,.1);color:var(--muted)}
-    
-    
-    
-    
-    .post-caption-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.35rem}
-    .post-caption-text{color:var(--text);line-height:1.55;font-size:.8125rem}
-    .cap-toggle{background:none;border:none;color:var(--azure);font-size:.75rem;font-weight:700;cursor:pointer;padding:.25rem 0 0;display:block}
+    .mc-callout{font-size:.6875rem;font-style:italic;color:#475569;line-height:1.45;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--border)}
+    /* Conditional Watch Time append under Retention card (Change 3 / Tier 1.5) */
+    .mc-watchtime{display:none;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--border);align-items:center;gap:.5rem}
+    .mc-watchtime.active{display:flex}
+    .mc-watchtime-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7c3aed}
+    .mc-watchtime-val{font-size:.875rem;font-weight:800;color:#7c3aed}
+    .mc-watchtime-note{font-size:.6875rem;color:var(--muted)}
+
+    /* ── LEAD SIGNAL (Change 4) ── */
+    .ls-pov{background:linear-gradient(135deg,#0f1730,#11254f);border-radius:var(--radius);padding:1.5rem 1.75rem;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,.06)}
+    .ls-pov-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.625rem}
+    .ls-pov-text{font-size:.9375rem;color:rgba(255,255,255,.85);line-height:1.7}
+    .ls-layers{display:flex;flex-direction:column;gap:1rem}
+    .ls-layer{border:1px solid var(--border);border-radius:var(--radius);padding:1.375rem 1.5rem;position:relative}
+    .ls-layer-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}
+    .ls-layer-num{width:26px;height:26px;border-radius:7px;background:var(--azure);color:#fff;font-size:.8125rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ls-layer-title{font-size:.9375rem;font-weight:800;color:var(--text)}
+    .ls-layer-sub{font-size:.75rem;color:var(--muted);font-weight:600}
+    .ls-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem}
+    .ls-stat{background:var(--ghost);border-radius:8px;padding:.875rem 1rem;text-align:center}
+    .ls-stat-val{font-size:1.5rem;font-weight:800;color:var(--azure);line-height:1;letter-spacing:-.02em}
+    .ls-stat-lbl{font-size:.6875rem;color:var(--muted);font-weight:600;margin-top:.35rem;text-transform:uppercase;letter-spacing:.04em}
+    /* Empty-state soft prompt for a layer with no data yet (graceful degradation) */
+    .ls-layer.empty{border-style:dashed;background:var(--ghost)}
+    .ls-empty-prompt{font-size:.875rem;color:var(--muted);line-height:1.6;font-style:italic}
+
+    /* ── TOP POSTS ── */
+    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
+    @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%;overflow:hidden}
+    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;overflow:hidden}
+    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
+    .reel-badge,.post-badge{background:#fff;color:#0e3387}
+    .carousel-badge{background:#e0e7ff;color:#3730a3}.static-badge{background:#f0fdf4;color:#166534}
+    .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
+    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
+    .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
+    .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
+    .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--lime);padding-left:.75rem;line-height:1.5}
+    .post-caption{font-size:.8rem;color:#475569;background:#f8fafc;border-radius:8px;padding:.6rem .8rem;line-height:1.55}
+    .cap-preview{display:inline}.cap-rest{display:none}.cap-rest.open{display:inline}.cap-ellipsis{display:inline}.cap-ellipsis.hidden{display:none}
+    .cap-toggle{background:none;border:none;color:var(--azure);font-size:.75rem;font-weight:600;cursor:pointer;padding:.4rem .1rem;margin-left:.2rem;min-height:32px}
     .cap-toggle:hover{text-decoration:underline}
-    .post-stats{display:grid;grid-template-columns:1fr;gap:.5rem;margin-bottom:.75rem}
-    .post-stats-outlier{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.75rem}
-    .pstat{background:var(--porcelain);border-radius:6px;padding:.5rem .75rem}
-    .pstat-outlier{background:var(--porcelain);border-radius:6px;padding:.5rem .75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.25rem}
-    .pstat-lbl{display:block;font-size:.625rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem}
-    .pstat-outlier .pstat-lbl{margin-bottom:0;flex:0 0 auto}
-    .pstat-val{font-size:1.125rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
-    .pstat-outlier .pstat-val{font-size:.9375rem;font-weight:800;color:var(--text)}
-    .pstat-mult{font-size:.6875rem;font-weight:700;padding:.2rem .5rem;border-radius:20px;white-space:nowrap}
-    .mult-high{background:rgba(5,150,105,.12);color:#065f46}
-    .mult-med{background:rgba(14,51,135,.1);color:var(--azure)}
-    .mult-base{background:rgba(100,116,139,.1);color:var(--muted)}
-    .post-insight{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .875rem;background:rgba(14,51,135,.04);border-left:3px solid var(--azure);border-radius:0 6px 6px 0;margin-bottom:1rem;display:flex;gap:.5rem;align-items:flex-start}
-    .post-format-row{display:flex;align-items:center;gap:.625rem;margin-bottom:.875rem;flex-wrap:wrap}
-    .post-format-tag{display:inline-flex;align-items:center;gap:.35rem;background:rgba(14,51,135,.08);border:1px solid rgba(14,51,135,.15);color:var(--azure);font-size:.75rem;font-weight:700;padding:.3rem .75rem;border-radius:20px;letter-spacing:.02em}
-    .post-format-tag::before{content:'';width:6px;height:6px;background:var(--azure);border-radius:50%;flex-shrink:0}
-    .post-retention-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem;padding:.4rem .75rem;background:rgba(124,58,237,.05);border:1px solid rgba(124,58,237,.12);border-radius:6px}
-    .post-retention-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#7c3aed}
-    .post-retention-note{font-size:.75rem;color:var(--muted);flex:1}
-    .post-retention-val{font-size:.9375rem;font-weight:800;color:#7c3aed}
-    .post-learning{font-size:.8125rem;color:var(--muted);line-height:1.6;padding:.625rem .875rem;background:rgba(234,179,8,.06);border-left:3px solid var(--lime);border-radius:0 6px 6px 0;margin-bottom:1rem;flex:1}
-    .post-learning-label{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lime);margin-bottom:.35rem}
-    
-    
-    .adj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:start}
-    @media(max-width:900px){.adj-grid{grid-template-columns:1fr}}
-    .adj-card{background:#fff;border:1px solid #e8eaf0;border-radius:12px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;height:100%}
-    .adj-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9375rem;font-weight:800;color:#fff;flex-shrink:0}
-    .adj-num.doubling{background:var(--azure)}.adj-num.testing{background:var(--exceed)}.adj-num.fixing{background:#f59e0b}
-    .adj-content{flex:1}
-    .adj-type{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.375rem}
-    .adj-type.doubling{color:var(--azure)}.adj-type.testing{color:var(--exceed)}.adj-type.fixing{color:#d97706}
-    .adj-headline{font-size:.9375rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:.375rem}
-    .adj-context{font-size:.75rem;color:var(--muted);margin-bottom:.625rem}
-    .adj-move{font-size:.875rem;color:var(--text);line-height:1.6;padding:.625rem .875rem;background:var(--porcelain);border-radius:6px;border-left:3px solid var(--azure)}
-    .adj-move.testing{border-left-color:var(--exceed)}.adj-move.fixing{border-left-color:#f59e0b}
+    .standout-metrics{display:flex;flex-direction:column;gap:.4rem}
+    .standout-metric{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .sm-label{font-size:.72rem;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.04em;min-width:80px}
+    .sm-value{font-size:.95rem;font-weight:800;color:var(--navy)}
+    .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
+    .outlier-2x{background:#dcfce7;color:#15803d}.outlier-1x{background:#dbeafe;color:#1d4ed8}.outlier-3x{background:#f3e8ff;color:#7c3aed}
+    .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
+    .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+    .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
+    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s}
+    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
+
+    /* ── ALL POSTS TABLE (Change 9) ── */
+    .ap-controls{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1.125rem}
+    .ap-chip{display:inline-flex;align-items:center;font-size:.75rem;font-weight:700;padding:.5rem .95rem;border-radius:22px;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s;min-height:44px}
+    .ap-chip:hover{border-color:rgba(14,51,135,.35);color:var(--azure)}
+    .ap-chip.active{background:var(--azure);border-color:var(--azure);color:#fff}
+    .ap-mobile-sort{display:none}
+    .ap-mobile-sort select{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.875rem;font-weight:600;color:var(--text);background:#fff;min-height:44px}
+    .ap-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius)}
+    table.ap-table{width:100%;border-collapse:collapse;font-size:.8125rem;min-width:760px}
+    .ap-table thead th{background:var(--ghost);text-align:left;padding:.7rem .75rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);position:sticky;top:0}
+    .ap-table thead th:hover{color:var(--azure)}
+    .ap-table thead th .arrow{opacity:.35;font-size:.625rem;margin-left:.2rem}
+    .ap-table thead th.sorted-asc .arrow,.ap-table thead th.sorted-desc .arrow{opacity:1;color:var(--azure)}
+    .ap-table thead th.num{text-align:right}
+    .ap-table tbody td{padding:.65rem .75rem;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap}
+    .ap-table tbody td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+    .ap-table tbody tr:last-child td{border-bottom:none}
+    .ap-table tbody tr.outlier td:first-child{box-shadow:inset 3px 0 0 var(--lime)}
+    .ap-table tbody tr.outlier{background:rgba(200,217,74,.06)}
+    .ap-fmt-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.6875rem;font-weight:700;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;letter-spacing:.03em}
+    .ap-fmt-tag.reel{background:#e0e7ff;color:#3730a3}.ap-fmt-tag.carousel{background:#fef3c7;color:#92400e}.ap-fmt-tag.static{background:#dcfce7;color:#166534}.ap-fmt-tag.story{background:#f3e8ff;color:#7c3aed}
+    .ap-cap{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:default}
+    .ap-table tbody tr:hover .ap-cap{white-space:normal;overflow:visible}
+    .ap-table tbody tr:hover{background:rgba(14,51,135,.03)}
+    .ap-table tbody tr.outlier:hover{background:rgba(200,217,74,.1)}
+    .ap-iglink{color:var(--azure);font-weight:700;font-size:.875rem}
+    .ap-out-flag{font-size:.625rem;font-weight:800;color:#65a30d;text-transform:uppercase;letter-spacing:.04em;margin-left:.35rem}
+    .ap-legend{font-size:.75rem;color:var(--muted);margin-top:.875rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .ap-legend .swatch{width:14px;height:14px;border-radius:3px;background:rgba(200,217,74,.4);box-shadow:inset 3px 0 0 var(--lime);flex-shrink:0}
+    .ap-empty{padding:2rem;text-align:center;color:var(--muted);font-style:italic;font-size:.9375rem}
+    /* Mobile card collapse for All Posts (<640px) */
+    .ap-cards{display:none;flex-direction:column;gap:.875rem}
+    .ap-pc{border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.125rem;background:#fff;position:relative;overflow:hidden}
+    .ap-pc.outlier{box-shadow:inset 3px 0 0 var(--lime);background:rgba(200,217,74,.05)}
+    .ap-pc-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.625rem;flex-wrap:wrap}
+    .ap-pc-date{font-size:.75rem;color:var(--muted);font-weight:600}
+    .ap-pc-cap{font-size:.8125rem;color:#475569;line-height:1.5;margin-bottom:.75rem}
+    .ap-pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem .75rem;margin-bottom:.75rem}
+    .ap-pc-stat{display:flex;flex-direction:column;gap:.1rem}
+    .ap-pc-stat .l{font-size:.625rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .ap-pc-stat .v{font-size:.9375rem;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
+    .ap-pc-link{display:inline-block;font-size:.8125rem;font-weight:700;color:var(--azure)}
+
+    /* ── TESTS + POSTS WE'RE WATCHING (Change 8) ── */
+    /* Dip-month narrative block — surfaces at top of this section when score drops >0.5 */
+    .dip-narr{display:none;background:#fffbeb;border:1px solid #fcd34d;border-left:4px solid #f59e0b;border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+    .dip-narr.active{display:block}
+    .dip-narr-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#92400e;margin-bottom:.75rem}
+    .dip-narr-list{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+    .dip-narr-item{display:flex;gap:.75rem;font-size:.875rem;color:#451a03;line-height:1.55}
+    .dip-narr-item b{color:#78350f}
+    .tw-group{margin-bottom:1.75rem}
+    .tw-group:last-child{margin-bottom:0}
+    .tw-group-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.875rem;display:flex;align-items:center;gap:.5rem}
+    .tw-group-label .ic{width:7px;height:7px;border-radius:50%}
+    .tw-group.patterns .tw-group-label{color:var(--bofu)}.tw-group.patterns .ic{background:var(--bofu)}
+    .tw-group.watching .tw-group-label{color:var(--watch)}.tw-group.watching .ic{background:#f59e0b}
+    .tw-group.tests .tw-group-label{color:var(--exceed)}.tw-group.tests .ic{background:var(--exceed)}
+    .tw-items{display:flex;flex-direction:column;gap:.75rem}
+    .tw-item{border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;background:var(--ghost)}
+    .tw-item-head{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.35}
+    .tw-item-body{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .tw-item.patterns{border-left:3px solid var(--bofu)}
+    .tw-item.watching{border-left:3px solid #f59e0b}
+    .tw-item.tests{border-left:3px solid var(--exceed)}
+
+    /* ── CTA SECTION ── */
     .cta-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);border-radius:var(--radius);padding:2.25rem;margin:1.75rem 0;color:#fff;overflow:hidden;position:relative}
     .cta-section::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(14,51,135,.2),transparent 65%);border-radius:50%;pointer-events:none}
     .cta-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
@@ -200,23 +400,18 @@
     .cta-sub{font-size:.9375rem;color:rgba(255,255,255,.55);margin-bottom:1.75rem;max-width:560px;line-height:1.65}
     .cta-primary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.22);border-radius:10px;padding:1.375rem;margin-bottom:1.5rem;position:relative;z-index:1}
     .cta-primary-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
-    .cta-primary-obj{font-size:1.0625rem;font-weight:700;color:#fff;margin-bottom:.75rem}
-    .cta-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.875rem}
-    .cta-chip{font-size:.6875rem;font-weight:600;padding:.25rem .625rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.7)}
+    .cta-primary-obj{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.75rem;letter-spacing:-.01em}
     .cta-copy{font-size:.9375rem;font-style:italic;color:rgba(255,255,255,.85);padding:.75rem 1rem;background:rgba(255,255,255,.06);border-radius:6px;border-left:3px solid var(--hl);margin-bottom:.75rem}
     .cta-rationale{font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.65}
-    .cta-funnel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;position:relative;z-index:1}
-    @media(max-width:760px){.cta-funnel-grid{grid-template-columns:1fr}}
-    .cta-funnel-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:1.125rem}
-    .cta-stage-badge{display:inline-block;font-size:.625rem;font-weight:700;padding:.25rem .625rem;border-radius:4px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.625rem}
-    .cta-stage-badge.tofu{background:rgba(14,51,135,.4);color:#cbe9ff}
-    .cta-stage-badge.mofu{background:rgba(124,58,237,.3);color:#c4b5fd}
-    .cta-stage-badge.bofu{background:rgba(5,150,105,.25);color:#6ee7b7}
-    .cta-funnel-type{font-size:.875rem;font-weight:700;color:#fff;margin-bottom:.4rem}
-    .cta-funnel-copy{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.7);margin-bottom:.625rem;line-height:1.55}
-    .cta-funnel-kpi{font-size:.6875rem;color:rgba(255,255,255,.4)}
-    .cta-funnel-kpi strong{color:rgba(255,255,255,.65)}
-    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem;display:block;width:100%;box-sizing:border-box}
+    .cta-funnel-list{list-style:none;display:flex;flex-direction:column;gap:.625rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1)}
+    .cta-funnel-li{display:flex;gap:.875rem;align-items:flex-start;color:rgba(255,255,255,.85);font-size:.875rem;line-height:1.55}
+    .cta-stage-tag{flex-shrink:0;font-size:.625rem;font-weight:800;letter-spacing:.06em;padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;margin-top:.15rem}
+    .cta-stage-tag.tofu{color:#cbe9ff;background:rgba(14,51,135,.4)}
+    .cta-stage-tag.mofu{color:#c4b5fd;background:rgba(124,58,237,.3)}
+    .cta-stage-tag.bofu{color:#6ee7b7;background:rgba(5,150,105,.25)}
+
+    /* ── PREVIOUS REPORTS + FOOTER ── */
+    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem;width:100%}
     .prev-inner{max-width:1100px;margin:0 auto}
     .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
     .prev-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
@@ -235,263 +430,49 @@
     .footer-text{font-size:.8125rem;color:var(--muted);line-height:1.6}
     .footer-text a{color:var(--azure);font-weight:600}
     @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
-  
-    /* ── POST CAPTIONS ── */
-    
-    .post-caption-label{font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-    .post-caption-text{font-size:.8125rem;color:#374151;line-height:1.55;word-break:break-word}
-    .cap-toggle{background:none;border:none;padding:.25rem 0 0;font-size:.75rem;font-weight:600;color:var(--accent);cursor:pointer;text-decoration:underline;display:block}
-    .cap-toggle:hover{color:var(--navy)}
-    
-    /* ── CAPTION EXPAND/COLLAPSE ── */
-    .cap-preview{display:inline}
-    .cap-rest{display:none}
-    .cap-rest.open{display:inline}
-    .cap-ellipsis{display:inline}
-    .cap-ellipsis.hidden{display:none}
-  
-    /* ── STICKY NAV BAR ── */
-    .report-nav{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:#0b2a6e;
-      border-bottom:2px solid #c8d94a;
-      padding:0;
-      width:100%;
-    }
-    .report-nav-inner{
-      max-width:1100px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      gap:0;
-      overflow-x:auto;
-      scrollbar-width:none;
-      -ms-overflow-style:none;
-    }
-    .report-nav-inner::-webkit-scrollbar{display:none}
-    .report-nav-link{
-      display:inline-block;
-      padding:.625rem 1rem;
-      font-size:.75rem;
-      font-weight:600;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.7);
-      text-decoration:none;
-      white-space:nowrap;
-      border-bottom:2px solid transparent;
-      transition:color .15s, border-color .15s;
-      margin-bottom:-2px;
-    }
-    .report-nav-link:hover{
-      color:#c8d94a;
-      border-bottom-color:#c8d94a;
-    }
-    .report-nav-link.active{
-      color:#c8d94a;
-      border-bottom-color:#c8d94a;
-    }
-    @media(max-width:700px){
-      .report-nav-link{padding:.5rem .75rem;font-size:.6875rem}
-    }
 
-  
-    /* ── TOP POSTS SECTION ── */
-    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
-    @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
-    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%}
-    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;overflow:hidden}
-    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
-    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
-    .reel-badge{background:#fff;color:#0e3387;flex-shrink:0}
-    .post-badge{background:#fff;color:#0e3387;flex-shrink:0}
-    .carousel-badge{background:#e0e7ff;color:#3730a3}
-    .static-badge{background:#f0fdf4;color:#166534}
-    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
-    .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
-    .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
-    .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--lime);padding-left:.75rem;line-height:1.5}
-    .post-caption{font-size:.8rem;color:#475569;background:#f8fafc;border-radius:8px;padding:.6rem .8rem;line-height:1.55}
-    .cap-preview{display:inline}
-    .cap-rest{display:none}
-    .cap-rest.open{display:inline}
-    .cap-ellipsis{display:inline}
-    .cap-ellipsis.hidden{display:none}
-    .cap-toggle{background:none;border:none;color:var(--blue);font-size:.75rem;font-weight:600;cursor:pointer;padding:0;margin-left:.2rem}
-    .cap-toggle:hover{text-decoration:underline}
-    /* Standout metrics */
-    .standout-metrics{display:flex;flex-direction:column;gap:.4rem}
-    .standout-metric{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
-    .sm-label{font-size:.72rem;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.04em;min-width:80px}
-    .sm-value{font-size:.95rem;font-weight:800;color:var(--navy)}
-    .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
-    .outlier-2x{background:#dcfce7;color:#15803d}
-    .outlier-1x{background:#dbeafe;color:#1d4ed8}
-    .outlier-3x{background:#f3e8ff;color:#7c3aed}
-    /* Retention row */
-    
-    
-    
-    
-    /* Why it worked */
-    .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
-    .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
-    .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
-    /* IG button */
-    .post-ig-btn{display:block;background:var(--navy,#0e3387);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;text-decoration:none;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s;position:relative;z-index:2;opacity:1 !important;visibility:visible !important}
-    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
-
-    .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
-
-    /* ═══════════════════════════════════════════════════
-       MOBILE OPTIMISATION (480px and below)
-       ═══════════════════════════════════════════════════ */
+    /* ═══ MOBILE (≤640px) ═══ */
+    @media(max-width:640px){
+      .ap-table-wrap{display:none}
+      .ap-cards{display:flex}
+      .ap-mobile-sort{display:block;width:100%;order:2;margin-top:.5rem}
+      .ap-controls{gap:.4rem}
+    }
+    /* ═══ MOBILE (≤480px) ═══ */
     @media(max-width:480px){
-
-      /* ── NAV ── */
-      .report-nav-inner{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 .5rem}
-      .report-nav-inner::-webkit-scrollbar{display:none}
-      .report-nav-link{padding:.5rem .6rem;font-size:.6rem;white-space:nowrap;flex-shrink:0}
-
-      /* ── HERO ── */
-      .hero{padding:2rem 1rem 5rem}
+      .report-nav-link{padding:.5rem .6rem;font-size:.625rem}
+      .hero{padding:2rem 1rem 3rem}
       .hero-top-row{flex-direction:column;gap:.5rem}
-      .hero-title{font-size:clamp(2rem,10vw,3rem)}
-      .hero-meta{flex-wrap:wrap;gap:.35rem .75rem;font-size:.75rem}
-      .hero-meta-sep{display:none}
-      .hero-bullets{padding:1rem}
-      .hero-bullet{font-size:.8125rem;gap:.5rem}
-
-      /* ── SCORE CARD ── */
-      .score-wrap{margin:-3rem auto 1.25rem;padding:0 1rem}
+      .paired-hero{grid-template-columns:1fr}
+      .score-wrap{margin:-2rem auto 1.25rem;padding:0 1rem}
       .score-card{padding:1.5rem 1.25rem}
       .score-num{font-size:clamp(3rem,14vw,4.5rem)}
-      .score-badges{flex-wrap:wrap;gap:.5rem;justify-content:center}
-      .trend-bar-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-      .trend-bars{min-width:320px}
-
-      /* ── FOLLOWERS BANNER ── */
-      .followers-banner{flex-direction:column;gap:.75rem;text-align:center}
-      .followers-count{font-size:clamp(1.75rem,8vw,2.5rem)}
-      .followers-meta{align-items:center}
-
-      /* ── GOALS GRID ── */
-      .goals-grid{grid-template-columns:1fr}
-      .goal-card{padding:1.25rem}
-
-      /* ── METRIC CARDS ── */
-      .metric-grid{grid-template-columns:1fr}
-      .metric-card{padding:1.25rem}
-      .metric-value-row{flex-wrap:wrap;gap:.35rem}
-      .metric-value{font-size:clamp(1.5rem,7vw,2rem)}
-      .metric-badge{font-size:.6875rem}
-      .metric-target-row{flex-wrap:wrap;gap:.25rem}
-
-      /* ── TOP POSTS ── */
+      .followers-banner{flex-direction:column;gap:.75rem}
+      .metrics-grid{grid-template-columns:1fr}
       .posts-grid{grid-template-columns:1fr}
-      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
-      .post-rank{font-size:.8rem}
-      .post-type-badge,.reel-badge,.post-badge{font-size:.6rem;padding:.15rem .4rem}
-      .post-score{font-size:.65rem;padding:.1rem .5rem;margin-left:auto}
-      .post-body{padding:1rem}
-      .post-hook{font-size:.875rem}
-      .standout-metric{flex-wrap:wrap;gap:.25rem}
-      .sm-label{font-size:.65rem}
-      .sm-value{font-size:1rem}
-      .sm-badge{font-size:.65rem;padding:.15rem .45rem}
-      .post-ig-btn{padding:.75rem 1rem;font-size:.875rem}
-
-      /* ── STRATEGY ADJUSTMENTS ── */
-      .adj-grid{grid-template-columns:1fr}
-      .adj-card{padding:1.25rem}
-      .adj-type{font-size:.65rem;padding:.2rem .6rem}
-      .adj-num{width:2rem;height:2rem;font-size:.875rem}
-
-      /* ── CTA SECTION ── */
-      .cta-funnel-grid{grid-template-columns:1fr}
-      .cta-primary-obj{padding:1.25rem}
-      .cta-chips{flex-wrap:wrap;gap:.35rem}
-      .cta-chip{font-size:.6875rem;padding:.25rem .6rem}
-      .cta-funnel-card{padding:1.25rem}
-
-      /* ── PREVIOUS REPORTS ── */
-      .prev-grid{grid-template-columns:1fr}
-      .prev-card{padding:1.25rem}
-      .prev-month{font-size:.65rem}
-      .prev-score{font-size:2rem}
-
-      /* ── WHAT WE LEARNED ── */
-      .learned-grid{grid-template-columns:1fr}
-      .learned-card{padding:1.25rem}
-
-      /* ── GENERAL SECTION PADDING ── */
       .sec{padding:1.25rem 1rem}
-      .sec-eyebrow{font-size:.6rem}
-      h2{font-size:clamp(1.25rem,6vw,1.75rem)}
+      .qsnap,.dip-line{margin-left:0;margin-right:0}
+      .ls-stats{grid-template-columns:1fr 1fr}
+      .ap-pc-stats{grid-template-columns:1fr 1fr}
     }
-
-    /* ── TABLET (481–768px) ── */
-    @media(min-width:481px) and (max-width:768px){
-      .hero{padding:2.5rem 1.5rem 5.5rem}
-      .hero-title{font-size:clamp(2.25rem,8vw,3.5rem)}
-      .posts-grid{grid-template-columns:1fr}
-      .adj-grid{grid-template-columns:1fr}
-      .metric-grid{grid-template-columns:1fr}
-      .goals-grid{grid-template-columns:1fr}
-      .prev-grid{grid-template-columns:repeat(2,1fr)}
-      .post-header{flex-wrap:wrap;gap:.35rem;padding:.5rem .75rem}
-      .post-score{margin-left:auto}
-    }
-
-  
-    /* ── Q2 COMMITMENT TRACKER SECTION ── */
-    .q2-section{background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 100%);border:1px solid #fcd34d;border-radius:var(--radius);padding:2rem 2.25rem;margin:1.75rem 0;position:relative;overflow:hidden}
-    .q2-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#f59e0b,#fbbf24,#fde047)}
-    .q2-eyebrow{font-size:.6875rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#92400e;margin-bottom:.5rem;display:inline-flex;align-items:center;gap:.5rem}
-    .q2-eyebrow::before{content:'';width:6px;height:6px;background:#d97706;border-radius:50%}
-    .q2-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#451a03;margin-bottom:.4rem;letter-spacing:-.02em;line-height:1.2}
-    .q2-sub{font-size:.9375rem;color:#78350f;line-height:1.6;margin-bottom:1.5rem;max-width:680px}
-    .q2-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}
-    @media(max-width:760px){.q2-grid{grid-template-columns:1fr}}
-    .q2-card{background:#fff;border:1px solid #fde68a;border-radius:10px;padding:1.125rem;display:flex;flex-direction:column;gap:.5rem;position:relative}
-    .q2-card-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.25rem}
-    .q2-metric-name{font-size:.75rem;font-weight:800;color:#78350f;text-transform:uppercase;letter-spacing:.06em}
-    .q2-status{font-size:.625rem;font-weight:800;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
-    .q2-status.hit{background:#d1fae5;color:#065f46}
-    .q2-status.miss{background:#fee2e2;color:#991b1b}
-    .q2-numbers{display:flex;align-items:baseline;gap:.5rem}
-    .q2-actual{font-size:1.625rem;font-weight:800;color:#451a03;letter-spacing:-.02em;line-height:1}
-    .q2-target{font-size:.75rem;color:#92400e;font-weight:600}
-    .q2-gap{font-size:.75rem;color:#78350f;line-height:1.4;padding-top:.25rem;border-top:1px dashed #fde68a;margin-top:.25rem}
-    .q2-gap strong{color:#451a03}
-    .q2-may{display:flex;justify-content:space-between;align-items:center;padding-top:.5rem;border-top:1px solid #fde68a;margin-top:.4rem}
-    .q2-may-label{font-size:.6875rem;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:.05em}
-    .q2-may-target{font-size:.9375rem;font-weight:800;color:#451a03}
-    .q2-ops{background:rgba(255,255,255,.65);border:1px solid #fde68a;border-radius:10px;padding:1.125rem 1.375rem}
-    .q2-ops-label{font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#92400e;margin-bottom:.75rem}
-    .q2-ops-list{list-style:none;display:flex;flex-direction:column;gap:.625rem}
-    .q2-ops-item{display:flex;gap:.75rem;align-items:flex-start;font-size:.875rem;color:#451a03;line-height:1.55}
-    .q2-ops-num{flex-shrink:0;width:22px;height:22px;background:#fde68a;color:#92400e;font-weight:800;font-size:.75rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:.1rem}
-    .q2-ops-item strong{color:#78350f}
-
-.mc-callout{font-size:.6875rem;font-style:italic;color:#475569;line-height:1.45;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--border)}
-.score-method{font-size:.8125rem;font-style:italic;color:var(--muted);line-height:1.55;max-width:520px;margin:0 auto 1.4rem;padding-top:.25rem}
   </style>
   <meta name="twitter:card" content="summary_large_image">
   <script>window.SCROLL_GATE={slug:'defineoakley',code:'define.scroll',title:'Private report',sub:'This report is private. Enter your access code to continue.',button:'View report'};</script>
   <script src="/access-gate.js"></script>
 </head>
 <body>
+
 <!-- ═══ STICKY NAV ═══ -->
 <nav class="report-nav" aria-label="Report sections">
   <div class="report-nav-inner">
     <a class="report-nav-link" href="#score-section">Score</a>
-    <a class="report-nav-link" href="#funnel-title">Goals</a>
+    <a class="report-nav-link" href="#goals-title">Goals</a>
     <a class="report-nav-link" href="#perf-title">Performance</a>
+    <a class="report-nav-link" href="#impact-title">Impact</a>
     <a class="report-nav-link" href="#posts-title">Top Posts</a>
-    <a class="report-nav-link" href="#strat-title">Strategy</a>
+    <a class="report-nav-link" href="#allposts-title">All Posts</a>
+    
+    <a class="report-nav-link" href="#tests-title">June Focus</a>
     <a class="report-nav-link" href="#cta-title">CTAs</a>
     <a class="report-nav-link" href="#prev-title">History</a>
   </div>
@@ -499,6 +480,19 @@
 
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
 
+<!-- ═══ LOOM WALKTHROUGH (Change 7) ═══
+     To activate: add the loom share id to data-loom-id below AND add class "active" to .loom-band.
+     If left empty / inactive, this band renders nothing (no broken player, no placeholder). -->
+<div class="loom-band" id="loom-band">
+  <div class="loom-inner">
+    <div class="loom-eyebrow"><span class="dot"></span>Your June walkthrough</div>
+    <div class="loom-frame">
+      <iframe id="loom-embed" data-loom-id="" src="" title="June report walkthrough" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HERO + PAIRED BLOCK (Change 1 + methodology one-liner Change 5) ═══ -->
 <header class="hero">
   <div class="hero-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
@@ -508,39 +502,44 @@
     </div>
     <h1>DEFINE <span>Oakley</span></h1>
     <div class="hero-meta">
-      <span>@defineoakley</span>
-      <span class="dot"></span>
-      <span>High-Energy, Low-Impact Boutique Fitness in Oakley</span>
-      <span class="dot"></span>
-      <span>May 1&ndash;30, 2026</span>
-      <span class="dot"></span>
+      <span>@defineoakley</span><span class="dot"></span>
+      <span>High-Energy, Low-Impact Boutique Fitness in Oakley</span><span class="dot"></span>
+      <span>May 1&ndash;30, 2026</span><span class="dot"></span>
       <span>Managed by Emily</span>
     </div>
-    <ul class="hero-bullets" aria-label="May performance highlights">
-      <li class="hero-bullet">
-        <span class="hero-bullet-icon" aria-hidden="true"></span>
-        <span class="hero-bullet-text"><strong>Normalization after a viral April.</strong> After April's account-defining viral Reel, May settled back to a healthy baseline. Views (74,657) and shares (209) both landed inside Lift targets, and retention climbed to 61%. The month did what a post-viral month should: hold the core.</span>
-      </li>
-      <li class="hero-bullet">
-        <span class="hero-bullet-icon" aria-hidden="true"></span>
-        <span class="hero-bullet-text"><strong>Retention was the standout.</strong> Average retention reached 61%, near the top of the Lift range and up from 51% in April. Tighter hooks and cleaner pacing kept people watching, the signal that earns wider distribution next.</span>
-      </li>
-      <li class="hero-bullet">
-        <span class="hero-bullet-icon" aria-hidden="true"></span>
-        <span class="hero-bullet-text"><strong>Conversion is the focus into June.</strong> Link taps (26) and profile conversion (6.6%) softened as the viral wave moved on. The work now is turning steady reach into class bookings, the priority the April report flagged.</span>
-      </li>
-    </ul>
+
+    <!-- PAIRED HERO BLOCK -->
+    <div class="paired-hero">
+      <div class="ph-panel score">
+        <p class="ph-label">Monthly Performance Score</p>
+        <div class="ph-bignum">7.7<span class="unit">/10</span></div>
+        <p class="ph-title">Building Month</p>
+        <span class="ph-delta dn">&#9660; 1.4 vs. April</span>
+        <div class="ph-badges">
+          <span class="ph-badge exceed"><span class="bd"></span>0 Exceeding</span>
+          <span class="ph-badge ontrack"><span class="bd"></span>6 On Track</span>
+          <span class="ph-badge watch"><span class="bd"></span>4 Watch</span>
+        </div>
+      </div>
+      <div class="ph-panel outcome">
+        <p class="ph-label">Bio Link Engagement</p>
+        <div class="ph-bignum">26</div>
+        <p class="ph-title">Total Bio Link Taps</p>
+        <p class="ph-outcome-sub">Total taps toward your class schedule and intro-offer page. The last step before a booked class, and the priority destination this quarter.</p>
+      </div>
+    </div>
+
+    <p class="hero-summary"><strong>May came in at 7.7, down from a standout viral April but holding its base. Views, shares, and comments all stayed inside Lift targets as the April surge normalized, and retention climbed to 61%. The June focus is converting steady traffic into class bookings.</strong></p>
+
+    <p class="hero-method">Your score reflects how this month performed against your stage targets, weighted by what predicts buyer behavior. Monthly score is a snapshot. Strategy decisions are made on quarterly trend, not single-month signal.</p>
   </div>
 </header>
 
+<!-- ═══ SCORE CARD + QUARTERLY SNAPSHOT (Section 2, Change 6) ═══ -->
 <div class="score-wrap" id="score-section">
   <div class="score-card">
-    <p class="score-eyebrow">Monthly Performance Score</p>
-    <div class="score-num">7.7<span class="score-denom">/10</span></div>
-    <p class="score-title">Building Month</p>
-    <span class="score-delta dn">&#9660; -1.4 vs. April</span>
-    <p class="score-method">Your score reflects how this month performed against your stage targets, weighted by what predicts buyer behavior. Monthly score is a snapshot. Strategy decisions are made on quarterly trend, not single-month signal.</p>
-    <p class="score-method" style="font-size:.75rem;margin-top:-.9rem">April 2026 was a one-off viral month for DEFINE Oakley. May reflects a return to your baseline, and the score is not adjusted downward for the natural decline from that anomalous spike.</p>
+    <p class="score-eyebrow">Score Context</p>
+    <span class="score-delta dn">&#9660; 1.4 vs. April</span>
     <div class="score-badges">
       <div class="score-badge exceed"><span class="bd"></span>0 Exceeding</div>
       <div class="score-badge ontrack"><span class="bd"></span>6 On Track</div>
@@ -550,43 +549,80 @@
       <p class="trend-label">Score Trend</p>
       <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:23.8%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.3</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:20.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.2</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:57.9%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.2</div><div class="tm">Mar</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:92.0%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">9.1</div><div class="tm">Apr</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:38.9%;background:#e2ed7a"></div></div><div class="ts curr">7.7</div><div class="tm curr">May</div></div></div>
     </div>
+
+    <p class="dip-line" id="dip-line">Expected volatility. The strategy holds. A single softer month inside a strong quarter is normal, and the call on direction gets made on quarterly trend at quarter-close, not on one month.</p>
+
+    <div class="qsnap" id="qsnap">
+      <div class="qsnap-head">
+        <span class="qsnap-label">Quarter to date</span>
+        <span class="qsnap-traj mixed">Mixed</span>
+      </div>
+      <div class="qsnap-row">
+        <div class="qsnap-spark"><svg width="84" height="30" viewBox="0 0 84 30" fill="none" aria-hidden="true"><polyline points="2.0,19.4 42.0,4.0 82.0,28.0" stroke="#0e3387" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82.0" cy="28.0" r="2.6" fill="#0e3387"/></svg></div>
+        <div class="qsnap-avg">
+          <span class="v">8.3</span>
+          <span class="l">3-month average</span>
+        </div>
+      </div>
+      <p class="qsnap-narr">The quarter averaged 8.3 across March, April, and May, with a viral April spike between two steadier months. The three-month view is strong; May reads as a return to baseline after an outlier month, not a decline in the work.</p>
+    </div>
   </div>
 </div>
 
+<!-- ═══ GOAL TRACKER (Section 3, Change 2) ═══ -->
 <div class="wrap">
-  <section class="sec" aria-labelledby="funnel-title">
+  <section class="sec" aria-labelledby="goals-title">
     <p class="sec-label">Business Goals</p>
-    <h2 class="sec-title" id="funnel-title">Funnel Health Check</h2>
-    <p class="sec-sub">How May performance mapped to your three core business goals.</p>
-    <div class="goals-grid">
-      <div class="goal-card ontrack">
-        <div class="goal-funnel-row"><span class="goal-funnel-dot tofu"></span><span class="goal-funnel-lbl">Top of Funnel</span></div>
-        <p class="goal-title">Drive New Audience Discovery &amp; Brand Awareness</p>
-        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:67%;background:#0e3387"></div></div>
-        <div class="goal-bar-meta"><span class="goal-bar-pct">67%</span><span class="goal-bar-count">3 of 3 metrics on track or above</span></div>
-        <p class="goal-summary">Views (74,657) and shares (209) held inside Lift targets after the viral spike receded. New followers (44) ran light as the April surge normalized. The awareness engine is intact; the next gain comes from consistency, not another spike.</p>
-        <span class="goal-status-badge ontrack">On Track</span>
+    <h2 class="sec-title" id="goals-title">Goal Tracker</h2>
+    <p class="sec-sub">Your three funnel stages, scored as a weighted composite of the metrics in each. Metrics that predict real buyer behavior, like saves and click-through, carry more weight than raw reach.</p>
+    <div class="gt-list">
+      <div class="gt-row tofu">
+        <div class="gt-main">
+          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div>
+          <p class="gt-title">Drive New Audience Discovery &amp; Brand Awareness</p>
+          <div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="45" style="width:0%"></div></div>
+            <span class="gt-pct">45%</span>
+          </div>
+          <div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div>
+          <p class="gt-narr">Your awareness stage scored 45% this month. Views (74,657) and shares (209) held inside Lift targets after the viral spike receded, while new followers (44) ran light as the April surge normalized. The awareness engine is intact; the next gain comes from consistency, not another spike.</p>
+        </div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">1.24<span class="gt-score-max">/2.75</span></span></div>
       </div>
-      <div class="goal-card ontrack">
-        <div class="goal-funnel-row"><span class="goal-funnel-dot mofu"></span><span class="goal-funnel-lbl">Middle of Funnel</span></div>
-        <p class="goal-title">Build Trust &amp; Deepen Community Connection</p>
-        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:75%;background:#0e3387"></div></div>
-        <div class="goal-bar-meta"><span class="goal-bar-pct">75%</span><span class="goal-bar-count">4 of 4 metrics on track or above</span></div>
-        <p class="goal-summary">Retention climbed to 61%, with profile visits (663) and comments (85) inside range. Saves (36) dipped below the Lift floor. Attention is healthy; deepening save-worthy content is the lever for June.</p>
-        <span class="goal-status-badge ontrack">On Track</span>
+
+      <div class="gt-row mofu">
+        <div class="gt-main">
+          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div>
+          <p class="gt-title">Build Trust &amp; Deepen Community Connection</p>
+          <div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="45" style="width:0%"></div></div>
+            <span class="gt-pct">45%</span>
+          </div>
+          <div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div>
+          <p class="gt-narr">Your engagement stage scored 45%. Retention climbed to 61% and profile visits (663) and comments (85) held inside range, while saves (36) dipped below the Lift floor. Attention is healthy; deepening save-worthy content is the June lever.</p>
+        </div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">2.48<span class="gt-score-max">/5.5</span></span></div>
       </div>
-      <div class="goal-card watch">
-        <div class="goal-funnel-row"><span class="goal-funnel-dot bofu"></span><span class="goal-funnel-lbl">Bottom of Funnel</span></div>
-        <p class="goal-title">Drive Class Bookings &amp; New Member Sign-Ups</p>
-        <div class="goal-bar-track"><div class="goal-bar-fill" style="width:33%;background:#f59e0b"></div></div>
-        <div class="goal-bar-meta"><span class="goal-bar-pct">33%</span><span class="goal-bar-count">3 of 3 metrics on track or above</span></div>
-        <p class="goal-summary">CTR held at 3.9% inside the Lift range, but link taps (26) and profile conversion (6.6%) sat below target. Converting steady traffic into bookings is the clear priority for the next cycle.</p>
-        <span class="goal-status-badge watch">Watch</span>
+
+      <div class="gt-row bofu">
+        <div class="gt-main">
+          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div>
+          <p class="gt-title">Drive Class Bookings &amp; New Member Sign-Ups</p>
+          <div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="36" style="width:0%"></div></div>
+            <span class="gt-pct">36%</span>
+          </div>
+          <div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div>
+          <p class="gt-narr">Your conversion stage scored 36%. Click-through held at 3.9% inside the Lift range, but link taps (26) and profile conversion (6.6%) sat below target. Converting steady traffic into booked classes is the clear priority for the next cycle.</p>
+        </div>
+        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">1.8<span class="gt-score-max">/5.0</span></span></div>
       </div>
+
     </div>
   </section>
 </div>
 
+<!-- ═══ PERFORMANCE DASHBOARD (Section 4) ═══ -->
 <div class="wrap">
   <section class="sec" aria-labelledby="perf-title">
     <p class="sec-label">May 2026</p>
@@ -702,6 +738,54 @@
   </section>
 </div>
 
+<!-- ═══ CONTENT-TO-BUSINESS IMPACT (Section 5, v8.3.1 retroactive) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="impact-title">
+    <p class="sec-label">From attention to business</p>
+    <h2 class="sec-title" id="impact-title">Content to Business Impact</h2>
+    <p class="sec-sub">How this month&rsquo;s attention maps to business signal, from what we can see on-platform to a conservative estimate of what it&rsquo;s worth.</p>
+
+    <div class="c2b-funnel">
+      <p class="c2b-panel-label">The funnel this month</p>
+      <div class="c2b-steps">
+        <div class="c2b-step"><span class="c2b-step-num">74,657</span><div class="c2b-step-main"><span class="c2b-step-txt">people saw your content</span><span class="c2b-step-badge">🎭 nearly three sold-out TQL Stadium crowds in the West End</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">663</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped through to look closer</span><span class="c2b-step-badge">🚶 a packed Saturday crowd on Oakley Square</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">36</span><div class="c2b-step-main"><span class="c2b-step-txt">bookmarked content to reference later</span><span class="c2b-step-badge">📌 36 pre-booking bookmarks</span></div></div>
+        <div class="c2b-step hi"><span class="c2b-step-num">26</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span><span class="c2b-step-badge">👆 26 deliberate taps toward your class schedule</span></div></div>
+      </div>
+    </div>
+
+    <div class="c2b-estimate">
+      <p class="c2b-panel-label">Conservative business estimate</p>
+      <div class="c2b-cust-cards">
+        <div class="c2b-cc">
+          <div class="c2b-cc-eyebrow">New member signal</div>
+          <div class="c2b-cc-num">1</div>
+          <p class="c2b-cc-lbl">estimated new member or intro-class signal</p>
+          <p class="c2b-cc-range">range: 1&ndash;3 depending on conversion</p>
+          <div class="c2b-cc-meta">
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">1&ndash;4 weeks</span></div>
+            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">$720 estimated</span></div>
+            <span class="c2b-cc-sub">typical range $400&ndash;$1,100</span>
+            <span class="c2b-cc-sub">an intro-class package converting to membership</span>
+          </div>
+        </div>
+      </div>
+      <p class="c2b-est-note">These relationships compound over time. A boutique-fitness member who sticks often stays a year or more, so a first intro class can become a $2,000 or more relationship as membership renews. The 12-month signal above is your near-term expected return, with compounding value building from there.</p>
+      <details class="c2b-method">
+        <summary>How we got here</summary>
+        <div class="c2b-method-body">
+          <p><b>New member:</b> assumes a share of bio link taps head to the class schedule and intro-offer page, intro-to-member conversion of 15&ndash;30% on a boutique-fitness audience, and a typical first-year member value inside the $400&ndash;$1,100 range after intro pricing and expected churn.</p>
+          <p>The headline number is a midpoint. The range beneath it reflects the uncertainty in conversion rates and customer mix. These are directional, category-typical figures, so the midpoint is best read as a central approximation rather than a precise count.</p>
+          <p>Sources: boutique fitness studio benchmarks, Mindbody intro-to-member conversion data, fitness membership retention.</p>
+        </div>
+      </details>
+      <p class="c2b-disclaimer">This section was added retroactively when the Content-to-Business Impact framework launched in June 2026. It is calculated using the same methodology as your June report. This is a modeled estimate, not confirmed attribution, and the figures are category-typical benchmarks best read as midpoint approximations.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ TOP 3 POSTS (Section 6) ═══ -->
 <div class="wrap">
   <section class="sec" aria-labelledby="posts-title">
     <p class="sec-label">Top Posts of the Month</p>
@@ -723,62 +807,110 @@ Whether you haven’t worked out in years, you’re coming back from an injury, 
   </section>
 </div>
 
+<!-- ═══ ALL POSTS THIS MONTH (Section 7, Change 9) ═══ -->
 <div class="wrap">
-  <section class="sec" aria-labelledby="strat-title">
-    <p class="sec-label">June Direction</p>
-    <h2 class="sec-title" id="strat-title">Strategy Forward</h2>
-    <p class="sec-sub">Three moves for June, grounded in May data.</p>
-    <div class="adj-grid">
-      <div class="adj-card">
-        <div class="adj-num doubling" aria-hidden="true">1</div>
-        <div class="adj-content">
-          <p class="adj-type doubling">Doubling Down</p>
-          <p class="adj-headline">Lean Into Retention-First Reels</p>
-          <p class="adj-context">Retention &amp; Reach &middot; Awareness Goal</p>
-          <div class="adj-move ">Retention hit 61% in May. Build June Reels around the hooks and pacing that drove it: short, instructor-led, one clear idea. Retention is what earns the algorithm's trust and the next reach lift.</div>
-        </div>
+  <section class="sec" aria-labelledby="allposts-title">
+    <p class="sec-label">Full Month</p>
+    <h2 class="sec-title" id="allposts-title">All Posts This Month</h2>
+    <p class="sec-sub">Every post published this month, with the numbers behind each one. Tap any column header to sort. Rows with a lime edge over-indexed on saves or click-through, the two strongest buyer signals.</p>
+    <div class="ap-controls" id="ap-controls">
+      <button class="ap-chip active" data-fmt="all">All</button>
+      <button class="ap-chip" data-fmt="reel">Reels</button>
+      <button class="ap-chip" data-fmt="carousel">Carousels</button>
+      <button class="ap-chip" data-fmt="static">Static</button>
+      <div class="ap-mobile-sort">
+        <select id="ap-mobile-sort-select" aria-label="Sort posts">
+          <option value="date|desc">Newest first</option>
+          <option value="date|asc">Oldest first</option>
+          <option value="views|desc">Most views</option>
+          <option value="saves|desc">Most saves</option>
+          <option value="shares|desc">Most shares</option>
+          <option value="comments|desc">Most comments</option>
+          <option value="ctr|desc">Highest CTR</option>
+        </select>
       </div>
-      <div class="adj-card">
-        <div class="adj-num fixing" aria-hidden="true">2</div>
-        <div class="adj-content">
-          <p class="adj-type fixing">Fixing</p>
-          <p class="adj-headline">Rebuild the Conversion Path</p>
-          <p class="adj-context">Link Taps &amp; Bookings &middot; Conversion Goal</p>
-          <div class="adj-move fixing">Link taps and profile conversion slipped below target. Refresh the bio link to lead with a first-class offer and add a comment-to-DM trigger so anyone asking about classes gets details instantly.</div>
-        </div>
+    </div>
+    <div class="ap-table-wrap">
+      <table class="ap-table" id="ap-table">
+        <thead>
+          <tr>
+            <th data-key="date" data-type="date">Date<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="format" data-type="str">Format<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="caption" data-type="str">Caption<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="views" data-type="num">Views<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="saves" data-type="num">Saves<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="linktaps" data-type="num">Bio Link Taps<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="" data-type="none">Post</th>
+          </tr>
+        </thead>
+        <tbody id="ap-tbody"><!-- rows rendered by JS from ALL_POSTS --></tbody>
+      </table>
+    </div>
+    <!-- Mobile card stack (rendered by JS, shown <640px) -->
+    <div class="ap-cards" id="ap-cards"></div>
+    <div class="ap-legend"><span class="swatch"></span> Lime edge = over-indexed on saves or CTR (at least 1.5&times; the account average this month).</div>
+  </section>
+</div>
+
+<!-- ═══ THIS MONTH'S TESTS + POSTS WE'RE WATCHING (Section 8, Change 8) ═══ -->
+<div class="wrap">
+  <section class="sec" aria-labelledby="tests-title">
+    <p class="sec-label">June Focus</p>
+    <h2 class="sec-title" id="tests-title">What We Noticed + June Focus</h2>
+    <p class="sec-sub">Strategy adjustments happen at quarter-close with the full three-month picture, not month to month. What follows is what we&rsquo;re paying attention to in June, not changes to your strategy.</p>
+
+    <div class="tw-group patterns">
+      <p class="tw-group-label"><span class="ic"></span>What worked this month</p>
+      <div class="tw-items">
+        <div class="tw-item patterns"><p class="tw-item-head">The account held after a viral April</p><p class="tw-item-body">Views (74,657) and shares (209) stayed inside Lift targets even as April&rsquo;s viral spike receded. The awareness engine held its base rather than falling off a cliff.</p></div>
+        <div class="tw-item patterns"><p class="tw-item-head">Retention climbed</p><p class="tw-item-body">Watch-through reached 61%, up 10 points and near the top of the Lift range. The content is holding attention well.</p></div>
       </div>
-      <div class="adj-card">
-        <div class="adj-num testing" aria-hidden="true">3</div>
-        <div class="adj-content">
-          <p class="adj-type testing">Testing Next</p>
-          <p class="adj-headline">Save-Worthy Content Series</p>
-          <p class="adj-context">Saves &middot; Engagement Goal</p>
-          <div class="adj-move testing">Saves fell below the Lift floor. Test a recurring save-this format (move breakdowns, weekly schedule, beginner tips) to give the audience a reason to bookmark and return.</div>
-        </div>
+    </div>
+
+    <div class="tw-group watching">
+      <p class="tw-group-label"><span class="ic"></span>What we&rsquo;re watching next</p>
+      <div class="tw-items">
+        <div class="tw-item watching"><p class="tw-item-head">Conversion is the June priority</p><p class="tw-item-body">Link taps (26) and profile conversion (6.6%) sat below target while click-through held. In June we&rsquo;re watching whether a clearer path from post to class schedule lifts bookings.</p></div>
+      </div>
+    </div>
+
+    <div class="tw-group tests">
+      <p class="tw-group-label"><span class="ic"></span>Where our attention is in June</p>
+      <div class="tw-items">
+        <div class="tw-item tests"><p class="tw-item-head">Turn steady traffic into bookings</p><p class="tw-item-body">May sent healthy traffic to the profile but fewer taps to the schedule. In June our attention is on a clear, repeated route from post to class booking.</p></div>
+        <div class="tw-item tests"><p class="tw-item-head">More save-worthy content</p><p class="tw-item-body">Saves dipped below the Lift floor. We&rsquo;re leaning into save-worthy formats (class breakdowns, member wins) to rebuild the consideration layer.</p></div>
       </div>
     </div>
   </section>
 </div>
 
+<!-- ═══ NEXT MONTH CTAs (Section 9) ═══ -->
 <div class="wrap">
   <div class="cta-section" role="region" aria-labelledby="cta-title">
-    <p class="cta-eyebrow">June CTA Plan</p>
+    <p class="cta-eyebrow">June Call-to-Action Plan</p>
     <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
-    <p class="cta-sub">The June call-to-action focus and the funnel-stage CTAs we&rsquo;ll be deploying.</p>
+    <p class="cta-sub">One primary call to action for June, with three supporting CTAs across the funnel that feed it.</p>
     <div class="cta-primary">
-      <p class="cta-primary-label">&#9733; Primary June CTA</p>
-      <p class="cta-primary-obj">Convert Steady Reach Into First-Class Bookings</p>
-      <div class="cta-copy">&ldquo;Comment CLASS for our beginner-friendly first-class offer, or book directly through the link in bio.&rdquo;</div>
-      <p class="cta-rationale">May proved the reach is steady without a viral hit. The highest-value June move is turning that consistent audience into booked classes. Every post should make booking the obvious next step.</p>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:.625rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1)">
-        <li style="display:flex;gap:.875rem;align-items:flex-start;color:rgba(255,255,255,.85);font-size:.875rem;line-height:1.55"><span style="flex-shrink:0;font-size:.625rem;font-weight:800;letter-spacing:.06em;color:#cbe9ff;background:rgba(14,51,135,.4);padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;margin-top:.15rem">TOFU</span><span><em>"Tag a friend who needs this energy."</em> &middot; Share-driven awareness.</span></li>
-        <li style="display:flex;gap:.875rem;align-items:flex-start;color:rgba(255,255,255,.85);font-size:.875rem;line-height:1.55"><span style="flex-shrink:0;font-size:.625rem;font-weight:800;letter-spacing:.06em;color:#c4b5fd;background:rgba(124,58,237,.3);padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;margin-top:.15rem">MOFU</span><span><em>"Save this for class-day motivation."</em> &middot; Save-prompted reference.</span></li>
-        <li style="display:flex;gap:.875rem;align-items:flex-start;color:rgba(255,255,255,.85);font-size:.875rem;line-height:1.55"><span style="flex-shrink:0;font-size:.625rem;font-weight:800;letter-spacing:.06em;color:#6ee7b7;background:rgba(5,150,105,.25);padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;margin-top:.15rem">BOFU</span><span><em>"Book your first class &amp;middot; link in bio."</em> &middot; The conversion handoff.</span></li>
-      </ul>
+      <p class="cta-primary-label">&#9733; Primary CTA</p>
+      <p class="cta-primary-obj">Turn steady traffic into booked intro classes</p>
+      <div class="cta-copy">&ldquo;Book your first class or tap the link in bio to see the schedule. Your first session is the easiest way in.&rdquo;</div>
+      <p class="cta-rationale">Reach and attention are healthy; the gap is the last step. The priority into June is a clear, repeated route from post to booked class.</p>
+      <p class="cta-discuss">This CTA is your monthly discussion point. Should we hold it or adjust based on the performance data above?</p>
     </div>
+    <p class="cta-supp-label">Supporting CTAs</p>
+    <ul class="cta-funnel-list">
+      <li class="cta-funnel-li"><span class="cta-stage-tag tofu">Awareness</span><span><em>&ldquo;Tag a friend who&rsquo;d love this class.&rdquo;</em> &middot; Widen reach in the Oakley community.</span></li>
+      <li class="cta-funnel-li"><span class="cta-stage-tag mofu">Engagement</span><span><em>&ldquo;Save this for your next workout.&rdquo;</em> &middot; Build reference intent.</span></li>
+      <li class="cta-funnel-li"><span class="cta-stage-tag bofu">Conversion</span><span><em>&ldquo;Book your intro class, link in bio.&rdquo;</em> &middot; The booking handoff.</span></li>
+    </ul>
   </div>
 </div>
 
+<!-- ═══ PREVIOUS REPORTS (Section 10) ═══ -->
 <section class="prev-section" aria-labelledby="prev-title">
   <div class="prev-inner">
     <p class="prev-eyebrow">Report History</p>
@@ -804,6 +936,7 @@ Whether you haven’t worked out in years, you’re coming back from an injury, 
     </div>
   </div>
 </section>
+
 <footer class="footer">
   <div class="footer-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">
@@ -815,10 +948,130 @@ Whether you haven’t worked out in years, you’re coming back from an injury, 
 </footer>
 
 <script>
+  /* ═══ ALL POSTS DATA (Change 9) ═══
+     Rendered statically into the page at BUILD TIME by all_posts_data.py (Metricool all-posts pull).
+     No runtime API calls. Replace this array with the build-time output for the client/month.
+     Each post: {date:"YYYY-MM-DD", date_display:"Jun 4", format:"reel|carousel|static|story",
+       caption:"full caption text", views:N, saves:N, shares:N, comments:N,
+       retention:N|null, linktaps:N|null, ctr:N|null, url:"https://...", outlier:true|false}
+     `outlier` is precomputed by the engine: true when saves >= 1.5x account-avg saves OR
+     ctr >= 1.5x account-avg ctr (the two T1-High buyer signals), subject to absolute floors. */
+  var ALL_POSTS = [];
+
+  (function(){
+    var tbody=document.getElementById('ap-tbody');
+    var cards=document.getElementById('ap-cards');
+    if(!tbody) return;
+    var state={sortKey:'date',sortDir:'desc',filter:'all'};
+    var fmtMeta={reel:['reel','Reel'],carousel:['carousel','Carousel'],static:['static','Static'],story:['story','Story']};
+
+    function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function num(v){return (v==null)?'&mdash;':Number(v).toLocaleString('en-US');}
+    function pct(v){return (v==null)?'&mdash;':v+'%';}
+    function capPrev(c){c=c||'';return c.length>60?c.slice(0,60).trim()+'…':c;}
+
+    function sorted(rows){
+      var k=state.sortKey,dir=state.sortDir==='asc'?1:-1;
+      return rows.slice().sort(function(a,b){
+        var av=a[k],bv=b[k];
+        if(k==='caption'||k==='format'){av=(av||'').toLowerCase();bv=(bv||'').toLowerCase();return av<bv?-1*dir:av>bv?1*dir:0;}
+        if(k==='date'){av=a.date||'';bv=b.date||'';return av<bv?-1*dir:av>bv?1*dir:0;}
+        // numeric: null sinks to bottom regardless of direction
+        var an=(av==null),bn=(bv==null);
+        if(an&&bn)return 0; if(an)return 1; if(bn)return -1;
+        return (av-bv)*dir;
+      });
+    }
+    function visible(){return ALL_POSTS.filter(function(p){return p.format!=='story' && (state.filter==='all'||p.format===state.filter);});}
+
+    function render(){
+      var rows=sorted(visible());
+      // table
+      if(!rows.length){tbody.innerHTML='<tr><td colspan="11" class="ap-empty">No posts match this filter.</td></tr>';}
+      else{
+        tbody.innerHTML=rows.map(function(p){
+          var fm=fmtMeta[p.format]||['static',p.format];
+          var out=p.outlier?' outlier':'';
+          var flag=p.outlier?'<span class="ap-out-flag">&#9650; outlier</span>':'';
+          var link=p.url?'<a class="ap-iglink" href="'+esc(p.url)+'" target="_blank" rel="noopener" aria-label="View on Instagram">&#8599;</a>':'&mdash;';
+          return '<tr class="'+out.trim()+'">'+
+            '<td>'+esc(p.date_display||p.date)+'</td>'+
+            '<td><span class="ap-fmt-tag '+fm[0]+'">'+esc(fm[1])+'</span></td>'+
+            '<td><span class="ap-cap" title="'+esc(p.caption)+'">'+esc(capPrev(p.caption))+'</span>'+flag+'</td>'+
+            '<td class="num">'+num(p.views)+'</td>'+
+            '<td class="num">'+num(p.saves)+'</td>'+
+            '<td class="num">'+num(p.shares)+'</td>'+
+            '<td class="num">'+num(p.comments)+'</td>'+
+            '<td class="num">'+pct(p.retention)+'</td>'+
+            '<td class="num">'+num(p.linktaps)+'</td>'+
+            '<td class="num">'+pct(p.ctr)+'</td>'+
+            '<td>'+link+'</td></tr>';
+        }).join('');
+      }
+      // mobile cards
+      if(cards){
+        if(!rows.length){cards.innerHTML='<div class="ap-empty">No posts match this filter.</div>';}
+        else{
+          cards.innerHTML=rows.map(function(p){
+            var fm=fmtMeta[p.format]||['static',p.format];
+            var out=p.outlier?' outlier':'';
+            var flag=p.outlier?'<span class="ap-out-flag">&#9650; outlier</span>':'';
+            var link=p.url?'<a class="ap-pc-link" href="'+esc(p.url)+'" target="_blank" rel="noopener">View on Instagram &rarr;</a>':'';
+            return '<div class="ap-pc'+out+'">'+
+              '<div class="ap-pc-top"><span class="ap-fmt-tag '+fm[0]+'">'+esc(fm[1])+'</span><span class="ap-pc-date">'+esc(p.date_display||p.date)+'</span></div>'+
+              '<div class="ap-pc-cap">'+esc(capPrev(p.caption))+flag+'</div>'+
+              '<div class="ap-pc-stats">'+
+                '<div class="ap-pc-stat"><span class="l">Views</span><span class="v">'+num(p.views)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Saves</span><span class="v">'+num(p.saves)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Shares</span><span class="v">'+num(p.shares)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Comments</span><span class="v">'+num(p.comments)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Retention</span><span class="v">'+pct(p.retention)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">CTR</span><span class="v">'+pct(p.ctr)+'</span></div>'+
+              '</div>'+link+'</div>';
+          }).join('');
+        }
+      }
+      // header sort indicators
+      document.querySelectorAll('#ap-table thead th').forEach(function(th){
+        th.classList.remove('sorted-asc','sorted-desc');
+        if(th.dataset.key===state.sortKey)th.classList.add(state.sortDir==='asc'?'sorted-asc':'sorted-desc');
+      });
+    }
+
+    // header click → sort (toggle direction)
+    document.querySelectorAll('#ap-table thead th').forEach(function(th){
+      if(th.dataset.type==='none')return;
+      th.addEventListener('click',function(){
+        var k=th.dataset.key;if(!k)return;
+        if(state.sortKey===k){state.sortDir=state.sortDir==='asc'?'desc':'asc';}
+        else{state.sortKey=k;state.sortDir=(th.dataset.type==='num')?'desc':'asc';}
+        render();
+      });
+    });
+    // filter chips
+    document.querySelectorAll('#ap-controls .ap-chip').forEach(function(chip){
+      chip.addEventListener('click',function(){
+        document.querySelectorAll('#ap-controls .ap-chip').forEach(function(c){c.classList.remove('active');});
+        chip.classList.add('active');state.filter=chip.dataset.fmt;render();
+      });
+    });
+    // mobile sort dropdown
+    var ms=document.getElementById('ap-mobile-sort-select');
+    if(ms){ms.addEventListener('change',function(){var p=ms.value.split('|');state.sortKey=p[0];state.sortDir=p[1];render();});}
+
+    render();
+  })();
+
+  /* progress bar */
   (function(){var bar=document.getElementById('progress-bar');function u(){var s=window.pageYOffset||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=h>0?(Math.min(s/h,1)*100)+'%':'0%';}window.addEventListener('scroll',u,{passive:true});u();})();
-  (function(){var fills=document.querySelectorAll('.bar-fill[data-w],.goal-bar-fill');fills.forEach(function(el){var t=el.dataset.w||el.style.width;el.style.width='0%';el.dataset.target=t;});var obs=new Set();if('IntersectionObserver' in window){var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting&&!obs.has(e.target)){obs.add(e.target);e.target.style.transition='width 0.7s cubic-bezier(0.4,0,0.2,1)';e.target.style.width=e.target.dataset.target+(e.target.dataset.w?'%':'');}});},{threshold:0.1});fills.forEach(function(el){io.observe(el);});}else{fills.forEach(function(el){el.style.width=el.dataset.target+(el.dataset.w?'%':'');});}})();
+  /* animate bar fills on scroll-in */
+  (function(){var fills=document.querySelectorAll('.bar-fill[data-w],.gt-bar-fill[data-w]');fills.forEach(function(el){el.dataset.target=el.dataset.w;el.style.width='0%';});if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.transition='width .7s cubic-bezier(.4,0,.2,1)';e.target.style.width=e.target.dataset.target+'%';io.unobserve(e.target);}});},{threshold:.1});fills.forEach(function(el){io.observe(el);});}else{fills.forEach(function(el){el.style.width=el.dataset.target+'%';});}})();
+  /* caption expand/collapse (Top Posts) */
   function toggleCap(uid){var rest=document.getElementById(uid+'-rest');var btn=document.getElementById(uid+'-btn');var ell=document.getElementById(uid+'-ellipsis');if(rest.style.display==='none'){rest.style.display='inline';if(ell)ell.style.display='none';btn.textContent='Show less';}else{rest.style.display='none';if(ell)ell.style.display='inline';btn.textContent='Show more';}}
-  (function(){var links=document.querySelectorAll('.report-nav-link');var sections=[];links.forEach(function(l){var id=l.getAttribute('href').replace('#','');var el=document.getElementById(id);if(el)sections.push({el:el,link:l});});function onScroll(){var scrollY=window.scrollY+80;var active=null;sections.forEach(function(s){if(s.el.getBoundingClientRect().top+window.scrollY<=scrollY)active=s;});links.forEach(function(l){l.classList.remove('active');});if(active)active.link.classList.add('active');}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
+  /* loom: activate band only if a loom id is present */
+  (function(){var f=document.getElementById('loom-embed');if(!f)return;var id=f.getAttribute('data-loom-id');if(id&&id.trim()){f.src='https://www.loom.com/embed/'+id.trim();document.getElementById('loom-band').classList.add('active');}})();
+  /* sticky nav active state */
+  (function(){var links=document.querySelectorAll('.report-nav-link');var sections=[];links.forEach(function(l){var el=document.getElementById(l.getAttribute('href').replace('#',''));if(el)sections.push({el:el,link:l});});function onScroll(){var y=window.scrollY+80;var active=null;sections.forEach(function(s){if(s.el.getBoundingClientRect().top+window.scrollY<=y)active=s;});links.forEach(function(l){l.classList.remove('active');});if(active)active.link.classList.add('active');}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
 </script>
 </body>
 </html>
