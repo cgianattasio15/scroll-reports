@@ -98,7 +98,7 @@
     .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
 
     /* ── SCORE CARD (Section 2) + QUARTERLY SNAPSHOT (Change 6) ── */
-    .score-wrap{position:relative;z-index:10;margin:-2.5rem auto 1.75rem;padding:0 1.25rem}
+    .score-wrap{position:relative;z-index:10;margin:1.75rem auto;padding:0 1.25rem}
     .score-card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:0 4px 32px rgba(21,21,22,.14);border:1px solid var(--border);text-align:center;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
     .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
     .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
@@ -444,7 +444,7 @@
       .hero{padding:2rem 1rem 3rem}
       .hero-top-row{flex-direction:column;gap:.5rem}
       .paired-hero{grid-template-columns:1fr}
-      .score-wrap{margin:-2rem auto 1.25rem;padding:0 1rem}
+      .score-wrap{margin:1.25rem auto;padding:0 1rem}
       .score-card{padding:1.5rem 1.25rem}
       .score-num{font-size:clamp(3rem,14vw,4.5rem)}
       .followers-banner{flex-direction:column;gap:.75rem}
@@ -493,6 +493,11 @@
     .qy-bars span.cur{background:var(--azure,#0e3387)}
     .qy-state{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#6b7280)}
     .qy-col.current .qy-state{color:var(--azure,#0e3387)}
+    /* v8.3.5 Issue 2 — per-quarter performance theme (dark-on-light, do not inherit dark-theme text) */
+    .qy-theme{margin:.55rem 0 .1rem;padding-top:.5rem;border-top:1px solid var(--border,rgba(21,21,22,.09));text-align:left}
+    .qy-tline{font-size:.68rem;color:#374151;line-height:1.42;margin-bottom:.28rem}
+    .qy-tline:last-child{margin-bottom:0}
+    .qy-tl{font-weight:800;color:var(--azure,#0e3387);letter-spacing:.01em}
     @media(max-width:560px){.qy-grid{grid-template-columns:1fr 1fr}}
 
     /* ═══ v8.3.4 trajectory chart (C3) ═══ */
@@ -621,7 +626,7 @@
          (Mar/Jun/Sep/Dec) from Sept 2026 onward, when the QBR artifact owns the snapshot.
          EXCEPTION: surface it for June 2026 reports (no QBR artifact ships until Aug 31).
          Trajectory class options: strong | steady | building | recovering | soft | mixed -->
-    <div class="qyear" id="qsnap"><p class="qyear-intro">Strategy adjustments happen at quarterly cadence, not month to month. Looking at a full three-month window means we build strategy on real patterns, not short-term noise. Below is your year at a quarterly view.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">7.6<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:45%"></span><span style="height:51%"></span><span class="cur" style="height:45%"></span></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">8.4<span class="u">/10</span></div><div class="qy-badge strong">Strong</div><div class="qy-bars"><span style="height:73%"></span><span style="height:81%"></span><span class="cur" style="height:56%"></span></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div><div class="qy-note">Begins July</div><div class="qy-state">Pending</div></div><div class="qy-col "><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Later this year</div><div class="qy-state">Pending</div></div></div></div>
+    <div class="qyear" id="qsnap"><p class="qyear-intro">Strategy adjustments happen at quarterly cadence, not month to month. Looking at a full three-month window means we build strategy on real patterns, not short-term noise. Below is your year at a quarterly view.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">7.6<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:45%"></span><span style="height:51%"></span><span class="cur" style="height:45%"></span></div><div class="qy-theme"><div class="qy-tline">Steady quarter, scores held in the mid sevens.</div></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">8.4<span class="u">/10</span></div><div class="qy-badge strong">Strong</div><div class="qy-bars"><span style="height:73%"></span><span style="height:81%"></span><span class="cur" style="height:56%"></span></div><div class="qy-theme"><div class="qy-tline"><span class="qy-tl">Worked:</span> click-through stayed above target all quarter, and April and May were both strong months.</div><div class="qy-tline"><span class="qy-tl">Watched:</span> reach softened into June, and retention slipped to 38%.</div></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div><div class="qy-note">Begins July</div><div class="qy-state">Pending</div></div><div class="qy-col "><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Later this year</div><div class="qy-state">Pending</div></div></div></div>
   </div>
 </div>
 
