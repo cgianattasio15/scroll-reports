@@ -457,6 +457,61 @@
   
     /* v8.3.3 mobile body-text floor (CLAUDE.md 3.12): .mc-callout >=14px on phones */
     @media(max-width:480px){.mc-callout{font-size:14px}}
+  
+    /* ═══ v8.3.4 June Highlights (C1) ═══ */
+    .jhi{max-width:920px;margin:1.25rem auto 0;padding:0 1.25rem}
+    .jhi-card{background:#fff;border:1px solid var(--border,rgba(21,21,22,.09));border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 2px 16px rgba(21,21,22,.05)}
+    .jhi-title{font-size:.6875rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--azure,#0e3387);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .jhi-title .dot{width:6px;height:6px;border-radius:50%;background:var(--hl,#e2ed7a)}
+    .jhi-list{display:flex;flex-direction:column;gap:.6rem}
+    .jhi-item{display:flex;gap:.7rem;align-items:flex-start;line-height:1.5}
+    .jhi-item .mk{flex:0 0 auto;width:8px;height:8px;border-radius:2px;background:var(--hl,#e2ed7a);margin-top:.42rem}
+    .jhi-item .bd{font-size:.9rem;color:var(--text,#151516)}
+    .jhi-item .bd b{color:var(--azure,#0e3387);font-weight:800;letter-spacing:.01em}
+    @media(max-width:480px){.jhi-item .bd{font-size:14px}}
+
+    /* ═══ v8.3.4 Q1-Q4 year view (C2) — light theme ═══ */
+    .qyear{margin-top:1.5rem}
+    .qyear-intro{font-size:.8125rem;color:var(--muted,#6b7280);line-height:1.6;max-width:640px;margin:0 auto 1rem;text-align:left}
+    .qy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}
+    .qy-col{background:var(--porcelain,#f2f3f4);border:1px solid var(--border,rgba(21,21,22,.09));border-radius:10px;padding:.8rem .7rem;text-align:center;position:relative}
+    .qy-col.current{border-color:rgba(14,51,135,.35);background:rgba(226,237,122,.14)}
+    .qy-col.pending{opacity:.65}
+    .qy-q{font-size:.9rem;font-weight:800;color:var(--text,#151516);letter-spacing:.02em}
+    .qy-range{font-size:.625rem;color:var(--muted,#6b7280);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+    .qy-avg{font-size:1.5rem;font-weight:800;color:var(--azure,#0e3387);line-height:1}
+    .qy-avg .u{font-size:.7rem;color:var(--muted,#6b7280);font-weight:600}
+    .qy-note{font-size:.72rem;color:#374151;line-height:1.42;padding:.35rem .1rem}
+    .qy-badge{display:inline-block;font-size:.5625rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:20px;margin:.4rem 0}
+    .qy-badge.steady{background:rgba(107,114,128,.16);color:#4b5563}
+    .qy-badge.building,.qy-badge.recovering{background:rgba(14,51,135,.12);color:#0e3387}
+    .qy-badge.strong{background:rgba(5,150,105,.14);color:#059669}
+    .qy-badge.mixed,.qy-badge.softening{background:rgba(217,119,6,.16);color:#b45309}
+    .qy-bars{display:flex;align-items:flex-end;justify-content:center;gap:3px;height:26px;margin:.3rem 0 .45rem}
+    .qy-bars span{width:8px;border-radius:2px 2px 0 0;background:rgba(14,51,135,.28)}
+    .qy-bars span.cur{background:var(--azure,#0e3387)}
+    .qy-state{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#6b7280)}
+    .qy-col.current .qy-state{color:var(--azure,#0e3387)}
+    @media(max-width:560px){.qy-grid{grid-template-columns:1fr 1fr}}
+
+    /* ═══ v8.3.4 trajectory chart (C3) ═══ */
+    .traj-wrap{margin:0 0 1.1rem}
+    .traj-lead{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:1rem}
+    .traj-chart{width:100%;height:auto;display:block}
+    .traj-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-top:.75rem;font-size:.75rem;color:rgba(255,255,255,.65)}
+    .traj-legend .lg{display:inline-flex;align-items:center;gap:.4rem}
+    .traj-legend .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+    .traj-legend .sw.mid{background:#e2ed7a}
+    .traj-legend .sw.band{background:rgba(226,237,122,.28);height:10px}
+    .traj-legend .sw.proj{background:linear-gradient(90deg,rgba(255,255,255,.5) 50%,transparent 50%);background-size:6px 3px}
+
+    /* ═══ v8.3.4 dip block typography tighten (C5) ═══ */
+    .dip-narr{padding:1rem 1.2rem!important;margin-bottom:1.25rem!important}
+    .dip-narr-label{margin-bottom:.55rem!important}
+    .dip-narr-list{gap:.5rem!important}
+    .dip-narr-item{display:block!important;line-height:1.45!important;font-size:.85rem!important}
+    .dip-narr-item b{display:block!important;margin-bottom:.1rem!important;font-weight:800!important;color:#78350f;letter-spacing:.01em}
+
   </style>
   <meta name="twitter:card" content="summary_large_image">
   <script>window.SCROLL_GATE={slug:'upandrunningoh',code:'uar.scroll',title:'Private report',sub:'This report is private. Enter your access code to continue.',button:'View report'};</script>
@@ -540,6 +595,9 @@
   </div>
 </header>
 
+<!-- ═══ JUNE HIGHLIGHTS (v8.3.4 C1) ═══ -->
+<div class="jhi"><div class="jhi-card"><p class="jhi-title"><span class="dot"></span>June Highlights</p><div class="jhi-list"><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Win of the month</b> &middot; Retention broke through to 66%, well above the Spark ceiling. Short-form Reels are landing.</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Standout</b> &middot; Community engagement restarted. Comments jumped from 3 to 11, shares grew from 17 to 56.</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>What we&rsquo;re focused on next</b> &middot; July&rsquo;s focus is scaling short-form Reels and testing save-worthy gear guides.</span></div></div></div></div>
+
 <!-- ═══ SCORE CARD + QUARTERLY SNAPSHOT (Section 2, Change 6) ═══ -->
 <div class="score-wrap" id="score-section">
   <div class="score-card">
@@ -563,20 +621,7 @@
          (Mar/Jun/Sep/Dec) from Sept 2026 onward, when the QBR artifact owns the snapshot.
          EXCEPTION: surface it for June 2026 reports (no QBR artifact ships until Aug 31).
          Trajectory class options: strong | steady | building | recovering | soft | mixed -->
-    <div class="qsnap" id="qsnap">
-      <div class="qsnap-head">
-        <span class="qsnap-label">Quarter to date</span>
-        <span class="qsnap-traj recovering">Recovering</span>
-      </div>
-      <div class="qsnap-row">
-        <div class="qsnap-spark"><svg width="84" height="30" viewBox="0 0 84 30" fill="none" aria-hidden="true"><polyline points="2.0,28.0 42.0,28.0 82.0,4.0" stroke="#0e3387" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82.0" cy="4.0" r="2.6" fill="#0e3387"/></svg></div>
-        <div class="qsnap-avg">
-          <span class="v">8.0</span>
-          <span class="l">3-month average</span>
-        </div>
-      </div>
-      <p class="qsnap-narr">The quarter averaged 8.0 across April, May, and June. After two flat months at 7.9, June recovered to 8.3, the strongest reading since February. The three-month view is the story here, not any single month.</p>
-    </div>
+    <div class="qyear" id="qsnap"><p class="qyear-intro">Strategy adjustments happen at quarterly cadence, not month to month. Looking at a full three-month window means we build strategy on real patterns, not short-term noise. Below is your year at a quarterly view.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">7.9<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:43%"></span><span style="height:67%"></span><span class="cur" style="height:59%"></span></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">8.0<span class="u">/10</span></div><div class="qy-badge recovering">Recovering</div><div class="qy-bars"><span style="height:56%"></span><span style="height:56%"></span><span class="cur" style="height:67%"></span></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div><div class="qy-note">Begins July</div><div class="qy-state">Pending</div></div><div class="qy-col "><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Later this year</div><div class="qy-state">Pending</div></div></div></div>
   </div>
 </div>
 
@@ -781,10 +826,7 @@
       </div>
     </div>
 
-    <div class="c2b-estimate">
-      <p class="c2b-panel-label">Conservative business estimate</p>
-      <p class="c2b-est-note">Your audience is still building. At this bio link tap volume (10), business signal modeling gets noisy. We&rsquo;ll surface modeled estimates in reports once bio link tap volume reaches ~50/month, which the July engagement momentum sets up. For context, typical first-year value of a new customer at Up and Running is around $300&ndash;$500 and lifetime value up to $1,800 over five years as they return for repeat shoe purchases. Once volume scales, we&rsquo;ll model against those benchmarks.</p>
-      <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
+    <div class="c2b-estimate"><p class="c2b-panel-label">Bio link tap trajectory &middot; 2026</p><div class="traj-wrap"><p class="traj-lead">As we&rsquo;ve been working together, we&rsquo;ve grown your ability to drive attention through organic social. Below is your bio link tap trajectory across 2026, the highest-intent signal we track. At your current volume, modeled dollar estimates get noisy, so we chart tap volume directly and begin dollar modeling once you clear roughly 50 taps a month. Each year resets.</p><svg class="traj-chart" viewBox="0 0 640 260" role="img" aria-label="Modeled value trajectory"><line x1="46" y1="226.0" x2="624" y2="226.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="229.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">0</text><line x1="46" y1="174.0" x2="624" y2="174.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="177.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">2</text><line x1="46" y1="122.0" x2="624" y2="122.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="125.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">5</text><line x1="46" y1="70.0" x2="624" y2="70.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="73.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">8</text><line x1="46" y1="18.0" x2="624" y2="18.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="21.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">11</text><text x="46.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jan</text><text x="98.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Feb</text><text x="151.1" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Mar</text><text x="203.6" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Apr</text><text x="256.2" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">May</text><text x="308.7" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jun</text><text x="361.3" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Jul</text><text x="413.8" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Aug</text><text x="466.4" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Sep</text><text x="518.9" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Oct</text><text x="571.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Nov</text><text x="624.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Dec</text><polygon points="46.0,45.1 98.5,117.5 151.1,63.2 203.6,117.5 256.2,99.4 308.7,45.1 308.7,45.1 256.2,99.4 203.6,117.5 151.1,63.2 98.5,117.5 46.0,45.1" fill="rgba(226,237,122,.16)" stroke="none"/><line x1="308.7" y1="45.1" x2="624.0" y2="45.1" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="5 4"/><polyline points="46.0,45.1 98.5,117.5 151.1,63.2 203.6,117.5 256.2,99.4 308.7,45.1" fill="none" stroke="#e2ed7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46.0" cy="45.1" r="3" fill="#e2ed7a"/><circle cx="98.5" cy="117.5" r="3" fill="#e2ed7a"/><circle cx="151.1" cy="63.2" r="3" fill="#e2ed7a"/><circle cx="203.6" cy="117.5" r="3" fill="#e2ed7a"/><circle cx="256.2" cy="99.4" r="3" fill="#e2ed7a"/><circle cx="308.7" cy="45.1" r="3" fill="#e2ed7a"/></svg><div class="traj-legend"><span class="lg"><span class="sw mid"></span>Bio link taps</span><span class="lg"><span class="sw proj"></span>Projection (Jul&ndash;Dec)</span></div></div><p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
     </div>
   </section>
 </div>
@@ -795,10 +837,10 @@
     <p class="sec-label">Top Posts of the Month</p>
     <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
     <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model. Posts that over-indexed on reach, saves, shares, or retention relative to account averages.</p>
-    <div class="posts-grid"><!--TP_START--><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Post Score: 212/100</span></div><div class="post-body"><div class="post-date">June 2, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;June is here, and so are all of our wonderful summer events and groups!&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">June is here, and so are all of our wonderful summer events and groups! ☀️  Swipe through to see what’s coming up →
+    <div class="posts-grid"><!--TP_START--><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 2.12x</span></div><div class="post-body"><div class="post-date">June 2, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;June is here, and so are all of our wonderful summer events and groups!&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">June is here, and so are all of our wonderful summer events and groups! ☀️  Swipe through to see what’s coming up →
 
 #daytonrunning #daytonsummer #ohiosummer</span><span class="cap-ellipsis" id="tpcarousel1-ellipsis">&hellip;</span><span class="cap-rest" id="tpcarousel1-rest" style="display:none"></span><button class="cap-toggle" id="tpcarousel1-btn" onclick="toggleCap('tpcarousel1')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">PERFORMANCE</span><span class="sm-value">Above avg</span><span class="sm-badge outlier-1x">multi-metric</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A save outlier at 3.0x the account’s average. Content the audience wanted to reference later, the strongest early signal of a future buyer. Save-worthy fit and product breakdowns are a proven pillar to keep running.</p></div><a href="https://www.instagram.com/p/DZF9D2SEbb5/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
-<div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Post Score: 182/100</span></div><div class="post-body"><div class="post-date">June 4, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Little legs, big milestones.&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Little legs, big milestones. 👟☀️
+<div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 1.82x</span></div><div class="post-body"><div class="post-date">June 4, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Little legs, big milestones.&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Little legs, big milestones. 👟☀️
 
 Our Juniors Running Program is back this summer, and right around the corner! We can’t wait to see what this year’s crew</span><span class="cap-ellipsis" id="tpcarousel2-ellipsis">&hellip;</span><span class="cap-rest" id="tpcarousel2-rest" style="display:none"> accomplishes.
 
@@ -812,7 +854,7 @@ Forest Field Park, Centerville
 More details and registration in the link in bio! 
 
 #summercamp #kidsrunning #daystonsummercamp</span><button class="cap-toggle" id="tpcarousel2-btn" onclick="toggleCap('tpcarousel2')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">1,568</span><span class="sm-badge outlier-1x">1.5x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A reach outlier at 1.5x the account’s average views. The hook broke past the core audience and into the wider algorithm, exactly the discovery motion a Spark-stage account needs. Strong signal to double down on this format and topic.</p></div><a href="https://www.instagram.com/p/DZK6MqxDXJH/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
-<div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Post Score: 142/100</span></div><div class="post-body"><div class="post-date">June 11, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Our “Sun Chaser” collection features the one and only UPF sun protection line by…&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Our “Sun Chaser” collection features the one and only UPF sun protection line by @runinrabbit.
+<div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 1.42x</span></div><div class="post-body"><div class="post-date">June 11, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Our “Sun Chaser” collection features the one and only UPF sun protection line by…&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Our “Sun Chaser” collection features the one and only UPF sun protection line by @runinrabbit.
 
 Stay cool, stay moving, and stay safe all summer long with these</span><span class="cap-ellipsis" id="tpcarousel3-ellipsis">&hellip;</span><span class="cap-rest" id="tpcarousel3-rest" style="display:none"> breathable and cooling must-haves. UPF protection from the sun and wind ☀️
 
