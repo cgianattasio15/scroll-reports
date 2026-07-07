@@ -67,7 +67,7 @@ def top_post_card(rank, badge_class, badge_label, score, date, fmt, hook, captio
     return (
         f'<div class="post-card"><div class="post-header"><span class="post-rank">#{rank} Top Post</span>'
         f'<span class="post-type-badge {badge_class}">{badge_label}</span>'
-        f'<span class="post-score">Post Score: {score}/100</span></div>'
+        f'<span class="post-score">Outlier Magnitude: {score/100:.2f}x</span></div>'
         f'<div class="post-body"><div class="post-date">{date}</div>'
         f'<div class="post-format-pill">{fmt}</div>'
         f'<blockquote class="post-hook">&ldquo;{hook}&rdquo;</blockquote>'

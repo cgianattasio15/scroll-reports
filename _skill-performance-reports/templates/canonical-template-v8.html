@@ -461,6 +461,61 @@
   
     /* v8.3.3 mobile body-text floor (CLAUDE.md 3.12): .mc-callout >=14px on phones */
     @media(max-width:480px){.mc-callout{font-size:14px}}
+  
+    /* ═══ v8.3.4 June Highlights (C1) ═══ */
+    .jhi{max-width:920px;margin:1.25rem auto 0;padding:0 1.25rem}
+    .jhi-card{background:#fff;border:1px solid var(--border,rgba(21,21,22,.09));border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 2px 16px rgba(21,21,22,.05)}
+    .jhi-title{font-size:.6875rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--azure,#0e3387);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .jhi-title .dot{width:6px;height:6px;border-radius:50%;background:var(--hl,#e2ed7a)}
+    .jhi-list{display:flex;flex-direction:column;gap:.6rem}
+    .jhi-item{display:flex;gap:.7rem;align-items:flex-start;line-height:1.5}
+    .jhi-item .mk{flex:0 0 auto;width:8px;height:8px;border-radius:2px;background:var(--hl,#e2ed7a);margin-top:.42rem}
+    .jhi-item .bd{font-size:.9rem;color:var(--text,#151516)}
+    .jhi-item .bd b{color:var(--azure,#0e3387);font-weight:800;letter-spacing:.01em}
+    @media(max-width:480px){.jhi-item .bd{font-size:14px}}
+
+    /* ═══ v8.3.4 Q1-Q4 year view (C2) — light theme ═══ */
+    .qyear{margin-top:1.5rem}
+    .qyear-intro{font-size:.8125rem;color:var(--muted,#6b7280);line-height:1.6;max-width:640px;margin:0 auto 1rem;text-align:left}
+    .qy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}
+    .qy-col{background:var(--porcelain,#f2f3f4);border:1px solid var(--border,rgba(21,21,22,.09));border-radius:10px;padding:.8rem .7rem;text-align:center;position:relative}
+    .qy-col.current{border-color:rgba(14,51,135,.35);background:rgba(226,237,122,.14)}
+    .qy-col.pending{opacity:.65}
+    .qy-q{font-size:.9rem;font-weight:800;color:var(--text,#151516);letter-spacing:.02em}
+    .qy-range{font-size:.625rem;color:var(--muted,#6b7280);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+    .qy-avg{font-size:1.5rem;font-weight:800;color:var(--azure,#0e3387);line-height:1}
+    .qy-avg .u{font-size:.7rem;color:var(--muted,#6b7280);font-weight:600}
+    .qy-note{font-size:.72rem;color:#374151;line-height:1.42;padding:.35rem .1rem}
+    .qy-badge{display:inline-block;font-size:.5625rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:20px;margin:.4rem 0}
+    .qy-badge.steady{background:rgba(107,114,128,.16);color:#4b5563}
+    .qy-badge.building,.qy-badge.recovering{background:rgba(14,51,135,.12);color:#0e3387}
+    .qy-badge.strong{background:rgba(5,150,105,.14);color:#059669}
+    .qy-badge.mixed,.qy-badge.softening{background:rgba(217,119,6,.16);color:#b45309}
+    .qy-bars{display:flex;align-items:flex-end;justify-content:center;gap:3px;height:26px;margin:.3rem 0 .45rem}
+    .qy-bars span{width:8px;border-radius:2px 2px 0 0;background:rgba(14,51,135,.28)}
+    .qy-bars span.cur{background:var(--azure,#0e3387)}
+    .qy-state{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#6b7280)}
+    .qy-col.current .qy-state{color:var(--azure,#0e3387)}
+    @media(max-width:560px){.qy-grid{grid-template-columns:1fr 1fr}}
+
+    /* ═══ v8.3.4 trajectory chart (C3) ═══ */
+    .traj-wrap{margin:0 0 1.1rem}
+    .traj-lead{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:1rem}
+    .traj-chart{width:100%;height:auto;display:block}
+    .traj-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-top:.75rem;font-size:.75rem;color:rgba(255,255,255,.65)}
+    .traj-legend .lg{display:inline-flex;align-items:center;gap:.4rem}
+    .traj-legend .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+    .traj-legend .sw.mid{background:#e2ed7a}
+    .traj-legend .sw.band{background:rgba(226,237,122,.28);height:10px}
+    .traj-legend .sw.proj{background:linear-gradient(90deg,rgba(255,255,255,.5) 50%,transparent 50%);background-size:6px 3px}
+
+    /* ═══ v8.3.4 dip block typography tighten (C5) ═══ */
+    .dip-narr{padding:1rem 1.2rem!important;margin-bottom:1.25rem!important}
+    .dip-narr-label{margin-bottom:.55rem!important}
+    .dip-narr-list{gap:.5rem!important}
+    .dip-narr-item{display:block!important;line-height:1.45!important;font-size:.85rem!important}
+    .dip-narr-item b{display:block!important;margin-bottom:.1rem!important;font-weight:800!important;color:#78350f;letter-spacing:.01em}
+
   </style>
   <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -541,6 +596,9 @@
   </div>
 </header>
 
+<!-- ═══ JUNE HIGHLIGHTS (v8.3.4 C1) ═══ -->
+<div class="jhi"><div class="jhi-card"><p class="jhi-title"><span class="dot"></span>{{MONTH}} Highlights</p><div class="jhi-list"><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Win of the month</b> &middot; {{HIGHLIGHT_WIN}}</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Standout</b> &middot; {{HIGHLIGHT_STANDOUT}}</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>What we&rsquo;re focused on next</b> &middot; {{HIGHLIGHT_NEXT}}</span></div></div></div></div>
+
 <!-- ═══ SCORE CARD + QUARTERLY SNAPSHOT (Section 2, Change 6) ═══ -->
 <div class="score-wrap" id="score-section">
   <div class="score-card">
@@ -564,20 +622,7 @@
          (Mar/Jun/Sep/Dec) from Sept 2026 onward, when the QBR artifact owns the snapshot.
          EXCEPTION: surface it for June 2026 reports (no QBR artifact ships until Aug 31).
          Trajectory class options: strong | steady | building | recovering | soft | mixed -->
-    <div class="qsnap" id="qsnap">
-      <div class="qsnap-head">
-        <span class="qsnap-label">Quarter to date</span>
-        <span class="qsnap-traj {{QSNAP_TRAJ_CLASS}}">{{QSNAP_TRAJ_LABEL}}</span>
-      </div>
-      <div class="qsnap-row">
-        <div class="qsnap-spark">{{QSNAP_SPARKLINE_SVG}}</div>
-        <div class="qsnap-avg">
-          <span class="v">{{QSNAP_AVG}}</span>
-          <span class="l">3-month average</span>
-        </div>
-      </div>
-      <p class="qsnap-narr">{{QSNAP_NARRATIVE}}</p>
-    </div>
+    <div class="qyear" id="qsnap"><p class="qyear-intro">{{QYEAR_INTRO}}</p><div class="qy-grid"><div class="qy-col {{Q1_CLS}}"><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div>{{Q1_BODY}}<div class="qy-state">{{Q1_STATE}}</div></div><div class="qy-col {{Q2_CLS}}"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div>{{Q2_BODY}}<div class="qy-state">{{Q2_STATE}}</div></div><div class="qy-col {{Q3_CLS}}"><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div>{{Q3_BODY}}<div class="qy-state">{{Q3_STATE}}</div></div><div class="qy-col {{Q4_CLS}}"><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div>{{Q4_BODY}}<div class="qy-state">{{Q4_STATE}}</div></div></div></div>
   </div>
 </div>
 
@@ -793,45 +838,7 @@
       </div>
     </div>
 
-    <div class="c2b-estimate">
-      <p class="c2b-panel-label">Conservative business estimate</p>
-      <!-- v8.3: customer-type cards. Lead with the 12-MONTH value (headline); lifetime is the compounding note below.
-           DUAL-CARD clients (Carl's deli/catering, Lane & Kate consultation/gift): two .c2b-cc + the .c2b-combined line.
-           SINGLE-CARD clients (DEFINE, Launch Party, MEAS): add class "single" to .c2b-cust-cards, keep Card A only, delete Card B + the .c2b-combined line.
-           THIN-VOLUME (Up & Running, Spark / < ~50 taps): replace this whole cards+combined block with a single <p class="c2b-est-note">{{C2B_THIN_PARAGRAPH}}</p>. -->
-      <div class="c2b-cust-cards">
-        <div class="c2b-cc">
-          <div class="c2b-cc-eyebrow">{{C2B_CARD_A_TITLE}}</div>
-          <!-- v8.3.1: hero = point estimate (midpoint); range shown as subtext beneath. -->
-          <div class="c2b-cc-num">{{C2B_CARD_A_NUM}}</div>
-          <p class="c2b-cc-lbl">{{C2B_CARD_A_LBL}}</p>
-          <p class="c2b-cc-range">{{C2B_CARD_A_RANGE}}</p>
-          <div class="c2b-cc-meta">
-            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">{{C2B_CARD_A_TIMELINE}}</span></div>
-            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">{{C2B_CARD_A_12MO}}</span></div>
-            <span class="c2b-cc-sub">{{C2B_CARD_A_12MO_RANGE}}</span>
-            <span class="c2b-cc-sub">{{C2B_CARD_A_SUB}}</span>
-          </div>
-        </div>
-        <div class="c2b-cc">
-          <div class="c2b-cc-eyebrow">{{C2B_CARD_B_TITLE}}</div>
-          <div class="c2b-cc-num">{{C2B_CARD_B_NUM}}</div>
-          <p class="c2b-cc-lbl">{{C2B_CARD_B_LBL}}</p>
-          <p class="c2b-cc-range">{{C2B_CARD_B_RANGE}}</p>
-          <div class="c2b-cc-meta">
-            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">Timeline</span><span class="c2b-cc-mval">{{C2B_CARD_B_TIMELINE}}</span></div>
-            <div class="c2b-cc-row"><span class="c2b-cc-mlbl">12-month value</span><span class="c2b-cc-mval big">{{C2B_CARD_B_12MO}}</span></div>
-            <span class="c2b-cc-sub">{{C2B_CARD_B_12MO_RANGE}}</span>
-            <span class="c2b-cc-sub">{{C2B_CARD_B_SUB}}</span>
-          </div>
-        </div>
-      </div>
-      <div class="c2b-combined-block">
-        <div class="c2b-combined"><span class="c2b-combined-lbl">Combined 12-month signal for {{REPORT_MONTH}}</span><span class="c2b-combined-val">{{C2B_COMBINED}}</span></div>
-        <p class="c2b-combined-sub">{{C2B_COMBINED_RANGE}}</p>
-      </div>
-      <p class="c2b-est-note">{{C2B_EST_NOTE}}</p>
-      <details class="c2b-method">
+    <div class="c2b-estimate"><p class="c2b-panel-label">{{TRAJ_PANEL_LABEL}}</p><div class="traj-wrap"><p class="traj-lead">{{TRAJ_LEAD}}</p>{{TRAJ_SVG}}{{TRAJ_LEGEND}}</div><details class="c2b-method">
         <summary>How we got here</summary>
         <div class="c2b-method-body">{{C2B_METHOD_BODY}}
           <p>The headline number is a midpoint. The range beneath it reflects the uncertainty in conversion rates and customer mix. The midpoint gives you an expected impact to plan around; the range shows the honest spread. As Bitly per-link tracking and your own data land in Q3, both the midpoint and the range tighten.</p>
