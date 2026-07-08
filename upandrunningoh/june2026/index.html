@@ -517,6 +517,59 @@
     .dip-narr-item{display:block!important;line-height:1.45!important;font-size:.85rem!important}
     .dip-narr-item b{display:block!important;margin-bottom:.1rem!important;font-weight:800!important;color:#78350f;letter-spacing:.01em}
 
+
+    /* ═══ v8.4 STORYTELLING LAYER ═══ */
+    .beat-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.85rem}
+    .beat-eyebrow .bn{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:rgba(14,51,135,.1);color:var(--azure);font-size:.75rem;font-weight:800;letter-spacing:0}
+    .beat-eyebrow.on-dark{color:var(--hl);margin:1rem 0 0}
+    .beat-eyebrow.on-dark .bn{background:rgba(226,237,122,.2);color:var(--hl)}
+    .beat-takeaway{font-size:clamp(1.2rem,3.4vw,1.55rem);font-weight:800;line-height:1.32;color:var(--text);letter-spacing:-.01em;margin-bottom:1.1rem}
+    .beat-prose{font-size:.95rem;color:var(--muted);line-height:1.7;max-width:680px;margin-bottom:1.1rem}
+    .sub-head{font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin:1.5rem 0 1rem}
+    .work-strip{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.1rem 0 1.25rem}
+    .work-chip{background:var(--ghost);border:1px solid var(--border);border-radius:22px;padding:.55rem .95rem;font-size:.8125rem;font-weight:600;color:var(--text);line-height:1.4}
+    .work-chip b{color:var(--azure);font-weight:800}
+    /* Beat 3 headline stat tiles */
+    .bstats{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:0 0 .5rem}
+    .bstat{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.15rem 1rem;text-align:center}
+    .bstat-val{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--text)}
+    .bstat-val.exceed{color:var(--exceed)}.bstat-val.ontrack{color:var(--ontrack)}.bstat-val.watch{color:var(--watch)}
+    .bstat-lbl{font-size:.72rem;color:var(--muted);font-weight:600;margin-top:.45rem;line-height:1.3}
+    .bstat-tag{display:inline-block;font-size:.5625rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:.15rem .45rem;border-radius:4px;margin-top:.55rem}
+    .bstat-tag.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
+    .bstat-tag.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
+    .bstat-tag.watch{background:rgba(245,158,11,.12);color:var(--watch)}
+    @media(max-width:560px){.bstats{grid-template-columns:1fr 1fr}}
+    /* Beat 4 featured post + pattern line */
+    .feature-wrap{max-width:560px;margin:0 0 1.1rem}
+    .beat-pattern{background:var(--ghost);border:1px solid var(--border);border-left:3px solid var(--hl);border-radius:8px;padding:1rem 1.25rem;font-size:.9rem;color:var(--text);line-height:1.6;margin-top:1.1rem}
+    /* Beat 5 light CTA */
+    .beat-cta{background:var(--ghost);border:1px solid var(--border);border-left:3px solid var(--azure);border-radius:10px;padding:1.25rem 1.4rem;margin-top:1.5rem}
+    .beat-cta-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.4rem}
+    .beat-cta-copy{font-size:.95rem;font-style:italic;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:6px;padding:.7rem .9rem}
+    /* Beat 3 goal-by-goal breakdown items (inside the collapsible) */
+    .gg-item{padding:1.1rem 0;border-bottom:1px solid var(--border)}
+    .gg-item:first-child{padding-top:0}
+    .gg-item:last-child{border-bottom:0;padding-bottom:0}
+    .gg-item .gt-funnel{margin-bottom:.5rem}
+    .gg-item .gt-bct{margin-bottom:.5rem}
+    .gg-item .gt-narr{margin:0}
+    /* Collapsible proof affordance */
+    .proof{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.1rem;background:var(--ghost)}
+    .proof+.proof{margin-top:.75rem}
+    .proof>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.75rem;padding:.95rem 1.15rem;min-height:52px;font-size:.9rem;font-weight:700;color:var(--azure)}
+    .proof>summary::-webkit-details-marker{display:none}
+    .proof>summary:hover{background:rgba(14,51,135,.03)}
+    .proof-ic{flex-shrink:0;width:24px;height:24px;border-radius:6px;background:rgba(14,51,135,.1);color:var(--azure);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800}
+    .proof-chev{margin-left:auto;flex-shrink:0;transition:transform .2s;color:var(--azure);font-size:1.35rem;line-height:1;font-weight:400}
+    .proof[open]>summary .proof-chev{transform:rotate(90deg)}
+    .proof-body{padding:1.25rem;border-top:1px solid var(--border);background:#fff}
+    .proof-body .wrap{padding:0;max-width:none;margin:0}
+    .proof-body .sec{background:transparent;border:0;box-shadow:none;padding:0;margin:0}
+    .proof-body .sec-label,.proof-body .sec-title{display:none}
+    @media(min-width:901px){.proof-body .posts-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.proof-body{padding:1rem .85rem}}
+
   </style>
   <meta name="twitter:card" content="summary_large_image">
   <script>window.SCROLL_GATE={slug:'upandrunningoh',code:'uar.scroll',title:'Private report',sub:'This report is private. Enter your access code to continue.',button:'View report'};</script>
@@ -524,37 +577,19 @@
 </head>
 <body>
 
-<!-- ═══ STICKY NAV ═══ -->
 <nav class="report-nav" aria-label="Report sections">
   <div class="report-nav-inner">
-    <a class="report-nav-link" href="#score-section">Score</a>
-    <a class="report-nav-link" href="#goals-title">Goals</a>
-    <a class="report-nav-link" href="#perf-title">Performance</a>
-    <a class="report-nav-link" href="#impact-title">Impact</a>
-    <a class="report-nav-link" href="#posts-title">Top Posts</a>
-    <a class="report-nav-link" href="#allposts-title">All Posts</a>
-    <a class="report-nav-link" href="#tests-title">July Focus</a>
-    <a class="report-nav-link" href="#cta-title">CTAs</a>
-    <a class="report-nav-link" href="#prev-title">History</a>
+    <a class="report-nav-link" href="#beat1">This Month</a>
+    <a class="report-nav-link" href="#beat2">What We Did</a>
+    <a class="report-nav-link" href="#beat3">Results</a>
+    <a class="report-nav-link" href="#beat4">What We Learned</a>
+    <a class="report-nav-link" href="#beat5">What&rsquo;s Next</a>
   </div>
 </nav>
 
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
 
-<!-- ═══ LOOM WALKTHROUGH (Change 7) ═══
-     To activate: add the loom share id to data-loom-id below AND add class "active" to .loom-band.
-     If left empty / inactive, this band renders nothing (no broken player, no placeholder). -->
-<div class="loom-band" id="loom-band">
-  <div class="loom-inner">
-    <div class="loom-eyebrow"><span class="dot"></span>Your June walkthrough</div>
-    <div class="loom-frame">
-      <iframe id="loom-embed" data-loom-id="" src="" title="June report walkthrough" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ HERO + PAIRED BLOCK (Change 1 + methodology one-liner Change 5) ═══ -->
-<header class="hero">
+<header class="hero" id="beat1">
   <div class="hero-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
     <div class="hero-top-row">
@@ -568,6 +603,8 @@
       <span>June 1&ndash;30, 2026</span><span class="dot"></span>
       <span>Managed by Rachel</span>
     </div>
+
+    <div class="beat-eyebrow on-dark"><span class="bn">1</span> This month</div>
 
     <!-- PAIRED HERO BLOCK -->
     <div class="paired-hero">
@@ -593,97 +630,84 @@
     </div>
 
     <!-- ONE-LINE PLAIN-ENGLISH SUMMARY (Chase fills per report) -->
-    <p class="hero-summary"><strong>June moved to 10 bio link taps, up from May. The July focus is building on the community-event content that drove the recovery.</strong></p>
+    <p class="hero-summary"><strong>June was a recovery month. Retention broke through, community re-engaged, and your reach base rebuilt.</strong></p>
 
     <!-- METHODOLOGY ONE-LINER (locked copy, v8 Callout Library — same every report) -->
     <p class="hero-method">Your score reflects how this month performed against your stage targets, weighted by what predicts buyer behavior. Monthly score is a snapshot. Strategy decisions are made on quarterly trend, not single-month signal.</p>
   </div>
 </header>
 
-<!-- ═══ JUNE HIGHLIGHTS (v8.3.4 C1) ═══ -->
-<div class="jhi"><div class="jhi-card"><p class="jhi-title"><span class="dot"></span>June Highlights</p><div class="jhi-list"><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Win of the month</b> &middot; Retention broke through to 66%, well above the Spark ceiling. Short-form Reels are landing.</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Standout</b> &middot; Community engagement restarted. Comments jumped from 3 to 11, shares grew from 17 to 56.</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>What we&rsquo;re focused on next</b> &middot; July&rsquo;s focus is scaling short-form Reels and testing save-worthy gear guides.</span></div></div></div></div>
-
-<!-- ═══ SCORE CARD + QUARTERLY SNAPSHOT (Section 2, Change 6) ═══ -->
-<div class="score-wrap" id="score-section">
-  <div class="score-card">
-    <p class="score-eyebrow">Score Context</p>
-    <span class="score-delta up">&#9650; 0.4 vs. May</span>
-    <div class="score-badges">
-      <div class="score-badge exceed"><span class="bd"></span>1 Exceeding</div>
-      <div class="score-badge ontrack"><span class="bd"></span>6 On Track</div>
-      <div class="score-badge watch"><span class="bd"></span>3 Watch</div>
+<div class="wrap"><section class="sec beat" id="beat2" aria-labelledby="beat2-t">
+  <p class="beat-eyebrow"><span class="bn">2</span> What we did</p>
+  <h2 class="beat-takeaway" id="beat2-t">We published 9 posts, leaning into summer events and running groups, the juniors program, and product collections, all pointing toward fittings and shop visits.</h2>
+  <div class="work-strip"><span class="work-chip"><b>9 posts</b></span><span class="work-chip">Mostly carousels</span><span class="work-chip">Themes: summer events and groups, juniors program, product collections</span><span class="work-chip">Focus: fittings and shop</span></div>
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See every post and its numbers</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
+  <section class="sec" aria-labelledby="allposts-title">
+    <p class="sec-label">Full Month</p>
+    <h2 class="sec-title" id="allposts-title">All Posts This Month</h2>
+    <p class="sec-sub">Every post published this month, with the numbers behind each one. Tap any column header to sort. Rows with a lime edge over-indexed on saves or click-through, the two strongest buyer signals.</p>
+    <div class="ap-controls" id="ap-controls">
+      <button class="ap-chip active" data-fmt="all">All</button>
+      <button class="ap-chip" data-fmt="reel">Reels</button>
+      <button class="ap-chip" data-fmt="carousel">Carousels</button>
+      <button class="ap-chip" data-fmt="static">Static</button>
+      <div class="ap-mobile-sort">
+        <select id="ap-mobile-sort-select" aria-label="Sort posts">
+          <option value="date|desc">Newest first</option>
+          <option value="date|asc">Oldest first</option>
+          <option value="views|desc">Most views</option>
+          <option value="saves|desc">Most saves</option>
+          <option value="shares|desc">Most shares</option>
+          <option value="comments|desc">Most comments</option>
+          <option value="ctr|desc">Highest CTR</option>
+        </select>
+      </div>
     </div>
-    <div class="trend-wrap" aria-label="Score trend">
-      <p class="trend-label">Score Trend</p>
-      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:35%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.4</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:58%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.3</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:50%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.0</div><div class="tm">Mar</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:48%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">Apr</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:48%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">May</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:58%;background:#e2ed7a"></div></div><div class="ts curr">8.3</div><div class="tm curr">Jun</div></div></div>
+    <div class="ap-table-wrap">
+      <table class="ap-table" id="ap-table">
+        <thead>
+          <tr>
+            <th data-key="date" data-type="date">Date<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="format" data-type="str">Format<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="caption" data-type="str">Caption<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="views" data-type="num">Views<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="saves" data-type="num">Saves<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="linktaps" data-type="num">Bio Link Taps<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="" data-type="none">Post</th>
+          </tr>
+        </thead>
+        <tbody id="ap-tbody"><!-- rows rendered by JS from ALL_POSTS --></tbody>
+      </table>
     </div>
+    <!-- Mobile card stack (rendered by JS, shown <640px) -->
+    <div class="ap-cards" id="ap-cards"></div>
+    <div class="ap-legend"><span class="swatch"></span> Lime edge = over-indexed on saves or CTR (at least 1.5&times; the account average this month).</div>
+  </section>
+</div></div></details>
+</section></div>
 
-    <!-- DIP-MONTH LOCKED LINE: add class "active" only when score drops >0.5 from prior month -->
-    <p class="dip-line" id="dip-line">Expected volatility. The strategy holds. A single softer month inside a strong quarter is normal, and the call on direction gets made on quarterly trend at quarter-close, not on one month.</p>
-
-    <!-- QUARTERLY SNAPSHOT BLOCK (Change 6).
-         Render in non-QBR months (Jan/Feb/Apr/May/Jul/Aug/Oct/Nov). SKIP in QBR months
-         (Mar/Jun/Sep/Dec) from Sept 2026 onward, when the QBR artifact owns the snapshot.
-         EXCEPTION: surface it for June 2026 reports (no QBR artifact ships until Aug 31).
-         Trajectory class options: strong | steady | building | recovering | soft | mixed -->
-    <div class="qyear" id="qsnap"><p class="qyear-intro">Strategy adjustments happen at quarterly cadence, not month to month. Looking at a full three-month window means we build strategy on real patterns, not short-term noise. Below is your year at a quarterly view.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">7.9<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:43%"></span><span style="height:67%"></span><span class="cur" style="height:59%"></span></div><div class="qy-theme"><div class="qy-tline">Steady quarter, strengthened through February and March.</div></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">8.0<span class="u">/10</span></div><div class="qy-badge recovering">Recovering</div><div class="qy-bars"><span style="height:56%"></span><span style="height:56%"></span><span class="cur" style="height:67%"></span></div><div class="qy-theme"><div class="qy-tline"><span class="qy-tl">Worked:</span> June recovered with retention at 66%, and community re-engaged as comments and shares climbed.</div><div class="qy-tline"><span class="qy-tl">Watched:</span> saves stayed below the stage floor, and bio link tap volume is still thin.</div></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div><div class="qy-note">Begins July</div><div class="qy-state">Pending</div></div><div class="qy-col "><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Later this year</div><div class="qy-state">Pending</div></div></div></div>
-  </div>
-</div>
-
-<!-- ═══ GOAL TRACKER (Section 3, Change 2) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="goals-title">
-    <p class="sec-label">Business Goals</p>
-    <h2 class="sec-title" id="goals-title">Goal Tracker</h2>
-    <p class="sec-sub">Your three funnel stages, scored as a weighted composite of the metrics in each. Metrics that predict real buyer behavior, like saves and click-through, carry more weight than raw reach.</p>
-    <div class="gt-list">
-      <div class="gt-row tofu">
-        <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div>
-          <p class="gt-title">Build Regional Brand Presence &amp; Grow Wellness Partnership Visibility</p>
-          <div class="gt-bct">
+<div class="wrap"><section class="sec beat" id="beat3" aria-labelledby="beat3-t">
+  <p class="beat-eyebrow"><span class="bn">3</span> The results</p>
+  <h2 class="beat-takeaway" id="beat3-t">The month recovered across the board. Retention hit 66%, above your stage ceiling, and community engagement climbed sharply.</h2>
+  <div class="bstats"><div class="bstat"><div class="bstat-val exceed">66%</div><div class="bstat-lbl">Video retention</div><span class="bstat-tag exceed">Exceeding</span></div><div class="bstat"><div class="bstat-val ontrack">56</div><div class="bstat-lbl">Shares</div><span class="bstat-tag ontrack">On Track</span></div><div class="bstat"><div class="bstat-val ontrack">257</div><div class="bstat-lbl">Profile visits</div><span class="bstat-tag ontrack">On Track</span></div><div class="bstat"><div class="bstat-val watch">11</div><div class="bstat-lbl">Saves</div><span class="bstat-tag watch">Watch</span></div></div>
+  <p class="sub-head">Goal Tracker</p>
+  
+  <div class="gt-list"><div class="gt-row tofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div><p class="gt-title">Build Regional Brand Presence &amp; Grow Wellness Partnership Visibility</p><div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="45" style="width:0%"></div></div>
             <span class="gt-pct">45%</span>
-          </div>
-          <div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div>
-          <p class="gt-narr">Your awareness stage scored 45% this month, up from May. Shares jumped and views rebuilt as community-event content traveled. New followers sit just under the Spark floor, and widening reach is what pulls the follow along behind it.</p>
-        </div>
-        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">1.25<span class="gt-score-max">/2.75</span></span></div>
-      </div>
-
-      <div class="gt-row mofu">
-        <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div>
-          <p class="gt-title">Build Trust Through Expertise &amp; Improve Customer Retention</p>
-          <div class="gt-bct">
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">1.25<span class="gt-score-max">/2.75</span></span></div></div><div class="gt-row mofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div><p class="gt-title">Build Trust Through Expertise &amp; Improve Customer Retention</p><div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="49" style="width:0%"></div></div>
             <span class="gt-pct">49%</span>
-          </div>
-          <div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div>
-          <p class="gt-narr">Your engagement stage scored 49%. Retention broke through the Spark ceiling at 66% and carried this stage, while saves and comments still sit below their floors. Save-worthy carousels are the July lever to bring the rest of the layer up.</p>
-        </div>
-        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">2.7<span class="gt-score-max">/5.5</span></span></div>
-      </div>
-
-      <div class="gt-row bofu">
-        <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div>
-          <p class="gt-title">Drive E-Commerce Shop Traffic &amp; In-Store Fit Bookings</p>
-          <div class="gt-bct">
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">2.7<span class="gt-score-max">/5.5</span></span></div></div><div class="gt-row bofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div><p class="gt-title">Drive E-Commerce Shop Traffic &amp; In-Store Fit Bookings</p><div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="60" style="width:0%"></div></div>
             <span class="gt-pct">60%</span>
-          </div>
-          <div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div>
-          <p class="gt-narr">Your conversion stage scored 60%, the strongest of the three. Click-through, link taps, and profile conversion all held inside their Spark ranges and improved from May. The conversion path is efficient; the job is feeding it more volume from the top.</p>
-        </div>
-        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">3.0<span class="gt-score-max">/5.0</span></span></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ═══ PERFORMANCE DASHBOARD (Section 4) ═══ -->
-<div class="wrap">
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">3.0<span class="gt-score-max">/5.0</span></span></div></div></div>
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See the goal-by-goal breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="gg-item"><div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div><div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your awareness stage scored 45% this month, up from May. Shares jumped and views rebuilt as community-event content traveled. New followers sit just under the Spark floor, and widening reach is what pulls the follow along behind it.</p></div><div class="gg-item"><div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div><div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your engagement stage scored 49%. Retention broke through the Spark ceiling at 66% and carried this stage, while saves and comments still sit below their floors. Save-worthy carousels are the July lever to bring the rest of the layer up.</p></div><div class="gg-item"><div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div><div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your conversion stage scored 60%, the strongest of the three. Click-through, link taps, and profile conversion all held inside their Spark ranges and improved from May. The conversion path is efficient; the job is feeding it more volume from the top.</p></div></div></details>
+  <details class="proof"><summary><span class="proof-ic">&#9638;</span><span>See the full 10-metric breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
   <section class="sec" aria-labelledby="perf-title">
     <p class="sec-label">June 2026</p>
     <h2 class="sec-title" id="perf-title">Performance Breakdown</h2>
@@ -812,10 +836,8 @@
       </div>
     </div>
   </section>
-</div>
-
-<!-- ═══ CONTENT-TO-BUSINESS IMPACT (Section 5, v8.3.1 thin-volume) ═══ -->
-<div class="wrap">
+</div></div></details>
+  <details class="proof"><summary><span class="proof-ic">&#9642;</span><span>See the 12-month value trajectory</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
   <section class="sec" aria-labelledby="impact-title">
     <p class="sec-label">From attention to business</p>
     <h2 class="sec-title" id="impact-title">Content to Business Impact</h2>
@@ -831,21 +853,23 @@
       </div>
     </div>
 
-    <div class="c2b-estimate"><p class="c2b-panel-label">Bio link tap trajectory &middot; 2026</p><div class="traj-wrap"><p class="traj-lead">As we&rsquo;ve been working together, we&rsquo;ve grown your ability to drive attention through organic social. Below is your bio link tap trajectory across 2026, the highest-intent signal we track. At your current volume, modeled dollar estimates get noisy, so we chart tap volume directly and begin dollar modeling once you clear roughly 50 taps a month. Each year resets.</p><svg class="traj-chart" viewBox="0 0 640 260" role="img" aria-label="Modeled value trajectory"><line x1="46" y1="226.0" x2="624" y2="226.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="229.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">0</text><line x1="46" y1="174.0" x2="624" y2="174.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="177.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">2</text><line x1="46" y1="122.0" x2="624" y2="122.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="125.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">5</text><line x1="46" y1="70.0" x2="624" y2="70.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="73.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">8</text><line x1="46" y1="18.0" x2="624" y2="18.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="21.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">11</text><text x="46.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jan</text><text x="98.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Feb</text><text x="151.1" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Mar</text><text x="203.6" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Apr</text><text x="256.2" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">May</text><text x="308.7" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jun</text><text x="361.3" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Jul</text><text x="413.8" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Aug</text><text x="466.4" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Sep</text><text x="518.9" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Oct</text><text x="571.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Nov</text><text x="624.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Dec</text><polygon points="46.0,45.1 98.5,117.5 151.1,63.2 203.6,117.5 256.2,99.4 308.7,45.1 308.7,45.1 256.2,99.4 203.6,117.5 151.1,63.2 98.5,117.5 46.0,45.1" fill="rgba(226,237,122,.16)" stroke="none"/><line x1="308.7" y1="45.1" x2="624.0" y2="45.1" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="5 4"/><polyline points="46.0,45.1 98.5,117.5 151.1,63.2 203.6,117.5 256.2,99.4 308.7,45.1" fill="none" stroke="#e2ed7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46.0" cy="45.1" r="3" fill="#e2ed7a"/><circle cx="98.5" cy="117.5" r="3" fill="#e2ed7a"/><circle cx="151.1" cy="63.2" r="3" fill="#e2ed7a"/><circle cx="203.6" cy="117.5" r="3" fill="#e2ed7a"/><circle cx="256.2" cy="99.4" r="3" fill="#e2ed7a"/><circle cx="308.7" cy="45.1" r="3" fill="#e2ed7a"/></svg><div class="traj-legend"><span class="lg"><span class="sw mid"></span>Bio link taps</span><span class="lg"><span class="sw proj"></span>Projection (Jul&ndash;Dec)</span></div></div><p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks at your August strategic review with your own data.</p>
+    <div class="c2b-estimate"><p class="c2b-panel-label">Bio link tap trajectory &middot; 2026</p><div class="traj-wrap"><p class="traj-lead">As we&rsquo;ve been working together, we&rsquo;ve grown your ability to drive attention through organic social. Below is your bio link tap trajectory across 2026, the highest-intent signal we track. At your current volume, modeled dollar estimates get noisy, so we chart tap volume directly and begin dollar modeling once you clear roughly 50 taps a month. Each year resets.</p><svg class="traj-chart" viewBox="0 0 640 260" role="img" aria-label="Modeled value trajectory"><line x1="46" y1="226.0" x2="624" y2="226.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="229.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">0</text><line x1="46" y1="174.0" x2="624" y2="174.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="177.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">2</text><line x1="46" y1="122.0" x2="624" y2="122.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="125.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">5</text><line x1="46" y1="70.0" x2="624" y2="70.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="73.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">8</text><line x1="46" y1="18.0" x2="624" y2="18.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="21.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">11</text><text x="46.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jan</text><text x="98.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Feb</text><text x="151.1" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Mar</text><text x="203.6" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Apr</text><text x="256.2" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">May</text><text x="308.7" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jun</text><text x="361.3" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Jul</text><text x="413.8" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Aug</text><text x="466.4" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Sep</text><text x="518.9" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Oct</text><text x="571.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Nov</text><text x="624.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Dec</text><polygon points="46.0,45.1 98.5,117.5 151.1,63.2 203.6,117.5 256.2,99.4 308.7,45.1 308.7,45.1 256.2,99.4 203.6,117.5 151.1,63.2 98.5,117.5 46.0,45.1" fill="rgba(226,237,122,.16)" stroke="none"/><line x1="308.7" y1="45.1" x2="624.0" y2="45.1" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="5 4"/><polyline points="46.0,45.1 98.5,117.5 151.1,63.2 203.6,117.5 256.2,99.4 308.7,45.1" fill="none" stroke="#e2ed7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46.0" cy="45.1" r="3" fill="#e2ed7a"/><circle cx="98.5" cy="117.5" r="3" fill="#e2ed7a"/><circle cx="151.1" cy="63.2" r="3" fill="#e2ed7a"/><circle cx="203.6" cy="117.5" r="3" fill="#e2ed7a"/><circle cx="256.2" cy="99.4" r="3" fill="#e2ed7a"/><circle cx="308.7" cy="45.1" r="3" fill="#e2ed7a"/></svg><div class="traj-legend"><span class="lg"><span class="sw mid"></span>Bio link taps</span><span class="lg"><span class="sw proj"></span>Projection (Jul&ndash;Dec)</span></div></div><p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. Bitly per-link tracking (a Q3 build) will tighten this range. We recalibrate the customer value benchmarks each quarter as your own data lands.</p>
     </div>
   </section>
-</div>
+</div></div></details>
+</section></div>
 
-<!-- ═══ TOP 3 POSTS (Section 6) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="posts-title">
-    <p class="sec-label">Top Posts of the Month</p>
-    <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
-    <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model. Posts that over-indexed on reach, saves, shares, or retention relative to account averages.</p>
-    <div class="posts-grid"><!--TP_START--><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 2.12x</span></div><div class="post-body"><div class="post-date">June 2, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;June is here, and so are all of our wonderful summer events and groups!&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">June is here, and so are all of our wonderful summer events and groups! ☀️  Swipe through to see what’s coming up →
+<div class="wrap"><section class="sec beat" id="beat4" aria-labelledby="beat4-t">
+  <p class="beat-eyebrow"><span class="bn">4</span> What we learned</p>
+  <h2 class="beat-takeaway" id="beat4-t">Short-form Reels with a strong open are what hold your audience, and community-event content is what pulls them into conversation.</h2>
+  <div class="feature-wrap"><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 2.12x</span></div><div class="post-body"><div class="post-date">June 2, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;June is here, and so are all of our wonderful summer events and groups!&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">June is here, and so are all of our wonderful summer events and groups! ☀️  Swipe through to see what’s coming up →
 
 #daytonrunning #daytonsummer #ohiosummer</span><span class="cap-ellipsis" id="tpcarousel1-ellipsis">&hellip;</span><span class="cap-rest" id="tpcarousel1-rest" style="display:none"></span><button class="cap-toggle" id="tpcarousel1-btn" onclick="toggleCap('tpcarousel1')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">PERFORMANCE</span><span class="sm-value">Above avg</span><span class="sm-badge outlier-1x">multi-metric</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A save outlier at 3.0x the account’s average. Content the audience wanted to reference later, the strongest early signal of a future buyer. Save-worthy fit and product breakdowns are a proven pillar to keep running.</p></div><a href="https://www.instagram.com/p/DZF9D2SEbb5/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
-<div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 1.82x</span></div><div class="post-body"><div class="post-date">June 4, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Little legs, big milestones.&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Little legs, big milestones. 👟☀️
+</div>
+  <p class="beat-pattern">Save-worthy content is the lever to lift saves.</p>
+  <p class="sub-head">Your quarter so far</p>
+  <div class="qyear" id="qsnap"><p class="qyear-intro">You&rsquo;re past testing and into execution. We track performance monthly and step back to adjust the strategy each quarter, so decisions come from real patterns, not single-month swings.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">7.9<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:43%"></span><span style="height:67%"></span><span class="cur" style="height:59%"></span></div><div class="qy-theme"><div class="qy-tline">Steady quarter, strengthened through February and March.</div></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">8.0<span class="u">/10</span></div><div class="qy-badge recovering">Recovering</div><div class="qy-bars"><span style="height:56%"></span><span style="height:56%"></span><span class="cur" style="height:67%"></span></div><div class="qy-theme"><div class="qy-tline"><span class="qy-tl">Worked:</span> June recovered with retention at 66%, and community re-engaged as comments and shares climbed.</div><div class="qy-tline"><span class="qy-tl">Watched:</span> saves stayed below the stage floor, and bio link tap volume is still thin.</div></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div><div class="qy-note">Begins July</div><div class="qy-state">Pending</div></div><div class="qy-col "><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Later this year</div><div class="qy-state">Pending</div></div></div></div>
+  <details class="proof"><summary><span class="proof-ic">&#9733;</span><span>See the other standout posts this month</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="posts-grid"><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 1.82x</span></div><div class="post-body"><div class="post-date">June 4, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Little legs, big milestones.&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Little legs, big milestones. 👟☀️
 
 Our Juniors Running Program is back this summer, and right around the corner! We can’t wait to see what this year’s crew</span><span class="cap-ellipsis" id="tpcarousel2-ellipsis">&hellip;</span><span class="cap-rest" id="tpcarousel2-rest" style="display:none"> accomplishes.
 
@@ -873,124 +897,24 @@ Featured we have the:
 - Men’s UPF Sleeves
 - Ice Hat
 
-#rabbitapparel #upfapparel #daytonsummer</span><button class="cap-toggle" id="tpcarousel3-btn" onclick="toggleCap('tpcarousel3')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">PERFORMANCE</span><span class="sm-value">Above avg</span><span class="sm-badge outlier-1x">multi-metric</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A save outlier at 2.0x the account’s average. Reference-later content that signals real buyer intent. Pairing this save-driving format with the retention-first Reels is the July play.</p></div><a href="https://www.instagram.com/p/DZc_EBzEep3/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><!--TP_END--></div>
-  </section>
-</div>
+#rabbitapparel #upfapparel #daytonsummer</span><button class="cap-toggle" id="tpcarousel3-btn" onclick="toggleCap('tpcarousel3')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">PERFORMANCE</span><span class="sm-value">Above avg</span><span class="sm-badge outlier-1x">multi-metric</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A save outlier at 2.0x the account’s average. Reference-later content that signals real buyer intent. Pairing this save-driving format with the retention-first Reels is the July play.</p></div><a href="https://www.instagram.com/p/DZc_EBzEep3/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div></div></details>
+</section></div>
 
-<!-- ═══ ALL POSTS THIS MONTH (Section 7, Change 9) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="allposts-title">
-    <p class="sec-label">Full Month</p>
-    <h2 class="sec-title" id="allposts-title">All Posts This Month</h2>
-    <p class="sec-sub">Every post published this month, with the numbers behind each one. Tap any column header to sort. Rows with a lime edge over-indexed on saves or click-through, the two strongest buyer signals.</p>
-    <div class="ap-controls" id="ap-controls">
-      <button class="ap-chip active" data-fmt="all">All</button>
-      <button class="ap-chip" data-fmt="reel">Reels</button>
-      <button class="ap-chip" data-fmt="carousel">Carousels</button>
-      <button class="ap-chip" data-fmt="static">Static</button>
-      <div class="ap-mobile-sort">
-        <select id="ap-mobile-sort-select" aria-label="Sort posts">
-          <option value="date|desc">Newest first</option>
-          <option value="date|asc">Oldest first</option>
-          <option value="views|desc">Most views</option>
-          <option value="saves|desc">Most saves</option>
-          <option value="shares|desc">Most shares</option>
-          <option value="comments|desc">Most comments</option>
-          <option value="ctr|desc">Highest CTR</option>
-        </select>
-      </div>
-    </div>
-    <div class="ap-table-wrap">
-      <table class="ap-table" id="ap-table">
-        <thead>
-          <tr>
-            <th data-key="date" data-type="date">Date<span class="arrow">&#9650;&#9660;</span></th>
-            <th data-key="format" data-type="str">Format<span class="arrow">&#9650;&#9660;</span></th>
-            <th data-key="caption" data-type="str">Caption<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="views" data-type="num">Views<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="saves" data-type="num">Saves<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="linktaps" data-type="num">Bio Link Taps<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
-            <th data-key="" data-type="none">Post</th>
-          </tr>
-        </thead>
-        <tbody id="ap-tbody"><!-- rows rendered by JS from ALL_POSTS --></tbody>
-      </table>
-    </div>
-    <!-- Mobile card stack (rendered by JS, shown <640px) -->
-    <div class="ap-cards" id="ap-cards"></div>
-    <div class="ap-legend"><span class="swatch"></span> Lime edge = over-indexed on saves or CTR (at least 1.5&times; the account average this month).</div>
-  </section>
-</div>
-
-<!-- ═══ THIS MONTH'S TESTS + POSTS WE'RE WATCHING (Section 8, Change 8) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="tests-title">
-    <p class="sec-label">July Focus</p>
-    <h2 class="sec-title" id="tests-title">What We Noticed + July Focus</h2>
-    <p class="sec-sub">Strategy adjustments happen at quarter-close with the full three-month picture, not month to month. What follows is what we&rsquo;re paying attention to in July, not changes to your strategy.</p>
-
-    <!-- Top Performer Patterns (1-2) -->
-    <div class="tw-group patterns">
-      <p class="tw-group-label"><span class="ic"></span>What worked this month</p>
-      <div class="tw-items">
-        <div class="tw-item patterns"><p class="tw-item-head">Retention-first Reels drove the month</p><p class="tw-item-body">Retention hit 66%, well above the Spark ceiling, and carried the score&rsquo;s recovery. Short-form Reels with a strong open are working, so we&rsquo;re leaning into that format while the rest of the funnel catches up.</p></div>
-      </div>
-    </div>
-
-    <!-- Posts We're Watching (1-2) — single client-facing line per underperforming post, no deep dissection -->
-    <div class="tw-group watching">
-      <p class="tw-group-label"><span class="ic"></span>What we&rsquo;re watching next</p>
-      <div class="tw-items">
-        <div class="tw-item watching"><p class="tw-item-head">Saves stayed below floor</p><p class="tw-item-body">Saves came in at 11, under the Spark floor of 20. In July we&rsquo;re watching how save-worthy carousels (fit guides, shoe-comparison breakdowns) move this, since saves are the strongest early signal of a future buyer.</p></div>
-      </div>
-    </div>
-
-    <!-- Tactical Tests (2-3) -->
-    <div class="tw-group tests">
+<div class="wrap"><section class="sec beat" id="beat5" aria-labelledby="beat5-t">
+  <p class="beat-eyebrow"><span class="bn">5</span> What&rsquo;s next</p>
+  <h2 class="beat-takeaway" id="beat5-t">Next month we hold the short-form Reel cadence that drove retention and test save-worthy fit guides, while feeding more volume to fittings.</h2>
+  <div class="tw-group tests">
       <p class="tw-group-label"><span class="ic"></span>Where our attention is in July</p>
       <div class="tw-items">
         <div class="tw-item tests"><p class="tw-item-head">Short-form Reels cadence</p><p class="tw-item-body">In July, our attention is on holding the short-form Reel cadence that drove retention this month, pairing the strong opens with clear community-event and product hooks.</p></div>
         <div class="tw-item tests"><p class="tw-item-head">Save-worthy carousels</p><p class="tw-item-body">We&rsquo;re watching how fit guides and shoe-comparison carousels move saves and comments, the two engagement signals still sitting below the Spark floor.</p></div>
       </div>
     </div>
-  </section>
-</div>
-
-<!-- ═══ NEXT MONTH CTAs (Section 9) ═══ -->
-<div class="wrap">
-  <div class="cta-section" role="region" aria-labelledby="cta-title">
-    <p class="cta-eyebrow">July Call-to-Action Plan</p>
-    <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
-    <p class="cta-sub">One primary call to action for July, with three supporting CTAs across the funnel that feed it.</p>
-    <div class="cta-primary">
-      <p class="cta-primary-label">&#9733; Primary CTA</p>
-      <p class="cta-primary-obj">Drive fitting bookings and shop traffic</p>
-      <div class="cta-copy">&ldquo;Book a fitting or shop the summer lineup, link in bio.&rdquo;</div>
-      <p class="cta-rationale">Fittings and shop visits are your highest-intent path. June&rsquo;s recovery rebuilt reach and retention, so July is about turning that renewed attention into bio link taps and booked fittings.</p>
-      <p class="cta-discuss">This CTA is your monthly discussion point. Should we hold it or adjust based on the performance data above?</p>
-    </div>
-    <p class="cta-supp-label">Supporting CTAs</p>
-    <ul class="cta-funnel-list">
-      <li class="cta-funnel-li"><span class="cta-stage-tag tofu">Awareness</span><span><em>&ldquo;Tag your running partner.&rdquo;</em> &middot; Widen reach.</span></li>
-      <li class="cta-funnel-li"><span class="cta-stage-tag mofu">Engagement</span><span><em>&ldquo;Save this fit guide for your next pair.&rdquo;</em> &middot; Build reference intent.</span></li>
-      <li class="cta-funnel-li"><span class="cta-stage-tag bofu">Conversion</span><span><em>&ldquo;Book a fitting, link in bio.&rdquo;</em> &middot; The in-store handoff.</span></li>
-    </ul>
+  <div class="beat-cta">
+    <p class="beat-cta-label">&#9733; Primary call to action</p>
+    <div class="beat-cta-copy">&ldquo;Book a fitting or shop the summer lineup, link in bio.&rdquo;</div>
   </div>
-</div>
-
-<!-- ═══ PREVIOUS REPORTS (Section 10) ═══ -->
-<section class="prev-section" aria-labelledby="prev-title">
-  <div class="prev-inner">
-    <p class="prev-eyebrow">Report History</p>
-    <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
-    <p class="prev-sub">Compare your performance over time. Click any month to view the full report.</p>
-    <div class="prev-grid"><a href="/upandrunningoh/may2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">May 2026</div><div class="prev-score" style="color:#0e3387">7.9<span>/10</span></div><div class="prev-label">Building Month</div><div class="prev-link">View Report &#8599;</div></a><a href="/upandrunningoh/april2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">April 2026</div><div class="prev-score" style="color:#0e3387">7.9<span>/10</span></div><div class="prev-label">Building Month</div><div class="prev-link">View Report &#8599;</div></a><a href="/upandrunningoh/march2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">March 2026</div><div class="prev-score" style="color:#059669">8.0<span>/10</span></div><div class="prev-label">Solid Month</div><div class="prev-link">View Report &#8599;</div></a></div>
-  </div>
-</section>
+</section></div>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -1128,5 +1052,6 @@ Featured we have the:
   /* sticky nav active state */
   (function(){var links=document.querySelectorAll('.report-nav-link');var sections=[];links.forEach(function(l){var el=document.getElementById(l.getAttribute('href').replace('#',''));if(el)sections.push({el:el,link:l});});function onScroll(){var y=window.scrollY+80;var active=null;sections.forEach(function(s){if(s.el.getBoundingClientRect().top+window.scrollY<=y)active=s;});links.forEach(function(l){l.classList.remove('active');});if(active)active.link.classList.add('active');}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
 </script>
+
 </body>
 </html>
