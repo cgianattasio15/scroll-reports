@@ -566,6 +566,13 @@
     .beat-cta-copy{font-size:.95rem;font-style:italic;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:6px;padding:.7rem .9rem;margin-bottom:.6rem}
     .beat-cta-rationale{font-size:.85rem;color:var(--muted);line-height:1.6}
     .beat-closing{font-size:.9rem;color:var(--muted);line-height:1.65;font-style:italic;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border)}
+    /* Beat 3 goal-by-goal breakdown items (inside the collapsible) */
+    .gg-item{padding:1.1rem 0;border-bottom:1px solid var(--border)}
+    .gg-item:first-child{padding-top:0}
+    .gg-item:last-child{border-bottom:0;padding-bottom:0}
+    .gg-item .gt-funnel{margin-bottom:.5rem}
+    .gg-item .gt-bct{margin-bottom:.5rem}
+    .gg-item .gt-narr{margin:0}
     /* Collapsible proof affordance */
     .proof{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.1rem;background:var(--ghost)}
     .proof+.proof{margin-top:.75rem}
@@ -649,13 +656,6 @@
   </div>
 </header>
 
-<div class="wrap"><section class="sec" aria-label="Where your quarter stands">
-  <p class="sub-head">Where your quarter stands</p>
-  <!-- {{QUARTER_VIEW}} : the Q1-Q4 qyear block (v8.3.5), spliced verbatim.
-       First-report clients carry the "your quarterly view is just beginning" intro + note state. -->
-  {{QUARTER_VIEW}}
-</section></div>
-
 <!-- ═══ BEAT 2 · WHAT WE DID ═══ -->
 <div class="wrap"><section class="sec beat" id="beat2" aria-labelledby="beat2-t">
   <p class="beat-eyebrow"><span class="bn">2</span> What we did</p>
@@ -684,10 +684,14 @@
     <div class="bstat"><div class="bstat-val {{BSTAT4_CLS}}">{{BSTAT4_VAL}}</div><div class="bstat-lbl">{{BSTAT4_LBL}}</div><span class="bstat-tag {{BSTAT4_CLS}}">{{BSTAT4_TAG}}</span></div>
   </div>
   <p class="sub-head">Goal Tracker</p>
-  <!-- {{GOAL_TRACKER_SUB}} + {{GOAL_TRACKER}} : the funnel-composite Goal Tracker (v8.1), spliced verbatim.
+  <!-- Goal Tracker (v8.1 funnel-composite), spliced verbatim per client:
+       {{GOAL_TRACKER_SUB}}     : the sec-sub intro line.
+       {{GOAL_TRACKER_COMPACT}} : the 3 compact goal bars (funnel eyebrow + title + bar/pct + weighted score), kept visible.
+       {{GOAL_BREAKDOWN}}       : the goal-by-goal detail ("Built from..." + narrative for all 3 stages), collapsed.
        First-report clients: single-point bars, no MoM sparkline. -->
   {{GOAL_TRACKER_SUB}}
-  {{GOAL_TRACKER}}
+  {{GOAL_TRACKER_COMPACT}}
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See the goal-by-goal breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body">{{GOAL_BREAKDOWN}}</div></details>
   <details class="proof"><summary><span class="proof-ic">&#9638;</span><span>See the full 10-metric breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body">
     <!-- {{PERF_BREAKDOWN}} : Performance Breakdown, followers banner + 10 metric cards + callouts, spliced verbatim -->
     {{PERF_BREAKDOWN}}
@@ -707,6 +711,11 @@
   <!-- {{TOP_POST_FEATURED}} : the #1 top-post card, spliced verbatim -->
   <div class="feature-wrap">{{TOP_POST_FEATURED}}</div>
   <p class="beat-pattern">{{BEAT4_PATTERN}}</p>
+  <p class="sub-head">Your quarter so far</p>
+  <!-- {{QUARTER_VIEW}} : the Q1-Q4 qyear block (v8.3.5), spliced verbatim. Framed here as the
+       quarter-scale view. First-report clients carry the "your quarterly view is just beginning"
+       intro + note states (Q1 "Not tracked...", Q2 "Building baseline..." + Worked/Watched, Q3/Q4 pending). -->
+  {{QUARTER_VIEW}}
   <details class="proof"><summary><span class="proof-ic">&#9733;</span><span>See the other standout posts this month</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="posts-grid">
     <!-- {{TOP_POSTS_REST}} : the remaining top-post cards (#2, #3), spliced verbatim -->
     {{TOP_POSTS_REST}}
