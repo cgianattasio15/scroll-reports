@@ -518,6 +518,59 @@
     .dip-narr-item{display:block!important;line-height:1.45!important;font-size:.85rem!important}
     .dip-narr-item b{display:block!important;margin-bottom:.1rem!important;font-weight:800!important;color:#78350f;letter-spacing:.01em}
 
+
+    /* ═══ v8.4 STORYTELLING LAYER ═══ */
+    .beat-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.85rem}
+    .beat-eyebrow .bn{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:rgba(14,51,135,.1);color:var(--azure);font-size:.75rem;font-weight:800;letter-spacing:0}
+    .beat-eyebrow.on-dark{color:var(--hl);margin:1rem 0 0}
+    .beat-eyebrow.on-dark .bn{background:rgba(226,237,122,.2);color:var(--hl)}
+    .beat-takeaway{font-size:clamp(1.2rem,3.4vw,1.55rem);font-weight:800;line-height:1.32;color:var(--text);letter-spacing:-.01em;margin-bottom:1.1rem}
+    .beat-prose{font-size:.95rem;color:var(--muted);line-height:1.7;max-width:680px;margin-bottom:1.1rem}
+    .sub-head{font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin:1.5rem 0 1rem}
+    .work-strip{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.1rem 0 1.25rem}
+    .work-chip{background:var(--ghost);border:1px solid var(--border);border-radius:22px;padding:.55rem .95rem;font-size:.8125rem;font-weight:600;color:var(--text);line-height:1.4}
+    .work-chip b{color:var(--azure);font-weight:800}
+    /* Beat 3 headline stat tiles */
+    .bstats{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:0 0 .5rem}
+    .bstat{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.15rem 1rem;text-align:center}
+    .bstat-val{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--text)}
+    .bstat-val.exceed{color:var(--exceed)}.bstat-val.ontrack{color:var(--ontrack)}.bstat-val.watch{color:var(--watch)}
+    .bstat-lbl{font-size:.72rem;color:var(--muted);font-weight:600;margin-top:.45rem;line-height:1.3}
+    .bstat-tag{display:inline-block;font-size:.5625rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:.15rem .45rem;border-radius:4px;margin-top:.55rem}
+    .bstat-tag.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
+    .bstat-tag.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
+    .bstat-tag.watch{background:rgba(245,158,11,.12);color:var(--watch)}
+    @media(max-width:560px){.bstats{grid-template-columns:1fr 1fr}}
+    /* Beat 4 featured post + pattern line */
+    .feature-wrap{max-width:560px;margin:0 0 1.1rem}
+    .beat-pattern{background:var(--ghost);border:1px solid var(--border);border-left:3px solid var(--hl);border-radius:8px;padding:1rem 1.25rem;font-size:.9rem;color:var(--text);line-height:1.6;margin-top:1.1rem}
+    /* Beat 5 light CTA */
+    .beat-cta{background:var(--ghost);border:1px solid var(--border);border-left:3px solid var(--azure);border-radius:10px;padding:1.25rem 1.4rem;margin-top:1.5rem}
+    .beat-cta-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.4rem}
+    .beat-cta-copy{font-size:.95rem;font-style:italic;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:6px;padding:.7rem .9rem}
+    /* Beat 3 goal-by-goal breakdown items (inside the collapsible) */
+    .gg-item{padding:1.1rem 0;border-bottom:1px solid var(--border)}
+    .gg-item:first-child{padding-top:0}
+    .gg-item:last-child{border-bottom:0;padding-bottom:0}
+    .gg-item .gt-funnel{margin-bottom:.5rem}
+    .gg-item .gt-bct{margin-bottom:.5rem}
+    .gg-item .gt-narr{margin:0}
+    /* Collapsible proof affordance */
+    .proof{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.1rem;background:var(--ghost)}
+    .proof+.proof{margin-top:.75rem}
+    .proof>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.75rem;padding:.95rem 1.15rem;min-height:52px;font-size:.9rem;font-weight:700;color:var(--azure)}
+    .proof>summary::-webkit-details-marker{display:none}
+    .proof>summary:hover{background:rgba(14,51,135,.03)}
+    .proof-ic{flex-shrink:0;width:24px;height:24px;border-radius:6px;background:rgba(14,51,135,.1);color:var(--azure);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800}
+    .proof-chev{margin-left:auto;flex-shrink:0;transition:transform .2s;color:var(--azure);font-size:1.35rem;line-height:1;font-weight:400}
+    .proof[open]>summary .proof-chev{transform:rotate(90deg)}
+    .proof-body{padding:1.25rem;border-top:1px solid var(--border);background:#fff}
+    .proof-body .wrap{padding:0;max-width:none;margin:0}
+    .proof-body .sec{background:transparent;border:0;box-shadow:none;padding:0;margin:0}
+    .proof-body .sec-label,.proof-body .sec-title{display:none}
+    @media(min-width:901px){.proof-body .posts-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.proof-body{padding:1rem .85rem}}
+
   </style>
   <meta name="twitter:card" content="summary_large_image">
   <script>window.SCROLL_GATE={slug:'measactive',code:'meas.scroll',title:'Private report',sub:'This report is private. Enter your access code to continue.',button:'View report'};</script>
@@ -525,37 +578,19 @@
 </head>
 <body>
 
-<!-- ═══ STICKY NAV ═══ -->
 <nav class="report-nav" aria-label="Report sections">
   <div class="report-nav-inner">
-    <a class="report-nav-link" href="#score-section">Score</a>
-    <a class="report-nav-link" href="#goals-title">Goals</a>
-    <a class="report-nav-link" href="#perf-title">Performance</a>
-    <a class="report-nav-link" href="#impact-title">Impact</a>
-    <a class="report-nav-link" href="#posts-title">Top Posts</a>
-    <a class="report-nav-link" href="#allposts-title">All Posts</a>
-    <a class="report-nav-link" href="#tests-title">July Focus</a>
-    <a class="report-nav-link" href="#cta-title">CTAs</a>
-    <a class="report-nav-link" href="#prev-title">History</a>
+    <a class="report-nav-link" href="#beat1">This Month</a>
+    <a class="report-nav-link" href="#beat2">What We Did</a>
+    <a class="report-nav-link" href="#beat3">Results</a>
+    <a class="report-nav-link" href="#beat4">What We Learned</a>
+    <a class="report-nav-link" href="#beat5">What&rsquo;s Next</a>
   </div>
 </nav>
 
 <div id="progress-bar" role="progressbar" aria-hidden="true"></div>
 
-<!-- ═══ LOOM WALKTHROUGH (Change 7) ═══
-     To activate: add the loom share id to data-loom-id below AND add class "active" to .loom-band.
-     If left empty / inactive, this band renders nothing (no broken player, no placeholder). -->
-<div class="loom-band" id="loom-band">
-  <div class="loom-inner">
-    <div class="loom-eyebrow"><span class="dot"></span>Your June walkthrough</div>
-    <div class="loom-frame">
-      <iframe id="loom-embed" data-loom-id="" src="" title="June report walkthrough" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ HERO + PAIRED BLOCK (Change 1 + methodology one-liner Change 5) ═══ -->
-<header class="hero">
+<header class="hero" id="beat1">
   <div class="hero-inner">
     <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
     <div class="hero-top-row">
@@ -569,6 +604,8 @@
       <span>June 1&ndash;30, 2026</span><span class="dot"></span>
       <span>Managed by Riley</span>
     </div>
+
+    <div class="beat-eyebrow on-dark"><span class="bn">1</span> This month</div>
 
     <!-- PAIRED HERO BLOCK -->
     <div class="paired-hero">
@@ -594,97 +631,84 @@
     </div>
 
     <!-- ONE-LINE PLAIN-ENGLISH SUMMARY (Chase fills per report) -->
-    <p class="hero-summary"><strong>June came in at 72 bio link taps as post-grand-opening reach settled. July&rsquo;s focus is founder-story content that drives shop traffic and email growth through the month.</strong></p>
+    <p class="hero-summary"><strong>June normalized after May&rsquo;s grand-opening surge, but conversion efficiency held and your community leaned in.</strong></p>
 
     <!-- METHODOLOGY ONE-LINER (locked copy, v8 Callout Library — same every report) -->
     <p class="hero-method">Your score reflects how this month performed against your stage targets, weighted by what predicts buyer behavior. Monthly score is a snapshot. Strategy decisions are made on quarterly trend, not single-month signal.</p>
   </div>
 </header>
 
-<!-- ═══ JUNE HIGHLIGHTS (v8.3.4 C1) ═══ -->
-<div class="jhi"><div class="jhi-card"><p class="jhi-title"><span class="dot"></span>June Highlights</p><div class="jhi-list"><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Win of the month</b> &middot; Comments climbed 74% to 193. Mission content resonating.</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>Standout</b> &middot; Grand-opening traffic normalized while CTR held above the Lift ceiling.</span></div><div class="jhi-item"><span class="mk"></span><span class="bd"><b>What we&rsquo;re focused on next</b> &middot; July&rsquo;s focus is founder-story content that drives shop traffic and email growth.</span></div></div></div></div>
-
-<!-- ═══ SCORE CARD + QUARTERLY SNAPSHOT (Section 2, Change 6) ═══ -->
-<div class="score-wrap" id="score-section">
-  <div class="score-card">
-    <p class="score-eyebrow">Score Context</p>
-    <span class="score-delta dn">&#9660; 0.6 vs. May</span>
-    <div class="score-badges">
-      <div class="score-badge exceed"><span class="bd"></span>1 Exceeding</div>
-      <div class="score-badge ontrack"><span class="bd"></span>4 On Track</div>
-      <div class="score-badge watch"><span class="bd"></span>5 Watch</div>
+<div class="wrap"><section class="sec beat" id="beat2" aria-labelledby="beat2-t">
+  <p class="beat-eyebrow"><span class="bn">2</span> What we did</p>
+  <h2 class="beat-takeaway" id="beat2-t">We published 8 posts, leaning into founder and mission content, interactive engagement, and product cheatsheets, all pointing toward the shop and the email list.</h2>
+  <div class="work-strip"><span class="work-chip"><b>8 posts</b></span><span class="work-chip">Mostly Reels, some carousels</span><span class="work-chip">Themes: founder and mission content, interactive engagement, product cheatsheets</span><span class="work-chip">Focus: shop and email list</span></div>
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See every post and its numbers</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
+  <section class="sec" aria-labelledby="allposts-title">
+    <p class="sec-label">Full Month</p>
+    <h2 class="sec-title" id="allposts-title">All Posts This Month</h2>
+    <p class="sec-sub">Every post published this month, with the numbers behind each one. Tap any column header to sort. Rows with a lime edge over-indexed on saves or click-through, the two strongest buyer signals.</p>
+    <div class="ap-controls" id="ap-controls">
+      <button class="ap-chip active" data-fmt="all">All</button>
+      <button class="ap-chip" data-fmt="reel">Reels</button>
+      <button class="ap-chip" data-fmt="carousel">Carousels</button>
+      <button class="ap-chip" data-fmt="static">Static</button>
+      <div class="ap-mobile-sort">
+        <select id="ap-mobile-sort-select" aria-label="Sort posts">
+          <option value="date|desc">Newest first</option>
+          <option value="date|asc">Oldest first</option>
+          <option value="views|desc">Most views</option>
+          <option value="saves|desc">Most saves</option>
+          <option value="shares|desc">Most shares</option>
+          <option value="comments|desc">Most comments</option>
+          <option value="ctr|desc">Highest CTR</option>
+        </select>
+      </div>
     </div>
-    <div class="trend-wrap" aria-label="Score trend">
-      <p class="trend-label">Score Trend</p>
-      <div class="trend-bars"><div class="tc"><div class="tbw"><div class="tb" style="height:95%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">9.0</div><div class="tm">Jan</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:30%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.1</div><div class="tm">Feb</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:57%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">Mar</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:57%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">7.9</div><div class="tm">Apr</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:68%;background:rgba(255,255,255,0.28)"></div></div><div class="ts">8.2</div><div class="tm">May</div></div><div class="tc"><div class="tbw"><div class="tb" style="height:47%;background:#e2ed7a"></div></div><div class="ts curr">7.6</div><div class="tm curr">Jun</div></div></div>
+    <div class="ap-table-wrap">
+      <table class="ap-table" id="ap-table">
+        <thead>
+          <tr>
+            <th data-key="date" data-type="date">Date<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="format" data-type="str">Format<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="caption" data-type="str">Caption<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="views" data-type="num">Views<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="saves" data-type="num">Saves<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="linktaps" data-type="num">Bio Link Taps<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="" data-type="none">Post</th>
+          </tr>
+        </thead>
+        <tbody id="ap-tbody"><!-- rows rendered by JS from ALL_POSTS --></tbody>
+      </table>
     </div>
+    <!-- Mobile card stack (rendered by JS, shown <640px) -->
+    <div class="ap-cards" id="ap-cards"></div>
+    <div class="ap-legend"><span class="swatch"></span> Lime edge = over-indexed on saves or CTR (at least 1.5&times; the account average this month).</div>
+  </section>
+</div></div></details>
+</section></div>
 
-    <!-- DIP-MONTH LOCKED LINE: add class "active" only when score drops >0.5 from prior month -->
-    <p class="dip-line active" id="dip-line">Expected volatility. Strategy holds. Re-evaluating at quarter-close.</p>
-
-    <!-- QUARTERLY SNAPSHOT BLOCK (Change 6).
-         Render in non-QBR months (Jan/Feb/Apr/May/Jul/Aug/Oct/Nov). SKIP in QBR months
-         (Mar/Jun/Sep/Dec) from Sept 2026 onward, when the QBR artifact owns the snapshot.
-         EXCEPTION: surface it for June 2026 reports (no QBR artifact ships until Aug 31).
-         Trajectory class options: strong | steady | building | recovering | soft | mixed -->
-    <div class="qyear" id="qsnap"><p class="qyear-intro">Strategy adjustments happen at quarterly cadence, not month to month. Looking at a full three-month window means we build strategy on real patterns, not short-term noise. Below is your year at a quarterly view.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">8.0<span class="u">/10</span></div><div class="qy-badge mixed">Mixed</div><div class="qy-bars"><span style="height:86%"></span><span style="height:34%"></span><span class="cur" style="height:56%"></span></div><div class="qy-theme"><div class="qy-tline">Mixed quarter, strong January and a softer February.</div></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">7.9<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:56%"></span><span style="height:64%"></span><span class="cur" style="height:48%"></span></div><div class="qy-theme"><div class="qy-tline"><span class="qy-tl">Worked:</span> May delivered a grand-opening surge, click-through held above target all quarter, and comments climbed 74%.</div><div class="qy-tline"><span class="qy-tl">Watched:</span> reach reverted after the opening, retention landed just under floor, and saves below floor.</div></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div><div class="qy-note">Begins July</div><div class="qy-state">Pending</div></div><div class="qy-col "><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Later this year</div><div class="qy-state">Pending</div></div></div></div>
-  </div>
-</div>
-
-<!-- ═══ GOAL TRACKER (Section 3, Change 2) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="goals-title">
-    <p class="sec-label">Business Goals</p>
-    <h2 class="sec-title" id="goals-title">Goal Tracker</h2>
-    <p class="sec-sub">Your three funnel stages, scored as a weighted composite of the metrics in each. Metrics that predict real buyer behavior, like saves and click-through, carry more weight than raw reach.</p>
-    <div class="gt-list">
-      <div class="gt-row tofu">
-        <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div>
-          <p class="gt-title">Grow Reach &amp; Build the Mission-Driven Brand</p>
-          <div class="gt-bct">
+<div class="wrap"><section class="sec beat" id="beat3" aria-labelledby="beat3-t">
+  <p class="beat-eyebrow"><span class="bn">3</span> The results</p>
+  <h2 class="beat-takeaway" id="beat3-t">Reach settled off the opening peak, but click-through stayed above your stage ceiling and comments broke out on mission content.</h2>
+  <div class="bstats"><div class="bstat"><div class="bstat-val exceed">9.8%</div><div class="bstat-lbl">Click-through rate</div><span class="bstat-tag exceed">Exceeding</span></div><div class="bstat"><div class="bstat-val ontrack">193</div><div class="bstat-lbl">Comments</div><span class="bstat-tag ontrack">On Track</span></div><div class="bstat"><div class="bstat-val ontrack">72</div><div class="bstat-lbl">Bio link taps</div><span class="bstat-tag ontrack">On Track</span></div><div class="bstat"><div class="bstat-val watch">49%</div><div class="bstat-lbl">Video retention</div><span class="bstat-tag watch">Watch</span></div></div>
+  <p class="sub-head">Goal Tracker</p>
+  
+  <div class="gt-list"><div class="gt-row tofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div><p class="gt-title">Grow Reach &amp; Build the Mission-Driven Brand</p><div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="35" style="width:0%"></div></div>
             <span class="gt-pct">35%</span>
-          </div>
-          <div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div>
-          <p class="gt-narr">Your awareness stage scored 35% this month. New followers, views, and shares all normalized from May&rsquo;s grand-opening surge. Rebuilding reach volume with founder and mission content is the July focus.</p>
-        </div>
-        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">0.95<span class="gt-score-max">/2.75</span></span></div>
-      </div>
-
-      <div class="gt-row mofu">
-        <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div>
-          <p class="gt-title">Deepen Community &amp; Build Purchase Confidence</p>
-          <div class="gt-bct">
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">0.95<span class="gt-score-max">/2.75</span></span></div></div><div class="gt-row mofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div><p class="gt-title">Deepen Community &amp; Build Purchase Confidence</p><div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="35" style="width:0%"></div></div>
             <span class="gt-pct">35%</span>
-          </div>
-          <div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div>
-          <p class="gt-narr">Your engagement stage scored 35%. Comments broke through, up 74% and well inside range as the mission content resonated. Retention sits a hair under the Lift floor and saves eased, so those are the July levers to lift the layer.</p>
-        </div>
-        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">1.9<span class="gt-score-max">/5.5</span></span></div>
-      </div>
-
-      <div class="gt-row bofu">
-        <div class="gt-main">
-          <div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div>
-          <p class="gt-title">Drive Shop Traffic &amp; Email List Growth</p>
-          <div class="gt-bct">
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">1.9<span class="gt-score-max">/5.5</span></span></div></div><div class="gt-row bofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div><p class="gt-title">Drive Shop Traffic &amp; Email List Growth</p><div class="gt-bct">
             <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="64" style="width:0%"></div></div>
             <span class="gt-pct">64%</span>
-          </div>
-          <div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div>
-          <p class="gt-narr">Your conversion stage scored 64%, the strongest of the three. Click-through stayed above the Lift ceiling even off the opening peak, and link taps held inside range. The conversion engine is efficient; the job is feeding it more reach from the top.</p>
-        </div>
-        <div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">3.2<span class="gt-score-max">/5.0</span></span></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ═══ PERFORMANCE DASHBOARD (Section 4) ═══ -->
-<div class="wrap">
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">3.2<span class="gt-score-max">/5.0</span></span></div></div></div>
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See the goal-by-goal breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="gg-item"><div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div><div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your awareness stage scored 35% this month. New followers, views, and shares all normalized from May&rsquo;s grand-opening surge. Rebuilding reach volume with founder and mission content is the July focus.</p></div><div class="gg-item"><div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div><div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your engagement stage scored 35%. Comments broke through, up 74% and well inside range as the mission content resonated. Retention sits a hair under the Lift floor and saves eased, so those are the July levers to lift the layer.</p></div><div class="gg-item"><div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div><div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your conversion stage scored 64%, the strongest of the three. Click-through stayed above the Lift ceiling even off the opening peak, and link taps held inside range. The conversion engine is efficient; the job is feeding it more reach from the top.</p></div></div></details>
+  <details class="proof"><summary><span class="proof-ic">&#9638;</span><span>See the full 10-metric breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
   <section class="sec" aria-labelledby="perf-title">
     <p class="sec-label">June 2026</p>
     <h2 class="sec-title" id="perf-title">Performance Breakdown</h2>
@@ -813,10 +837,8 @@
       </div>
     </div>
   </section>
-</div>
-
-<!-- ═══ CONTENT-TO-BUSINESS IMPACT (Section 5, v8.3.1) ═══ -->
-<div class="wrap">
+</div></div></details>
+  <details class="proof"><summary><span class="proof-ic">&#9642;</span><span>See the 12-month value trajectory</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
   <section class="sec" aria-labelledby="impact-title">
     <p class="sec-label">From attention to business</p>
     <h2 class="sec-title" id="impact-title">Content to Business Impact</h2>
@@ -843,15 +865,13 @@
       <p class="c2b-disclaimer">This is a modeled estimate, not confirmed attribution. The figures are category-typical benchmarks and are best read as midpoint approximations, not precise counts.</p>
     </div>
   </section>
-</div>
+</div></div></details>
+</section></div>
 
-<!-- ═══ TOP 3 POSTS (Section 6) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="posts-title">
-    <p class="sec-label">Top Posts of the Month</p>
-    <h2 class="sec-title" id="posts-title">Top Posts of the Month</h2>
-    <p class="sec-sub">Your highest-performing content this month, identified by our outlier scoring model. Posts that over-indexed on reach, saves, shares, or retention relative to account averages.</p>
-    <div class="posts-grid"><!--TP_START--><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Outlier Magnitude: 1.74x</span></div><div class="post-body"><div class="post-date">June 16, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;Your intuition is being tested 👀  What color is this workout set?&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Your intuition is being tested 👀
+<div class="wrap"><section class="sec beat" id="beat4" aria-labelledby="beat4-t">
+  <p class="beat-eyebrow"><span class="bn">4</span> What we learned</p>
+  <h2 class="beat-takeaway" id="beat4-t">Your mission is what your audience talks about.</h2>
+  <div class="feature-wrap"><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span><span class="post-score">Outlier Magnitude: 1.74x</span></div><div class="post-body"><div class="post-date">June 16, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;Your intuition is being tested 👀  What color is this workout set?&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Your intuition is being tested 👀
 
 What color is this workout set? Drop the FIRST color that comes to mind, no overthinking! 🩷
 
@@ -860,7 +880,11 @@ What color is this workout set? Drop the FIRST color that comes to mind, no over
 And don’t forget to shop our Sculpt Voop Tank & Leggings to find your perfect color.
 
 #measactive #workoutset #intuitiontest #activewear</span><button class="cap-toggle" id="tpreel1-btn" onclick="toggleCap('tpreel1')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">COMMENTS</span><span class="sm-value">32</span><span class="sm-badge outlier-3x">3.8x account avg</span></div><div class="standout-metric"><span class="sm-label">TOTAL VIEWS</span><span class="sm-value">6,454</span><span class="sm-badge outlier-2x">2.4x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A conversation outlier at 3.8x the account’s comment average, with reach also over-indexing at 2.4x. Mission-driven content pulled the community into a reply moment, exactly the engagement that builds the trust an activewear buyer acts on.</p></div><a href="https://www.instagram.com/reel/DZqHIbAO7U0/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div>
-<div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 1.22x</span></div><div class="post-body"><div class="post-date">June 4, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Curious about our activewear collections? Save this as your cheatsheet.&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Curious about our activewear collections? Save this as your cheatsheet. 📌
+</div>
+  <p class="beat-pattern">The content that pulled them into conversation was founder-led and values-driven. Retention and saves are the levers to lift.</p>
+  <p class="sub-head">Your quarter so far</p>
+  <div class="qyear" id="qsnap"><p class="qyear-intro">You&rsquo;re past testing and into execution. We track performance monthly and step back to adjust the strategy each quarter, so decisions come from real patterns, not single-month swings.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">8.0<span class="u">/10</span></div><div class="qy-badge mixed">Mixed</div><div class="qy-bars"><span style="height:86%"></span><span style="height:34%"></span><span class="cur" style="height:56%"></span></div><div class="qy-theme"><div class="qy-tline">Mixed quarter, strong January and a softer February.</div></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">7.9<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:56%"></span><span style="height:64%"></span><span class="cur" style="height:48%"></span></div><div class="qy-theme"><div class="qy-tline"><span class="qy-tl">Worked:</span> May delivered a grand-opening surge, click-through held above target all quarter, and comments climbed 74%.</div><div class="qy-tline"><span class="qy-tl">Watched:</span> reach reverted after the opening, retention landed just under floor, and saves below floor.</div></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q3</div><div class="qy-range">Jul&ndash;Sep</div><div class="qy-note">Begins July</div><div class="qy-state">Pending</div></div><div class="qy-col "><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Later this year</div><div class="qy-state">Pending</div></div></div></div>
+  <details class="proof"><summary><span class="proof-ic">&#9733;</span><span>See the other standout posts this month</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="posts-grid"><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span><span class="post-score">Outlier Magnitude: 1.22x</span></div><div class="post-body"><div class="post-date">June 4, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Curious about our activewear collections? Save this as your cheatsheet.&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Curious about our activewear collections? Save this as your cheatsheet. 📌
 
 We design three distinct collections so your gear actually works for what you’re doing.
 
@@ -881,134 +905,24 @@ This is for the 5am runners, the pilates babes, and the woman who never slows do
 
 Come find your fit at 1323 Vine St in OTR or shop the link in bio.
 
-#measactive #womenowned #cincinnatifitness #activewearstyle</span><button class="cap-toggle" id="tpcarousel3-btn" onclick="toggleCap('tpcarousel3')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.2x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A share outlier at 2.2x the account’s average. Content the audience wanted to pass along, extending reach beyond the existing follower base and pulling new people toward the brand.</p></div><a href="https://www.instagram.com/p/DaA4y7yFhTp/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><!--TP_END--></div>
-  </section>
-</div>
+#measactive #womenowned #cincinnatifitness #activewearstyle</span><button class="cap-toggle" id="tpcarousel3-btn" onclick="toggleCap('tpcarousel3')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.2x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A share outlier at 2.2x the account’s average. Content the audience wanted to pass along, extending reach beyond the existing follower base and pulling new people toward the brand.</p></div><a href="https://www.instagram.com/p/DaA4y7yFhTp/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div></div></details>
+</section></div>
 
-<!-- ═══ ALL POSTS THIS MONTH (Section 7, Change 9) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="allposts-title">
-    <p class="sec-label">Full Month</p>
-    <h2 class="sec-title" id="allposts-title">All Posts This Month</h2>
-    <p class="sec-sub">Every post published this month, with the numbers behind each one. Tap any column header to sort. Rows with a lime edge over-indexed on saves or click-through, the two strongest buyer signals.</p>
-    <div class="ap-controls" id="ap-controls">
-      <button class="ap-chip active" data-fmt="all">All</button>
-      <button class="ap-chip" data-fmt="reel">Reels</button>
-      <button class="ap-chip" data-fmt="carousel">Carousels</button>
-      <button class="ap-chip" data-fmt="static">Static</button>
-      <div class="ap-mobile-sort">
-        <select id="ap-mobile-sort-select" aria-label="Sort posts">
-          <option value="date|desc">Newest first</option>
-          <option value="date|asc">Oldest first</option>
-          <option value="views|desc">Most views</option>
-          <option value="saves|desc">Most saves</option>
-          <option value="shares|desc">Most shares</option>
-          <option value="comments|desc">Most comments</option>
-          <option value="ctr|desc">Highest CTR</option>
-        </select>
-      </div>
-    </div>
-    <div class="ap-table-wrap">
-      <table class="ap-table" id="ap-table">
-        <thead>
-          <tr>
-            <th data-key="date" data-type="date">Date<span class="arrow">&#9650;&#9660;</span></th>
-            <th data-key="format" data-type="str">Format<span class="arrow">&#9650;&#9660;</span></th>
-            <th data-key="caption" data-type="str">Caption<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="views" data-type="num">Views<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="saves" data-type="num">Saves<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="linktaps" data-type="num">Bio Link Taps<span class="arrow">&#9650;&#9660;</span></th>
-            <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
-            <th data-key="" data-type="none">Post</th>
-          </tr>
-        </thead>
-        <tbody id="ap-tbody"><!-- rows rendered by JS from ALL_POSTS --></tbody>
-      </table>
-    </div>
-    <!-- Mobile card stack (rendered by JS, shown <640px) -->
-    <div class="ap-cards" id="ap-cards"></div>
-    <div class="ap-legend"><span class="swatch"></span> Lime edge = over-indexed on saves or CTR (at least 1.5&times; the account average this month).</div>
-  </section>
-</div>
-
-<!-- ═══ THIS MONTH'S TESTS + POSTS WE'RE WATCHING (Section 8, Change 8) ═══ -->
-<div class="wrap">
-  <section class="sec" aria-labelledby="tests-title">
-    <p class="sec-label">July Focus</p>
-    <h2 class="sec-title" id="tests-title">What We Noticed + July Focus</h2>
-    <p class="sec-sub">Strategy adjustments happen at quarter-close with the full three-month picture, not month to month. What follows is what we&rsquo;re paying attention to in July, not changes to your strategy.</p>
-
-    <!-- DIP-MONTH NARRATIVE: add class "active" when score dropped >0.5 from prior month -->
-    <div class="dip-narr active" id="dip-narr">
-      <p class="dip-narr-label">On this month&rsquo;s dip</p>
-      <ul class="dip-narr-list">
-        <li class="dip-narr-item"><b>What drove it:</b>&nbsp;Post-grand-opening reversion. New followers, views, profile visits, and link taps all normalized from May&rsquo;s opening surge. CTR stayed above the Lift ceiling and community engagement climbed 74%.</li>
-        <li class="dip-narr-item"><b>Why we&rsquo;re not changing strategy:</b>&nbsp;A single softer month inside a strong quarter is expected volatility. The strategy is built on a quarter, not a month.</li>
-        <li class="dip-narr-item"><b>What we&rsquo;re watching:</b>&nbsp;The founder-format trajectory across the full three-month window. July continues the direction from May, with more founder-story Reels and product-detail carousels folded in. We make the call on direction at quarter-close, not here.</li>
-      </ul>
-    </div>
-
-    <!-- Top Performer Patterns (1-2) -->
-    <div class="tw-group patterns">
-      <p class="tw-group-label"><span class="ic"></span>What worked this month</p>
-      <div class="tw-items">
-        <div class="tw-item patterns"><p class="tw-item-head">Community engagement broke through</p><p class="tw-item-body">Comments jumped 74% to 193, well inside the Lift range. The mission-driven content is resonating and pulling the audience into conversation, the engagement signal that builds durable community.</p></div>
-      </div>
-    </div>
-
-    <!-- Posts We're Watching (1-2) — single client-facing line per underperforming post, no deep dissection -->
-    <div class="tw-group watching">
-      <p class="tw-group-label"><span class="ic"></span>What we&rsquo;re watching next</p>
-      <div class="tw-items">
-        <div class="tw-item watching"><p class="tw-item-head">Retention slipped just below the Lift floor</p><p class="tw-item-body">Retention came in at 49%, a hair under the 50% Lift floor. In July we&rsquo;re watching how higher-cadence founder-story Reels move attention back above the line.</p></div>
-      </div>
-    </div>
-
-    <!-- Tactical Tests (2-3) -->
-    <div class="tw-group tests">
+<div class="wrap"><section class="sec beat" id="beat5" aria-labelledby="beat5-t">
+  <p class="beat-eyebrow"><span class="bn">5</span> What&rsquo;s next</p>
+  <h2 class="beat-takeaway" id="beat5-t">Next month we lean into higher-cadence founder-story Reels to lift retention and test an email-list-first bio link to turn taps into owned audience.</h2>
+  <div class="tw-group tests">
       <p class="tw-group-label"><span class="ic"></span>Where our attention is in July</p>
       <div class="tw-items">
         <div class="tw-item tests"><p class="tw-item-head">Founder-story Reels at higher cadence</p><p class="tw-item-body">In July, our attention is on more founder-story Reels, using May&rsquo;s 94.5% retention founder post as the template for what holds attention on this account.</p></div>
         <div class="tw-item tests"><p class="tw-item-head">Email-list-first bio link</p><p class="tw-item-body">We&rsquo;re testing an email-list-first bio link with a July offer, turning bio link taps into owned audience the shop can reach directly.</p></div>
       </div>
     </div>
-  </section>
-</div>
-
-<!-- ═══ NEXT MONTH CTAs (Section 9) ═══ -->
-<div class="wrap">
-  <div class="cta-section" role="region" aria-labelledby="cta-title">
-    <p class="cta-eyebrow">July Call-to-Action Plan</p>
-    <h2 class="cta-title" id="cta-title">Next Month&rsquo;s CTAs</h2>
-    <p class="cta-sub">One primary call to action for July, with three supporting CTAs across the funnel that feed it.</p>
-    <div class="cta-primary">
-      <p class="cta-primary-label">&#9733; Primary CTA</p>
-      <p class="cta-primary-obj">Drive shop traffic and email signups</p>
-      <div class="cta-copy">&ldquo;Shop the collection or join the list, link in bio.&rdquo;</div>
-      <p class="cta-rationale">Your shop and email list are the priority destinations. June normalized after the grand-opening surge, but conversion efficiency held with CTR above the Lift ceiling. July turns founder-story attention into shop visits and owned email audience.</p>
-      <p class="cta-discuss">This CTA is your monthly discussion point. Should we hold it or adjust based on the performance data above?</p>
-    </div>
-    <p class="cta-supp-label">Supporting CTAs</p>
-    <ul class="cta-funnel-list">
-      <li class="cta-funnel-li"><span class="cta-stage-tag tofu">Awareness</span><span><em>&ldquo;Tag someone who&rsquo;d love this.&rdquo;</em> &middot; Widen reach.</span></li>
-      <li class="cta-funnel-li"><span class="cta-stage-tag mofu">Engagement</span><span><em>&ldquo;Save this for your next order.&rdquo;</em> &middot; Build reference intent.</span></li>
-      <li class="cta-funnel-li"><span class="cta-stage-tag bofu">Conversion</span><span><em>&ldquo;Shop the drop, link in bio.&rdquo;</em> &middot; The store handoff.</span></li>
-    </ul>
+  <div class="beat-cta">
+    <p class="beat-cta-label">&#9733; Primary call to action</p>
+    <div class="beat-cta-copy">&ldquo;Shop the collection or join the list, link in bio.&rdquo;</div>
   </div>
-</div>
-
-<!-- ═══ PREVIOUS REPORTS (Section 10) ═══ -->
-<section class="prev-section" aria-labelledby="prev-title">
-  <div class="prev-inner">
-    <p class="prev-eyebrow">Report History</p>
-    <h2 class="prev-title" id="prev-title">Previous Monthly Reports</h2>
-    <p class="prev-sub">Compare your performance over time. Click any month to view the full report.</p>
-    <div class="prev-grid"><a href="/measactive/may2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">May 2026</div><div class="prev-score" style="color:#059669">8.2<span>/10</span></div><div class="prev-label">Solid Month</div><div class="prev-link">View Report &#8599;</div></a><a href="/measactive/april2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">April 2026</div><div class="prev-score" style="color:#0e3387">7.9<span>/10</span></div><div class="prev-label">Building Month</div><div class="prev-link">View Report &#8599;</div></a><a href="/measactive/march2026/" class="prev-card" target="_blank" rel="noopener"><div class="prev-month">March 2026</div><div class="prev-score" style="color:#0e3387">7.9<span>/10</span></div><div class="prev-label">Building Month</div><div class="prev-link">View Report &#8599;</div></a></div>
-  </div>
-</section>
+</section></div>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -1146,5 +1060,6 @@ Come find your fit at 1323 Vine St in OTR or shop the link in bio.
   /* sticky nav active state */
   (function(){var links=document.querySelectorAll('.report-nav-link');var sections=[];links.forEach(function(l){var el=document.getElementById(l.getAttribute('href').replace('#',''));if(el)sections.push({el:el,link:l});});function onScroll(){var y=window.scrollY+80;var active=null;sections.forEach(function(s){if(s.el.getBoundingClientRect().top+window.scrollY<=y)active=s;});links.forEach(function(l){l.classList.remove('active');});if(active)active.link.classList.add('active');}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
 </script>
+
 </body>
 </html>
