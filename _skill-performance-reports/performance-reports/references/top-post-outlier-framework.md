@@ -14,9 +14,9 @@ This means the metrics that matter most are the ones that signal **buyer intent*
 
 The Scroll Media Outlier Framework uses a **Composite Weighted Scoring Model** that evaluates every post against the account's own monthly average, identifying posts that over-index on the specific metrics that drive business outcomes. The weighting hierarchy reflects the intent ladder: saves and conversion signals are weighted highest; shares (noisy, audience-quality-agnostic) are weighted lowest.
 
-## 2. The Unified Scoring Hierarchy
+## 2. Scoring Hierarchy (monthly score) vs Showcase Selection (top posts)
 
-Both the monthly account score and the top post outlier engine use the same intent-weighted metric hierarchy.
+**As of v2.0 (July 10, 2026) these are decoupled.** The **monthly account score** uses the intent-weighted hierarchy below (Unified Scoring Framework v1.3: saves and CTR highest, shares lowest) and is unchanged. **Top-post showcase selection** - governed by this document (sections 3-4) - instead leads on reach + retention behind an eligibility gate, so the report surfaces content that genuinely broke out; the buyer-intent story then lives in the card narrative rather than the ranking math. The hierarchy table below governs the MONTHLY SCORE, retained here for reference:
 
 | Tier | Weight | Metrics | Rationale |
 |---|---|---|---|
