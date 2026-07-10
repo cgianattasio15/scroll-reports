@@ -1,4 +1,10 @@
-# Scroll Media: Top Post Outlier Detection Framework (v1.2)
+# Scroll Media: Top Post Outlier Detection Framework (v2.0)
+
+> **v2.0 — Showcase-Selection model (July 2026).** Two changes to *which posts get showcased* and *how their cards read*, decoupled from the monthly account score:
+> 1. **Eligibility gate.** A post is showcaseable only if it clears at least one real standout floor (floors at >=1.5x account avg). Posts that would otherwise rank on a metric they cannot cite (e.g. a high save-ratio that never clears the >=4 absolute floor on a Spark-stage account) no longer surface.
+> 2. **Reach + retention lead the showcase.** Weights rebalanced (Section 3) so genuine breakout reach/retention content is not buried under saves on save-light accounts.
+>
+> **Decouple:** these changes alter top-post *selection* and card copy only. The monthly `/10` account score (`Scroll_Media_Scoring_Framework.md`) is unchanged. The buyer-intent hierarchy below is retained as history for the account-score model; the v2.0 weights govern the showcase engine.
 
 ## 1. The Philosophy of Outlier Detection
 
@@ -24,21 +30,21 @@ Both the monthly account score and the top post outlier engine use the same inte
 
 Every post published in the reporting month receives an Outlier Score based on its performance against the account's monthly average for that specific format.
 
-### Reel Scoring Formula
+### Reel Scoring Formula (v2.0 — reach + retention lead)
 ```
-score = (views / avg_views) * 20
-      + (saves / avg_saves) * 35
-      + (retention / avg_retention) * 25
+score = (views / avg_views) * 30
+      + (saves / avg_saves) * 25
+      + (retention / avg_retention) * 30
       + min(comments / avg_comments, 5.0) * 10
-      + (shares / avg_shares) * 10
+      + (shares / avg_shares) * 5
 ```
 
-### Carousel / Image Scoring Formula (no retention)
+### Carousel / Image Scoring Formula (v2.0 — no retention; reach primary, saves strong secondary)
 ```
-score = (views / avg_views) * 25
-      + (saves / avg_saves) * 50
+score = (views / avg_views) * 45
+      + (saves / avg_saves) * 35
       + min(comments / avg_comments, 5.0) * 15
-      + (shares / avg_shares) * 10
+      + (shares / avg_shares) * 5
 ```
 
 ### Score Interpretation
@@ -58,12 +64,13 @@ score = (views / avg_views) * 25
 1. **Calculate Baseline:** Compute the average Views, Shares, Saves, and Retention for all posts published in the reporting month.
 2. **Score All Posts:** Run every post through the Composite Scoring Model.
 3. **Rank and Filter:** Sort posts by Outlier Score in descending order.
-4. **Dynamic Selection:**
-   - Select the top 3 posts by default.
-   - If the #4 post has an Outlier Score > 150, include it (max 4 posts).
-   - If the #3 post has an Outlier Score < 80, exclude it (min 2 posts).
-   - **Always include at least 2 posts regardless of score.**
-5. **Cross-reference IG Insights (CRITICAL):** Before finalizing, compare engine output against the client's actual IG Insights data for the month. Metricool excludes collab posts where the client is not the main creator — these will be missing from the engine entirely. If a collab post shows strong IG Insights performance, include it manually using IG Insights as the source of truth.
+4. **Eligibility gate (v2.0):** A post is showcase-eligible only if it clears at least one real standout floor — i.e. `get_standout_metrics` returns a non-empty list (floors: views>=500, saves>=4, shares>=4, retention>=30%, comments>=5, each at >=1.5x account avg). Compute standouts for **every** post, then select from eligible posts only. This retires the old failure mode where a post ranked on a save-ratio it could never cite because saves never cleared the absolute >=4 floor.
+5. **Dynamic Selection (from eligible posts first):**
+   - Select the top 2 eligible posts by default.
+   - If the #3 eligible post has an Outlier Score >= 80, include it.
+   - If the #4 eligible post has an Outlier Score >= 150, include it (max 4 posts).
+   - **Min-2 rule:** never show fewer than 2 posts. If fewer than 2 posts are eligible, pad with the highest-scoring remaining posts — these use the composite "why it worked" fallback and never fabricate a standout number.
+6. **Cross-reference IG Insights (CRITICAL):** Before finalizing, compare engine output against the client's actual IG Insights data for the month. Metricool excludes collab posts where the client is not the main creator — these will be missing from the engine entirely. If a collab post shows strong IG Insights performance, include it manually using IG Insights as the source of truth.
 
 ## 5. Post Score Badge (Normalized 0–100)
 
