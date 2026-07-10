@@ -1,14 +1,22 @@
 """
 Scroll Media — Top Post Outlier Detection Engine
-Version 1.2 — Unified Scoring Framework
+Version 2.0 — Showcase-Selection model (eligibility gate + reach/retention lead)
 
 Pulls all posts and reels for a given client from Metricool for the reporting month,
 scores each post using the Scroll Media Composite Outlier Scoring Model, and returns
 the top 2-4 outlier posts with their standout metrics and auto-generated insights.
 
-Unified Scoring Philosophy (v1.2):
+Showcase-Selection Philosophy (v2.0):
+  A post is only showcased if it clears at least one real standout floor (the
+  eligibility gate), and the showcase ranks reach + retention ahead of saves so
+  genuine breakout content is not buried on low-save (Spark-stage) accounts. The
+  monthly account score is decoupled and unchanged — v2.0 alters top-post selection
+  and card copy only, never the headline score. See top-post-outlier-framework.md v2.0.
+
+Superseded philosophy (v1.2 — Unified Scoring Framework):
   Primary goal of organic social = get in front of the highest-quality audience
   (buyers), not the widest audience. Metric weights reflect buyer-intent hierarchy.
+  Retained here for history; the v2.0 weights below replace it for showcase selection.
 
 Usage:
     from outlier_engine import get_top_posts
@@ -58,40 +66,39 @@ CLIENT_BLOG_IDS = {
 }
 
 # ── METRIC WEIGHTS (must sum to 100) ─────────────────────────────────────────
-# Unified Scoring Framework v1.2 — Buyer Intent Hierarchy:
+# Showcase-Selection model v2.0 — reach + retention lead the showcase:
 #
-#   SAVES (35%) — Highest-intent buyer-adjacent behavior. Viewer stopped and
-#       bookmarked for future reference. Trains algorithm toward high-quality
-#       buyer audiences. Closest organic signal to purchase intent.
+#   REACH/VIEWS — Now the primary showcase signal. Breakout reach is the clearest
+#       sign a post escaped the core audience. On low-save Spark-stage accounts,
+#       leading on saves buried genuinely viral reach + retention content; v2.0 fixes it.
 #
-#   RETENTION (25%) — Hook quality + content depth (Reels only). High retention
-#       signals the algorithm to push content to higher-quality audiences.
-#       Confirms the hook delivered and the pacing held attention.
+#   RETENTION (Reels only) — Co-leads with reach. High retention confirms the hook
+#       delivered and pacing held, the strongest quality signal a Reel can carry.
 #
-#   REACH/VIEWS (20%) — Necessary but quality-agnostic. High views alone don't
-#       guarantee the right audience. Important for algorithmic distribution.
+#   SAVES — Strong secondary. Still a high-intent, buyer-adjacent signal, but no
+#       longer the metric that decides the showcase on save-light accounts.
 #
-#   COMMENTS (10%) — Community signal. Meaningful engagement that indicates
-#       content resonated emotionally, but not a buyer-specific signal.
+#   COMMENTS — Community signal. Meaningful engagement, not a reach/quality lead.
 #
-#   SHARES (10%) — Awareness amplifier but noisy. Shared content often reaches
-#       non-buyer audiences (funny, relatable, "thought of you" content).
-#       Lowest weight — reach without quality guarantee.
+#   SHARES — Awareness amplifier but noisy; lowest weight.
+#
+# Note: this changes top-post SELECTION + card copy only. The monthly account score
+# (Scroll_Media_Scoring_Framework.md) is decoupled and unchanged.
 WEIGHTS = {
-    "reach": 20,       # Views vs account avg views (TOFU — reach but quality-agnostic)
-    "saves": 35,       # Saves vs account avg saves (highest-intent, buyer-adjacent signal)
-    "retention": 25,   # Retention % vs account avg retention (Reels only — hook + depth quality)
-    "comments": 10,    # Comments vs account avg comments (community signal, not buyer-specific)
-    "shares": 10,      # Shares vs account avg shares (awareness amplifier, noisy audience quality)
+    "reach": 30,       # Views vs account avg views (co-leads the showcase)
+    "saves": 25,       # Saves vs account avg saves (strong secondary, no longer the lead)
+    "retention": 30,   # Retention % vs account avg retention (Reels only — co-leads with reach)
+    "comments": 10,    # Comments vs account avg comments (community signal)
+    "shares": 5,       # Shares vs account avg shares (awareness amplifier, noisy)
 }
 
-# For non-Reel posts, redistribute retention weight to saves
+# For non-Reel posts (no retention): reach primary, saves strong secondary
 WEIGHTS_NO_RETENTION = {
-    "reach": 25,
-    "saves": 50,
+    "reach": 45,
+    "saves": 35,
     "retention": 0,
     "comments": 15,
-    "shares": 10,
+    "shares": 5,
 }
 
 # ── OUTLIER THRESHOLDS ────────────────────────────────────────────────────────
@@ -114,9 +121,9 @@ def fetch_posts(blog_id: int, month: int, year: int) -> list:
     """Fetch all posts (non-Reel) for the given month from Metricool."""
     from_date = f"{year}-{month:02d}-01T00:00:00"
     import calendar
-    last_day = calendar.monthrange(year, month)[1] - 1
+    last_day = calendar.monthrange(year, month)[1]        # was: [1] - 1 (dropped last-day posts)
     to_date = f"{year}-{month:02d}-{last_day:02d}T23:59:59"
-    
+
     try:
         r = requests.get(
             f"{BASE_URL}/analytics/posts/instagram",
@@ -140,10 +147,10 @@ def fetch_posts(blog_id: int, month: int, year: int) -> list:
 def fetch_reels(blog_id: int, month: int, year: int) -> list:
     """Fetch all Reels for the given month from Metricool."""
     import calendar
-    last_day = calendar.monthrange(year, month)[1] - 1
+    last_day = calendar.monthrange(year, month)[1]        # was: [1] - 1 (dropped last-day posts)
     from_date = f"{year}-{month:02d}-01T00:00:00"
     to_date = f"{year}-{month:02d}-{last_day:02d}T23:59:59"
-    
+
     try:
         r = requests.get(
             f"{BASE_URL}/analytics/reels/instagram",
@@ -470,29 +477,45 @@ def get_top_posts(blog_id: int, month: int, year: int, client_name: str = "") ->
     
     # 5. Sort by outlier score
     all_content.sort(key=lambda x: x["outlier_score"], reverse=True)
-    
-    # 6. Dynamic selection (2-4 posts)
+
+    # 6. Compute standouts for every post (needed for the eligibility gate).
+    #    A post is showcase-eligible only if it clears >=1 real standout floor
+    #    (get_standout_metrics enforces the 1.5x multiplier AND the absolute floors:
+    #    views>=500, saves>=4, shares>=4, retention>=30%, comments>=5).
+    for post in all_content:
+        post["standout_metrics"] = get_standout_metrics(post, averages, post["score_components"])
+        post["eligible"] = len(post["standout_metrics"]) > 0
+
+    # all_content is already sorted by outlier_score desc (step 5)
+    eligible   = [p for p in all_content if p["eligible"]]
+    ineligible = [p for p in all_content if not p["eligible"]]
+
+    # 7. Dynamic selection from ELIGIBLE first (2-4 posts)
     selected = []
-    for i, post in enumerate(all_content):
-        if i == 0:
+    for i, post in enumerate(eligible):
+        if i < 2:
             selected.append(post)
-        elif i == 1:
+        elif i == 2 and post["outlier_score"] >= OUTLIER_SCORE_EXCLUDE_3RD:
             selected.append(post)
-        elif i == 2:
-            if post["outlier_score"] >= OUTLIER_SCORE_EXCLUDE_3RD:
-                selected.append(post)
-        elif i == 3:
-            if post["outlier_score"] >= OUTLIER_SCORE_INCLUDE_4TH:
-                selected.append(post)
+        elif i == 3 and post["outlier_score"] >= OUTLIER_SCORE_INCLUDE_4TH:
+            selected.append(post)
         else:
             break
-    
-    # 7. Generate standout metrics and insights
+
+    # Min-2 rule: never show fewer than 2. If <2 eligible, pad with the highest-scoring
+    # remaining posts (they'll use the composite "why it worked" fallback — no fabricated standout).
+    if len(selected) < 2:
+        for post in ineligible:            # already score-sorted
+            if post not in selected:
+                selected.append(post)
+            if len(selected) >= 2:
+                break
+
+    # 8. why_it_worked (generate_why_it_worked already handles empty standouts)
     for post in selected:
-        post["standout_metrics"] = get_standout_metrics(post, averages, post["score_components"])
-        post["why_it_worked"]    = generate_why_it_worked(post, post["standout_metrics"], averages)
-    
-    # 8. Print results
+        post["why_it_worked"] = generate_why_it_worked(post, post["standout_metrics"], averages)
+
+    # 9. Print results
     print(f"\n  Top {len(selected)} Posts Selected:")
     for i, post in enumerate(selected):
         print(f"\n  #{i+1} [{post['type']}] Score: {post['outlier_score']}")
