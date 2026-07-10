@@ -18,13 +18,14 @@ The Scroll Media Outlier Framework uses a **Composite Weighted Scoring Model** t
 
 **As of v2.0 (July 10, 2026) these are decoupled.** The **monthly account score** uses the intent-weighted hierarchy below (Unified Scoring Framework v1.3: saves and CTR highest, shares lowest) and is unchanged. **Top-post showcase selection** - governed by this document (sections 3-4) - instead leads on reach + retention behind an eligibility gate, so the report surfaces content that genuinely broke out; the buyer-intent story then lives in the card narrative rather than the ranking math. The hierarchy table below governs the MONTHLY SCORE, retained here for reference:
 
-| Tier | Weight | Metrics | Rationale |
+| Tier | Metrics | Weight | Rationale |
 |---|---|---|---|
-| T1 | 1.5x | Saves, Retention %, Link Taps, PCR, CTR | Highest-intent buyer signals. All require a deliberate viewer decision. Saves = pre-purchase bookmarking. Link Taps & CTR = BOFU action. Retention % = content resonance. PCR = profile-to-follower conversion. |
-| T2 | 1.0x | Profile Visits, New Followers, Total Views, Shares | Growth and distribution signals. Meaningful but quality-agnostic. Shares drive algorithmic reach but don't confirm purchase intent. |
-| T3 | 0.75x | Comments | Supporting signal. Valuable context but highly variable by niche and content type. |
+| T1-High | Saves, CTR | Highest | Saves = bookmarked for future reference (pre-purchase behavior). CTR = strongest BOFU conversion signal. |
+| T1 | Retention %, PCR, Link Taps | High | Content depth, profile-to-follower conversion, BOFU action signals. |
+| T2 | Profile Visits, Comments, New Followers, Total Views | Medium | Consideration and community signals. Meaningful but quality-agnostic. |
+| T3 | Shares | Low | Awareness amplifier. Noisy audience quality. Content gets shared when it's funny, relatable, or useful-for-others — not necessarily when the sharer is a buyer. |
 
-**The T1 definition:** T1 metrics share one characteristic — they require the viewer to make a deliberate decision. Saving a post, watching it to completion, tapping a link, or following an account are all active choices that signal genuine interest. These are the behaviors that precede a purchase inquiry. Shares are T2 because a post can go viral for entertainment value without reaching a single buyer.
+**Why Shares are lowest (both models):** High shares can mean the content is funny, relatable, or shareable-for-others — not that the sharer is a buyer. Shares amplify reach but don't guarantee quality audience distribution. Saves are the inverse: they require the viewer to actively decide this content is worth keeping — a much stronger signal of purchase consideration.
 
 ## 3. The Composite Scoring Model (Outlier Engine)
 
