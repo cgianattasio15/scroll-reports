@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+  <meta name="theme-color" content="#151516">
+  <!-- Tier 3 client-data report: noindex + nofollow (CLAUDE.md §5 Security Tiering). -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>MEAS Active &ndash; Final Performance Report | Scroll Media</title>
+  <meta name="description" content="MEAS Active June 2026 Instagram performance report. Score 7.6/10. Building Month. Lift Stage. Managed by Scroll Media.">
+  <meta property="og:title" content="MEAS Active, June 2026 Performance Report">
+  <meta property="og:description" content="Monthly score 7.6/10. Building Month. Prepared by Scroll Media.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/zzWMPdGUZOQUUmHF.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    :root{
+      --shadow:#151516;--navy:#0e3387;--azure:#0e3387;--hl:#e2ed7a;--lime:#c8d94a;
+      --lucid:#cbe9ff;--porcelain:#f2f3f4;--ghost:#f7f8fc;
+      --text:#151516;--muted:#6b7280;--border:rgba(21,21,22,.09);
+      --exceed:#7c3aed;--ontrack:#0e3387;--watch:#d97706;
+      --tofu:#0e3387;--mofu:#7c3aed;--bofu:#059669;
+      --radius:12px;--radius-sm:8px;
+    }
+    body{font-family:'Source Sans 3',system-ui,sans-serif;background:var(--ghost);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    /* Safety net: long unbroken strings (e.g. an unfilled {{TOKEN}} in a draft shell) wrap
+       instead of forcing horizontal overflow. No-op for real, short report values. */
+    .hero-inner,.score-card,.sec,.cta-section,.ls-pov,.gt-row,.followers-banner{overflow-wrap:anywhere}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl));z-index:9999;transition:width .1s linear;pointer-events:none}
+
+    /* ── STICKY NAV ── */
+    .report-nav{position:sticky;top:0;z-index:100;background:#0b2a6e;border-bottom:2px solid #c8d94a;width:100%}
+    .report-nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+    .report-nav-inner::-webkit-scrollbar{display:none}
+    .report-nav-link{display:inline-block;padding:.625rem 1rem;font-size:.75rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.7);white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;margin-bottom:-2px}
+    .report-nav-link:hover,.report-nav-link.active{color:#c8d94a;border-bottom-color:#c8d94a}
+    @media(max-width:700px){.report-nav-link{padding:.5rem .75rem;font-size:.6875rem;min-height:44px;display:inline-flex;align-items:center}}
+
+    /* ── LOOM WALKTHROUGH (Change 7) ── */
+    /* Empty by default — renders NOTHING when no embed id is set. Chase pastes the
+       Loom share id into data-loom-id on .loom-embed to activate. */
+    .loom-band{background:#0a0f1e;display:none}
+    .loom-band.active{display:block}
+    .loom-inner{max-width:1100px;margin:0 auto;padding:1.75rem 1.25rem}
+    .loom-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .loom-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--hl)}
+    .loom-frame{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:var(--radius);overflow:hidden;background:#11193a;border:1px solid rgba(255,255,255,.08)}
+    .loom-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(140deg,#0a0f1e 0%,#0d1a3a 55%,#151f3d 100%);color:#fff;padding:3rem 1.25rem 4rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-30%;right:-10%;width:min(700px,120vw);height:min(700px,120vw);background:radial-gradient(circle,rgba(14,51,135,.25),transparent 65%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+    .hero-logo{height:28px;width:auto;margin-bottom:2rem}
+    .hero-top-row{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.12);border:1px solid rgba(226,237,122,.28);padding:.35rem .875rem;border-radius:4px;font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl)}
+    .hero-eyebrow .dot{width:5px;height:5px;background:var(--hl);border-radius:50%;flex-shrink:0}
+    .hero-stage-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(226,237,122,.18);border:1.5px solid rgba(226,237,122,.5);padding:.4rem 1rem;border-radius:20px;font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--hl)}
+    .hero-stage-badge .stage-icon{width:7px;height:7px;background:var(--hl);border-radius:50%}
+    .hero h1{font-size:clamp(2.25rem,8vw,4.25rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.625rem}
+    .hero h1 span{color:var(--hl)}
+    .hero-meta{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
+    .hero-meta .dot{width:3px;height:3px;background:rgba(255,255,255,.3);border-radius:50%;align-self:center}
+
+    /* ── PAIRED HERO BLOCK (Change 1) ── */
+    .paired-hero{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem}
+    @media(max-width:760px){.paired-hero{grid-template-columns:1fr}}
+    .ph-panel{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:1.5rem 1.625rem;position:relative;overflow:hidden}
+    .ph-panel.score::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
+    .ph-panel.outcome::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#34d399)}
+    .ph-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.625rem}
+    .ph-bignum{font-size:clamp(2.75rem,9vw,3.75rem);font-weight:800;line-height:1;letter-spacing:-.04em;color:#fff}
+    .ph-bignum .unit{font-size:1.125rem;font-weight:400;color:rgba(255,255,255,.4)}
+    .ph-panel.score .ph-bignum{color:var(--hl)}
+    .ph-title{font-size:1rem;font-weight:700;color:#fff;margin:.5rem 0 .25rem}
+    .ph-delta{font-size:.875rem;font-weight:700;display:inline-block}
+    .ph-delta.up{color:#6ee7b7}.ph-delta.dn{color:#fca5a5}.ph-delta.fl{color:rgba(255,255,255,.55)}
+    .ph-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.875rem}
+    .ph-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.6875rem;font-weight:700;padding:.25rem .6rem;border-radius:5px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+    .ph-badge .bd{width:6px;height:6px;border-radius:50%}
+    .ph-badge.exceed .bd{background:#c4b5fd}.ph-badge.ontrack .bd{background:#7a9ad8}.ph-badge.watch .bd{background:#fbbf24}
+    .ph-badge.na .bd{background:rgba(255,255,255,.35)}
+    .ph-outcome-sub{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.55;margin-top:.625rem}
+    .hero-summary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.2);border-left:3px solid var(--hl);border-radius:8px;padding:.875rem 1.125rem;font-size:.9375rem;color:rgba(255,255,255,.9);line-height:1.6}
+    .hero-summary strong{color:#fff}
+    .hero-method{font-size:.8125rem;font-style:italic;color:rgba(255,255,255,.5);line-height:1.55;max-width:680px;margin-top:1rem}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .sec{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:2.25rem;margin:1.75rem 0;box-shadow:0 1px 6px rgba(21,21,22,.04)}
+    @media(max-width:640px){.sec{padding:1.5rem 1.25rem}}
+    .sec-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.5rem}
+    .sec-title{font-size:clamp(1.375rem,4.5vw,2rem);font-weight:800;line-height:1.15;color:var(--shadow);margin-bottom:.5rem;letter-spacing:-.02em}
+    .sec-sub{font-size:.9375rem;color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:1.5rem}
+
+    /* ── SCORE CARD (Section 2) + QUARTERLY SNAPSHOT (Change 6) ── */
+    .score-wrap{position:relative;z-index:10;margin:1.75rem auto;padding:0 1.25rem}
+    .score-card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:0 4px 32px rgba(21,21,22,.14);border:1px solid var(--border);text-align:center;position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
+    .score-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--azure),#4f6ef7,var(--hl))}
+    .score-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.875rem}
+    .score-num{font-size:clamp(3.5rem,12vw,5rem);font-weight:800;color:var(--azure);line-height:1;letter-spacing:-.04em}
+    .score-denom{font-size:1.375rem;color:var(--muted);font-weight:400}
+    .score-title{font-size:1.125rem;font-weight:700;color:var(--text);margin:.375rem 0}
+    .score-delta{font-size:.9375rem;font-weight:700;margin-bottom:1.25rem;display:block}
+    .score-delta.up{color:#059669}.score-delta.dn{color:#dc2626}.score-delta.fl{color:#94a3b8}
+    .score-badges{display:flex;justify-content:center;gap:.625rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .score-badge{display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border-radius:6px;font-size:.75rem;font-weight:700}
+    .score-badge .bd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .score-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}.score-badge.exceed .bd{background:var(--exceed)}
+    .score-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}.score-badge.ontrack .bd{background:var(--ontrack)}
+    .score-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}.score-badge.watch .bd{background:#f59e0b}
+    .trend-wrap{background:linear-gradient(135deg,#1a1f3a,#0c1a3a);border-radius:10px;padding:1.375rem;max-width:420px;margin:0 auto}
+    .trend-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.875rem;text-align:left}
+    .trend-bars{display:flex;align-items:flex-end;gap:1rem;height:72px;justify-content:center}
+    .tc{display:flex;flex-direction:column;align-items:center;gap:.3rem;flex:1;max-width:80px}
+    .tbw{height:52px;display:flex;align-items:flex-end;width:100%}
+    .tb{width:100%;border-radius:3px 3px 0 0;min-height:4px}
+    .ts{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.5)}
+    .ts.curr{color:var(--hl);font-size:.9375rem;font-weight:800}
+    .tm{font-size:.6875rem;color:rgba(255,255,255,.35)}
+    .tm.curr{color:rgba(255,255,255,.65);font-weight:600}
+    /* Dip-month locked line (Change 8 discipline) — render only when score drops >0.5 MoM */
+    .dip-line{display:none;font-size:.8125rem;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:.75rem 1rem;line-height:1.55;max-width:560px;margin:1.25rem auto 0;text-align:left}
+    .dip-line.active{display:block}
+    /* Quarterly snapshot block */
+    .qsnap{max-width:560px;margin:1.5rem auto 0;background:var(--ghost);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.375rem;text-align:left}
+    .qsnap-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.875rem}
+    .qsnap-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure)}
+    .qsnap-traj{font-size:.6875rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.25rem .6rem;border-radius:5px}
+    .qsnap-traj.strong,.qsnap-traj.steady{background:rgba(5,150,105,.12);color:#065f46}
+    .qsnap-traj.building,.qsnap-traj.recovering{background:rgba(14,51,135,.1);color:var(--azure)}
+    .qsnap-traj.soft,.qsnap-traj.mixed{background:rgba(245,158,11,.12);color:#92400e}
+    .qsnap-row{display:flex;align-items:center;gap:1.25rem;margin-bottom:.875rem;flex-wrap:wrap}
+    .qsnap-spark{flex-shrink:0}
+    .qsnap-avg{display:flex;flex-direction:column;gap:.1rem}
+    .qsnap-avg .v{font-size:1.5rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em}
+    .qsnap-avg .l{font-size:.6875rem;color:var(--muted);font-weight:600}
+    .qsnap-narr{font-size:.8125rem;color:var(--muted);line-height:1.6}
+
+    /* ── GOAL TRACKER (Change 2) ── */
+    .gt-list{display:flex;flex-direction:column;gap:1.125rem}
+    .gt-row{border:1px solid var(--border);border-radius:var(--radius);padding:1.375rem 1.5rem;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:1rem 1.5rem;align-items:center}
+    .gt-row::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
+    .gt-row.tofu::before{background:var(--tofu)}.gt-row.mofu::before{background:var(--mofu)}.gt-row.bofu::before{background:var(--bofu)}
+    .gt-main{min-width:0}
+    .gt-funnel{display:flex;align-items:center;gap:.5rem;margin-bottom:.4rem}
+    .gt-dot{width:8px;height:8px;border-radius:50%}
+    .gt-dot.tofu{background:var(--tofu)}.gt-dot.mofu{background:var(--mofu)}.gt-dot.bofu{background:var(--bofu)}
+    .gt-funnel-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .gt-title{font-size:1.0625rem;font-weight:800;color:var(--text);line-height:1.25;letter-spacing:-.01em;margin-bottom:.625rem}
+    .gt-bct{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
+    .gt-bar-track{flex:1;height:10px;background:var(--porcelain);border-radius:5px;overflow:hidden}
+    .gt-bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,var(--azure),#4f6ef7)}
+    .gt-bar-fill.lime{background:linear-gradient(90deg,#65a30d,var(--lime))}
+    .gt-pct{font-size:1.0625rem;font-weight:800;color:var(--text);letter-spacing:-.02em;flex-shrink:0;min-width:3rem;text-align:right}
+    .gt-bct{display:flex;gap:1.25rem;margin-bottom:.5rem;flex-wrap:wrap}
+    .gt-bct .seg{font-size:.75rem;color:var(--muted)}
+    .gt-bct .seg b{color:var(--text);font-weight:700}
+    .gt-narr{font-size:.8125rem;color:var(--muted);line-height:1.55}
+    .gt-side{display:flex;flex-direction:column;align-items:flex-end;gap:.625rem;flex-shrink:0}
+    .gt-spark-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+    @media(max-width:640px){.gt-row{grid-template-columns:1fr}.gt-side{flex-direction:row;align-items:center;justify-content:space-between;width:100%}}
+    /* ── GOAL TRACKER composite score (v8.1) ── */
+    .gt-score-pts{font-size:1.25rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+    .gt-score-max{font-size:.8125rem;font-weight:600;color:var(--muted)}
+    /* ── CONTENT-TO-BUSINESS IMPACT (v8.1) ── */
+    .c2b-funnel{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.75rem;margin-bottom:1.25rem}
+    .c2b-panel-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:1rem}
+    .c2b-steps{display:flex;flex-direction:column;gap:.75rem}
+    .c2b-step{display:flex;align-items:baseline;gap:.875rem;padding-bottom:.75rem;border-bottom:1px dashed var(--border)}
+    .c2b-step:last-child{border-bottom:none;padding-bottom:0}
+    .c2b-step-num{font-size:1.375rem;font-weight:800;color:var(--text);letter-spacing:-.02em;min-width:5.5rem;flex-shrink:0}
+    .c2b-step.hi .c2b-step-num{color:var(--bofu)}
+    .c2b-step-txt{font-size:.9375rem;color:var(--muted);line-height:1.5}
+    .c2b-estimate{background:linear-gradient(135deg,#0f1730,#11254f);border-radius:var(--radius);padding:1.75rem;border:1px solid rgba(255,255,255,.06)}
+    .c2b-estimate .c2b-panel-label{color:var(--hl)}
+    .c2b-lead{font-size:1rem;color:rgba(255,255,255,.9);line-height:1.65;margin-bottom:1.25rem}
+    .c2b-lead b{color:#fff}
+    .c2b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem}
+    .c2b-cell{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem}
+    .c2b-cell-lbl{display:block;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+    .c2b-cell-val{display:block;font-size:1.125rem;font-weight:800;color:var(--hl);letter-spacing:-.01em;line-height:1.2}
+    .c2b-cell-note{display:block;font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.3rem;line-height:1.4}
+    .c2b-disclaimer{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.6;font-style:italic;border-top:1px solid rgba(255,255,255,.1);padding-top:1rem}
+    @media(max-width:640px){.c2b-grid{grid-template-columns:1fr}}
+    /* ── v8.2 Content-to-Business Impact estimate hero ── */
+    .c2b-est-hero{text-align:center;padding:.25rem 0 1rem}
+    .c2b-est-num{font-size:clamp(3rem,10vw,4.5rem);font-weight:800;color:var(--hl);line-height:1;letter-spacing:-.04em}
+    .c2b-est-num-lbl{font-size:.9375rem;color:rgba(255,255,255,.85);margin-top:.6rem;font-weight:600;line-height:1.4}
+    .c2b-est-sub{font-size:.8125rem;color:rgba(255,255,255,.55);margin:.6rem auto 0;line-height:1.55;max-width:460px}
+    .c2b-timeline-badge{display:flex;align-items:center;justify-content:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.65rem 1rem;font-size:.8125rem;color:rgba(255,255,255,.8);margin:0 0 1rem;text-align:center}
+    .c2b-timeline-badge .ic{color:var(--hl);flex-shrink:0}
+    .c2b-val-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .c2b-val-card{background:rgba(255,255,255,.05);border-radius:8px;padding:1rem 1.125rem;text-align:center}
+    .c2b-est-note{font-size:.8125rem;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:1rem}
+    @media(max-width:480px){.c2b-val-cards{grid-template-columns:1fr}}
+    /* ── v8.3 analogy badges (Panel 1) ── */
+    .c2b-step{align-items:flex-start}
+    .c2b-step-main{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+    .c2b-step-badge{display:inline-block;font-size:.72rem;color:#475569;background:rgba(14,51,135,.05);border:1px solid rgba(14,51,135,.08);border-radius:20px;padding:.2rem .65rem;line-height:1.4;width:fit-content;max-width:100%}
+    /* ── v8.3 two customer-type cards (Panel 2) ── */
+    .c2b-cust-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    .c2b-cc{background:rgba(255,255,255,.05);border-radius:10px;padding:1.5rem 1.25rem;text-align:center;display:flex;flex-direction:column}
+    .c2b-cc-eyebrow{font-size:.625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem}
+    .c2b-cc-num{font-size:clamp(2.5rem,8vw,3.25rem);font-weight:800;color:var(--hl);line-height:1;letter-spacing:-.03em}
+    .c2b-cc-lbl{font-size:.8125rem;color:rgba(255,255,255,.8);margin-top:.5rem;font-weight:600;line-height:1.4}
+    .c2b-cc-meta{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);text-align:left;display:flex;flex-direction:column;gap:.5rem}
+    .c2b-cc-row{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
+    .c2b-cc-mlbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5)}
+    .c2b-cc-mval{font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.85);text-align:right}
+    .c2b-cc-mval.big{font-size:1.0625rem;font-weight:800;color:var(--hl)}
+    .c2b-cc-sub{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.4}
+    .c2b-combined{display:flex;align-items:baseline;justify-content:center;gap:.75rem;flex-wrap:wrap;background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.2);border-radius:8px;padding:.875rem 1.25rem;margin-bottom:1rem;text-align:center}
+    .c2b-combined-lbl{font-size:.8125rem;color:rgba(255,255,255,.7);font-weight:600}
+    .c2b-combined-val{font-size:1.375rem;font-weight:800;color:var(--hl);letter-spacing:-.01em}
+    .c2b-method{margin-bottom:1rem;border:1px solid rgba(255,255,255,.1);border-radius:8px;overflow:hidden}
+    .c2b-method summary{cursor:pointer;font-size:.8125rem;font-weight:700;color:var(--hl);padding:.7rem 1rem;list-style:none}
+    .c2b-method summary::-webkit-details-marker{display:none}
+    .c2b-method summary::before{content:'\25B8  ';color:rgba(255,255,255,.5)}
+    .c2b-method[open] summary::before{content:'\25BE  '}
+    .c2b-method-body{padding:0 1rem 1rem;font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.6}
+    .c2b-method-body p{margin-bottom:.5rem}
+    .c2b-method-body b{color:rgba(255,255,255,.85)}
+    @media(max-width:560px){.c2b-cust-cards{grid-template-columns:1fr}}
+    /* ── v8.3.1 point estimate + confidence band ── */
+    .c2b-cc-range{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.3rem;font-style:italic}
+    .c2b-combined-block{margin-bottom:1rem}
+    .c2b-combined-block .c2b-combined{margin-bottom:.35rem}
+    .c2b-combined-sub{text-align:center;font-size:.75rem;color:rgba(255,255,255,.5)}
+    .c2b-cust-cards.single{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+
+    /* ── PERFORMANCE DASHBOARD ── */
+    .followers-banner{background:linear-gradient(135deg,var(--azure) 0%,#1a4fc4 100%);border-radius:10px;padding:1.375rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+    .fb-left .fb-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.25rem}
+    .fb-left .fb-count{font-size:2.25rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.03em}
+    .fb-left .fb-mom{font-size:.8125rem;color:rgba(255,255,255,.65);margin-top:.2rem}
+    .fb-right{text-align:right}
+    .fb-right .fb-target-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.25rem}
+    .fb-right .fb-target{font-size:1.0625rem;font-weight:700;color:var(--hl)}
+    .fb-right .fb-stage{font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.15rem}
+    @media(max-width:480px){.followers-banner{flex-direction:column}.fb-right{text-align:left}}
+    .funnel-group{margin-bottom:1.75rem}
+    .funnel-header{display:flex;align-items:center;gap:.625rem;padding:.625rem .875rem;border-radius:6px;margin-bottom:1rem}
+    .funnel-header.tofu{background:rgba(14,51,135,.06)}.funnel-header.mofu{background:rgba(124,58,237,.06)}.funnel-header.bofu{background:rgba(5,150,105,.06)}
+    .funnel-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .funnel-dot.tofu{background:var(--tofu)}.funnel-dot.mofu{background:var(--mofu)}.funnel-dot.bofu{background:var(--bofu)}
+    .funnel-lbl{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .funnel-lbl.tofu{color:var(--tofu)}.funnel-lbl.mofu{color:var(--mofu)}.funnel-lbl.bofu{color:var(--bofu)}
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .mc{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.125rem}
+    .mc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.625rem}
+    .mc-name{font-size:.8125rem;font-weight:700;color:var(--text)}
+    .mc-badge{font-size:.625rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em}
+    .mc-badge.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
+    .mc-badge.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
+    .mc-badge.watch{background:rgba(245,158,11,.1);color:var(--watch)}
+    .mc-badge.na{background:rgba(21,21,22,.06);color:var(--muted)}
+    .mc-nums{display:flex;gap:1.25rem;margin-bottom:.5rem}
+    .mc-lbl{font-size:.6875rem;color:var(--muted);display:block;margin-bottom:.15rem}
+    .mc-val{font-size:1.375rem;font-weight:800;letter-spacing:-.02em}
+    .mc-val.exceed{color:var(--exceed)}.mc-val.ontrack{color:var(--ontrack)}.mc-val.watch{color:var(--watch)}
+    .mc-val.na{color:var(--muted);font-weight:700}
+    .mc.na{opacity:.85}
+    .mc-tgt{font-size:.9375rem;font-weight:600;color:var(--muted)}
+    .mc-mom{margin-bottom:.5rem}
+    .mom{font-size:.75rem;font-weight:700;padding:.15rem .5rem;border-radius:4px}
+    .mom.up{background:rgba(5,150,105,.1);color:#059669}.mom.dn{background:rgba(220,38,38,.1);color:#dc2626}.mom.fl{background:rgba(148,163,184,.1);color:#94a3b8}
+    .bar-track{height:6px;background:var(--porcelain);border-radius:3px;overflow:hidden;margin-bottom:.5rem}
+    .bar-fill{height:100%;border-radius:3px;transition:width .7s cubic-bezier(.4,0,.2,1)}
+    .bar-fill.exceed{background:var(--exceed)}.bar-fill.ontrack{background:var(--ontrack)}.bar-fill.watch{background:#f59e0b}
+    .mc-note{font-size:.6875rem;color:var(--muted);line-height:1.5}
+    .mc-callout{font-size:.6875rem;font-style:italic;color:#475569;line-height:1.45;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--border)}
+    /* Conditional Watch Time append under Retention card (Change 3 / Tier 1.5) */
+    .mc-watchtime{display:none;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--border);align-items:center;gap:.5rem}
+    .mc-watchtime.active{display:flex}
+    .mc-watchtime-lbl{font-size:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#7c3aed}
+    .mc-watchtime-val{font-size:.875rem;font-weight:800;color:#7c3aed}
+    .mc-watchtime-note{font-size:.6875rem;color:var(--muted)}
+
+    /* ── LEAD SIGNAL (Change 4) ── */
+    .ls-pov{background:linear-gradient(135deg,#0f1730,#11254f);border-radius:var(--radius);padding:1.5rem 1.75rem;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,.06)}
+    .ls-pov-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.625rem}
+    .ls-pov-text{font-size:.9375rem;color:rgba(255,255,255,.85);line-height:1.7}
+    .ls-layers{display:flex;flex-direction:column;gap:1rem}
+    .ls-layer{border:1px solid var(--border);border-radius:var(--radius);padding:1.375rem 1.5rem;position:relative}
+    .ls-layer-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}
+    .ls-layer-num{width:26px;height:26px;border-radius:7px;background:var(--azure);color:#fff;font-size:.8125rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ls-layer-title{font-size:.9375rem;font-weight:800;color:var(--text)}
+    .ls-layer-sub{font-size:.75rem;color:var(--muted);font-weight:600}
+    .ls-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem}
+    .ls-stat{background:var(--ghost);border-radius:8px;padding:.875rem 1rem;text-align:center}
+    .ls-stat-val{font-size:1.5rem;font-weight:800;color:var(--azure);line-height:1;letter-spacing:-.02em}
+    .ls-stat-lbl{font-size:.6875rem;color:var(--muted);font-weight:600;margin-top:.35rem;text-transform:uppercase;letter-spacing:.04em}
+    /* Empty-state soft prompt for a layer with no data yet (graceful degradation) */
+    .ls-layer.empty{border-style:dashed;background:var(--ghost)}
+    .ls-empty-prompt{font-size:.875rem;color:var(--muted);line-height:1.6;font-style:italic}
+
+    /* ── TOP POSTS ── */
+    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:start}
+    @media(max-width:900px){.posts-grid{grid-template-columns:1fr}}
+    .post-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);display:flex;flex-direction:column;height:100%;overflow:hidden}
+    .post-header{background:var(--navy);color:#fff;padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;overflow:hidden}
+    .post-rank{font-size:.8rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+    .post-type-badge{font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;flex-shrink:0}
+    .reel-badge,.post-badge{background:#fff;color:#0e3387}
+    .carousel-badge{background:#e0e7ff;color:#3730a3}.static-badge{background:#f0fdf4;color:#166534}
+    .post-score{font-size:.72rem;font-weight:700;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.2rem .65rem;letter-spacing:.04em;margin-left:auto;white-space:nowrap;flex-shrink:0}
+    .post-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.6rem;position:relative;z-index:1}
+    .post-date{font-size:.75rem;color:var(--muted);font-weight:500}
+    .post-format-pill{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.06em;background:#f1f5f9;color:#475569;border-radius:20px;padding:.2rem .7rem;text-transform:uppercase;width:fit-content}
+    .post-hook{margin:0;font-style:italic;font-size:.9rem;color:var(--navy);border-left:3px solid var(--lime);padding-left:.75rem;line-height:1.5}
+    .post-caption{font-size:.8rem;color:#475569;background:#f8fafc;border-radius:8px;padding:.6rem .8rem;line-height:1.55}
+    .cap-preview{display:inline}.cap-rest{display:none}.cap-rest.open{display:inline}.cap-ellipsis{display:inline}.cap-ellipsis.hidden{display:none}
+    .cap-toggle{background:none;border:none;color:var(--azure);font-size:.75rem;font-weight:600;cursor:pointer;padding:.4rem .1rem;margin-left:.2rem;min-height:32px}
+    .cap-toggle:hover{text-decoration:underline}
+    .standout-metrics{display:flex;flex-direction:column;gap:.4rem}
+    .standout-metric{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .sm-label{font-size:.72rem;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.04em;min-width:80px}
+    .sm-value{font-size:.95rem;font-weight:800;color:var(--navy)}
+    .sm-badge{font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:20px;letter-spacing:.03em}
+    .outlier-2x{background:#dcfce7;color:#15803d}.outlier-1x{background:#dbeafe;color:#1d4ed8}.outlier-3x{background:#f3e8ff;color:#7c3aed}
+    .post-why{background:#fffbeb;border-radius:8px;padding:.65rem .8rem;margin-top:auto}
+    .why-label{font-size:.7rem;font-weight:800;color:#b45309;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+    .why-text{font-size:.8rem;color:#78350f;line-height:1.55;margin:0}
+    .post-ig-btn{display:block;background:var(--navy);color:#fff;text-align:center;padding:.75rem 1rem;font-weight:700;font-size:.85rem;border-radius:0 0 var(--radius) var(--radius);margin-top:auto;transition:background .2s}
+    .post-ig-btn:hover{background:#1a3a7a;color:#fff}
+
+    /* ── ALL POSTS TABLE (Change 9) ── */
+    .ap-controls{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1.125rem}
+    .ap-chip{display:inline-flex;align-items:center;font-size:.75rem;font-weight:700;padding:.5rem .95rem;border-radius:22px;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;transition:all .15s;min-height:44px}
+    .ap-chip:hover{border-color:rgba(14,51,135,.35);color:var(--azure)}
+    .ap-chip.active{background:var(--azure);border-color:var(--azure);color:#fff}
+    .ap-mobile-sort{display:none}
+    .ap-mobile-sort select{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.875rem;font-weight:600;color:var(--text);background:#fff;min-height:44px}
+    .ap-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius)}
+    table.ap-table{width:100%;border-collapse:collapse;font-size:.8125rem;min-width:760px}
+    .ap-table thead th{background:var(--ghost);text-align:left;padding:.7rem .75rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);position:sticky;top:0}
+    .ap-table thead th:hover{color:var(--azure)}
+    .ap-table thead th .arrow{opacity:.35;font-size:.625rem;margin-left:.2rem}
+    .ap-table thead th.sorted-asc .arrow,.ap-table thead th.sorted-desc .arrow{opacity:1;color:var(--azure)}
+    .ap-table thead th.num{text-align:right}
+    .ap-table tbody td{padding:.65rem .75rem;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap}
+    .ap-table tbody td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+    .ap-table tbody tr:last-child td{border-bottom:none}
+    .ap-table tbody tr.outlier td:first-child{box-shadow:inset 3px 0 0 var(--lime)}
+    .ap-table tbody tr.outlier{background:rgba(200,217,74,.06)}
+    .ap-fmt-tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.6875rem;font-weight:700;padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;letter-spacing:.03em}
+    .ap-fmt-tag.reel{background:#e0e7ff;color:#3730a3}.ap-fmt-tag.carousel{background:#fef3c7;color:#92400e}.ap-fmt-tag.static{background:#dcfce7;color:#166534}.ap-fmt-tag.story{background:#f3e8ff;color:#7c3aed}
+    .ap-cap{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:default}
+    .ap-table tbody tr:hover .ap-cap{white-space:normal;overflow:visible}
+    .ap-table tbody tr:hover{background:rgba(14,51,135,.03)}
+    .ap-table tbody tr.outlier:hover{background:rgba(200,217,74,.1)}
+    .ap-iglink{color:var(--azure);font-weight:700;font-size:.875rem}
+    .ap-out-flag{font-size:.625rem;font-weight:800;color:#65a30d;text-transform:uppercase;letter-spacing:.04em;margin-left:.35rem}
+    .ap-legend{font-size:.75rem;color:var(--muted);margin-top:.875rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+    .ap-legend .swatch{width:14px;height:14px;border-radius:3px;background:rgba(200,217,74,.4);box-shadow:inset 3px 0 0 var(--lime);flex-shrink:0}
+    .ap-empty{padding:2rem;text-align:center;color:var(--muted);font-style:italic;font-size:.9375rem}
+    /* Mobile card collapse for All Posts (<640px) */
+    .ap-cards{display:none;flex-direction:column;gap:.875rem}
+    .ap-pc{border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.125rem;background:#fff;position:relative;overflow:hidden}
+    .ap-pc.outlier{box-shadow:inset 3px 0 0 var(--lime);background:rgba(200,217,74,.05)}
+    .ap-pc-top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.625rem;flex-wrap:wrap}
+    .ap-pc-date{font-size:.75rem;color:var(--muted);font-weight:600}
+    .ap-pc-cap{font-size:.8125rem;color:#475569;line-height:1.5;margin-bottom:.75rem}
+    .ap-pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem .75rem;margin-bottom:.75rem}
+    .ap-pc-stat{display:flex;flex-direction:column;gap:.1rem}
+    .ap-pc-stat .l{font-size:.625rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .ap-pc-stat .v{font-size:.9375rem;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
+    .ap-pc-link{display:inline-block;font-size:.8125rem;font-weight:700;color:var(--azure)}
+
+    /* ── TESTS + POSTS WE'RE WATCHING (Change 8) ── */
+    /* Dip-month narrative block — surfaces at top of this section when score drops >0.5 */
+    .dip-narr{display:none;background:#fffbeb;border:1px solid #fcd34d;border-left:4px solid #f59e0b;border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+    .dip-narr.active{display:block}
+    .dip-narr-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#92400e;margin-bottom:.75rem}
+    .dip-narr-list{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+    .dip-narr-item{display:flex;gap:.75rem;font-size:.875rem;color:#451a03;line-height:1.55}
+    .dip-narr-item b{color:#78350f}
+    .tw-group{margin-bottom:1.75rem}
+    .tw-group:last-child{margin-bottom:0}
+    .tw-group-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.875rem;display:flex;align-items:center;gap:.5rem}
+    .tw-group-label .ic{width:7px;height:7px;border-radius:50%}
+    .tw-group.patterns .tw-group-label{color:var(--bofu)}.tw-group.patterns .ic{background:var(--bofu)}
+    .tw-group.watching .tw-group-label{color:var(--watch)}.tw-group.watching .ic{background:#f59e0b}
+    .tw-group.tests .tw-group-label{color:var(--exceed)}.tw-group.tests .ic{background:var(--exceed)}
+    .tw-items{display:flex;flex-direction:column;gap:.75rem}
+    .tw-item{border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;background:var(--ghost)}
+    .tw-item-head{font-size:.9375rem;font-weight:700;color:var(--text);margin-bottom:.3rem;line-height:1.35}
+    .tw-item-body{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .tw-item.patterns{border-left:3px solid var(--bofu)}
+    .tw-item.watching{border-left:3px solid #f59e0b}
+    .tw-item.tests{border-left:3px solid var(--exceed)}
+
+    /* ── CTA SECTION ── */
+    .cta-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);border-radius:var(--radius);padding:2.25rem;margin:1.75rem 0;color:#fff;overflow:hidden;position:relative}
+    .cta-section::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(14,51,135,.2),transparent 65%);border-radius:50%;pointer-events:none}
+    .cta-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .cta-title{font-size:clamp(1.375rem,4vw,1.875rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
+    .cta-sub{font-size:.9375rem;color:rgba(255,255,255,.55);margin-bottom:1.75rem;max-width:560px;line-height:1.65}
+    .cta-primary{background:rgba(226,237,122,.08);border:1px solid rgba(226,237,122,.22);border-radius:10px;padding:1.375rem;margin-bottom:1.5rem;position:relative;z-index:1}
+    .cta-primary-label{font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .cta-primary-obj{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.75rem;letter-spacing:-.01em}
+    .cta-copy{font-size:.9375rem;font-style:italic;color:rgba(255,255,255,.85);padding:.75rem 1rem;background:rgba(255,255,255,.06);border-radius:6px;border-left:3px solid var(--hl);margin-bottom:.75rem}
+    .cta-rationale{font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.65}
+    .cta-funnel-list{list-style:none;display:flex;flex-direction:column;gap:.625rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1)}
+    .cta-funnel-li{display:flex;gap:.875rem;align-items:flex-start;color:rgba(255,255,255,.85);font-size:.875rem;line-height:1.55}
+    .cta-stage-tag{flex-shrink:0;font-size:.625rem;font-weight:800;letter-spacing:.06em;padding:.2rem .5rem;border-radius:4px;text-transform:uppercase;margin-top:.15rem}
+    .cta-stage-tag.tofu{color:#cbe9ff;background:rgba(14,51,135,.4)}
+    .cta-stage-tag.mofu{color:#c4b5fd;background:rgba(124,58,237,.3)}
+    .cta-stage-tag.bofu{color:#6ee7b7;background:rgba(5,150,105,.25)}
+
+    /* ── PREVIOUS REPORTS + FOOTER ── */
+    .prev-section{background:linear-gradient(140deg,#0a0f1e,#0d1a3a);padding:2.75rem 1.25rem;margin-top:1.75rem;width:100%}
+    .prev-inner{max-width:1100px;margin:0 auto}
+    .prev-eyebrow{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:.5rem}
+    .prev-title{font-size:clamp(1.25rem,4vw,1.75rem);font-weight:800;color:#fff;margin-bottom:.375rem;letter-spacing:-.02em}
+    .prev-sub{font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem}
+    .prev-grid{display:flex;flex-wrap:wrap;gap:.875rem}
+    .prev-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.375rem 1.625rem;color:#fff;transition:background .2s,border-color .2s;min-width:180px;flex:1}
+    .prev-card:hover{background:rgba(255,255,255,.1);border-color:rgba(226,237,122,.3)}
+    .prev-month{font-size:.6875rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+    .prev-score{font-size:2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:.2rem;letter-spacing:-.03em}
+    .prev-score span{font-size:.875rem;font-weight:400;color:rgba(255,255,255,.35)}
+    .prev-label{font-size:.8125rem;color:rgba(255,255,255,.55);margin-bottom:.75rem}
+    .prev-link{font-size:.8125rem;font-weight:700;color:var(--hl)}
+    .carry{background:var(--ghost);border:1px solid var(--border);border-left:3px solid var(--azure);border-radius:10px;padding:1.25rem 1.35rem;margin-top:1.1rem}
+    .carry h3{font-size:1.0625rem;font-weight:800;letter-spacing:-.01em;margin-bottom:.6rem;color:var(--ink)}
+    .carry p{font-size:.9375rem;line-height:1.75;color:var(--body)}
+    .carry p+p{margin-top:.85rem}
+    .carry .lbl{font-weight:800;color:var(--ink)}
+    .doorway{max-width:1100px;margin:0 auto;padding:0 1.25rem 2.25rem}
+    .doorway p{font-size:1rem;line-height:1.75;color:var(--body);font-style:italic;border-top:1px solid var(--border);padding-top:1.5rem}
+    .footer{background:#fff;padding:2.25rem 1.25rem;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem}
+    .footer-logo{height:26px;width:auto}
+    .footer-text{font-size:.8125rem;color:var(--muted);line-height:1.6}
+    .footer-text a{color:var(--azure);font-weight:600}
+    @media(max-width:560px){.footer-inner{flex-direction:column;align-items:flex-start}}
+
+    /* ═══ MOBILE (≤640px) ═══ */
+    @media(max-width:640px){
+      .ap-table-wrap{display:none}
+      .ap-cards{display:flex}
+      .ap-mobile-sort{display:block;width:100%;order:2;margin-top:.5rem}
+      .ap-controls{gap:.4rem}
+    }
+    /* ═══ MOBILE (≤480px) ═══ */
+    @media(max-width:480px){
+      .report-nav-link{padding:.5rem .6rem;font-size:.625rem}
+      .hero{padding:2rem 1rem 3rem}
+      .hero-top-row{flex-direction:column;gap:.5rem}
+      .paired-hero{grid-template-columns:1fr}
+      .score-wrap{margin:1.25rem auto;padding:0 1rem}
+      .score-card{padding:1.5rem 1.25rem}
+      .score-num{font-size:clamp(3rem,14vw,4.5rem)}
+      .followers-banner{flex-direction:column;gap:.75rem}
+      .metrics-grid{grid-template-columns:1fr}
+      .posts-grid{grid-template-columns:1fr}
+      .sec{padding:1.25rem 1rem}
+      .qsnap,.dip-line{margin-left:0;margin-right:0}
+      .ls-stats{grid-template-columns:1fr 1fr}
+      .ap-pc-stats{grid-template-columns:1fr 1fr}
+    }
+  
+    /* v8.3.3 mobile body-text floor (CLAUDE.md 3.12): .mc-callout >=14px on phones */
+    @media(max-width:480px){.mc-callout{font-size:14px}}
+  
+    /* ═══ v8.3.4 June Highlights (C1) ═══ */
+    .jhi{max-width:920px;margin:1.25rem auto 0;padding:0 1.25rem}
+    .jhi-card{background:#fff;border:1px solid var(--border,rgba(21,21,22,.09));border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 2px 16px rgba(21,21,22,.05)}
+    .jhi-title{font-size:.6875rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--azure,#0e3387);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+    .jhi-title .dot{width:6px;height:6px;border-radius:50%;background:var(--hl,#e2ed7a)}
+    .jhi-list{display:flex;flex-direction:column;gap:.6rem}
+    .jhi-item{display:flex;gap:.7rem;align-items:flex-start;line-height:1.5}
+    .jhi-item .mk{flex:0 0 auto;width:8px;height:8px;border-radius:2px;background:var(--hl,#e2ed7a);margin-top:.42rem}
+    .jhi-item .bd{font-size:.9rem;color:var(--text,#151516)}
+    .jhi-item .bd b{color:var(--azure,#0e3387);font-weight:800;letter-spacing:.01em}
+    @media(max-width:480px){.jhi-item .bd{font-size:14px}}
+
+    /* ═══ v8.3.4 Q1-Q4 year view (C2) — light theme ═══ */
+    .qyear{margin-top:1.5rem}
+    .qyear-intro{font-size:.8125rem;color:var(--muted,#6b7280);line-height:1.6;max-width:640px;margin:0 auto 1rem;text-align:left}
+    .qy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}
+    .qy-col{background:var(--porcelain,#f2f3f4);border:1px solid var(--border,rgba(21,21,22,.09));border-radius:10px;padding:.8rem .7rem;text-align:center;position:relative}
+    .qy-col.current{border-color:rgba(14,51,135,.35);background:rgba(226,237,122,.14)}
+    .qy-col.pending{opacity:.65}
+    .qy-q{font-size:.9rem;font-weight:800;color:var(--text,#151516);letter-spacing:.02em}
+    .qy-range{font-size:.625rem;color:var(--muted,#6b7280);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+    .qy-avg{font-size:1.5rem;font-weight:800;color:var(--azure,#0e3387);line-height:1}
+    .qy-avg .u{font-size:.7rem;color:var(--muted,#6b7280);font-weight:600}
+    .qy-note{font-size:.72rem;color:#374151;line-height:1.42;padding:.35rem .1rem}
+    .qy-badge{display:inline-block;font-size:.5625rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:20px;margin:.4rem 0}
+    .qy-badge.steady{background:rgba(107,114,128,.16);color:#4b5563}
+    .qy-badge.building,.qy-badge.recovering{background:rgba(14,51,135,.12);color:#0e3387}
+    .qy-badge.strong{background:rgba(5,150,105,.14);color:#059669}
+    .qy-badge.mixed,.qy-badge.softening{background:rgba(217,119,6,.16);color:#b45309}
+    .qy-bars{display:flex;align-items:flex-end;justify-content:center;gap:3px;height:26px;margin:.3rem 0 .45rem}
+    .qy-bars span{width:8px;border-radius:2px 2px 0 0;background:rgba(14,51,135,.28)}
+    .qy-bars span.cur{background:var(--azure,#0e3387)}
+    .qy-state{font-size:.5625rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#6b7280)}
+    .qy-col.current .qy-state{color:var(--azure,#0e3387)}
+    /* v8.3.5 Issue 2 — per-quarter performance theme (dark-on-light, do not inherit dark-theme text) */
+    .qy-theme{margin:.55rem 0 .1rem;padding-top:.5rem;border-top:1px solid var(--border,rgba(21,21,22,.09));text-align:left}
+    .qy-tline{font-size:.68rem;color:#374151;line-height:1.42;margin-bottom:.28rem}
+    .qy-tline:last-child{margin-bottom:0}
+    .qy-tl{font-weight:800;color:var(--azure,#0e3387);letter-spacing:.01em}
+    @media(max-width:560px){.qy-grid{grid-template-columns:1fr 1fr}}
+
+    /* ═══ v8.3.4 trajectory chart (C3) ═══ */
+    .traj-wrap{margin:0 0 1.1rem}
+    .traj-lead{font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:1rem}
+    .traj-chart{width:100%;height:auto;display:block}
+    .traj-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;margin-top:.75rem;font-size:.75rem;color:rgba(255,255,255,.65)}
+    .traj-legend .lg{display:inline-flex;align-items:center;gap:.4rem}
+    .traj-legend .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+    .traj-legend .sw.mid{background:#e2ed7a}
+    .traj-legend .sw.band{background:rgba(226,237,122,.28);height:10px}
+    .traj-legend .sw.proj{background:linear-gradient(90deg,rgba(255,255,255,.5) 50%,transparent 50%);background-size:6px 3px}
+
+    /* ═══ v8.3.4 dip block typography tighten (C5) ═══ */
+    .dip-narr{padding:1rem 1.2rem!important;margin-bottom:1.25rem!important}
+    .dip-narr-label{margin-bottom:.55rem!important}
+    .dip-narr-list{gap:.5rem!important}
+    .dip-narr-item{display:block!important;line-height:1.45!important;font-size:.85rem!important}
+    .dip-narr-item b{display:block!important;margin-bottom:.1rem!important;font-weight:800!important;color:#78350f;letter-spacing:.01em}
+
+
+    /* ═══ v8.4 STORYTELLING LAYER ═══ */
+    .beat-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin-bottom:.85rem}
+    .beat-eyebrow .bn{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;background:rgba(14,51,135,.1);color:var(--azure);font-size:.75rem;font-weight:800;letter-spacing:0}
+    .beat-eyebrow.on-dark{color:var(--hl);margin:1rem 0 0}
+    .beat-eyebrow.on-dark .bn{background:rgba(226,237,122,.2);color:var(--hl)}
+    .beat-takeaway{font-size:clamp(1.2rem,3.4vw,1.55rem);font-weight:800;line-height:1.32;color:var(--text);letter-spacing:-.01em;margin-bottom:1.1rem}
+    .beat-prose{font-size:.95rem;color:var(--muted);line-height:1.7;max-width:680px;margin-bottom:1.1rem}
+    .sub-head{font-size:.6875rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--azure);margin:1.5rem 0 1rem}
+    .work-strip{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.1rem 0 1.25rem}
+    .work-chip{background:var(--ghost);border:1px solid var(--border);border-radius:22px;padding:.55rem .95rem;font-size:.8125rem;font-weight:600;color:var(--text);line-height:1.4}
+    .work-chip b{color:var(--azure);font-weight:800}
+    /* Beat 3 headline stat tiles */
+    .bstats{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:0 0 .5rem}
+    .bstat{background:var(--ghost);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.15rem 1rem;text-align:center}
+    .bstat-val{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--text)}
+    .bstat-val.exceed{color:var(--exceed)}.bstat-val.ontrack{color:var(--ontrack)}.bstat-val.watch{color:var(--watch)}
+    .bstat-lbl{font-size:.72rem;color:var(--muted);font-weight:600;margin-top:.45rem;line-height:1.3}
+    .bstat-tag{display:inline-block;font-size:.5625rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:.15rem .45rem;border-radius:4px;margin-top:.55rem}
+    .bstat-tag.exceed{background:rgba(124,58,237,.1);color:var(--exceed)}
+    .bstat-tag.ontrack{background:rgba(14,51,135,.1);color:var(--ontrack)}
+    .bstat-tag.watch{background:rgba(245,158,11,.12);color:var(--watch)}
+    @media(max-width:560px){.bstats{grid-template-columns:1fr 1fr}}
+    /* Beat 4 featured post + pattern line */
+    .feature-wrap{max-width:560px;margin:0 0 1.1rem}
+    .beat-pattern{background:var(--ghost);border:1px solid var(--border);border-left:3px solid var(--hl);border-radius:8px;padding:1rem 1.25rem;font-size:.9rem;color:var(--text);line-height:1.6;margin-top:1.1rem}
+    /* Beat 5 light CTA */
+    .beat-cta{background:var(--ghost);border:1px solid var(--border);border-left:3px solid var(--azure);border-radius:10px;padding:1.25rem 1.4rem;margin-top:1.5rem}
+    .beat-cta-label{font-size:.6875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--azure);margin-bottom:.4rem}
+    .beat-cta-copy{font-size:.95rem;font-style:italic;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:6px;padding:.7rem .9rem}
+    /* Beat 3 goal-by-goal breakdown items (inside the collapsible) */
+    .gg-item{padding:1.1rem 0;border-bottom:1px solid var(--border)}
+    .gg-item:first-child{padding-top:0}
+    .gg-item:last-child{border-bottom:0;padding-bottom:0}
+    .gg-item .gt-funnel{margin-bottom:.5rem}
+    .gg-item .gt-bct{margin-bottom:.5rem}
+    .gg-item .gt-narr{margin:0}
+    /* Collapsible proof affordance */
+    .proof{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.1rem;background:var(--ghost)}
+    .proof+.proof{margin-top:.75rem}
+    .proof>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.75rem;padding:.95rem 1.15rem;min-height:52px;font-size:.9rem;font-weight:700;color:var(--azure)}
+    .proof>summary::-webkit-details-marker{display:none}
+    .proof>summary:hover{background:rgba(14,51,135,.03)}
+    .proof-ic{flex-shrink:0;width:24px;height:24px;border-radius:6px;background:rgba(14,51,135,.1);color:var(--azure);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800}
+    .proof-chev{margin-left:auto;flex-shrink:0;transition:transform .2s;color:var(--azure);font-size:1.35rem;line-height:1;font-weight:400}
+    .proof[open]>summary .proof-chev{transform:rotate(90deg)}
+    .proof-body{padding:1.25rem;border-top:1px solid var(--border);background:#fff}
+    .proof-body .wrap{padding:0;max-width:none;margin:0}
+    .proof-body .sec{background:transparent;border:0;box-shadow:none;padding:0;margin:0}
+    .proof-body .sec-label,.proof-body .sec-title{display:none}
+    @media(min-width:901px){.proof-body .posts-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.proof-body{padding:1rem .85rem}}
+
+
+    /* ═══ v8.5 ═══ */
+    .feature-2up{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:0 0 1.1rem}
+    @media(max-width:760px){.feature-2up{grid-template-columns:1fr}}
+    .mscore-lead{font-size:.8125rem;color:var(--muted);line-height:1.6;margin-bottom:.75rem}
+    .mscore{display:flex;flex-wrap:wrap;gap:.7rem}
+    .mscore-q{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;flex:1 1 auto;min-width:150px}
+    .mscore-cell{background:var(--ghost);border:1px solid var(--border);border-radius:6px;padding:.5rem .25rem;text-align:center}
+    .mscore-cell.current{border-color:rgba(14,51,135,.35);background:rgba(226,237,122,.14)}
+    .mscore-cell.empty{opacity:.5}
+    .mscore-m{font-size:.5625rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:.2rem}
+    .mscore-v{font-size:.9375rem;font-weight:800;color:var(--azure);line-height:1}
+    .mscore-cell.empty .mscore-v{color:var(--muted);font-weight:600}
+
+  </style>
+  <meta name="twitter:card" content="summary_large_image">
+  <script>window.SCROLL_GATE={slug:'measactive',code:'meas.scroll',title:'Private report',sub:'This report is private. Enter your access code to continue.',button:'View report'};</script>
+  <script src="/access-gate.js"></script>
+</head>
+<body>
+
+<nav class="report-nav" aria-label="Report sections">
+  <div class="report-nav-inner">
+    <a class="report-nav-link" href="#beat1">This Month</a>
+    <a class="report-nav-link" href="#beat2">What We Did</a>
+    <a class="report-nav-link" href="#beat3">Results</a>
+    <a class="report-nav-link" href="#beat4">What We Learned</a>
+    <a class="report-nav-link" href="#beat5">Carry Forward</a>
+  </div>
+</nav>
+
+<div id="progress-bar" role="progressbar" aria-hidden="true"></div>
+
+<header class="hero" id="beat1">
+  <div class="hero-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/gRkEECsvrvKVYljY.png" alt="Scroll Media" class="hero-logo" width="140" height="28">
+    <div class="hero-top-row">
+      <div class="hero-eyebrow"><span class="dot"></span>Final Performance Report</div>
+      <div class="hero-stage-badge"><span class="stage-icon"></span>Lift Stage &middot; Month 15</div>
+    </div>
+    <h1>MEAS <span>Active</span></h1>
+    <div class="hero-meta">
+      <span>@measactive</span><span class="dot"></span>
+      <span>Fashion-Forward Performance Activewear with a Mission</span><span class="dot"></span>
+      <span>July 1&ndash;22 (final)</span><span class="dot"></span>
+      <span>Managed by Riley</span>
+    </div>
+
+    <div class="beat-eyebrow on-dark"><span class="bn">1</span> This month</div>
+
+    <!-- PAIRED HERO BLOCK -->
+    <div class="paired-hero">
+      <!-- LEFT: composite score -->
+      <div class="ph-panel score">
+        <p class="ph-label">Final Performance Score</p>
+        <div class="ph-bignum">7.6<span class="unit">/10</span></div>
+        <p class="ph-title">Building Month</p>
+        <span class="ph-delta fl">Flat vs. June</span>
+        <div class="ph-badges">
+          <span class="ph-badge exceed"><span class="bd"></span>1 Exceeding</span>
+          <span class="ph-badge ontrack"><span class="bd"></span>2 On Track</span>
+          <span class="ph-badge watch"><span class="bd"></span>5 Watch</span>
+          <span class="ph-badge na"><span class="bd"></span>2 n/a</span>
+        </div>
+      </div>
+      <!-- RIGHT: client-specific headline business outcome (Workstream A locks the metric per client) -->
+      <div class="ph-panel outcome">
+        <p class="ph-label">Bio Link Engagement</p>
+        <div class="ph-bignum">57</div>
+        <p class="ph-title">Total Bio Link Taps</p>
+        <p class="ph-outcome-sub">Total taps on any link in your bio. Shop and email list are your priority destinations.</p>
+      </div>
+    </div>
+
+    <!-- ONE-LINE PLAIN-ENGLISH SUMMARY (Chase fills per report) -->
+    <p class="hero-summary"><strong>A lighter 22 day close built toward the Mille-Feuille launch, and the two signals that defined the year held: click-through stayed well above benchmark and the founder story carried the conversation.</strong></p>
+
+    <!-- METHODOLOGY ONE-LINER (locked copy, v8 Callout Library — same every report) -->
+    <p class="hero-method">Your score reflects how this window performed against your stage targets, weighted by what predicts buyer behavior. This is a partial window, July 1 to 22, with six published pieces, so volume metrics read lighter than a full month by design. Two metrics are marked not available and are excluded from the score rather than counted as zero.</p>
+  </div>
+</header>
+
+<div class="wrap"><section class="sec beat" id="beat2" aria-labelledby="beat2-t">
+  <p class="beat-eyebrow"><span class="bn">2</span> What we did</p>
+  <h2 class="beat-takeaway" id="beat2-t">We published 6 pieces in 22 days, built around the founder story and the Mille-Feuille launch runway, all pointing toward the shop and the email list.</h2>
+  <div class="work-strip"><span class="work-chip"><b>6 pieces</b></span><span class="work-chip">5 Reels, 1 carousel</span><span class="work-chip">Themes: founder story, launch runway, community and values</span><span class="work-chip">Focus: shop and email list</span><span class="work-chip">Lighter launch-build cadence</span></div>
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See every post and its numbers</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
+  <section class="sec" aria-labelledby="allposts-title">
+    <p class="sec-label">Full Month</p>
+    <h2 class="sec-title" id="allposts-title">All Posts, July 1 to 22</h2>
+    <p class="sec-sub">Every piece published in this final window, with the numbers behind each one. Tap any column header to sort. Rows with a lime edge over-indexed on at least one standout signal against the window average.</p>
+    <div class="ap-controls" id="ap-controls">
+      <button class="ap-chip active" data-fmt="all">All</button>
+      <button class="ap-chip" data-fmt="reel">Reels</button>
+      <button class="ap-chip" data-fmt="carousel">Carousels</button>
+      <button class="ap-chip" data-fmt="static">Static</button>
+      <div class="ap-mobile-sort">
+        <select id="ap-mobile-sort-select" aria-label="Sort posts">
+          <option value="date|desc">Newest first</option>
+          <option value="date|asc">Oldest first</option>
+          <option value="views|desc">Most views</option>
+          <option value="saves|desc">Most saves</option>
+          <option value="shares|desc">Most shares</option>
+          <option value="comments|desc">Most comments</option>
+          <option value="ctr|desc">Highest CTR</option>
+        </select>
+      </div>
+    </div>
+    <div class="ap-table-wrap">
+      <table class="ap-table" id="ap-table">
+        <thead>
+          <tr>
+            <th data-key="date" data-type="date">Date<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="format" data-type="str">Format<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="caption" data-type="str">Caption<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="views" data-type="num">Views<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="saves" data-type="num">Saves<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="shares" data-type="num">Shares<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="comments" data-type="num">Comments<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="retention" data-type="num">Retention<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="linktaps" data-type="num">Bio Link Taps<span class="arrow">&#9650;&#9660;</span></th>
+            <th class="num" data-key="ctr" data-type="num">CTR<span class="arrow">&#9650;&#9660;</span></th>
+            <th data-key="" data-type="none">Post</th>
+          </tr>
+        </thead>
+        <tbody id="ap-tbody"><!-- rows rendered by JS from ALL_POSTS --></tbody>
+      </table>
+    </div>
+    <!-- Mobile card stack (rendered by JS, shown <640px) -->
+    <div class="ap-cards" id="ap-cards"></div>
+    <div class="ap-legend"><span class="swatch"></span> Lime edge = over-indexed on at least one standout signal (saves, shares, comments, views, or retention) at 1.5&times; or more the window average.</div>
+  </section>
+</div></div></details>
+</section></div>
+
+<div class="wrap"><section class="sec beat" id="beat3" aria-labelledby="beat3-t">
+  <p class="beat-eyebrow"><span class="bn">3</span> The results</p>
+  <h2 class="beat-takeaway" id="beat3-t">On a fraction of a normal month&rsquo;s volume, click-through held at 9.7% against a 3 to 6% benchmark, and the founder story drove nearly half of all comments.</h2>
+  <div class="bstats"><div class="bstat"><div class="bstat-val exceed">9.7%</div><div class="bstat-lbl">Click-through rate</div><span class="bstat-tag exceed">Exceeding</span></div><div class="bstat"><div class="bstat-val watch">54</div><div class="bstat-lbl">Comments</div><span class="bstat-tag watch">Watch</span></div><div class="bstat"><div class="bstat-val ontrack">57</div><div class="bstat-lbl">Bio link taps</div><span class="bstat-tag ontrack">On Track</span></div><div class="bstat"><div class="bstat-val watch">37.8%</div><div class="bstat-lbl">Video retention</div><span class="bstat-tag watch">Watch</span></div></div>
+  <p class="sub-head">Goal Tracker</p>
+  
+  <div class="gt-list"><div class="gt-row tofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div><p class="gt-title">Grow Reach &amp; Build the Mission-Driven Brand</p><div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="20" style="width:0%"></div></div>
+            <span class="gt-pct">20%</span>
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">0.35<span class="gt-score-max">/1.75</span></span></div></div><div class="gt-row mofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div><p class="gt-title">Deepen Community &amp; Build Purchase Confidence</p><div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="27" style="width:0%"></div></div>
+            <span class="gt-pct">27%</span>
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">1.5<span class="gt-score-max">/5.5</span></span></div></div><div class="gt-row bofu"><div class="gt-main"><div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div><p class="gt-title">Drive Shop Traffic &amp; Email List Growth</p><div class="gt-bct">
+            <div class="gt-bar-track"><div class="gt-bar-fill lime" data-w="83" style="width:0%"></div></div>
+            <span class="gt-pct">83%</span>
+          </div></div><div class="gt-side"><span class="gt-spark-lbl">Weighted score</span><span class="gt-score-pts">2.9<span class="gt-score-max">/3.5</span></span></div></div></div>
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See the goal-by-goal breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="gg-item"><div class="gt-funnel"><span class="gt-dot tofu"></span><span class="gt-funnel-lbl">Top of funnel &middot; Awareness</span></div><div class="gt-bct"><span class="seg">Built from <b>Shares, Views, New Followers</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your awareness stage scored 20% across the window. Six pieces in 22 days is roughly a third of a normal month&rsquo;s output, so views and shares land well under the monthly floors. New followers is not available for this window and is excluded rather than counted as a zero.</p></div><div class="gg-item"><div class="gt-funnel"><span class="gt-dot mofu"></span><span class="gt-funnel-lbl">Middle of funnel &middot; Engagement</span></div><div class="gt-bct"><span class="seg">Built from <b>Profile Visits, Comments, Retention, Saves</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your engagement stage scored 27%. Comments held their shape on far less volume, with the founder story alone drawing 24 of the 54. Retention at 37.8% and saves at 15 are the two levers that stayed below target all year, and they remain the clearest room to grow.</p></div><div class="gg-item"><div class="gt-funnel"><span class="gt-dot bofu"></span><span class="gt-funnel-lbl">Bottom of funnel &middot; Conversion</span></div><div class="gt-bct"><span class="seg">Built from <b>Bio Link Taps, CTR, PCR</b>, weighted by buyer-predictive value.</span></div><p class="gt-narr">Your conversion stage scored 83%, the strongest of the three and the clearest proof point of the year. Click-through finished at 9.7%, above the Lift ceiling and nearly identical to June&rsquo;s 9.8%, and link taps held inside range on a partial window. Profile conversion rate is not available for this window and is excluded rather than counted as a zero.</p></div></div></details>
+  <details class="proof"><summary><span class="proof-ic">&#9638;</span><span>See the full 10-metric breakdown</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
+  <section class="sec" aria-labelledby="perf-title">
+    <p class="sec-label">July 1&ndash;22, 2026</p>
+    <h2 class="sec-title" id="perf-title">Performance Breakdown</h2>
+    <p class="sec-sub">Every tracked metric for the final window, scored against your Lift Stage target ranges. Targets are monthly, so a 22 day window reads lighter on volume metrics by design.</p>
+    <div class="followers-banner" role="region" aria-label="Total Followers">
+      <div class="fb-left">
+        <p class="fb-label">Total Followers</p>
+        <div class="fb-count">10,118</div>
+        <div class="fb-mom"><span class="mom fl">Essentially flat vs. June (10,134)</span></div>
+      </div>
+      <div class="fb-right">
+        <p class="fb-target-label">Target Range</p>
+        <p class="fb-target">5,000 &ndash; 25,000</p>
+        <p class="fb-stage">Lift Stage</p>
+      </div>
+    </div>
+
+    <!-- TOFU -->
+    <div class="funnel-group">
+      <div class="funnel-header tofu"><span class="funnel-dot tofu"></span><span class="funnel-lbl tofu">Top of funnel &middot; Awareness</span></div>
+      <div class="metrics-grid">
+        <!-- New Followers -->
+        <div class="mc na">
+          <div class="mc-top"><span class="mc-name">New Followers</span><span class="mc-badge na">Not available</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val na">n/a</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">100 &ndash; 270</span></div></div>
+          <p class="mc-note">Instagram changed how gross new followers are reported, so this figure is not available for the final window. It is excluded from the score rather than counted as a zero.</p>
+          <p class="mc-callout">Followers were essentially flat across the window, 10,134 to 10,118. Net movement of 16 accounts over 22 days means the audience you built held steady right through the close.</p>
+        </div>
+        <!-- Shares -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Shares</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val watch">19</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">60 &ndash; 300</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; 27% vs June</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="6" style="width:0%"></div></div>
+          <p class="mc-note">Below floor on a partial window. The one carousel out-shared every Reel, which is worth carrying into your format mix.</p>
+          <p class="mc-callout">Shares landed at 19. Translation: 19 people sent your content to someone else. Shares put you in front of new audiences your posts wouldn&rsquo;t reach on their own.</p>
+        </div>
+        <!-- Total Views -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Total Views</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val watch">10,491</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">40,000 &ndash; 150,000</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; 80% vs June</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="7" style="width:0%"></div></div>
+          <p class="mc-note">Below the monthly floor on six pieces across 22 days. Average reach per piece held at 1,067.</p>
+          <p class="mc-callout">Views came in at 10,491. Translation: your content reached 10,491 screens in 22 days. Views are the widest measure of how many people you got in front of, and everything downstream starts here.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOFU -->
+    <div class="funnel-group">
+      <div class="funnel-header mofu"><span class="funnel-dot mofu"></span><span class="funnel-lbl mofu">Middle of funnel &middot; Engagement</span></div>
+      <div class="metrics-grid">
+        <!-- Profile Visits -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Profile Visits</span><span class="mc-badge ontrack">On Track</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val ontrack">585</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">300 &ndash; 2,000</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; 20% vs June</span></div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-w="29" style="width:0%"></div></div>
+          <p class="mc-note">Inside range even on a partial window. Consideration traffic stayed healthy to the end.</p>
+          <p class="mc-callout">Profile visits came in at 585. Translation: 585 people tapped through to look closer at who you are. A profile visit is a deliberate step toward becoming a customer, not a passive scroll.</p>
+        </div>
+        <!-- Retention (carries the conditional Watch Time append) -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Retention</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val watch">37.8%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">50% &ndash; 65%</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; 11.2 pts vs June</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="58" style="width:0%"></div></div>
+          <p class="mc-note">Below the Lift floor and the largest single gap in the window. Front-loading the hook is the highest-leverage fix.</p>
+          <p class="mc-callout">Retention came in at 37.8%. Translation: on average, people watched 37.8% of your videos before moving on. The more of your video people watch, the more the algorithm trusts it and shows it to new audiences.</p>
+        </div>
+        <!-- Saves -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Saves</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val watch">15</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">80 &ndash; 400</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; 32% vs June</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="4" style="width:0%"></div></div>
+          <p class="mc-note">Below floor, the same gap flagged every month this year. Save-worthy value content is the standing recommendation.</p>
+          <p class="mc-callout">Saves landed at 15. Translation: 15 people bookmarked your posts to act on later. Saves are the strongest signal of a future buyer.</p>
+        </div>
+        <!-- Comments -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Comments</span><span class="mc-badge watch">Watch</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val watch">54</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">75 &ndash; 250</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; 72% vs June</span></div>
+          <div class="bar-track"><div class="bar-fill watch" data-w="22" style="width:0%"></div></div>
+          <p class="mc-note">Under the monthly floor on a third of the usual output, but the founder story alone drew 24 of the 54.</p>
+          <p class="mc-callout">Comments landed at 54. Translation: 54 people stopped to start a conversation with you. Comments are public proof that your audience is engaged, and they pull in the people watching from the sidelines.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOFU -->
+    <div class="funnel-group">
+      <div class="funnel-header bofu"><span class="funnel-dot bofu"></span><span class="funnel-lbl bofu">Bottom of funnel &middot; Conversion</span></div>
+      <div class="metrics-grid">
+        <!-- CTR -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">CTR</span><span class="mc-badge exceed">Exceeding</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val exceed">9.7%</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">3% &ndash; 6%</span></div></div>
+          <div class="mc-mom"><span class="mom fl">0.1 pts vs June, essentially flat</span></div>
+          <div class="bar-track"><div class="bar-fill exceed" data-w="100" style="width:0%"></div></div>
+          <p class="mc-note">Above the Lift ceiling and steady to the final day. The strongest and most consistent metric of the engagement.</p>
+          <p class="mc-callout">Click-through rate came in at 9.7%. Translation: of everyone who saw your link, 9.7% acted on it. A high click-through rate means the people finding you are not just watching, they are moving toward becoming customers.</p>
+        </div>
+        <!-- Link Taps -->
+        <div class="mc">
+          <div class="mc-top"><span class="mc-name">Bio Link Taps</span><span class="mc-badge ontrack">On Track</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val ontrack">57</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">30 &ndash; 180</span></div></div>
+          <div class="mc-mom"><span class="mom dn">&#9660; 21% vs June</span></div>
+          <div class="bar-track"><div class="bar-fill ontrack" data-w="32" style="width:0%"></div></div>
+          <p class="mc-note">Inside range on a partial window. Steady traffic to the shop and list right to the close.</p>
+          <p class="mc-callout">Link taps landed at 57. Translation: 57 people tapped the link in your bio to move toward your site, booking, or offer. A link tap is one of the clearest actions someone takes when they are ready to do business.</p>
+        </div>
+        <!-- PCR -->
+        <div class="mc na">
+          <div class="mc-top"><span class="mc-name">PCR</span><span class="mc-badge na">Not available</span></div>
+          <div class="mc-nums"><div><span class="mc-lbl">July 1&ndash;22</span><span class="mc-val na">n/a</span></div><div><span class="mc-lbl">Target Range</span><span class="mc-tgt">10% &ndash; 16%</span></div></div>
+          <p class="mc-note">Profile conversion rate is derived from gross new followers, which Instagram no longer reports for this window, so it cannot be computed. It is excluded from the score rather than counted as a zero.</p>
+          <p class="mc-callout">Followers held essentially flat, 10,134 to 10,118, while 585 people still visited the profile. The audience you built stayed with you through the final weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div></div></details>
+  <details class="proof"><summary><span class="proof-ic">&#9642;</span><span>See the 12-month value trajectory</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="wrap">
+  <section class="sec" aria-labelledby="impact-title">
+    <p class="sec-label">From attention to business</p>
+    <h2 class="sec-title" id="impact-title">Content to Business Impact</h2>
+    <p class="sec-sub">How this final window&rsquo;s attention maps to business signal, from what we can see on-platform to a conservative estimate of what it&rsquo;s worth.</p>
+
+    <div class="c2b-funnel">
+      <p class="c2b-panel-label">The funnel in this final window</p>
+      <div class="c2b-steps">
+        <div class="c2b-step"><span class="c2b-step-num">10,491</span><div class="c2b-step-main"><span class="c2b-step-txt">people saw your content</span><span class="c2b-step-badge">🎼 Music Hall filled 3x over</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">585</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped through to look closer</span><span class="c2b-step-badge">🎭 a sold-out Memorial Hall crowd</span></div></div>
+        <div class="c2b-step"><span class="c2b-step-num">15</span><div class="c2b-step-main"><span class="c2b-step-txt">bookmarked content to reference later</span><span class="c2b-step-badge">📌 15 pre-purchase bookmarks</span></div></div>
+        <div class="c2b-step hi"><span class="c2b-step-num">57</span><div class="c2b-step-main"><span class="c2b-step-txt">tapped a bio link, the highest-intent signal we track</span><span class="c2b-step-badge">👆 57 deliberate taps toward your shop</span></div></div>
+      </div>
+    </div>
+
+    <div class="c2b-estimate"><p class="c2b-panel-label">Modeled 12-month value trajectory &middot; 2026</p><div class="traj-wrap"><p class="traj-lead">As we&rsquo;ve worked together, we&rsquo;ve grown your ability to turn organic attention into business signal. This chart is about direction, not a fixed dollar figure. It models where your momentum points over a 12-month window, and each month of real performance sharpens the line. Watch the trend, not the endpoint.</p><svg class="traj-chart" viewBox="0 0 640 260" role="img" aria-label="Modeled value trajectory"><line x1="46" y1="226.0" x2="624" y2="226.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="229.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">$0</text><line x1="46" y1="174.0" x2="624" y2="174.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="177.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">$1.0k</text><line x1="46" y1="122.0" x2="624" y2="122.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="125.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">$2.0k</text><line x1="46" y1="70.0" x2="624" y2="70.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="73.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">$3.0k</text><line x1="46" y1="18.0" x2="624" y2="18.0" stroke="rgba(255,255,255,.08)" stroke-width="1"/><text x="40" y="21.0" text-anchor="end" font-size="9" fill="rgba(255,255,255,.4)">$4.0k</text><text x="46.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jan</text><text x="98.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Feb</text><text x="151.1" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Mar</text><text x="203.6" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Apr</text><text x="256.2" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">May</text><text x="308.7" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)">Jun</text><text x="361.3" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Jul</text><text x="413.8" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Aug</text><text x="466.4" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Sep</text><text x="518.9" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Oct</text><text x="571.5" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Nov</text><text x="624.0" y="242" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.28)">Dec</text><polygon points="46.0,45.1 98.5,140.4 151.1,137.2 203.6,129.4 256.2,139.1 308.7,179.3 308.7,205.3 256.2,187.4 203.6,183.1 151.1,186.5 98.5,188.0 46.0,145.6" fill="rgba(226,237,122,.16)" stroke="none"/><line x1="308.7" y1="192.3" x2="624.0" y2="192.3" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="5 4"/><polyline points="46.0,95.4 98.5,164.2 151.1,161.9 203.6,156.3 256.2,163.3 308.7,192.3" fill="none" stroke="#e2ed7a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46.0" cy="95.4" r="3" fill="#e2ed7a"/><circle cx="98.5" cy="164.2" r="3" fill="#e2ed7a"/><circle cx="151.1" cy="161.9" r="3" fill="#e2ed7a"/><circle cx="203.6" cy="156.3" r="3" fill="#e2ed7a"/><circle cx="256.2" cy="163.3" r="3" fill="#e2ed7a"/><circle cx="308.7" cy="192.3" r="3" fill="#e2ed7a"/></svg><div class="traj-legend"><span class="lg"><span class="sw mid"></span>Modeled midpoint</span><span class="lg"><span class="sw band"></span>Low&ndash;high range</span><span class="lg"><span class="sw proj"></span>Projection (Jul&ndash;Dec)</span></div></div><details class="c2b-method">
+        <summary>How we got here</summary>
+        <div class="c2b-method-body">
+          <p><b>Customer:</b> assumes about 55% of bio link taps head toward the shop and checkout, about 25% toward email list signup, and the rest to other destinations, new-customer conversion of 2&ndash;4%, and a typical mission-driven activewear customer at an $85 average order across about 2.4 orders a year over a 2.8-year relationship.</p>
+          <p>The headline number is a midpoint. The range beneath it reflects the uncertainty in conversion rates and customer mix. The midpoint gives you an expected impact to plan around; the range shows the honest spread. These are directional, category-typical figures, so the midpoint is best read as a central approximation rather than a precise count.</p>
+          <p>Sources: Foundry CRO DTC fashion benchmarks, Commerce Catalyst DTC apparel, Rivo lifestyle retention.</p>
+        </div>
+      </details>
+      <p class="c2b-disclaimer">These figures use industry benchmarks for your category, not your books. Share your real numbers (average sale, repeat rate, typical customer lifetime value) and we will rebuild this on your actual economics, so the trajectory reflects your business instead of the category.</p>
+    </div>
+  </section>
+</div></div></details>
+</section></div>
+
+<div class="wrap"><section class="sec beat" id="beat4" aria-labelledby="beat4-t">
+  <p class="beat-eyebrow"><span class="bn">4</span> What we learned</p>
+  <h2 class="beat-takeaway" id="beat4-t">Your mission is what your audience talks about.</h2>
+  <div class="feature-2up"><div class="post-card"><div class="post-header"><span class="post-rank">#1 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">July 9, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;Behind The Seams: How I Create Our Collections&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Behind The Seams: How I Create Our Collections
+
+No two collections ever look the same, and  that's my favorite part. Every single one starts as a scattered brainstorm and transforms into something</span><span class="cap-ellipsis" id="tpreel1-ellipsis">&hellip;</span><span class="cap-rest" id="tpreel1-rest" style="display:none"> worn by dynamic, confident women dressing for every moment of their lives. Watching that happen never gets old.
+
+This one is no different, and I think you're going to love it.
+
+Mille-Feuille dropping July 23,  in store and online. Sign up for our email list to be the first to know all the details, and follow along on our socials. I can't wait to see how you make these pieces your own.
+
+#athleticwear #collectiondrop #athleisurecollection #behindtheseams</span><button class="cap-toggle" id="tpreel1-btn" onclick="toggleCap('tpreel1')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">COMMENTS</span><span class="sm-value">24</span><span class="sm-badge outlier-2x">2.7x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">A conversation outlier at 2.7x the window&rsquo;s comment average, and the single most engaging piece of the final window at a 13.3% engagement rate against an account average of 6.4%. Erin on camera, telling the story of how a collection actually gets made, is the content that pulled this community into a reply every time we ran it. This is the engine worth carrying forward.</p></div><a href="https://www.instagram.com/reel/DakvyIekbsZ/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div><div class="post-card"><div class="post-header"><span class="post-rank">#2 Top Post</span><span class="post-type-badge reel-badge">REEL</span></div><div class="post-body"><div class="post-date">July 21, 2026</div><div class="post-format-pill">Reel</div><blockquote class="post-hook">&ldquo;Saw this gal on the street and I just had to stop her…&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Saw this gal on the street and I just had to stop her… she may or may not be wearing our new collection, Mille-Feuille, a thousand layers. (this was not staged btw)
+
+Mille-Feuille is built to move</span><span class="cap-ellipsis" id="tpreel2-ellipsis">&hellip;</span><span class="cap-rest" id="tpreel2-rest" style="display:none"> the way she does: brunch to pickleball, pilates to pickup, polished even on the hottest summer days.
+
+Launching Thursday, July 23. Which piece are you most excited to get your hands on? 👀
+
+#layeredactivewear #activewearskort #cincinnatifitness #workoutoutfit</span><button class="cap-toggle" id="tpreel2-btn" onclick="toggleCap('tpreel2')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SAVES</span><span class="sm-value">5</span><span class="sm-badge outlier-2x">2.0x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Save density at 2.0x the window average, on top of the widest reach of the final window at 2,503 views. Saves are the strongest pre-purchase signal we track, and seeing them concentrate on the Mille-Feuille tease means people were bookmarking the drop to come back to it. Launch runway content earns its place.</p></div><a href="https://www.instagram.com/reel/DbD5DG4Rxul/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div>
+  <details class="proof"><summary><span class="proof-ic">&#9636;</span><span>See the other standout post from this window</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><div class="posts-grid"><div class="post-card"><div class="post-header"><span class="post-rank">#3 Top Post</span><span class="post-type-badge carousel-badge">CAROUSEL</span></div><div class="post-body"><div class="post-date">July 2, 2026</div><div class="post-format-pill">Carousel</div><blockquote class="post-hook">&ldquo;Freedom to be you. Freedom to move.&rdquo;</blockquote><div class="post-caption"><span class="cap-preview">Freedom to be you. Freedom to move. 
+
+Freedom means something different for every woman who wears MEAS. The runner chasing a sunrise PR, the mom squeezing in a workout between drop-offs, the woman</span><span class="cap-ellipsis" id="tpcar3-ellipsis">&hellip;</span><span class="cap-rest" id="tpcar3-rest" style="display:none"> who just wants to feel like herself again. However you define it, we built this brand to help you live it.
+
+Celebrating with 20% off sitewide + a FREE Flexi Claw on any $75+ order. 
+
+July 2–6. Shop the link in bio. 🔗🎆
+
+#measactive #fourthofjulysale #activewear #workoutoutfit</span><button class="cap-toggle" id="tpcar3-btn" onclick="toggleCap('tpcar3')">Show more</button></div><div class="standout-metrics"><div class="standout-metric"><span class="sm-label">SHARES</span><span class="sm-value">8</span><span class="sm-badge outlier-2x">2.5x account avg</span></div></div><div class="post-why"><div class="why-label">&#9650; WHY IT WORKED</div><p class="why-text">Share velocity at 2.5x the window average, and the share leader of the final window. A single static carousel out-shared every Reel we published, which is worth remembering for your format mix. Shares put you in front of audiences your own followers cannot reach.</p></div><a href="https://www.instagram.com/p/DaSxhsUlvQh/" target="_blank" rel="noopener" class="post-ig-btn">View on Instagram &rarr;</a></div></div></div></div></details>
+  <p class="beat-pattern">The pattern that closed the year is the same one that opened it: when Erin is on camera telling the story, the community shows up to talk. Retention and saves stayed the two levers to lift.</p>
+  <p class="sub-head">Your full engagement</p>
+  <div class="qyear" id="qsnap"><p class="qyear-intro">This is the whole engagement in one view, quarter by quarter, from October 2025 through the final window. Each quarter we stepped back and adjusted the strategy from the pattern rather than from any single month.</p><div class="qy-grid"><div class="qy-col "><div class="qy-q">Q1</div><div class="qy-range">Jan&ndash;Mar</div><div class="qy-avg">8.0<span class="u">/10</span></div><div class="qy-badge mixed">Mixed</div><div class="qy-bars"><span style="height:86%"></span><span style="height:34%"></span><span class="cur" style="height:56%"></span></div><div class="qy-theme"><div class="qy-tline">Mixed quarter, strong January and a softer February.</div></div><div class="qy-state">Complete</div></div><div class="qy-col "><div class="qy-q">Q2</div><div class="qy-range">Apr&ndash;Jun</div><div class="qy-avg">7.9<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span style="height:56%"></span><span style="height:64%"></span><span class="cur" style="height:48%"></span></div><div class="qy-theme"><div class="qy-tline"><span class="qy-tl">Worked:</span> May delivered a grand-opening surge, click-through held above target all quarter, and comments climbed 74%.</div><div class="qy-tline"><span class="qy-tl">Watched:</span> reach reverted after the opening, retention landed just under floor, and saves below floor.</div></div><div class="qy-state">Complete</div></div><div class="qy-col current"><div class="qy-q">Q3</div><div class="qy-range">Jul 1&ndash;22</div><div class="qy-avg">7.6<span class="u">/10</span></div><div class="qy-badge steady">Steady</div><div class="qy-bars"><span class="cur" style="height:48%"></span></div><div class="qy-theme"><div class="qy-tline"><span class="qy-tl">Worked:</span> click-through finished at 9.7%, above benchmark for the last time as it was for most of the year, and the founder story drove 24 of 54 comments.</div><div class="qy-tline"><span class="qy-tl">Watched:</span> retention at 37.8% and saves at 15, the two gaps that stayed open all year.</div></div><div class="qy-state">Final window</div></div><div class="qy-col pending"><div class="qy-q">Q4</div><div class="qy-range">Oct&ndash;Dec</div><div class="qy-note">Engagement closed July 22</div><div class="qy-state">Not tracked</div></div></div><details class="proof mstrip"><summary><span class="proof-ic">&#9636;</span><span>See every month we tracked</span><span class="proof-chev">&#8250;</span></summary><div class="proof-body"><p class="mscore-lead">Your composite score across the full engagement, October 2025 through the final window. October to December 2025 come from the legacy performance sheet; January 2026 forward are v8 scored reports. Every month we managed is shown, and the year closed inside the healthy 7.3 to 8.5 band.</p><div class="mscore"><div class="mscore-q"><div class="mscore-cell"><div class="mscore-m">Oct</div><div class="mscore-v">8.5</div></div><div class="mscore-cell"><div class="mscore-m">Nov</div><div class="mscore-v">7.5</div></div><div class="mscore-cell"><div class="mscore-m">Dec</div><div class="mscore-v">8.0</div></div></div><div class="mscore-q"><div class="mscore-cell"><div class="mscore-m">Jan</div><div class="mscore-v">7.3</div></div><div class="mscore-cell"><div class="mscore-m">Feb</div><div class="mscore-v">7.4</div></div><div class="mscore-cell"><div class="mscore-m">Mar</div><div class="mscore-v">7.9</div></div></div><div class="mscore-q"><div class="mscore-cell"><div class="mscore-m">Apr</div><div class="mscore-v">7.9</div></div><div class="mscore-cell"><div class="mscore-m">May</div><div class="mscore-v">8.2</div></div><div class="mscore-cell"><div class="mscore-m">Jun</div><div class="mscore-v">7.6</div></div></div><div class="mscore-q"><div class="mscore-cell current"><div class="mscore-m">Jul</div><div class="mscore-v">7.6</div></div></div></div></div></details></div>
+  
+</section></div>
+
+<div class="wrap"><section class="sec beat" id="beat5" aria-labelledby="beat5-t">
+  <p class="beat-eyebrow"><span class="bn">5</span> What you carry forward</p>
+  <h2 class="beat-takeaway" id="beat5-t">Everything we built this year stays with you, and so does the playbook that produced it.</h2>
+  <div class="carry">
+    <h3>What you carry forward</h3>
+    <p>Everything we built this year stays with you. Your content library and b-roll, every published caption, and the unpublished backlog are in your handoff folder for the next 30 days. Beyond the files, you carry a proven playbook: the founder-led and community content that became your comment and reach engine, the collab and ambassador motion that consistently outperformed, and a click-through rate that held above the activewear benchmark month after month. That is a real, repeatable foundation to build on, whoever is steering next.</p>
+  </div>
+  <div class="carry">
+    <h3>Going forward</h3>
+    <p><span class="lbl">What&rsquo;s proven.</span> Founder-story and community content is your engine. Erin on camera, the mission, the ambassador and event moments: that is what your audience comments on, shares, and clicks. Your conversion intent is strong, with click-through running well above the 3 to 6% benchmark, most recently 9.7%.</p>
+    <p><span class="lbl">What to try next.</span> Your clearest room to grow is content people save and return to. Value-forward carousels, styling guides, &ldquo;which short for which workout&rdquo; decision references, are built to be saved and were the standout opportunity all year. Pair that with an email-list-first bio link to capture the traffic you are already winning.</p>
+    <p><span class="lbl">What to monitor.</span> Retention, which closed this final window at 37.8% against a 50 to 65% target, is what decides how far each post travels. Front-loading the hook and tightening pace is the highest-leverage fix. Watch saves and profile conversion rate alongside it.</p>
+  </div>
+</section></div>
+
+<div class="doorway">
+  <p>It has been a genuine pleasure building MEAS Active&rsquo;s presence alongside you this year. The door is always open, whether that is picking this back up down the road or sending a runner our way. Cheering you on.</p>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663351235918/XZQtdKpUJwIfArMn.png" alt="Scroll Media" class="footer-logo" width="130" height="26">
+    <p class="footer-text">
+      Prepared by <a href="https://scrollmedia.co" target="_blank" rel="noopener">Scroll Media</a> &middot; Final Performance Report &middot; July 1&ndash;22, 2026<br>
+      Data sources: Instagram Insights &middot; Metricool &middot; Scroll Media Unified Scoring Framework v1.3
+    </p>
+  </div>
+</footer>
+
+<script>
+  /* ═══ ALL POSTS DATA (Change 9) ═══
+     Rendered statically into the page at BUILD TIME by all_posts_data.py (Metricool all-posts pull).
+     No runtime API calls. Replace this array with the build-time output for the client/month.
+     Each post: {date:"YYYY-MM-DD", date_display:"Jun 4", format:"reel|carousel|static|story",
+       caption:"full caption text", views:N, saves:N, shares:N, comments:N,
+       retention:N|null, linktaps:N|null, ctr:N|null, url:"https://...", outlier:true|false}
+     `outlier` is precomputed by the engine: true when saves >= 1.5x account-avg saves OR
+     ctr >= 1.5x account-avg ctr (the two T1-High buyer signals), subject to absolute floors. */
+  var ALL_POSTS = [{"date": "2026-07-21", "date_display": "Jul 21", "format": "reel", "caption": "Saw this gal on the street and I just had to stop her… she may or may not be wearing our new collection, Mille-Feuille, a thousand layers. (this was not staged btw)\n\nMille-Feuille is built to move the way she does: brunch to pickleball, pilates to pickup, polished even on the hottest summer days.\n\nLaunching Thursday, July 23. Which piece are you most excited to get your hands on? 👀\n\n#layeredactivewear #activewearskort #cincinnatifitness #workoutoutfit", "views": 2503, "saves": 5, "shares": 3, "comments": 6, "retention": 45.7, "linktaps": null, "ctr": null, "url": "https://www.instagram.com/reel/DbD5DG4Rxul/", "outlier": true}, {"date": "2026-07-16", "date_display": "Jul 16", "format": "reel", "caption": "Babes, you are your biggest project.\n\nYou’ll be a lot of women in this lifetime. The marathoner. The businesswoman. The partner. The mother. The bestie. \n\nThe list keeps going and every version deserves to be honored, not rushed past.\n\nSo here’s to showing up for all of her. ❤️\n\nWhich version are you leaning into right now? \n\n#womensactivewear #fitnessmotivation #strongwomen #cincinnatifitness #selflove", "views": 1823, "saves": 3, "shares": 2, "comments": 4, "retention": 28.5, "linktaps": null, "ctr": null, "url": "https://www.instagram.com/reel/Da21zCxvI_F/", "outlier": false}, {"date": "2026-07-14", "date_display": "Jul 14", "format": "reel", "caption": "Blanc or onyx? We need to know.\n\nThe Fleur Dress is built for all of it. Pickleball, pilates, brunch after. Built-in shorts so you’re always covered.\n\nYour hardest decision will be picking which color to wear first.\n\nThe Mille-Feuille collection is dropping July 23. Make sure you’re signed up for our email list to stay updated with drop info. 💌\n\nSo which one is it? Drop it below 👇\n\n#measactive #activewear #dresses #workoutdress #cincinnati", "views": 1656, "saves": 1, "shares": 3, "comments": 12, "retention": 35.4, "linktaps": null, "ctr": null, "url": "https://www.instagram.com/reel/DaxuzVsA7g9/", "outlier": false}, {"date": "2026-07-09", "date_display": "Jul 9", "format": "reel", "caption": "Behind The Seams: How I Create Our Collections\n\nNo two collections ever look the same, and  that's my favorite part. Every single one starts as a scattered brainstorm and transforms into something worn by dynamic, confident women dressing for every moment of their lives. Watching that happen never gets old.\n\nThis one is no different, and I think you're going to love it.\n\nMille-Feuille dropping July 23,  in store and online. Sign up for our email list to be the first to know all the details, and follow along on our socials. I can't wait to see how you make these pieces your own.\n\n#athleticwear #collectiondrop #athleisurecollection #behindtheseams", "views": 1550, "saves": 2, "shares": 2, "comments": 24, "retention": 39.0, "linktaps": null, "ctr": null, "url": "https://www.instagram.com/reel/DakvyIekbsZ/", "outlier": true}, {"date": "2026-07-06", "date_display": "Jul 6", "format": "reel", "caption": "Summer is here… but so is your 9-5, your inbox, and literally everyone who needs something from you 😅\n\nRemember to move when you can, show up how you can, that’s more than enough.\nConsider today’s sale our way of saying we see you.\n\n20% off sitewide + a free Flexi Claw on any $75+ order. Ends TODAY!\n\n#workouthumor #athleisure #measactive #summerworkout #measactivesale", "views": 1076, "saves": 2, "shares": 1, "comments": 4, "retention": 40.6, "linktaps": null, "ctr": null, "url": "https://www.instagram.com/reel/DadMDJ-O4Ko/", "outlier": false}, {"date": "2026-07-02", "date_display": "Jul 2", "format": "carousel", "caption": "Freedom to be you. Freedom to move. \n\nFreedom means something different for every woman who wears MEAS. The runner chasing a sunrise PR, the mom squeezing in a workout between drop-offs, the woman who just wants to feel like herself again. However you define it, we built this brand to help you live it.\n\nCelebrating with 20% off sitewide + a FREE Flexi Claw on any $75+ order. \n\nJuly 2–6. Shop the link in bio. 🔗🎆\n\n#measactive #fourthofjulysale #activewear #workoutoutfit", "views": 1883, "saves": 2, "shares": 8, "comments": 4, "retention": null, "linktaps": null, "ctr": null, "url": "https://www.instagram.com/p/DaSxhsUlvQh/", "outlier": true}];
+
+  (function(){
+    var tbody=document.getElementById('ap-tbody');
+    var cards=document.getElementById('ap-cards');
+    if(!tbody) return;
+    var state={sortKey:'date',sortDir:'desc',filter:'all'};
+    var fmtMeta={reel:['reel','Reel'],carousel:['carousel','Carousel'],static:['static','Static'],story:['story','Story']};
+
+    function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function num(v){return (v==null)?'&mdash;':Number(v).toLocaleString('en-US');}
+    function pct(v){return (v==null)?'&mdash;':v+'%';}
+    function capPrev(c){c=c||'';return c.length>60?c.slice(0,60).trim()+'…':c;}
+
+    function sorted(rows){
+      var k=state.sortKey,dir=state.sortDir==='asc'?1:-1;
+      return rows.slice().sort(function(a,b){
+        var av=a[k],bv=b[k];
+        if(k==='caption'||k==='format'){av=(av||'').toLowerCase();bv=(bv||'').toLowerCase();return av<bv?-1*dir:av>bv?1*dir:0;}
+        if(k==='date'){av=a.date||'';bv=b.date||'';return av<bv?-1*dir:av>bv?1*dir:0;}
+        // numeric: null sinks to bottom regardless of direction
+        var an=(av==null),bn=(bv==null);
+        if(an&&bn)return 0; if(an)return 1; if(bn)return -1;
+        return (av-bv)*dir;
+      });
+    }
+    function visible(){return ALL_POSTS.filter(function(p){return p.format!=='story' && (state.filter==='all'||p.format===state.filter);});}
+
+    function render(){
+      var rows=sorted(visible());
+      // table
+      if(!rows.length){tbody.innerHTML='<tr><td colspan="11" class="ap-empty">No posts match this filter.</td></tr>';}
+      else{
+        tbody.innerHTML=rows.map(function(p){
+          var fm=fmtMeta[p.format]||['static',p.format];
+          var out=p.outlier?' outlier':'';
+          var flag=p.outlier?'<span class="ap-out-flag">&#9650; outlier</span>':'';
+          var link=p.url?'<a class="ap-iglink" href="'+esc(p.url)+'" target="_blank" rel="noopener" aria-label="View on Instagram">&#8599;</a>':'&mdash;';
+          return '<tr class="'+out.trim()+'">'+
+            '<td>'+esc(p.date_display||p.date)+'</td>'+
+            '<td><span class="ap-fmt-tag '+fm[0]+'">'+esc(fm[1])+'</span></td>'+
+            '<td><span class="ap-cap" title="'+esc(p.caption)+'">'+esc(capPrev(p.caption))+'</span>'+flag+'</td>'+
+            '<td class="num">'+num(p.views)+'</td>'+
+            '<td class="num">'+num(p.saves)+'</td>'+
+            '<td class="num">'+num(p.shares)+'</td>'+
+            '<td class="num">'+num(p.comments)+'</td>'+
+            '<td class="num">'+pct(p.retention)+'</td>'+
+            '<td class="num">'+num(p.linktaps)+'</td>'+
+            '<td class="num">'+pct(p.ctr)+'</td>'+
+            '<td>'+link+'</td></tr>';
+        }).join('');
+      }
+      // mobile cards
+      if(cards){
+        if(!rows.length){cards.innerHTML='<div class="ap-empty">No posts match this filter.</div>';}
+        else{
+          cards.innerHTML=rows.map(function(p){
+            var fm=fmtMeta[p.format]||['static',p.format];
+            var out=p.outlier?' outlier':'';
+            var flag=p.outlier?'<span class="ap-out-flag">&#9650; outlier</span>':'';
+            var link=p.url?'<a class="ap-pc-link" href="'+esc(p.url)+'" target="_blank" rel="noopener">View on Instagram &rarr;</a>':'';
+            return '<div class="ap-pc'+out+'">'+
+              '<div class="ap-pc-top"><span class="ap-fmt-tag '+fm[0]+'">'+esc(fm[1])+'</span><span class="ap-pc-date">'+esc(p.date_display||p.date)+'</span></div>'+
+              '<div class="ap-pc-cap">'+esc(capPrev(p.caption))+flag+'</div>'+
+              '<div class="ap-pc-stats">'+
+                '<div class="ap-pc-stat"><span class="l">Views</span><span class="v">'+num(p.views)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Saves</span><span class="v">'+num(p.saves)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Shares</span><span class="v">'+num(p.shares)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Comments</span><span class="v">'+num(p.comments)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">Retention</span><span class="v">'+pct(p.retention)+'</span></div>'+
+                '<div class="ap-pc-stat"><span class="l">CTR</span><span class="v">'+pct(p.ctr)+'</span></div>'+
+              '</div>'+link+'</div>';
+          }).join('');
+        }
+      }
+      // header sort indicators
+      document.querySelectorAll('#ap-table thead th').forEach(function(th){
+        th.classList.remove('sorted-asc','sorted-desc');
+        if(th.dataset.key===state.sortKey)th.classList.add(state.sortDir==='asc'?'sorted-asc':'sorted-desc');
+      });
+    }
+
+    // header click → sort (toggle direction)
+    document.querySelectorAll('#ap-table thead th').forEach(function(th){
+      if(th.dataset.type==='none')return;
+      th.addEventListener('click',function(){
+        var k=th.dataset.key;if(!k)return;
+        if(state.sortKey===k){state.sortDir=state.sortDir==='asc'?'desc':'asc';}
+        else{state.sortKey=k;state.sortDir=(th.dataset.type==='num')?'desc':'asc';}
+        render();
+      });
+    });
+    // filter chips
+    document.querySelectorAll('#ap-controls .ap-chip').forEach(function(chip){
+      chip.addEventListener('click',function(){
+        document.querySelectorAll('#ap-controls .ap-chip').forEach(function(c){c.classList.remove('active');});
+        chip.classList.add('active');state.filter=chip.dataset.fmt;render();
+      });
+    });
+    // mobile sort dropdown
+    var ms=document.getElementById('ap-mobile-sort-select');
+    if(ms){ms.addEventListener('change',function(){var p=ms.value.split('|');state.sortKey=p[0];state.sortDir=p[1];render();});}
+
+    render();
+  })();
+
+  /* progress bar */
+  (function(){var bar=document.getElementById('progress-bar');function u(){var s=window.pageYOffset||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=h>0?(Math.min(s/h,1)*100)+'%':'0%';}window.addEventListener('scroll',u,{passive:true});u();})();
+  /* animate bar fills on scroll-in */
+  (function(){var fills=document.querySelectorAll('.bar-fill[data-w],.gt-bar-fill[data-w]');fills.forEach(function(el){el.dataset.target=el.dataset.w;el.style.width='0%';});if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.style.transition='width .7s cubic-bezier(.4,0,.2,1)';e.target.style.width=e.target.dataset.target+'%';io.unobserve(e.target);}});},{threshold:.1});fills.forEach(function(el){io.observe(el);});}else{fills.forEach(function(el){el.style.width=el.dataset.target+'%';});}})();
+  /* caption expand/collapse (Top Posts) */
+  function toggleCap(uid){var rest=document.getElementById(uid+'-rest');var btn=document.getElementById(uid+'-btn');var ell=document.getElementById(uid+'-ellipsis');if(rest.style.display==='none'){rest.style.display='inline';if(ell)ell.style.display='none';btn.textContent='Show less';}else{rest.style.display='none';if(ell)ell.style.display='inline';btn.textContent='Show more';}}
+  /* loom: activate band only if a loom id is present */
+  (function(){var f=document.getElementById('loom-embed');if(!f)return;var id=f.getAttribute('data-loom-id');if(id&&id.trim()){f.src='https://www.loom.com/embed/'+id.trim();document.getElementById('loom-band').classList.add('active');}})();
+  /* sticky nav active state */
+  (function(){var links=document.querySelectorAll('.report-nav-link');var sections=[];links.forEach(function(l){var el=document.getElementById(l.getAttribute('href').replace('#',''));if(el)sections.push({el:el,link:l});});function onScroll(){var y=window.scrollY+80;var active=null;sections.forEach(function(s){if(s.el.getBoundingClientRect().top+window.scrollY<=y)active=s;});links.forEach(function(l){l.classList.remove('active');});if(active)active.link.classList.add('active');}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
+</script>
+
+</body>
+</html>
