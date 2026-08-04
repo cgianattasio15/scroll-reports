@@ -73,3 +73,18 @@ const h  = s => Math.min(...[...document.querySelectorAll(s)].map(e => e.getBoun
 **Status:** FIXED (this commit) · **Found:** Aug 4, 2026 (July 2026 build) · **Severity:** high (silent HTML corruption)
 
 `inject_report_data.py::inject_top_posts()` had a last-resort branch that filled `<div class="posts-grid">` with a greedy regex running to the next `</section>`; on any report carrying a Beat-4 "other standout posts" dropdown it swallowed the dropdown **and** the quarter-view / month-score strip (hit Launch Party + MEAS this cycle, both hand-recovered). Fixed by removing the fallback entirely — Top-3 injection now targets only the `{{TOP_POSTS_HTML}}` slot or `TP_START`/`TP_END` markers and **hard-fails** ("no {{TOP_POSTS_HTML}} slot or TP markers in <path>; scaffold the shell first") if neither is present, making the marker a build precondition per the SOP.
+
+---
+
+## KI-003 — a Metricool re-pull clobbers already-finalized Beat-4 cards — FIXED
+
+**Status:** FIXED (this commit) · **Found:** Aug 4, 2026 (Atlas onboarding) · **Severity:** high (silent overwrite of shipped content)
+
+Consequence of the KI-002 precondition (TP markers): `inject_top_posts()` fills the TP-marked
+region, so a Metricool pull that re-hits an already-finalized report overwrites its hand-built
+`feature-2up` (top-2 featured + dropdown + custom why-text) with the injector's flat render. A
+redundant July pull (`cf34df9`) did exactly this to all six finalized July reports; they were
+restored from `45d2d87`. Normal flow (transform → pull → finalize) hid it because finalize
+re-crafts after the pull, but a pull without a following finalize clobbers. Fixed: `inject_top_posts`
+now skips a TP-marked region that already contains `post-card` markup (hand-built cards) and only
+fills a truly empty marker pair; the finalize step owns the crafted cards.

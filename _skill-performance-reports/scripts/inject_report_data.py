@@ -95,7 +95,17 @@ def inject_top_posts(report_path, html_block):
     if "{{TOP_POSTS_HTML}}" in html:
         html = html.replace("{{TOP_POSTS_HTML}}", wrapped, 1)
     elif TP_START in html:
-        html = re.sub(re.escape(TP_START) + r".*?" + re.escape(TP_END), wrapped, html, count=1, flags=re.S)
+        region = re.search(re.escape(TP_START) + r"(.*?)" + re.escape(TP_END), html, re.S)
+        if region and "post-card" in region.group(1):
+            # KI-003: the marked region already holds hand-built Beat-4 cards -- a shell
+            # carried over from the prior-month transform, or an already-finalized report.
+            # The finalize step owns those cards; overwriting them here means a re-pull (or
+            # the monthly pull re-hitting a finalized report, as cf34df9 did to all six July
+            # reports) clobbers the crafted feature-2up. Leave it; finalize re-crafts. Only an
+            # empty marker pair (a bare scaffold) is filled.
+            pass
+        else:
+            html = re.sub(re.escape(TP_START) + r".*?" + re.escape(TP_END), wrapped, html, count=1, flags=re.S)
     else:
         # The Top-3 slot is a build precondition: the shell must carry either the
         # {{TOP_POSTS_HTML}} slot or a TP_START/TP_END pair. There is no posts-grid
