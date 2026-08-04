@@ -95,11 +95,17 @@ card2 = card(CATER, "#2 Top Post", "reel-badge", "REEL", "Reel",
              "the attention, then the reel made the catering pitch while viewers were still there. That is the pattern to "
              "copy: hook first, then the ask, so the catering message lands on an audience that stayed.")
 
-old_feature = re.search(r'<div class="feature-2up">.*?</div></div></div>\n  <p class="beat-pattern">', html, re.S)
+# ALWAYS emit the featured block wrapped in TP_START/TP_END markers -- they are the sole
+# injection target for inject_report_data.py (bare posts-grid fallback removed, KI-002), so
+# re-emitting them keeps the shell able to pass next month's pull. Anchor on the markers if
+# present, else the legacy bare feature-2up (and add the markers).
+new_block = f'<!--TP_START--><div class="feature-2up">{card1}{card2}</div><!--TP_END-->'
+old_feature = re.search(r'<!--TP_START-->.*?<!--TP_END-->', html, re.S)
+if not old_feature:
+    old_feature = re.search(r'<div class="feature-2up">.*?</div></div></div>(?=\n  <p class="beat-pattern">)', html, re.S)
 if not old_feature:
     sys.exit("ANCHOR FAIL [beat4:feature-2up]")
-html = html.replace(old_feature.group(0),
-                    f'<div class="feature-2up">{card1}{card2}</div>\n  <p class="beat-pattern">', 1)
+html = html.replace(old_feature.group(0), new_block, 1)
 edits.append("beat4:feature-2up")
 
 # ── Beat 2 (post-dependent) ──────────────────────────────────────────────────

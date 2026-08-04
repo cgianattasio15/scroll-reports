@@ -741,7 +741,8 @@
   <!-- v8.5: feature the TOP 2 posts (was 1). {{TOP_POST_1}} + {{TOP_POST_2}} are the top two by the
        outlier engine ranking, spliced verbatim. If fewer than 2 posts qualify, render only what
        qualifies (a single card in .feature-wrap, or none); never pad with a non-outlier. -->
-  <div class="feature-2up">{{TOP_POST_1}}{{TOP_POST_2}}</div>
+  <!-- TP_START/TP_END wrap the featured-posts block. They are the ONLY target inject_report_data.py::inject_top_posts() will fill (the old bare posts-grid fallback was removed, KI-002) — every shell MUST carry them or the Metricool pull hard-fails. Keep the markers around feature-2up when scaffolding/finalizing a month. -->
+  <!--TP_START--><div class="feature-2up">{{TOP_POST_1}}{{TOP_POST_2}}</div><!--TP_END-->
   <p class="beat-pattern">{{BEAT4_PATTERN}}</p>
   <!-- v8.5: the "other standout posts" dropdown moves HERE (directly after the featured posts, before
        "Your quarter so far"). {{TOP_POSTS_DROPDOWN_BLOCK}} is the FULL <details> block holding the post

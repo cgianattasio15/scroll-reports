@@ -156,10 +156,18 @@ def finalize(client):
                f'<h2 class="beat-takeaway" id="beat4-t">{c["beat4_new"]}</h2>', "beat4-takeaway", client)
 
     cards = "".join(card(by[cc["uid"]], cc["rank"], cc["hook"], cc["cid"], cc["standouts"], cc["why"]) for cc in c["cards"])
-    m = re.search(r'<div class="feature-2up">.*?</div></div></div>\n  <p class="beat-pattern">', html, re.S)
+    # ALWAYS emit the featured block wrapped in TP_START/TP_END. Those markers are the
+    # sole injection target for inject_report_data.py (the bare posts-grid fallback was
+    # removed, KI-002) — re-emitting them here is what keeps every finalized shell able to
+    # pass next month's Metricool pull. Anchor on the markers if the shell already carries
+    # them, else fall back to the legacy bare feature-2up (and add the markers).
+    new_block = f'<!--TP_START--><div class="feature-2up">{cards}</div><!--TP_END-->'
+    m = re.search(r'<!--TP_START-->.*?<!--TP_END-->', html, re.S)
+    if not m:
+        m = re.search(r'<div class="feature-2up">.*?</div></div></div>(?=\n  <p class="beat-pattern">)', html, re.S)
     if not m:
         sys.exit(f"ANCHOR FAIL [{client}:feature-2up]")
-    html = html.replace(m.group(0), f'<div class="feature-2up">{cards}</div>\n  <p class="beat-pattern">', 1)
+    html = html.replace(m.group(0), new_block, 1)
 
     if "drop_uid" in c:
         dcard = card(by[c["drop_uid"]], c["drop_rank"], c["drop_hook"], c["drop_cid"], c["drop_standouts"], c["drop_why"])
