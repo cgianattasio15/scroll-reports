@@ -65,3 +65,11 @@ const h  = s => Math.min(...[...document.querySelectorAll(s)].map(e => e.getBoun
 ({ mcNote: px('.mc-note'), gtNarr: px('.gt-narr'), mscoreLead: px('.mscore-lead'),
    whyText: px('.why-text'), capToggle: h('.cap-toggle'), summary: h('details summary') })
 ```
+
+---
+
+## KI-002 — inject_top_posts() greedy posts-grid fallback damaged Beat-4 dropdowns — FIXED
+
+**Status:** FIXED (this commit) · **Found:** Aug 4, 2026 (July 2026 build) · **Severity:** high (silent HTML corruption)
+
+`inject_report_data.py::inject_top_posts()` had a last-resort branch that filled `<div class="posts-grid">` with a greedy regex running to the next `</section>`; on any report carrying a Beat-4 "other standout posts" dropdown it swallowed the dropdown **and** the quarter-view / month-score strip (hit Launch Party + MEAS this cycle, both hand-recovered). Fixed by removing the fallback entirely — Top-3 injection now targets only the `{{TOP_POSTS_HTML}}` slot or `TP_START`/`TP_END` markers and **hard-fails** ("no {{TOP_POSTS_HTML}} slot or TP markers in <path>; scaffold the shell first") if neither is present, making the marker a build precondition per the SOP.

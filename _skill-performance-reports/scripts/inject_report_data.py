@@ -97,9 +97,15 @@ def inject_top_posts(report_path, html_block):
     elif TP_START in html:
         html = re.sub(re.escape(TP_START) + r".*?" + re.escape(TP_END), wrapped, html, count=1, flags=re.S)
     else:
-        # last resort: fill the posts-grid inner
-        html = re.sub(r'(<div class="posts-grid">)(.*?)(</div>\s*</section>)',
-                      lambda m: m.group(1) + wrapped + m.group(3), html, count=1, flags=re.S)
+        # The Top-3 slot is a build precondition: the shell must carry either the
+        # {{TOP_POSTS_HTML}} slot or a TP_START/TP_END pair. There is no posts-grid
+        # fallback -- a bare `<div class="posts-grid">` fill used a greedy regex that
+        # ran to the next `</section>`, swallowing the Beat-4 "other standout posts"
+        # dropdown AND the quarter view on any report that carried a dropdown (it
+        # damaged Launch Party + MEAS in the July 2026 cycle; both needed hand
+        # recovery). Hard-fail instead of guessing at a grid. See KNOWN_ISSUES.md.
+        sys.exit(f"No {{{{TOP_POSTS_HTML}}}} slot or TP markers in {report_path}; "
+                 f"scaffold the shell first (add the Top-3 slot before injecting).")
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(html)
 
