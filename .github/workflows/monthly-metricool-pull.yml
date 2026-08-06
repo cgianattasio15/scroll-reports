@@ -1,11 +1,9 @@
 name: Monthly Metricool Pull
-
 # Fills the two data-heavy sections of each v8 report shell from Metricool at build time
 # (the All Posts This Month table + the Top 3 Posts cards), then commits the injected shells.
 # No runtime API calls ship to the client: the data is baked into static HTML here.
 # The token is read from the METRICOOL_TOKEN repository secret; METRICOOL_USER_ID stays a
 # code global in outlier_engine.py (it is an identifier, not a credential).
-
 on:
   schedule:
     # 10:00 UTC on the 1st of each month = 6:00am EDT (summer) / 5:00am EST (winter).
@@ -20,27 +18,21 @@ on:
       year:
         description: 'Year (e.g. 2026). Blank = derived with month.'
         required: false
-
 permissions:
   contents: write   # commit the injected shells back to the repo
-
 concurrency:
   group: metricool-pull
   cancel-in-progress: false
-
 jobs:
   pull:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install deps
         run: pip install requests
-
       - name: Resolve reporting period
         id: period
         run: |
@@ -61,7 +53,6 @@ jobs:
           echo "month_name=$MNAME"  >> "$GITHUB_OUTPUT"
           echo "slug=$SLUG"         >> "$GITHUB_OUTPUT"
           echo "Pulling $MNAME $Y (slug: $SLUG)"
-
       - name: Pull all clients and inject All Posts + Top 3
         env:
           METRICOOL_TOKEN: ${{ secrets.METRICOOL_TOKEN }}
@@ -72,7 +63,7 @@ jobs:
           Y="${{ steps.period.outputs.year }}"
           SLUG="${{ steps.period.outputs.slug }}"
           mkdir -p "$GITHUB_WORKSPACE/summaries"
-          for CLIENT in laneandkate upandrunningoh defineoakley shoplaunchparty measactive carlsdeli; do
+          for CLIENT in laneandkate upandrunningoh defineoakley shoplaunchparty measactive carlsdeli atlassystems; do
             SHELL_PATH="../../$CLIENT/$SLUG/index.html"
             if [ -f "$SHELL_PATH" ]; then
               echo "::group::$CLIENT"
@@ -86,11 +77,9 @@ jobs:
               echo "::warning::no shell at $CLIENT/$SLUG/index.html; scaffold it first (skipping)"
             fi
           done
-
       - name: Build run summary
         if: always()
         run: python3 _skill-performance-reports/scripts/build_run_summary.py summaries
-
       - name: Upload summary artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -98,7 +87,6 @@ jobs:
           name: metricool-pull-summary-${{ steps.period.outputs.slug }}
           path: summaries/
           retention-days: 30
-
       - name: Commit injected shells
         run: |
           git config user.name "scroll-metricool-bot"
