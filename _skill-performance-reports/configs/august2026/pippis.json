@@ -1,0 +1,132 @@
+{
+  "prior_report": "atlassystems/july2026/index.html",
+  "out": "pippis/august2026/index.html",
+  "client_name_html": "Pippi&rsquo;s",
+  "month_label": "August",
+  "prior_month_label": "July",
+  "year": 2026,
+  "stage": "Spark",
+  "month_num": 2,
+  "date_range": "August 1&ndash;31, 2026",
+  "score_label": "Strong Month",
+  "delta_class": "fl",
+  "delta_text": "First report",
+  "final_score_override": 8.8,
+  "override_reason": "stage-assignment mismatch (Scroll_Media_Scoring_Framework.md); Spark math gives 9.3, Lift gives 8.2. Chase-approved 2026-09-01",
+  "identity": {
+    "source_name": "Atlas",
+    "gate_slug": "pippis",
+    "gate_code": "pippis.scroll",
+    "h1": "<h1>Pippi&rsquo;s <span>Salon</span></h1>",
+    "meta_lead": "<span>@pippis.salon</span><span class=\"dot\"></span>\n<span>Color-led salon on Vine Street, Over-the-Rhine</span>",
+    "goal_titles": [
+      "Build Awareness Before the Doors Open",
+      "Build Trust as the Colorist Cincinnati Turns To",
+      "Turn Interest Into Booked Chairs"
+    ],
+    "source_full": "Atlas Systems"
+  },
+  "outcome_value": "381",
+  "outcome_sub": "Total taps on any link in your bio. With Aura live from August 1, this is the clearest measure of people moving from watching to booking.",
+  "beat1_summary": "You opened, and the audience you built before the doors opened showed up. Nearly a hundred thousand people saw the salon this month, and 381 of them tapped through to book.",
+  "post_count": 12,
+  "work_chips": [
+    "<b>12 posts</b>",
+    "6 Reels, six carousels",
+    "Themes: the buildout story, the stylists, the Rica line",
+    "Focus: turning the pre-open audience into first bookings"
+  ],
+  "beat2_prose": "August was the opening. We led with the room itself and the people in it, introduced each stylist, and pointed everything at the booking link the day it went live.",
+  "beat2_takeaway": "We published 12 pieces in August, six Reels and six carousels, built around the opening and the people behind the chairs.",
+  "bstats": [
+    {
+      "value": "95,220",
+      "label": "Total views",
+      "status": "EXCEEDING"
+    },
+    {
+      "value": "3,141",
+      "label": "Profile visits",
+      "status": "EXCEEDING"
+    },
+    {
+      "value": "381",
+      "label": "Bio link taps",
+      "status": "EXCEEDING"
+    },
+    {
+      "value": "45%",
+      "label": "Video retention",
+      "status": "ON TRACK"
+    }
+  ],
+  "beat3_takeaway": "Every awareness and conversion metric finished above the ceiling for your stage. The pre-launch audience converted the moment there was somewhere to book.",
+  "beat4_takeaway": "The posts that travelled were about people, not hair. Your founder story drew 50 comments, more than six times an average post.",
+  "beat4_prose": "The August 28 founder carousel pulled 6.3 times average comments, and the stylist introductions were close behind on shares. The room and the people are the story here.",
+  "beat5_takeaway": "September is about saves. Reach and bookings are strong, so the work now is content people keep and come back to.",
+  "followers_banner": {
+    "count": "709",
+    "mom": "<span class=\"mom fl\">First month tracked</span>"
+  },
+  "c2b_steps": [
+    {
+      "num": "95,220",
+      "text": "people saw your content",
+      "badge": "\ud83c\udfdf Great American Ball Park filled 2.2x over"
+    },
+    {
+      "num": "3,141",
+      "text": "tapped through to look at your profile",
+      "badge": "\ud83c\udfad more than a sold-out Taft Theatre"
+    },
+    {
+      "num": "41",
+      "text": "bookmarked a piece for later",
+      "badge": "\ud83d\udccc 41 saved for a decision later"
+    },
+    {
+      "num": "381",
+      "text": "tapped a bio link, your highest-intent action",
+      "hi": true,
+      "badge": "\ud83d\udc87 381 steps toward a booked chair"
+    }
+  ],
+  "goals": [
+    {
+      "pct": 100
+    },
+    {
+      "pct": 85
+    },
+    {
+      "pct": 78
+    }
+  ],
+  "goal_narratives": [
+    "Awareness scored 100%. Views, shares and new followers all finished above the Spark ceiling in your first month open, which is the pre-launch audience arriving all at once.",
+    "Trust scored 85%. Profile visits and comments both cleared the ceiling and retention held at 45%, inside the Spark range, so people are watching the room and not just passing it.",
+    "Conversion scored 78%. Bio link taps at 381 and a 12.1% click-through both finished well above the ceiling. Profile conversion at 7.1% is the one metric under its floor."
+  ],
+  "narrative_allowed_numbers": [
+    6.3,
+    2.1,
+    2.6,
+    12,
+    6,
+    50
+  ],
+  "kpis": {
+    "total_followers": 709,
+    "new_followers": 224,
+    "shares": 279,
+    "total_views": 95220,
+    "profile_visits": 3141,
+    "retention": 45,
+    "saves": 41,
+    "comments": 145,
+    "reposts": 56,
+    "ctr": 12.1,
+    "link_taps": 381,
+    "pcr": 7.1
+  }
+}

@@ -431,6 +431,46 @@ def main():
     if tp:
         html = html[:tp.start()] + tp.group(1) + tp.group(2) + html[tp.end():]
 
+    # Same reasoning for the All Posts payload: last month's posts are always wrong for this
+    # month, and leaving them means a failed injection ships the prior month's post table
+    # silently -- the exact failure the top-post region just had. Empty it; preflight's
+    # "ALL_POSTS injected" check then fails loudly if the pull did not run.
+    html, _n = re.subn(r"(ALL_POSTS\s*=\s*)\[.*?\];", r"\g<1>[];", html, count=1, flags=re.S)
+
+    # --- client identity (only when transforming ACROSS clients) ---
+    # A first-ever report has no prior month of its own, so it is built from another client's
+    # report that already has the right first-report shape (no MoM delta, single-point goal
+    # tracker). That means every identity-bearing string has to be swapped, and missing one
+    # ships another client's name on the page. Each replacement is counted and reported.
+    ident = cfg.get("identity")
+    if ident:
+        swaps = []
+        html, n = re.subn(r"SCROLL_GATE=\{[^}]*\}",
+            "SCROLL_GATE={slug:'%s',code:'%s',title:'Private report',"
+            "sub:'This report is private. Enter your access code to continue.',"
+            "button:'View report'}" % (ident["gate_slug"], ident["gate_code"]), html)
+        swaps.append(("gate", n))
+        html, n = re.subn(r"<h1>.*?</h1>", ident["h1"], html, count=1, flags=re.S)
+        swaps.append(("h1", n))
+        html, n = re.subn(r'(<div class="hero-meta">).*?(<span class="dot"></span>\s*<span>'
+                          r'[A-Z][a-z]+ \d+&ndash;\d+, \d{4}</span>)',
+                          lambda m: m.group(1) + ident["meta_lead"] + m.group(2),
+                          html, count=1, flags=re.S)
+        swaps.append(("hero meta", n))
+        for i, title in enumerate(ident.get("goal_titles", [])):
+            titles = list(re.finditer(r'<p class="gt-title">[^<]*</p>', html))
+            if i < len(titles):
+                t = titles[i]
+                html = html[:t.start()] + f'<p class="gt-title">{title}</p>' + html[t.end():]
+        swaps.append(("goal titles", len(ident.get("goal_titles", []))))
+        # Social/meta tags carry the client name in prose form ("<Client> July 2026
+        # Instagram performance report..."), which no other replacement touches.
+        plain = re.sub(r"<[^>]+>", "", ident["h1"]).strip()
+        html, n = re.subn(rf'(<meta[^>]*content=")[^"]*?{re.escape(ident["source_full"])}',
+                          lambda m: m.group(1) + plain, html)
+        swaps.append(("meta tags", n))
+        print("  identity swapped: " + ", ".join(f"{k}={v}" for k, v in swaps))
+
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):
         key = f"beat{i}_takeaway"
@@ -446,6 +486,18 @@ def main():
     # the overflow safety net, and flagging it every build trains people to ignore the warning.
     scan = re.sub(r"<!--.*?-->", " ", html, flags=re.S)
     scan = re.sub(r"/\*.*?\*/", " ", scan, flags=re.S)
+    # Leak check LAST, once narrative, top-post clearing and every other replacement have
+    # run. Checking mid-pipeline only sees an intermediate state and fails on content that
+    # a later step was always going to replace.
+    if cfg.get("identity"):
+        src = cfg["identity"]["source_name"]
+        leak = len(re.findall(rf"\b{re.escape(src)}\b", scan))
+        if leak:
+            ctx = [re.sub(r"\s+", " ", scan[max(0, m.start()-60):m.end()+60])
+                   for m in re.finditer(rf"\b{re.escape(src)}\b", scan)][:3]
+            sys.exit(f"FATAL: source client '{src}' still appears {leak}x in the built "
+                     f"report. Would ship another client's name.\n  " + "\n  ".join(ctx))
+
     leftover = sorted(set(re.findall(r"\{\{([A-Z0-9_]+)\}\}", scan)))
     out = a.out or cfg["out"]
     os.makedirs(os.path.dirname(out), exist_ok=True)
