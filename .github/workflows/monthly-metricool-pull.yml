@@ -68,8 +68,7 @@ jobs:
             if [ -f "$SHELL_PATH" ]; then
               echo "::group::$CLIENT"
               python3 inject_report_data.py \
-                --client "$CLIENT" --month "$M" --year "$Y" \
-                --inject "$SHELL_PATH" \
+          for CLIENT in carlsdeli laneandkate defineoakley upandrunningoh atlassystems pippis; do                --inject "$SHELL_PATH" \
                 --summary-out "$GITHUB_WORKSPACE/summaries/$CLIENT.json" \
                 || echo "::warning::pull failed for $CLIENT (continuing)"
               echo "::endgroup::"
