@@ -428,6 +428,24 @@ def get_top_posts(blog_id: int, month: int, year: int, client_name: str = "") ->
     Main function: pull all posts and reels for the month, score them,
     and return the top 2-4 outlier posts with insights.
     """
+    # Guard: blog_id MUST be the numeric Metricool id. Passing a client slug here (an easy
+    # mistake, since every sibling script takes --client) does not raise -- Metricool answers
+    # with a DIFFERENT account's posts and the caller has no way to know. During the August
+    # 2026 build this returned another account's content for what was labelled Carl's Deli,
+    # and it was caught only because the captions obviously did not read like a deli. On a
+    # client report that is someone else's data under someone else's name.
+    if not isinstance(blog_id, int) or isinstance(blog_id, bool):
+        raise TypeError(
+            f"get_top_posts() needs the numeric Metricool blogId, got {blog_id!r}. "
+            f"Look it up in CLIENT_BLOG_IDS (e.g. CLIENT_BLOG_IDS['carlsdeli']) or the "
+            f"Client Roster's 'Metricool BlogID' column. Passing a slug silently returns "
+            f"another account's posts."
+        )
+    if blog_id not in set(CLIENT_BLOG_IDS.values()):
+        raise ValueError(
+            f"blogId {blog_id} is not in CLIENT_BLOG_IDS. Add it there first so the id is "
+            f"tied to a named client, rather than pulling an unidentified account."
+        )
     print(f"\n{'='*60}")
     print(f"Analyzing: {client_name or blog_id} — {datetime(year, month, 1).strftime('%B %Y')}")
     print(f"{'='*60}")

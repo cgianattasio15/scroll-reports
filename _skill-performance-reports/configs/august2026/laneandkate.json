@@ -1,0 +1,111 @@
+{
+  "prior_report": "laneandkate/july2026/index.html",
+  "out": "laneandkate/august2026/index.html",
+  "client_name_html": "Lane &amp; Kate",
+  "month_label": "August",
+  "prior_month_label": "July",
+  "year": 2026,
+  "stage": "Lift",
+  "month_num": 16,
+  "date_range": "August 1&ndash;31, 2026",
+  "score_label": "Building Month",
+  "delta_class": "dn",
+  "delta_text": "Down 0.5 vs. July",
+  "outcome_value": "160",
+  "beat1_summary": "Conversion stayed excellent and volume did not. Three Reels went out instead of seven, and the engagement metrics followed the cadence down.",
+  "post_count": 8,
+  "work_chips": [
+    "<b>8 posts</b>",
+    "3 Reels, five carousels",
+    "Themes: custom pieces, the Cincy tennis story, in-store events",
+    "Focus: bringing people to the shop"
+  ],
+  "beat2_takeaway": "We published 8 pieces in August, three Reels and five carousels, weighted toward the custom work and local stories that your audience saves.",
+  "bstats": [
+    {
+      "value": "18.5%",
+      "label": "Click-through rate",
+      "status": "EXCEEDING"
+    },
+    {
+      "value": "160",
+      "label": "Bio link taps",
+      "status": "ON TRACK"
+    },
+    {
+      "value": "24%",
+      "label": "Video retention",
+      "status": "WATCH"
+    },
+    {
+      "value": "18",
+      "label": "Comments",
+      "status": "WATCH"
+    }
+  ],
+  "beat3_takeaway": "Almost one in five people who saw your profile tapped through. That is the best click-through rate in our whole book, and it held while everything else got quieter.",
+  "beat4_takeaway": "Your most-shared piece was a carousel, not a Reel. The gold-moments set travelled 5.6 times further than an average post.",
+  "beat5_takeaway": "September is about cadence. The conversion engine works, so the fix is simply putting more in front of it.",
+  "followers_banner": {
+    "count": "7,305",
+    "mom": "<span class=\"mom up\">&#9650; 0.2% vs July</span>"
+  },
+  "c2b_steps": [
+    {
+      "num": "53,301",
+      "text": "people saw your content",
+      "badge": "\ud83c\udfdf Great American Ball Park filled 1.2x over"
+    },
+    {
+      "num": "865",
+      "text": "tapped through to look at your profile",
+      "badge": "\ud83c\udfad a third of a sold-out Taft Theatre"
+    },
+    {
+      "num": "32",
+      "text": "bookmarked a piece for later",
+      "badge": "\ud83d\udccc 32 pre-purchase bookmarks"
+    },
+    {
+      "num": "160",
+      "text": "tapped a bio link, your highest-intent action",
+      "hi": true,
+      "badge": "\ud83d\udc8d 160 steps toward a custom piece"
+    }
+  ],
+  "narrative_allowed_numbers": [
+    5.6,
+    4.0,
+    8,
+    3,
+    5
+  ],
+  "kpis": {
+    "total_followers": 7305,
+    "new_followers": 74,
+    "shares": 62,
+    "total_views": 53301,
+    "profile_visits": 865,
+    "retention": 24,
+    "saves": 32,
+    "comments": 18,
+    "reposts": 3,
+    "ctr": 18.5,
+    "link_taps": 160,
+    "pcr": 8.6
+  },
+  "prior_kpis": {
+    "total_followers": 7288,
+    "new_followers": 71,
+    "shares": 72,
+    "total_views": 60725,
+    "profile_visits": 974,
+    "retention": 28,
+    "saves": 42,
+    "comments": 70,
+    "reposts": 3,
+    "ctr": 15.6,
+    "link_taps": 152,
+    "pcr": 7.3
+  }
+}
