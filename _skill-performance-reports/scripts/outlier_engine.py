@@ -64,6 +64,7 @@ CLIENT_BLOG_IDS = {
     "upandrunningoh": 5506230,
     "carlsdeli": 5869607,  # Metricool blogId (userId 3745914 = global METRICOOL_USER_ID). Real ID added Jun 30, 2026.
     "atlassystems": 6607502,  # Spark, B2B IT/AI consulting (@atlasysky). Onboarded to pipeline Aug 4, 2026; inaugural report July 2026.
+    "pippis": 6743117,        # Spark, hair/nail studio (@pippis.salon). Onboarded Jul 16, 2026; inaugural report August 2026.
 }
 
 # ── METRIC WEIGHTS (must sum to 100) ─────────────────────────────────────────
