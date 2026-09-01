@@ -358,7 +358,7 @@ def generate_why_it_worked(post: dict, standouts: list[dict], averages: dict) ->
         if parts:
             metric_str = ", ".join(parts)
             return (
-                f"Scored in the top posts this month on composite performance — "
+                f"Scored in the top posts this month on composite performance, "
                 f"{metric_str}. No single metric broke out at scale, but the "
                 f"combination of above-average signals across the board placed it here. "
                 f"Consistent multi-metric performance is a strong indicator of content-market fit."
@@ -367,7 +367,7 @@ def generate_why_it_worked(post: dict, standouts: list[dict], averages: dict) ->
             return (
                 "Scored in the top posts this month on composite performance. "
                 "Above-average results across multiple signals indicate this content "
-                "resonated with the core audience — a reliable foundation to build on."
+                "resonated with the core audience, a reliable foundation to build on."
             )
     
     top = standouts[0]
@@ -377,12 +377,12 @@ def generate_why_it_worked(post: dict, standouts: list[dict], averages: dict) ->
         "views": (
             f"A reach outlier at {multiplier_str} the account's average views. "
             f"The hook successfully broke content out of the core audience and into the wider algorithm "
-            f"— a strong signal to double down on this format and topic."
+            f", a strong signal to double down on this format and topic."
         ),
         "saves": (
             f"Powered by save density at {multiplier_str} the account average. "
             f"Saves this high signal that viewers found the content worth returning to "
-            f"— the strongest indicator of consideration-stage intent and buyer-adjacent behavior. "
+            f", the strongest indicator of consideration-stage intent and buyer-adjacent behavior. "
             f"This content is training the algorithm toward your highest-quality audience."
         ),
         "retention": (
@@ -394,13 +394,13 @@ def generate_why_it_worked(post: dict, standouts: list[dict], averages: dict) ->
         "comments": (
             f"Driven by community response at {multiplier_str} the account average in comments. "
             f"This level of engagement signals the content triggered an emotional reaction "
-            f"— the audience didn't just watch, they showed up to participate. "
+            f", the audience didn't just watch, they showed up to participate. "
             f"High-emotion content like this builds the trust that converts followers into buyers."
         ),
         "shares": (
             f"Driven by share velocity at {multiplier_str} the account average. "
             f"High shares indicate the content tapped into a universal emotion or pain point "
-            f"the audience wanted to pass along — a strong organic amplification signal "
+            f"the audience wanted to pass along, a strong organic amplification signal "
             f"that extends reach beyond the existing follower base."
         ),
     }
@@ -411,11 +411,11 @@ def generate_why_it_worked(post: dict, standouts: list[dict], averages: dict) ->
     if len(standouts) >= 2:
         sec = standouts[1]
         secondary_map = {
-            "views":     f"Reach also over-indexed at {sec['multiplier']}x average — confirming broad algorithmic distribution.",
-            "saves":     f"Saves also over-indexed at {sec['multiplier']}x average — a dual signal of reach and buyer intent.",
-            "retention": f"Retention also over-indexed at {sec['multiplier']}x average — confirming strong content quality throughout.",
-            "comments":  f"Comments also over-indexed at {sec['multiplier']}x average — compounding the community engagement signal.",
-            "shares":    f"Shares also over-indexed at {sec['multiplier']}x average — compounding the reach effect.",
+            "views":     f"Reach also over-indexed at {sec['multiplier']}x average, confirming broad algorithmic distribution.",
+            "saves":     f"Saves also over-indexed at {sec['multiplier']}x average, a dual signal of reach and buyer intent.",
+            "retention": f"Retention also over-indexed at {sec['multiplier']}x average, confirming strong content quality throughout.",
+            "comments":  f"Comments also over-indexed at {sec['multiplier']}x average, compounding the community engagement signal.",
+            "shares":    f"Shares also over-indexed at {sec['multiplier']}x average, compounding the reach effect.",
         }
         secondary = secondary_map.get(sec["metric"], f"{sec['label']} also over-indexed at {sec['multiplier']}x.")
         return f"{primary} {secondary}"
@@ -447,7 +447,7 @@ def get_top_posts(blog_id: int, month: int, year: int, client_name: str = "") ->
             f"tied to a named client, rather than pulling an unidentified account."
         )
     print(f"\n{'='*60}")
-    print(f"Analyzing: {client_name or blog_id} — {datetime(year, month, 1).strftime('%B %Y')}")
+    print(f"Analyzing: {client_name or blog_id}, {datetime(year, month, 1).strftime('%B %Y')}")
     print(f"{'='*60}")
     
     # 1. Fetch all content

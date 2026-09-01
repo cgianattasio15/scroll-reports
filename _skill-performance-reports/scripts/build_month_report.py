@@ -419,6 +419,18 @@ def main():
         for n, txt in zip(reversed(narrs), reversed(cfg["goal_narratives"])):
             html = html[:n.start()] + f'<p class="gt-narr">{txt}</p>' + html[n.end():]
 
+    # --- clear the prior month's top-post cards ---
+    # inject_report_data.py deliberately refuses to overwrite a TP region that already holds
+    # cards (KI-003), because a re-pull once clobbered hand-crafted July cards on finalized
+    # reports. That guard is right for a finalized report and WRONG for a new month's shell,
+    # which by construction still holds last month's cards -- the injector skips, reports
+    # "3 top cards" anyway, and the report ships featuring content from the wrong month.
+    # All five August reports did exactly that. Empty the region here so the injector's
+    # bare-scaffold path fills it with this month's posts.
+    tp = re.search(r'(<!--TP_START-->).*?(<!--TP_END-->)', html, re.S)
+    if tp:
+        html = html[:tp.start()] + tp.group(1) + tp.group(2) + html[tp.end():]
+
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):
         key = f"beat{i}_takeaway"
