@@ -12,7 +12,7 @@
   "delta_class": "dn",
   "delta_text": "Down 0.5 vs. July",
   "outcome_value": "160",
-  "beat1_summary": "Conversion stayed excellent and volume did not. Three Reels went out instead of seven, and the engagement metrics followed the cadence down.",
+  "beat1_summary": "Awareness held and conversion got better. What changed is the middle: fewer people commented, saved or watched all the way through, even though the ones who did convert more efficiently than any account we run.",
   "post_count": 8,
   "work_chips": [
     "<b>8 posts</b>",
@@ -20,7 +20,7 @@
     "Themes: custom pieces, the Cincy tennis story, in-store events",
     "Focus: bringing people to the shop"
   ],
-  "beat2_takeaway": "We published 8 pieces in August, three Reels and five carousels, weighted toward the custom work and local stories that your audience saves.",
+  "beat2_takeaway": "We published 8 pieces in August, three Reels and five carousels, weighted toward the custom work and the local stories.",
   "bstats": [
     {
       "value": "18.5%",
@@ -33,19 +33,19 @@
       "status": "ON TRACK"
     },
     {
-      "value": "24%",
-      "label": "Video retention",
-      "status": "WATCH"
-    },
-    {
       "value": "18",
       "label": "Comments",
       "status": "WATCH"
+    },
+    {
+      "value": "32",
+      "label": "Saves",
+      "status": "WATCH"
     }
   ],
-  "beat3_takeaway": "Almost one in five people who saw your profile tapped through. That is the best click-through rate in our whole book, and it held while everything else got quieter.",
-  "beat4_takeaway": "Your most-shared piece was a carousel, not a Reel. The gold-moments set travelled 5.6 times further than an average post.",
-  "beat5_takeaway": "September is about cadence. The conversion engine works, so the fix is simply putting more in front of it.",
+  "beat3_takeaway": "Almost one in five people who saw your profile tapped through, the best click-through rate in our book. The gap is one step earlier: fewer people commented, saved or finished a video before getting there.",
+  "beat4_takeaway": "Your most-shared piece was a carousel, not a Reel. The gold-moments set travelled 5.6 times further than an average post, so the format is reaching people. It is the response it invites that changed.",
+  "beat5_takeaway": "September is about giving people something to respond to. Conversion is already the strongest in our book, so the work is one step earlier: content that earns a comment and a save, not just a click.",
   "followers_banner": {
     "count": "7,305",
     "mom": "<span class=\"mom up\">&#9650; 0.2% vs July</span>"
@@ -78,7 +78,8 @@
     4.0,
     8,
     3,
-    5
+    5,
+    74
   ],
   "kpis": {
     "total_followers": 7305,
@@ -120,9 +121,9 @@
     }
   ],
   "goal_narratives": [
-    "Awareness scored 42%, roughly level with July. Shares and views held inside your Lift range while new followers stayed under the 100 floor.",
-    "Engagement scored 18%, down from July. Comments fell from 70 to 18, retention eased to 24% and saves to 32, leaving three of the four engagement metrics under their floors.",
-    "Conversion scored 70%, up from July. Click-through rate hit 18.5%, well above the Lift ceiling, and bio link taps rose to 160."
+    "Awareness scored 42%, close to level with July. Shares and views held inside your Lift range and new followers ticked up, so reach is broadly steady.",
+    "Engagement scored 18%, the band that moved. Comments came down from 70 to 18 and saves to 32, with retention easing to 24%. This is the step the September work is aimed at, because engagement is also what Instagram reads when it decides how far to push a post.",
+    "Conversion scored 70%, up from July and the strongest part of your funnel. Click-through hit 18.5%, well above the Lift ceiling, and bio link taps rose to 160."
   ],
   "account_manager": "Rachel"
 }
