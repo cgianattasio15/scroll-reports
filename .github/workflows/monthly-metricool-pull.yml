@@ -63,7 +63,12 @@ jobs:
           Y="${{ steps.period.outputs.year }}"
           SLUG="${{ steps.period.outputs.slug }}"
           mkdir -p "$GITHUB_WORKSPACE/summaries"
-          for CLIENT in laneandkate upandrunningoh defineoakley shoplaunchparty measactive carlsdeli atlassystems; do
+          # ACTIVE REPORTING ACCOUNTS ONLY. The Client Roster is the authority for who is
+          # active -- this list is a copy of it and WILL go stale (it carried shoplaunchparty
+          # and measactive for weeks after both engagements closed, while omitting pippis
+          # entirely, which would have shipped Pippi's inaugural report with an empty All
+          # Posts table). Reconcile against the roster whenever a client starts or ends.
+          for CLIENT in carlsdeli laneandkate defineoakley upandrunningoh atlassystems pippis; do
             SHELL_PATH="../../$CLIENT/$SLUG/index.html"
             if [ -f "$SHELL_PATH" ]; then
               echo "::group::$CLIENT"
