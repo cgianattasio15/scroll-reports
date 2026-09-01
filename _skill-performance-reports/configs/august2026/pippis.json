@@ -24,7 +24,8 @@
       "Build Trust as the Colorist Cincinnati Turns To",
       "Turn Interest Into Booked Chairs"
     ],
-    "source_full": "Atlas Systems"
+    "source_full": "Atlas Systems",
+    "am": "Rachel"
   },
   "outcome_value": "381",
   "outcome_sub": "Total taps on any link in your bio. With Aura live from August 1, this is the clearest measure of people moving from watching to booking.",
@@ -128,5 +129,6 @@
     "ctr": 12.1,
     "link_taps": 381,
     "pcr": 7.1
-  }
+  },
+  "account_manager": "Rachel"
 }

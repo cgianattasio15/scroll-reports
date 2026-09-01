@@ -457,6 +457,10 @@ def main():
                           lambda m: m.group(1) + ident["meta_lead"] + m.group(2),
                           html, count=1, flags=re.S)
         swaps.append(("hero meta", n))
+        # "Managed by X" sits AFTER the date range, so the hero-meta swap above stops short
+        # of it and the source client's account manager survives. Pippi's shipped a preview
+        # reading "Managed by Riley" when their AM is Rachel. Replace it explicitly.
+
         for i, title in enumerate(ident.get("goal_titles", [])):
             titles = list(re.finditer(r'<p class="gt-title">[^<]*</p>', html))
             if i < len(titles):
@@ -470,6 +474,18 @@ def main():
                           lambda m: m.group(1) + plain, html)
         swaps.append(("meta tags", n))
         print("  identity swapped: " + ", ".join(f"{k}={v}" for k, v in swaps))
+
+    # --- account manager ---
+    # Applies to EVERY build, not just cross-client transforms. Two ways this goes wrong:
+    # a transform carries the source client's AM through ("Managed by Riley" on Pippi's),
+    # and an unchanged report keeps an AM who has since left -- DEFINE Oakley still read
+    # "Managed by Emily" in August, months after Emily Krintz offboarded on Aug 8. The
+    # Client Roster is the authority; config carries it and preflight verifies it.
+    if cfg.get("account_manager"):
+        html, n = re.subn(r'<span>Managed by [^<]*</span>',
+                          f'<span>Managed by {cfg["account_manager"]}</span>', html, count=1)
+        if n != 1:
+            sys.exit("FATAL: could not find the 'Managed by' line to set the account manager")
 
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):
