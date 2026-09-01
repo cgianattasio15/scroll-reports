@@ -100,7 +100,15 @@
     .proposal-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:700;color:var(--azure);white-space:nowrap;padding:.5rem .875rem;border:1.5px solid rgba(14,51,135,.2);border-radius:6px;transition:background .15s,border-color .15s}
     .proposal-card:hover .proposal-link{background:rgba(14,51,135,.06);border-color:rgba(14,51,135,.35)}
     @media(max-width:640px){.proposals-grid{grid-template-columns:1fr}}
-  </style>
+  
+/* Mobile body-text floor, CLAUDE.md Locked Principle 3.12 + Procedural Gate #6.
+   Body prose only. Labels and chrome (.ph-label, .sec-label, .funnel-lbl, .qy-note,
+   .c2b-step-badge) stay at their design sizes, and the .cap-* spans are excluded
+   because they quote the client's own Instagram copy verbatim.
+   MUST live at the END of the stylesheet: injected earlier it loses to the base
+   rules on equal specificity and silently does nothing. */
+@media(max-width:480px){.gt-narr,.why-text,.qyear-intro,.mscore-lead,.tw-item-body,.beat-cta-rationale,.ap-pc-cap,.ph-outcome-sub,.hero-method{font-size:14px}}
+</style>
   <script>window.SCROLL_GATE={slug:'index',code:'scrollies',title:'Scroll Media reports',sub:'This is the internal Scroll Media reports dashboard. Enter your access code to continue.',button:'View dashboard'};</script>
   <script src="/access-gate.js"></script>
 </head>

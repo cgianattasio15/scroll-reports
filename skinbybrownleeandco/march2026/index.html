@@ -445,7 +445,15 @@
       .post-score{margin-left:auto}
     }
 
-  </style>
+  
+/* Mobile body-text floor, CLAUDE.md Locked Principle 3.12 + Procedural Gate #6.
+   Body prose only. Labels and chrome (.ph-label, .sec-label, .funnel-lbl, .qy-note,
+   .c2b-step-badge) stay at their design sizes, and the .cap-* spans are excluded
+   because they quote the client's own Instagram copy verbatim.
+   MUST live at the END of the stylesheet: injected earlier it loses to the base
+   rules on equal specificity and silently does nothing. */
+@media(max-width:480px){.gt-narr,.why-text,.qyear-intro,.mscore-lead,.tw-item-body,.beat-cta-rationale,.ap-pc-cap,.ph-outcome-sub,.hero-method{font-size:14px}}
+</style>
   <meta name="twitter:card" content="summary_large_image">
   <script>window.SCROLL_GATE={slug:'skinbybrownleeandco',code:'skin.scroll',title:'Private report',sub:'This report is private. Enter your access code to continue.',button:'View report'};</script>
   <script src="/access-gate.js"></script>
