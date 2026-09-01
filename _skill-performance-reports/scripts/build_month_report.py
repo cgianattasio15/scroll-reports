@@ -487,6 +487,32 @@ def main():
         if n != 1:
             sys.exit("FATAL: could not find the 'Managed by' line to set the account manager")
 
+    # --- Highlights: the customer-facing at-a-glance summary ---
+    # Three bullets a client reads in ten seconds: the win, the standout, and what we are
+    # working on next. The .jhi CSS shipped in v8.3.4 and has sat in every report since as
+    # DEAD CSS -- the v8.4 restructure dropped the markup and nothing put it back, so the
+    # styles were maintained for a block that no longer rendered.
+    #
+    # Authored once here and reused verbatim in the delivery email and the internal Slack
+    # post, so the client, the AM and the founder all read the same three sentences. One
+    # fact, one owner (CLAUDE.md section 5).
+    if cfg.get("highlights"):
+        items = "\n".join(
+            f'          <div class="jhi-item"><span class="mk"></span>'
+            f'<span class="bd"><strong>{h["label"]}</strong> &middot; {h["text"]}</span></div>'
+            for h in cfg["highlights"])
+        block = (f'\n<div class="jhi">\n      <div class="jhi-card">\n'
+                 f'        <p class="jhi-title"><span class="dot"></span>'
+                 f'{cfg["month_label"]} at a glance</p>\n'
+                 f'        <div class="jhi-list">\n{items}\n        </div>\n'
+                 f'      </div>\n    </div>\n')
+        # Idempotent: replace an existing block rather than stacking a second one.
+        existing = re.search(r'\n<div class="jhi">.*?</div>\n    </div>\n', html, re.S)
+        if existing:
+            html = html[:existing.start()] + block + html[existing.end():]
+        else:
+            html = sub_once(html, r'</header>', "</header>" + block, "highlights block")
+
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):
         key = f"beat{i}_takeaway"

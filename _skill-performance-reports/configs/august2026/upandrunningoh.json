@@ -127,5 +127,19 @@
     "Engagement scored 48%, up from July. Retention climbed from 33% to 41% and cleared the Spark floor, and saves recovered from 2 to 11.",
     "Conversion scored 62%, your strongest band and up from July. Bio link taps, click-through rate and profile conversion all finished inside the Spark range."
   ],
-  "account_manager": "Rachel"
+  "account_manager": "Rachel",
+  "highlights": [
+    {
+      "label": "Win of the month",
+      "text": "Your steadiest month of the year. Retention rose to 41% and saves recovered from 2 to 11, the two things we flagged in July."
+    },
+    {
+      "label": "Standout",
+      "text": "The shoe-fitting explainer was saved 11.4 times more than an average post, the biggest outlier across all our accounts this month."
+    },
+    {
+      "label": "Next",
+      "text": "Comments. Reach and conversion are steady, so the gap is getting people talking rather than just watching."
+    }
+  ]
 }

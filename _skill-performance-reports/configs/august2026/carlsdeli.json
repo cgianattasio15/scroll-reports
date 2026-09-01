@@ -130,5 +130,19 @@
     "Engagement scored 70%, up from July. Retention climbed from 37% to 53% and cleared the Lift floor for the first time. Saves at 42 are the one piece still short of the 80 target.",
     "Conversion scored 90%, your strongest band. Bio link taps, click-through rate and profile conversion all finished above the Lift ceiling."
   ],
-  "account_manager": "Rachel"
+  "account_manager": "Rachel",
+  "highlights": [
+    {
+      "label": "Win of the month",
+      "text": "Retention jumped from 37% to 53%, clearing your stage target for the first time. People are watching your Reels most of the way through."
+    },
+    {
+      "label": "Standout",
+      "text": "The August 24 Reel was shared 6.2 times more than an average post."
+    },
+    {
+      "label": "Next",
+      "text": "Giving people a reason to save. Reach and clicks are strong, so saves are the one gap left."
+    }
+  ]
 }

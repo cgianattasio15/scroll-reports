@@ -127,5 +127,19 @@
     "Engagement scored 52%, the month's clearest gain. Saves nearly doubled to 39 and comments to 29, both now inside the Spark range. Retention at 24% is the standing first lever.",
     "Conversion scored 30%, down from July. Bio link taps fell to 2 and click-through to 1.4%, both under their floors, on a small enough base that a handful of taps moves the number a long way."
   ],
-  "account_manager": "Riley"
+  "account_manager": "Riley",
+  "highlights": [
+    {
+      "label": "Win of the month",
+      "text": "Your best month since launch. Saves nearly doubled to 39 and comments to 29, both now inside your stage range."
+    },
+    {
+      "label": "Standout",
+      "text": "The \\u201cwhy does everybody DIY a business\\u201d Reel pulled 4.9 times the account's average views."
+    },
+    {
+      "label": "Next",
+      "text": "Retention. There is a real library of content now, so the next lever is holding a business owner past the first three seconds."
+    }
+  ]
 }

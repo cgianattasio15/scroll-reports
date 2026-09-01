@@ -123,5 +123,19 @@
     "Engagement scored 38%. Retention recovered to 50% and is back at the Lift floor, the clearest positive in the month, while comments came down from July's 401.",
     "Conversion scored 50%. Click-through rate and profile conversion both sit inside the Lift range; bio link taps at 26 slipped just under the 30 floor."
   ],
-  "account_manager": "Riley"
+  "account_manager": "Riley",
+  "highlights": [
+    {
+      "label": "Win of the month",
+      "text": "Retention recovered to 50% and is back at your stage target, the clearest signal of the month."
+    },
+    {
+      "label": "Standout",
+      "text": "The instructor-support Reel was shared 3.4 times more than an average post."
+    },
+    {
+      "label": "Next",
+      "text": "Depth. Saves and bio link taps are the two to lift, now that people are watching to the end again."
+    }
+  ]
 }
