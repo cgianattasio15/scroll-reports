@@ -113,5 +113,21 @@
     1.5,
     13,
     11
+  ],
+  "goals": [
+    {
+      "pct": 85
+    },
+    {
+      "pct": 70
+    },
+    {
+      "pct": 90
+    }
+  ],
+  "goal_narratives": [
+    "Awareness scored 85%, down from July's peak. Shares, views and new followers all came off the flood-post highs but every one of them stayed inside your Lift range, with new followers still above the ceiling.",
+    "Engagement scored 70%, up from July. Retention climbed from 37% to 53% and cleared the Lift floor for the first time. Saves at 42 are the one piece still short of the 80 target.",
+    "Conversion scored 90%, your strongest band. Bio link taps, click-through rate and profile conversion all finished above the Lift ceiling."
   ]
 }

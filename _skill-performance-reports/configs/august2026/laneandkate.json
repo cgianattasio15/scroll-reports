@@ -107,5 +107,21 @@
     "ctr": 15.6,
     "link_taps": 152,
     "pcr": 7.3
-  }
+  },
+  "goals": [
+    {
+      "pct": 42
+    },
+    {
+      "pct": 18
+    },
+    {
+      "pct": 70
+    }
+  ],
+  "goal_narratives": [
+    "Awareness scored 42%, roughly level with July. Shares and views held inside your Lift range while new followers stayed under the 100 floor.",
+    "Engagement scored 18%, down from July. Comments fell from 70 to 18, retention eased to 24% and saves to 32, leaving three of the four engagement metrics under their floors.",
+    "Conversion scored 70%, up from July. Click-through rate hit 18.5%, well above the Lift ceiling, and bio link taps rose to 160."
+  ]
 }

@@ -121,6 +121,10 @@ def build_breakdown(cfg, scorer):
     return grids, counts, res
 
 
+def mx_fmt(v):
+    return f"{v:g}"
+
+
 def grid_span(html, after_open):
     """Return (start, end) of the metrics-grid's INNER content, found by walking div depth.
 
@@ -200,8 +204,18 @@ def main():
                     f'<div class="ph-bignum">{final}<span class="unit">/10</span></div>', "hero score")
     html = sub_once(html, r'<p class="ph-title">[^<]*</p>',
                     f'<p class="ph-title">{cfg["score_label"]}</p>', "score label")
-    html = sub_once(html, r'<span class="ph-delta[^"]*">[^<]*</span>',
-                    f'<span class="ph-delta {cfg["delta_class"]}">{cfg["delta_text"]}</span>', "MoM delta")
+    # A first report has no MoM delta element at all (nothing to compare to), so a client
+    # whose prior report was their inaugural one legitimately lacks it. Insert one after the
+    # score title in that case rather than failing.
+    if re.search(r'<span class="ph-delta[^"]*">[^<]*</span>', html):
+        html = sub_once(html, r'<span class="ph-delta[^"]*">[^<]*</span>',
+                        f'<span class="ph-delta {cfg["delta_class"]}">{cfg["delta_text"]}</span>',
+                        "MoM delta")
+    else:
+        html = sub_once(html, r'(<p class="ph-title">[^<]*</p>)',
+                        f'<p class="ph-title">{cfg["score_label"]}</p>'
+                        f'<span class="ph-delta {cfg["delta_class"]}">{cfg["delta_text"]}</span>',
+                        "MoM delta (inserted; prior report was a first report)")
     badges = (f'<span class="ph-badge exceed"><span class="bd"></span>{counts.get("EXCEEDING",0)} Exceeding</span>\n'
               f'<span class="ph-badge ontrack"><span class="bd"></span>{counts.get("ON TRACK",0)} On Track</span>\n'
               f'<span class="ph-badge watch"><span class="bd"></span>{counts.get("WATCH",0)} Watch</span>')
@@ -297,8 +311,15 @@ def main():
                           lambda m: m.group(1) + fb["count"] + m.group(2), html, count=1)
         if n != 1:
             sys.exit("FATAL: followers-banner count not found")
-        html = sub_once(html, r'<div class="fb-mom">.*?</div>', fb["mom"], "followers MoM",
-                        re.S, wrap=('<div class="fb-mom">', "</div>"))
+        # Same first-report case as the hero delta: an inaugural report has no fb-mom.
+        if re.search(r'<div class="fb-mom">', html):
+            html = sub_once(html, r'<div class="fb-mom">.*?</div>', fb["mom"], "followers MoM",
+                            re.S, wrap=('<div class="fb-mom">', "</div>"))
+        else:
+            html = sub_once(html, r'(<div class="fb-count">[^<]*</div>)',
+                            fb["mom"], "followers MoM (inserted)",
+                            wrap=(f'<div class="fb-count">{fb["count"]}</div>'
+                                  f'<div class="fb-mom">', "</div>"))
 
     # --- Content-to-Business funnel walk ---
     # Four absolute volumes plus their analogy badges. The badges are COPY, not arithmetic --
@@ -354,6 +375,49 @@ def main():
     # real fix must append at the END of the stylesheet.
     #
     # Tracked for Chase as a bulk decision alongside the broken-logo fix.
+
+    # --- Goal Tracker ---
+    # Chase-approved per-client percentages. These have NEVER been computed: July's were
+    # hardcoded per client in one-off build_<client>_july.py scripts, and the two defensible
+    # formulas produce wildly different client-facing numbers (position-in-range reads a
+    # punitive 0% for a real month; floor-as-100% flatters a month whose cadence halved).
+    # So they stay a drafted-and-approved judgment call, anchored to the prior month, and the
+    # weighted-score line is derived from the percentage so the two can never disagree.
+    if cfg.get("goals"):
+        # Replace positionally inside the gt-list. Matching whole <div class="gt-row"> blocks
+        # with a regex fails the same way the metrics grid did -- they are nested divs, so
+        # ".*?</div></div></div>" collapses all three rows into one match. The three bars
+        # appear in funnel order, so index them directly instead.
+        gl = re.search(r'<div class="gt-list">.*?(?=<p class="sub-head"|</section>|<details)',
+                       html, re.S)
+        if not gl:
+            sys.exit("FATAL: could not locate the gt-list block")
+        seg = gl.group(0)
+        bars = list(re.finditer(r'data-w="(\d+)"', seg))
+        pcts = list(re.finditer(r'<span class="gt-pct">([^<]*)</span>', seg))
+        ptss = list(re.finditer(r'<span class="gt-score-pts">([^<]*)<span class="gt-score-max">/([\d.]+)</span>', seg))
+        if not (len(bars) == len(pcts) == len(cfg["goals"])):
+            sys.exit(f"FATAL: goal tracker has {len(bars)} bars / {len(pcts)} pct labels "
+                     f"but {len(cfg['goals'])} configured")
+        for i in range(len(cfg["goals"]) - 1, -1, -1):
+            pct = int(cfg["goals"][i]["pct"])
+            if i < len(ptss):
+                mval = float(ptss[i].group(2))
+                seg = (seg[:ptss[i].start()]
+                       + f'<span class="gt-score-pts">{round(mval*pct/100,2):g}'
+                         f'<span class="gt-score-max">/{mx_fmt(mval)}</span>'
+                       + seg[ptss[i].end():])
+            seg = seg[:pcts[i].start()] + f'<span class="gt-pct">{pct}%</span>' + seg[pcts[i].end():]
+            seg = seg[:bars[i].start()] + f'data-w="{pct}"' + seg[bars[i].end():]
+        html = html[:gl.start()] + seg + html[gl.end():]
+
+    if cfg.get("goal_narratives"):
+        narrs = list(re.finditer(r'<p class="gt-narr">.*?</p>', html, re.S))
+        if len(narrs) != len(cfg["goal_narratives"]):
+            sys.exit(f"FATAL: {len(narrs)} goal narratives but "
+                     f"{len(cfg['goal_narratives'])} configured")
+        for n, txt in zip(reversed(narrs), reversed(cfg["goal_narratives"])):
+            html = html[:n.start()] + f'<p class="gt-narr">{txt}</p>' + html[n.end():]
 
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):

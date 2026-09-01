@@ -1,0 +1,126 @@
+{
+  "prior_report": "defineoakley/july2026/index.html",
+  "out": "defineoakley/august2026/index.html",
+  "client_name_html": "DEFINE Oakley",
+  "month_label": "August",
+  "prior_month_label": "July",
+  "year": 2026,
+  "stage": "Lift",
+  "month_num": 19,
+  "date_range": "August 1&ndash;31, 2026",
+  "score_label": "Progressing Month",
+  "delta_class": "dn",
+  "delta_text": "Down 1.1 vs. July",
+  "outcome_value": "26",
+  "beat1_summary": "July was carried by one post that travelled unusually far. August is the honest baseline underneath it, and the clearest good news is that retention climbed back to the Lift floor.",
+  "post_count": 8,
+  "work_chips": [
+    "<b>8 posts</b>",
+    "7 Reels, one carousel",
+    "Themes: instructor personality, class culture, first-timer nerves",
+    "Focus: holding people to the end of a Reel"
+  ],
+  "beat2_takeaway": "We published 8 pieces in August, seven Reels and one carousel, leaning into instructors and the feel of a class rather than the schedule.",
+  "bstats": [
+    {
+      "value": "50%",
+      "label": "Video retention",
+      "status": "ON TRACK"
+    },
+    {
+      "value": "5.8%",
+      "label": "Click-through rate",
+      "status": "ON TRACK"
+    },
+    {
+      "value": "54",
+      "label": "Comments",
+      "status": "WATCH"
+    },
+    {
+      "value": "29",
+      "label": "Saves",
+      "status": "WATCH"
+    }
+  ],
+  "beat3_takeaway": "Retention came back to 50%, which is the floor for your stage and the first time since spring it has been there. Reach and comments dropped hard off July's outlier.",
+  "beat4_takeaway": "The instructor-support Reel travelled furthest, shared 3.4 times more than an average post. People respond to the team, not the timetable.",
+  "beat5_takeaway": "September is about depth. Retention is fixed, so the work now is giving people a reason to save and to tap through.",
+  "followers_banner": {
+    "count": "3,854",
+    "mom": "<span class=\"mom up\">&#9650; 0.4% vs July</span>"
+  },
+  "c2b_steps": [
+    {
+      "num": "35,173",
+      "text": "people saw your content",
+      "badge": "\ud83c\udfdf four in five Great American Ball Park seats"
+    },
+    {
+      "num": "449",
+      "text": "tapped through to look at your profile",
+      "badge": "\ud83c\udfbc a Music Hall balcony crowd"
+    },
+    {
+      "num": "29",
+      "text": "bookmarked a piece for later",
+      "badge": "\ud83d\udccc 29 pre-purchase bookmarks"
+    },
+    {
+      "num": "26",
+      "text": "tapped a bio link, your highest-intent action",
+      "hi": true,
+      "badge": "\ud83d\udc46 26 deliberate steps toward booking a class"
+    }
+  ],
+  "narrative_allowed_numbers": [
+    3.4,
+    8,
+    7,
+    1
+  ],
+  "kpis": {
+    "total_followers": 3854,
+    "new_followers": 48,
+    "shares": 55,
+    "total_views": 35173,
+    "profile_visits": 449,
+    "retention": 50,
+    "saves": 29,
+    "comments": 54,
+    "reposts": 2,
+    "ctr": 5.8,
+    "link_taps": 26,
+    "pcr": 10.7
+  },
+  "prior_kpis": {
+    "total_followers": 3839,
+    "new_followers": 59,
+    "shares": 466,
+    "total_views": 70666,
+    "profile_visits": 730,
+    "retention": 47,
+    "saves": 68,
+    "comments": 401,
+    "reposts": 52,
+    "ctr": 7.7,
+    "link_taps": 56,
+    "pcr": 8.1
+  },
+  "goals": [
+    {
+      "pct": 28
+    },
+    {
+      "pct": 38
+    },
+    {
+      "pct": 50
+    }
+  ],
+  "goal_narratives": [
+    "Awareness scored 28%, down sharply as July's outlier post receded. Shares, views and new followers all finished under their Lift floors this month.",
+    "Engagement scored 38%. Retention recovered to 50% and is back at the Lift floor, the clearest positive in the month, while comments came down from July's 401.",
+    "Conversion scored 50%. Click-through rate and profile conversion both sit inside the Lift range; bio link taps at 26 slipped just under the 30 floor."
+  ]
+}
