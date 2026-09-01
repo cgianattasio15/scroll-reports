@@ -52,7 +52,7 @@
     "pcr": 14.0
   },
   "beat3_takeaway": "July&rsquo;s flood post brought a crowd. August proved they stayed: people watched more than half of every Reel, and clicked through at nearly double July&rsquo;s rate.",
-  "beat4_takeaway": "The lesson of August is that shorter, tighter openings held people who used to scroll past. Retention went from 37% to 53%, and that is the number everything else follows.",
+  "beat4_takeaway": "The posts that traveled were the ones with your people in them. The sisters, the staff, the regulars behind the counter.",
   "beat5_takeaway": "September is about giving people a reason to save. Reach and clicks are strong, so the one gap left is content worth keeping.",
   "post_count": 13,
   "beat2_takeaway": "We published 13 pieces in August, 11 Reels and two carousels, every one of them built to earn the first three seconds.",
@@ -104,5 +104,14 @@
       "hi": true,
       "badge": "\ud83e\udd6a 192 steps toward a sandwich or a catering order"
     }
+  ],
+  "beat4_prose": "Your standout was the August 24 Reel, shared 6.2 times more than an average post and saved 4.3 times more. The Fan Check carousel was right behind it, with saves at 2.7 times average.",
+  "narrative_allowed_numbers": [
+    6.2,
+    4.3,
+    2.7,
+    1.5,
+    13,
+    11
   ]
 }

@@ -253,9 +253,23 @@ def main():
         html = sub_once(html, r'<div class="work-strip">.*?</div>\s*\n', chips,
                         "work strip", re.S,
                         wrap=('<div class="work-strip">\n', "\n    </div>\n"))
-    if cfg.get("beat2_prose"):
-        html = sub_once(html, r'<p class="beat-prose">.*?</p>', cfg["beat2_prose"],
-                        "beat2 prose", re.S, wrap=('<p class="beat-prose">', "</p>"))
+    # There are TWO .beat-prose elements (Beat 2 and Beat 4). Replacing "the first one" left
+    # Beat 4 describing JULY's top post -- a stale narrative claim about content that was not
+    # even published this month, which preflight's corroboration check caught. Scope each
+    # replacement to its own beat section.
+    for bi in (2, 4):
+        key = f"beat{bi}_prose"
+        if not cfg.get(key):
+            continue
+        anchor = re.search(rf'id="beat{bi}"', html)
+        if not anchor:
+            sys.exit(f"FATAL: no beat{bi} section found")
+        seg = html[anchor.end():]
+        m = re.search(r'<p class="beat-prose">.*?</p>', seg, re.S)
+        if not m:
+            sys.exit(f"FATAL: no .beat-prose inside beat{bi}")
+        lo = anchor.end() + m.start(); hi = anchor.end() + m.end()
+        html = html[:lo] + f'<p class="beat-prose">{cfg[key]}</p>' + html[hi:]
 
     # --- Beat 3 result stat tiles ---
     # Four of the 12 metrics, chosen to match the month's story. Separate markup from the
@@ -318,6 +332,28 @@ def main():
                       lambda m: m.group(1) + "/assets/scroll-logo-white.png" + m.group(2), html)
         html = re.sub(r'(<img src=")https://files\.manuscdn\.com[^"]*("[^>]*class="footer-logo")',
                       lambda m: m.group(1) + "/assets/scroll-logo-navy.png" + m.group(2), html)
+        # The favicon points at the same dead CDN.
+        html = re.sub(r'(<link rel="icon"[^>]*href=")https://files\.manuscdn\.com[^"]*(")',
+                      lambda m: m.group(1) + "/assets/favicon.svg" + m.group(2), html)
+        html = html.replace('<link rel="icon" type="image/png" href="/assets/favicon.svg"',
+                            '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"')
+
+    # --- mobile body-text floor: FLAGGED, NOT FIXED ---
+    # CLAUDE.md Locked Principle 3.12 bans body text under 14px on mobile, and Procedural
+    # Gate #6 says every sub-14px body selector must join the 480px floor list before deploy.
+    # Only .mc-callout ever did (v8.3.3). A live audit at 375px found ~15 more selectors
+    # under 14px on both the August build AND July's shipped report -- .work-chip, .gt-narr,
+    # .why-text, .qyear-intro, .mscore-lead, .tw-item-body, .beat-cta-rationale and others.
+    #
+    # Deliberately NOT auto-fixed here. Deciding which of those are body copy and which are
+    # chrome (.funnel-lbl, .sec-label and the caption spans are arguably labels/quotes) is a
+    # design decision affecting every shipped report, and a partial fix ships inconsistent
+    # typography inside a single strip. A first attempt also proved the naive fix does not
+    # even work: injecting the floor next to the .mc-callout rule puts it BEFORE the base
+    # .work-chip rule in source order, so equal specificity means the base rule wins. Any
+    # real fix must append at the END of the stylesheet.
+    #
+    # Tracked for Chase as a bulk decision alongside the broken-logo fix.
 
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):
