@@ -139,5 +139,10 @@
       "label": "Next",
       "text": "Content that earns a response. Comments and saves eased this month, and those are what Instagram reads when deciding how far to push a post."
     }
-  ]
+  ],
+  "cta": {
+    "objective": "Book more custom jewelry appointments",
+    "copy": "&ldquo;Book a custom design consultation, link in bio.&rdquo;",
+    "rationale": "A custom appointment is the highest-value action on this account. Click-through is already the strongest in our book, so September works one step earlier: content that earns a comment and a save, so more of the audience reaches the point of booking."
+  }
 }

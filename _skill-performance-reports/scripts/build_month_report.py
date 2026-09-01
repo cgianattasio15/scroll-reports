@@ -513,6 +513,37 @@ def main():
         else:
             html = sub_once(html, r'</header>', "</header>" + block, "highlights block")
 
+    # --- primary call to action ---
+    # The single conversion goal the whole account optimises toward, set by Chase and
+    # documented in each client's context/goals file (that file is the authority; this only
+    # renders it). Three ways it went wrong before this existed: Pippi's carried ATLAS's CTA
+    # verbatim through the cross-client transform ("Book a strategy call" on a hair salon),
+    # Carl's rationale still narrated "June proved... July concentrates..." two months later,
+    # and Lane & Kate had a CTA line with no objective at all.
+    if cfg.get("cta"):
+        cta = cfg["cta"]
+        # Tag varies by client: some reports render beat-cta-copy as <p>, others as <div>,
+        # and only some carry the objective and rationale paragraphs at all. Match on the
+        # class and capture whatever tag it happens to use.
+        def cta_pat(cls):
+            return rf'<(p|div) class="{cls}">.*?</\1>'
+        for key, cls in (("objective", "beat-cta-obj"), ("copy", "beat-cta-copy"),
+                         ("rationale", "beat-cta-rationale")):
+            if not cta.get(key):
+                continue
+            if re.search(cta_pat(cls), html, re.S):
+                html = sub_once(html, cta_pat(cls), cta[key], f"cta {key}", re.S,
+                                wrap=(f'<p class="{cls}">', "</p>"))
+                continue
+            # Absent entirely: place it around the copy element rather than shipping a
+            # bare CTA line with no objective.
+            m = re.search(cta_pat("beat-cta-copy"), html, re.S)
+            if not m:
+                sys.exit("FATAL: no beat-cta-copy element to anchor the CTA on")
+            ins = f'<p class="{cls}">{cta[key]}</p>'
+            at = m.start() if key == "objective" else m.end()
+            html = html[:at] + ins + html[at:]
+
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):
         key = f"beat{i}_takeaway"

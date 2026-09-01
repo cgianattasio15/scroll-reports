@@ -141,5 +141,10 @@
       "label": "Next",
       "text": "Retention. There is a real library of content now, so the next lever is holding a business owner past the first three seconds."
     }
-  ]
+  ],
+  "cta": {
+    "objective": "Generate qualified consultation leads",
+    "copy": "&ldquo;Book a consultation, link in bio.&rdquo;",
+    "rationale": "A qualified enquiry from a small-business owner is the only conversion that matters here. August built the library and lifted engagement; September turns that attention into booked consultations, which is the metric that came down this month."
+  }
 }

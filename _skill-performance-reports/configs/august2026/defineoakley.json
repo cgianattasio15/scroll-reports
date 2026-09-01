@@ -137,5 +137,10 @@
       "label": "Next",
       "text": "Depth. Saves and bio link taps are the two to lift, now that people are watching to the end again."
     }
-  ]
+  ],
+  "cta": {
+    "objective": "Convert first classes into memberships",
+    "copy": "&ldquo;Start your membership, link in bio.&rdquo;",
+    "rationale": "A membership, not a drop-in, is the conversion worth optimising. A first class is the on-ramp. With retention back at target in August, September points the bio link and the class-culture content at the membership step rather than the trial."
+  }
 }

@@ -144,5 +144,10 @@
       "label": "Next",
       "text": "Saves. Reach and bookings are strong, so the work now is content people keep and come back to."
     }
-  ]
+  ],
+  "cta": {
+    "objective": "Book more client appointments",
+    "copy": "&ldquo;Book your appointment, link in bio.&rdquo;",
+    "rationale": "Now that the chairs are filled, appointments are the conversion. August sent 381 people to the booking link in your opening month. September works on the share of those taps that become a booking, which is the one metric still under target."
+  }
 }

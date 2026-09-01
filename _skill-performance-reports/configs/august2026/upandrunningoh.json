@@ -141,5 +141,10 @@
       "label": "Next",
       "text": "Comments. Reach and conversion are steady, so the gap is getting people talking rather than just watching."
     }
-  ]
+  ],
+  "cta": {
+    "objective": "Drive online orders and corporate fittings",
+    "copy": "&ldquo;Shop online or book a group fitting, link in bio.&rdquo;",
+    "rationale": "Two destinations, one link: e-commerce orders and corporate group business. Corporate outings and group fittings are the higher-value half and the harder one for an online-only competitor to take. September splits the bio link so both paths are reachable."
+  }
 }
