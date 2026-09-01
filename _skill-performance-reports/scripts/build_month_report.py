@@ -224,6 +224,101 @@ def main():
     html = re.sub(r'(content="[^"]*?Monthly score [\d.]+/10\. )[^"]*?(")',
                   lambda mm: mm.group(1) + cfg["score_label"] + "." + mm.group(2), html)
 
+    # --- paired-hero outcome panel ---
+    # The client-specific business-outcome metric. It is NOT one of the 12 scored metrics, so
+    # nothing else in this script would touch it -- the first pilot build left July's 262 bio
+    # link taps sitting next to August's score, which is the single most visible wrong number
+    # a report could carry.
+    if cfg.get("outcome_value"):
+        html, n = re.subn(
+            r'(<div class="ph-panel outcome">.*?<div class="ph-bignum">)[^<]*(</div>)',
+            lambda m: m.group(1) + str(cfg["outcome_value"]) + m.group(2),
+            html, count=1, flags=re.S)
+        if n != 1:
+            sys.exit(f"FATAL: expected 1 match for outcome value, got {n}")
+    if cfg.get("outcome_sub"):
+        html = sub_once(html, r'<p class="ph-outcome-sub">.*?</p>', cfg["outcome_sub"],
+                        "outcome sub", re.S,
+                        wrap=('<p class="ph-outcome-sub">', "</p>"))
+
+    # --- Beat 1 hero summary ---
+    if cfg.get("beat1_summary"):
+        html = sub_once(html, r'(<p class="hero-summary"[^>]*>)<strong>.*?</strong>(</p>)',
+                        cfg["beat1_summary"], "beat1 summary", re.S,
+                        wrap=('<p class="hero-summary"><strong>', "</strong></p>"))
+
+    # --- Beat 2 work strip ---
+    if cfg.get("work_chips"):
+        chips = "\n".join(f'      <span class="work-chip">{c}</span>' for c in cfg["work_chips"])
+        html = sub_once(html, r'<div class="work-strip">.*?</div>\s*\n', chips,
+                        "work strip", re.S,
+                        wrap=('<div class="work-strip">\n', "\n    </div>\n"))
+    if cfg.get("beat2_prose"):
+        html = sub_once(html, r'<p class="beat-prose">.*?</p>', cfg["beat2_prose"],
+                        "beat2 prose", re.S, wrap=('<p class="beat-prose">', "</p>"))
+
+    # --- Beat 3 result stat tiles ---
+    # Four of the 12 metrics, chosen to match the month's story. Separate markup from the
+    # metric cards, so regenerating the breakdown does not touch them.
+    if cfg.get("bstats"):
+        tiles = []
+        for t in cfg["bstats"]:
+            cls = STATUS_CLS[t["status"]]
+            tiles.append(f'<div class="bstat"><div class="bstat-val {cls}">{t["value"]}</div>'
+                         f'<div class="bstat-lbl">{t["label"]}</div>'
+                         f'<span class="bstat-tag {cls}">{STATUS_TXT[t["status"]]}</span></div>')
+        html = sub_once(html, r'<div class="bstats">.*?</div>\s*(?=<p class="sub-head")',
+                        "\n      ".join(tiles), "beat3 stat tiles", re.S,
+                        wrap=('<div class="bstats">\n      ', "\n    </div>\n    "))
+
+    # --- the "See all N posts" proof label ---
+    if cfg.get("post_count"):
+        html = re.sub(r'(<span>See all )\d+( posts and their numbers</span>)',
+                      lambda m: m.group(1) + str(cfg["post_count"]) + m.group(2), html, count=1)
+
+    # --- followers banner ---
+    if cfg.get("followers_banner"):
+        fb = cfg["followers_banner"]
+        html, n = re.subn(r'(<div class="fb-count">)[^<]*(</div>)',
+                          lambda m: m.group(1) + fb["count"] + m.group(2), html, count=1)
+        if n != 1:
+            sys.exit("FATAL: followers-banner count not found")
+        html = sub_once(html, r'<div class="fb-mom">.*?</div>', fb["mom"], "followers MoM",
+                        re.S, wrap=('<div class="fb-mom">', "</div>"))
+
+    # --- Content-to-Business funnel walk ---
+    # Four absolute volumes plus their analogy badges. The badges are COPY, not arithmetic --
+    # "the Taft Theatre filled nearly twice over" only works at certain magnitudes -- so they
+    # are authored per month rather than computed, and reviewed with Chase like the rest of
+    # the modeled layer (process-v8.5 gate).
+    if cfg.get("c2b_steps"):
+        steps = []
+        for st in cfg["c2b_steps"]:
+            badge = (f'<span class="c2b-step-badge">{st["badge"]}</span>' if st.get("badge") else "")
+            steps.append(f'<div class="c2b-step{" hi" if st.get("hi") else ""}">'
+                         f'<span class="c2b-step-num">{st["num"]}</span>'
+                         f'<div class="c2b-step-main"><span class="c2b-step-txt">{st["text"]}</span>'
+                         f'{badge}</div></div>')
+        m = re.search(r'<div class="c2b-steps">', html)
+        if not m:
+            sys.exit("FATAL: could not locate the c2b funnel steps.")
+        # Depth-scan again: each step is itself nested divs, so a non-greedy regex stops at
+        # the FIRST step and silently leaves the rest of last month's funnel in place.
+        inner_start, inner_end = grid_span(html, m.end())
+        html = (html[:inner_start] + "\n        " + "\n        ".join(steps)
+                + "\n      " + html[inner_end:])
+
+    # --- logos ---
+    # The hero and footer logos pointed at expiring files.manuscdn.com session-file URLs.
+    # All three return 403, across 44 shipped report files, so every live client report has
+    # been rendering a broken logo in its hero. The repo already ships the real assets.
+    # Hero sits on dark navy -> white mark; footer is #fff -> navy mark.
+    if cfg.get("fix_logos", True):
+        html = re.sub(r'(<img src=")https://files\.manuscdn\.com[^"]*("[^>]*class="hero-logo")',
+                      lambda m: m.group(1) + "/assets/scroll-logo-white.png" + m.group(2), html)
+        html = re.sub(r'(<img src=")https://files\.manuscdn\.com[^"]*("[^>]*class="footer-logo")',
+                      lambda m: m.group(1) + "/assets/scroll-logo-navy.png" + m.group(2), html)
+
     # --- narrative ---
     for i in (1, 2, 3, 4, 5):
         key = f"beat{i}_takeaway"

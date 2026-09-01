@@ -13,13 +13,96 @@
   "delta_text": "Down 0.5 vs. July",
   "final_score_override": 8.7,
   "override_reason": "viral-regression MoM suppression (Scroll_Media_Scoring_Framework.md), Chase-approved 2026-09-01",
-  "kpis": {"total_followers":8800,"new_followers":300,"shares":284,"total_views":124993,
-           "profile_visits":1772,"retention":53,"saves":42,"comments":93,"reposts":17,
-           "ctr":10.8,"link_taps":192,"pcr":16.9},
-  "prior_kpis": {"total_followers":8630,"new_followers":660,"shares":1021,"total_views":230017,
-           "profile_visits":4702,"retention":37,"saves":113,"comments":280,"reposts":47,
-           "ctr":5.6,"link_taps":262,"pcr":14.0},
-  "beat3_takeaway": "July's flood post brought a crowd. August proved they stayed: people watched more than half of every Reel, and clicked through at nearly double July's rate.",
+  "outcome_value": "192",
+  "outcome_sub": "Total taps on any link in your bio. Catering is your priority destination this quarter, so this number is the total interest signal that lands there and elsewhere in your bio.",
+  "beat1_summary": "A quieter month than July on the surface, and a stronger one underneath. Reach came back to earth after the flood post, but people watched more than half of every Reel and clicked through at nearly twice July&rsquo;s rate.",
+  "work_chips": [
+    "<b>13 posts</b>",
+    "11 Reels, two carousels",
+    "Themes: sandwich craft, the counter staff, catering",
+    "Focus: holding attention past three seconds"
+  ],
+  "beat2_prose": "We tightened the opening of every Reel and led with the food itself instead of the setup. Fewer posts than July, built to be watched all the way through rather than scrolled past.",
+  "kpis": {
+    "total_followers": 8800,
+    "new_followers": 300,
+    "shares": 284,
+    "total_views": 124993,
+    "profile_visits": 1772,
+    "retention": 53,
+    "saves": 42,
+    "comments": 93,
+    "reposts": 17,
+    "ctr": 10.8,
+    "link_taps": 192,
+    "pcr": 16.9
+  },
+  "prior_kpis": {
+    "total_followers": 8630,
+    "new_followers": 660,
+    "shares": 1021,
+    "total_views": 230017,
+    "profile_visits": 4702,
+    "retention": 37,
+    "saves": 113,
+    "comments": 280,
+    "reposts": 47,
+    "ctr": 5.6,
+    "link_taps": 262,
+    "pcr": 14.0
+  },
+  "beat3_takeaway": "July&rsquo;s flood post brought a crowd. August proved they stayed: people watched more than half of every Reel, and clicked through at nearly double July&rsquo;s rate.",
   "beat4_takeaway": "The lesson of August is that shorter, tighter openings held people who used to scroll past. Retention went from 37% to 53%, and that is the number everything else follows.",
-  "beat5_takeaway": "September is about giving people a reason to save. Reach and clicks are strong, so the one gap left is content worth keeping."
+  "beat5_takeaway": "September is about giving people a reason to save. Reach and clicks are strong, so the one gap left is content worth keeping.",
+  "post_count": 13,
+  "beat2_takeaway": "We published 13 pieces in August, 11 Reels and two carousels, every one of them built to earn the first three seconds.",
+  "bstats": [
+    {
+      "value": "53%",
+      "label": "Video retention",
+      "status": "ON TRACK"
+    },
+    {
+      "value": "10.8%",
+      "label": "Click-through rate",
+      "status": "EXCEEDING"
+    },
+    {
+      "value": "192",
+      "label": "Bio link taps",
+      "status": "EXCEEDING"
+    },
+    {
+      "value": "42",
+      "label": "Saves",
+      "status": "WATCH"
+    }
+  ],
+  "followers_banner": {
+    "count": "8,800",
+    "mom": "<span class=\"mom up\">&#9650; 2.0% vs July</span>"
+  },
+  "c2b_steps": [
+    {
+      "num": "124,993",
+      "text": "people saw your content",
+      "badge": "\ud83c\udfdf Great American Ball Park filled 2.9x over"
+    },
+    {
+      "num": "1,772",
+      "text": "tapped through to look at your profile",
+      "badge": "\ud83c\udfad two-thirds of a sold-out Taft Theatre"
+    },
+    {
+      "num": "42",
+      "text": "bookmarked content for reference later",
+      "badge": "\ud83d\udccc 42 pre-purchase bookmarks"
+    },
+    {
+      "num": "192",
+      "text": "tapped a bio link, your highest-intent action",
+      "hi": true,
+      "badge": "\ud83e\udd6a 192 steps toward a sandwich or a catering order"
+    }
+  ]
 }
