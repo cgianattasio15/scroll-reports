@@ -63,12 +63,13 @@ jobs:
           Y="${{ steps.period.outputs.year }}"
           SLUG="${{ steps.period.outputs.slug }}"
           mkdir -p "$GITHUB_WORKSPACE/summaries"
-          for CLIENT in laneandkate upandrunningoh defineoakley shoplaunchparty measactive carlsdeli atlassystems; do
+                  for CLIENT in carlsdeli laneandkate defineoakley upandrunningoh atlassystems pippis; do
             SHELL_PATH="../../$CLIENT/$SLUG/index.html"
             if [ -f "$SHELL_PATH" ]; then
               echo "::group::$CLIENT"
               python3 inject_report_data.py \
-          for CLIENT in carlsdeli laneandkate defineoakley upandrunningoh atlassystems pippis; do                --inject "$SHELL_PATH" \
+                --client "$CLIENT" --month "$M" --year "$Y" \
+                --inject "$SHELL_PATH" \
                 --summary-out "$GITHUB_WORKSPACE/summaries/$CLIENT.json" \
                 || echo "::warning::pull failed for $CLIENT (continuing)"
               echo "::endgroup::"
