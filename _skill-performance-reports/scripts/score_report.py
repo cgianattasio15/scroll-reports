@@ -111,13 +111,18 @@ def mom_credit(kpis, prior):
             detail.append((m, prv, cur, "down"))
         else:
             detail.append((m, prv, cur, "flat"))
-    if improving >= 6:
+    # Each band additionally requires its direction to be the DOMINANT one. Without that
+    # guard the elif chain tests improving first and a net-negative month can collect
+    # positive credit: Lane & Kate's August 2026 was 5 improving / 6 declining and earned
+    # +0.25, which read as momentum on a month where more metrics fell than rose.
+    # (Fixed 2026-09-01, Chase-approved, before the August cohort shipped.)
+    if improving >= 6 and improving > declining:
         c = 0.5
-    elif improving == 5:
+    elif improving == 5 and improving > declining:
         c = 0.25
-    elif declining >= 6:
+    elif declining >= 6 and declining > improving:
         c = -0.5
-    elif declining == 5:
+    elif declining == 5 and declining > improving:
         c = -0.25
     else:
         c = 0.0
