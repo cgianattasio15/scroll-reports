@@ -36,7 +36,9 @@ def mc(name, cls, lab, val, tgt, bar, note, callout=None):
 html = open(SRC, encoding="utf-8").read()
 
 # ── access gate + head/meta ──────────────────────────────────────────────────
-html = sub(html, "window.SCROLL_GATE={slug:'carlsdeli',code:'carls.scroll'", "window.SCROLL_GATE={slug:'atlassystems',code:'atlas.scroll'", "gate")
+# Access gate REMOVED 2026-09-04 (Chase) -- one-off historical script, line neutralised.
+# The gate was never security (code shipped in page source) and cost inbox placement.
+# html = sub(html, "window.SCROLL_GATE={slug:'carlsdeli',code:'carls.scroll'", "window.SCROLL_GATE={slug:'atlassystems',code:'atlas.scroll'", "gate")
 html = sub(html, "<title>Carl's Deli &ndash; June 2026 | Scroll Media</title>", "<title>Atlas Systems &ndash; July 2026 | Scroll Media</title>", "title")
 html = sub(html, 'content="Carl\'s Deli June 2026 Instagram performance report. Score 9.2/10. Exceptional Month. Lift Stage. Managed by Scroll Media.">',
            'content="Atlas Systems July 2026 Instagram performance report. Score 7.5/10. Building Month. Spark Stage. Managed by Scroll Media.">', "meta:desc")

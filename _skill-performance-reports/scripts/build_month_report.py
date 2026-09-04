@@ -445,11 +445,12 @@ def main():
     ident = cfg.get("identity")
     if ident:
         swaps = []
-        html, n = re.subn(r"SCROLL_GATE=\{[^}]*\}",
-            "SCROLL_GATE={slug:'%s',code:'%s',title:'Private report',"
-            "sub:'This report is private. Enter your access code to continue.',"
-            "button:'View report'}" % (ident["gate_slug"], ident["gate_code"]), html)
-        swaps.append(("gate", n))
+        # Access gate REMOVED 2026-09-04 (Chase). It was never security: the code
+        # shipped in the page source, readable by view-source before anyone typed it.
+        # It cost inbox placement, because a link plus a credential in the same email
+        # is the shape spam filters read as credential phishing. Do not reinstate it
+        # here -- see 07_Operations/skills/security_protocol/resources/
+        # email_deliverability_standard_v1.md in the OS.
         html, n = re.subn(r"<h1>.*?</h1>", ident["h1"], html, count=1, flags=re.S)
         swaps.append(("h1", n))
         html, n = re.subn(r'(<div class="hero-meta">).*?(<span class="dot"></span>\s*<span>'
